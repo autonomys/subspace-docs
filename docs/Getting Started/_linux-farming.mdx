@@ -1,0 +1,54 @@
+### 🐧 Linux Installation
+
+1. Download the executables for your operating system from the [Releases](https://github.com/subspace/subspace/releases) tab.
+2. Open your favourite terminal, and change to the Downloads directory using `cd Downloads`
+3. Make the farmer & node executable  `chmod +x $(farmer-name)` & `chmod +X $(node-name)`
+4. We will then start the node using the following command
+
+> *Note, when attempting to run this command you may be prompted:* Click on `cancel` instead of moving it to trash.
+To allow execution, go to `System Preferences -> Security & Privacy -> General`, and click on `allow`.
+After this, simply repeat the step you prompted for (step 4 or 6). This time, click the `Open` button when prompted.
+
+```
+# Replace `NODE_FILE_NAME` with the name of the node file you downloaded from releases.
+# Replace `INSERT_YOUR_ID` with a nickname you choose
+./NODE_FILE_NAME \
+  --chain testnet \
+  --wasm-execution compiled \
+  --execution wasm \
+  --bootnodes "/dns/farm-rpc.subspace.network/tcp/30333/p2p/12D3KooWPjMZuSYj35ehced2MTJFf95upwpHKgKUrFRfHwohzJXr" \
+  --rpc-cors all \
+  --rpc-methods unsafe \
+  --ws-external \
+  --validator \
+  --telemetry-url "wss://telemetry.polkadot.io/submit/ 1" \
+  --name INSERT_YOUR_ID
+```
+5. You should see something similar as the output in the terminal.
+```
+2022-02-03 10:52:23 Subspace
+2022-02-03 10:52:23 ✌️  version 0.1.0-35cf6f5-x86_64-macos
+2022-02-03 10:52:23 ❤️  by Subspace Labs <https://subspace.network>, 2021-2022
+2022-02-03 10:52:23 📋 Chain specification: Subspace testnet
+2022-02-03 10:52:23 🏷  Node name: YOUR_FANCY_NAME
+2022-02-03 10:52:23 👤 Role: AUTHORITY
+2022-02-03 10:52:23 💾 Database: RocksDb at /Users/X/Library/Application Support/subspace-node-x86_64-macos-11-snapshot-2022-jan-05/chains/subspace_test/db/full
+2022-02-03 10:52:23 ⛓  Native runtime: subspace-100 (subspace-1.tx1.au1)
+2022-02-03 10:52:23 🔨 Initializing Genesis block/state (state: 0x22a5…17ea, header-hash: 0x6ada…0d38)
+2022-02-03 10:52:24 ⏱  Loaded block-time = 1s from block 0x6ada0792ea62bf3501abc87d92e1ce0e78ddefba66f02973de54144d12ed0d38
+2022-02-03 10:52:24 Starting archiving from genesis
+2022-02-03 10:52:24 Archiving already produced blocks 0..=0
+2022-02-03 10:52:24 🏷  Local node identity is: 12D3KooWBgKtea7MVvraeNyxdPF935pToq1x9VjR1rDeNH1qecXu
+2022-02-03 10:52:24 🧑‍🌾 Starting Subspace Authorship worker
+2022-02-03 10:52:24 📦 Highest known block at #0
+2022-02-03 10:52:24 〽️ Prometheus exporter started at 127.0.0.1:9615
+2022-02-03 10:52:24 Listening for new connections on 0.0.0.0:9944.
+2022-02-03 10:52:26 🔍 Discovered new external address for our node: /ip4/176.233.17.199/tcp/30333/p2p/12D3KooWBgKtea7MVvraeNyxdPF935pToq1x9VjR1rDeNH1qecXu
+2022-02-03 10:52:29 ⚙️  Syncing, target=#215883 (2 peers), best: #55 (0xafc7…bccf), finalized #0 (0x6ada…0d38), ⬇ 850.1kiB/s ⬆ 1.5kiB/s
+```
+7. We will then open another terminal, change to the downloads directory, then start the farmer node with the following command:
+```
+# Replace `FARMER_FILE_NAME` with the name of the node file you downloaded from releases.
+./FARMER_FILE_NAME farm
+```
+7. It may prompt again in here. Refer to the note on step 4.
