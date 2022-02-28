@@ -5,7 +5,7 @@ import styles from './HomepageFeatures.module.css';
 const FeatureList = [
   {
     title: 'Learn',
-    Svg: require('../../static/img/logo.svg').default,
+    Svg: require('../../static/img/learn-dark.svg').default,
     description: (
       <>
         Learn about the Subspace Network and how we utilize our novel Proof of Archival Storage consensus to fully resolve the blockchain Trilemma.
@@ -14,7 +14,7 @@ const FeatureList = [
   },
   {
     title: 'Get Started Farming',
-    Svg: require('../../static/img/logo.svg').default,
+    Svg: require('../../static/img/get-started-dark.svg').default,
     description: (
       <>
         Get started farming on the Subspace Network, all that is required is a basic computer and some extra storage space.
@@ -23,7 +23,7 @@ const FeatureList = [
   },
   {
     title: 'Develop',
-    Svg: require('../../static/img/logo.svg').default,
+    Svg: require('../../static/img/develop-dark.svg').default,
     description: (
       <>
         Want to develop on the Subspace Network? Utilize Subspace.js to store on the network!.

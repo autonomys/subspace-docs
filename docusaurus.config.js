@@ -46,7 +46,8 @@ const config = {
         title: 'Subspace Network Documentation',
         logo: {
           alt: 'Subspace Labs Logo',
-          src: 'img/logo.svg',
+          src: 'img/logo-black.svg',
+          srcDark: 'img/logo-white.svg',
         },
         items: [
           {
@@ -58,7 +59,6 @@ const config = {
         ],
       },
       footer: {
-        style: 'dark',
         links: [
           {
             title: 'Docs',
@@ -112,6 +112,12 @@ const config = {
             ],
           },
         ],
+        logo: {
+          alt: 'Subspace Labs Banner Logo',
+          src: 'img/banner-black.svg',
+          srcDark: 'img/banner-white.svg',
+          href: 'https://subspace.network',
+        },
         copyright: `Copyright © ${new Date().getFullYear()} Subspace Labs, Inc.`,
       },
       prism: {
