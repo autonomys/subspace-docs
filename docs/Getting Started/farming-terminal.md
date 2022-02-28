@@ -4,11 +4,11 @@ sidebar_position: 2
 tags:
     - Farming
     - Storage
-    - Node
+    - CLI
     - Getting Started
 ---
 
-# Getting Started Farming
+# Farm with the Terminal
 
   Becoming a Farmer on the Subspace Network...
 
@@ -18,7 +18,7 @@ import WindowsFarming from './_windows-farming.mdx';
 import MacosFarming from './_macos-farming.mdx';
 import LinuxFarming from './_linux-farming.mdx';
 
-## 📝Installation Instructions
+## 📝Terminal Instructions
 
 <Tabs groupId="os">
   <TabItem value="windows" label="Windows" default>
