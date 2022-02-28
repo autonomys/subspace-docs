@@ -27,11 +27,11 @@ html[data-theme='dark'] {
   --ifm-color-primary-lightest: #8749d8;
 }
 
-html[data-theme='dark'] footer {
+html[data-theme='dark'] .footer {
   background-color: #292929;
 }
 
-html[data-theme='light'] dooter {
+html[data-theme='light'] .footer {
   background-color: #fafafa;
 }
 
