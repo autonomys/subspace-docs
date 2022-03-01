@@ -16,20 +16,20 @@ The Subspace Network is an ambitious layer zero protocol which is the first scal
 ---
 Our goal is to bring an extremely low barrier to entry for participating on consensus, As long as you meet the simple requirements below you can get started below.
 
-- [Getting Started Farming](/docs/Getting-Started/farming)
+- [Getting Started Farming](/docs/Getting%20Started/farming-terminal)
 
 ## 💻 Develop on the Network
 ---
 If you would like to develop on the network you can check out our developmental guides below. 
 
-- [Getting Started Developing](/docs/Getting-Started/developing)
+- [Getting Started Developing](/docs/Getting%20Started/developing)
 
 ## 📖 Additional Resources
 ---
 If you are looking for additional resources you can check our both our Official resources, and Community provided resources. 
 
-- [Official](/docs/Resources/official)
-- [Community](/docs/Resources/)
+- [Official](/docs/official)
+- [Community](/docs/community)
 
 
 
