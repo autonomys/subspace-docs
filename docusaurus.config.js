@@ -46,36 +46,57 @@ const config = {
         title: 'Subspace Network Documentation',
         logo: {
           alt: 'Subspace Labs Logo',
-          src: 'img/logo.svg',
+          src: 'img/logo-black.svg',
+          srcDark: 'img/logo-white.svg',
         },
         items: [
           {
             type: 'doc',
-            docId: 'introduction',
+            docId: 'intro',
             position: 'left',
             label: 'Docs',
           },
         ],
       },
       footer: {
-        style: 'dark',
         links: [
           {
-            title: 'Docs',
+            title: 'Subspace Network',
             items: [
               {
-                label: 'Introduction',
-                to: '/docs/introduction',
+                label: 'Official Website',
+                href: 'https://subspace.network'
               },
               {
-                label: 'Learn',
-                to: '/docs/learn/index.md'
+                label: 'Introduction',
+                to: '/docs/intro',
               },
               {
                 label: 'Getting Started',
-                to: '/decs/Getting Started/index.md'
+                to: '/decs/Getting Started/'
+              },
+              {
+                label: 'Resources',
+                to: '/docs/Resources/'
               }
             ],
+          },
+          {
+            title: 'Products',
+            items: [
+              {
+                label: 'Subspace Desktop',
+                href: 'https://github.com/subspace/subspace-desktop'
+              },
+              {
+                label: 'Subspace Explorer',
+                href: 'https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Ftest-rpc.subspace.network#/explorer'
+              },
+              {
+                label: 'Subspace Relayer',
+                href: 'https://testnet-relayer.subspace.network/'
+              }
+            ]
           },
           {
             title: 'Community',
@@ -85,33 +106,51 @@ const config = {
                 href: 'https://github.com/subspace',
               },
               {
-                label: 'Website',
-                href: 'https://subspace.network',
-              },
-              {
-                label: 'Stack Overflow',
-                href: 'https://stackoverflow.com/questions/tagged/docusaurus',
-              },
-              {
                 label: 'Discord',
                 href: 'https://discord.gg/subspace-network',
               },
               {
-                label: 'Twitter',
-                href: 'https://twitter.com/networksubspace',
+                label: 'Telegram',
+                href: 'https://t.me/subspace_network',
+              },
+              {
+                label: 'Reddit',
+                href: 'https://reddit.com/r/sub',
               },
             ],
           },
           {
-            title: 'More',
+            title: 'Social',
             items: [
               {
-                label: 'Blog',
-                to: '/blog',
+                label: 'YouTube',
+                href: 'https://www.youtube.com/channel/UCojYRCZOtVTJHJXivOYJzeQ',
               },
+              {
+                label: 'LinkedIn',
+                href: 'https://www.linkedin.com/company/subspace-blockchain',
+              },
+              {
+                label: 'Twitter',
+                href: 'https://twitter.com/network_subspace',
+              },
+              {
+                label: 'Medium',
+                href: 'https://medium.com/subspace-network',
+              },
+              {
+                label: 'Subsocial',
+                href: 'https://app.subsocial.network/@NetworkSubspace'
+              }
             ],
           },
         ],
+        logo: {
+          alt: 'Subspace Labs Banner Logo',
+          src: 'img/banner-black.svg',
+          srcDark: 'img/banner-white.svg',
+          href: 'https://subspace.network',
+        },
         copyright: `Copyright © ${new Date().getFullYear()} Subspace Labs, Inc.`,
       },
       prism: {
