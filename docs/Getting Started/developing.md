@@ -1,10 +1,5 @@
 ---
 sidebar_position: 2
-tags:
-    - Development
-    - Subspace.js
-    - Node
-    - Getting Started
 ---
 
 # Getting Started Developing
