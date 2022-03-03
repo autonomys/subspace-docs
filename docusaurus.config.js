@@ -9,7 +9,7 @@ const config = {
   title: 'Subspace Labs Documentation',
   tagline: 'Subspace is an open, scalable platform for both storage and compute that is fully interoperable with any layer one.',
   url: 'https://subspace.github.io',
-  baseUrl: '/subspace-docs',
+  baseUrl: '/subspace-docs/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
@@ -73,11 +73,11 @@ const config = {
               },
               {
                 label: 'Getting Started',
-                to: '/decs/Getting Started/'
+                to: '/docs/Getting Started/farming-terminal'
               },
               {
                 label: 'Resources',
-                to: '/docs/Resources/'
+                to: '/docs/intro'
               }
             ],
           },

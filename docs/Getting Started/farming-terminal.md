@@ -1,11 +1,5 @@
 ---
 sidebar_position: 1
-
-tags:
-    - Farming
-    - Storage
-    - CLI
-    - Getting Started
 ---
 
 # Farm with the Terminal
