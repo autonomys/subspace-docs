@@ -43,11 +43,22 @@ Please note, all community provided resources are **non-offiical**. For clarific
 
 ### Articles
 
+#### Information
+
+F.A.Q
+- [Russian Translation](https://docs.google.com/document/d/17LwoBVP6POgaI18oajyI9xsi3nSJDtS7O-TvKSoHQwo/edit) provided by Artem Frolow
+
+Getting Started Farming
+- [Russian Translation](https://vmelbit.medium.com/%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D0%BC%D1%81%D1%8F-%D1%84%D0%B5%D1%80%D0%BC%D0%B5%D1%80%D0%B0%D0%BC%D0%B8-subspace-network-5bacab106755) provided by vmelbit
 
 #### Medium
 
 Bringing the PoC Consensus to Substrate
 - [Russian Translation](https://medium.com/@ivan.arenovich/%D0%B4%D0%BE%D0%B2%D0%B5%D0%B4%D0%B5%D0%BD%D0%BD%D1%8F-poc-%D0%BA%D0%BE%D0%BD%D1%81%D0%B5%D0%BD%D1%81%D1%83%D1%81%D1%83-%D0%B4%D0%BE-substrate-67baf6307d8) provided by Ivanl
+
+Subspace is the first protocol to completely resolve the blockchain trilemma without compromise. provided by solgas
+- [Russian Translation](https://medium.com/@solgas/subspace-%D1%8D%D1%82%D0%BE-%D0%BF%D0%B5%D1%80%D0%B2%D1%8B%D0%B9-%D0%BF%D1%80%D0%BE%D1%82%D0%BE%D0%BA%D0%BE%D0%BB-%D0%BF%D0%BE%D0%BB%D0%BD%D0%BE%D1%81%D1%82%D1%8C%D1%8E-%D1%80%D0%B0%D0%B7%D1%80%D0%B5%D1%88%D0%B8%D0%B2%D1%88%D0%B8%D0%B9-%D1%82%D1%80%D0%B8%D0%BB%D0%B5%D0%BC%D0%BC%D1%83-%D0%B1%D0%BB%D0%BE%D0%BA%D1%87%D0%B5%D0%B9%D0%BD%D0%B0-%D0%B1%D0%B5%D0%B7-%D0%BA%D0%BE%D0%BC%D0%BF%D1%80%D0%BE%D0%BC%D0%B8%D1%81%D1%81%D0%BE%D0%B2-84aceca19504)
+
 
 #### Events
 
