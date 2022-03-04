@@ -8,7 +8,7 @@ sidebar_position: 2
 
 This JavaScript library provides a simple API to submit and retrieve user data to the [Subspace network](https://subspace.network/). The project is in active development with a [live test network](https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Ftest-rpc.subspace.network#/explorer) designed to provide scalable and distributed archival storage.
 
-# Storage API.
+# Storage API
 
 The Storage API exposes a Subspace node feature called [pallet-object-store](https://github.com/subspace/subspace/tree/main/crates/pallet-object-store) that implements RPC methods to store an **Object** from user-provided data. The user can send a simple text or even a file; the `pallet-object-store` receives an **Object** to store and generate an **objectId**.
 
@@ -32,7 +32,7 @@ To expose these methods, this library implements two main classes:
 
     - `getObject`: Receives an **objectId** calling `findObject` to return the **Object** as Uint8Array.
 
-# Run this project.
+# Run this project
 
 Clone this repository:
 
@@ -71,7 +71,7 @@ const objectId: string = await subspaceClient.putObject(objectData);
 const object: Uint8Array = await subspaceClient.getObject(objectId);
 ```
 
-## Run the examples.
+## Run the examples
 
 - Check the examples folder for node.js and browser.
 
