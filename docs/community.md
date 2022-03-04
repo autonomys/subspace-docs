@@ -5,7 +5,7 @@ title: "Community Resources"
 
 :::caution
 
-Please note, all community provided resources are **non-offiical**. For clarification please refer to [official materials](pathname:///docs/Resources/official). 
+Please note, all community provided resources are **non-offiical**. For clarification please refer to [official materials](pathname:///docs/official). 
 
 :::
 
@@ -26,7 +26,7 @@ Please note, all community provided resources are **non-offiical**. For clarific
 
 🇷🇺 - [русское дискорд-сообщество](https://discord.com/channels/864285291518361610/940699533640368128)
 
-🇺🇦 - [українська спільнота розбрату](https://discord.com/channels/864285291518361610/940699198330925106)
+🇺🇦 - [українська діскорд-спільнота](https://discord.com/channels/864285291518361610/940699198330925106)
 
 
 ## Community Translations
