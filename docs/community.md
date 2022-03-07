@@ -5,7 +5,7 @@ title: "Community Resources"
 
 :::caution
 
-Please note, all community provided resources are **non-offiical**. For clarification please refer to [official materials](pathname:///docs/official). 
+Please note, all community provided resources are **non-official**. For clarification please refer to [official materials](pathname:///docs/official). 
 
 :::
 
