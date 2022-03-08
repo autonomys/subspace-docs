@@ -45,6 +45,8 @@ Please note, all community provided resources are **non-official**. For clarific
 
 
 #### Medium
+Getting started guide
+- [Russian Translation](https://vmelbit.medium.com/%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D0%BC%D1%81%D1%8F-%D1%84%D0%B5%D1%80%D0%BC%D0%B5%D1%80%D0%B0%D0%BC%D0%B8-subspace-network-5bacab106755) provided by Vmelbit
 
 Bringing the PoC Consensus to Substrate
 - [Russian Translation](https://medium.com/@ivan.arenovich/%D0%B4%D0%BE%D0%B2%D0%B5%D0%B4%D0%B5%D0%BD%D0%BD%D1%8F-poc-%D0%BA%D0%BE%D0%BD%D1%81%D0%B5%D0%BD%D1%81%D1%83%D1%81%D1%83-%D0%B4%D0%BE-substrate-67baf6307d8) provided by Ivanl
