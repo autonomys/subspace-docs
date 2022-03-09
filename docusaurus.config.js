@@ -16,6 +16,21 @@ const config = {
   organizationName: 'subspace', // Usually your GitHub org/user name.
   projectName: 'subspace-docs', // Usually your repo name.
 
+  i18n: {
+    defaultLocale: 'en',
+    locales: ['ru', 'uk', 'ko', 'es', 'vi'],
+    localeConfigs: {
+      en: {
+        htmlLang: 'en-GB',
+      },
+      // You can omit a locale (e.g. fr) if you don't need to override the defaults
+      fa: {
+        direction: 'rtl',
+      },
+    },
+  },
+
+
   presets: [
     [
       'classic',
@@ -53,6 +68,10 @@ const config = {
             docId: 'intro',
             position: 'left',
             label: 'Docs',
+          },
+          {
+            type: 'localeDropdown',
+            position: 'right',
           },
         ],
       },
