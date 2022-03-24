@@ -6,19 +6,19 @@ First off, thank you for considering contributing to the Subspace Network. It's 
 
 ### Help us, Help you, Help us!
 
-Following these guidelines helps to communicate that you respect the time of the developers managing and developing this open source project. In return, they should reciprocate that respect in addressing your issue, assessing changes, and helping you finalize your pull requests.
+Following these guidelines shows that you respect the time of the developers who manage and develope this open source project. In return, they should reciprocate that respect in addressing your issue, assessing changes, and helping you finalize your pull requests.
 
 
 ### What Can I Contribute?
 
-We are a fully Open Source project, meaning we are open to almost any kind of contributions from our community. Some of the major things we are looking for in this repo are as follows
+We are a fully Open Source project, meaning we are open to all kinds of contributions from our community. Here are a few example of contributions that we are open to in this repo:
 
-- **Added Content:** Write a nice guide? Submit it to be added to the Docs. 
-- **Translation:** Added Translations of our prior content, see the [translate.md](TRANSLATE.md) for help.
-- **Bug Reports & Fixes:** Find a bug or error? Let us know where its hiding.
-- **Feature Requests & Implementations:** Looking for a new feature? Give us some ideas on how we can improve.
+- **Added Content:** Writing a nice guide? Submit it (Where?) so we can add it to our Docs. 
+- **Translation:** Adding Translations of our prior content? See the [translate.md](TRANSLATE.md) for help.
+- **Bug Reports & Fixes:** Find a bug or error? Let us know where its hiding. (Where?)
+- **Feature Requests & Implementations:** Looking for a new feature? Share your ideas so we can improve.
 
-*If you have something that is not listed, feel free to still submit the PR, just try and be as descriptive as possible.*
+*If you have something that is not listed, try to be as descriptive as possible and feel free to submit the PR.*
 
 # Ground Rules
 
@@ -28,8 +28,8 @@ Please refer to our [Code of Conduct](CODE_OF_CONDUCT.md)
 
 ## Simple Fix
 
-Please only follow this pathway when your contribution is minor such as Spelling, Typo, Rewording, etc. 
-> If you are adding full on new pages, features, etc then please refer to the `Advanced` portion of this section
+Please follow this pathway for *minor* contributions such as Spelling errors, Typos, Rewording, etc. 
+> If you are adding entirely new pages, features, etc, then please refer to the `Advanced` portion of this section
 
 1. Go to [Subspace Documentation](https://subspace.github.io/subspace-docs), and find the page that you would like to change.
 2. Scroll to the bottom and click `Edit this page`.
@@ -39,17 +39,17 @@ Please only follow this pathway when your contribution is minor such as Spelling
 6. Once you are satisfied with your changes you will scroll to the bottom.
     - Fill out Title
     - Fill out Description
-    - Click `Create a new branch for this commit and start a pull request.` Option
-7. Click `Propose Changes`.
+    - Click the `Create a new branch for this commit and start a pull request.` option
+7. Click `Propose Changes`
 8. On the right you will see some options, you will want to apply the most accurate `labels` listed.
 9. Click `Create Pull Request`
 
 🎉Congratulations! You have just submitted your first Pull Request! 
-*Please provide some time for a maintainer to get a chance to view your pull request and approve it, or request adjustments.*
+*Please provide some time for a maintainer to view your pull request and approve it, or request adjustments.*
 
 ## Never contributed before?
 
-No worries! We all start somewhere 🚀 There are thousands of videos & resources online to show various ways to use GitHub.
+No worries! We all start somewhere 🚀 There are several videos & resources online to show various ways to use GitHub.
 Check out some of these amazing guides to help get you familiar with GitHub and contributing.
 - [First Contributions - Terminal](https://github.com/firstcontributions/first-contributions)
 - [First Contributions - GitHub Desktop](https://github.com/firstcontributions/first-contributions/blob/master/gui-tool-tutorials/github-desktop-tutorial.md)
@@ -59,12 +59,12 @@ Check out some of these amazing guides to help get you familiar with GitHub and 
 
 This section presumes a better understanding of GitHub, and programming basics.
 
-For larger more advanced fixes please ensure you follow the basic principles below.
+For larger, more advanced fixes please ensure you follow the basic principles below.
 * Do **not** comment simple trivial code such as importing existing components, and basic HTML/CSS.
-* Do comment on complex non-trivial code, complex logic should be easy to understand
+* Do comment on complex non-trivial code, complex logic should be easy to understand.
 * All public functions need to be commented.
 * If code is trivial but could be forgotten over time, please comment.
-* Try and think about your code from a 3rd view, it should make sense to anyone with a similar background in the technology you are using.
+* Try and think about your code from a 3rd person view, it should make sense to anyone with a similar background in the technology that you are using.
 * Sometimes difficult to understand code needs refactoring instead of more comments.
 * Make sure the program can still build prior to pull request.
 
@@ -84,18 +84,18 @@ We do not have any strict template that you must follow, but please provide all 
 
 # How to suggest a feature or enhancement
 
-This documentation is for the community, any feature requests are welcome.
+This documentation is for the community, so any feature requests are welcome.
 * If you are requesting a feature, please submit a Github issue and use the label `enhancement`
 * Explain why this issue is needed, and what problems it will solve.
 * Indicate if you are able/willing to help implement this feature.
 
 # Code review process
 
-* The core team will take a look at any pull requests as soon as possible, generally expect within a day or two.
+* The core team will take a look at any pull requests as soon as possible, generally you can expect a response within a day or two.
 * If it is a simple and non-controversial fix we will review the code and approve. 
 * If there are questions, feedback, or more discussion needs to be had we will reach out to the contributor on the Pull Request to try and resolve said issues.
 * If there is no response or activity within 2 weeks of team response we may close the pull request.
 
 # Community
 
-You can chat with the core team on https://discord.gg/subspace-network.
+You can chat with the core team on Discord https://discord.gg/subspace-network.
