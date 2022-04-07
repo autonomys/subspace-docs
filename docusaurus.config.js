@@ -18,7 +18,7 @@ const config = {
 
   i18n: {
     defaultLocale: 'en',
-    locales: ['ru', 'uk', 'ko', 'es', 'vi'],
+    locales: ['en', 'ru', 'uk', 'ko', 'es', 'vi'],
     localeConfigs: {
       en: {
         htmlLang: 'en-GB',
@@ -29,6 +29,17 @@ const config = {
       },
     },
   },
+  plugins: [
+    [
+      "docusaurus-plugin-remote-content",
+      {
+        name: "terminal-farming",
+        sourceBaseUrl: "https://raw.githubusercontent.com/subspace/subspace/main/docs/",
+        outDir: "docs/Getting Started/",
+        documents: ["farming.md"],
+      },
+    ],
+  ],
 
 
   presets: [
@@ -85,23 +96,6 @@ const config = {
                 href: 'https://subspace.network'
               },
               {
-                label: 'Introduction',
-                to: '/docs/intro',
-              },
-              {
-                label: 'Getting Started',
-                to: '/docs/Getting Started/farming-terminal'
-              },
-              {
-                label: 'Resources',
-                to: '/docs/intro'
-              }
-            ],
-          },
-          {
-            title: 'Products',
-            items: [
-              {
                 label: 'Subspace Desktop',
                 href: 'https://github.com/subspace/subspace-desktop'
               },
@@ -113,7 +107,7 @@ const config = {
                 label: 'Subspace Relayer',
                 href: 'https://testnet-relayer.subspace.network/'
               }
-            ]
+            ],
           },
           {
             title: 'Community',

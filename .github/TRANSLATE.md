@@ -31,32 +31,30 @@ See example below.
 
 ```
 ├── docs/                       
-│   ├── Community Resources/     --|
+│   ├── Getting Started/         --|
 │   │   ├── _category.json         |
-│   │   ├── _linux-farming.mdx     |
-│   │   ├── _macos-farming.mdx     |
-│   │   ├── _windows-farming.mdx   |
+│   │   ├── commands.md            |
+│   │   ├── farming.md             |
+│   │   ├── issues.md              |
 │   │   ├── developing.md          |--- Original English Docs
 │   │   └── farming-terminal.md    |
-│   ├── Getting Started/           |
-│   │   └── ...etc                 |
 │   ├── intro.md                   |
+│   ├── community-awesome.md       |
 │   └── official.md              --|
 ├── i18n/
 │   ├── es/
 │   │   ├── docusaurus-plugin-content-blog
 │   │   ├── docusaurus-plugin-content-docs/
 │   │   │   ├── current/
-│   │   │   │   ├── Community Resources/     --|
+│   │   │   │   ├── Getting Started/         --|
 │   │   │   │   │   ├── _category.json         |
-│   │   │   │   │   ├── _linux-farming.mdx     |
-│   │   │   │   │   ├── _macos-farming.mdx     |
-│   │   │   │   │   ├── _windows-farming.mdx   |
-│   │   │   │   │   ├── developing.md          |--- Spanish Translated Docs 
+│   │   │   │   │   ├── commands.md            |
+│   │   │   │   │   ├── farming.md             |
+│   │   │   │   │   ├── issues.md              |
+│   │   │   │   │   ├── developing.md          |--- Original English Docs
 │   │   │   │   │   └── farming-terminal.md    |
-│   │   │   │   ├── Getting Started/           |
-│   │   │   │   │   └── ...etc                 |
 │   │   │   │   ├── intro.md                   |
+│   │   │   │   ├── community-awesome.md       |
 │   │   │   │   └── official.md              --|
 │   │   │   └── current.json
 │   │   ├── docusaurus-theme-classic
