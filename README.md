@@ -44,7 +44,7 @@ If you would like to contribute check out the following materials
         <a href="https://github.com/skylordafk">
             <img src="https://avatars.githubusercontent.com/u/89288441?v=4" width="100;" alt="skylordafk"/>
             <br />
-            <sub><b>skylordafk</b></sub>
+            <sub><b>Skylordafk</b></sub>
         </a>
     </td></tr>
 </table>
