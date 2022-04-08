@@ -1,0 +1,70 @@
+{
+  "link.title.Subspace Network": {
+    "message": "Subspace Network",
+    "description": "The title of the footer links column with title=Subspace Network in the footer"
+  },
+  "link.title.Community": {
+    "message": "Community",
+    "description": "The title of the footer links column with title=Community in the footer"
+  },
+  "link.title.Social": {
+    "message": "Social",
+    "description": "The title of the footer links column with title=Social in the footer"
+  },
+  "link.item.label.Official Website": {
+    "message": "Official Website",
+    "description": "The label of footer link with label=Official Website linking to https://subspace.network"
+  },
+  "link.item.label.Subspace Desktop": {
+    "message": "Subspace Desktop",
+    "description": "The label of footer link with label=Subspace Desktop linking to https://github.com/subspace/subspace-desktop"
+  },
+  "link.item.label.Subspace Explorer": {
+    "message": "Subspace Explorer",
+    "description": "The label of footer link with label=Subspace Explorer linking to https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Ftest-rpc.subspace.network#/explorer"
+  },
+  "link.item.label.Subspace Relayer": {
+    "message": "Subspace Relayer",
+    "description": "The label of footer link with label=Subspace Relayer linking to https://testnet-relayer.subspace.network/"
+  },
+  "link.item.label.GitHub": {
+    "message": "GitHub",
+    "description": "The label of footer link with label=GitHub linking to https://github.com/subspace"
+  },
+  "link.item.label.Discord": {
+    "message": "Discord",
+    "description": "The label of footer link with label=Discord linking to https://discord.gg/subspace-network"
+  },
+  "link.item.label.Telegram": {
+    "message": "Telegram",
+    "description": "The label of footer link with label=Telegram linking to https://t.me/subspace_network"
+  },
+  "link.item.label.Reddit": {
+    "message": "Reddit",
+    "description": "The label of footer link with label=Reddit linking to https://reddit.com/r/sub"
+  },
+  "link.item.label.YouTube": {
+    "message": "YouTube",
+    "description": "The label of footer link with label=YouTube linking to https://www.youtube.com/channel/UCojYRCZOtVTJHJXivOYJzeQ"
+  },
+  "link.item.label.LinkedIn": {
+    "message": "LinkedIn",
+    "description": "The label of footer link with label=LinkedIn linking to https://www.linkedin.com/company/subspace-blockchain"
+  },
+  "link.item.label.Twitter": {
+    "message": "Twitter",
+    "description": "The label of footer link with label=Twitter linking to https://twitter.com/network_subspace"
+  },
+  "link.item.label.Medium": {
+    "message": "Medium",
+    "description": "The label of footer link with label=Medium linking to https://medium.com/subspace-network"
+  },
+  "link.item.label.Subsocial": {
+    "message": "Subsocial",
+    "description": "The label of footer link with label=Subsocial linking to https://app.subsocial.network/@NetworkSubspace"
+  },
+  "copyright": {
+    "message": "Copyright © 2022 Subspace Labs, Inc.",
+    "description": "The footer copyright"
+  }
+}

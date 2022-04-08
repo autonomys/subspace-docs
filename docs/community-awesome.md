@@ -1,6 +1,6 @@
 ---
-sidebar_position: 5
-title: "Community Resources"
+sidebar_position: 4
+title: "Awesome Subspace"
 ---
 
 :::caution
