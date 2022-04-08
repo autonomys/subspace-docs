@@ -17,5 +17,36 @@ If you would like to contribute check out the following materials
 
 ### Contributors
 <!-- readme: contributors -start -->
+<table>
+<tr>
+    <td align="center">
+        <a href="https://github.com/ImmaZoni">
+            <img src="https://avatars.githubusercontent.com/u/31865152?v=4" width="100;" alt="ImmaZoni"/>
+            <br />
+            <sub><b>Justin</b></sub>
+        </a>
+    </td>
+    <td align="center">
+        <a href="https://github.com/EmilFattakhov">
+            <img src="https://avatars.githubusercontent.com/u/66026548?v=4" width="100;" alt="EmilFattakhov"/>
+            <br />
+            <sub><b>Emil Fattakhov</b></sub>
+        </a>
+    </td>
+    <td align="center">
+        <a href="https://github.com/themorgantown">
+            <img src="https://avatars.githubusercontent.com/u/50146?v=4" width="100;" alt="themorgantown"/>
+            <br />
+            <sub><b>Daniel</b></sub>
+        </a>
+    </td>
+    <td align="center">
+        <a href="https://github.com/skylordafk">
+            <img src="https://avatars.githubusercontent.com/u/89288441?v=4" width="100;" alt="skylordafk"/>
+            <br />
+            <sub><b>skylordafk</b></sub>
+        </a>
+    </td></tr>
+</table>
 <!-- readme: contributors -end -->
 
