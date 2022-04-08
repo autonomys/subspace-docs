@@ -10,10 +10,10 @@ We have not launched our docs fully but you can preview the demo @ https://subsp
 
 If you would like to contribute check out the following materials
 
-- [Code of Conduct](CODE_OF_CONDUCT.md)
-- [Contributing Guide](CONTRIBUTING.md)
-- [Translation Guide](TRANSLATE.md)
-- [Development Guide](DEVELOPMENT.md)
+- [Code of Conduct](/.github/CODE_OF_CONDUCT.md)
+- [Contributing Guide](/.github/CONTRIBUTING.md)
+- [Translation Guide](/.github/TRANSLATE.md)
+- [Development Guide](/.github/DEVELOPMENT.md)
 
 ### Contributors
 <!-- readme: contributors -start -->
