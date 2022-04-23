@@ -22,7 +22,7 @@ Please note, all community provided resources are **non-official**. For clarific
 
 🇨🇳 - [中国不和谐社区](https://discord.com/channels/864285291518361610/940656159927451668)
 
-🇰🇷 - [한국 불화 커뮤니티](https://discord.com/channels/864285291518361610/941490199786037278)
+🇰🇷 - [한국 커뮤니티](https://discord.com/channels/864285291518361610/941490199786037278)
 
 🇷🇺 - [русское дискорд-сообщество](https://discord.com/channels/864285291518361610/940699533640368128)
 
