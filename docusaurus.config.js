@@ -10,7 +10,7 @@ const config = {
   tagline: 'Subspace is an open, scalable platform for both storage and compute that is fully interoperable with any layer one.',
   url: 'https://docs.subspace.network',
   baseUrl: '/',
-  onBrokenLinks: 'throw',
+  onBrokenLinks: 'warn',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
   organizationName: 'subspace', // Usually your GitHub org/user name.
