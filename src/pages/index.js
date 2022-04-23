@@ -16,7 +16,7 @@ function HomepageHeader() {
         <div className={styles.buttons}>
           <Link
             className="button button--secondary button--lg"
-            to="/docs/Getting Started/farming">
+            to="/docs/Getting Started/App/desktop-farming">
             Getting Started Farming - 10min ⏱️
           </Link>
         </div>
@@ -29,8 +29,8 @@ export default function Home() {
   const {siteConfig} = useDocusaurusContext();
   return (
     <Layout
-      title={`Hello from ${siteConfig.title}`}
-      description="Description will go into a meta tag in <head />">
+      title={`${siteConfig.title} Documentation`}
+      description="Official Documentation for Subspace Labs">
       <HomepageHeader />
       <main>
         <HomepageFeatures />

@@ -22,7 +22,7 @@ const FeatureList = [
         Get started farming on the Subspace Network, all that is required is a basic computer and some extra storage space.
       </>
     ),
-    href: 'pathname:///docs/Getting%20Started/farming',
+    href: 'pathname:///docs/Getting%20Started/App/desktop-farming',
   },
   {
     title: 'Develop',

@@ -31,12 +31,104 @@ const config = {
   },
   plugins: [
     [
-      "docusaurus-plugin-remote-content",
+      "docusaurus-plugin-remote-content", // Pulls doc file directly from subspace monorepo
       {
         name: "terminal-farming",
         sourceBaseUrl: "https://raw.githubusercontent.com/subspace/subspace/main/docs/",
-        outDir: "docs/Getting Started/",
-        documents: ["farming.md"],
+        outDir: "docs/",
+        documents: ["farming.md", "development.md"],
+        modifyContent(filename, content) {
+        if (filename.includes("farming")) {
+            return {
+                content: `---
+sidebar_position: 1
+title: "👨‍🌾 Getting Started - CLI"
+---
+:::info
+
+This document was automatically pulled from https://github.com/subspace/subspace, any edits must go to that repo, not this one.
+
+:::
+
+${content}`,
+                filename: "Getting Started/Terminal/cli-farming.md",
+              }
+          }
+        if (filename.includes("development")) {
+          return {
+              content: `---
+sidebar_position: 1
+title: "📜 Core Subspace Protocol"
+---
+:::info
+
+This document was automatically pulled from https://github.com/subspace/subspace, any edits must go to that repo, not this one.
+
+:::
+
+${content}`,
+              filename: "Development/core-development.md",
+            }
+        }
+          return undefined
+        },
+      },
+    ],
+    [
+      "docusaurus-plugin-remote-content", // Pulls doc file directly from subspace-desktop
+      {
+        name: "desktop-farming",
+        sourceBaseUrl: "https://raw.githubusercontent.com/subspace/subspace-desktop/main/",
+        outDir: "docs/Getting Started/App/",
+        documents: ["README.md"],
+        // in the plugin's options:
+        modifyContent(filename, content) {
+          if (filename.includes("README")) {
+              return {
+                  content: `---
+sidebar_position: 2
+title: "👨‍🌾 Getting Started - Desktop"
+---
+:::info
+
+This document was automatically pulled from https://github.com/subspace/subspace-desktop, any edits must go to that repo, not this one.
+
+:::
+
+${content}`,
+                  filename: "desktop-farming.md",
+              }
+          }
+          return undefined
+        },
+      },
+    ],
+    [
+      "docusaurus-plugin-remote-content", // Pulls doc file directly from subspace.js
+      {
+        name: "subspace-js",
+        sourceBaseUrl: "https://raw.githubusercontent.com/subspace/subspace.js/master/",
+        outDir: "docs/Development/",
+        documents: ["README.md"],
+        modifyContent(filename, content) {
+          if (filename.includes("README")) {
+              return {
+                  content: `---
+sidebar_position: 2
+title: "🔧 Subspace.js"
+---
+:::info
+
+This document was automatically pulled from https://github.com/subspace/subspace.js, any edits must go to that repo, not this one.
+
+:::
+
+${content}`,
+                filename: "subspacejs.md",
+              }
+          }
+          return undefined
+        },
       },
     ],
   ],

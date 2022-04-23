@@ -1,5 +1,5 @@
 ---
-sidebar_position: 1
+sidebar_position: 3
 title: "🔥 Common Issues"
 ---
 
@@ -10,7 +10,7 @@ This is by no means an all inclusive list, If you are having issues feel free to
 :::
 
 ### Invalid Solution
-This error is caused when running a version of the Subspace Node that is not compatible with the current network, you likely just need to update. Refer to the "Switching to New Snapshot" section in the [Getting Started](pathname:///docs/Getting%20Started/farming) guide.
+This error is caused when running a version of the Subspace Node that is not compatible with the current network, you likely just need to update. Refer to the "Switching to New Snapshot" section in the [Getting Started](pathname:///docs/Getting%20Started/App/desktop-farming) guide.
 
 ### Unable to author block in slot. No best block header: Chain lookup failed: Failed to get header for hash
 This error is often caused by lack of disk space on the drive that is being used for farming. Try checking your drives storage usage.

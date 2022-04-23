@@ -1,8 +1,17 @@
+---
+sidebar_position: 1
+title: "👨‍🌾 Getting Started - CLI"
+---
+:::info
+
+This document was automatically pulled from https://github.com/subspace/subspace, any edits must go to that repo, not this one.
+
+:::
+
 
 # 👨‍🌾 Getting Started Farming
 
-This is the documentation/guideline on how to run the farmer. You may also refer to the [glossary](#glossary-for-farm-commands) for
-various farm commands.
+This is the documentation/guideline on how to run the farmer. You may also refer to the [help](#help) section for various commands.
 
 We are regularly releasing stable snapshots. Our CI builds container images and executables for 3 major platforms (Windows, macOS, Linux).
 
@@ -26,10 +35,6 @@ The address of your account will be necessary at the last step.
 
 ## 🖼️ Windows Instructions
 
-<details>
-
-### 📝 Windows Installation
-
 1. Download the executables for your operating system from the [Releases](https://github.com/subspace/subspace/releases) tab.
 2. Open `Powershell` (we do not recommend using Command Prompt as it's syntax is slightly different)
 3. In the terminal we will change to the Downloads directory using this command `cd Downloads`
@@ -49,17 +54,18 @@ The address of your account will be necessary at the last step.
 --ws-external `
 --validator `
 --telemetry-url "wss://telemetry.polkadot.io/submit/ 1" `
+--telemetry-url "wss://telemetry.subspace.network/submit 1" `
 --name INSERT_YOUR_ID
 ```
 5. You should see something similar in the terminal:
 ```
 2022-02-03 10:52:23 Subspace
-2022-02-03 10:52:23 ✌️  version 0.1.0-35cf6f5-x86_64-macos
+2022-02-03 10:52:23 ✌️  version 0.1.0-35cf6f5-x86_64-windows
 2022-02-03 10:52:23 ❤️  by Subspace Labs <https://subspace.network>, 2021-2022
 2022-02-03 10:52:23 📋 Chain specification: Subspace testnet
 2022-02-03 10:52:23 🏷  Node name: YOUR_FANCY_NAME
 2022-02-03 10:52:23 👤 Role: AUTHORITY
-2022-02-03 10:52:23 💾 Database: RocksDb at /Users/X/Library/Application Support/subspace-node-x86_64-macos-11-snapshot-2022-jan-05/chains/subspace_test/db/full
+2022-02-03 10:52:23 💾 Database: RocksDb at C:\Users\X\AppData\Local\subspace-node-windows-x86_64-snapshot-2022-jan-05.exe\data\chains\subspace_test\db\full
 2022-02-03 10:52:23 ⛓  Native runtime: subspace-100 (subspace-1.tx1.au1)
 2022-02-03 10:52:23 🔨 Initializing Genesis block/state (state: 0x22a5…17ea, header-hash: 0x6ada…0d38)
 2022-02-03 10:52:24 ⏱  Loaded block-time = 1s from block 0x6ada0792ea62bf3501abc87d92e1ce0e78ddefba66f02973de54144d12ed0d38
@@ -81,13 +87,7 @@ The address of your account will be necessary at the last step.
 .\FARMER_FILE_NAME.exe farm --reward-address WALLET_ADDRESS
 ```
 
-</details>
-
 ## 🐧 Linux Instructions
-
-<details>
-
-### 📝 Linux Installation
 
 1. Download the executables for your operating system from the [Releases](https://github.com/subspace/subspace/releases) tab.
 2. Open your favourite terminal, and change to the Downloads directory using `cd Downloads`
@@ -108,17 +108,18 @@ The address of your account will be necessary at the last step.
   --ws-external \
   --validator \
   --telemetry-url "wss://telemetry.polkadot.io/submit/ 1" \
+  --telemetry-url "wss://telemetry.subspace.network/submit 1" \
   --name INSERT_YOUR_ID
 ```
 5. You should see something similar in the terminal:
 ```
 2022-02-03 10:52:23 Subspace
-2022-02-03 10:52:23 ✌️  version 0.1.0-35cf6f5-x86_64-macos
+2022-02-03 10:52:23 ✌️  version 0.1.0-35cf6f5-x86_64-ubuntu
 2022-02-03 10:52:23 ❤️  by Subspace Labs <https://subspace.network>, 2021-2022
 2022-02-03 10:52:23 📋 Chain specification: Subspace testnet
 2022-02-03 10:52:23 🏷  Node name: YOUR_FANCY_NAME
 2022-02-03 10:52:23 👤 Role: AUTHORITY
-2022-02-03 10:52:23 💾 Database: RocksDb at /Users/X/Library/Application Support/subspace-node-x86_64-macos-11-snapshot-2022-jan-05/chains/subspace_test/db/full
+2022-02-03 10:52:23 💾 Database: RocksDb at /home/X/.local/share/subspace-node-x86_64-ubuntu-20.04-snapshot-2022-jan-05/chains/subspace_test/db/full
 2022-02-03 10:52:23 ⛓  Native runtime: subspace-100 (subspace-1.tx1.au1)
 2022-02-03 10:52:23 🔨 Initializing Genesis block/state (state: 0x22a5…17ea, header-hash: 0x6ada…0d38)
 2022-02-03 10:52:24 ⏱  Loaded block-time = 1s from block 0x6ada0792ea62bf3501abc87d92e1ce0e78ddefba66f02973de54144d12ed0d38
@@ -139,13 +140,7 @@ The address of your account will be necessary at the last step.
 ./FARMER_FILE_NAME farm --reward-address WALLET_ADDRESS
 ```
 
-</details>
-
 ## 🍎 macOS Instructions
-
-<details>
-
-### 📝 macOS Installation
 
 1. Download the executables for your operating system from the [Releases](https://github.com/subspace/subspace/releases) tab and extract binaries from ZIP archives.
 2. Open your favourite terminal, and change to the Downloads directory using `cd Downloads`
@@ -170,6 +165,7 @@ After this, simply repeat the step you prompted for (step 4 or 6). This time, cl
   --ws-external \
   --validator \
   --telemetry-url "wss://telemetry.polkadot.io/submit/ 1" \
+  --telemetry-url "wss://telemetry.subspace.network/submit 1" \
   --name INSERT_YOUR_ID
 ```
 5. You should see something similar in the terminal:
@@ -202,7 +198,80 @@ After this, simply repeat the step you prompted for (step 4 or 6). This time, cl
 ```
 7. It may prompt again in here. Refer to the note on step 4.
 
-</details>
+## 🐋 Docker Instructions
+
+Create `subspace` directory and `docker-compose.yml` in it with following contents:
+```yml
+version: "3.7"
+services:
+  node:
+    # Replace `snapshot-DATE` with latest release (like `snapshot-2022-mar-09`)
+    image: ghcr.io/subspace/node:snapshot-DATE
+    volumes:
+# Instead of specifying volume (which will store data in `/var/lib/docker`), you can
+# alternatively specify path to the directory where files will be stored, just make
+# sure everyone is allowed to write there
+      - node-data:/var/subspace:rw
+#      - /path/to/subspace-node:/var/subspace:rw
+    ports:
+# If port 30333 is already occupied by another Substrate-based node, replace all
+# occurrences of `30333` in this file with another value
+      - "0.0.0.0:30333:30333"
+# Un-comment following line to unlock node's WebSocket RPC
+#      - "127.0.0.1:9944:9944"
+    restart: unless-stopped
+    command: [
+      "--chain", "testnet",
+      "--base-path", "/var/subspace",
+      "--wasm-execution", "compiled",
+      "--execution", "wasm",
+      "--bootnodes", "/dns/farm-rpc.subspace.network/tcp/30333/p2p/12D3KooWPjMZuSYj35ehced2MTJFf95upwpHKgKUrFRfHwohzJXr",
+      "--port", "30333",
+      "--telemetry-url", "wss://telemetry.polkadot.io/submit/ 1",
+      "--telemetry-url", "wss://telemetry.subspace.network/submit/ 1",
+      "--rpc-cors", "all",
+      "--rpc-methods", "unsafe",
+      "--ws-external",
+      "--validator",
+# Replace `INSERT_YOUR_ID` with your node ID (will be shown in telemetry)
+      "--name", "INSERT_YOUR_ID"
+    ]
+
+  farmer:
+# Replace `snapshot-DATE` with latest release (like `snapshot-2022-mar-09`)
+    image: ghcr.io/subspace/farmer:snapshot-DATE
+# Un-comment following 2 lines to unlock farmer's RPC
+#    ports:
+#      - "127.0.0.1:9955:9955"
+# Instead of specifying volume (which will store data in `/var/lib/docker`), you can
+# alternatively specify path to the directory where files will be stored, just make
+# sure everyone is allowed to write there
+    volumes:
+      - farmer-data:/var/subspace:rw
+#      - /path/to/subspace-farmer:/var/subspace:rw
+    restart: unless-stopped
+    command: [
+      "farm",
+      "--node-rpc-url", "ws://node:9944",
+      "--ws-server-listen-addr", "0.0.0.0:9955",
+# Replace `WALLET_ADDRESS` with your Polkadot.js wallet address
+      "--reward-address", "WALLET_ADDRESS"
+    ]
+volumes:
+  node-data:
+  farmer-data:
+```
+
+After which follow these steps:
+* Now edit created file:
+  1. Replace `snapshot-DATE` with the latest release (not pre-release!) snapshot (like `snapshot-2022-mar-09`)
+  2. Replace `INSERT_YOUR_ID` with desired name that will be shown in telemetry (doesn't impact anything else)
+  3. Replace `WALLET_ADDRESS` with your wallet address
+  4. If you want to store files on a separate disk or customize port, read comments in the file
+* Ensure [Docker](https://www.docker.com/) is installed and running
+* Now go to directory with `docker-compose.yml` and type `docker-compose up -d` to start everything
+
+You can read logs with `docker-compose logs --tail=1000 -f`, for the rest read [Docker Compose CLI reference](https://docs.docker.com/compose/reference/).
 
 # 🤔Notes
 
@@ -215,6 +284,9 @@ If you are getting `invalid solution` errors (visible on the terminal that Node 
 
 ---
 ## Switching to a new snapshot
+
+### CLI
+
 If you were running a node previously, and want to switch to a new snapshot, please perform these steps and then follow the guideline again:
 ```
 # Replace `FARMER_FILE_NAME` with the name of the node file you downloaded from releases
@@ -226,19 +298,53 @@ Does not matter if the node/farmer executable is the previous one or from the ne
 The reason we require this is, with every snapshot change, the network might get partitioned, and you may be on a different genesis than the current one.
 In plain English, these commands are like a `reset` button for snapshot changes.
 
-## Glossary for useful farmer commands
+Now follow installation guide.
 
-Structure -> `subspace-farmer-x86_64-*-snapshot <COMMAND>`
+### Docker
+
+In case of Docker setup run `docker-compose down` (and manually delete custom directories if you have specified them).
+
+Now follow installation guide.
+
+## Help
+
+There are extra commands and parameters you can use on farmer or node, use the `--help` after any other command to display additional options.
+
+Below are some helpful farmer commands:
 
 - `farm --reward-address WALLET_ADDRESS` : starts background plotting and farming together, farmed testnet coins will be sent to `WALLET_ADDRESS`
-- `farm` : starts background plotting and farming together, rewards are sent to auto-generated wallet (see `identity` commands below)
 - `wipe` : erases the plot and identity (including plot, commitment, object mappings and identity files)
-- `identity import-from-mnemonic "spell out your seed phrase here"` : imports your existing identity from your seed phrase (not recommended! use `--reward-address` instead)
-- `identity view` : displays SS58 address (this is the same as `identity view --address`) where farmed testnet coins will be sent
-- `identity view --mnemonic` : displays mnemonic phrase of auto-generated wallet (sensitive information, keep this private, not very useful if `--reward-address` was used)
 
-An example command:
+Examples:
 ```bash
 # Replace `FARMER_FILE_NAME` with the name of the node file you downloaded from releases
-``./FARMER_FILE_NAME wipe
+./FARMER_FILE_NAME farm --help
+./FARMER_FILE_NAME wipe
 ```
+
+## [Advanced] Build from source (Linux)
+
+If you're running unsupported Linux distribution or CPU architecture, you may try to build binaries yourself from source.
+
+NOTE: This is primarily targeted at tech-savvy users and not recommended unless you know what you're doing.
+Please try to find answer to your question online before reaching out to maintainers.
+
+You'll have to have [Rust toolchain](https://rustup.rs/) installed as well as LLVM and Clang in addition to usual developer tooling (Ubuntu example):
+```bash
+sudo apt-get install llvm clang
+```
+
+Now clone the source and build snapshot `snapshot-2022-mar-09` (replace occurrences with the snapshot you want to build):
+```bash
+git clone https://github.com/subspace/subspace.git
+cd subspace
+git checkout snapshot-2022-mar-09
+wget -O chain-spec.json https://github.com/subspace/subspace/releases/download/snapshot-2022-mar-09/chain-spec-raw-snapshot-2022-mar-09.json
+cargo build \
+    --profile production \
+    --bin subspace-node \
+    --bin subspace-farmer \
+    --features=subspace-node/json-chain-spec
+```
+
+You'll find two binaries under `target/production` directory once it succeeds, after which refer to instructions above on how to use them.
