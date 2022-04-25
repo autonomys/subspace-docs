@@ -16,7 +16,7 @@ The Subspace Network is an ambitious layer zero protocol which is the first scal
 ---
 Our goal is to bring an extremely low barrier to entry for participating on consensus, As long as you meet the simple requirements below you can get started below.
 
-- [Getting Started Farming](pathname:///docs/Getting%20Started/farming)
+- [Getting Started Farming](pathname:///docs/Getting%20Started/App/desktop-farming)
 
 ## 📖 Additional Resources
 ---
