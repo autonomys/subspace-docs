@@ -9,7 +9,7 @@ const config = {
   title: 'Subspace Labs Documentation',
   tagline: 'Subspace is an open, scalable platform for both storage and compute that is fully interoperable with any layer one.',
   url: 'https://docs.subspace.network',
-  baseUrl: '/subspace-docs/',
+  baseUrl: '/',
   onBrokenLinks: 'warn',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
