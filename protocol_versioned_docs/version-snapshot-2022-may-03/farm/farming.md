@@ -47,11 +47,12 @@ The address of your account will be necessary at the last step.
 # Copy all of the lines below, they are all part of the same command
 .\NODE_FILE_NAME.exe `
 --chain testnet `
---execution native `
---unsafe-pruning `
---pruning 1024 `
---keep-blocks 1024 `
+--wasm-execution compiled `
+--execution wasm `
+--bootnodes "/dns/farm-rpc.subspace.network/tcp/30333/p2p/12D3KooWPjMZuSYj35ehced2MTJFf95upwpHKgKUrFRfHwohzJXr" `
 --validator `
+--telemetry-url "wss://telemetry.polkadot.io/submit/ 1" `
+--telemetry-url "wss://telemetry.subspace.network/submit 1" `
 --name INSERT_YOUR_ID
 ```
 5. You should see something similar in the terminal:
@@ -81,8 +82,7 @@ The address of your account will be necessary at the last step.
 ```PowerShell
 # Replace `FARMER_FILE_NAME.exe` with the name of the node file you downloaded from releases
 # Replace `WALLET_ADDRESS` below with your account address from Polkadot.js wallet
-# Replace `PLOT_SIZE` with plot size in gigabytes or terabytes, for instance 100G or 2T (but leave at least 10G of disk space for node)
-.\FARMER_FILE_NAME.exe farm --reward-address WALLET_ADDRESS --plot-size PLOT_SIZE
+.\FARMER_FILE_NAME.exe farm --reward-address WALLET_ADDRESS
 ```
 
 ## 🐧 Linux Instructions
@@ -98,11 +98,12 @@ The address of your account will be necessary at the last step.
 # Copy all of the lines below, they are all part of the same command
 ./NODE_FILE_NAME \
   --chain testnet \
+  --wasm-execution compiled \
   --execution wasm \
-  --unsafe-pruning \
-  --pruning 1024 \
-  --keep-blocks 1024 \
+  --bootnodes "/dns/farm-rpc.subspace.network/tcp/30333/p2p/12D3KooWPjMZuSYj35ehced2MTJFf95upwpHKgKUrFRfHwohzJXr" \
   --validator \
+  --telemetry-url "wss://telemetry.polkadot.io/submit/ 1" \
+  --telemetry-url "wss://telemetry.subspace.network/submit 1" \
   --name INSERT_YOUR_ID
 ```
 5. You should see something similar in the terminal:
@@ -131,8 +132,7 @@ The address of your account will be necessary at the last step.
 ```bash
 # Replace `FARMER_FILE_NAME` with the name of the node file you downloaded from releases
 # Replace `WALLET_ADDRESS` below with your account address from Polkadot.js wallet
-# Replace `PLOT_SIZE` with plot size in gigabytes or terabytes, for instance 100G or 2T (but leave at least 10G of disk space for node)
-./FARMER_FILE_NAME farm --reward-address WALLET_ADDRESS --plot-size PLOT_SIZE
+./FARMER_FILE_NAME farm --reward-address WALLET_ADDRESS
 ```
 
 ## 🍎 macOS Instructions
@@ -152,11 +152,12 @@ After this, simply repeat the step you prompted for (step 4 or 6). This time, cl
 # Copy all of the lines below, they are all part of the same command
 ./NODE_FILE_NAME \
   --chain testnet \
+  --wasm-execution compiled \
   --execution wasm \
-  --unsafe-pruning \
-  --pruning 1024 \
-  --keep-blocks 1024 \
+  --bootnodes "/dns/farm-rpc.subspace.network/tcp/30333/p2p/12D3KooWPjMZuSYj35ehced2MTJFf95upwpHKgKUrFRfHwohzJXr" \
   --validator \
+  --telemetry-url "wss://telemetry.polkadot.io/submit/ 1" \
+  --telemetry-url "wss://telemetry.subspace.network/submit 1" \
   --name INSERT_YOUR_ID
 ```
 5. You should see something similar in the terminal:
@@ -185,8 +186,7 @@ After this, simply repeat the step you prompted for (step 4 or 6). This time, cl
 ```bash
 # Replace `FARMER_FILE_NAME` with the name of the node file you downloaded from releases
 # Replace `WALLET_ADDRESS` below with your account address from Polkadot.js wallet
-# Replace `PLOT_SIZE` with plot size in gigabytes or terabytes, for instance 100G or 2T (but leave at least 10G of disk space for node)
-./FARMER_FILE_NAME farm --reward-address WALLET_ADDRESS --plot-size PLOT_SIZE
+./FARMER_FILE_NAME farm --reward-address WALLET_ADDRESS
 ```
 7. It may prompt again in here. Refer to the note on step 4.
 
@@ -197,7 +197,7 @@ Create `subspace` directory and `docker-compose.yml` in it with following conten
 version: "3.7"
 services:
   node:
-    # Replace `snapshot-DATE` with latest release (like `snapshot-2022-apr-29`)
+    # Replace `snapshot-DATE` with latest release (like `snapshot-2022-mar-09`)
     image: ghcr.io/subspace/node:snapshot-DATE
     volumes:
 # Instead of specifying volume (which will store data in `/var/lib/docker`), you can
@@ -213,11 +213,12 @@ services:
     command: [
       "--chain", "testnet",
       "--base-path", "/var/subspace",
+      "--wasm-execution", "compiled",
       "--execution", "wasm",
-      "--unsafe-pruning",
-      "--pruning", "1024",
-      "--keep-blocks", "1024",
+      "--bootnodes", "/dns/farm-rpc.subspace.network/tcp/30333/p2p/12D3KooWPjMZuSYj35ehced2MTJFf95upwpHKgKUrFRfHwohzJXr",
       "--port", "30333",
+      "--telemetry-url", "wss://telemetry.polkadot.io/submit/ 1",
+      "--telemetry-url", "wss://telemetry.subspace.network/submit/ 1",
       "--rpc-cors", "all",
       "--rpc-methods", "safe",
       "--unsafe-ws-external",
@@ -225,17 +226,11 @@ services:
 # Replace `INSERT_YOUR_ID` with your node ID (will be shown in telemetry)
       "--name", "INSERT_YOUR_ID"
     ]
-    healthcheck:
-      timeout: 5s
-# If node setup takes longer then expected, you want to increase `interval` and `retries` number.
-      interval: 30s
-      retries: 5
 
   farmer:
     depends_on:
-      node:
-        condition: service_healthy
-# Replace `snapshot-DATE` with latest release (like `snapshot-2022-apr-29`)
+      - node
+# Replace `snapshot-DATE` with latest release (like `snapshot-2022-mar-09`)
     image: ghcr.io/subspace/farmer:snapshot-DATE
 # Un-comment following 2 lines to unlock farmer's RPC
 #    ports:
@@ -249,13 +244,10 @@ services:
     restart: unless-stopped
     command: [
       "farm",
-      "--custom-path", "/var/subspace",
       "--node-rpc-url", "ws://node:9944",
       "--ws-server-listen-addr", "0.0.0.0:9955",
 # Replace `WALLET_ADDRESS` with your Polkadot.js wallet address
-      "--reward-address", "WALLET_ADDRESS",
-# Replace `PLOT_SIZE` with plot size in gigabytes or terabytes, for instance 100G or 2T (but leave at least 10G of disk space for node)
-      "--plot-size", "PLOT_SIZE"
+      "--reward-address", "WALLET_ADDRESS"
     ]
 volumes:
   node-data:
@@ -264,11 +256,10 @@ volumes:
 
 After which follow these steps:
 * Now edit created file:
-  * Replace `snapshot-DATE` with the latest release (not pre-release!) snapshot (like `snapshot-2022-apr-29`)
-  * Replace `INSERT_YOUR_ID` with desired name that will be shown in telemetry (doesn't impact anything else)
-  * Replace `WALLET_ADDRESS` with your wallet address
-  * Replace `PLOT_SIZE` with plot size in gigabytes or terabytes, for instance 100G or 2T (but leave at least 10G of disk space for node)
-  * If you want to store files on a separate disk or customize port, read comments in the file
+  1. Replace `snapshot-DATE` with the latest release (not pre-release!) snapshot (like `snapshot-2022-mar-09`)
+  2. Replace `INSERT_YOUR_ID` with desired name that will be shown in telemetry (doesn't impact anything else)
+  3. Replace `WALLET_ADDRESS` with your wallet address
+  4. If you want to store files on a separate disk or customize port, read comments in the file
 * Ensure [Docker](https://www.docker.com/) is installed and running
 * Now go to directory with `docker-compose.yml` and type `docker-compose up -d` to start everything
 
@@ -283,6 +274,7 @@ Visit [Polkadot.js explorer](https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Ffarm-
 ## Invalid Solution
 If you are getting `invalid solution` errors (visible on the terminal that Node runs), please follow "Switching to a new snapshot" steps below and start afresh.
 
+---
 ## Switching to a new snapshot
 
 ### CLI
@@ -302,7 +294,7 @@ Now follow installation guide.
 
 ### Docker
 
-In case of Docker setup run `docker-compose down -v` (and manually delete custom directories if you have specified them).
+In case of Docker setup run `docker-compose down` (and manually delete custom directories if you have specified them).
 
 Now follow installation guide.
 
@@ -310,12 +302,10 @@ Now follow installation guide.
 
 There are extra commands and parameters you can use on farmer or node, use the `--help` after any other command to display additional options.
 
-Below are some helpful samples:
+Below are some helpful farmer commands:
 
-- `./FARMER_FILE_NAME farm --custom-path /path/to/data ...` : will store data in `/path/to/data` instead of default location
-- `./FARMER_FILE_NAME wipe --custom-path /path/to/data` : erases everything related to farmer if data were stored in `/path/to/data`
-- `./NODE_FILE_NAME --base-path /path/to/data --chain testnet ...` : start node and store data in `/path/to/data` instead of default location
-- `./NODE_FILE_NAME purge-chain --base-path /path/to/data --chain testnet` : erases data related to the node if data were stored in `/path/to/data`
+- `farm --reward-address WALLET_ADDRESS` : starts background plotting and farming together, farmed testnet coins will be sent to `WALLET_ADDRESS`
+- `wipe` : erases the plot and identity (including plot, commitment, object mappings and identity files)
 
 Examples:
 ```bash
@@ -323,20 +313,6 @@ Examples:
 ./FARMER_FILE_NAME farm --help
 ./FARMER_FILE_NAME wipe
 ```
-
-## [Advanced] Running an archival node
-
-Instructions above will get you full node (doesn't store the history and state of the whole blockchain, only last 1024
-blocks). If you want to opt in to storing the whole history (archival node), remove following parameters (lines) from
-above instructions before starting your node:
-* `--unsafe-pruning`
-* `--pruning 1024`
-* `--keep-blocks 1024`
-
-Archival node is useful if you run an RPC node and want to support querying older blockchain history.
-
-NOTE: You can't switch between full and archival node without wiping it, so if you need that, follow steps in
-[Switching to a new snapshot](#switching-to-a-new-snapshot) section above.
 
 ## [Advanced] Build from source (Linux)
 
@@ -350,15 +326,17 @@ You'll have to have [Rust toolchain](https://rustup.rs/) installed as well as LL
 sudo apt-get install llvm clang
 ```
 
-Now clone the source and build snapshot `snapshot-2022-apr-29` (replace occurrences with the snapshot you want to build):
+Now clone the source and build snapshot `snapshot-2022-mar-09` (replace occurrences with the snapshot you want to build):
 ```bash
 git clone https://github.com/subspace/subspace.git
 cd subspace
-git checkout snapshot-2022-apr-29
+git checkout snapshot-2022-mar-09
+wget -O chain-spec.json https://github.com/subspace/subspace/releases/download/snapshot-2022-mar-09/chain-spec-raw-snapshot-2022-mar-09.json
 cargo build \
     --profile production \
     --bin subspace-node \
-    --bin subspace-farmer
+    --bin subspace-farmer \
+    --features=subspace-node/json-chain-spec
 ```
 
 You'll find two binaries under `target/production` directory once it succeeds, after which refer to instructions above on how to use them.
