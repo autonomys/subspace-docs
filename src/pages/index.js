@@ -16,7 +16,7 @@ function HomepageHeader() {
         <div className={styles.buttons}>
           <Link
             className="button button--secondary button--lg"
-            to="/docs/Getting Started/App/desktop-farming">
+            to="./protocol/#-participate-on-the-network">
             Getting Started Farming - 10min ⏱️
           </Link>
         </div>
