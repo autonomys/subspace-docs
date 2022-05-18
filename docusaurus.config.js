@@ -16,7 +16,7 @@ const config = {
   organizationName: 'subspace', // Usually your GitHub org/user name.
   projectName: 'subspace-docs', // Usually your repo name.
 
-  i18n: {
+ /* i18n: {
     defaultLocale: 'en',
     locales: ['en', 'ru', 'uk', 'ko', 'es', 'vi'],
     localeConfigs: {
@@ -29,108 +29,35 @@ const config = {
       },
     },
   },
+  */
   plugins: [
     [
-      "docusaurus-plugin-remote-content", // Pulls doc file directly from subspace monorepo
+      '@docusaurus/plugin-content-docs',
       {
-        name: "terminal-farming",
-        sourceBaseUrl: "https://raw.githubusercontent.com/subspace/subspace/main/docs/",
-        outDir: "docs/",
-        documents: ["farming.md", "development.md"],
-        modifyContent(filename, content) {
-        if (filename.includes("farming")) {
-            return {
-                content: `---
-sidebar_position: 1
-title: "👨‍🌾 Getting Started - CLI"
----
-:::info
-
-This document was automatically pulled from https://github.com/subspace/subspace, any edits must go to that repo, not this one.
-
-:::
-
-${content}`,
-                filename: "Getting Started/Terminal/cli-farming.md",
-              }
-          }
-        if (filename.includes("development")) {
-          return {
-              content: `---
-sidebar_position: 1
-title: "📜 Core Subspace Protocol"
----
-:::info
-
-This document was automatically pulled from https://github.com/subspace/subspace, any edits must go to that repo, not this one.
-
-:::
-
-${content}`,
-              filename: "Development/core-development.md",
-            }
-        }
-          return undefined
-        },
-      },
+        id: 'community',
+        path: 'community',
+        routeBasePath: 'community',
+        sidebarPath: require.resolve('./sidebars.js'),
+      }
     ],
     [
-      "docusaurus-plugin-remote-content", // Pulls doc file directly from subspace-desktop
+      '@docusaurus/plugin-content-docs',
       {
-        name: "desktop-farming",
-        sourceBaseUrl: "https://raw.githubusercontent.com/subspace/subspace-desktop/main/",
-        outDir: "docs/Getting Started/App/",
-        documents: ["README.md"],
-        // in the plugin's options:
-        modifyContent(filename, content) {
-          if (filename.includes("README")) {
-              return {
-                  content: `---
-sidebar_position: 2
-title: "👨‍🌾 Getting Started - Desktop"
----
-:::info
-
-This document was automatically pulled from https://github.com/subspace/subspace-desktop, any edits must go to that repo, not this one.
-
-:::
-
-${content}`,
-                  filename: "desktop-farming.md",
-              }
-          }
-          return undefined
-        },
-      },
+        id: 'subspace-desktop',
+        path: 'subspace-desktop',
+        routeBasePath: 'subspace-desktop',
+        sidebarPath: require.resolve('./sidebars.js'),
+      }
     ],
     [
-      "docusaurus-plugin-remote-content", // Pulls doc file directly from subspace.js
+      '@docusaurus/plugin-content-docs',
       {
-        name: "subspace-js",
-        sourceBaseUrl: "https://raw.githubusercontent.com/subspace/subspace.js/master/",
-        outDir: "docs/Development/",
-        documents: ["README.md"],
-        modifyContent(filename, content) {
-          if (filename.includes("README")) {
-              return {
-                  content: `---
-sidebar_position: 2
-title: "🔧 Subspace.js"
----
-:::info
-
-This document was automatically pulled from https://github.com/subspace/subspace.js, any edits must go to that repo, not this one.
-
-:::
-
-${content}`,
-                filename: "subspacejs.md",
-              }
-          }
-          return undefined
-        },
-      },
-    ],
+        id: 'subspacejs',
+        path: 'subspacejs',
+        routeBasePath: 'subspacejs',
+        sidebarPath: require.resolve('./sidebars.js'),
+      }
+    ]
   ],
 
 
@@ -140,6 +67,9 @@ ${content}`,
       /** @type {import('@docusaurus/preset-classic').Options} */
       ({
         docs: {
+          id: 'protocol',
+          path: 'protocol',
+          routeBasePath: 'protocol',
           sidebarPath: require.resolve('./sidebars.js'),
           // Please change this to your repo.
           editUrl: 'https://github.com/subspace/subspace-docs/blob/main/',
@@ -167,10 +97,51 @@ ${content}`,
         },
         items: [
           {
-            type: 'doc',
-            docId: 'intro',
+            type: 'dropdown',
+            label: 'Products',
             position: 'left',
-            label: 'Docs',
+            items: [
+              {
+                type: 'doc',
+                docId: 'index',
+                label: 'Core Protocol',
+                docsPluginId: 'protocol',
+              },
+              {
+                to: 'subspace-desktop/',
+                label: 'Subspace Desktop',
+              },
+              {
+                to: 'subspacejs/',
+                label: 'Subspace.js',
+              },
+            ],
+          },
+          {
+            to: 'community/',
+            position: 'left',
+            label: 'Community',
+          },
+          {
+            type: 'docsVersionDropdown',
+            label: 'Core Versions',
+            position: 'right',
+            dropdownActiveClassDisabled: true,
+            docsPluginId: 'protocol',
+          },
+          {
+            type: 'docsVersionDropdown',
+            label: 'Subspace-Desktop Versions',
+            position: 'right',
+            dropdownActiveClassDisabled: true,
+            docsPluginId: 'subspace-desktop',
+          },
+          {
+            type: 'docsVersionDropdown',
+            label: 'subspacejs Versions',
+            position: 'right',
+            dropdownActiveClassDisabled: true,
+            docsPluginId: 'subspacejs',
           },
           {
             type: 'localeDropdown',
