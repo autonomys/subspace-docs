@@ -48,7 +48,7 @@ The address of your account will be necessary at the last step.
 # Copy all of the lines below, they are all part of the same command
 .\NODE_FILE_NAME.exe `
 --chain testnet `
---execution native `
+--execution wasm `
 --unsafe-pruning `
 --pruning 1024 `
 --keep-blocks 1024 `
