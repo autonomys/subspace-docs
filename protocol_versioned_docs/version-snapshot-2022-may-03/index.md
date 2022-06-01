@@ -24,8 +24,8 @@ The Subspace Network is an ambitious layer zero protocol which is the first scal
 Our goal is to bring an extremely low barrier to entry for participating on consensus, As long as you meet the simple requirements below you can get started below.
 
 
-### - [Start Farming with CLI](farming.md#-getting-started-farming)
-### - [Start Farming with Docker](farming.md#-docker-instructions)
+### - [Start Farming with CLI](./farm/farming.md#-getting-started-farming)
+### - [Start Farming with Docker](./farm/farming.md#-docker-instructions)
 ### - [Start Farming with Subspace Desktop Application](../../subspace-desktop/)
 
 ## 📖 Develop on Subspace Network

@@ -81,6 +81,11 @@ const config = {
           changefreq: 'weekly',
           priority: 0.5,
         },
+        googleAnalytics: {
+          trackingID: 'G-25NWNJB9MR',
+          anonymizeIP: false,
+
+        }
       }),
     ],
   ],
@@ -97,25 +102,21 @@ const config = {
         },
         items: [
           {
-            type: 'dropdown',
-            label: 'Products',
+            type: 'doc',
+            docId: 'index',
+            label: 'Core Protocol',
             position: 'left',
-            items: [
-              {
-                type: 'doc',
-                docId: 'index',
-                label: 'Core Protocol',
-                docsPluginId: 'protocol',
-              },
-              {
-                to: 'subspace-desktop/',
-                label: 'Subspace Desktop',
-              },
-              {
-                to: 'subspacejs/',
-                label: 'Subspace.js',
-              },
-            ],
+            docsPluginId: 'protocol',
+          },
+          {
+            to: 'subspace-desktop/',
+            position: 'left',
+            label: 'Subspace Desktop',
+          },
+          {
+            to: 'subspacejs/',
+            position: 'left',
+            label: 'Subspace.js',
           },
           {
             to: 'community/',
