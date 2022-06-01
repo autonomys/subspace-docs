@@ -81,6 +81,11 @@ const config = {
           changefreq: 'weekly',
           priority: 0.5,
         },
+        googleAnalytics: {
+          trackingID: 'G-25NWNJB9MR',
+          anonymizeIP: false,
+
+        }
       }),
     ],
   ],
