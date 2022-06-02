@@ -15,6 +15,8 @@ keywords:
 
 This is the documentation/guideline on how to run the farmer. You may also refer to the [help](#help) section for various commands.
 
+## Releases
+
 We are regularly releasing stable snapshots. Our CI builds container images and executables for 3 major platforms (Windows, macOS, Linux).
 
 Our snapshots are categorized as the following:
@@ -25,7 +27,25 @@ You need 2 executables, select whichever applies to your operating system
 * Node Executable - `subspace-node-...`
 * Farmer Executable - `subspace-farmer-...`
 
-You can find these executables in the [Releases](https://github.com/subspace/subspace/releases) section of this Repository.
+## Release Links
+
+You can always find these executables in the [Releases](https://github.com/subspace/subspace/releases/tag/gemini-1b-2022-june-02) section on our GitHub
+
+### Windows
+- [Node](https://github.com/subspace/subspace/releases/download/gemini-1b-2022-june-02/subspace-node-windows-x86_64-gemini-1b-2022-june-02.exe)
+- [Farmer](https://github.com/subspace/subspace/releases/download/gemini-1b-2022-june-02/subspace-farmer-windows-x86_64-gemini-1b-2022-june-02.exe)
+
+### macOS
+- [Node](https://github.com/subspace/subspace/releases/download/gemini-1b-2022-june-02/subspace-node-macos-x86_64-gemini-1b-2022-june-02.zip)
+- [Farmer](https://github.com/subspace/subspace/releases/download/gemini-1b-2022-june-02/subspace-farmer-macos-x86_64-gemini-1b-2022-june-02.zip)
+
+### Linux
+- [Node](https://github.com/subspace/subspace/releases/download/gemini-1b-2022-june-02/subspace-node-ubuntu-x86_64-gemini-1b-2022-june-02)
+- [Farmer](https://github.com/subspace/subspace/releases/download/gemini-1b-2022-june-02/subspace-farmer-ubuntu-x86_64-gemini-1b-2022-june-02)
+
+### Linux (Aarch64)
+- [Node](https://github.com/subspace/subspace/releases/download/gemini-1b-2022-june-02/subspace-node-ubuntu-aarch64-gemini-1b-2022-june-02)
+- [Farmer](https://github.com/subspace/subspace/releases/download/gemini-1b-2022-june-02/subspace-farmer-ubuntu-aarch64-gemini-1b-2022-june-02)
 
 ## Polkadot.js wallet
 
@@ -49,10 +69,9 @@ If you're connected directly without any router, then again nothing needs to be 
 4. We will then start the node using the following command
 
 ```PowerShell
-# Replace `NODE_FILE_NAME.exe` with the name of the node file you downloaded from releases
 # Replace `INSERT_YOUR_ID` with a nickname you choose
 # Copy all of the lines below, they are all part of the same command
-.\NODE_FILE_NAME.exe `
+.\subspace-node-windows-x86_64-gemini-1b-2022-june-02.exe `
 --chain gemini-1 `
 --execution wasm `
 --pruning 1024 `
@@ -85,10 +104,9 @@ If you're connected directly without any router, then again nothing needs to be 
 6. After running this command, Windows may ask you for permissions related to firewall, select `allow` in this case.
 7. We will then open another terminal, change to the downloads directory, then start the farmer node with the following command:
 ```PowerShell
-# Replace `FARMER_FILE_NAME.exe` with the name of the farmer file you downloaded from releases
 # Replace `WALLET_ADDRESS` below with your account address from Polkadot.js wallet
 # Replace `PLOT_SIZE` with plot size in gigabytes or terabytes, for instance 100G or 2T (but leave at least 10G of disk space for node)
-.\FARMER_FILE_NAME.exe farm --reward-address WALLET_ADDRESS --plot-size PLOT_SIZE
+.\subspace-farmer-windows-x86_64-gemini-1b-2022-june-02.exe.exe farm --reward-address WALLET_ADDRESS --plot-size PLOT_SIZE
 ```
 8. You should see something similar in the terminal:
 ```
@@ -116,14 +134,13 @@ If you're connected directly without any router, then again nothing needs to be 
 
 1. Download the executables for your operating system from the [Releases](https://github.com/subspace/subspace/releases) tab.
 2. Open your favorite terminal, and change to the Downloads directory using `cd Downloads`
-3. Make the farmer & node executable  `chmod +x farmer-name` & `chmod +X node-name`
+3. Make the farmer & node executable  `chmod +x subspace-farmer-ubuntu-x86_64-gemini-1b-2022-june-02` & `chmod +X subspace-node-ubuntu-x86_64-gemini-1b-2022-june-02`
 4. We will then start the node using the following command
 
 ```bash
-# Replace `NODE_FILE_NAME` with the name of the node file you downloaded from releases
 # Replace `INSERT_YOUR_ID` with a nickname you choose
 # Copy all of the lines below, they are all part of the same command
-./NODE_FILE_NAME \
+./subspace-node-ubuntu-x86_64-gemini-1b-2022-june-02 \
   --chain gemini-1 \
   --execution wasm \
   --pruning 1024 \
@@ -155,10 +172,9 @@ If you're connected directly without any router, then again nothing needs to be 
 ```
 7. We will then open another terminal, change to the downloads directory, then start the farmer node with the following command:
 ```bash
-# Replace `FARMER_FILE_NAME` with the name of the farmer file you downloaded from releases
 # Replace `WALLET_ADDRESS` below with your account address from Polkadot.js wallet
 # Replace `PLOT_SIZE` with plot size in gigabytes or terabytes, for instance 100G or 2T (but leave at least 10G of disk space for node)
-./FARMER_FILE_NAME farm --reward-address WALLET_ADDRESS --plot-size PLOT_SIZE
+./subspace-farmer-ubuntu-x86_64-gemini-1b-2022-june-02 farm --reward-address WALLET_ADDRESS --plot-size PLOT_SIZE
 ```
 8. You should see something similar in the terminal:
 ```
@@ -184,7 +200,7 @@ If you're connected directly without any router, then again nothing needs to be 
 
 1. Download the executables for your operating system from the [Releases](https://github.com/subspace/subspace/releases) tab and extract binaries from ZIP archives.
 2. Open your favorite terminal, and change to the Downloads directory using `cd Downloads`
-3. Make the farmer & node executable  `chmod +x farmer-name` & `chmod +X node-name`
+3. Make the farmer & node executable  `chmod +x subspace-farmer-macos-x86_64-gemini-1b-2022-june-02` & `chmod +X subspace-node-macos-x86_64-gemini-1b-2022-june-02`
 4. We will then start the node using the following command
 
 > *Note, when attempting to run this command you may be prompted:* Click on `cancel` instead of moving it to trash.
@@ -192,10 +208,9 @@ To allow execution, go to `System Preferences -> Security & Privacy -> General`,
 After this, simply repeat the step you prompted for (step 4 or 6). This time, click the `Open` button when prompted.
 
 ```bash
-# Replace `NODE_FILE_NAME` with the name of the node file you downloaded from releases
 # Replace `INSERT_YOUR_ID` with a nickname you choose
 # Copy all of the lines below, they are all part of the same command
-./NODE_FILE_NAME \
+./subspace-node-macos-x86_64-gemini-1b-2022-june-02 \
   --chain gemini-1 \
   --execution wasm \
   --pruning 1024 \
@@ -227,10 +242,9 @@ After this, simply repeat the step you prompted for (step 4 or 6). This time, cl
 ```
 7. We will then open another terminal, change to the downloads directory, then start the farmer node with the following command:
 ```bash
-# Replace `FARMER_FILE_NAME` with the name of the farmer file you downloaded from releases
 # Replace `WALLET_ADDRESS` below with your account address from Polkadot.js wallet
 # Replace `PLOT_SIZE` with plot size in gigabytes or terabytes, for instance 100G or 2T (but leave at least 10G of disk space for node)
-./FARMER_FILE_NAME farm --reward-address WALLET_ADDRESS --plot-size PLOT_SIZE
+./subspace-farmer-macos-x86_64-gemini-1b-2022-june-02 farm --reward-address WALLET_ADDRESS --plot-size PLOT_SIZE
 ```
 8. It may prompt again in here. Refer to the note on step 4.
 
@@ -262,9 +276,8 @@ Create `subspace` directory and `docker-compose.yml` in it with following conten
 version: "3.7"
 services:
   node:
-    # Replace `snapshot-DATE` with latest release (like `snapshot-2022-apr-29`)
     # For running on Aarch64 add `-aarch64` after `DATE`
-    image: ghcr.io/subspace/node:snapshot-DATE
+    image: ghcr.io/subspace/node:gemini-1b-2022-june-02
     volumes:
 # Instead of specifying volume (which will store data in `/var/lib/docker`), you can
 # alternatively specify path to the directory where files will be stored, just make
@@ -300,9 +313,8 @@ services:
     depends_on:
       node:
         condition: service_healthy
-    # Replace `snapshot-DATE` with latest release (like `snapshot-2022-apr-29`)
     # For running on Aarch64 add `-aarch64` after `DATE`
-    image: ghcr.io/subspace/farmer:snapshot-DATE
+    image: ghcr.io/subspace/farmer:gemini-1b-2022-june-02
 # Un-comment following 2 lines to unlock farmer's RPC
 #    ports:
 #      - "127.0.0.1:9955:9955"
@@ -344,7 +356,7 @@ You can read logs with `docker-compose logs --tail=1000 -f`, for the rest read [
 
 ## Checking results and interacting with farmnet
 
-Visit [Polkadot.js explorer](https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Ffarm-rpc.subspace.network#/explorer), from there you can interact with the Subspace Farmnet as any Substrate-based blockchain.
+Visit [Polkadot.js explorer](https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Feu.gemini-1b.subspace.network%2Fws#/explorer), from there you can interact with the Subspace Farmnet as any Substrate-based blockchain.
 
 ## Invalid Solution
 If you are getting `invalid solution` errors (visible on the terminal that Node runs), please follow "Switching to a new snapshot" steps below and start afresh.
