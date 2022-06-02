@@ -69,7 +69,6 @@ If you're connected directly without any router, then again nothing needs to be 
 4. We will then start the node using the following command
 
 ```PowerShell
-# Note `.exe` should match the name of the node file you downloaded from releases
 # Replace `INSERT_YOUR_ID` with a nickname you choose
 # Copy all of the lines below, they are all part of the same command
 .\subspace-node-windows-x86_64-gemini-1b-2022-june-02.exe `
@@ -105,7 +104,6 @@ If you're connected directly without any router, then again nothing needs to be 
 6. After running this command, Windows may ask you for permissions related to firewall, select `allow` in this case.
 7. We will then open another terminal, change to the downloads directory, then start the farmer node with the following command:
 ```PowerShell
-# Note `.exe` should match the name of the farmer file you downloaded from releases
 # Replace `WALLET_ADDRESS` below with your account address from Polkadot.js wallet
 # Replace `PLOT_SIZE` with plot size in gigabytes or terabytes, for instance 100G or 2T (but leave at least 10G of disk space for node)
 .\subspace-farmer-windows-x86_64-gemini-1b-2022-june-02.exe.exe farm --reward-address WALLET_ADDRESS --plot-size PLOT_SIZE
@@ -140,7 +138,6 @@ If you're connected directly without any router, then again nothing needs to be 
 4. We will then start the node using the following command
 
 ```bash
-# Note command name should match the name of the node file you downloaded from releases
 # Replace `INSERT_YOUR_ID` with a nickname you choose
 # Copy all of the lines below, they are all part of the same command
 ./subspace-node-ubuntu-x86_64-gemini-1b-2022-june-02 \
@@ -175,7 +172,6 @@ If you're connected directly without any router, then again nothing needs to be 
 ```
 7. We will then open another terminal, change to the downloads directory, then start the farmer node with the following command:
 ```bash
-# Note command name should the name of the farmer file you downloaded from releases
 # Replace `WALLET_ADDRESS` below with your account address from Polkadot.js wallet
 # Replace `PLOT_SIZE` with plot size in gigabytes or terabytes, for instance 100G or 2T (but leave at least 10G of disk space for node)
 ./subspace-farmer-ubuntu-x86_64-gemini-1b-2022-june-02 farm --reward-address WALLET_ADDRESS --plot-size PLOT_SIZE
@@ -212,7 +208,6 @@ To allow execution, go to `System Preferences -> Security & Privacy -> General`,
 After this, simply repeat the step you prompted for (step 4 or 6). This time, click the `Open` button when prompted.
 
 ```bash
-# Note command name should the name of the node file you downloaded from releases
 # Replace `INSERT_YOUR_ID` with a nickname you choose
 # Copy all of the lines below, they are all part of the same command
 ./subspace-node-macos-x86_64-gemini-1b-2022-june-02 \
@@ -247,7 +242,6 @@ After this, simply repeat the step you prompted for (step 4 or 6). This time, cl
 ```
 7. We will then open another terminal, change to the downloads directory, then start the farmer node with the following command:
 ```bash
-# Note command name should the name of the farmer file you downloaded from releases
 # Replace `WALLET_ADDRESS` below with your account address from Polkadot.js wallet
 # Replace `PLOT_SIZE` with plot size in gigabytes or terabytes, for instance 100G or 2T (but leave at least 10G of disk space for node)
 ./subspace-farmer-macos-x86_64-gemini-1b-2022-june-02 farm --reward-address WALLET_ADDRESS --plot-size PLOT_SIZE
@@ -282,7 +276,6 @@ Create `subspace` directory and `docker-compose.yml` in it with following conten
 version: "3.7"
 services:
   node:
-    # Replace `snapshot-DATE` with latest release (like `snapshot-2022-apr-29`)
     # For running on Aarch64 add `-aarch64` after `DATE`
     image: ghcr.io/subspace/node:gemini-1b-2022-june-02
     volumes:
@@ -320,7 +313,6 @@ services:
     depends_on:
       node:
         condition: service_healthy
-    # Replace `snapshot-DATE` with latest release (like `snapshot-2022-apr-29`)
     # For running on Aarch64 add `-aarch64` after `DATE`
     image: ghcr.io/subspace/farmer:gemini-1b-2022-june-02
 # Un-comment following 2 lines to unlock farmer's RPC
