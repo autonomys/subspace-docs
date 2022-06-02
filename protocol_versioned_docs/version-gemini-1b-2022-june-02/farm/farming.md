@@ -27,13 +27,19 @@ You need 2 executables, select whichever applies to your operating system
 
 You can find these executables in the [Releases](https://github.com/subspace/subspace/releases) section of this Repository.
 
-> This is a ***non-incentivized*** testnet. Meaning there are no rewards in place at this time, and has absolutely no financial benefit to being run at this time.
-
 ## Polkadot.js wallet
 
 Before running anything you need to have a wallet where you'll receive testnet coins.
 Install [Polkadot.js extension](https://polkadot.js.org/extension/) into your browser and create a new account there.
 The address of your account will be necessary at the last step.
+
+## Required ports
+Currently, TCP port `30333` needs to be exposed for node to work properly.
+
+If you have a server with no firewall, there is nothing to be done, but otherwise make sure to open TCP port `30333` for incoming connections.
+
+On the desktop side if you have a router in front of your computer, you'll need to forward TCP port `30333` to the machine on which your node is running (how this is done varied from router to router, but there is always a feature like this, refer to [How to Forward Ports](port-forwarding.md) for a more in-depth tutorial).
+If you're connected directly without any router, then again nothing needs to be done in such case.
 
 ## 🖼️ Windows Instructions
 
@@ -47,9 +53,8 @@ The address of your account will be necessary at the last step.
 # Replace `INSERT_YOUR_ID` with a nickname you choose
 # Copy all of the lines below, they are all part of the same command
 .\NODE_FILE_NAME.exe `
---chain testnet `
+--chain gemini-1 `
 --execution wasm `
---unsafe-pruning `
 --pruning 1024 `
 --keep-blocks 1024 `
 --validator `
@@ -60,7 +65,7 @@ The address of your account will be necessary at the last step.
 2022-02-03 10:52:23 Subspace
 2022-02-03 10:52:23 ✌️  version 0.1.0-35cf6f5-x86_64-windows
 2022-02-03 10:52:23 ❤️  by Subspace Labs <https://subspace.network>, 2021-2022
-2022-02-03 10:52:23 📋 Chain specification: Subspace testnet
+2022-02-03 10:52:23 📋 Chain specification: Subspace Gemini 1
 2022-02-03 10:52:23 🏷  Node name: YOUR_FANCY_NAME
 2022-02-03 10:52:23 👤 Role: AUTHORITY
 2022-02-03 10:52:23 💾 Database: RocksDb at C:\Users\X\AppData\Local\subspace-node-windows-x86_64-snapshot-2022-jan-05.exe\data\chains\subspace_test\db\full
@@ -80,16 +85,37 @@ The address of your account will be necessary at the last step.
 6. After running this command, Windows may ask you for permissions related to firewall, select `allow` in this case.
 7. We will then open another terminal, change to the downloads directory, then start the farmer node with the following command:
 ```PowerShell
-# Replace `FARMER_FILE_NAME.exe` with the name of the node file you downloaded from releases
+# Replace `FARMER_FILE_NAME.exe` with the name of the farmer file you downloaded from releases
 # Replace `WALLET_ADDRESS` below with your account address from Polkadot.js wallet
 # Replace `PLOT_SIZE` with plot size in gigabytes or terabytes, for instance 100G or 2T (but leave at least 10G of disk space for node)
 .\FARMER_FILE_NAME.exe farm --reward-address WALLET_ADDRESS --plot-size PLOT_SIZE
 ```
+8. You should see something similar in the terminal:
+```
+2022-06-02T00:02:04.552120Z  INFO subspace_farmer::commands::farm: Connecting to node at ws://127.0.0.1:9944
+2022-06-02T00:02:04.557220Z  INFO jsonrpsee_client_transport::ws: Connection established to target: Target { sockaddrs: [], host: "127.0.0.1", host_header: "127.0.0.1:9944", _mode: Plain, path_and_query: "/" }
+2022-06-02T00:02:04.575669Z  INFO subspace_farmer::commands::farm: Opening object mapping
+2022-06-02T00:02:04.617553Z  INFO subspace_farmer::multi_farming: Opening plot
+2022-06-02T00:02:04.645422Z  INFO subspace_farmer::multi_farming: Opening commitments
+2022-06-02T00:02:04.666925Z  INFO subspace_farmer::farming: Subscribing to slot info notifications
+2022-06-02T00:02:04.688218Z  INFO subspace_farmer::archiving: Subscribing to archived segments
+2022-06-02T00:02:04.689129Z  INFO subspace_farmer::commands::farm: WS RPC server listening on 127.0.0.1:9955
+2022-06-02T00:02:09.492868Z  INFO subspace_farmer::archiving: Plotted segment segment_index=0
+2022-06-02T00:02:09.492868Z  INFO subspace_farmer::archiving: Plotted segment segment_index=1
+2022-06-02T00:02:09.492868Z  INFO subspace_farmer::archiving: Plotted segment segment_index=2
+2022-06-02T00:02:09.492868Z  INFO subspace_farmer::archiving: Plotted segment segment_index=3
+2022-06-02T00:02:09.492868Z  INFO subspace_farmer::archiving: Plotted segment segment_index=4
+2022-06-02T00:02:09.492868Z  INFO subspace_farmer::archiving: Plotted segment segment_index=5
+```
+
+9. You are now Farming! Just wait for your node to fully sync, and for your farmer to fully plot.
+
+
 
 ## 🐧 Linux Instructions
 
 1. Download the executables for your operating system from the [Releases](https://github.com/subspace/subspace/releases) tab.
-2. Open your favourite terminal, and change to the Downloads directory using `cd Downloads`
+2. Open your favorite terminal, and change to the Downloads directory using `cd Downloads`
 3. Make the farmer & node executable  `chmod +x farmer-name` & `chmod +X node-name`
 4. We will then start the node using the following command
 
@@ -98,9 +124,8 @@ The address of your account will be necessary at the last step.
 # Replace `INSERT_YOUR_ID` with a nickname you choose
 # Copy all of the lines below, they are all part of the same command
 ./NODE_FILE_NAME \
-  --chain testnet \
+  --chain gemini-1 \
   --execution wasm \
-  --unsafe-pruning \
   --pruning 1024 \
   --keep-blocks 1024 \
   --validator \
@@ -111,7 +136,7 @@ The address of your account will be necessary at the last step.
 2022-02-03 10:52:23 Subspace
 2022-02-03 10:52:23 ✌️  version 0.1.0-35cf6f5-x86_64-ubuntu
 2022-02-03 10:52:23 ❤️  by Subspace Labs <https://subspace.network>, 2021-2022
-2022-02-03 10:52:23 📋 Chain specification: Subspace testnet
+2022-02-03 10:52:23 📋 Chain specification: Subspace Gemini 1
 2022-02-03 10:52:23 🏷  Node name: YOUR_FANCY_NAME
 2022-02-03 10:52:23 👤 Role: AUTHORITY
 2022-02-03 10:52:23 💾 Database: RocksDb at /home/X/.local/share/subspace-node-x86_64-ubuntu-20.04-snapshot-2022-jan-05/chains/subspace_test/db/full
@@ -130,16 +155,35 @@ The address of your account will be necessary at the last step.
 ```
 7. We will then open another terminal, change to the downloads directory, then start the farmer node with the following command:
 ```bash
-# Replace `FARMER_FILE_NAME` with the name of the node file you downloaded from releases
+# Replace `FARMER_FILE_NAME` with the name of the farmer file you downloaded from releases
 # Replace `WALLET_ADDRESS` below with your account address from Polkadot.js wallet
 # Replace `PLOT_SIZE` with plot size in gigabytes or terabytes, for instance 100G or 2T (but leave at least 10G of disk space for node)
 ./FARMER_FILE_NAME farm --reward-address WALLET_ADDRESS --plot-size PLOT_SIZE
 ```
+8. You should see something similar in the terminal:
+```
+2022-06-02T00:02:04.552120Z  INFO subspace_farmer::commands::farm: Connecting to node at ws://127.0.0.1:9944
+2022-06-02T00:02:04.557220Z  INFO jsonrpsee_client_transport::ws: Connection established to target: Target { sockaddrs: [], host: "127.0.0.1", host_header: "127.0.0.1:9944", _mode: Plain, path_and_query: "/" }
+2022-06-02T00:02:04.575669Z  INFO subspace_farmer::commands::farm: Opening object mapping
+2022-06-02T00:02:04.617553Z  INFO subspace_farmer::multi_farming: Opening plot
+2022-06-02T00:02:04.645422Z  INFO subspace_farmer::multi_farming: Opening commitments
+2022-06-02T00:02:04.666925Z  INFO subspace_farmer::farming: Subscribing to slot info notifications
+2022-06-02T00:02:04.688218Z  INFO subspace_farmer::archiving: Subscribing to archived segments
+2022-06-02T00:02:04.689129Z  INFO subspace_farmer::commands::farm: WS RPC server listening on 127.0.0.1:9955
+2022-06-02T00:02:09.492868Z  INFO subspace_farmer::archiving: Plotted segment segment_index=0
+2022-06-02T00:02:09.492868Z  INFO subspace_farmer::archiving: Plotted segment segment_index=1
+2022-06-02T00:02:09.492868Z  INFO subspace_farmer::archiving: Plotted segment segment_index=2
+2022-06-02T00:02:09.492868Z  INFO subspace_farmer::archiving: Plotted segment segment_index=3
+2022-06-02T00:02:09.492868Z  INFO subspace_farmer::archiving: Plotted segment segment_index=4
+2022-06-02T00:02:09.492868Z  INFO subspace_farmer::archiving: Plotted segment segment_index=5
+```
+
+9. You are now Farming! Just wait for your node to fully sync, and for your farmer to fully plot.
 
 ## 🍎 macOS Instructions
 
 1. Download the executables for your operating system from the [Releases](https://github.com/subspace/subspace/releases) tab and extract binaries from ZIP archives.
-2. Open your favourite terminal, and change to the Downloads directory using `cd Downloads`
+2. Open your favorite terminal, and change to the Downloads directory using `cd Downloads`
 3. Make the farmer & node executable  `chmod +x farmer-name` & `chmod +X node-name`
 4. We will then start the node using the following command
 
@@ -152,9 +196,8 @@ After this, simply repeat the step you prompted for (step 4 or 6). This time, cl
 # Replace `INSERT_YOUR_ID` with a nickname you choose
 # Copy all of the lines below, they are all part of the same command
 ./NODE_FILE_NAME \
-  --chain testnet \
+  --chain gemini-1 \
   --execution wasm \
-  --unsafe-pruning \
   --pruning 1024 \
   --keep-blocks 1024 \
   --validator \
@@ -165,7 +208,7 @@ After this, simply repeat the step you prompted for (step 4 or 6). This time, cl
 2022-02-03 10:52:23 Subspace
 2022-02-03 10:52:23 ✌️  version 0.1.0-35cf6f5-x86_64-macos
 2022-02-03 10:52:23 ❤️  by Subspace Labs <https://subspace.network>, 2021-2022
-2022-02-03 10:52:23 📋 Chain specification: Subspace testnet
+2022-02-03 10:52:23 📋 Chain specification: Subspace Gemini 1
 2022-02-03 10:52:23 🏷  Node name: YOUR_FANCY_NAME
 2022-02-03 10:52:23 👤 Role: AUTHORITY
 2022-02-03 10:52:23 💾 Database: RocksDb at /Users/X/Library/Application Support/subspace-node-x86_64-macos-11-snapshot-2022-jan-05/chains/subspace_test/db/full
@@ -184,12 +227,33 @@ After this, simply repeat the step you prompted for (step 4 or 6). This time, cl
 ```
 7. We will then open another terminal, change to the downloads directory, then start the farmer node with the following command:
 ```bash
-# Replace `FARMER_FILE_NAME` with the name of the node file you downloaded from releases
+# Replace `FARMER_FILE_NAME` with the name of the farmer file you downloaded from releases
 # Replace `WALLET_ADDRESS` below with your account address from Polkadot.js wallet
 # Replace `PLOT_SIZE` with plot size in gigabytes or terabytes, for instance 100G or 2T (but leave at least 10G of disk space for node)
 ./FARMER_FILE_NAME farm --reward-address WALLET_ADDRESS --plot-size PLOT_SIZE
 ```
-7. It may prompt again in here. Refer to the note on step 4.
+8. It may prompt again in here. Refer to the note on step 4.
+
+9. You should see something similar in the terminal:
+```
+2022-06-02T00:02:04.552120Z  INFO subspace_farmer::commands::farm: Connecting to node at ws://127.0.0.1:9944
+2022-06-02T00:02:04.557220Z  INFO jsonrpsee_client_transport::ws: Connection established to target: Target { sockaddrs: [], host: "127.0.0.1", host_header: "127.0.0.1:9944", _mode: Plain, path_and_query: "/" }
+2022-06-02T00:02:04.575669Z  INFO subspace_farmer::commands::farm: Opening object mapping
+2022-06-02T00:02:04.617553Z  INFO subspace_farmer::multi_farming: Opening plot
+2022-06-02T00:02:04.645422Z  INFO subspace_farmer::multi_farming: Opening commitments
+2022-06-02T00:02:04.666925Z  INFO subspace_farmer::farming: Subscribing to slot info notifications
+2022-06-02T00:02:04.688218Z  INFO subspace_farmer::archiving: Subscribing to archived segments
+2022-06-02T00:02:04.689129Z  INFO subspace_farmer::commands::farm: WS RPC server listening on 127.0.0.1:9955
+2022-06-02T00:02:09.492868Z  INFO subspace_farmer::archiving: Plotted segment segment_index=0
+2022-06-02T00:02:09.492868Z  INFO subspace_farmer::archiving: Plotted segment segment_index=1
+2022-06-02T00:02:09.492868Z  INFO subspace_farmer::archiving: Plotted segment segment_index=2
+2022-06-02T00:02:09.492868Z  INFO subspace_farmer::archiving: Plotted segment segment_index=3
+2022-06-02T00:02:09.492868Z  INFO subspace_farmer::archiving: Plotted segment segment_index=4
+2022-06-02T00:02:09.492868Z  INFO subspace_farmer::archiving: Plotted segment segment_index=5
+```
+
+10. You are now Farming! Just wait for your node to fully sync, and for your farmer to fully plot.
+
 
 ## 🐋 Docker Instructions
 
@@ -199,6 +263,7 @@ version: "3.7"
 services:
   node:
     # Replace `snapshot-DATE` with latest release (like `snapshot-2022-apr-29`)
+    # For running on Aarch64 add `-aarch64` after `DATE`
     image: ghcr.io/subspace/node:snapshot-DATE
     volumes:
 # Instead of specifying volume (which will store data in `/var/lib/docker`), you can
@@ -212,10 +277,9 @@ services:
       - "0.0.0.0:30333:30333"
     restart: unless-stopped
     command: [
-      "--chain", "testnet",
+      "--chain", "gemini-1",
       "--base-path", "/var/subspace",
       "--execution", "wasm",
-      "--unsafe-pruning",
       "--pruning", "1024",
       "--keep-blocks", "1024",
       "--port", "30333",
@@ -236,7 +300,8 @@ services:
     depends_on:
       node:
         condition: service_healthy
-# Replace `snapshot-DATE` with latest release (like `snapshot-2022-apr-29`)
+    # Replace `snapshot-DATE` with latest release (like `snapshot-2022-apr-29`)
+    # For running on Aarch64 add `-aarch64` after `DATE`
     image: ghcr.io/subspace/farmer:snapshot-DATE
 # Un-comment following 2 lines to unlock farmer's RPC
 #    ports:
@@ -249,8 +314,8 @@ services:
 #      - /path/to/subspace-farmer:/var/subspace:rw
     restart: unless-stopped
     command: [
+      "--base-path", "/var/subspace",
       "farm",
-      "--custom-path", "/var/subspace",
       "--node-rpc-url", "ws://node:9944",
       "--ws-server-listen-addr", "0.0.0.0:9955",
 # Replace `WALLET_ADDRESS` with your Polkadot.js wallet address
@@ -293,7 +358,7 @@ If you were running a node previously, and want to switch to a new snapshot, ple
 # Replace `FARMER_FILE_NAME` with the name of the node file you downloaded from releases
 ./FARMER_FILE_NAME wipe
 # Replace `NODE_FILE_NAME` with the name of the node file you downloaded from releases
-./NODE_FILE_NAME purge-chain --chain testnet
+./NODE_FILE_NAME purge-chain --chain gemini-1
 ```
 Does not matter if the node/farmer executable is the previous one or from the new snapshot, both will work :)
 The reason we require this is, with every snapshot change, the network might get partitioned, and you may be on a different genesis than the current one.
@@ -313,10 +378,10 @@ There are extra commands and parameters you can use on farmer or node, use the `
 
 Below are some helpful samples:
 
-- `./FARMER_FILE_NAME farm --custom-path /path/to/data ...` : will store data in `/path/to/data` instead of default location
-- `./FARMER_FILE_NAME wipe --custom-path /path/to/data` : erases everything related to farmer if data were stored in `/path/to/data`
-- `./NODE_FILE_NAME --base-path /path/to/data --chain testnet ...` : start node and store data in `/path/to/data` instead of default location
-- `./NODE_FILE_NAME purge-chain --base-path /path/to/data --chain testnet` : erases data related to the node if data were stored in `/path/to/data`
+- `./FARMER_FILE_NAME --base-path /path/to/data farm ...` : will store data in `/path/to/data` instead of default location
+- `./FARMER_FILE_NAME --base-path /path/to/data wipe` : erases everything related to farmer if data were stored in `/path/to/data`
+- `./NODE_FILE_NAME --base-path /path/to/data --chain gemini-1 ...` : start node and store data in `/path/to/data` instead of default location
+- `./NODE_FILE_NAME purge-chain --base-path /path/to/data --chain gemini-1` : erases data related to the node if data were stored in `/path/to/data`
 
 Examples:
 ```bash
@@ -330,9 +395,11 @@ Examples:
 Instructions above will get you full node (doesn't store the history and state of the whole blockchain, only last 1024
 blocks). If you want to opt in to storing the whole history (archival node), remove following parameters (lines) from
 above instructions before starting your node:
-* `--unsafe-pruning`
 * `--pruning 1024`
 * `--keep-blocks 1024`
+
+And instead add this:
+* `--pruning archive`
 
 Archival node is useful if you run an RPC node and want to support querying older blockchain history.
 
