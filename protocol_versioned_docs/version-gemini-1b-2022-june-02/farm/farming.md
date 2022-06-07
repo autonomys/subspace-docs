@@ -342,7 +342,6 @@ volumes:
 
 After which follow these steps:
 * Now edit created file:
-  * Replace `snapshot-DATE` with the latest release (not pre-release!) snapshot (like `snapshot-2022-apr-29`)
   * Replace `INSERT_YOUR_ID` with desired name that will be shown in telemetry (doesn't impact anything else)
   * Replace `WALLET_ADDRESS` with your wallet address
   * Replace `PLOT_SIZE` with plot size in gigabytes or terabytes, for instance 100G or 2T (but leave at least 10G of disk space for node)
