@@ -57,6 +57,13 @@ const config = {
         routeBasePath: 'subspacejs',
         sidebarPath: require.resolve('./sidebars.js'),
       }
+    ],
+    [
+      '@docusaurus/plugin-google-gtag',
+      {
+        trackingID: 'G-25NWNJB9MR',
+        anonymizeIP: false, 
+      }
     ]
   ],
 
@@ -81,11 +88,6 @@ const config = {
           changefreq: 'weekly',
           priority: 0.5,
         },
-        googleAnalytics: {
-          trackingID: 'G-25NWNJB9MR',
-          anonymizeIP: false,
-
-        }
       }),
     ],
   ],
