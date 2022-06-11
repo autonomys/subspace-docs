@@ -11,6 +11,10 @@ keywords:
     - Subspace Desktop
 ---
 
+:::caution
+If you are using Linux, verify you have opened up your firewall for TCP traffic on Port 30333 with the following command `sudo ufw allow 30333/tcp`
+:::
+
 First before forwarding ports it is important to understand what that actually means. We would highly suggest reading some information on the topic, here is a guide we find helpful https://www.geeksforgeeks.org/port-forwarding-on-router-and-why-do-we-need-it/
 
 Forwarding ports on your router will open up one specific lane on your router to allow external traffic to flow in or out. This is usually automatically done for most applications such as port 80 for File Transfer Protocol, in our case we will need to do this manually.
