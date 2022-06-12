@@ -34,6 +34,13 @@ If you would like to contribute check out the following materials
         </a>
     </td>
     <td align="center">
+        <a href="https://github.com/nazar-pc">
+            <img src="https://avatars.githubusercontent.com/u/928965?v=4" width="100;" alt="nazar-pc"/>
+            <br />
+            <sub><b>Nazar Mokrynskyi</b></sub>
+        </a>
+    </td>
+    <td align="center">
         <a href="https://github.com/themorgantown">
             <img src="https://avatars.githubusercontent.com/u/50146?v=4" width="100;" alt="themorgantown"/>
             <br />
