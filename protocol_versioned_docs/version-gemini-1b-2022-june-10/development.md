@@ -1,7 +1,8 @@
 ---
 title: Core Protocol Development
-sidebar_position: 4
+sidebar_position: 99
 description: A basic guide on how to develop on the core subspace protocol utilizing substrate
+draft: true # Meaning this will NOT be shown in Production
 keywords:
     - Getting Started
     - Learn
