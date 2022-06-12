@@ -292,7 +292,7 @@ Create `subspace` directory and `docker-compose.yml` in it with following conten
 version: "3.7"
 services:
   node:
-    # For running on Aarch64 add `-aarch64` after `DATE`
+    # For running on Aarch64 add `-aarch64` at the end of the following line
     image: ghcr.io/subspace/node:gemini-1b-2022-june-05
     volumes:
 # Instead of specifying volume (which will store data in `/var/lib/docker`), you can
@@ -329,7 +329,7 @@ services:
     depends_on:
       node:
         condition: service_healthy
-    # For running on Aarch64 add `-aarch64` after `DATE`
+    # For running on Aarch64 add `-aarch64` at the end of the following line
     image: ghcr.io/subspace/farmer:gemini-1b-2022-june-05
 # Un-comment following 2 lines to unlock farmer's RPC
 #    ports:
