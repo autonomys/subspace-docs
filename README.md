@@ -27,17 +27,17 @@ If you would like to contribute check out the following materials
         </a>
     </td>
     <td align="center">
-        <a href="https://github.com/EmilFattakhov">
-            <img src="https://avatars.githubusercontent.com/u/66026548?v=4" width="100;" alt="EmilFattakhov"/>
-            <br />
-            <sub><b>Emil Fattakhov</b></sub>
-        </a>
-    </td>
-    <td align="center">
         <a href="https://github.com/nazar-pc">
             <img src="https://avatars.githubusercontent.com/u/928965?v=4" width="100;" alt="nazar-pc"/>
             <br />
             <sub><b>Nazar Mokrynskyi</b></sub>
+        </a>
+    </td>
+    <td align="center">
+        <a href="https://github.com/EmilFattakhov">
+            <img src="https://avatars.githubusercontent.com/u/66026548?v=4" width="100;" alt="EmilFattakhov"/>
+            <br />
+            <sub><b>Emil Fattakhov</b></sub>
         </a>
     </td>
     <td align="center">
