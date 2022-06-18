@@ -96,7 +96,7 @@ const config = {
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       navbar: {
-        title: 'Subspace Network Documentation',
+        title: '',
         logo: {
           alt: 'Subspace Labs Logo',
           src: 'img/logo-black.svg',

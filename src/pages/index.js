@@ -11,13 +11,13 @@ function HomepageHeader() {
   return (
     <header className={clsx('hero hero--primary', styles.heroBanner)}>
       <div className="container">
-        <h1 className="hero__title">{siteConfig.title}</h1>
-        <p className="hero__subtitle">{siteConfig.tagline}</p>
+        <h1 className="hero__title">Farm from Anywhere</h1>
+        <p className="hero__subtitle">Earn rewards by running a farmer node by pledging spare disk. No expensive setup or upfront capital is required.</p>
         <div className={styles.buttons}>
           <Link
             className="button button--secondary button--lg"
-            to="./protocol/#-participate-on-the-network">
-            Getting Started Farming - 10min ⏱️
+            to="./protocol/farm/farming">
+            Start Farming - 10min ⏱️
           </Link>
         </div>
       </div>

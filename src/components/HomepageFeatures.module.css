@@ -3,9 +3,22 @@
   align-items: center;
   padding: 2rem 0;
   width: 100%;
+  vertical-align: middle;
+  text-align: center;
 }
 
 .featureSvg {
-  height: 200px;
-  width: 200px;
+  height: 2em;
+  width: 2em;
+  display: inline-flex;
+  vertical-align: middle;
+  justify-content: left;
 }
+
+.items {
+  font-size: 2em;
+  font-weight: 100;
+  padding: .33em;
+  display: inline-flex;
+}
+
