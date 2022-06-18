@@ -2,6 +2,7 @@
 title: Farming with the CLI
 sidebar_position: 1
 description: How to run a Subspace Network Farmer with the CLI or Docker
+displayed_sidebar: masterSidebar
 keywords:
     - Farmer
     - Farming
@@ -137,6 +138,7 @@ We will be downloading two files for your respective operating system.
         "--rpc-methods", "safe",
         "--unsafe-ws-external",
         "--validator",
+        "--out-peers 100",
   # Replace `INSERT_YOUR_ID` with your node ID (will be shown in telemetry)
         "--name", "INSERT_YOUR_ID"
       ]
@@ -223,6 +225,7 @@ We will be downloading two files for your respective operating system.
   --pruning 1024 `
   --keep-blocks 1024 `
   --validator `
+  --out-peers 100 `
   --name INSERT_YOUR_ID
   ```
   4. You should see something similar in the terminal:
@@ -311,6 +314,7 @@ We will be downloading two files for your respective operating system.
     --pruning 1024 \
     --keep-blocks 1024 \
     --validator \
+    --out-peers 100 \
     --name INSERT_YOUR_ID
   ```
   4. You should see something similar in the terminal:
@@ -418,6 +422,7 @@ We will be downloading two files for your respective operating system.
   --pruning 1024 \
   --keep-blocks 1024 \
   --validator \
+  --out-peers 100 \
   --name INSERT_YOUR_ID
   ```
   4. You should see something similar in the terminal:

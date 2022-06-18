@@ -1,14 +1,8 @@
 ---
-title: Store Data w/Subspace.js
-sidebar_position: 1
-description: A Getting Started guide for the Subspace.js npm package
-keywords:
-    - Getting Started
-    - Learn
-    - Store Data
-    - Development
+displayed_sidebar: masterSidebar
 ---
-## @subspace/subspace
+
+# @subspace/subspace
 
 This JavaScript library provides a simple API to submit and retrieve user data to the [Subspace network](https://subspace.network/). The project is in active development with a [live test network](https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Ftest-rpc.subspace.network#/explorer) designed to provide scalable and distributed archival storage.
 
