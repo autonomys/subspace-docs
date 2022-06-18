@@ -5,31 +5,31 @@ import Link from '@docusaurus/Link';
 
 const FeatureList = [
   {
-    title: 'Learn',
-    Svg: require('../../static/img/learn-dark.svg').default,
+    title: 'Lightweight',
+    Svg: require('../../static/img/lightweight.svg').default,
     description: (
       <>
-        Learn about the Subspace Network and how we utilize our novel Proof of Archival Storage consensus to fully resolve the blockchain Trilemma.
+        Run the farmer node in the background on your computer without affecting your daily usage, with minimal maintenance.
       </>
     ),
     href: 'https://subspace.network/news/subspace-network-whitepaper',
   },
   {
-    title: 'Get Started Farming',
-    Svg: require('../../static/img/get-started-dark.svg').default,
+    title: 'Easy to setup',
+    Svg: require('../../static/img/easy-to-setup.svg').default,
     description: (
       <>
-        Get started farming on the Subspace Network, all that is required is a basic computer and some extra storage space.
+        To set up the application takes only a few minutes. It supports Linux, Windows and macOS operating systems.
       </>
     ),
     href: '../protocol/',
   },
   {
-    title: 'Develop',
-    Svg: require('../../static/img/develop-dark.svg').default,
+    title: 'Frequent rewards',
+    Svg: require('../../static/img/frequent-rewards.svg').default,
     description: (
       <>
-        Want to develop on the Subspace Network? Utilize Subspace.js to store on the network!.
+        Get rewarded by contributing to a globally distributed network that gives control back to users and creators.
       </>
     ),
     href: 'https://github.com/subspace/subspace.js',
@@ -40,11 +40,9 @@ function Feature({Svg, title, description, href}) {
   return (
     <div className={clsx('col col--4')}>
       <Link to={href} style={{ textDecoration: 'none' }}>
-        <div className="text--center">
+        <div className=''>
           <Svg className={styles.featureSvg} alt={title} />
-        </div>
-        <div className="text--center padding-horiz--md">
-          <h3>{title}</h3>
+          <h3 className={styles.items}>{title}</h3>
           <p>{description}</p>
         </div>
       </Link>

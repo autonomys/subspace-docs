@@ -4,6 +4,14 @@
  * work well for content-centric websites.
  */
 
+ @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+:root {
+  --ifm-font-family-monospace: "Montserrat", sans-serif;
+  --ifm-font-family-base: "Montserrat", sans-serif;
+}
+
+
 /* You can override the default Infima variables here. */
 :root {
   --ifm-color-primary: #562b8e;
