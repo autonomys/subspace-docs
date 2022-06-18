@@ -122,7 +122,7 @@ If you're connected directly without any router, then again nothing needs to be 
 ```PowerShell
 # Replace `WALLET_ADDRESS` below with your account address from Polkadot.js wallet
 # Replace `PLOT_SIZE` with plot size in gigabytes or terabytes, for instance 100G or 2T (but leave at least 10G of disk space for node)
-.\subspace-farmer-windows-x86_64-gemini-1b-2022-june-05.exe.exe farm --reward-address WALLET_ADDRESS --plot-size PLOT_SIZE
+.\subspace-farmer-windows-x86_64-gemini-1b-2022-june-05.exe farm --reward-address WALLET_ADDRESS --plot-size PLOT_SIZE
 ```
 8. You should see something similar in the terminal:
 ```
