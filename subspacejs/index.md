@@ -1,3 +1,7 @@
+---
+displayed_sidebar: masterSidebar
+---
+
 # @subspace/subspace
 
 This JavaScript library provides a simple API to submit and retrieve user data to the [Subspace network](https://subspace.network/). The project is in active development with a [live test network](https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Ftest-rpc.subspace.network#/explorer) designed to provide scalable and distributed archival storage.
