@@ -110,7 +110,7 @@ const config = {
             items: [
               {
                 type: 'doc',
-                docId: 'index',
+                docId: 'farming',
                 label: 'CLI Farmer',
                 docsPluginId: 'protocol',
               },
