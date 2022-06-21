@@ -110,13 +110,13 @@ const config = {
             items: [
               {
                 type: 'doc',
-                docId: 'farming',
+                docId: 'farm/farming',
                 label: 'CLI Farmer',
                 docsPluginId: 'protocol',
               },
               {
                 type: 'doc',
-                docId: 'index',
+                docId: 'subspace-desktop',
                 label: 'GUI Farmer',
                 docsPluginId: 'subspace-desktop',
               }
