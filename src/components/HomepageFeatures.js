@@ -12,7 +12,7 @@ const FeatureList = [
         Run the farmer node in the background on your computer without affecting your daily usage, with minimal maintenance.
       </>
     ),
-    href: 'https://subspace.network/news/subspace-network-whitepaper',
+    href: '',
   },
   {
     title: 'Easy to setup',
@@ -22,7 +22,7 @@ const FeatureList = [
         To set up the application takes only a few minutes. It supports Linux, Windows and macOS operating systems.
       </>
     ),
-    href: '../protocol/',
+    href: '',
   },
   {
     title: 'Frequent rewards',
@@ -32,7 +32,7 @@ const FeatureList = [
         Get rewarded by contributing to a globally distributed network that gives control back to users and creators.
       </>
     ),
-    href: 'https://github.com/subspace/subspace.js',
+    href: '',
   },
 ];
 
