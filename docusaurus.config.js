@@ -96,7 +96,7 @@ const config = {
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       navbar: {
-        title: 'Subspace Network Documentation',
+        title: '',
         logo: {
           alt: 'Subspace Labs Logo',
           src: 'img/logo-black.svg',
@@ -104,21 +104,49 @@ const config = {
         },
         items: [
           {
-            type: 'doc',
-            docId: 'index',
-            label: 'Core Protocol',
+            type: 'dropdown',
+            label: 'Subspace Farmer',
             position: 'left',
-            docsPluginId: 'protocol',
+            items: [
+              {
+                type: 'doc',
+                docId: 'index',
+                label: 'CLI Farmer',
+                docsPluginId: 'protocol',
+              },
+              {
+                type: 'doc',
+                docId: 'index',
+                label: 'GUI Farmer',
+                docsPluginId: 'subspace-desktop',
+              }
+            ],
           },
           {
-            to: 'subspace-desktop/',
+            type: 'dropdown',
+            label: 'Subspace SDK',
             position: 'left',
-            label: 'Subspace Desktop',
+            items: [
+              {
+                to: 'subspacejs/',
+                label: 'Subspace.js',
+              },
+            ],
           },
           {
-            to: 'subspacejs/',
+            type: 'dropdown',
+            label: 'Network Resources',
             position: 'left',
-            label: 'Subspace.js',
+            items: [
+              {
+                label: 'Subspace Telemetry',
+                href: 'https://telemetry.subspace.network',
+              },
+              {
+                label: 'Subspace Explorer',
+                href: 'https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Fna.gemini-1b.subspace.network%2Fws#/explorer',
+              },
+            ],
           },
           {
             to: 'community/',

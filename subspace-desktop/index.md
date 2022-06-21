@@ -2,6 +2,7 @@
 title: What is Subspace Desktop?
 sidebar_position: 1
 description: Intro to Subspace Desktop and its place in the ecosystem
+displayed_sidebar: masterSidebar
 keywords:
     - Subspace Desktop
     - Learn
