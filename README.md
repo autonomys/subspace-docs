@@ -48,6 +48,13 @@ If you would like to contribute check out the following materials
         </a>
     </td>
     <td align="center">
+        <a href="https://github.com/kolima">
+            <img src="https://avatars.githubusercontent.com/u/7297942?v=4" width="100;" alt="kolima"/>
+            <br />
+            <sub><b>Mykola Bezruk</b></sub>
+        </a>
+    </td>
+    <td align="center">
         <a href="https://github.com/skylordafk">
             <img src="https://avatars.githubusercontent.com/u/89288441?v=4" width="100;" alt="skylordafk"/>
             <br />
