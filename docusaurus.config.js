@@ -8,7 +8,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 const config = {
   title: 'Subspace Labs Documentation',
   tagline: 'Subspace is an open, scalable platform for both storage and compute that is fully interoperable with any layer one.',
-  url: 'https://docs.subspace.network',
+  url: 'http://ryyeung.github.io/subspace-contribution-Ryan/.', 
   baseUrl: '/',
   onBrokenLinks: 'warn',
   onBrokenMarkdownLinks: 'warn',
