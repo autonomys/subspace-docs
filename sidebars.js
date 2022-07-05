@@ -89,12 +89,25 @@ const sidebars = {
         },
       ],
     },
-    {
-      type: 'link',
-      label: 'Community Resources',
-      href: '../../community/',
-    },
+    { 
+    type: 'category',
+    label: 'Community',
+    items: [
+      { //Implementation of Contribution Guide 
+       type: 'link',
+       label: 'Contribution Guide',
+       href: '../../community/contribute',
+      },
+      {
+       type: 'link',
+       label: 'Community Resources',
+       href: '../../community/',
+      },
+     ],
+    }, 
   ],
 };
+
+
 
 module.exports = sidebars;

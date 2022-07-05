@@ -33,7 +33,7 @@ const config = {
   plugins: [
     [
       '@docusaurus/plugin-content-docs',
-      {
+      { //COMMUNITY PLUGIN
         id: 'community',
         path: 'community',
         routeBasePath: 'community',
@@ -149,10 +149,22 @@ const config = {
             ],
           },
           {
-            to: 'community/',
-            position: 'left',
+            type: 'dropdown',
             label: 'Community',
-          },
+            position: 'left',
+            items: [
+              { //Implementation of Contribution Guide 
+                type: 'doc',
+                docId: 'contribute',
+                label: 'Contribution Guide',
+                docsPluginId: 'community',
+              },
+              {
+                to: 'community/',
+                label: 'Community Resources',
+              },
+            ],
+          }, 
           {
             type: 'docsVersionDropdown',
             label: 'Core Versions',
@@ -180,7 +192,7 @@ const config = {
           },
         ],
       },
-      footer: {
+      footer: { 
         links: [
           {
             title: 'Subspace Network',
@@ -257,7 +269,7 @@ const config = {
           href: 'https://subspace.network',
         },
         copyright: `Copyright © ${new Date().getFullYear()} Subspace Labs, Inc.`,
-      },
+      }, 
       prism: {
         theme: lightCodeTheme,
         darkTheme: darkCodeTheme,
