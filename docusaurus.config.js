@@ -269,7 +269,7 @@ const config = {
           href: 'https://subspace.network',
         },
         copyright: `Copyright © ${new Date().getFullYear()} Subspace Labs, Inc.`,
-      }, 
+      },
       prism: {
         theme: lightCodeTheme,
         darkTheme: darkCodeTheme,
