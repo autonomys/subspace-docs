@@ -192,7 +192,7 @@ const config = {
           },
         ],
       },
-      footer: { 
+      footer: {
         links: [
           {
             title: 'Subspace Network',
