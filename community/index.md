@@ -1,5 +1,5 @@
 ---
-id: Awesome
+id: awesome
 title: Awesome Subspace
 sidebar_position: 1
 description: Awesome Community List for Subspace Labs and Network

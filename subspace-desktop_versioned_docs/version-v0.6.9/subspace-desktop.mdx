@@ -1,5 +1,5 @@
 ---
-title: Farming with Subspace Desktop
+title: Farming with Subspace Desktop (GUI)
 sidebar_position: 2
 description: How to run a Subspace Network Farmer with Subspace Desktop
 displayed_sidebar: masterSidebar
@@ -16,17 +16,14 @@ import TabItem from '@theme/TabItem';
 import Link from '@docusaurus/Link';
 import styles from '@site/src/pages/index.module.css';
 
-## Subspace Desktop
----
-
 Standalone Desktop application for farming on Subspace Network (includes both node and farmer).
 Download and run this application to be a farmer on Subspace Network (currently on testnet).
 
 ## OS Requirements
 ---
-
+:::tip Note:
 Below is not necessarily strict boundaries, but rather what we have tested and confirmed so far.
-
+:::
 - Windows 10 and 11
 - Ubuntu 20.04 and 22.04
 - macOS 11 and 12
@@ -79,32 +76,44 @@ Select your respective Operating System and click the button to download Subspac
 ## How to Install
 ---
 
-1. Download the latest for your preferred platform from above.
-2. Install the program.
-3. Open `subspace-desktop` application.
-4. Click the `This is my first time farming` option (or, if you want to use an existing reward address, click `I've run a farmer before and still have my keys`).
-5. Select how much space you want to pledge
-6. When you click `start plotting`, it may prompt you to store your seed phrase, if you did not import a reward address.
-7. The network will begin to sync and plotting will start. While you wait you can click `hints` to open up the `what is plotting` page, and join our online communities from the social links displayed in there!
-8. Once the node fully syncs you will be taken the the Farmer Dashboard which will show you the network/plot status, and your total earned rewards.
+1. Download and install the latest for your preferred platform from above.
+2. Open `subspace-desktop` application.
+
+3. Click the `This is my first time farming` option (or, if you want to use an existing reward address, click `I've run a farmer before and still have my keys`).
+
+4. Select how much space you want to pledge
+<img src={require('@site/static/img/subspace-desktop-images/subspace-desktop-plot-size.png').default} />
+
+5. When you click `start plotting`, it may prompt you to store your seed phrase, if you did not import a reward address.
+<img src={require('@site/static/img/subspace-desktop-images/subspace-desktop-seed-phrase.png').default} />
+6. The network will begin to sync and plotting will start. 
+
+:::tip While you wait...
+Click `hints` to open up the `what is plotting` page,
+and join our online communities from the social links displayed in there!
+:::
+7. Once the node fully syncs, you will be taken the the Farmer Dashboard which will show you the network/plot status, and your total earned rewards.
 ## How to Upgrade
 ---
 
 ### Upgrade from previous version of Subspace Desktop
 
-1. Simply uninstall the old application from your computer
+:::tip UNLESS STATED OTHERWISE IN THE RELEASE NOTES:
+- You don't need to delete your existing plot
+- You don't need to create a new identity
+- You don't need to delete the config and log files
+:::
+
+1. Uninstall the old application from your computer
 2. Download the latest [release](https://github.com/subspace/subspace-desktop/releases) for your preferred platform (make sure to select "Latest" release with green label and not "Pre-release")
 3. Install new version of Subspace Desktop
 4. Run the application, it should detect your old plot and continue farming as usual
 
-**UNLESS STATED OTHERWISE IN THE RELEASE NOTES:**
-- You don't need to delete your existing plot
-- You don't need to create a new identity
-- You don't need to delete the config and log files
-
 ### Wipe & Purge Existing Install
 
+:::caution
 This should only be done if you are facing issues, wish to replot, or is required in an update. 
+:::
 
 To wipe and purge your plot & node configuration is very simple in Subspace Desktop
 1. Open the application
@@ -113,10 +122,12 @@ To wipe and purge your plot & node configuration is very simple in Subspace Desk
 4. You will get a popup which says "`This will erase everything, and you will have to start from the beginning. Only do this if there is something wrong with the network, or you imported a wrong reward address.`"
 5. Click the final `Reset`
 
-### Upgrade from CLI (subspace-node + subspace-farmer)
+### Upgrade to GUI from CLI (subspace-node + subspace-farmer)
 
+:::tip Note:
 These instructions are for upgrading installation that followed [official guide](https://github.com/subspace/subspace/blob/main/docs/farming.md),
 if you followed unofficial one, ask guide author for proper upgrade steps.
+:::
 
 1. Remove old data to free space used by CLI:
     ```bash
@@ -125,14 +136,13 @@ if you followed unofficial one, ask guide author for proper upgrade steps.
     # Replace `NODE_FILE_NAME` with the name of the node file you downloaded from releases
     ./NODE_FILE_NAME purge-chain --chain testnet
     ```
-   Make sure to replace `FARMER_FILE_NAME` and `NODE_FILE_NAME` with actual file names
 2. Delete those files `FARMER_FILE_NAME` and `NODE_FILE_NAME`
 3. Install Subspace Desktop
 4. Choose `I've run a farmer before and still have my keys` on the first screen and use the same reward address (that you used for CLI) there
 
 ## Development
 ---
-
+If you would like to use the Developer version of Subspace Desktop, please follow the instructions below.
 ### Prerequisites
 
 - nodejs 14+
@@ -158,10 +168,10 @@ sudo apt update && sudo apt install libwebkit2gtk-4.0-dev \
 - libappindicator: needed to use the system tray feature.
 - patchelf and librsvg: needed to bundle AppImage.
 
+:::tip
 Stuck?
-
 https://tauri.studio/en/docs/getting-started/intro
-
+:::
 ### Install the dependencies
 
 ```bash
