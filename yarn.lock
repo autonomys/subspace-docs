@@ -1334,7 +1334,7 @@
     utility-types "^3.10.0"
     webpack "^5.72.1"
 
-"@docusaurus/plugin-content-docs@2.0.0-beta.21", "@docusaurus/plugin-content-docs@^2.0.0-beta.21":
+"@docusaurus/plugin-content-docs@2.0.0-beta.21":
   version "2.0.0-beta.21"
   resolved "https://registry.yarnpkg.com/@docusaurus/plugin-content-docs/-/plugin-content-docs-2.0.0-beta.21.tgz#b3171fa9aed99e367b6eb7111187bd0e3dcf2949"
   integrity sha512-aa4vrzJy4xRy81wNskyhE3wzRf3AgcESZ1nfKh8xgHUkT7fDTZ1UWlg50Jb3LBCQFFyQG2XQB9N6llskI/KUnw==
