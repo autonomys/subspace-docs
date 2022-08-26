@@ -1,4 +1,7 @@
-# Subspace Labs Official Documentation
+
+<img src="./static/img/subspace-network.svg" align="center" />
+
+---
 
 This website is built using [Docusaurus 2](https://docusaurus.io/). This is an ever evolving documentation, please feel free to contribute, post issues, and make suggestions!
 
