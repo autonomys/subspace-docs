@@ -1,19 +1,38 @@
 # Subspace Labs Official Documentation
 
-This website is built using [Docusaurus 2](https://docusaurus.io/).
+This website is built using [Docusaurus 2](https://docusaurus.io/). This is an ever evolving documentation, please feel free to contribute, post issues, and make suggestions!
 
-### Demo
+## Documentation
 
-We have not launched our docs fully but you can preview the demo @ https://subspace.github.io/subspace-docs/
+You can view the documentation in two ways
+
+### Live Webpage
+
+https://docs.subspace.network
+
+### Run Locally
+
+You can also pull the repository and run it locally.
+
+1. Clone the repository
+    
+    ```git clone https://github.com/subspace/subspace-docs.git```
+
+2. Install the required packages
+
+    ```yarn```
+
+3. Start the web server locally with
+
+    ```yarn start```
 
 ### Contributing
 
-If you would like to contribute check out the following materials
+If you would like to contribute check out the following materials, and feel free to ask questions in our [Discord](https://discord.gg/subspace-network)
 
-- [Code of Conduct](/.github/CODE_OF_CONDUCT.md)
-- [Contributing Guide](/.github/CONTRIBUTING.md)
-- [Translation Guide](/.github/TRANSLATE.md)
-- [Development Guide](/.github/DEVELOPMENT.md)
+- [Code of Conduct](CODE_OF_CONDUCT.md)
+- [Contributing Guide](CONTRIBUTING.md)
+- [Development Guide](DEVELOPMENT.md)
 
 ### Contributors
 <!-- readme: contributors -start -->
