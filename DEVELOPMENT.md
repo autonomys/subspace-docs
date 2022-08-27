@@ -39,6 +39,8 @@ For example:
 yarn run docusaurus docs:version:subspace-desktop 6.5.1
 ```
 
+We generally will keep 3 prior versions live on the documentation. Keep this in mind when doing improvements that are version agnostic. s
+
 
 ## Local Development
 

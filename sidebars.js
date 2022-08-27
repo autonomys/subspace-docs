@@ -53,7 +53,7 @@ const sidebars = {
         {
           type: 'link',
           label: 'How to Forward Ports',
-          href: '../../protocol/port-forwarding',
+          href: '/protocol/port-forwarding',
         },
         {
           type: 'link',
@@ -85,7 +85,7 @@ const sidebars = {
         {
           type: 'link',
           label: 'Subspace.js',
-          href: '../../subspace-js/subspace-js',
+          href: '/subspacejs/',
         },
       ],
     },
