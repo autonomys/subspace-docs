@@ -27,6 +27,13 @@ If you would like to contribute check out the following materials
         </a>
     </td>
     <td align="center">
+        <a href="https://github.com/ryyeung">
+            <img src="https://avatars.githubusercontent.com/u/97981608?v=4" width="100;" alt="ryyeung"/>
+            <br />
+            <sub><b>ryyeung</b></sub>
+        </a>
+    </td>
+    <td align="center">
         <a href="https://github.com/nazar-pc">
             <img src="https://avatars.githubusercontent.com/u/928965?v=4" width="100;" alt="nazar-pc"/>
             <br />
@@ -53,7 +60,8 @@ If you would like to contribute check out the following materials
             <br />
             <sub><b>Mykola Bezruk</b></sub>
         </a>
-    </td>
+    </td></tr>
+<tr>
     <td align="center">
         <a href="https://github.com/skylordafk">
             <img src="https://avatars.githubusercontent.com/u/89288441?v=4" width="100;" alt="skylordafk"/>
