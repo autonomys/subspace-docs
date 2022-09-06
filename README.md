@@ -52,7 +52,7 @@ If you would like to contribute check out the following materials, and feel free
         <a href="https://github.com/ryyeung">
             <img src="https://avatars.githubusercontent.com/u/97981608?v=4" width="100;" alt="ryyeung"/>
             <br />
-            <sub><b>ryyeung</b></sub>
+            <sub><b>Ryyeung</b></sub>
         </a>
     </td>
     <td align="center">
