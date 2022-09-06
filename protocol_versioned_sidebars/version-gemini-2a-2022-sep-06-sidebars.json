@@ -28,17 +28,12 @@
         {
           "type": "link",
           "label": "Farm with CLI/Docker",
-          "href": "../../protocol/farm/farming"
-        },
-        {
-          "type": "link",
-          "label": "Farm with Subspace Desktop",
-          "href": "../../subspace-desktop/subspace-desktop"
+          "href": "../../farm/farming"
         },
         {
           "type": "link",
           "label": "How to Forward Ports",
-          "href": "../../protocol/port-forwarding"
+          "href": "/protocol/port-forwarding"
         },
         {
           "type": "link",
@@ -70,7 +65,7 @@
         {
           "type": "link",
           "label": "Subspace.js",
-          "href": "../../subspacejs/"
+          "href": "/subspacejs/"
         }
       ]
     },
@@ -78,15 +73,15 @@
       "type": "category",
       "label": "Community",
       "items": [
-        { 
+        {
           "type": "link",
           "label": "Contribution Guide",
           "href": "../../community/contribute"
         },
         {
           "type": "link",
-         "label": "Community Resources",
-         "href": "../../community/"
+          "label": "Community Resources",
+          "href": "../../community/"
         }
       ]
     }

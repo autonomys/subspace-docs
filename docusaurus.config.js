@@ -43,15 +43,6 @@ const config = {
     [
       '@docusaurus/plugin-content-docs',
       {
-        id: 'subspace-desktop',
-        path: 'subspace-desktop',
-        routeBasePath: 'subspace-desktop',
-        sidebarPath: require.resolve('./sidebars.js'),
-      }
-    ],
-    [
-      '@docusaurus/plugin-content-docs',
-      {
         id: 'subspacejs',
         path: 'subspacejs',
         routeBasePath: 'subspacejs',
@@ -113,13 +104,13 @@ const config = {
                 docId: 'farm/farming',
                 label: 'CLI Farmer',
                 docsPluginId: 'protocol',
-              },
+              }/*,
               {
                 type: 'doc',
                 docId: 'subspace-desktop',
                 label: 'GUI Farmer',
                 docsPluginId: 'subspace-desktop',
-              }
+              }*/
             ],
           },
           {
