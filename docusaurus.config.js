@@ -113,13 +113,13 @@ const config = {
                 docId: 'farm/farming',
                 label: 'CLI Farmer',
                 docsPluginId: 'protocol',
-              },
+              }/*,
               {
                 type: 'doc',
                 docId: 'subspace-desktop',
                 label: 'GUI Farmer',
                 docsPluginId: 'subspace-desktop',
-              }
+              }*/
             ],
           },
           {
