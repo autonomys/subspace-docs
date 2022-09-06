@@ -1,6 +1,7 @@
 ---
 title: Farming with Subspace Desktop
 sidebar_position: 2
+draft: true
 description: How to run a Subspace Network Farmer with Subspace Desktop
     - Farmer
     - Farming
@@ -8,6 +9,17 @@ description: How to run a Subspace Network Farmer with Subspace Desktop
     - App
     - GUI
 ---
+
+:::danger
+
+## Unsupported - Please Read
+
+Subspace Desktop is not currently supported, please use the CLI & Docker versions. We have done this to focus on the user experience for the core protocol and CLI experience. We will be back to developing Subspace Desktop in the near future.
+
+*For more information please refer to the bottom of [this announcement](https://forum.subspace.network/t/non-incentivized-gemini-phase-ii-stress-test-feat-launch-party/617)*
+
+:::
+
 
 # Subspace Desktop
 

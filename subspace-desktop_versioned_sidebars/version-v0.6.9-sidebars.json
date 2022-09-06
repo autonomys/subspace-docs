@@ -32,11 +32,6 @@
         },
         {
           "type": "link",
-          "label": "Farm with Subspace Desktop",
-          "href": "../../subspace-desktop/subspace-desktop"
-        },
-        {
-          "type": "link",
           "label": "How to Forward Ports",
           "href": "../../protocol/port-forwarding"
         },
@@ -75,20 +70,9 @@
       ]
     },
     {
-      "type": "category",
-      "label": "Community",
-      "items": [
-        { 
-          "type": "link",
-          "label": "Contribution Guide",
-          "href": "../../community/contribute"
-        },
-        {
-          "type": "link",
-         "label": "Community Resources",
-         "href": "../../community/"
-        }
-      ]
+      "type": "link",
+      "label": "Community Resources",
+      "href": "../../community/"
     }
   ]
 }

@@ -43,13 +43,13 @@ const sidebars = {
         {
           type: 'link',
           label: 'Farm with CLI/Docker',
-          href: '../../protocol/farm/farming',
-        },
+          href: '../../farm/farming',
+        },/*
         {
           type: 'link',
           label: 'Farm with Subspace Desktop',
           href: '../../subspace-desktop/subspace-desktop',
-        },
+        },*/
         {
           type: 'link',
           label: 'How to Forward Ports',
