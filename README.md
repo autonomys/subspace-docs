@@ -52,7 +52,7 @@ If you would like to contribute check out the following materials, and feel free
         <a href="https://github.com/ryyeung">
             <img src="https://avatars.githubusercontent.com/u/97981608?v=4" width="100;" alt="ryyeung"/>
             <br />
-            <sub><b>ryyeung</b></sub>
+            <sub><b>Ryyeung</b></sub>
         </a>
     </td>
     <td align="center">
@@ -60,6 +60,13 @@ If you would like to contribute check out the following materials, and feel free
             <img src="https://avatars.githubusercontent.com/u/928965?v=4" width="100;" alt="nazar-pc"/>
             <br />
             <sub><b>Nazar Mokrynskyi</b></sub>
+        </a>
+    </td>
+    <td align="center">
+        <a href="https://github.com/achiurizo">
+            <img src="https://avatars.githubusercontent.com/u/24772?v=4" width="100;" alt="achiurizo"/>
+            <br />
+            <sub><b>Arthur Chiu</b></sub>
         </a>
     </td>
     <td align="center">
@@ -75,23 +82,22 @@ If you would like to contribute check out the following materials, and feel free
             <br />
             <sub><b>Daniel</b></sub>
         </a>
-    </td>
+    </td></tr>
+<tr>
     <td align="center">
         <a href="https://github.com/jim-counter">
             <img src="https://avatars.githubusercontent.com/u/11335994?v=4" width="100;" alt="jim-counter"/>
             <br />
             <sub><b>Jim Counter</b></sub>
         </a>
-    </td></tr>
-<tr>
+    </td>
     <td align="center">
         <a href="https://github.com/kolima">
             <img src="https://avatars.githubusercontent.com/u/7297942?v=4" width="100;" alt="kolima"/>
             <br />
             <sub><b>Mykola Bezruk</b></sub>
         </a>
-    </td></tr>
-<tr>
+    </td>
     <td align="center">
         <a href="https://github.com/skylordafk">
             <img src="https://avatars.githubusercontent.com/u/89288441?v=4" width="100;" alt="skylordafk"/>
