@@ -69,6 +69,11 @@ const sidebars = {
         {
           type: 'link',
           label: 'Subspace Block Explorer',
+          href: 'https://subspace.subscan.io/',
+        },
+        {
+          type: 'link',
+          label: 'PolkadotJS Portal',
           href: 'https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Fna.gemini-1b.subspace.network%2Fws#/explorer',
         },
         {
