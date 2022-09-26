@@ -43,7 +43,7 @@ const sidebars = {
         {
           type: 'link',
           label: 'Farm with CLI/Docker',
-          href: '../../farm/farming',
+          href: '/protocol/farm/farming',
         },/*
         {
           type: 'link',
