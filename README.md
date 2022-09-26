@@ -52,7 +52,7 @@ If you would like to contribute check out the following materials, and feel free
         <a href="https://github.com/ryyeung">
             <img src="https://avatars.githubusercontent.com/u/97981608?v=4" width="100;" alt="ryyeung"/>
             <br />
-            <sub><b>Ryyeung</b></sub>
+            <sub><b>ryyeung</b></sub>
         </a>
     </td>
     <td align="center">
@@ -90,7 +90,8 @@ If you would like to contribute check out the following materials, and feel free
             <br />
             <sub><b>Mykola Bezruk</b></sub>
         </a>
-    </td>
+    </td></tr>
+<tr>
     <td align="center">
         <a href="https://github.com/skylordafk">
             <img src="https://avatars.githubusercontent.com/u/89288441?v=4" width="100;" alt="skylordafk"/>
