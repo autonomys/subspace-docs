@@ -135,7 +135,11 @@ const config = {
               },
               {
                 label: 'Subspace Explorer',
-                href: 'https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Fna.gemini-1b.subspace.network%2Fws#/explorer',
+                href: 'https://subspace.subscan.io/',
+              },
+              {
+                label: 'PolkadotJS Portal',
+                href: 'https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Feu-1.gemini-2a.subspace.network%2Fws#/explorer',
               },
             ],
           },
