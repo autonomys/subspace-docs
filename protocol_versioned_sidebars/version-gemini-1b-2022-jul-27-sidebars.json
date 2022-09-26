@@ -32,11 +32,6 @@
         },
         {
           "type": "link",
-          "label": "Farm with Subspace Desktop",
-          "href": "../../subspace-desktop/subspace-desktop"
-        },
-        {
-          "type": "link",
           "label": "How to Forward Ports",
           "href": "../../protocol/port-forwarding"
         },
@@ -70,7 +65,7 @@
         {
           "type": "link",
           "label": "Subspace.js",
-          "href": "../../subspace-js/subspace-js"
+          "href": "https://docs.subspace.network/subspacejs/"
         }
       ]
     },

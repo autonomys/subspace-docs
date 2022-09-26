@@ -2,6 +2,7 @@
 title: Getting Started
 sidebar_position: 1
 description: A Getting Started guide for the Subspace Network
+displayed_sidebar: masterSidebar
 keywords:
     - Getting Started
     - Learn
@@ -24,9 +25,8 @@ The Subspace Network is an ambitious layer zero protocol which is the first scal
 Our goal is to bring an extremely low barrier to entry for participating on consensus, As long as you meet the simple requirements below you can get started below.
 
 
-### - [Start Farming with CLI](./farm/farming.md#-getting-started-farming)
-### - [Start Farming with Docker](./farm/farming.md#-docker-instructions)
-### - [Start Farming with Subspace Desktop Application](../../subspace-desktop/)
+### - [Start Farming with CLI or Docker](farm/farming)
+### - [Start Farming with Subspace Desktop Application](../../subspace-desktop)
 
 ## 📖 Develop on Subspace Network
 ---
@@ -35,4 +35,4 @@ The Subspace Network aims to provide an amazing developer experience to anyone w
 
 ### - [Core Protocol Development](development)
 
-### - [Store data with Subspace.js](../../subspacejs/)
+### - [Store data with Subspace.js](../../subspacejs)

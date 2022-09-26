@@ -14,7 +14,6 @@ Following these guidelines shows that you respect the time of the developers who
 We are a fully Open Source project, meaning we are open to all kinds of contributions from our community. Here are a few example of contributions that we are open to in this repo:
 
 - **Added Content:** Writing a nice guide? Submit it (Where?) so we can add it to our Docs. 
-- **Translation:** Adding Translations of our prior content? See the [translate.md](TRANSLATE.md) for help.
 - **Bug Reports & Fixes:** Find a bug or error? Let us know where its hiding. (Where?)
 - **Feature Requests & Implementations:** Looking for a new feature? Share your ideas so we can improve.
 

@@ -2,6 +2,7 @@
 title: How to Forward Ports
 sidebar_position: 3
 description: How to forward TCP port 30333 for the Subspace Farmer
+displayed_sidebar: masterSidebar
 keywords:
     - Farmer
     - Farming
@@ -10,6 +11,10 @@ keywords:
     - Port Forwarding
     - Subspace Desktop
 ---
+
+:::caution
+If you are using Linux and enabled `ufw` (firewall), make sure you have opened up your firewall for TCP traffic on port 30333 with the following command `sudo ufw allow 30333/tcp`
+:::
 
 First before forwarding ports it is important to understand what that actually means. We would highly suggest reading some information on the topic, here is a guide we find helpful https://www.geeksforgeeks.org/port-forwarding-on-router-and-why-do-we-need-it/
 
