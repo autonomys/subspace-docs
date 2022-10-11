@@ -29,11 +29,3 @@ jobs:
           publish_dir: ./build
           user_name: github-actions[bot]
           user_email: 41898282+github-actions[bot]@users.noreply.github.com
-  contributors:
-    name: A job to automate contrib in readme
-    runs-on: ubuntu-latest
-    steps:
-        - name: Contribute List
-          uses: akhilmhdh/contributors-readme-action@v2.3.4
-          env:
-              GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
