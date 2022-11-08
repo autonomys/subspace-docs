@@ -26,6 +26,18 @@ import styles from '@site/src/pages/index.module.css';
 You will also want to ensure you have a stable Network connection. It is also important to note that plotting can be network intensive and may impact network usage if you have a hard data limit.
 :::
 
+:::note CoW File Systems Warning
+It is advised not to use the Subspace farmer and node on CoW file systems for any OS. 
+
+If BTRFS is used with Subspace, the directory/whole file system must be CoW disabled with the following command prior to starting Subspace.
+
+**Command to Cow Disable**
+```
+sudo chattr +C path/to/data
+```
+Alternatively, non-CoW file systems like ext4 or xfs can be used instead.
+:::
+
 
 |Hardware|Specs|
 |-|-|
