@@ -96,12 +96,30 @@ const config = {
               },
             ],
           },
-          {to: '/blog', label: 'Blog', position: 'left'},
+          {
+            type: 'dropdown',
+            label: 'Community',
+            position: 'left',
+            items: [
+              {
+                label: 'Contribution Guide',
+                href: '/docs/community/contribute',
+              },
+              {
+                label: 'Contribution Guide',
+                href: '/docs/community',
+              },
+            ],
+          },
           {
             href: 'https://github.com/subspace',
             label: 'GitHub',
             position: 'right',
           },
+          {
+            type: 'localeDropdown',
+            position: 'right',
+          }
         ],
       },
       footer: {
