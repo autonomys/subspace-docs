@@ -6,8 +6,8 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'Subspace Labs Documentation',
-  tagline: 'Subspace is an open, scalable platform for both storage and compute that is fully interoperable with any layer one.',
+  title: 'Farm from Anywhere',
+  tagline: 'Earn rewards by running a farmer node by pledging spare disk. No expensive setup or upfront capital is required.',
   url: 'https://docs.subspace.network',
   baseUrl: '/',
   onBrokenLinks: 'throw',
