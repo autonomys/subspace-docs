@@ -2,7 +2,6 @@
 title: Farming with the CLI
 sidebar_position: 1
 description: How to run a Subspace Network Farmer with the CLI or Docker
-displayed_sidebar: masterSidebar
 keywords:
     - Farmer
     - Farming

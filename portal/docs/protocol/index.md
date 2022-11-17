@@ -2,7 +2,6 @@
 title: Getting Started
 sidebar_position: 1
 description: A Getting Started guide for the Subspace Network
-displayed_sidebar: masterSidebar
 keywords:
     - Getting Started
     - Learn
