@@ -2,7 +2,6 @@
 title: Code of Conduct
 sidebar_position: 4
 description: Code of Conduct for the Subspace Labs Documentation
-displayed_sidebar: masterSidebar
 keywords:
     - Awesome
     - Community

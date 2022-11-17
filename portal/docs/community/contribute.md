@@ -3,7 +3,6 @@ id: contribute
 title: Contribute!
 sidebar_position: 2
 description: How to contribute to the Subspace Docs
-displayed_sidebar: masterSidebar
 keywords:
     - Docs
     - Contribute

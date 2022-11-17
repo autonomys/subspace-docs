@@ -2,7 +2,6 @@
 title: Translation Guide
 sidebar_position: 3
 description: Translation Guide for the Subspace Docs
-displayed_sidebar: masterSidebar
 keywords:
     - Awesome
     - Community
