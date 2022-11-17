@@ -106,7 +106,7 @@ const config = {
                 href: '/docs/community/contribute',
               },
               {
-                label: 'Contribution Guide',
+                label: 'Community Resources',
                 href: '/docs/community',
               },
             ],
