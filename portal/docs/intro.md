@@ -1,47 +1,34 @@
 ---
+title: Getting Started
 sidebar_position: 1
+description: A Getting Started guide for the Subspace Network
+keywords:
+    - Getting Started
+    - Learn
+    - Farming
+    - Development
 ---
 
-# Tutorial Intro
+# 👋Welcome
+The Subspace Network is an ambitious layer zero protocol which is the first scalable, secure, & decentralized infrastructure layer for the Web3 ecosystems. 
 
-Let's discover **Docusaurus in less than 5 minutes**.
+## ❓ Learn About the Subspace Network 
+---
+- [What is the Subspace Network](https://subspace.network/technology)
+- [Frequently Asked Questions](https://subspace.network/faq)
+- [Whitepaper - *Summarized*](https://subspace.network/news/subspace-network-whitepaper)
+- [Whitepaper - *Full Length*](https://assets.website-files.com/61526a2af87a54e565b0ae92/617759c00edd0e3bd279aa29_Subspace_%20A%20solution%20to%20the%20farmer%27s%20dilemma.pdf)
 
-## Getting Started
+## 🤝 Participate on the Network
+---
+Our goal is to bring an extremely low barrier to entry for participating on consensus, As long as you meet the simple requirements below you can get started below.
 
-Get started by **creating a new site**.
 
-Or **try Docusaurus immediately** with **[docusaurus.new](https://docusaurus.new)**.
+### - [Start Farming with CLI or Docker](/docs/protocol/farming)
 
-### What you'll need
+## 📖 Develop on Subspace Network
+---
 
-- [Node.js](https://nodejs.org/en/download/) version 16.14 or above:
-  - When installing Node.js, you are recommended to check all checkboxes related to dependencies.
+The Subspace Network aims to provide an amazing developer experience to anyone who wishes to build on top of the protocol. As such we have started working on a variety of tools to help with development within our network. 
 
-## Generate a new site
-
-Generate a new Docusaurus site using the **classic template**.
-
-The classic template will automatically be added to your project after you run the command:
-
-```bash
-npm init docusaurus@latest my-website classic
-```
-
-You can type this command into Command Prompt, Powershell, Terminal, or any other integrated terminal of your code editor.
-
-The command also installs all necessary dependencies you need to run Docusaurus.
-
-## Start your site
-
-Run the development server:
-
-```bash
-cd my-website
-npm run start
-```
-
-The `cd` command changes the directory you're working with. In order to work with your newly created Docusaurus site, you'll need to navigate the terminal there.
-
-The `npm run start` command builds your website locally and serves it through a development server, ready for you to view at http://localhost:3000/.
-
-Open `docs/intro.md` (this page) and edit some lines: the site **reloads automatically** and displays your changes.
+### - [Core Protocol Development](/docs/protocol/development)
