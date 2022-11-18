@@ -1,4 +1,4 @@
-# Website
+<img src="./static/img/subspace-network.svg" align="center" />
 
 This website is built using [Docusaurus 2](https://docusaurus.io/), a modern static website generator.
 
@@ -39,3 +39,13 @@ $ GIT_USER=<Your GitHub username> yarn deploy
 ```
 
 If you are using GitHub pages for hosting, this command is a convenient way to build the website and push to the `gh-pages` branch.
+
+### Contributing
+
+If you would like to contribute check out the following materials, and feel free to ask questions in our [Discord](https://discord.gg/subspace-network)
+
+- [Code of Conduct](CODE_OF_CONDUCT.md)
+- [Contributing Guide](CONTRIBUTING.md)
+- [Development Guide](DEVELOPMENT.md)
+
+Thank you to all our [Contributors](https://github.com/subspace/subspace-docs/graphs/contributors)!
