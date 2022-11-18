@@ -68,7 +68,8 @@ const config = {
         title: 'Subspace',
         logo: {
           alt: 'Subspace Labs Logo',
-          src: 'img/logo.svg',
+          src: 'img/logo-black.svg',
+          srcDark: 'img/logo-white.svg',
         },
         items: [
           {
