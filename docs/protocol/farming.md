@@ -590,10 +590,6 @@ Examples:
 
 ---
 
-### Storing Data on the Subspace Network
-
-We are still early in our development but would love to see people start to build on subspace. refer to you npm package [subspace.js](../../../subspacejs/)
-
 ### Running an archival node
 
 Instructions above will get you full node (doesn't store the history and state of the whole blockchain, only last 1024

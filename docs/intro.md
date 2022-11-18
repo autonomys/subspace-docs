@@ -31,4 +31,4 @@ Our goal is to bring an extremely low barrier to entry for participating on cons
 
 The Subspace Network aims to provide an amazing developer experience to anyone who wishes to build on top of the protocol. As such we have started working on a variety of tools to help with development within our network. 
 
-### - [Core Protocol Development](/docs/protocol/development)
+### - [Core Protocol Development](https://github.com/subspace/subspace/blob/main/docs/development.md)
