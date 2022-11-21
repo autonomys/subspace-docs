@@ -43,6 +43,9 @@ html[data-theme='light'] .footer {
   background-color: #fafafa;
 }
 
+html[data-theme='light'] .footer .footer__link-item {
+  color: #000000;
+}
 
 .docusaurus-highlight-code-line {
   background-color: rgba(0, 0, 0, 0.1);

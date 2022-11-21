@@ -1,33 +1,44 @@
-
 <img src="./static/img/subspace-network.svg" align="center" />
 
----
+This website is built using [Docusaurus 2](https://docusaurus.io/), a modern static website generator.
 
-This website is built using [Docusaurus 2](https://docusaurus.io/). This is an ever evolving documentation, please feel free to contribute, post issues, and make suggestions!
+### Installation
 
-## Documentation
+```
+$ yarn
+```
 
-You can view the documentation in two ways
+### Local Development
 
-### Live Webpage
+```
+$ yarn start
+```
 
-https://docs.subspace.network
+This command starts a local development server and opens up a browser window. Most changes are reflected live without having to restart the server.
 
-### Run Locally
+### Build
 
-You can also pull the repository and run it locally.
+```
+$ yarn build
+```
 
-1. Clone the repository
-    
-    ```git clone https://github.com/subspace/subspace-docs.git```
+This command generates static content into the `build` directory and can be served using any static contents hosting service.
 
-2. Install the required packages
+### Deployment
 
-    ```yarn```
+Using SSH:
 
-3. Start the web server locally with
+```
+$ USE_SSH=true yarn deploy
+```
 
-    ```yarn start```
+Not using SSH:
+
+```
+$ GIT_USER=<Your GitHub username> yarn deploy
+```
+
+If you are using GitHub pages for hosting, this command is a convenient way to build the website and push to the `gh-pages` branch.
 
 ### Contributing
 

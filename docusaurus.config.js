@@ -1,4 +1,4 @@
-// @ts-nocheck
+// @ts-check
 // Note: type annotations allow type checking and IDEs autocompletion
 
 const lightCodeTheme = require('prism-react-renderer/themes/github');
@@ -6,49 +6,27 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'Subspace Labs Documentation',
-  tagline: 'Subspace is an open, scalable platform for both storage and compute that is fully interoperable with any layer one.',
+  title: 'Farm from Anywhere',
+  tagline: 'Earn rewards by running a farmer node by pledging spare disk. No expensive setup or upfront capital is required.',
   url: 'https://docs.subspace.network',
   baseUrl: '/',
-  onBrokenLinks: 'warn',
+  onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
+
+  // GitHub pages deployment config.
+  // If you aren't using GitHub pages, you don't need these.
   organizationName: 'subspace', // Usually your GitHub org/user name.
   projectName: 'subspace-docs', // Usually your repo name.
 
- /* i18n: {
+  // Even if you don't use internalization, you can use this field to set useful
+  // metadata like html lang. For example, if your site is Chinese, you may want
+  // to replace "en" with "zh-Hans".
+  i18n: {
     defaultLocale: 'en',
-    locales: ['en', 'ru', 'uk', 'ko', 'es', 'vi'],
-    localeConfigs: {
-      en: {
-        htmlLang: 'en-GB',
-      },
-      // You can omit a locale (e.g. fr) if you don't need to override the defaults
-      fa: {
-        direction: 'rtl',
-      },
-    },
+    locales: ['en'],
   },
-  */
   plugins: [
-    [
-      '@docusaurus/plugin-content-docs',
-      { //COMMUNITY PLUGIN
-        id: 'community',
-        path: 'community',
-        routeBasePath: 'community',
-        sidebarPath: require.resolve('./sidebars.js'),
-      }
-    ],
-    [
-      '@docusaurus/plugin-content-docs',
-      {
-        id: 'subspacejs',
-        path: 'subspacejs',
-        routeBasePath: 'subspacejs',
-        sidebarPath: require.resolve('./sidebars.js'),
-      }
-    ],
     [
       '@docusaurus/plugin-google-gtag',
       {
@@ -58,20 +36,20 @@ const config = {
     ]
   ],
 
-
   presets: [
     [
       'classic',
       /** @type {import('@docusaurus/preset-classic').Options} */
       ({
         docs: {
-          id: 'protocol',
-          path: 'protocol',
-          routeBasePath: 'protocol',
           sidebarPath: require.resolve('./sidebars.js'),
           // Please change this to your repo.
+          // Remove this to remove the "edit this page" links.
           editUrl: 'https://github.com/subspace/subspace-docs/blob/main/',
-        }, 
+        },
+        blog: {
+          showReadingTime: true,
+        },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
         },
@@ -87,7 +65,7 @@ const config = {
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       navbar: {
-        title: '',
+        title: 'Subspace',
         logo: {
           alt: 'Subspace Labs Logo',
           src: 'img/logo-black.svg',
@@ -95,34 +73,10 @@ const config = {
         },
         items: [
           {
-            type: 'dropdown',
-            label: 'Subspace Farmer',
+            type: 'doc',
+            docId: 'intro',
             position: 'left',
-            items: [
-              {
-                type: 'doc',
-                docId: 'farm/farming',
-                label: 'CLI Farmer',
-                docsPluginId: 'protocol',
-              }/*,
-              {
-                type: 'doc',
-                docId: 'subspace-desktop',
-                label: 'GUI Farmer',
-                docsPluginId: 'subspace-desktop',
-              }*/
-            ],
-          },
-          {
-            type: 'dropdown',
-            label: 'Subspace SDK',
-            position: 'left',
-            items: [
-              {
-                to: 'subspacejs/',
-                label: 'Subspace.js',
-              },
-            ],
+            label: 'Docs',
           },
           {
             type: 'dropdown',
@@ -148,46 +102,29 @@ const config = {
             label: 'Community',
             position: 'left',
             items: [
-              { //Implementation of Contribution Guide 
-                type: 'doc',
-                docId: 'contribute',
+              {
                 label: 'Contribution Guide',
-                docsPluginId: 'community',
+                href: '/docs/community/contribute',
               },
               {
-                to: 'community/',
                 label: 'Community Resources',
+                href: '/docs/community',
               },
             ],
-          }, 
-          {
-            type: 'docsVersionDropdown',
-            label: 'Core Versions',
-            position: 'right',
-            dropdownActiveClassDisabled: true,
-            docsPluginId: 'protocol',
           },
           {
-            type: 'docsVersionDropdown',
-            label: 'Subspace-Desktop Versions',
+            href: 'https://github.com/subspace',
+            label: 'GitHub',
             position: 'right',
-            dropdownActiveClassDisabled: true,
-            docsPluginId: 'subspace-desktop',
-          },
-          {
-            type: 'docsVersionDropdown',
-            label: 'subspacejs Versions',
-            position: 'right',
-            dropdownActiveClassDisabled: true,
-            docsPluginId: 'subspacejs',
           },
           {
             type: 'localeDropdown',
             position: 'right',
-          },
+          }
         ],
       },
       footer: {
+        style: 'dark',
         links: [
           {
             title: 'Subspace Network',
