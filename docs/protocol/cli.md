@@ -46,7 +46,14 @@ Please feel free to file bug reports on our GitHub issues.
 Subspace CLI is still in alpha.
 :::
 
-Compiled versions of the Subspace CLI is [hosted on GitHub](https://github.com/subspace/subspace-cli/releases). This is the recommended way to install the application.
+Compiled versions of the Subspace CLI is [hosted on GitHub](https://github.com/subspace/subspace-cli/releases). This is the recommended way to install the application. Please find the appropriate binary for your operating system.
+
+For example, linux users can run the follow commands:
+
+```bash
+wget https://github.com/subspace/subspace-cli/releases/download/v0.1.0-alpha/subspace-cli-ubuntu-x86_64-v0.1.0-alpha
+chmod +x subspace-cli-ubuntu-x86_64-v0.1.0-alpha
+```
 
 ## II. Configuration
 
