@@ -124,3 +124,24 @@ chain = 'dev'
 ```
 
 ## III. Farming
+
+To begin farming on the network, just run the `farm` command with the CLI like so:
+
+```bash
+./subspace-cli farm
+```
+
+You should see the farmer ande node start successfully and begin syncing, plotting, and then farming:
+
+```bash
+$ ./subspace-cli-ubuntu-x86_64-v0.1.0-alpha farm
+Starting node ... (this might take up to couple of minutes)
+Node started successfully!
+Starting farmer ...
+Farmer started successfully!
+Initial plotting for plot: #0 (/home/username/.local/share/subspace-cli/plots)
+⠁ [00:00:00] 3% [=>                                      ]
+      (31.00 MiB/953.67 MiB) 157.35 GiB/s, plotting, ETA: 0s 
+```
+
+That's it! Enjoy and Happy Farming!
