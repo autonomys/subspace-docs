@@ -1,5 +1,5 @@
 ---
-title: Subspace CLI
+title: Subspace CLI (Recommended)
 sidebar_position: 1
 description: Farming on the Subspace Network
 keywords:
@@ -36,7 +36,16 @@ Subspace CLI requires commodity hardware specs to operate. At a **minimum**, you
 
 ### Getting a Crypto Wallet
 
-Make sure you have a crypto wallet to accumulate farming rewards. Check out the Crypto Wallet page for more information.
+Before running anything you need to have a wallet where you'll receive testnet coins. There are currently two wallets we suggest using, SubWallet being the preferred route.
+
+- [SubWallet](https://subwallet.app/)
+- [PolkadotJS](https://polkadot.js.org/extension/)
+
+Install one of the two wallets above into your browser and create a new account there.
+The address of your account will be necessary at the last step.
+
+For help refer to our forum post [How to setup Subwallet & a Polkadot.js Wallet](https://forum.subspace.network/t/subspace-wallet/61)
+- *make sure to follow the Bonus section of the bottom of the post above.*
 
 ### Downloading the Release Binaries
 
