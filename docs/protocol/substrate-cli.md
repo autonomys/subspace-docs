@@ -1,7 +1,7 @@
 ---
-title: Farming with the CLI
-sidebar_position: 1
-description: How to run a Subspace Network Farmer with the CLI or Docker
+title: Substrate CLI
+sidebar_position: 2
+description: How to run a Subspace Network Farmer with the Substrate CLI
 keywords:
     - Farmer
     - Farming
@@ -14,6 +14,11 @@ import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import Link from '@docusaurus/Link';
 import styles from '@site/src/pages/index.module.css';
+
+
+:::caution Advanced Usage
+[Subspace CLI](https://github.com/subspace/subspace-cli) is the recommended way to farm on the Subspace Network. Follow the guide below to get started or check out the project [README on GitHub](https://github.com/subspace/subspace-cli/blobl/main/README.md).
+:::
 
 ## I. Pre-requisites
 
