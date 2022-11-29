@@ -10,12 +10,17 @@ keywords:
     - GitHub
 ---
 
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+import Link from '@docusaurus/Link';
+import styles from '@site/src/pages/index.module.css';
+
+
 :::tip Recommended
 [Subspace CLI](https://github.com/subspace/subspace-cli) is the recommended way to farm on the Subspace Network. Follow the guide below to get started or check out the project [README on GitHub](https://github.com/subspace/subspace-cli/blobl/main/README.md).
 :::
 
-## Installation
-
+## Pre-Requisites
 ---
 
 ### System Requirements
@@ -34,20 +39,12 @@ Subspace CLI requires commodity hardware specs to operate. At a **minimum**, you
 * 150 GB Storage
 
 
-### Getting a Crypto Wallet
+### Getting A Crypto Wallet
 
-Before running anything you need to have a wallet where you'll receive testnet coins. There are currently two wallets we suggest using, SubWallet being the preferred route.
+Before running anything you need to have a wallet where you'll receive testnet coins. 
+Follow our how-to guides in the [Wallets section](/docs/category/wallets/) of the documentation for steps on how to get your wallet setup.
 
-- [SubWallet](https://subwallet.app/)
-- [PolkadotJS](https://polkadot.js.org/extension/)
-
-Install one of the two wallets above into your browser and create a new account there.
-The address of your account will be necessary at the last step.
-
-For help refer to our forum post [How to setup Subwallet & a Polkadot.js Wallet](https://forum.subspace.network/t/subspace-wallet/61)
-- *make sure to follow the Bonus section of the bottom of the post above.*
-
-### Downloading the Release Binaries
+## Installation
 
 :::caution ALPHA SOFTWARE
 Subspace CLI is  in **alpha**.
@@ -55,22 +52,112 @@ Please feel free to file bug reports on our GitHub issues.
 Subspace CLI is still in alpha.
 :::
 
+### Download Binaries
+
+---
+
 Compiled versions of the Subspace CLI is [hosted on GitHub](https://github.com/subspace/subspace-cli/releases). This is the recommended way to install the application. Please find the appropriate binary for your operating system.
 
-For example, linux users can run the follow commands:
+<Tabs groupId="OS">
 
-```bash
-wget https://github.com/subspace/subspace-cli/releases/download/v0.1.0-alpha/subspace-cli-ubuntu-x86_64-v0.1.0-alpha
-chmod +x subspace-cli-ubuntu-x86_64-v0.1.0-alpha
+<TabItem value="windows" label="🖼️ Windows" default>
+
+1. Download the Release Binary below.
+    
+<div className={styles.buttons}>
+    <Link
+    className="button button--secondary button"
+    to="https://github.com/subspace/subspace-cli/releases/download/v0.1.0-alpha/subspace-cli-windows-x86_64-v0.1.0-alpha.exe">
+    Windows CLI Executable
+    </Link>
+</div>
+
+2. Open Powershell, type `cd Downloads` (or `cd Your-File-Location`). 
+
+</TabItem>
+
+<TabItem value="macos" label="🍎macOS" default>
+
+1. Download your Release Binary below. 
+
+<div className={styles.buttons}>
+    <Link
+    className="button button--secondary button"
+    to="https://github.com/subspace/subspace-cli/releases/download/v0.1.0-alpha/subspace-cli-macos-x86_64-v0.1.0-alpha.zip">
+    Mac CLI Executable (Intel)
+    </Link>
+</div>
+<div className={styles.buttons}>
+    <Link
+    className="button button--secondary button"
+    to="https://github.com/subspace/subspace-cli/releases/download/v0.1.0-alpha/subspace-cli-macos-aarch64-v0.1.0-alpha.zip">
+    Mac CLI Executable (Apple M1)
+    </Link>
+</div>
+
+2. Extract the `.zip` file.
+3. Open Terminal, type `cd Downloads` (or `cd Your-File-Location`).
+4. Make the binary executable by running `chmod +x subspace-cli-macos-x86_64-v0.1.0-alpha`.
+
+</TabItem>
+<TabItem value="linux" label="🐧Ubuntu">
+
+1. Download your Release Binary below. 
+
+<div className={styles.buttons}>
+    <Link
+    className="button button--secondary button"
+    to="https://github.com/subspace/subspace-cli/releases/download/v0.1.0-alpha/subspace-cli-Ubuntu-x86_64-v0.1.0-alpha">
+    Ubuntu Executable
+    </Link>
+</div>
+<div className={styles.buttons}>
+    <Link
+    className="button button--secondary button"
+    to="https://github.com/subspace/subspace-cli/releases/download/v0.1.0-alpha/subspace-cli-ubuntu-aarch64-v0.1.0-alpha">
+    Linux Arch Executable
+    </Link>
+</div>
+
+2. Open Terminal, type `cd Downloads` (or `cd Your-File-Location`).
+3. Make the binary executable by running `chmod +x subspace-cli-macos-x86_64-v0.1.0-alpha`.
+
+
+</TabItem>
+
+</Tabs>
+
+### Configuration
+
+---
+
+To start we wil have to initialize our Farmer, this can be done with:
+
+<Tabs groupId="OS">
+<TabItem value="windows" label="🖼️" default>
+
+```powershell
+subspace-cli-windows-x86_64-v0.1.0-alpha init
 ```
 
-## Configuration
+</TabItem>
 
-Getting started with Subspace CLI can be done with:
+<TabItem value="macos" label="🍎">
 
 ```bash
-subspace-cli init
+subspace-cli-macos-x86_64-v0.1.0-alpha init
 ```
+
+</TabItem>
+
+<TabItem value="linux" label="🐧">
+
+```bash
+subspace-cli-ubuntu-x86_64-v0.1.0-alpha init
+```
+
+</TabItem>
+</Tabs>
 
 This will prompt you to setup your CLI configurations to begin farming. You should see a similar prompt like so:
 
@@ -92,25 +179,40 @@ Ready for lift off! Run the follow command to begin:
 `./subspace-cli farm`
 ```
 
-
-
-import Tabs from '@theme/Tabs'
-import TabItem from '@theme/TabItem'
-
 :::info Finding your settings.toml
 
 After running `subspace-cli init`, the prompt will display where the `settings.toml` is generated. However in case you missed it, you can find the file based on your operating system:
 
-<Tabs>
-    <TabItem value="linux"><code>$HOME/.config/subspace-cli/settings.toml</code></TabItem>
-    <TabItem value="macos"><code>$HOME/Library/Application Support/subspace-cli/settings.toml</code></TabItem>
-    <TabItem value="windows"><code>$FOLDERID_RoamingAppData/subspace-cli/settings.toml</code></TabItem>
+<Tabs groupId="OS">
+<TabItem value="windows" label="🖼️ Windows" default>
+
+Your `settings.toml` will be found in `$FOLDERID_RoamingAppData/subspace-cli/settings.toml`
+
+</TabItem>
+
+<TabItem value="macos" label="🍎macOS">
+
+Your `settings.toml` will be found in `$HOME/Library/Application Support/subspace-cli/settings.toml`
+
+</TabItem>
+
+<TabItem value="linux" label="🐧Ubuntu">
+
+Your `settings.toml` will be found in `$HOME/.config/subspace-cli/settings.toml`
+
+</TabItem>
 </Tabs>
+
 :::
 
 
 
+
+
+
 ### Gemini 3 Testnet
+
+---
 
 :::tip Use the default generated configuration!
 The default configuration generated by Subspace CLI will have you ready for Gemini 3.
@@ -130,6 +232,8 @@ chain = 'gemini-3a'
 
 ### Local Development
 
+---
+
 To run Subspace CLI in a local development mode, modify your `settings.toml` and ensure your `chain` points to `dev`:
 
 ```toml
@@ -141,13 +245,37 @@ chain = 'dev'
 
 ## Farming
 
+---
+
 To begin farming on the network, just run the `farm` command with the CLI like so:
 
-```bash
-./subspace-cli farm
+<Tabs groupId="OS">
+<TabItem value="windows" label="🖼️ Windows" default>
+
+```powershell
+./subspace-cli-windows-x86_64-v0.1.0-alpha farm
 ```
 
-You should see the farmer ande node start successfully and begin syncing, plotting, and then farming:
+</TabItem>
+
+<TabItem value="macos" label="🍎 macOS">
+
+```bash
+./subspace-cli-macos-x86_64-v0.1.0-alpha farm
+```
+
+</TabItem>
+
+<TabItem value="linux" label="🐧 Ubuntu">
+
+```bash
+./subspace-cli-ubuntu-x86_64-v0.1.0-alpha farm
+```
+
+</TabItem>
+</Tabs>
+
+You should see the farmer and node start successfully and begin syncing, plotting, and then farming:
 
 ```bash
 $ ./subspace-cli-ubuntu-x86_64-v0.1.0-alpha farm
