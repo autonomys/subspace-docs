@@ -1,6 +1,6 @@
 ---
-title: Substrate CLI
-sidebar_position: 2
+title: Substrate CLI (Advanced)
+sidebar_position: 3
 description: How to run a Subspace Network Farmer with the Substrate CLI
 keywords:
     - Farmer
