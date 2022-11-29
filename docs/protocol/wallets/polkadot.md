@@ -8,7 +8,6 @@ keywords:
     - CLI
     - SubWallet
     - Wallet
-draft: true
 ---
 
 :::note
