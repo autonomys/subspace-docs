@@ -142,7 +142,7 @@ subspace-cli-windows-x86_64-v0.1.0-alpha init
 
 </TabItem>
 
-<TabItem value="macos" label="🍎">
+<TabItem value="macos" label="🍎 macOS">
 
 ```bash
 subspace-cli-macos-x86_64-v0.1.0-alpha init
