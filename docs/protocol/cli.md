@@ -67,7 +67,7 @@ Compiled versions of the Subspace CLI is [hosted on GitHub](https://github.com/s
 <div className={styles.buttons}>
     <Link
     className="button button--secondary button"
-    to="https://github.com/subspace/subspace-cli/releases/download/v0.1.0-alpha/subspace-cli-windows-x86_64-v0.1.0-alpha.exe">
+    to="https://github.com/subspace/subspace-cli/releases/download/v0.1.1-alpha/subspace-cli-windows-x86_64-v0.1.1-alpha.exe">
     Windows CLI Executable
     </Link>
 </div>
@@ -83,21 +83,21 @@ Compiled versions of the Subspace CLI is [hosted on GitHub](https://github.com/s
 <div className={styles.buttons}>
     <Link
     className="button button--secondary button"
-    to="https://github.com/subspace/subspace-cli/releases/download/v0.1.0-alpha/subspace-cli-macos-x86_64-v0.1.0-alpha.zip">
+    to="https://github.com/subspace/subspace-cli/releases/download/v0.1.1-alpha/subspace-cli-macos-x86_64-v0.1.1-alpha.zip">
     Mac CLI Executable (Intel)
     </Link>
 </div>
 <div className={styles.buttons}>
     <Link
     className="button button--secondary button"
-    to="https://github.com/subspace/subspace-cli/releases/download/v0.1.0-alpha/subspace-cli-macos-aarch64-v0.1.0-alpha.zip">
+    to="https://github.com/subspace/subspace-cli/releases/download/v0.1.1-alpha/subspace-cli-macos-aarch64-v0.1.1-alpha.zip">
     Mac CLI Executable (Apple M1)
     </Link>
 </div>
 
 2. Extract the `.zip` file.
 3. Open Terminal, type `cd Downloads` (or `cd Your-File-Location`).
-4. Make the binary executable by running `chmod +x subspace-cli-macos-x86_64-v0.1.0-alpha`.
+4. Make the binary executable by running `chmod +x subspace-cli-macos-x86_64-v0.1.1-alpha`.
 
 </TabItem>
 <TabItem value="linux" label="🐧Ubuntu">
@@ -107,20 +107,20 @@ Compiled versions of the Subspace CLI is [hosted on GitHub](https://github.com/s
 <div className={styles.buttons}>
     <Link
     className="button button--secondary button"
-    to="https://github.com/subspace/subspace-cli/releases/download/v0.1.0-alpha/subspace-cli-Ubuntu-x86_64-v0.1.0-alpha">
+    to="https://github.com/subspace/subspace-cli/releases/download/v0.1.1-alpha/subspace-cli-Ubuntu-x86_64-v0.1.1-alpha">
     Ubuntu Executable
     </Link>
 </div>
 <div className={styles.buttons}>
     <Link
     className="button button--secondary button"
-    to="https://github.com/subspace/subspace-cli/releases/download/v0.1.0-alpha/subspace-cli-ubuntu-aarch64-v0.1.0-alpha">
+    to="https://github.com/subspace/subspace-cli/releases/download/v0.1.1-alpha/subspace-cli-ubuntu-aarch64-v0.1.1-alpha">
     Linux Arch Executable
     </Link>
 </div>
 
 2. Open Terminal, type `cd Downloads` (or `cd Your-File-Location`).
-3. Make the binary executable by running `chmod +x subspace-cli-macos-x86_64-v0.1.0-alpha`.
+3. Make the binary executable by running `chmod +x subspace-cli-macos-x86_64-v0.1.1-alpha`.
 
 
 </TabItem>
@@ -137,7 +137,7 @@ To start we will have to initialize our Farmer, this can be done with:
 <TabItem value="windows" label="🖼️ Windows" default>
 
 ```powershell
-subspace-cli-windows-x86_64-v0.1.0-alpha init
+subspace-cli-windows-x86_64-v0.1.1-alpha init
 ```
 
 </TabItem>
@@ -145,7 +145,7 @@ subspace-cli-windows-x86_64-v0.1.0-alpha init
 <TabItem value="macos" label="🍎 macOS">
 
 ```bash
-subspace-cli-macos-x86_64-v0.1.0-alpha init
+subspace-cli-macos-x86_64-v0.1.1-alpha init
 ```
 
 </TabItem>
@@ -153,7 +153,7 @@ subspace-cli-macos-x86_64-v0.1.0-alpha init
 <TabItem value="linux" label="🐧 Ubuntu">
 
 ```bash
-subspace-cli-ubuntu-x86_64-v0.1.0-alpha init
+subspace-cli-ubuntu-x86_64-v0.1.1-alpha init
 ```
 
 </TabItem>
@@ -162,7 +162,7 @@ subspace-cli-ubuntu-x86_64-v0.1.0-alpha init
 This will prompt you to setup your CLI configurations to begin farming. You should see a similar prompt like so:
 
 ```bash
-$ ./subspace-cli-ubuntu-x86_64-v0.1.0-alpha init
+$ ./subspace-cli-ubuntu-x86_64-v0.1.1-alpha init
 
 version: 0.1.0
 
@@ -253,7 +253,7 @@ To begin farming on the network, just run the `farm` command with the CLI like s
 <TabItem value="windows" label="🖼️ Windows" default>
 
 ```powershell
-./subspace-cli-windows-x86_64-v0.1.0-alpha farm
+./subspace-cli-windows-x86_64-v0.1.1-alpha farm
 ```
 
 </TabItem>
@@ -261,7 +261,7 @@ To begin farming on the network, just run the `farm` command with the CLI like s
 <TabItem value="macos" label="🍎 macOS">
 
 ```bash
-./subspace-cli-macos-x86_64-v0.1.0-alpha farm
+./subspace-cli-macos-x86_64-v0.1.1-alpha farm
 ```
 
 </TabItem>
@@ -269,7 +269,7 @@ To begin farming on the network, just run the `farm` command with the CLI like s
 <TabItem value="linux" label="🐧 Ubuntu">
 
 ```bash
-./subspace-cli-ubuntu-x86_64-v0.1.0-alpha farm
+./subspace-cli-ubuntu-x86_64-v0.1.1-alpha farm
 ```
 
 </TabItem>
@@ -278,7 +278,7 @@ To begin farming on the network, just run the `farm` command with the CLI like s
 You should see the farmer and node start successfully and begin syncing, plotting, and then farming:
 
 ```bash
-$ ./subspace-cli-ubuntu-x86_64-v0.1.0-alpha farm
+$ ./subspace-cli-ubuntu-x86_64-v0.1.1-alpha farm
 Starting node ... (this might take up to couple of minutes)
 Node started successfully!
 Starting farmer ...
