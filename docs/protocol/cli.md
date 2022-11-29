@@ -131,7 +131,7 @@ Compiled versions of the Subspace CLI is [hosted on GitHub](https://github.com/s
 
 ---
 
-To start we wil have to initialize our Farmer, this can be done with:
+To start we will have to initialize our Farmer, this can be done with:
 
 <Tabs groupId="OS">
 <TabItem value="windows" label="🖼️" default>
