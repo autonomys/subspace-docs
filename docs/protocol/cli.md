@@ -150,7 +150,7 @@ subspace-cli-macos-x86_64-v0.1.0-alpha init
 
 </TabItem>
 
-<TabItem value="linux" label="🐧">
+<TabItem value="linux" label="🐧 Ubuntu">
 
 ```bash
 subspace-cli-ubuntu-x86_64-v0.1.0-alpha init
