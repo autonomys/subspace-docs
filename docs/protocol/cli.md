@@ -1,6 +1,6 @@
 ---
 title: Subspace CLI (Recommended)
-sidebar_position: 1
+sidebar_position: 2
 description: Farming on the Subspace Network
 keywords:
     - Farmer
