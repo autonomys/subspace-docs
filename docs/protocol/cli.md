@@ -134,7 +134,7 @@ Compiled versions of the Subspace CLI is [hosted on GitHub](https://github.com/s
 To start we will have to initialize our Farmer, this can be done with:
 
 <Tabs groupId="OS">
-<TabItem value="windows" label="🖼️" default>
+<TabItem value="windows" label="🖼️ Windows" default>
 
 ```powershell
 subspace-cli-windows-x86_64-v0.1.0-alpha init
