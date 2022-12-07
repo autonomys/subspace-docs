@@ -17,7 +17,7 @@ import styles from '@site/src/pages/index.module.css';
 
 
 :::tip Recommended
-[Subspace CLI](https://github.com/subspace/subspace-cli) is the recommended way to farm on the Subspace Network. Follow the guide below to get started or check out the project [README on GitHub](https://github.com/subspace/subspace-cli/blobl/main/README.md).
+[Subspace CLI](https://github.com/subspace/subspace-cli) is the recommended way to farm on the Subspace Network. To get started, follow the guide below. For more information, you can check out the project [README on GitHub](https://github.com/subspace/subspace-cli/blob/main/README.md).
 :::
 
 ## Pre-Requisites
