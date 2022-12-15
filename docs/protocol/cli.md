@@ -64,13 +64,10 @@ Compiled versions of the Subspace CLI is [hosted on GitHub](https://github.com/s
 
 1. Download the Release Binary below.
     
-<div className={styles.buttons}>
-    <Link
-    className="button button--secondary button"
-    to="https://github.com/subspace/subspace-cli/releases/download/v0.1.2-alpha/subspace-cli-windows-x86_64-v0.1.2-alpha.exe">
-    Windows CLI Executable
-    </Link>
-</div>
+    [Windows CLI Executable](https://github.com/subspace/subspace-cli/releases/download/v0.1.2-alpha/subspace-cli-windows-x86_64-v0.1.2-alpha.exe)
+    
+    
+    
 
 2. Open Powershell, type `cd Downloads` (or `cd Your-File-Location`). 
 
