@@ -1,0 +1,69 @@
+version: "3.7"
+services:
+  node:
+    # Replace `snapshot-DATE` with latest release (like `snapshot-2022-apr-29`)
+    # For running on Aarch64 add `-aarch64` after `DATE`
+    image: ghcr.io/subspace/node:snapshot-DATE
+    volumes:
+# Instead of specifying volume (which will store data in `/var/lib/docker`), you can
+# alternatively specify path to the directory where files will be stored, just make
+# sure everyone is allowed to write there
+      - node-data:/var/subspace:rw
+#      - /path/to/subspace-node:/var/subspace:rw
+    ports:
+# If port 30333 is already occupied by another Substrate-based node, replace all
+# occurrences of `30333` in this file with another value
+      - "0.0.0.0:30333:30333"
+    restart: unless-stopped
+    command: [
+      "--chain", "gemini-2a",
+      "--base-path", "/var/subspace",
+      "--execution", "wasm",
+      "--state-pruning", "archive",
+      "--port", "30333",
+      "--rpc-cors", "all",
+      "--rpc-methods", "safe",
+      "--unsafe-ws-external",
+      "--validator",
+# Replace `INSERT_YOUR_ID` with your node ID (will be shown in telemetry)
+      "--name", "INSERT_YOUR_ID"
+    ]
+    healthcheck:
+      timeout: 5s
+# If node setup takes longer then expected, you want to increase `interval` and `retries` number.
+      interval: 30s
+      retries: 5
+
+  farmer:
+    depends_on:
+      node:
+        condition: service_healthy
+    # Replace `snapshot-DATE` with latest release (like `snapshot-2022-apr-29`)
+    # For running on Aarch64 add `-aarch64` after `DATE`
+    image: ghcr.io/subspace/farmer:snapshot-DATE
+    volumes:
+# Instead of specifying volume (which will store data in `/var/lib/docker`), you can
+# alternatively specify path to the directory where files will be stored, just make
+# sure everyone is allowed to write there
+      - farmer-data:/var/subspace:rw
+#      - /path/to/subspace-farmer:/var/subspace:rw
+    ports:
+# Un-comment following line to unlock farmer's RPC
+#      - "127.0.0.1:9955:9955"
+# If port 40333 is already occupied by something else, replace all
+# occurrences of `40333` in this file with another value
+      - "0.0.0.0:40333:40333"
+    restart: unless-stopped
+    command: [
+      "--base-path", "/var/subspace",
+      "farm",
+      "--node-rpc-url", "ws://node:9944",
+      "--ws-server-listen-addr", "0.0.0.0:9955",
+      "--listen-on", "/ip4/0.0.0.0/tcp/40333",
+# Replace `WALLET_ADDRESS` with your Polkadot.js wallet address
+      "--reward-address", "WALLET_ADDRESS",
+      "--plot-size", "100G"
+    ]
+volumes:
+  node-data:
+  farmer-data:
