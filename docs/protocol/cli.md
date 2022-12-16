@@ -3,11 +3,11 @@ title: Subspace CLI (Recommended)
 sidebar_position: 2
 description: Farming on the Subspace Network
 keywords:
-    - Farmer
-    - Farming
-    - CLI
-    - Binaries
-    - GitHub
+  - Farmer
+  - Farming
+  - CLI
+  - Binaries
+  - GitHub
 ---
 
 import Tabs from '@theme/Tabs';
@@ -15,12 +15,12 @@ import TabItem from '@theme/TabItem';
 import Link from '@docusaurus/Link';
 import styles from '@site/src/pages/index.module.css';
 
-
 :::tip Recommended
 [Subspace CLI](https://github.com/subspace/subspace-cli) is the recommended way to farm on the Subspace Network. To get started, follow the guide below. For more information, you can check out the project [README on GitHub](https://github.com/subspace/subspace-cli/blob/main/README.md).
 :::
 
 ## Pre-Requisites
+
 ---
 
 ### System Requirements
@@ -38,28 +38,29 @@ It is advised not to use the Subspace farmer and node on CoW file systems for an
 If BTRFS is used with Subspace, the directory/whole file system must be CoW disabled with the following command prior to starting Subspace.
 
 **Command to Cow Disable**
+
 ```
 sudo chattr +C path/to/data
 ```
+
 Alternatively, non-CoW file systems like ext4 or xfs can be used instead.
 :::
 
 Subspace CLI requires commodity hardware specs to operate. At a **minimum**, you should have:
 
-* CPU with greater than 2 cores
-* 4 GB RAM (8 GB is **recommended**)
-* 150 GB Storage
-
+- CPU with greater than 2 cores
+- 4 GB RAM (8 GB is **recommended**)
+- 150 GB Storage
 
 ### Getting A Crypto Wallet
 
-Before running anything you need to have a wallet where you'll receive testnet coins. 
+Before running anything you need to have a wallet where you'll receive testnet coins.
 Follow our how-to guides in the [Wallets section](/docs/category/wallets/) of the documentation for steps on how to get your wallet setup.
 
 ## Installation
 
 :::caution ALPHA SOFTWARE
-Subspace CLI is  in **alpha**.
+Subspace CLI is in **alpha**.
 Please feel free to file bug reports on our GitHub issues.
 Subspace CLI is still in alpha.
 :::
@@ -75,61 +76,60 @@ Compiled versions of the Subspace CLI is [hosted on GitHub](https://github.com/s
 <TabItem value="windows" label="🖼️ Windows" default>
 
 1. Download the Release Binary below.
-    
+
 <div className={styles.buttons}>
     <Link
     className="button button--secondary button"
-    to="https://github.com/subspace/subspace-cli/releases/download/v0.1.2-alpha/subspace-cli-windows-x86_64-v0.1.2-alpha.exe">
+    to="https://github.com/subspace/subspace-cli/releases/download/v0.1.3-alpha/subspace-cli-windows-x86_64-v0.1.3-alpha.exe">
     Windows CLI Executable
     </Link>
 </div>
 
-2. Open Powershell, type `cd Downloads` (or `cd Your-File-Location`). 
+2. Open Powershell, type `cd Downloads` (or `cd Your-File-Location`).
 
 </TabItem>
 
 <TabItem value="macos" label="🍎macOS" default>
 
-1. Download your Release Binary below. 
+1. Download your Release Binary below.
 
 <div className={styles.buttons}>
     <Link
         className="button button--secondary button"
-        to="https://github.com/subspace/subspace-cli/releases/download/v0.1.2-alpha/subspace-cli-macos-x86_64-v0.1.2-alpha.zip">
+        to="https://github.com/subspace/subspace-cli/releases/download/v0.1.3-alpha/subspace-cli-macos-x86_64-v0.1.3-alpha.zip">
         Mac CLI Executable (Intel)
     </Link>
     <Link
         className="button button--secondary button"
-        to="https://github.com/subspace/subspace-cli/releases/download/v0.1.2-alpha/subspace-cli-macos-aarch64-v0.1.2-alpha.zip">
+        to="https://github.com/subspace/subspace-cli/releases/download/v0.1.3-alpha/subspace-cli-macos-aarch64-v0.1.3-alpha.zip">
         Mac CLI Executable (Apple M1)
     </Link>
 </div>
 
 2. Extract the `.zip` file.
 3. Open Terminal, type `cd Downloads` (or `cd Your-File-Location`).
-4. Make the binary executable by running `chmod +x subspace-cli-macos-x86_64-v0.1.2-alpha`.
+4. Make the binary executable by running `chmod +x subspace-cli-macos-x86_64-v0.1.3-alpha`.
 
 </TabItem>
 <TabItem value="linux" label="🐧Ubuntu">
 
-1. Download your Release Binary below. 
+1. Download your Release Binary below.
 
 <div className={styles.buttons}>
     <Link
         className="button button--secondary button"
-        to="https://github.com/subspace/subspace-cli/releases/download/v0.1.2-alpha/subspace-cli-Ubuntu-x86_64-v0.1.2-alpha">
+        to="https://github.com/subspace/subspace-cli/releases/download/v0.1.3-alpha/subspace-cli-Ubuntu-x86_64-v0.1.3-alpha">
         Ubuntu Executable
     </Link>
     <Link
         className="button button--secondary button"
-        to="https://github.com/subspace/subspace-cli/releases/download/v0.1.2-alpha/subspace-cli-ubuntu-aarch64-v0.1.2-alpha">
+        to="https://github.com/subspace/subspace-cli/releases/download/v0.1.3-alpha/subspace-cli-ubuntu-aarch64-v0.1.3-alpha">
         Linux Arch Executable
     </Link>
 </div>
 
 2. Open Terminal, type `cd Downloads` (or `cd Your-File-Location`).
-3. Make the binary executable by running `chmod +x subspace-cli-macos-x86_64-v0.1.2-alpha`.
-
+3. Make the binary executable by running `chmod +x subspace-cli-macos-x86_64-v0.1.3-alpha`.
 
 </TabItem>
 
@@ -145,7 +145,7 @@ To start we will have to initialize our Farmer, this can be done with:
 <TabItem value="windows" label="🖼️ Windows" default>
 
 ```powershell
-subspace-cli-windows-x86_64-v0.1.2-alpha init
+subspace-cli-windows-x86_64-v0.1.3-alpha init
 ```
 
 </TabItem>
@@ -153,7 +153,7 @@ subspace-cli-windows-x86_64-v0.1.2-alpha init
 <TabItem value="macos" label="🍎 macOS">
 
 ```bash
-subspace-cli-macos-x86_64-v0.1.2-alpha init
+subspace-cli-macos-x86_64-v0.1.3-alpha init
 ```
 
 </TabItem>
@@ -161,7 +161,7 @@ subspace-cli-macos-x86_64-v0.1.2-alpha init
 <TabItem value="linux" label="🐧 Ubuntu">
 
 ```bash
-subspace-cli-ubuntu-x86_64-v0.1.2-alpha init
+subspace-cli-ubuntu-x86_64-v0.1.3-alpha init
 ```
 
 </TabItem>
@@ -170,7 +170,7 @@ subspace-cli-ubuntu-x86_64-v0.1.2-alpha init
 This will prompt you to setup your CLI configurations to begin farming. You should see a similar prompt like so:
 
 ```bash
-$ ./subspace-cli-ubuntu-x86_64-v0.1.2-alpha init
+$ ./subspace-cli-ubuntu-x86_64-v0.1.3-alpha init
 
 version: 0.1.0
 
@@ -213,11 +213,6 @@ Your `settings.toml` will be found in `$HOME/.config/subspace-cli/settings.toml`
 
 :::
 
-
-
-
-
-
 ### Gemini 3 Testnet
 
 ---
@@ -230,12 +225,11 @@ If you are using the default configurations from Subspace CLI, you are ready to 
 
 Open your `settings.toml` directory and ensure your `chain` is correctly specified to `gemini-3a` as so:
 
-
 ```toml
 # settings.toml
 [node]
 chain = 'gemini-3a'
-# ... redacted ... 
+# ... redacted ...
 ```
 
 ### Local Development
@@ -248,7 +242,7 @@ To run Subspace CLI in a local development mode, modify your `settings.toml` and
 # settings.toml
 [node]
 chain = 'dev'
-# ... redacted ... 
+# ... redacted ...
 ```
 
 ## Farming
@@ -261,7 +255,7 @@ To begin farming on the network, just run the `farm` command with the CLI like s
 <TabItem value="windows" label="🖼️ Windows" default>
 
 ```powershell
-./subspace-cli-windows-x86_64-v0.1.2-alpha farm
+./subspace-cli-windows-x86_64-v0.1.3-alpha farm
 ```
 
 </TabItem>
@@ -269,7 +263,7 @@ To begin farming on the network, just run the `farm` command with the CLI like s
 <TabItem value="macos" label="🍎 macOS">
 
 ```bash
-./subspace-cli-macos-x86_64-v0.1.2-alpha farm
+./subspace-cli-macos-x86_64-v0.1.3-alpha farm
 ```
 
 </TabItem>
@@ -277,7 +271,7 @@ To begin farming on the network, just run the `farm` command with the CLI like s
 <TabItem value="linux" label="🐧 Ubuntu">
 
 ```bash
-./subspace-cli-ubuntu-x86_64-v0.1.2-alpha farm
+./subspace-cli-ubuntu-x86_64-v0.1.3-alpha farm
 ```
 
 </TabItem>
@@ -286,14 +280,14 @@ To begin farming on the network, just run the `farm` command with the CLI like s
 You should see the farmer and node start successfully and begin syncing, plotting, and then farming:
 
 ```bash
-$ ./subspace-cli-ubuntu-x86_64-v0.1.2-alpha farm
+$ ./subspace-cli-ubuntu-x86_64-v0.1.3-alpha farm
 Starting node ... (this might take up to couple of minutes)
 Node started successfully!
 Starting farmer ...
 Farmer started successfully!
 Initial plotting for plot: #0 (/home/username/.local/share/subspace-cli/plots)
 ⠁ [00:00:00] 3% [=>                                      ]
-      (31.00 MiB/953.67 MiB) 157.35 GiB/s, plotting, ETA: 0s 
+      (31.00 MiB/953.67 MiB) 157.35 GiB/s, plotting, ETA: 0s
 ```
 
 That's it! Enjoy and Happy Farming!
