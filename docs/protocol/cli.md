@@ -80,7 +80,7 @@ Compiled versions of the Subspace CLI is [hosted on GitHub](https://github.com/s
 <div className={styles.buttons}>
     <Link
     className="button button--secondary button"
-    to="https://github.com/subspace/subspace-cli/releases/download/v0.1.2-alpha/subspace-cli-windows-x86_64-v0.1.2-alpha.exe">
+    to="https://github.com/subspace/subspace-cli/releases/download/v0.1.3-alpha/subspace-cli-windows-x86_64-v0.1.3-alpha.exe">
     Windows CLI Executable
     </Link>
 </div>
@@ -96,12 +96,12 @@ Compiled versions of the Subspace CLI is [hosted on GitHub](https://github.com/s
 <div className={styles.buttons}>
     <Link
         className="button button--secondary button"
-        to="https://github.com/subspace/subspace-cli/releases/download/v0.1.2-alpha/subspace-cli-macos-x86_64-v0.1.2-alpha.zip">
+        to="https://github.com/subspace/subspace-cli/releases/download/v0.1.3-alpha/subspace-cli-macos-x86_64-v0.1.3-alpha.zip">
         Mac CLI Executable (Intel)
     </Link>
     <Link
         className="button button--secondary button"
-        to="https://github.com/subspace/subspace-cli/releases/download/v0.1.2-alpha/subspace-cli-macos-aarch64-v0.1.2-alpha.zip">
+        to="https://github.com/subspace/subspace-cli/releases/download/v0.1.3-alpha/subspace-cli-macos-aarch64-v0.1.3-alpha.zip">
         Mac CLI Executable (Apple M1)
     </Link>
 </div>
@@ -118,12 +118,12 @@ Compiled versions of the Subspace CLI is [hosted on GitHub](https://github.com/s
 <div className={styles.buttons}>
     <Link
         className="button button--secondary button"
-        to="https://github.com/subspace/subspace-cli/releases/download/v0.1.2-alpha/subspace-cli-Ubuntu-x86_64-v0.1.2-alpha">
+        to="https://github.com/subspace/subspace-cli/releases/download/v0.1.3-alpha/subspace-cli-Ubuntu-x86_64-v0.1.3-alpha">
         Ubuntu Executable
     </Link>
     <Link
         className="button button--secondary button"
-        to="https://github.com/subspace/subspace-cli/releases/download/v0.1.2-alpha/subspace-cli-ubuntu-aarch64-v0.1.2-alpha">
+        to="https://github.com/subspace/subspace-cli/releases/download/v0.1.3-alpha/subspace-cli-ubuntu-aarch64-v0.1.3-alpha">
         Linux Arch Executable
     </Link>
 </div>
