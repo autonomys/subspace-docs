@@ -32,6 +32,18 @@ Make sure you have a stable network connection. During the plotting phase of far
 This may impact your network usage so please check your network connection if you have a hard data limit.
 :::
 
+:::note CoW File Systems Warning
+It is advised not to use the Subspace farmer and node on CoW file systems for any OS.
+
+If BTRFS is used with Subspace, the directory/whole file system must be CoW disabled with the following command prior to starting Subspace.
+
+**Command to Cow Disable**
+```
+sudo chattr +C path/to/data
+```
+Alternatively, non-CoW file systems like ext4 or xfs can be used instead.
+:::
+
 Subspace CLI requires commodity hardware specs to operate. At a **minimum**, you should have:
 
 * CPU with greater than 2 cores
