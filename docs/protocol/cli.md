@@ -271,7 +271,7 @@ To begin farming on the network, just run the `farm` command with the CLI like s
 <TabItem value="windows" label="🖼️ Windows" default>
 
 ```powershell
-./subspace-cli-windows-x86_64-v0.1.3-alpha farm
+./subspace-cli-windows-x86_64-v0.1.3-alpha.exe farm
 ```
 
 </TabItem>
