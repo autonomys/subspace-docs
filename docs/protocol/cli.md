@@ -108,7 +108,9 @@ Compiled versions of the Subspace CLI is [hosted on GitHub](https://github.com/s
 
 2. Extract the `.zip` file.
 3. Open Terminal, type `cd Downloads` (or `cd Your-File-Location`).
-4. Make the binary executable by running `chmod +x subspace-cli-macos-x86_64-v0.1.3-alpha`.
+4. Make the binary executable by running:
+    * `chmod +x subspace-cli-macos-x86_64-v0.1.3-alpha` (Intel Chip) 
+    * `chmod +x subspace-cli-macos-aarch64-v0.1.3-alpha` (Apple M1 Chip)
 
 </TabItem>
 <TabItem value="linux" label="🐧Ubuntu">
@@ -129,7 +131,9 @@ Compiled versions of the Subspace CLI is [hosted on GitHub](https://github.com/s
 </div>
 
 2. Open Terminal, type `cd Downloads` (or `cd Your-File-Location`).
-3. Make the binary executable by running `chmod +x subspace-cli-macos-x86_64-v0.1.3-alpha`.
+3. Make the binary executable by running:
+    * `chmod +x    subspace-cli-ubuntu-x86_64-v0.1.3-alpha` (Ubuntu) 
+    * `chmod +x subspace-cli-ubuntu-aarch64-v0.1.3-alpha` (Linux Arch)
 
 </TabItem>
 
@@ -145,23 +149,35 @@ To start we will have to initialize our Farmer, this can be done with:
 <TabItem value="windows" label="🖼️ Windows" default>
 
 ```powershell
-subspace-cli-windows-x86_64-v0.1.3-alpha init
+subspace-cli-windows-x86_64-v0.1.3-alpha.exe init
 ```
 
 </TabItem>
 
 <TabItem value="macos" label="🍎 macOS">
+Intel Chip:
 
 ```bash
 subspace-cli-macos-x86_64-v0.1.3-alpha init
+```
+Apple M1 Chip:
+
+```bash
+subspace-cli-macos-aarch64-v0.1.3-alpha init
 ```
 
 </TabItem>
 
 <TabItem value="linux" label="🐧 Ubuntu">
+Ubuntu:
 
 ```bash
 subspace-cli-ubuntu-x86_64-v0.1.3-alpha init
+```
+Linux Arch:
+
+```bash
+subspace-cli-ubuntu-aarch64-v0.1.3-alpha init
 ```
 
 </TabItem>
@@ -262,16 +278,30 @@ To begin farming on the network, just run the `farm` command with the CLI like s
 
 <TabItem value="macos" label="🍎 macOS">
 
+Intel Chip:
+
 ```bash
-./subspace-cli-macos-x86_64-v0.1.3-alpha farm
+subspace-cli-macos-x86_64-v0.1.3-alpha farm
+```
+Apple M1 Chip:
+
+```bash
+subspace-cli-macos-aarch64-v0.1.3-alpha farm
 ```
 
 </TabItem>
 
 <TabItem value="linux" label="🐧 Ubuntu">
 
+Ubuntu:
+
 ```bash
-./subspace-cli-ubuntu-x86_64-v0.1.3-alpha farm
+subspace-cli-ubuntu-x86_64-v0.1.3-alpha farm
+```
+Linux Arch:
+
+```bash
+subspace-cli-ubuntu-aarch64-v0.1.3-alpha farm
 ```
 
 </TabItem>
