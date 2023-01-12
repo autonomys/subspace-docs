@@ -321,3 +321,54 @@ Initial plotting for plot: #0 (/home/username/.local/share/subspace-cli/plots)
 ```
 
 That's it! Enjoy and Happy Farming!
+
+#### Moving the Farming Process to the Background
+
+<Tabs groupId="OS">
+<TabItem value="tmux" label="tmux" default>
+
+* Create a new tmux session using a socket file named farming
+
+```bash
+$ tmux -S farming
+```
+
+
+* Move process to background by detaching
+```bash
+Ctrl+b d OR ⌘+b d (Mac)
+```
+
+* To re-attach
+```bash
+$ tmux -S farming attach 
+```
+
+* To delete farming session
+```bash
+$ tmux kill-session -t farming
+```
+
+</TabItem>
+<TabItem value="screen" label="screen">
+
+* Create new screen using a socket file named farming
+```bash
+$ screen -S farming 
+```
+
+* Move process to background by detaching
+```bash
+Ctrl+d a OR ⌘+d a (Mac)
+```
+
+* To re-attach
+```bash
+$ screen -r farming 
+```
+* To delete farming session
+```bash
+$ screen -S farming -X quit
+```
+</TabItem>
+</Tabs>
