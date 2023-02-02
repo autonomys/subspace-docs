@@ -69,7 +69,7 @@ Currently, TCP port `30333` needs to be exposed for node to work properly.
 
 If you have a server with no firewall, there is nothing to be done, but otherwise make sure to open TCP port `30333` for incoming connections.
 
-On the desktop side if you have a router in front of your computer, you'll need to forward TCP port `30333` to the machine on which your node is running (how this is done varied from router to router, but there is always a feature like this, refer to [How to Forward Ports](port-forwarding.md) for a more in-depth tutorial).
+On the desktop side if you have a router in front of your computer, you'll need to forward TCP port `30333` to the machine on which your node is running (how this is done varies from router to router, but there is always a feature like this, refer to [How to Forward Ports](port-forwarding.md) for a more in-depth tutorial).
 If you're connected directly without any router, then again nothing needs to be done in such case.
 
 
@@ -140,7 +140,7 @@ We will be downloading two files for your respective operating system.
       ]
       healthcheck:
         timeout: 5s
-  # If node setup takes longer then expected, you want to increase `interval` and `retries` number.
+  # If node setup takes longer than expected, you want to increase `interval` and `retries` number.
         interval: 30s
         retries: 5
 
@@ -221,7 +221,7 @@ We will be downloading two files for your respective operating system.
 
 :::
 
-  1. Open `Powershell` (we do not recommend using Command Prompt as it's syntax is slightly different)
+  1. Open `Powershell` (we do not recommend using Command Prompt as its syntax is slightly different)
   2. In the terminal we will change to the Downloads directory using this command `cd Downloads`
   3. We will then start the node using the following command
   > You may get a popup asking for firewall permission, make sure to click `Allow`
@@ -521,7 +521,7 @@ We will be downloading two files for your respective operating system.
 
 ---
 
-Now that your Node & Farmer have been started you will wait for the node to sync and the farmer to complete the initial plotting. While this is occuring you can check out some of the helpful resources below.
+Now that your Node & Farmer have been started you will wait for the node to sync and the farmer to complete the initial plotting. While this is occurring you can check out some of the helpful resources below.
 
 **- [Telemetry Server](https://telemetry.subspace.network/#/0x9ee86eefc3cc61c71a7751bba7f25e442da2512f408e6286153b3ccc055dccf0)**
 
