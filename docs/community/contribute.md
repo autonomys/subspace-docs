@@ -19,16 +19,16 @@ First off, thank you for considering contributing to the Subspace Network. It's 
 
 ### Help us, Help you, Help us!
 
-Following these guidelines shows that you respect the time of the developers who manage and develope this open source project. In return, they should reciprocate that respect in addressing your issue, assessing changes, and helping you finalize your pull requests.
+Following these guidelines shows that you respect the time of the developers who manage and develop this open source project. In return, they should reciprocate that respect by addressing your issue, assessing changes, and helping you finalize your pull requests.
 
 
 ### What Can I Contribute?
 
-We are a fully Open Source project, meaning we are open to all kinds of contributions from our community. Here are a few example of contributions that we are open to in this repo:
+We are a fully Open Source project, meaning we are open to all kinds of contributions from our community. Here are a few examples of contributions that we are open to in this repo:
 
 - **Added Content:** Writing a nice guide? Submit it (Where?) so we can add it to our Docs. 
 - **Translation:** Adding Translations of our prior content? See the [translate](TRANSLATE) page for help.
-- **Bug Reports & Fixes:** Find a bug or error? Let us know where its hiding. (Where?)
+- **Bug Reports & Fixes:** Find a bug or error? Let us know where it's hiding. (Where?)
 - **Feature Requests & Implementations:** Looking for a new feature? Share your ideas so we can improve.
 
 *If you have something that is not listed, try to be as descriptive as possible and feel free to submit the PR.*
