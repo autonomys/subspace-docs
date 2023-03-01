@@ -197,7 +197,7 @@ Enter your farmer/reward address: REDACTED_ADDRESS
 Enter your node name to be identified on the network(defaults to `username`, press enter to use the default):
 Specify a plot location (press enter to use the default: `"/home/username/.local/share/subspace-cli/plots"`):
 Specify a plot size (defaults to `1000.0 MB`, press enter to use the default):
-Specify the chain to farm(defaults to `gemini-3a`, press enter to use the default):
+Specify the chain to farm(defaults to `gemini-3c`, press enter to use the default):
 Configuration has been generated at /home/username/.config/subspace-cli
 Ready for lift off! Run the follow command to begin:
 `./subspace-cli farm`
