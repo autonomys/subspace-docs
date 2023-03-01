@@ -83,7 +83,7 @@ If you face any trouble or would like to learn about other features for SubWalle
 
 1. Go to the Subspace/Polkadot Explorer here: [Polkadot/Substrate Portal](https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Ftest-rpc.subspace.network#/explorer)
 
-2. You will be prompted to allow the extension to connect, select which accout you want to connect and click `Connect`
+2. You will be prompted to allow the extension to connect, select which account you want to connect and click `Connect`
 
     ![trouble-4](/img/doc-imgs/subwallet/trouble-2.png)
 

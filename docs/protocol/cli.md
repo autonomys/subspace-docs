@@ -201,7 +201,7 @@ Specify a plot location (press enter to use the default: `"/home/username/.local
 Specify a plot size (defaults to `100.0 GB`, press enter to use the default):
 Specify the chain to farm(defaults to `dev`, press enter to use the default):
 Configuration has been generated at /home/username/.config/subspace-cli
-Ready for lift off! Run the follow command to begin:
+Ready for lift-off! Run the following command to begin:
 `./subspace-cli farm`
 ```
 
