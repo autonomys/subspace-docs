@@ -45,9 +45,10 @@ Alternatively, non-CoW file systems like ext4 or xfs can be used instead.
 
 |Hardware|Specs|
 |-|-|
-|CPU|2 Core+|
+|CPU|4 Core+|
 |RAM|4GB+ (Rec. 8GB)|
-|Storage|150GB|
+|SWAP|4GB|
+|Storage|50GB|
 
 
 ### B. Crypto Wallet
