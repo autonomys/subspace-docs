@@ -66,11 +66,15 @@ For help refer to our forum post [How to setup Subwallet & a Polkadot.js Wallet]
 
 ### D. Required ports
 
-Currently, TCP port `30333` needs to be exposed for node to work properly.
+Currently, a few ports need to be exposed for node to work properly.
 
-If you have a server with no firewall, there is nothing to be done, but otherwise make sure to open TCP port `30333` for incoming connections.
+If you have a server with no firewall, there is nothing to be done, but otherwise make sure to open the following TCP ports for incoming connections.
 
-On the desktop side if you have a router in front of your computer, you'll need to forward TCP port `30333` to the machine on which your node is running (how this is done varies from router to router, but there is always a feature like this, refer to [How to Forward Ports](port-forwarding.md) for a more in-depth tutorial).
+- `30333`
+- `30433`
+- `30533`
+
+On the desktop side if you have a router in front of your computer, you'll need to forward TCP ports to the machine on which your node is running (how this is done varies from router to router, but there is always a feature like this, refer to [How to Forward Ports](port-forwarding.md) for a more in-depth tutorial).
 If you're connected directly without any router, then again nothing needs to be done in such case.
 
 
