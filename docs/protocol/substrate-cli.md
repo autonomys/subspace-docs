@@ -1,5 +1,5 @@
 ---
-title: Substrate CLI (Advanced)
+title: Advanced CLI
 sidebar_position: 3
 description: How to run a Subspace Network Farmer with the Substrate CLI
 keywords:
@@ -48,7 +48,7 @@ Alternatively, non-CoW file systems like ext4 or xfs can be used instead.
 |CPU|4 Core+|
 |RAM|4GB+ (Rec. 8GB)|
 |SWAP|4GB|
-|Storage|50GB|
+|Storage|50GB SSD|
 
 
 ### B. Crypto Wallet
