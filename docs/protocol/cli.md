@@ -1,5 +1,5 @@
 ---
-title: Subspace CLI (Recommended)
+title: Simple CLI (Recommended)
 sidebar_position: 2
 description: Farming on the Subspace Network
 keywords:
@@ -39,7 +39,7 @@ Subspace CLI requires commodity hardware specs to operate. At a **minimum**, it 
 |CPU|4 Core+|
 |RAM|4GB+ (Rec. 8GB)|
 |SWAP|4GB|
-|Storage|50GB|
+|Storage|50GB SSD|
 
 :::note CoW File Systems Warning
 It is advised not to use the Subspace farmer and node on CoW file systems for any OS.
@@ -202,8 +202,6 @@ subspace-cli-ubuntu-aarch64-v0.1.8-alpha init
 This will prompt you to setup your CLI configurations to begin farming. You should see a similar prompt like so:
 
 ```bash
-$ ./subspace-cli-ubuntu-x86_64-v0.1.8-alpha init
-
 version: 0.1.0
 
 SUBSPACE NETWORK
@@ -326,7 +324,6 @@ subspace-cli-ubuntu-aarch64-v0.1.8-alpha farm
 You should see the farmer and node start successfully and begin syncing, plotting, and then farming:
 
 ```bash
-$ ./subspace-cli-ubuntu-x86_64-v0.1.8-alpha farm
 Starting node ... (this might take up to couple of minutes)
 Node started successfully!
 Starting farmer ...
