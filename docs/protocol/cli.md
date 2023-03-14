@@ -128,6 +128,10 @@ Compiled versions of the Subspace CLI is [hosted on GitHub](https://github.com/s
     * `chmod +x subspace-cli-macos-x86_64-v0.1.8-alpha` (Intel Chip) 
     * `chmod +x subspace-cli-macos-aarch64-v0.1.8-alpha` (Apple M1 Chip)
 
+:::warning
+Your Mac may not let you open/initialize the file because of unidentified developer restrictions. To resolve this, go to Settings-> Security&Privacy -> General -> Allow 
+:::
+
 </TabItem>
 <TabItem value="linux" label="🐧Ubuntu">
 
@@ -174,12 +178,12 @@ To start we have to initialize our Farmer, this can be done with:
 Intel Chip:
 
 ```bash
-subspace-cli-macos-x86_64-v0.1.8-alpha init
+./subspace-cli-macos-x86_64-v0.1.8-alpha init
 ```
 Apple M1 Chip:
 
 ```bash
-subspace-cli-macos-aarch64-v0.1.8-alpha init
+./subspace-cli-macos-aarch64-v0.1.8-alpha init
 ```
 
 </TabItem>
@@ -188,12 +192,12 @@ subspace-cli-macos-aarch64-v0.1.8-alpha init
 Ubuntu:
 
 ```bash
-subspace-cli-ubuntu-x86_64-v0.1.8-alpha init
+./subspace-cli-ubuntu-x86_64-v0.1.8-alpha init
 ```
 Linux Arch:
 
 ```bash
-subspace-cli-ubuntu-aarch64-v0.1.8-alpha init
+./subspace-cli-ubuntu-aarch64-v0.1.8-alpha init
 ```
 
 </TabItem>
@@ -291,12 +295,12 @@ To begin farming on the network, just run the `farm` command with the CLI like s
 Intel Chip:
 
 ```bash
-subspace-cli-macos-x86_64-v0.1.8-alpha farm
+./subspace-cli-macos-x86_64-v0.1.8-alpha farm
 ```
 Apple M1 Chip:
 
 ```bash
-subspace-cli-macos-aarch64-v0.1.8-alpha farm
+./subspace-cli-macos-aarch64-v0.1.8-alpha farm
 ```
 
 </TabItem>
@@ -306,12 +310,12 @@ subspace-cli-macos-aarch64-v0.1.8-alpha farm
 Ubuntu:
 
 ```bash
-subspace-cli-ubuntu-x86_64-v0.1.8-alpha farm
+./subspace-cli-ubuntu-x86_64-v0.1.8-alpha farm
 ```
 Linux Arch:
 
 ```bash
-subspace-cli-ubuntu-aarch64-v0.1.8-alpha farm
+./subspace-cli-ubuntu-aarch64-v0.1.8-alpha farm
 ```
 
 </TabItem>
