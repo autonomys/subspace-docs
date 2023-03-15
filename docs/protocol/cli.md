@@ -96,7 +96,7 @@ Compiled versions of the Subspace CLI is [hosted on GitHub](https://github.com/s
 <div className={styles.buttons}>
     <Link
     className="button button--secondary button"
-    to="https://github.com/subspace/subspace-cli/releases/download/v0.1.8-alpha/subspace-cli-windows-x86_64-v0.1.8-alpha.exe">
+    to="https://github.com/subspace/subspace-cli/releases/download/v0.1.9-alpha/subspace-cli-windows-x86_64-v0.1.9-alpha.exe">
     Windows CLI Executable
     </Link>
 </div>
@@ -112,12 +112,12 @@ Compiled versions of the Subspace CLI is [hosted on GitHub](https://github.com/s
 <div className={styles.buttons}>
     <Link
         className="button button--secondary button"
-        to="https://github.com/subspace/subspace-cli/releases/download/v0.1.8-alpha/subspace-cli-macos-x86_64-v0.1.8-alpha.zip">
+        to="https://github.com/subspace/subspace-cli/releases/download/v0.1.9-alpha/subspace-cli-macos-x86_64-v0.1.9-alpha.zip">
         Mac CLI Executable (Intel)
     </Link>
     <Link
         className="button button--secondary button"
-        to="https://github.com/subspace/subspace-cli/releases/download/v0.1.8-alpha/subspace-cli-macos-aarch64-v0.1.8-alpha.zip">
+        to="https://github.com/subspace/subspace-cli/releases/download/v0.1.9-alpha/subspace-cli-macos-aarch64-v0.1.9-alpha.zip">
         Mac CLI Executable (Apple M1)
     </Link>
 </div>
@@ -125,8 +125,8 @@ Compiled versions of the Subspace CLI is [hosted on GitHub](https://github.com/s
 2. Extract the `.zip` file.
 3. Open Terminal, type `cd Downloads` (or `cd Your-File-Location`).
 4. Make the binary executable by running:
-    * `chmod +x subspace-cli-macos-x86_64-v0.1.8-alpha` (Intel Chip) 
-    * `chmod +x subspace-cli-macos-aarch64-v0.1.8-alpha` (Apple M1 Chip)
+    * `chmod +x subspace-cli-macos-x86_64-v0.1.9-alpha` (Intel Chip) 
+    * `chmod +x subspace-cli-macos-aarch64-v0.1.9-alpha` (Apple M1 Chip)
 
 :::warning
 Your Mac may not let you open/initialize the file because of unidentified developer restrictions. To resolve this, go to Settings-> Security&Privacy -> General -> Allow 
@@ -140,20 +140,20 @@ Your Mac may not let you open/initialize the file because of unidentified develo
 <div className={styles.buttons}>
     <Link
         className="button button--secondary button"
-        to="https://github.com/subspace/subspace-cli/releases/download/v0.1.8-alpha/subspace-cli-Ubuntu-x86_64-v0.1.8-alpha">
+        to="https://github.com/subspace/subspace-cli/releases/download/v0.1.9-alpha/subspace-cli-Ubuntu-x86_64-v0.1.9-alpha">
         Ubuntu Executable
     </Link>
     <Link
         className="button button--secondary button"
-        to="https://github.com/subspace/subspace-cli/releases/download/v0.1.8-alpha/subspace-cli-ubuntu-aarch64-v0.1.8-alpha">
+        to="https://github.com/subspace/subspace-cli/releases/download/v0.1.9-alpha/subspace-cli-ubuntu-aarch64-v0.1.9-alpha">
         Linux Arch Executable
     </Link>
 </div>
 
 2. Open Terminal, type `cd Downloads` (or `cd Your-File-Location`).
 3. Make the binary executable by running:
-    * `chmod +x subspace-cli-ubuntu-x86_64-v0.1.8-alpha` (Ubuntu) 
-    * `chmod +x subspace-cli-ubuntu-aarch64-v0.1.8-alpha` (Linux Arch)
+    * `chmod +x subspace-cli-ubuntu-x86_64-v0.1.9-alpha` (Ubuntu) 
+    * `chmod +x subspace-cli-ubuntu-aarch64-v0.1.9-alpha` (Linux Arch)
 
 </TabItem>
 
@@ -169,7 +169,7 @@ To start we have to initialize our Farmer, this can be done with:
 <TabItem value="windows" label="🖼️ Windows" default>
 
 ```powershell
-./subspace-cli-windows-x86_64-v0.1.8-alpha.exe init
+./subspace-cli-windows-x86_64-v0.1.9-alpha.exe init
 ```
 
 </TabItem>
@@ -178,12 +178,16 @@ To start we have to initialize our Farmer, this can be done with:
 Intel Chip:
 
 ```bash
-./subspace-cli-macos-x86_64-v0.1.8-alpha init
+
+./subspace-cli-macos-x86_64-v0.1.9-alpha init
+
 ```
 Apple M1 Chip:
 
 ```bash
-./subspace-cli-macos-aarch64-v0.1.8-alpha init
+
+./subspace-cli-macos-aarch64-v0.1.9-alpha init
+
 ```
 
 </TabItem>
@@ -192,12 +196,16 @@ Apple M1 Chip:
 Ubuntu:
 
 ```bash
-./subspace-cli-ubuntu-x86_64-v0.1.8-alpha init
+
+./subspace-cli-ubuntu-x86_64-v0.1.9-alpha init
+
 ```
 Linux Arch:
 
 ```bash
-./subspace-cli-ubuntu-aarch64-v0.1.8-alpha init
+
+./subspace-cli-ubuntu-aarch64-v0.1.9-alpha init
+
 ```
 
 </TabItem>
@@ -285,7 +293,7 @@ To begin farming on the network, just run the `farm` command with the CLI like s
 <TabItem value="windows" label="🖼️ Windows" default>
 
 ```powershell
-./subspace-cli-windows-x86_64-v0.1.8-alpha.exe farm
+./subspace-cli-windows-x86_64-v0.1.9-alpha.exe farm
 ```
 
 </TabItem>
@@ -295,12 +303,16 @@ To begin farming on the network, just run the `farm` command with the CLI like s
 Intel Chip:
 
 ```bash
-./subspace-cli-macos-x86_64-v0.1.8-alpha farm
+
+./subspace-cli-macos-x86_64-v0.1.9-alpha farm
+
 ```
 Apple M1 Chip:
 
 ```bash
-./subspace-cli-macos-aarch64-v0.1.8-alpha farm
+
+./subspace-cli-macos-aarch64-v0.1.9-alpha farm
+
 ```
 
 </TabItem>
@@ -310,12 +322,16 @@ Apple M1 Chip:
 Ubuntu:
 
 ```bash
-./subspace-cli-ubuntu-x86_64-v0.1.8-alpha farm
+
+./subspace-cli-ubuntu-x86_64-v0.1.9-alpha farm
+
 ```
 Linux Arch:
 
 ```bash
-./subspace-cli-ubuntu-aarch64-v0.1.8-alpha farm
+
+./subspace-cli-ubuntu-aarch64-v0.1.9-alpha farm
+
 ```
 
 </TabItem>
