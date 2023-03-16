@@ -626,6 +626,37 @@ Examples:
 ## IV. Advanced
 
 ---
+### Support for multiple disks
+
+Farmer has an advanced set of parameters that allow using multiple disks.
+
+To use these advanced parameters you need to replace this command:
+```
+./FARMER_FILE_NAME farm --reward-address WALLET_ADDRESS --plot-size PLOT_SIZE
+```
+
+With this:
+```
+./FARMER_FILE_NAME --farm path=/path/to/directory,size=PLOT_SIZE farm --reward-address WALLET_ADDRESS
+```
+
+`/path/to/directory` is path that will store the data, up to `PLOT_SIZE`.
+
+NOTE: `PLOT_SIZE` has a different notion here, it doesn't include metadata size!
+
+Multiple farms are supported too, for example:
+```
+./FARMER_FILE_NAME \
+    --farm path=/media/ssd1,size=100GiB \
+    --farm path=/media/ssd2,size=10T \
+    --farm path=/media/ssd3,size=10T \
+    farm --reward-address WALLET_ADDRESS
+```
+
+You can also print info about farms with `info` command:
+```
+./FARMER_FILE_NAME --farm path=/media/ssd1,size=PLOT_SIZE info
+```
 
 ### Running an archival node
 
