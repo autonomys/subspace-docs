@@ -140,7 +140,7 @@ Your Mac may not let you open/initialize the file because of unidentified develo
 <div className={styles.buttons}>
     <Link
         className="button button--secondary button"
-        to="https://github.com/subspace/subspace-cli/releases/download/v0.1.9-alpha/subspace-cli-Ubuntu-x86_64-v0.1.9-alpha">
+        to="https://github.com/subspace/subspace-cli/releases/download/v0.1.9-alpha/subspace-cli-ubuntu-x86_64-v0.1.9-alpha">
         Ubuntu Executable
     </Link>
     <Link
