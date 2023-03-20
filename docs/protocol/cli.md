@@ -96,7 +96,7 @@ Compiled versions of the Subspace CLI is [hosted on GitHub](https://github.com/s
 <div className={styles.buttons}>
     <Link
     className="button button--secondary button"
-    to="https://github.com/subspace/subspace-cli/releases/download/v0.1.9-alpha/subspace-cli-windows-x86_64-v0.1.9-alpha.exe">
+    to="https://github.com/subspace/subspace-cli/releases/download/v0.1.10-alpha/subspace-cli-windows-x86_64-v0.1.10-alpha.exe">
     Windows CLI Executable
     </Link>
 </div>
@@ -112,12 +112,12 @@ Compiled versions of the Subspace CLI is [hosted on GitHub](https://github.com/s
 <div className={styles.buttons}>
     <Link
         className="button button--secondary button"
-        to="https://github.com/subspace/subspace-cli/releases/download/v0.1.9-alpha/subspace-cli-macos-x86_64-v0.1.9-alpha.zip">
+        to="https://github.com/subspace/subspace-cli/releases/download/v0.1.10-alpha/subspace-cli-macos-x86_64-v0.1.10-alpha.zip">
         Mac CLI Executable (Intel)
     </Link>
     <Link
         className="button button--secondary button"
-        to="https://github.com/subspace/subspace-cli/releases/download/v0.1.9-alpha/subspace-cli-macos-aarch64-v0.1.9-alpha.zip">
+        to="https://github.com/subspace/subspace-cli/releases/download/v0.1.10-alpha/subspace-cli-macos-aarch64-v0.1.10-alpha.zip">
         Mac CLI Executable (Apple M1)
     </Link>
 </div>
@@ -125,8 +125,8 @@ Compiled versions of the Subspace CLI is [hosted on GitHub](https://github.com/s
 2. Extract the `.zip` file.
 3. Open Terminal, type `cd Downloads` (or `cd Your-File-Location`).
 4. Make the binary executable by running:
-    * `chmod +x subspace-cli-macos-x86_64-v0.1.9-alpha` (Intel Chip) 
-    * `chmod +x subspace-cli-macos-aarch64-v0.1.9-alpha` (Apple M1 Chip)
+    * `chmod +x subspace-cli-macos-x86_64-v0.1.10-alpha` (Intel Chip) 
+    * `chmod +x subspace-cli-macos-aarch64-v0.1.10-alpha` (Apple M1 Chip)
 
 :::warning
 Your Mac may not let you open/initialize the file because of unidentified developer restrictions. To resolve this, go to Settings-> Security&Privacy -> General -> Allow 
@@ -140,20 +140,20 @@ Your Mac may not let you open/initialize the file because of unidentified develo
 <div className={styles.buttons}>
     <Link
         className="button button--secondary button"
-        to="https://github.com/subspace/subspace-cli/releases/download/v0.1.9-alpha/subspace-cli-Ubuntu-x86_64-v0.1.9-alpha">
+        to="https://github.com/subspace/subspace-cli/releases/download/v0.1.10-alpha/subspace-cli-Ubuntu-x86_64-v0.1.10-alpha">
         Ubuntu Executable
     </Link>
     <Link
         className="button button--secondary button"
-        to="https://github.com/subspace/subspace-cli/releases/download/v0.1.9-alpha/subspace-cli-ubuntu-aarch64-v0.1.9-alpha">
+        to="https://github.com/subspace/subspace-cli/releases/download/v0.1.10-alpha/subspace-cli-ubuntu-aarch64-v0.1.10-alpha">
         Linux Arch Executable
     </Link>
 </div>
 
 2. Open Terminal, type `cd Downloads` (or `cd Your-File-Location`).
 3. Make the binary executable by running:
-    * `chmod +x subspace-cli-ubuntu-x86_64-v0.1.9-alpha` (Ubuntu) 
-    * `chmod +x subspace-cli-ubuntu-aarch64-v0.1.9-alpha` (Linux Arch)
+    * `chmod +x subspace-cli-ubuntu-x86_64-v0.1.10-alpha` (Ubuntu) 
+    * `chmod +x subspace-cli-ubuntu-aarch64-v0.1.10-alpha` (Linux Arch)
 
 </TabItem>
 
@@ -169,7 +169,7 @@ To start we have to initialize our Farmer, this can be done with:
 <TabItem value="windows" label="🖼️ Windows" default>
 
 ```powershell
-./subspace-cli-windows-x86_64-v0.1.9-alpha.exe init
+./subspace-cli-windows-x86_64-v0.1.10-alpha.exe init
 ```
 
 </TabItem>
@@ -179,14 +179,14 @@ Intel Chip:
 
 ```bash
 
-./subspace-cli-macos-x86_64-v0.1.9-alpha init
+./subspace-cli-macos-x86_64-v0.1.10-alpha init
 
 ```
 Apple M1 Chip:
 
 ```bash
 
-./subspace-cli-macos-aarch64-v0.1.9-alpha init
+./subspace-cli-macos-aarch64-v0.1.10-alpha init
 
 ```
 
@@ -197,14 +197,14 @@ Ubuntu:
 
 ```bash
 
-./subspace-cli-ubuntu-x86_64-v0.1.9-alpha init
+./subspace-cli-ubuntu-x86_64-v0.1.10-alpha init
 
 ```
 Linux Arch:
 
 ```bash
 
-./subspace-cli-ubuntu-aarch64-v0.1.9-alpha init
+./subspace-cli-ubuntu-aarch64-v0.1.10-alpha init
 
 ```
 
@@ -293,7 +293,7 @@ To begin farming on the network, just run the `farm` command with the CLI like s
 <TabItem value="windows" label="🖼️ Windows" default>
 
 ```powershell
-./subspace-cli-windows-x86_64-v0.1.9-alpha.exe farm
+./subspace-cli-windows-x86_64-v0.1.10-alpha.exe farm
 ```
 
 </TabItem>
@@ -304,14 +304,14 @@ Intel Chip:
 
 ```bash
 
-./subspace-cli-macos-x86_64-v0.1.9-alpha farm
+./subspace-cli-macos-x86_64-v0.1.10-alpha farm
 
 ```
 Apple M1 Chip:
 
 ```bash
 
-./subspace-cli-macos-aarch64-v0.1.9-alpha farm
+./subspace-cli-macos-aarch64-v0.1.10-alpha farm
 
 ```
 
@@ -323,14 +323,14 @@ Ubuntu:
 
 ```bash
 
-./subspace-cli-ubuntu-x86_64-v0.1.9-alpha farm
+./subspace-cli-ubuntu-x86_64-v0.1.10-alpha farm
 
 ```
 Linux Arch:
 
 ```bash
 
-./subspace-cli-ubuntu-aarch64-v0.1.9-alpha farm
+./subspace-cli-ubuntu-aarch64-v0.1.10-alpha farm
 
 ```
 
@@ -414,7 +414,41 @@ $ screen -S farming -X quit
 </TabItem>
 </Tabs>
 
-## Restarting & Wiping a Node
+## Having Trouble?
+
+If you are facing issues with your node/farmer you can try a few of the following things below, if you are unable to get your issue resolved please check our [Forums](https://forums.subspace.network) to see if your issue may have been solved, if its a new one feel free to post it! You can also join our [Discord](https://discord.gg/subspace-network) for additional Peer to Peer help.
+
+### View your Logs
+
+A good place to start if you are facing trouble is by viewing your logs and seeing if there are any errors or insights that might be available. You can find the location for your logs below
+
+<Tabs groupId="OS">
+<TabItem value="windows" label="🖼️ Windows" default>
+
+Your Logs will be found in `%USERPROFILE%/AppData/Local/subspace-cli/logs`
+
+</TabItem>
+
+<TabItem value="macos" label="🍎macOS">
+
+Your Logs will be found in `$HOME/Library/Logs/subspace-cli/`
+
+</TabItem>
+
+<TabItem value="linux" label="🐧Ubuntu">
+
+Your Logs will be found in `$HOME/.local/share/subspace-cli/logs`
+
+</TabItem>
+</Tabs>
+
+### Wipe Node & Farmer
+
+:::tip Updated from a previous version and now having issues?
+
+Occasionally after updating to a new version of the CLI you will need to wipe your node and farmer, generally this should not be required but can be attempted if your farmer is having issues after having had worked fine previously. 
+
+::: 
 
 To simply restart the node, go to the terminal where you started the `farm` command, and press `Ctrl + C` you should see a shutdown message appear and the application will attempt a simple shutdown, if you dont see the message press `Ctrl + C` again to force shutdown. You can then simply start the farmer again with the `farm` command you used prior.
 
