@@ -140,7 +140,7 @@ Your Mac may not let you open/initialize the file because of unidentified develo
 <div className={styles.buttons}>
     <Link
         className="button button--secondary button"
-        to="https://github.com/subspace/subspace-cli/releases/download/v0.1.10-alpha/subspace-cli-ubuntu-x86_64-v0.1.10-alpha">
+        to="https://github.com/subspace/subspace-cli/releases/download/v0.1.10-alpha/subspace-cli-ubuntu-x86_64-v3-v0.1.10-alpha">
         Ubuntu Executable
     </Link>
     <Link
@@ -152,7 +152,7 @@ Your Mac may not let you open/initialize the file because of unidentified develo
 
 2. Open Terminal, type `cd Downloads` (or `cd Your-File-Location`).
 3. Make the binary executable by running:
-    * `chmod +x subspace-cli-ubuntu-x86_64-v0.1.10-alpha` (Ubuntu) 
+    * `chmod +x subspace-cli-ubuntu-x86_64-v3-v0.1.10-alpha` (Ubuntu) 
     * `chmod +x subspace-cli-ubuntu-aarch64-v0.1.10-alpha` (Linux Arch)
 
 </TabItem>
@@ -197,7 +197,7 @@ Ubuntu:
 
 ```bash
 
-./subspace-cli-ubuntu-x86_64-v0.1.10-alpha init
+./subspace-cli-ubuntu-x86_64-v3-v0.1.10-alpha init
 
 ```
 Linux Arch:
@@ -323,7 +323,7 @@ Ubuntu:
 
 ```bash
 
-./subspace-cli-ubuntu-x86_64-v0.1.10-alpha farm
+./subspace-cli-ubuntu-x86_64-v3-v0.1.10-alpha farm
 
 ```
 Linux Arch:
