@@ -39,7 +39,7 @@ Subspace CLI requires commodity hardware specs to operate. At a **minimum**, it 
 |CPU|4 Core+|
 |RAM|4GB+ (Rec. 8GB)|
 |SWAP|4GB|
-|Storage|50GB SSD|
+|Storage|100GB SSD|
 
 :::note CoW File Systems Warning
 It is advised not to use the Subspace farmer and node on CoW file systems for any OS.
