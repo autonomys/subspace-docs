@@ -88,22 +88,12 @@ If you're connected directly without any router, then again nothing needs to be 
 You can always find these executables in the [Releases](https://github.com/subspace/subspace/releases) section on our GitHub
 :::
 
-:::caution OpenCL support
-If you use farmer executable starting with `subspace-farmer-opencl-` and see this error:
-```
-The code execution cannot proceed because OpenCL.dll was not found. Reinstalling the program may fix this problem.
-```
-Or farmer exits in CLI without any messages, it means you don't have OpenCL-capable GPU or drivers installed.
-Installing OpenCL GPU drivers or using farmer executable without `opencl` in file name will fix the issue.
 
-
-:::
 
 We will be downloading two files for your respective operating system.
 1. `Subspace-Node` - This is the executable that actually makes the connection with the Subspace Network
 2. `Subspace-Farmer` - This is the executable that will actually farm for rewards on your allocated storage plot.
 
-- *There is also an OpenCL option in case you have OpenCL-capable AMD, Intel or Nvidia GPU*
 - *Those using Docker will not have to download anything, just configure the `docker-compose.yml`*
 
 
@@ -215,11 +205,6 @@ We will be downloading two files for your respective operating system.
       to="https://github.com/subspace/subspace/releases/download/gemini-3c-2023-mar-23/subspace-farmer-windows-x86_64-gemini-3c-2023-mar-23.exe">
       Download Farmer Executable
     </Link>
-    <Link
-      className="button button--secondary button"
-      to="https://github.com/subspace/subspace/releases/download/gemini-3c-2023-mar-23/subspace-farmer-opencl-windows-x86_64-gemini-3c-2023-mar-23.exe">
-      Download Farmer Executable (OpenCL)
-    </Link>
   </div>
 
   ---
@@ -272,7 +257,6 @@ We will be downloading two files for your respective operating system.
   ```
   5. After running this command, Windows may ask you for permissions related to firewall, select `allow` in this case.
   6. We will then open another terminal, change to the downloads directory, then start the farmer node with the following command:
-    *Change command to feature `subspace-farmer-opencl-windows-x86_64-gemini-3c-2023-mar-23.exe` if using Open CL version.*
   ```PowerShell
   # Replace `WALLET_ADDRESS` below with your account address from Polkadot.js wallet
   .\subspace-farmer-windows-x86_64-gemini-3c-2023-mar-23.exe farm  `
@@ -413,11 +397,6 @@ We will be downloading two files for your respective operating system.
       to="https://github.com/subspace/subspace/releases/download/gemini-3c-2023-mar-23/subspace-farmer-ubuntu-x86_64-gemini-3c-2023-mar-23">
       Download Farmer Executable
     </Link>
-    <Link
-      className="button button--secondary button"
-      to="https://github.com/subspace/subspace/releases/download/gemini-3c-2023-mar-23/subspace-farmer-opencl-ubuntu-x86_64-gemini-3c-2023-mar-23">
-      Download Farmer Executable (OpenCL)
-    </Link>
   </div>
   <p>
 
@@ -447,20 +426,9 @@ We will be downloading two files for your respective operating system.
   There are two packages that are typically already installed, but might be missing on your machine.
 
   If you see this error:
-  > error while loading shared libraries: libOpenCL.so.1: cannot open shared object file: No such file or directory
-
-  Make sure to install `ocl-icd-libopencl1` library with `sudo apt-get install ocl-icd-libopencl1`.
-
-  If you see this error:
   > error while loading shared libraries: libgomp.so.1: cannot open shared object file: No such file or directory
 
   Make sure to install `libgomp1` library with `sudo apt-get install libgomp1`.
-
-  ### OpenCL support
-  Please read following documentation to make sure OpenCL support is enabled and working properly: <https://docs.rs/sloth256-189/latest/sloth256_189/opencl/index.html>
-
-  OpenCL support is used for GPU acceleration (AMD, Intel, Nvidia) of initial plotting.
-  GPU is not required generally for farmer to work and is not used at all after initial plotting.
 
   ---
   1. Open your favorite terminal, and change to the Downloads directory using `cd Downloads`
@@ -505,7 +473,6 @@ We will be downloading two files for your respective operating system.
   2022-02-03 10:52:29 ⚙️  Syncing, target=#215883 (2 peers), best: #55 (0xafc7…bccf), finalized #0 (0x6ada…0d38), ⬇ 850.1kiB/s ⬆ 1.5kiB/s
   ```
   5. We will then open another terminal, change to the downloads directory, then start the farmer node with the following command:
-      *Change command to feature `subspace-farmer-opencl-ubuntu-x86_64-gemini-3c-2023-mar-23` if using openCL.* 
   ```bash
   # Replace `FARMER_FILE_NAME` with the name of the farmer file you downloaded from releases
   # Replace `WALLET_ADDRESS` below with your account address from Polkadot.js wallet
