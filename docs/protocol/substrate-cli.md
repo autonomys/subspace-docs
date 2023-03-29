@@ -118,7 +118,7 @@ We will be downloading two files for your respective operating system.
     services:
       node:
         # For running on Aarch64 add `-aarch64` after `DATE`
-        image: ghcr.io/subspace/node:gemini-3c-2023-mar-14
+        image: ghcr.io/subspace/node:gemini-3c-2023-mar-23
         volumes:
     # Instead of specifying volume (which will store data in `/var/lib/docker`), you can
     # alternatively specify path to the directory where files will be stored, just make
@@ -159,7 +159,7 @@ We will be downloading two files for your respective operating system.
           node:
             condition: service_healthy
         # For running on Aarch64 add `-aarch64` after `DATE`
-        image: ghcr.io/subspace/farmer:gemini-3c-2023-mar-14
+        image: ghcr.io/subspace/farmer:gemini-3c-2023-mar-23
         volumes:
     # Instead of specifying volume (which will store data in `/var/lib/docker`), you can
     # alternatively specify path to the directory where files will be stored, just make
@@ -207,17 +207,17 @@ We will be downloading two files for your respective operating system.
   <div className={styles.buttons}>
     <Link
       className="button button--secondary button"
-      to="https://github.com/subspace/subspace/releases/download/gemini-3c-2023-mar-14/subspace-node-windows-x86_64-gemini-3c-2023-mar-14.exe">
+      to="https://github.com/subspace/subspace/releases/download/gemini-3c-2023-mar-23/subspace-node-windows-x86_64-gemini-3c-2023-mar-23.exe">
       Download Node Executable
     </Link>
     <Link
       className="button button--secondary button"
-      to="https://github.com/subspace/subspace/releases/download/gemini-3c-2023-mar-14/subspace-farmer-windows-x86_64-gemini-3c-2023-mar-14.exe">
+      to="https://github.com/subspace/subspace/releases/download/gemini-3c-2023-mar-23/subspace-farmer-windows-x86_64-gemini-3c-2023-mar-23.exe">
       Download Farmer Executable
     </Link>
     <Link
       className="button button--secondary button"
-      to="https://github.com/subspace/subspace/releases/download/gemini-3c-2023-mar-14/subspace-farmer-opencl-windows-x86_64-gemini-3c-2023-mar-14.exe">
+      to="https://github.com/subspace/subspace/releases/download/gemini-3c-2023-mar-23/subspace-farmer-opencl-windows-x86_64-gemini-3c-2023-mar-23.exe">
       Download Farmer Executable (OpenCL)
     </Link>
   </div>
@@ -238,7 +238,7 @@ We will be downloading two files for your respective operating system.
   ```PowerShell
   # Replace `INSERT_YOUR_ID` with a nickname you choose
   # Copy all of the lines below, they are all part of the same command
-  .\subspace-node-windows-x86_64-gemini-3c-2023-mar-14.exe `
+  .\subspace-node-windows-x86_64-gemini-3c-2023-mar-23.exe `
     --chain gemini-3c `
     --execution wasm `
     --blocks-pruning archive `
@@ -272,10 +272,10 @@ We will be downloading two files for your respective operating system.
   ```
   5. After running this command, Windows may ask you for permissions related to firewall, select `allow` in this case.
   6. We will then open another terminal, change to the downloads directory, then start the farmer node with the following command:
-    *Change command to feature `subspace-farmer-opencl-windows-x86_64-gemini-3c-2023-mar-14.exe` if using Open CL version.*
+    *Change command to feature `subspace-farmer-opencl-windows-x86_64-gemini-3c-2023-mar-23.exe` if using Open CL version.*
   ```PowerShell
   # Replace `WALLET_ADDRESS` below with your account address from Polkadot.js wallet
-  .\subspace-farmer-windows-x86_64-gemini-3c-2023-mar-14.exe farm  `
+  .\subspace-farmer-windows-x86_64-gemini-3c-2023-mar-23.exe farm  `
     --disable-private-ips `
     --reward-address WALLET_ADDRESS `
     --plot-size 10G
@@ -306,12 +306,12 @@ We will be downloading two files for your respective operating system.
   <div className={styles.buttons}>
     <Link
       className="button button--secondary button"
-      to="https://github.com/subspace/subspace/releases/download/gemini-3c-2023-mar-14/subspace-node-macos-x86_64-gemini-3c-2023-mar-14.zip">
+      to="https://github.com/subspace/subspace/releases/download/gemini-3c-2023-mar-23/subspace-node-macos-x86_64-gemini-3c-2023-mar-23.zip">
       Download Node Executable
     </Link>
     <Link
       className="button button--secondary button"
-      to="https://github.com/subspace/subspace/releases/download/gemini-3c-2023-mar-14/subspace-farmer-macos-x86_64-gemini-3c-2023-mar-14.zip">
+      to="https://github.com/subspace/subspace/releases/download/gemini-3c-2023-mar-23/subspace-farmer-macos-x86_64-gemini-3c-2023-mar-23.zip">
       Download Farmer Executable
     </Link>
   </div>
@@ -326,8 +326,8 @@ We will be downloading two files for your respective operating system.
 
   1. Open your favorite terminal, and change to the Downloads directory using `cd Downloads`
   2. Make the farmer & node executable:
-  - `chmod +x subspace-farmer-macos-x86_64-gemini-3c-2023-mar-14`
-  - `chmod +x subspace-node-macos-x86_64-gemini-3c-2023-mar-14`
+  - `chmod +x subspace-farmer-macos-x86_64-gemini-3c-2023-mar-23`
+  - `chmod +x subspace-node-macos-x86_64-gemini-3c-2023-mar-23`
   3. We will then start the node using the following command
 
   > *Note, when attempting to run this command you may be prompted:* Click on `cancel` instead of moving it to trash.
@@ -337,7 +337,7 @@ We will be downloading two files for your respective operating system.
   ```bash
   # Replace `INSERT_YOUR_ID` with a nickname you choose
   # Copy all of the lines below, they are all part of the same command
-  ./subspace-node-macos-x86_64-gemini-3c-2023-mar-14 \
+  ./subspace-node-macos-x86_64-gemini-3c-2023-mar-23 \
     --chain gemini-3c \
     --execution wasm \
     --blocks-pruning archive \
@@ -372,7 +372,7 @@ We will be downloading two files for your respective operating system.
   5. We will then open another terminal, change to the downloads directory, then start the farmer node with the following command:
   ```bash
   # Replace `WALLET_ADDRESS` below with your account address from Polkadot.js wallet
-  ./subspace-farmer-macos-x86_64-gemini-3c-2023-mar-14 farm \
+  ./subspace-farmer-macos-x86_64-gemini-3c-2023-mar-23 farm \
     --disable-private-ips \
     --reward-address WALLET_ADDRESS \
     --plot-size 10G
@@ -405,17 +405,17 @@ We will be downloading two files for your respective operating system.
   <div className={styles.buttons}>
     <Link
       className="button button--secondary button"
-      to="https://github.com/subspace/subspace/releases/download/gemini-3c-2023-mar-14/subspace-node-ubuntu-x86_64-gemini-3c-2023-mar-14">
+      to="https://github.com/subspace/subspace/releases/download/gemini-3c-2023-mar-23/subspace-node-ubuntu-x86_64-gemini-3c-2023-mar-23">
       Download Node Executable
     </Link>
     <Link
       className="button button--secondary button"
-      to="https://github.com/subspace/subspace/releases/download/gemini-3c-2023-mar-14/subspace-farmer-ubuntu-x86_64-gemini-3c-2023-mar-14">
+      to="https://github.com/subspace/subspace/releases/download/gemini-3c-2023-mar-23/subspace-farmer-ubuntu-x86_64-gemini-3c-2023-mar-23">
       Download Farmer Executable
     </Link>
     <Link
       className="button button--secondary button"
-      to="https://github.com/subspace/subspace/releases/download/gemini-3c-2023-mar-14/subspace-farmer-opencl-ubuntu-x86_64-gemini-3c-2023-mar-14">
+      to="https://github.com/subspace/subspace/releases/download/gemini-3c-2023-mar-23/subspace-farmer-opencl-ubuntu-x86_64-gemini-3c-2023-mar-23">
       Download Farmer Executable (OpenCL)
     </Link>
   </div>
@@ -432,12 +432,12 @@ We will be downloading two files for your respective operating system.
     <div className={styles.buttons}>
       <Link
         className="button button--secondary button"
-        to="https://github.com/subspace/subspace/releases/download/gemini-3c-2023-mar-14/subspace-node-ubuntu-aarch64-gemini-3c-2023-mar-14">
+        to="https://github.com/subspace/subspace/releases/download/gemini-3c-2023-mar-23/subspace-node-ubuntu-aarch64-gemini-3c-2023-mar-23">
         1. Download Node Executable
       </Link>
       <Link
         className="button button--secondary button"
-        to="https://github.com/subspace/subspace/releases/download/gemini-3c-2023-mar-14/subspace-farmer-ubuntu-aarch64-gemini-3c-2023-mar-14">
+        to="https://github.com/subspace/subspace/releases/download/gemini-3c-2023-mar-23/subspace-farmer-ubuntu-aarch64-gemini-3c-2023-mar-23">
         2. Download Farmer Executable
       </Link>
     </div>
@@ -465,14 +465,14 @@ We will be downloading two files for your respective operating system.
   ---
   1. Open your favorite terminal, and change to the Downloads directory using `cd Downloads`
   2. Make the farmer & node executable
-  - `chmod +x subspace-farmer-ubuntu-x86_64-gemini-3c-2023-mar-14`
-  - `chmod +x subspace-node-ubuntu-x86_64-gemini-3c-2023-mar-14`
+  - `chmod +x subspace-farmer-ubuntu-x86_64-gemini-3c-2023-mar-23`
+  - `chmod +x subspace-node-ubuntu-x86_64-gemini-3c-2023-mar-23`
   3. We will then start the node using the following command
 
   ```bash
   # Replace `INSERT_YOUR_ID` with a nickname you choose
   # Copy all of the lines below, they are all part of the same command
-  ./subspace-node-ubuntu-x86_64-gemini-3c-2023-mar-14 \
+  ./subspace-node-ubuntu-x86_64-gemini-3c-2023-mar-23 \
     --chain gemini-3c \
     --execution wasm \
     --blocks-pruning archive \
@@ -505,11 +505,11 @@ We will be downloading two files for your respective operating system.
   2022-02-03 10:52:29 ⚙️  Syncing, target=#215883 (2 peers), best: #55 (0xafc7…bccf), finalized #0 (0x6ada…0d38), ⬇ 850.1kiB/s ⬆ 1.5kiB/s
   ```
   5. We will then open another terminal, change to the downloads directory, then start the farmer node with the following command:
-      *Change command to feature `subspace-farmer-opencl-ubuntu-x86_64-gemini-3c-2023-mar-14` if using openCL.* 
+      *Change command to feature `subspace-farmer-opencl-ubuntu-x86_64-gemini-3c-2023-mar-23` if using openCL.* 
   ```bash
   # Replace `FARMER_FILE_NAME` with the name of the farmer file you downloaded from releases
   # Replace `WALLET_ADDRESS` below with your account address from Polkadot.js wallet
-  ./subspace-farmer-ubuntu-x86_64-gemini-3c-2023-mar-14 farm \
+  ./subspace-farmer-ubuntu-x86_64-gemini-3c-2023-mar-23 farm \
     --disable-private-ips \
     --reward-address WALLET_ADDRESS \
     --plot-size 10G
@@ -559,7 +559,7 @@ To set your node to use a custom path all you will need to do is add the `--base
 
 **Example:**
 ```
-.\subspace-node-ubuntu-x86_64-gemini-3c-2023-mar-14 --chain gemini-3c --base-path /path/to/directory/here --execution wasm --state-pruning archive --validator --name INSERT_YOUR_ID
+.\subspace-node-ubuntu-x86_64-gemini-3c-2023-mar-23 --chain gemini-3c --base-path /path/to/directory/here --execution wasm --state-pruning archive --validator --name INSERT_YOUR_ID
 ```
 </TabItem>
 <TabItem value="farmer" label="2.🧑‍🌾 Farmer">
@@ -569,7 +569,7 @@ To set your node to use a custom path all you will need to do is add the `--base
 
 **Example:**
 ```
-.\subspace-farmer-ubuntu-x86_64-gemini-3c-2023-mar-14 --base-path /path/to/directory/here farm --reward-address WALLET_ADDRESS --plot-size PLOT_SIZE
+.\subspace-farmer-ubuntu-x86_64-gemini-3c-2023-mar-23 --base-path /path/to/directory/here farm --reward-address WALLET_ADDRESS --plot-size PLOT_SIZE
 ```
 </TabItem>
 </Tabs>
@@ -686,11 +686,11 @@ You'll have to have [Rust toolchain](https://rustup.rs/) installed as well as LL
 sudo apt-get install llvm clang
 ```
 
-Now clone the source and build snapshot `gemini-3c-2023-mar-14` (replace occurrences with the snapshot you want to build):
+Now clone the source and build snapshot `gemini-3c-2023-mar-23` (replace occurrences with the snapshot you want to build):
 ```bash
 git clone https://github.com/subspace/subspace.git
 cd subspace
-git checkout gemini-3c-2023-mar-14
+git checkout gemini-3c-2023-mar-23
 cargo build \
     --profile production \
     --bin subspace-node \
