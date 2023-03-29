@@ -82,14 +82,7 @@ Please feel free to file bug reports on our GitHub issues.
 :::
 
 ### Download Binaries
-:::tip
 
-We now include two versions in our builds a V2 and a V3 the versions are for as follows
-- V3: for newer processors since ~2015
-- V2: for older processors since ~2009 and some old VMs
-older processors/VMs are no longer supported by official releases, but can still be compiled manually if desired
-
-:::
 
 
 ---
@@ -100,20 +93,41 @@ Compiled versions of the Subspace CLI is [hosted on GitHub](https://github.com/s
 
 <TabItem value="windows" label="🖼️ Windows" default>
 
+:::caution
+
+Some older processors/VMs are no longer supported by official releases, but can still be compiled manually if desired
+
+:::
 1. Download the Release Binary below.
 
-<div className={styles.buttons}>
-    <Link
-    className="button button--secondary button"
-    to="https://github.com/subspace/subspace-cli/releases/download/v0.1.12/subspace-cli-windows-x86_64-v2-v0.1.12.exe">
-    V2: Windows CLI Executable
-    </Link>
-    <Link
-    className="button button--secondary button"
-    to="https://github.com/subspace/subspace-cli/releases/download/v0.1.12/subspace-cli-windows-x86_64-v3-v0.1.12.exe">
-    V3: Windows CLI Executable
-    </Link>
-</div>
+  <details>
+    <summary>
+    Expand for Version 2 - For older processors since ~2009 and some old VMs
+    </summary>
+    <div className={styles.buttons}>
+      <Link
+        className="button button--secondary button"
+        to="https://github.com/subspace/subspace-cli/releases/download/v0.1.12/subspace-cli-windows-x86_64-v2-v0.1.12.exe">
+        Windows CLI Executable
+      </Link>
+    </div>
+  </details>
+
+  <details>
+    <summary>
+    Expand for Version 3 - For newer processors since ~2015
+    </summary>
+    <div className={styles.buttons}>
+      <Link
+        className="button button--secondary button"
+        to="https://github.com/subspace/subspace-cli/releases/download/v0.1.12/subspace-cli-windows-x86_64-v3-v0.1.12.exe">
+        Windows CLI Executable
+      </Link>
+    </div>
+  </details>
+
+
+
 
 2. Open Powershell, type `cd Downloads` (or `cd Your-File-Location`).
 
@@ -121,20 +135,37 @@ Compiled versions of the Subspace CLI is [hosted on GitHub](https://github.com/s
 
 <TabItem value="macos" label="🍎macOS" default>
 
-1. Download your Release Binary below.
+:::caution
 
-<div className={styles.buttons}>
-    <Link
+Some older processors/VMs are no longer supported by official releases, but can still be compiled manually if desired
+
+:::
+1. Download your Release Binary below.
+  <details>
+    <summary>
+    Mac CLI Executable (Intel)
+    </summary>
+    <div className={styles.buttons}>
+      <Link
         className="button button--secondary button"
         to="https://github.com/subspace/subspace-cli/releases/download/v0.1.12/subspace-cli-macos-x86_64-v0.1.12.zip">
         Mac CLI Executable (Intel)
-    </Link>
-    <Link
-        className="button button--secondary button"
-        to="https://github.com/subspace/subspace-cli/releases/download/v0.1.12/subspace-cli-macos-aarch64-v0.1.12.zip">
-        Mac CLI Executable (Apple M Series)
-    </Link>
-</div>
+      </Link>
+    </div>
+  </details>
+
+  <details>
+    <summary>
+    Mac CLI Executable (Apple M Series)
+    </summary>
+    <div className={styles.buttons}>
+        <Link
+            className="button button--secondary button"
+            to="https://github.com/subspace/subspace-cli/releases/download/v0.1.12/subspace-cli-macos-aarch64-v0.1.12.zip">
+            Mac CLI Executable (Apple M Series)
+        </Link>
+    </div>
+  </details>
 
 2. Extract the `.zip` file.
 3. Open Terminal, type `cd Downloads` (or `cd Your-File-Location`).
@@ -149,26 +180,56 @@ Your Mac may not let you open/initialize the file because of unidentified develo
 </TabItem>
 <TabItem value="linux" label="🐧Ubuntu">
 
+:::caution
+
+Some older processors/VMs are no longer supported by official releases, but can still be compiled manually if desired
+
+:::
 1. Download your Release Binary below.
 
-<div className={styles.buttons}>
-    <Link
-        className="button button--secondary button"
-        to="https://github.com/subspace/subspace-cli/releases/download/v0.1.12/subspace-cli-ubuntu-x86_64-v2-v0.1.12">
-        V2: Ubuntu Executable
-    </Link>
-    <Link
-        className="button button--secondary button"
-        to="https://github.com/subspace/subspace-cli/releases/download/v0.1.12/subspace-cli-ubuntu-x86_64-v3-v0.1.12">
-        V3: Ubuntu Executable
-    </Link>
-    <Link
-        className="button button--secondary button"
-        to="https://github.com/subspace/subspace-cli/releases/download/v0.1.12/subspace-cli-ubuntu-aarch64-v0.1.12">
-        V2: Ubuntu Executable (aarch64)
-    </Link>
+  <details>
+    <summary>
+    Expand for Ubuntu Executable
+    </summary>
+    <details>
+        <summary>
+        Version 2 - for older processors since ~2009 and some old VMs
+        </summary>    
+        <div className={styles.buttons}>
+            <Link
+                className="button button--secondary button"
+                to="https://github.com/subspace/subspace-cli/releases/download/v0.1.12/subspace-cli-ubuntu-x86_64-v2-v0.1.12">
+                Ubuntu Executable
+            </Link>
+        </div>
+    </details>
+    <details>
+        <summary>
+        Version 3 - For newer processors since ~2015
+        </summary>    
+        <div className={styles.buttons}>
+            <Link
+                className="button button--secondary button"
+                to="https://github.com/subspace/subspace-cli/releases/download/v0.1.12/subspace-cli-ubuntu-x86_64-v3-v0.1.12">
+                Ubuntu Executable
+            </Link>
+        </div>
+    </details>
 
-</div>
+  </details>
+
+    <details>
+        <summary>
+        Expand for Aarch64/64-bit Raspberry Pi Executables
+        </summary>    
+        <div className={styles.buttons}>
+            <Link
+                className="button button--secondary button"
+                to="https://github.com/subspace/subspace-cli/releases/download/v0.1.12/subspace-cli-ubuntu-aarch64-v0.1.12">
+                Ubuntu Executable (aarch64)
+            </Link>
+        </div>
+    </details>
 
 2. Open Terminal, type `cd Downloads` (or `cd Your-File-Location`).
 3. Make the binary executable by running:
