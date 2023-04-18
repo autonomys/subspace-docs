@@ -34,12 +34,12 @@ This may impact your network usage so please check your network connection if yo
 
 Subspace CLI requires commodity hardware specs to operate. At a **minimum**, it is recommended to have:
 
-|Hardware|Specs|
-|-|-|
-|CPU|4 Core+|
-|RAM|4GB+ (Rec. 8GB)|
-|SWAP|4GB|
-|Storage|100GB SSD|
+| Hardware | Specs           |
+| -------- | --------------- |
+| CPU      | 4 Core+         |
+| RAM      | 4GB+ (Rec. 8GB) |
+| SWAP     | 4GB             |
+| Storage  | 100GB SSD       |
 
 :::note CoW File Systems Warning
 It is advised not to use the Subspace farmer and node on CoW file systems for any OS.
@@ -107,7 +107,7 @@ Some older processors/VMs are no longer supported by official releases, but can 
     <div className={styles.buttons}>
       <Link
         className="button button--secondary button"
-        to="https://github.com/subspace/subspace-cli/releases/download/v0.1.12/subspace-cli-windows-x86_64-v2-v0.1.12.exe">
+        to="https://github.com/subspace/subspace-cli/releases/download/v0.3.2/subspace-cli-windows-x86_64-v2-v0.3.2.exe">
         Windows CLI Executable
       </Link>
     </div>
@@ -120,7 +120,7 @@ Some older processors/VMs are no longer supported by official releases, but can 
     <div className={styles.buttons}>
       <Link
         className="button button--secondary button"
-        to="https://github.com/subspace/subspace-cli/releases/download/v0.1.12/subspace-cli-windows-x86_64-v3-v0.1.12.exe">
+        to="https://github.com/subspace/subspace-cli/releases/download/v0.3.2/subspace-cli-windows-x86_64-v3-v0.3.2.exe">
         Windows CLI Executable
       </Link>
     </div>
@@ -148,7 +148,7 @@ Some older processors/VMs are no longer supported by official releases, but can 
     <div className={styles.buttons}>
       <Link
         className="button button--secondary button"
-        to="https://github.com/subspace/subspace-cli/releases/download/v0.1.12/subspace-cli-macos-x86_64-v0.1.12.zip">
+        to="https://github.com/subspace/subspace-cli/releases/download/v0.3.2/subspace-cli-macos-x86_64-v0.3.2.zip">
         Mac CLI Executable (Intel)
       </Link>
     </div>
@@ -161,7 +161,7 @@ Some older processors/VMs are no longer supported by official releases, but can 
     <div className={styles.buttons}>
         <Link
             className="button button--secondary button"
-            to="https://github.com/subspace/subspace-cli/releases/download/v0.1.12/subspace-cli-macos-aarch64-v0.1.12.zip">
+            to="https://github.com/subspace/subspace-cli/releases/download/v0.3.2/subspace-cli-macos-aarch64-v0.3.2.zip">
             Mac CLI Executable (Apple M Series)
         </Link>
     </div>
@@ -170,11 +170,11 @@ Some older processors/VMs are no longer supported by official releases, but can 
 2. Extract the `.zip` file.
 3. Open Terminal, type `cd Downloads` (or `cd Your-File-Location`).
 4. Make the binary executable by running:
-    * `chmod +x subspace-cli-macos-x86_64-v0.1.12` (Intel Chip) 
-    * `chmod +x subspace-cli-macos-aarch64-v0.1.12` (Apple M Series)
+    * `chmod +x subspace-cli-macos-x86_64-v0.3.2` (Intel Chip)
+    * `chmod +x subspace-cli-macos-aarch64-v0.3.2` (Apple M Series)
 
 :::warning
-Your Mac may not let you open/initialize the file because of unidentified developer restrictions. To resolve this, go to Settings-> Security&Privacy -> General -> Allow 
+Your Mac may not let you open/initialize the file because of unidentified developer restrictions. To resolve this, go to Settings-> Security&Privacy -> General -> Allow
 :::
 
 </TabItem>
@@ -194,11 +194,11 @@ Some older processors/VMs are no longer supported by official releases, but can 
     <details>
         <summary>
         Version 2 - for older processors since ~2009 and some old VMs
-        </summary>    
+        </summary>
         <div className={styles.buttons}>
             <Link
                 className="button button--secondary button"
-                to="https://github.com/subspace/subspace-cli/releases/download/v0.1.12/subspace-cli-ubuntu-x86_64-v2-v0.1.12">
+                to="https://github.com/subspace/subspace-cli/releases/download/v0.3.2/subspace-cli-ubuntu-x86_64-v2-v0.3.2">
                 Ubuntu Executable
             </Link>
         </div>
@@ -206,11 +206,11 @@ Some older processors/VMs are no longer supported by official releases, but can 
     <details>
         <summary>
         Version 3 - For newer processors since ~2015
-        </summary>    
+        </summary>
         <div className={styles.buttons}>
             <Link
                 className="button button--secondary button"
-                to="https://github.com/subspace/subspace-cli/releases/download/v0.1.12/subspace-cli-ubuntu-x86_64-v3-v0.1.12">
+                to="https://github.com/subspace/subspace-cli/releases/download/v0.3.2/subspace-cli-ubuntu-x86_64-v3-v0.3.2">
                 Ubuntu Executable
             </Link>
         </div>
@@ -221,11 +221,11 @@ Some older processors/VMs are no longer supported by official releases, but can 
     <details>
         <summary>
         Expand for Aarch64/64-bit Raspberry Pi Executables
-        </summary>    
+        </summary>
         <div className={styles.buttons}>
             <Link
                 className="button button--secondary button"
-                to="https://github.com/subspace/subspace-cli/releases/download/v0.1.12/subspace-cli-ubuntu-aarch64-v0.1.12">
+                to="https://github.com/subspace/subspace-cli/releases/download/v0.3.2/subspace-cli-ubuntu-aarch64-v0.3.2">
                 Ubuntu Executable (aarch64)
             </Link>
         </div>
@@ -233,8 +233,8 @@ Some older processors/VMs are no longer supported by official releases, but can 
 
 2. Open Terminal, type `cd Downloads` (or `cd Your-File-Location`).
 3. Make the binary executable by running:
-    * `chmod +x subspace-cli-ubuntu-x86_64-v3-v0.1.12` (Ubuntu) 
-    * `chmod +x subspace-cli-ubuntu-aarch64-v0.1.12` (Ubuntu aarch64)
+    * `chmod +x subspace-cli-ubuntu-x86_64-v3-v0.3.2` (Ubuntu)
+    * `chmod +x subspace-cli-ubuntu-aarch64-v0.3.2` (Ubuntu aarch64)
 
 </TabItem>
 
@@ -250,7 +250,7 @@ To start we have to initialize our Farmer, this can be done with:
 <TabItem value="windows" label="🖼️ Windows" default>
 
 ```powershell
-./subspace-cli-windows-x86_64-v0.1.12.exe init
+./subspace-cli-windows-x86_64-v0.3.2.exe init
 ```
 
 </TabItem>
@@ -260,14 +260,14 @@ Intel Chip:
 
 ```bash
 
-./subspace-cli-macos-x86_64-v0.1.12 init
+./subspace-cli-macos-x86_64-v0.3.2 init
 
 ```
 Apple M Series:
 
 ```bash
 
-./subspace-cli-macos-aarch64-v0.1.12 init
+./subspace-cli-macos-aarch64-v0.3.2 init
 
 ```
 
@@ -278,36 +278,35 @@ Ubuntu:
 
 ```bash
 
-./subspace-cli-ubuntu-x86_64-v3-v0.1.12 init
+./subspace-cli-ubuntu-x86_64-v3-v0.3.2 init
 
 ```
 Ubuntu Executable (aarch64):
 
 ```bash
 
-./subspace-cli-ubuntu-aarch64-v0.1.12 init
+./subspace-cli-ubuntu-aarch64-v0.3.2 init
 
 ```
 
 </TabItem>
 </Tabs>
 
-This will prompt you to setup your CLI configurations to begin farming. You should see a similar prompt like so:
+This will prompt you to setup your CLI configurations to begin farming. You should see a similar prompt like so (some info might be different than shown here w.r.t your OS):
 
 ```bash
-version: 0.1.0
-
-SUBSPACE NETWORK
+version: 0.3.2
 
 Configuration creation process has started...
 Enter your farmer/reward address: REDACTED_ADDRESS
-Enter your node name to be identified on the network(defaults to `username`, press enter to use the default):
-Specify a plot location (press enter to use the default: `"/home/username/.local/share/subspace-cli/plots"`):
+Enter your node name to be identified on the network(defaults to `ozgunozerk`, press enter to use the default):
+Specify a path for storing plot files (press enter to use the default: `"/home/username/.local/share/subspace-cli/plots"`):
+Specify a path for storing node files (press enter to use the default: `"/Users/ozgunozerk/Library/Application Support/subspace-cli/node"`):
 Specify a plot size (defaults to `1000.0 MB`, press enter to use the default):
-Specify the chain to farm(defaults to `gemini-3c`, press enter to use the default):
+Specify the chain to farm. Available options are: [Gemini3d, Dev, DevNet].
+ Defaults to `Gemini3d`, press enter to use the default:
 Configuration has been generated at /home/username/.config/subspace-cli
-Ready for lift-off! Run the following command to begin:
-`./subspace-cli farm`
+Ready for lift off! Run the follow command to begin:
 ```
 
 :::info Finding your settings.toml
@@ -374,7 +373,7 @@ To begin farming on the network, just run the `farm` command with the CLI like s
 <TabItem value="windows" label="🖼️ Windows" default>
 
 ```powershell
-./subspace-cli-windows-x86_64-v0.1.12.exe farm
+./subspace-cli-windows-x86_64-v0.3.2.exe farm
 ```
 
 </TabItem>
@@ -385,14 +384,14 @@ Intel Chip:
 
 ```bash
 
-./subspace-cli-macos-x86_64-v0.1.12 farm
+./subspace-cli-macos-x86_64-v0.3.2 farm
 
 ```
 Apple M1 Chip:
 
 ```bash
 
-./subspace-cli-macos-aarch64-v0.1.12 farm
+./subspace-cli-macos-aarch64-v0.3.2 farm
 
 ```
 
@@ -404,14 +403,14 @@ Ubuntu:
 
 ```bash
 
-./subspace-cli-ubuntu-x86_64-v3-v0.1.12 farm
+./subspace-cli-ubuntu-x86_64-v3-v0.3.2 farm
 
 ```
 Ubuntu Executable (aarch64):
 
 ```bash
 
-./subspace-cli-ubuntu-aarch64-v0.1.12 farm
+./subspace-cli-ubuntu-aarch64-v0.3.2 farm
 
 ```
 
@@ -457,7 +456,7 @@ Ctrl+b d OR ⌘+b d (Mac)
 
 * To re-attach
 ```bash
-$ tmux -S farming attach 
+$ tmux -S farming attach
 ```
 
 * To delete farming session
@@ -476,7 +475,7 @@ If you want to learn more about Screen and its options check out their Webpage [
 
 * Create new screen using a socket file named farming
 ```bash
-$ screen -S farming 
+$ screen -S farming
 ```
 
 * Move process to background by detaching
@@ -486,7 +485,7 @@ Ctrl+d a OR ⌘+d a (Mac)
 
 * To re-attach
 ```bash
-$ screen -r farming 
+$ screen -r farming
 ```
 * To delete farming session
 ```bash
@@ -527,9 +526,9 @@ Your Logs will be found in `$HOME/.local/share/subspace-cli/logs`
 
 :::tip Updated from a previous version and now having issues?
 
-Occasionally after updating to a new version of the CLI you will need to wipe your node and farmer, generally this should not be required but can be attempted if your farmer is having issues after having had worked fine previously. 
+Occasionally after updating to a new version of the CLI you will need to wipe your node and farmer, generally this should not be required but can be attempted if your farmer is having issues after having had worked fine previously.
 
-::: 
+:::
 
 To simply restart the node, go to the terminal where you started the `farm` command, and press `Ctrl + C` you should see a shutdown message appear and the application will attempt a simple shutdown, if you dont see the message press `Ctrl + C` again to force shutdown. You can then simply start the farmer again with the `farm` command you used prior.
 
