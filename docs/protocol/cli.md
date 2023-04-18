@@ -306,7 +306,7 @@ Specify a plot size (defaults to `1000.0 MB`, press enter to use the default):
 Specify the chain to farm. Available options are: [Gemini3d, Dev, DevNet].
  Defaults to `Gemini3d`, press enter to use the default:
 Configuration has been generated at /home/username/.config/subspace-cli
-Ready for lift off! Run the follow command to begin:
+Ready for lift off! Run the follow command to begin: `"path/to/executable" farm`
 ```
 
 :::info Finding your settings.toml

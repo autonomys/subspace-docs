@@ -11,7 +11,7 @@ keywords:
 
 :::caution
 
-Please note, all community provided resources are **non-official**. For clarification please refer to [official materials](/docs/intro). 
+Please note, all community provided resources are **non-official**. For clarification please refer to [official materials](/docs/intro).
 
 :::
 
@@ -22,7 +22,7 @@ Please note, all community provided resources are **non-official**. For clarific
 
 ### Telegram
 
-🇹🇷 - [türk telgraf topluluğu](https://t.me/subspacenetworkturkey)
+🇹🇷 - [türk telegram topluluğu](https://t.me/subspacenetworkturkey)
 
 ### Discord
 
