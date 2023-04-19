@@ -141,6 +141,7 @@ Some older processors/VMs are no longer supported by official releases, but can 
 
 :::
 1. Download your Release Binary below.
+
 <details>
   <summary>
   Mac CLI Executable (Intel)
