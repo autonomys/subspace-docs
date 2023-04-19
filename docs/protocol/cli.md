@@ -299,9 +299,9 @@ version: 0.3.2
 
 Configuration creation process has started...
 Enter your farmer/reward address: REDACTED_ADDRESS
-Enter your node name to be identified on the network(defaults to `ozgunozerk`, press enter to use the default):
+Enter your node name to be identified on the network(defaults to `username`, press enter to use the default):
 Specify a path for storing plot files (press enter to use the default: `"/home/username/.local/share/subspace-cli/plots"`):
-Specify a path for storing node files (press enter to use the default: `"/Users/ozgunozerk/Library/Application Support/subspace-cli/node"`):
+Specify a path for storing node files (press enter to use the default: `"/home/username/.local/share/subspace-cli/node"`):
 Specify a plot size (defaults to `1000.0 MB`, press enter to use the default):
 Specify the chain to farm. Available options are: [Gemini3d, Dev, DevNet].
  Defaults to `Gemini3d`, press enter to use the default:
