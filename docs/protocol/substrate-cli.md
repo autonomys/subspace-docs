@@ -229,9 +229,11 @@ We will be downloading two files for your respective operating system.
       </Link>
     </div>
   </details>
-  ---
 
-:::caution Windows No Output Bug
+
+---
+
+:::caution  Windows No Output Bug
 
   If you face an error where the node outputs nothing and no error code is given it is likely you just need to install the latest Visual C++ Redistributable package [here](https://learn.microsoft.com/en-us/cpp/windows/latest-supported-vc-redist?view=msvc-170)
 
@@ -490,11 +492,16 @@ We will be downloading two files for your respective operating system.
     </div>
   </details>
 
-  :::caution
+
+---
+
+:::caution Linux File Descriptor Limit
+
   The Linux system has a hard file descriptor limit of 100k. If this is exceeded, an error will be thrown. For reference, Substrate by default has a 10k hard file descriptor limit.
 
   The limit can generally be found on the path /proc/sys/fs/file-max. It is recommended to change the limit to 100k if it is not already. Here is an example [tutorial.](https://www.tutorialspoint.com/increase-number-of-maximum-open-files-in-linux)
-  :::
+
+:::
 
   ### Required dependencies
   There are two packages that are typically already installed, but might be missing on your machine.
