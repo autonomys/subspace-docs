@@ -122,7 +122,7 @@ We will be downloading two files for your respective operating system.
           - "0.0.0.0:30433:30433"
         restart: unless-stopped
         command: [
-          "--chain", "gemini-3c",
+          "--chain", "gemini-3d",
           "--base-path", "/var/subspace",
           "--execution", "wasm",
           "--blocks-pruning", "archive",
@@ -169,7 +169,7 @@ We will be downloading two files for your respective operating system.
           "--listen-on", "/ip4/0.0.0.0/tcp/30533",
     # Replace `WALLET_ADDRESS` with your Polkadot.js wallet address
           "--reward-address", "WALLET_ADDRESS",
-    # Replace `PLOT_SIZE` with plot size in gigabytes or terabytes, for instance 100G or 2T (but leave at least 60G of disk space for node and some for OS)
+    # Replace `PLOT_SIZE` with plot size in gigabytes or terabytes, for example 100G or 2T (but leave at least 60G of disk space for node and some for OS)
           "--plot-size", "PLOT_SIZE"
         ]
     volumes:
