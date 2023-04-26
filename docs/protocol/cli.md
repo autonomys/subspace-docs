@@ -41,6 +41,16 @@ Subspace CLI requires commodity hardware specs to operate. At a **minimum**, it 
 | SWAP     | 4GB             |
 | Storage  | 100GB SSD       |
 
+:::caution BUG#1388 - Storage Growing Too Large
+
+We are currently investigating a bug that is causing the node Archive to exceed its expected growth. As a result, we suggest having a minimum of 150-200GB of storage available for your system.
+
+Therefore, please make sure that you have at least ~150-200GB of storage in addition to your desired plot size.
+
+For more information, please visit: https://github.com/subspace/subspace/issues/1388
+
+:::
+
 :::note CoW File Systems Warning
 It is advised not to use the Subspace farmer and node on CoW file systems for any OS.
 

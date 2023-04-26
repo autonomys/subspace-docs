@@ -51,6 +51,16 @@ Alternatively, non-CoW file systems like ext4 or xfs can be used instead.
 |Storage|100GB SSD|
 
 
+:::caution BUG#1388 - Storage Growing Too Large
+
+We are currently investigating a bug that is causing the node Archive to exceed its expected growth. As a result, we suggest having a minimum of 150-200GB of storage available for your system.
+
+Therefore, please make sure that you have at least ~150-200GB of storage in addition to your desired plot size.
+
+For more information, please visit: https://github.com/subspace/subspace/issues/1388
+
+:::
+
 ### B. Crypto Wallet
 
 Before running anything you need to have a wallet where you'll receive testnet coins. There are currently two wallets we suggest using, SubWallet being the preferred route.
