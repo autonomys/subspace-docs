@@ -31,7 +31,7 @@ We are a fully open source project, meaning we are open to all kinds of contribu
 - **Bug Reports & Fixes:** Find a bug or error? Let us know where it's hiding. Report it at the [GitHub](https://github.com/subspace/subspace-docs).
 - **Feature Requests & Implementations:** Looking for a new feature? Share your ideas so we can improve.
 
-*If you have something that is not listed, try to be as descriptive as possible and feel free to submit the Pull Request on [GitHub](https://github.com/subspace/subspace-docs).*
+*If you have something that is not listed, try to be as descriptive as possible and feel free to submit the [pull request](https://github.com/subspace/subspace-docs/pulls).*
 
 # Ground Rules
 
