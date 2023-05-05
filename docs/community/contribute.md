@@ -24,14 +24,14 @@ Following these guidelines shows that you respect the time of the developers who
 
 ### What Can I Contribute?
 
-We are a fully Open Source project, meaning we are open to all kinds of contributions from our community. Here are a few examples of contributions that we are open to in this repo:
+We are a fully open source project, meaning we are open to all kinds of contributions from our community. Here are a few examples of contributions that we are open to:
 
-- **Added Content:** Writing a nice guide? Submit it (Where?) so we can add it to our Docs. 
-- **Translation:** Adding Translations of our prior content? See the [translate](TRANSLATE) page for help.
-- **Bug Reports & Fixes:** Find a bug or error? Let us know where it's hiding. (Where?)
+- **Added Content:** Writing a nice guide? Submit it on [Github](https://github.com/subspace/subspace-docs) so we can add it to our Docs. 
+- **Translation:** Adding translations of our prior content? See the [translate](TRANSLATE) page for help.
+- **Bug Reports & Fixes:** Find a bug or error? Let us know where it's hiding. Report it at the [Github] (https://github.com/subspace/subspace-docs)
 - **Feature Requests & Implementations:** Looking for a new feature? Share your ideas so we can improve.
 
-*If you have something that is not listed, try to be as descriptive as possible and feel free to submit the PR.*
+*If you have something that is not listed, try to be as descriptive as possible and feel free to submit the Pull Request on [Github](https://github.com/subspace/subspace-docs).*
 
 # Ground Rules
 
@@ -41,7 +41,7 @@ Please refer to our [Code of Conduct](CODE_OF_CONDUCT)
 
 ## Simple Fix
 
-Please follow this pathway for *minor* contributions such as Spelling errors, Typos, Rewording, etc. 
+Please follow this pathway for *minor* contributions such as spelling errors, typos, rewording, etc. 
 > If you are adding entirely new pages, features, etc, then please refer to the `Advanced` portion of this section
 
 1. Go to [Subspace Documentation](https://docs.subspace.network), and find the page that you would like to change.
@@ -49,7 +49,7 @@ Please follow this pathway for *minor* contributions such as Spelling errors, Ty
 3. This will open up GitHub, and direct you to the raw page on GitHub.
 4. In the top right click the `pencil` emoji to edit the page.
 5. GitHub will change the page to a text editor, where you will be able to make changes.
-6. Once you are satisfied with your changes you will scroll to the bottom.
+6. Once you are satisfied with your changes, scroll to the bottom and fill out the following fields.
     - Fill out Title
     - Fill out Description
     - Click the `Create a new branch for this commit and start a pull request.` option
@@ -57,12 +57,12 @@ Please follow this pathway for *minor* contributions such as Spelling errors, Ty
 8. On the right you will see some options, you will want to apply the most accurate `labels` listed.
 9. Click `Create Pull Request`
 
-🎉Congratulations! You have just submitted your first Pull Request! 
+🎉Congratulations! You have just submitted your first pull request! 
 *Please provide some time for a maintainer to view your pull request and approve it, or request adjustments.*
 
 ## Never contributed before?
 
-No worries! We all start somewhere 🚀 There are several videos & resources online to show various ways to use GitHub.
+No worries! We all start somewhere 🚀 There are several videos and resources online to show various ways to use GitHub.
 Check out some of these amazing guides to help get you familiar with GitHub and contributing.
 - [First Contributions - Terminal](https://github.com/firstcontributions/first-contributions)
 - [First Contributions - GitHub Desktop](https://github.com/firstcontributions/first-contributions/blob/master/gui-tool-tutorials/github-desktop-tutorial.md)
