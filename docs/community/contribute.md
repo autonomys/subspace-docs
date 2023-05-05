@@ -15,7 +15,7 @@ keywords:
 
 ### You Rock!
 
-First off, thank you for considering contributing to the Subspace Network. It's through the amazing collaboration of people like yourself that truly makes the Open Source community amazing. ❤️
+First off, thank you for considering contributing to the Subspace Network. It's through the amazing collaboration of people like yourself that truly makes the open source community amazing. ❤️
 
 ### Help us, Help you, Help us!
 
@@ -26,16 +26,16 @@ Following these guidelines shows that you respect the time of the developers who
 
 We are a fully open source project, meaning we are open to all kinds of contributions from our community. Here are a few examples of contributions that we are open to:
 
-- **Added Content:** Writing a nice guide? Submit it on the [forums](https://forum.subspace.network/c/guides-and-faqs/13). 
+- **Added Content:** Writing a nice guide? Submit it on the [forum guides](https://forum.subspace.network/c/guides-and-faqs/13). 
 - **Translation:** Adding translations of our prior content? See the [translate](TRANSLATE) page for help.
-- **Bug Reports & Fixes:** Find a bug or error? Let us know where it's hiding. Report it at the [GitHub](https://github.com/subspace/subspace-docs).
+- **Bug Reports & Fixes:** Find a bug or error? Let us know where it's hiding. Report it at the [support forum](https://forum.subspace.network/c/support/5).
 - **Feature Requests & Implementations:** Looking for a new feature? Share your ideas so we can improve.
 
 *If you have something that is not listed, try to be as descriptive as possible and feel free to submit the [pull request](https://github.com/subspace/subspace-docs/pulls).*
 
 # Ground Rules
 
-Please refer to our [Code of Conduct](CODE_OF_CONDUCT).
+Please refer to our [Code of Conduct](CODE_OF_CONDUCT.md).
 
 # Your First Contribution
 
