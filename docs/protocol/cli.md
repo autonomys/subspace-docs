@@ -141,6 +141,11 @@ Some older processors/VMs are no longer supported by official releases, but can 
 
 2. Open Powershell, type `cd Downloads` (or `cd Your-File-Location`).
 
+:::warning
+Windows may block Subspace because of unidentified developer restrictions. To resolve this, select 'Allow access'
+:::
+![Windows Defender Firewall](../../src/Images/Windows_Security_Alert.png)
+
 </TabItem>
 
 <TabItem value="macos" label="🍎macOS" default>

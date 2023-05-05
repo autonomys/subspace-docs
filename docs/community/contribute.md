@@ -26,23 +26,23 @@ Following these guidelines shows that you respect the time of the developers who
 
 We are a fully open source project, meaning we are open to all kinds of contributions from our community. Here are a few examples of contributions that we are open to:
 
-- **Added Content:** Writing a nice guide? Submit it on [Github](https://github.com/subspace/subspace-docs) so we can add it to our Docs. 
+- **Added Content:** Writing a nice guide? Submit it on the [forums](https://forum.subspace.network/c/guides-and-faqs/13). 
 - **Translation:** Adding translations of our prior content? See the [translate](TRANSLATE) page for help.
-- **Bug Reports & Fixes:** Find a bug or error? Let us know where it's hiding. Report it at the [Github] (https://github.com/subspace/subspace-docs)
+- **Bug Reports & Fixes:** Find a bug or error? Let us know where it's hiding. Report it at the [GitHub](https://github.com/subspace/subspace-docs).
 - **Feature Requests & Implementations:** Looking for a new feature? Share your ideas so we can improve.
 
-*If you have something that is not listed, try to be as descriptive as possible and feel free to submit the Pull Request on [Github](https://github.com/subspace/subspace-docs).*
+*If you have something that is not listed, try to be as descriptive as possible and feel free to submit the Pull Request on [GitHub](https://github.com/subspace/subspace-docs).*
 
 # Ground Rules
 
-Please refer to our [Code of Conduct](CODE_OF_CONDUCT)
+Please refer to our [Code of Conduct](CODE_OF_CONDUCT).
 
 # Your First Contribution
 
 ## Simple Fix
 
 Please follow this pathway for *minor* contributions such as spelling errors, typos, rewording, etc. 
-> If you are adding entirely new pages, features, etc, then please refer to the `Advanced` portion of this section
+> If you are adding entirely new pages, features, etc, then please refer to the `Advanced` portion of this section.
 
 1. Go to [Subspace Documentation](https://docs.subspace.network), and find the page that you would like to change.
 2. Scroll to the bottom and click `Edit this page`.
@@ -98,7 +98,7 @@ We do not have any strict template that you must follow, but please provide all 
 # How to suggest a feature or enhancement
 
 This documentation is for the community, so any feature requests are welcome.
-* If you are requesting a feature, please submit a Github issue and use the label `enhancement`
+* If you are requesting a feature, please submit a Github issue and use the label `enhancement`.
 * Explain why this issue is needed, and what problems it will solve.
 * Indicate if you are able/willing to help implement this feature.
 
