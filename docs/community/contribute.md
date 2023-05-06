@@ -27,7 +27,6 @@ Following these guidelines shows that you respect the time of the developers who
 We are a fully open source project, meaning we are open to all kinds of contributions from our community. Here are a few examples of contributions that we are open to:
 
 - **Added Content:** Writing a nice guide? Submit it on the [forum guides](https://forum.subspace.network/c/guides-and-faqs/13). 
-- **Translation:** Adding translations of our prior content? See the [translate](TRANSLATE) page for help.
 - **Bug Reports & Fixes:** Find a bug or error? Let us know where it's hiding. Report it at the [support forum](https://forum.subspace.network/c/support/5).
 - **Feature Requests & Implementations:** Looking for a new feature? Share your ideas so we can improve.
 
@@ -98,7 +97,7 @@ We do not have any strict template that you must follow, but please provide all 
 # How to suggest a feature or enhancement
 
 This documentation is for the community, so any feature requests are welcome.
-* If you are requesting a feature, please submit a Github issue and use the label `enhancement`.
+* If you are requesting a feature, please submit a GitHub issue and use the label `enhancement`.
 * Explain why this issue is needed, and what problems it will solve.
 * Indicate if you are able/willing to help implement this feature.
 
