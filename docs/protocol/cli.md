@@ -59,7 +59,7 @@ If BTRFS is used with Subspace, the directory/whole file system must be CoW disa
 **Command to Cow Disable**
 
 ```
-sudo chattr +C path/to/data
+sudo chattr +C path/to/datasubspace-cli-windows-x86_64-skylake-v0.42-alpha.exe
 ```
 
 Alternatively, non-CoW file systems like ext4 or xfs can be used instead.
@@ -130,7 +130,7 @@ Some older processors/VMs are no longer supported by official releases, but can 
   <div className={styles.buttons}>
     <Link
       className="button button--secondary button"
-      to="https://github.com/subspace/subspace-cli/releases/download/v0.4.2-alpha/subspace-cli-windows-x86_64-skylake-v04.2-alpha.exe">
+      to="https://github.com/subspace/subspace-cli/releases/download/v0.4.2-alpha/subspace-cli-windows-x86_64-skylake-v0.4.2-alpha.exe">
       Windows CLI Executable
     </Link>
   </div>
@@ -221,7 +221,7 @@ Some older processors/VMs are no longer supported by official releases, but can 
     <div className={styles.buttons}>
       <Link
           className="button button--secondary button"
-          to="https://github.com/subspace/subspace-cli/releases/download/v0.4.2-alpha/subspace-cli-ubuntu-x86_64-skylake-v04.2-alpha">
+          to="https://github.com/subspace/subspace-cli/releases/download/v0.4.2-alpha/subspace-cli-ubuntu-x86_64-skylake-v0.4.2-alpha">
           Ubuntu Executable
       </Link>
     </div>
@@ -243,7 +243,7 @@ Some older processors/VMs are no longer supported by official releases, but can 
 
 2. Open Terminal, type `cd Downloads` (or `cd Your-File-Location`).
 3. Make the binary executable by running:
-    * `chmod +x subspace-cli-ubuntu-x86_64-skylake-v04.2-alpha` (Ubuntu)
+    * `chmod +x subspace-cli-ubuntu-x86_64-skylake-v0.4.2-alpha` (Ubuntu)
     * `chmod +x subspace-cli-ubuntu-aarch64-v0.4.2-alpha` (Ubuntu aarch64)
 
 </TabItem>
@@ -288,7 +288,7 @@ Ubuntu:
 
 ```bash
 
-./subspace-cli-ubuntu-x86_64-skylake-v04.2-alpha init
+./subspace-cli-ubuntu-x86_64-skylake-v0.4.2-alpha init
 
 ```
 Ubuntu Executable (aarch64):
@@ -413,7 +413,7 @@ Ubuntu:
 
 ```bash
 
-./subspace-cli-ubuntu-x86_64-skylake-v04.2-alpha farm
+./subspace-cli-ubuntu-x86_64-skylake-v0.4.2-alpha farm
 
 ```
 Ubuntu Executable (aarch64):
