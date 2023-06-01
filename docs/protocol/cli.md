@@ -141,6 +141,11 @@ Some older processors/VMs are no longer supported by official releases, but can 
 
 2. Open Powershell, type `cd Downloads` (or `cd Your-File-Location`).
 
+:::warning
+The warning below may appear because the application is trying to access the internet. This is expected as it is how the farmer talks to other farmers on the network. Please select 'Allow access' to continue farming.
+:::
+![Windows Defender Firewall](../../src/Images/Windows_Security_Alert.png)
+
 </TabItem>
 
 <TabItem value="macos" label="🍎macOS" default>
