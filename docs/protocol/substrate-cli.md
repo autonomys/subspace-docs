@@ -132,19 +132,19 @@ We will be downloading two files for your respective operating system.
           - "0.0.0.0:30433:30433"
         restart: unless-stopped
         command: [
-          "--chain", "gemini-3d",
-          "--base-path", "/var/subspace",
+          "--chain", "devnet",
           "--execution", "wasm",
           "--blocks-pruning", "archive",
           "--state-pruning", "archive",
-          "--port", "30333",
-          "--dsn-listen-on", "/ip4/0.0.0.0/tcp/30433",
-          "--rpc-cors", "all",
-          "--rpc-methods", "safe",
-          "--unsafe-ws-external",
           "--dsn-disable-private-ips",
           "--no-private-ipv4",
           "--validator",
+          "--base-path", "/var/subspace",
+          "--prometheus-external",
+          "--prometheus-port", "9615",
+          "--rpc-cors", "all",
+          "--unsafe-rpc-external",
+          "--rpc-methods", "safe",
     # Replace `INSERT_YOUR_ID` with your node ID (will be shown in telemetry)
           "--name", "INSERT_YOUR_ID"
         ]
