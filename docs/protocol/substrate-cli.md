@@ -118,7 +118,7 @@ We will be downloading two files for your respective operating system.
     services:
       node:
         # For running on Aarch64 add `-aarch64` after `DATE`
-        image: ghcr.io/subspace/node:snapshot-2023-jun-27-3
+        image: ghcr.io/subspace/node:gemini-3e-2023-jun-30
         volumes:
     # Instead of specifying volume (which will store data in `/var/lib/docker`), you can
     # alternatively specify path to the directory where files will be stored, just make
@@ -159,7 +159,7 @@ We will be downloading two files for your respective operating system.
           node:
             condition: service_healthy
         # For running on Aarch64 add `-aarch64` after `DATE`
-        image: ghcr.io/subspace/farmer:snapshot-2023-jun-27-3
+        image: ghcr.io/subspace/farmer:gemini-3e-2023-jun-30
         volumes:
     # Instead of specifying volume (which will store data in `/var/lib/docker`), you can
     # alternatively specify path to the directory where files will be stored, just make
@@ -211,12 +211,12 @@ We will be downloading two files for your respective operating system.
     <div className={styles.buttons}>
       <Link
         className="button button--secondary button"
-        to="https://github.com/subspace/subspace/releases/download/snapshot-2023-jun-27-3/subspace-node-windows-x86_64-v2-snapshot-2023-jun-27-3.exe">
+        to="https://github.com/subspace/subspace/releases/download/gemini-3e-2023-jun-30/subspace-node-windows-x86_64-v2-gemini-3e-2023-jun-30.exe">
         Download Node Executable
       </Link>
       <Link
         className="button button--secondary button"
-        to="https://github.com/subspace/subspace/releases/download/snapshot-2023-jun-27-3/subspace-farmer-windows-x86_64-v2-snapshot-2023-jun-27-3.exe">
+        to="https://github.com/subspace/subspace/releases/download/gemini-3e-2023-jun-30/subspace-farmer-windows-x86_64-v2-gemini-3e-2023-jun-30.exe">
         Download Farmer Executable
       </Link>
     </div>
@@ -229,12 +229,12 @@ We will be downloading two files for your respective operating system.
     <div className={styles.buttons}>
       <Link
         className="button button--secondary button"
-        to="https://github.com/subspace/subspace/releases/download/snapshot-2023-jun-27-3/subspace-node-windows-x86_64-skylake-snapshot-2023-jun-27-3.exe">
+        to="https://github.com/subspace/subspace/releases/download/gemini-3e-2023-jun-30/subspace-node-windows-x86_64-skylake-gemini-3e-2023-jun-30.exe">
         Download Node Executable
       </Link>
       <Link
         className="button button--secondary button"
-        to="https://github.com/subspace/subspace/releases/download/snapshot-2023-jun-27-3/subspace-farmer-windows-x86_64-v2-snapshot-2023-jun-27-3.exe">
+        to="https://github.com/subspace/subspace/releases/download/gemini-3e-2023-jun-30/subspace-farmer-windows-x86_64-v2-gemini-3e-2023-jun-30.exe">
         Download Farmer Executable
       </Link>
     </div>
@@ -257,7 +257,7 @@ We will be downloading two files for your respective operating system.
   ```PowerShell
   # Replace `INSERT_YOUR_ID` with a nickname you choose
   # Copy all of the lines below, they are all part of the same command
-  .\subspace-node-windows-x86_64-skylake-snapshot-2023-jun-27-3.exe `
+  .\subspace-node-windows-x86_64-skylake-gemini-3e-2023-jun-30.exe `
     --chain devnet `
     --execution wasm `
     --blocks-pruning archive `
@@ -293,7 +293,7 @@ We will be downloading two files for your respective operating system.
   6. We will then open another terminal, change to the downloads directory, then start the farmer node with the following command:
   ```PowerShell
   # Replace `WALLET_ADDRESS` below with your account address from Polkadot.js wallet
-  .\subspace-farmer-windows-x86_64-v2-snapshot-2023-jun-27-3.exe farm  `
+  .\subspace-farmer-windows-x86_64-v2-gemini-3e-2023-jun-30.exe farm  `
     --disable-private-ips `
     --reward-address WALLET_ADDRESS `
     --plot-size 10G
@@ -328,12 +328,12 @@ We will be downloading two files for your respective operating system.
     <div className={styles.buttons}>
       <Link
         className="button button--secondary button"
-        to="https://github.com/subspace/subspace/releases/download/snapshot-2023-jun-27-3/subspace-node-macos-x86_64-snapshot-2023-jun-27-3.zip">
+        to="https://github.com/subspace/subspace/releases/download/gemini-3e-2023-jun-30/subspace-node-macos-x86_64-gemini-3e-2023-jun-30.zip">
         Download Node Executable
       </Link>
       <Link
         className="button button--secondary button"
-        to="https://github.com/subspace/subspace/releases/download/snapshot-2023-jun-27-3/subspace-farmer-macos-x86_64-snapshot-2023-jun-27-3.zip">
+        to="https://github.com/subspace/subspace/releases/download/gemini-3e-2023-jun-30/subspace-farmer-macos-x86_64-gemini-3e-2023-jun-30.zip">
         Download Farmer Executable
       </Link>
     </div>
@@ -346,12 +346,12 @@ We will be downloading two files for your respective operating system.
     <div className={styles.buttons}>
       <Link
         className="button button--secondary button"
-        to="https://github.com/subspace/subspace/releases/download/snapshot-2023-jun-27-3/subspace-node-macos-aarch64-snapshot-2023-jun-27-3.zip">
+        to="https://github.com/subspace/subspace/releases/download/gemini-3e-2023-jun-30/subspace-node-macos-aarch64-gemini-3e-2023-jun-30.zip">
         Download Node Executable
       </Link>
       <Link
         className="button button--secondary button"
-        to="https://github.com/subspace/subspace/releases/download/snapshot-2023-jun-27-3/subspace-farmer-macos-aarch64-snapshot-2023-jun-27-3.zip">
+        to="https://github.com/subspace/subspace/releases/download/gemini-3e-2023-jun-30/subspace-farmer-macos-aarch64-gemini-3e-2023-jun-30.zip">
         Download Farmer Executable
       </Link>
     </div>
@@ -368,8 +368,8 @@ We will be downloading two files for your respective operating system.
 
   1. Open your favorite terminal, and change to the Downloads directory using `cd Downloads`
   2. Make the farmer & node executable:
-  - `chmod +x subspace-farmer-macos-x86_64-snapshot-2023-jun-27-3`
-  - `chmod +x subspace-node-macos-x86_64-snapshot-2023-jun-27-3`
+  - `chmod +x subspace-farmer-macos-x86_64-gemini-3e-2023-jun-30`
+  - `chmod +x subspace-node-macos-x86_64-gemini-3e-2023-jun-30`
   1. We will then start the node using the following command
 
   > *Note, when attempting to run this command you may be prompted:* Click on `cancel` instead of moving it to trash.
@@ -379,7 +379,7 @@ We will be downloading two files for your respective operating system.
   ```bash
   # Replace `INSERT_YOUR_ID` with a nickname you choose
   # Copy all of the lines below, they are all part of the same command
-  ./subspace-node-macos-x86_64-snapshot-2023-jun-27-3 \
+  ./subspace-node-macos-x86_64-gemini-3e-2023-jun-30 \
     --chain gemini-3d \
     --execution wasm \
     --blocks-pruning archive \
@@ -414,7 +414,7 @@ We will be downloading two files for your respective operating system.
   5. We will then open another terminal, change to the downloads directory, then start the farmer node with the following command:
   ```bash
   # Replace `WALLET_ADDRESS` below with your account address from Polkadot.js wallet
-  ./subspace-farmer-macos-x86_64-snapshot-2023-jun-27-3 farm \
+  ./subspace-farmer-macos-x86_64-gemini-3e-2023-jun-30 farm \
     --disable-private-ips \
     --reward-address WALLET_ADDRESS \
     --plot-size 10G
@@ -455,12 +455,12 @@ We will be downloading two files for your respective operating system.
       <div className={styles.buttons}>
         <Link
           className="button button--secondary button"
-          to="https://github.com/subspace/subspace/releases/download/snapshot-2023-jun-27-3/subspace-node-ubuntu-x86_64-v2-snapshot-2023-jun-27-3">
+          to="https://github.com/subspace/subspace/releases/download/gemini-3e-2023-jun-30/subspace-node-ubuntu-x86_64-v2-gemini-3e-2023-jun-30">
           Download Node Executable
         </Link>
         <Link
           className="button button--secondary button"
-          to="https://github.com/subspace/subspace/releases/download/snapshot-2023-jun-27-3/subspace-farmer-ubuntu-x86_64-v2-snapshot-2023-jun-27-3">
+          to="https://github.com/subspace/subspace/releases/download/gemini-3e-2023-jun-30/subspace-farmer-ubuntu-x86_64-v2-gemini-3e-2023-jun-30">
           Download Farmer Executable
         </Link>
       </div>
@@ -472,12 +472,12 @@ We will be downloading two files for your respective operating system.
       <div className={styles.buttons}>
         <Link
           className="button button--secondary button"
-          to="https://github.com/subspace/subspace/releases/download/snapshot-2023-jun-27-3/subspace-node-ubuntu-x86_64-skylake-snapshot-2023-jun-27-3">
+          to="https://github.com/subspace/subspace/releases/download/gemini-3e-2023-jun-30/subspace-node-ubuntu-x86_64-skylake-gemini-3e-2023-jun-30">
           Download Node Executable
         </Link>
         <Link
           className="button button--secondary button"
-          to="https://github.com/subspace/subspace/releases/download/snapshot-2023-jun-27-3/subspace-farmer-ubuntu-x86_64-skylake-snapshot-2023-jun-27-3">
+          to="https://github.com/subspace/subspace/releases/download/gemini-3e-2023-jun-30/subspace-farmer-ubuntu-x86_64-skylake-gemini-3e-2023-jun-30">
           Download Farmer Executable
         </Link>
       </div>
@@ -491,12 +491,12 @@ We will be downloading two files for your respective operating system.
     <div className={styles.buttons}>
       <Link
         className="button button--secondary button"
-        to="https://github.com/subspace/subspace/releases/download/snapshot-2023-jun-27-3/subspace-node-ubuntu-aarch64-snapshot-2023-jun-27-3">
+        to="https://github.com/subspace/subspace/releases/download/gemini-3e-2023-jun-30/subspace-node-ubuntu-aarch64-gemini-3e-2023-jun-30">
         1. Download Node Executable
       </Link>
       <Link
         className="button button--secondary button"
-        to="https://github.com/subspace/subspace/releases/download/snapshot-2023-jun-27-3/subspace-farmer-ubuntu-aarch64-snapshot-2023-jun-27-3">
+        to="https://github.com/subspace/subspace/releases/download/gemini-3e-2023-jun-30/subspace-farmer-ubuntu-aarch64-gemini-3e-2023-jun-30">
         2. Download Farmer Executable
       </Link>
     </div>
@@ -524,14 +524,14 @@ We will be downloading two files for your respective operating system.
   ---
   1. Open your favorite terminal, and change to the Downloads directory using `cd Downloads`
   2. Make the farmer & node executable
-  - `chmod +x subspace-farmer-ubuntu-x86_64-skylake-snapshot-2023-jun-27-3`
-  - `chmod +x subspace-node-ubuntu-x86_64-skylake-snapshot-2023-jun-27-3`
+  - `chmod +x subspace-farmer-ubuntu-x86_64-skylake-gemini-3e-2023-jun-30`
+  - `chmod +x subspace-node-ubuntu-x86_64-skylake-gemini-3e-2023-jun-30`
   3. We will then start the node using the following command
 
   ```bash
   # Replace `INSERT_YOUR_ID` with a nickname you choose
   # Copy all of the lines below, they are all part of the same command
-  ./subspace-node-ubuntu-x86_64-skylake-snapshot-2023-jun-27-3 \
+  ./subspace-node-ubuntu-x86_64-skylake-gemini-3e-2023-jun-30 \
     --chain gemini-3d \
     --execution wasm \
     --blocks-pruning archive \
@@ -567,7 +567,7 @@ We will be downloading two files for your respective operating system.
   ```bash
   # Replace `FARMER_FILE_NAME` with the name of the farmer file you downloaded from releases
   # Replace `WALLET_ADDRESS` below with your account address from Polkadot.js wallet
-  ./subspace-farmer-ubuntu-x86_64-skylake-snapshot-2023-jun-27-3 farm \
+  ./subspace-farmer-ubuntu-x86_64-skylake-gemini-3e-2023-jun-30 farm \
     --disable-private-ips \
     --reward-address WALLET_ADDRESS \
     --plot-size 10G
@@ -617,7 +617,7 @@ To set your node to use a custom path all you will need to do is add the `--base
 
 **Example:**
 ```
-.\subspace-node-ubuntu-x86_64-skylake-snapshot-2023-jun-27-3 --chain gemini-3d --base-path /path/to/directory/here --execution wasm --state-pruning archive --validator --name INSERT_YOUR_ID
+.\subspace-node-ubuntu-x86_64-skylake-gemini-3e-2023-jun-30 --chain gemini-3d --base-path /path/to/directory/here --execution wasm --state-pruning archive --validator --name INSERT_YOUR_ID
 ```
 </TabItem>
 <TabItem value="farmer" label="2.🧑‍🌾 Farmer">
@@ -627,7 +627,7 @@ To set your node to use a custom path all you will need to do is add the `--base
 
 **Example:**
 ```
-.\subspace-farmer-ubuntu-x86_64-skylake-snapshot-2023-jun-27-3 --base-path /path/to/directory/here farm --reward-address WALLET_ADDRESS --plot-size PLOT_SIZE
+.\subspace-farmer-ubuntu-x86_64-skylake-gemini-3e-2023-jun-30 --base-path /path/to/directory/here farm --reward-address WALLET_ADDRESS --plot-size PLOT_SIZE
 ```
 </TabItem>
 </Tabs>
@@ -744,11 +744,11 @@ You'll have to have [Rust toolchain](https://rustup.rs/) installed as well as LL
 sudo apt-get install llvm clang
 ```
 
-Now clone the source and build snapshot `snapshot-2023-jun-27-3` (replace occurrences with the snapshot you want to build):
+Now clone the source and build snapshot `gemini-3e-2023-jun-30` (replace occurrences with the snapshot you want to build):
 ```bash
 git clone https://github.com/subspace/subspace.git
 cd subspace
-git checkout snapshot-2023-jun-27-3
+git checkout gemini-3e-2023-jun-30
 cargo build \
     --profile production \
     --bin subspace-node \
