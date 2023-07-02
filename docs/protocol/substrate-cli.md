@@ -132,7 +132,7 @@ We will be downloading two files for your respective operating system.
           - "0.0.0.0:30433:30433"
         restart: unless-stopped
         command: [
-          "--chain", "devnet",
+          "--chain", "gemini-3e",
           "--execution", "wasm",
           "--blocks-pruning", "archive",
           "--state-pruning", "archive",
@@ -258,7 +258,7 @@ We will be downloading two files for your respective operating system.
   # Replace `INSERT_YOUR_ID` with a nickname you choose
   # Copy all of the lines below, they are all part of the same command
   .\subspace-node-windows-x86_64-skylake-gemini-3e-2023-jun-30.exe `
-    --chain devnet `
+    --chain gemini-3e `
     --execution wasm `
     --blocks-pruning archive `
     --state-pruning archive `
