@@ -380,7 +380,7 @@ We will be downloading two files for your respective operating system.
   # Replace `INSERT_YOUR_ID` with a nickname you choose
   # Copy all of the lines below, they are all part of the same command
   ./subspace-node-macos-x86_64-gemini-3e-2023-jun-30 \
-    --chain gemini-3d \
+    --chain gemini-3e \
     --execution wasm \
     --blocks-pruning archive \
     --state-pruning archive \
@@ -532,7 +532,7 @@ We will be downloading two files for your respective operating system.
   # Replace `INSERT_YOUR_ID` with a nickname you choose
   # Copy all of the lines below, they are all part of the same command
   ./subspace-node-ubuntu-x86_64-skylake-gemini-3e-2023-jun-30 \
-    --chain gemini-3d \
+    --chain gemini-3e \
     --execution wasm \
     --blocks-pruning archive \
     --state-pruning archive \
@@ -601,9 +601,9 @@ We will be downloading two files for your respective operating system.
 
 Now that your Node & Farmer have been started you will wait for the node to sync and the farmer to complete the initial plotting. While this is occurring you can check out some of the helpful resources below.
 
-**- [Telemetry Server](https://telemetry.subspace.network/#list/0xab946a15b37f59c5f4f27c5de93acde9fe67a28e0b724a43a30e4fe0e87246b7)**
+**- [Telemetry Server](https://telemetry.subspace.network/#list/0xa3cd4b592d93f79943fbc58fc90ca8f516106699c9cf4d7ada98ca22877bc1ae)**
 
-**- [Block Explorer](https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Feu-0.gemini-3d.subspace.network%2Fws#/explorer)**
+**- [Block Explorer](https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Frpc-0.gemini-3e.subspace.network%2Fws#/explorer)**
 
 
 ### Using a Custom Path
@@ -617,7 +617,7 @@ To set your node to use a custom path all you will need to do is add the `--base
 
 **Example:**
 ```
-.\subspace-node-ubuntu-x86_64-skylake-gemini-3e-2023-jun-30 --chain gemini-3d --base-path /path/to/directory/here --execution wasm --state-pruning archive --validator --name INSERT_YOUR_ID
+.\subspace-node-ubuntu-x86_64-skylake-gemini-3e-2023-jun-30 --chain gemini-3e --base-path /path/to/directory/here --execution wasm --state-pruning archive --validator --name INSERT_YOUR_ID
 ```
 </TabItem>
 <TabItem value="farmer" label="2.🧑‍🌾 Farmer">
@@ -671,8 +671,8 @@ Below are some helpful samples:
 
 - `./FARMER_FILE_NAME --base-path /path/to/data farm ...` : will store data in `/path/to/data` instead of default location
 - `./FARMER_FILE_NAME --base-path /path/to/data wipe` : erases everything related to farmer if data were stored in `/path/to/data`
-- `./NODE_FILE_NAME --base-path /path/to/data --chain gemini-3d ...` : start node and store data in `/path/to/data` instead of default location
-- `./NODE_FILE_NAME purge-chain --base-path /path/to/data --chain gemini-3d : erases data related to the node if data were stored in `/path/to/data`
+- `./NODE_FILE_NAME --base-path /path/to/data --chain gemini-3e ...` : start node and store data in `/path/to/data` instead of default location
+- `./NODE_FILE_NAME purge-chain --base-path /path/to/data --chain gemini-3e : erases data related to the node if data were stored in `/path/to/data`
 
 Examples:
 ```bash
