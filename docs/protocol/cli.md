@@ -117,7 +117,7 @@ Some older processors/VMs are no longer supported by official releases, but can 
   <div className={styles.buttons}>
     <Link
       className="button button--secondary button"
-      to="https://github.com/subspace/subspace-cli/releases/download/v0.5.0-alpha/subspace-cli-windows-x86_64-v2-v0.5.1-alpha.exe">
+      to="https://github.com/subspace/subspace-cli/releases/download/v0.5.1-alpha/subspace-cli-windows-x86_64-v2-v0.5.1-alpha-2.exe">
       Windows CLI Executable
     </Link>
   </div>
@@ -130,7 +130,7 @@ Some older processors/VMs are no longer supported by official releases, but can 
   <div className={styles.buttons}>
     <Link
       className="button button--secondary button"
-      to="https://github.com/subspace/subspace-cli/releases/download/v0.5.0-alpha/subspace-cli-windows-x86_64-skylake-v0.5.1-alpha.exe">
+      to="https://github.com/subspace/subspace-cli/releases/download/v0.5.1-alpha/subspace-cli-windows-x86_64-skylake-v0.5.1-alpha-2.exe">
       Windows CLI Executable
     </Link>
   </div>
@@ -164,7 +164,7 @@ Some older processors/VMs are no longer supported by official releases, but can 
   <div className={styles.buttons}>
     <Link
       className="button button--secondary button"
-      to="https://github.com/subspace/subspace-cli/releases/download/v0.5.0-alpha/subspace-cli-macos-x86_64-v0.5.0-alpha.zip">
+      to="https://github.com/subspace/subspace-cli/releases/download/v0.5.1-alpha/subspace-cli-macos-x86_64-v0.5.1-alpha-2.zip">
       Mac CLI Executable (Intel)
     </Link>
   </div>
@@ -177,7 +177,7 @@ Some older processors/VMs are no longer supported by official releases, but can 
   <div className={styles.buttons}>
     <Link
         className="button button--secondary button"
-        to="https://github.com/subspace/subspace-cli/releases/download/v0.5.0-alpha/subspace-cli-macos-aarch64-v0.5.0-alpha.zip">
+        to="https://github.com/subspace/subspace-cli/releases/download/v0.5.1-alpha/subspace-cli-macos-aarch64-v0.5.1-alpha-2.zip">
         Mac CLI Executable (Apple M Series)
     </Link>
   </div>
@@ -186,8 +186,8 @@ Some older processors/VMs are no longer supported by official releases, but can 
 2. Extract the `.zip` file.
 3. Open Terminal, type `cd Downloads` (or `cd Your-File-Location`).
 4. Make the binary executable by running:
-    * `chmod +x subspace-cli-macos-x86_64-v0.5.0-alpha` (Intel Chip)
-    * `chmod +x subspace-cli-macos-aarch64-v0.5.0-alpha` (Apple M Series)
+    * `chmod +x subspace-cli-macos-x86_64-v0.5.1-alpha-2` (Intel Chip)
+    * `chmod +x subspace-cli-macos-aarch64-v0.5.1-alpha-2` (Apple M Series)
 
 :::warning
 Your Mac may not let you open/initialize the file because of unidentified developer restrictions. To resolve this, go to Settings-> Security&Privacy -> General -> Allow
@@ -214,7 +214,7 @@ Some older processors/VMs are no longer supported by official releases, but can 
     <div className={styles.buttons}>
       <Link
           className="button button--secondary button"
-          to="https://github.com/subspace/subspace-cli/releases/download/v0.5.0-alpha/subspace-cli-ubuntu-x86_64-v2-v0.5.0-alpha">
+          to="https://github.com/subspace/subspace-cli/releases/download/v0.5.1-alpha/subspace-cli-ubuntu-x86_64-v2-v0.5.1-alpha-2">
           Ubuntu Executable
       </Link>
     </div>
@@ -226,7 +226,7 @@ Some older processors/VMs are no longer supported by official releases, but can 
     <div className={styles.buttons}>
       <Link
           className="button button--secondary button"
-          to="https://github.com/subspace/subspace-cli/releases/download/v0.5.0-alpha/subspace-cli-ubuntu-x86_64-skylake-v0.5.0-alpha">
+          to="https://github.com/subspace/subspace-cli/releases/download/v0.5.1-alpha/subspace-cli-ubuntu-x86_64-skylake-v0.5.1-alpha-2">
           Ubuntu Executable
       </Link>
     </div>
@@ -240,7 +240,7 @@ Some older processors/VMs are no longer supported by official releases, but can 
   <div className={styles.buttons}>
     <Link
         className="button button--secondary button"
-        to="https://github.com/subspace/subspace-cli/releases/download/v0.5.0-alpha/subspace-cli-ubuntu-aarch64-v0.5.0-alpha">
+        to="https://github.com/subspace/subspace-cli/releases/download/v0.5.1-alpha/subspace-cli-ubuntu-aarch64-v0.5.1-alpha-2">
         Ubuntu Executable (aarch64)
     </Link>
   </div>
@@ -248,8 +248,8 @@ Some older processors/VMs are no longer supported by official releases, but can 
 
 2. Open Terminal, type `cd Downloads` (or `cd Your-File-Location`).
 3. Make the binary executable by running:
-    * `chmod +x subspace-cli-ubuntu-x86_64-skylake-v0.5.0-alpha` (Ubuntu)
-    * `chmod +x subspace-cli-ubuntu-aarch64-v0.5.0-alpha` (Ubuntu aarch64)
+    * `chmod +x subspace-cli-ubuntu-x86_64-skylake-v0.5.1-alpha-2` (Ubuntu)
+    * `chmod +x subspace-cli-ubuntu-aarch64-v0.5.1-alpha-2` (Ubuntu aarch64)
 
 </TabItem>
 
@@ -265,7 +265,7 @@ To start we have to initialize our Farmer, this can be done with:
 <TabItem value="windows" label="🖼️ Windows" default>
 
 ```powershell
-./subspace-cli-windows-x86_64-skylake-v0.5.1-alpha.exe init
+./subspace-cli-windows-x86_64-skylake-v0.5.1-alpha-2.exe init
 ```
 
 </TabItem>
@@ -275,14 +275,14 @@ Intel Chip:
 
 ```bash
 
-./subspace-cli-macos-x86_64-v0.5.0-alpha init
+./subspace-cli-macos-x86_64-v0.5.1-alpha-2 init
 
 ```
 Apple M Series:
 
 ```bash
 
-./subspace-cli-macos-aarch64-v0.5.0-alpha init
+./subspace-cli-macos-aarch64-v0.5.1-alpha-2 init
 
 ```
 
@@ -293,14 +293,14 @@ Ubuntu:
 
 ```bash
 
-./subspace-cli-ubuntu-x86_64-skylake-v0.5.0-alpha init
+./subspace-cli-ubuntu-x86_64-skylake-v0.5.1-alpha-2 init
 
 ```
 Ubuntu Executable (aarch64):
 
 ```bash
 
-./subspace-cli-ubuntu-aarch64-v0.5.0-alpha init
+./subspace-cli-ubuntu-aarch64-v0.5.1-alpha-2 init
 
 ```
 
@@ -388,7 +388,7 @@ To begin farming on the network, just run the `farm` command with the CLI like s
 <TabItem value="windows" label="🖼️ Windows" default>
 
 ```powershell
-./subspace-cli-windows-x86_64-v0.5.1-alpha.exe farm
+./subspace-cli-windows-x86_64-v0.5.1-alpha-2.exe farm
 ```
 
 </TabItem>
@@ -399,14 +399,14 @@ Intel Chip:
 
 ```bash
 
-./subspace-cli-macos-x86_64-v0.5.0-alpha farm
+./subspace-cli-macos-x86_64-v0.5.1-alpha-2 farm
 
 ```
 Apple M1 Chip:
 
 ```bash
 
-./subspace-cli-macos-aarch64-v0.5.0-alpha farm
+./subspace-cli-macos-aarch64-v0.5.1-alpha-2 farm
 
 ```
 
@@ -418,14 +418,14 @@ Ubuntu:
 
 ```bash
 
-./subspace-cli-ubuntu-x86_64-skylake-v0.5.0-alpha farm
+./subspace-cli-ubuntu-x86_64-skylake-v0.5.1-alpha-2 farm
 
 ```
 Ubuntu Executable (aarch64):
 
 ```bash
 
-./subspace-cli-ubuntu-aarch64-v0.5.0-alpha farm
+./subspace-cli-ubuntu-aarch64-v0.5.1-alpha-2 farm
 
 ```
 
