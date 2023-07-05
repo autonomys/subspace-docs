@@ -310,7 +310,7 @@ Ubuntu Executable (aarch64):
 This will prompt you to setup your CLI configurations to begin farming. You should see a similar prompt like so (some info might be different than shown here w.r.t your OS):
 
 ```bash
-version: 0.4.1
+version: 0.5.0
 
 Configuration creation process has started...
 Enter your farmer/reward address: REDACTED_ADDRESS
@@ -318,8 +318,8 @@ Enter your node name to be identified on the network(defaults to `username`, pre
 Specify a path for storing plot files (press enter to use the default: `"/home/username/.local/share/subspace-cli/plots"`):
 Specify a path for storing node files (press enter to use the default: `"/home/username/.local/share/subspace-cli/node"`):
 Specify a plot size (defaults to `1000.0 MB`, press enter to use the default):
-Specify the chain to farm. Available options are: [Gemini3d, Dev, DevNet].
- Defaults to `Gemini3d`, press enter to use the default:
+Specify the chain to farm. Available options are: [Gemini3e, Dev, DevNet].
+Defaults to `Gemini3e`, press enter to use the default:
 Configuration has been generated at /home/username/.config/subspace-cli
 Ready for lift off! Run the follow command to begin: `"path/to/executable" farm`
 ```
@@ -356,12 +356,12 @@ Your `settings.toml` will be found in `$HOME/.config/subspace-cli/settings.toml`
 
 If you are using the default configurations from Subspace CLI, you are ready to go with the Gemini 3 Testnet. Alternatively, you can ensure this occurs by manually setting the network like so.
 
-Open your `settings.toml` directory and ensure your `chain` is correctly specified to `gemini-3c` as so:
+Open your `settings.toml` directory and ensure your `chain` is correctly specified to `gemini-3e` as so:
 
 ```toml
 # settings.toml
 [node]
-chain = 'gemini-3c'
+chain = 'gemini-3e'
 # ... redacted ...
 ```
 
