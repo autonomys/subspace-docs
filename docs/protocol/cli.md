@@ -117,7 +117,7 @@ Some older processors/VMs are no longer supported by official releases, but can 
   <div className={styles.buttons}>
     <Link
       className="button button--secondary button"
-      to="https://github.com/subspace/subspace-cli/releases/download/v0.5.0-alpha/subspace-cli-windows-x86_64-v2-v0.5.0-alpha.exe">
+      to="https://github.com/subspace/subspace-cli/releases/download/v0.5.0-alpha/subspace-cli-windows-x86_64-v2-v0.5.1-alpha.exe">
       Windows CLI Executable
     </Link>
   </div>
@@ -130,7 +130,7 @@ Some older processors/VMs are no longer supported by official releases, but can 
   <div className={styles.buttons}>
     <Link
       className="button button--secondary button"
-      to="https://github.com/subspace/subspace-cli/releases/download/v0.5.0-alpha/subspace-cli-windows-x86_64-skylake-v0.5.0-alpha.exe">
+      to="https://github.com/subspace/subspace-cli/releases/download/v0.5.0-alpha/subspace-cli-windows-x86_64-skylake-v0.5.1-alpha.exe">
       Windows CLI Executable
     </Link>
   </div>
@@ -265,7 +265,7 @@ To start we have to initialize our Farmer, this can be done with:
 <TabItem value="windows" label="🖼️ Windows" default>
 
 ```powershell
-./subspace-cli-windows-x86_64-skylake-v0.5.0-alpha.exe init
+./subspace-cli-windows-x86_64-skylake-v0.5.1-alpha.exe init
 ```
 
 </TabItem>
@@ -388,7 +388,7 @@ To begin farming on the network, just run the `farm` command with the CLI like s
 <TabItem value="windows" label="🖼️ Windows" default>
 
 ```powershell
-./subspace-cli-windows-x86_64-v0.5.0-alpha.exe farm
+./subspace-cli-windows-x86_64-v0.5.1-alpha.exe farm
 ```
 
 </TabItem>
