@@ -117,7 +117,7 @@ Some older processors/VMs are no longer supported by official releases, but can 
   <div className={styles.buttons}>
     <Link
       className="button button--secondary button"
-      to="https://github.com/subspace/subspace-cli/releases/download/v0.5.1-alpha/subspace-cli-windows-x86_64-v2-v0.5.1-alpha-2.exe">
+      to="https://github.com/subspace/subspace-cli/releases/download/v0.5.1-alpha-2/subspace-cli-windows-x86_64-v2-v0.5.1-alpha-2.exe">
       Windows CLI Executable
     </Link>
   </div>
@@ -130,7 +130,7 @@ Some older processors/VMs are no longer supported by official releases, but can 
   <div className={styles.buttons}>
     <Link
       className="button button--secondary button"
-      to="https://github.com/subspace/subspace-cli/releases/download/v0.5.1-alpha/subspace-cli-windows-x86_64-skylake-v0.5.1-alpha-2.exe">
+      to="https://github.com/subspace/subspace-cli/releases/download/v0.5.1-alpha-2/subspace-cli-windows-x86_64-skylake-v0.5.1-alpha-2.exe">
       Windows CLI Executable
     </Link>
   </div>
@@ -164,7 +164,7 @@ Some older processors/VMs are no longer supported by official releases, but can 
   <div className={styles.buttons}>
     <Link
       className="button button--secondary button"
-      to="https://github.com/subspace/subspace-cli/releases/download/v0.5.1-alpha/subspace-cli-macos-x86_64-v0.5.1-alpha-2.zip">
+      to="https://github.com/subspace/subspace-cli/releases/download/v0.5.1-alpha-2/subspace-cli-macos-x86_64-v0.5.1-alpha-2.zip">
       Mac CLI Executable (Intel)
     </Link>
   </div>
@@ -177,7 +177,7 @@ Some older processors/VMs are no longer supported by official releases, but can 
   <div className={styles.buttons}>
     <Link
         className="button button--secondary button"
-        to="https://github.com/subspace/subspace-cli/releases/download/v0.5.1-alpha/subspace-cli-macos-aarch64-v0.5.1-alpha-2.zip">
+        to="https://github.com/subspace/subspace-cli/releases/download/v0.5.1-alpha-2/subspace-cli-macos-aarch64-v0.5.1-alpha-2.zip">
         Mac CLI Executable (Apple M Series)
     </Link>
   </div>
@@ -214,7 +214,7 @@ Some older processors/VMs are no longer supported by official releases, but can 
     <div className={styles.buttons}>
       <Link
           className="button button--secondary button"
-          to="https://github.com/subspace/subspace-cli/releases/download/v0.5.1-alpha/subspace-cli-ubuntu-x86_64-v2-v0.5.1-alpha-2">
+          to="https://github.com/subspace/subspace-cli/releases/download/v0.5.1-alpha-2/subspace-cli-ubuntu-x86_64-v2-v0.5.1-alpha-2">
           Ubuntu Executable
       </Link>
     </div>
@@ -226,7 +226,7 @@ Some older processors/VMs are no longer supported by official releases, but can 
     <div className={styles.buttons}>
       <Link
           className="button button--secondary button"
-          to="https://github.com/subspace/subspace-cli/releases/download/v0.5.1-alpha/subspace-cli-ubuntu-x86_64-skylake-v0.5.1-alpha-2">
+          to="https://github.com/subspace/subspace-cli/releases/download/v0.5.1-alpha-2/subspace-cli-ubuntu-x86_64-skylake-v0.5.1-alpha-2">
           Ubuntu Executable
       </Link>
     </div>
@@ -240,7 +240,7 @@ Some older processors/VMs are no longer supported by official releases, but can 
   <div className={styles.buttons}>
     <Link
         className="button button--secondary button"
-        to="https://github.com/subspace/subspace-cli/releases/download/v0.5.1-alpha/subspace-cli-ubuntu-aarch64-v0.5.1-alpha-2">
+        to="https://github.com/subspace/subspace-cli/releases/download/v0.5.1-alpha-2/subspace-cli-ubuntu-aarch64-v0.5.1-alpha-2">
         Ubuntu Executable (aarch64)
     </Link>
   </div>
