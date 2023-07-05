@@ -152,7 +152,7 @@ We will be downloading two files for your respective operating system.
           timeout: 5s
     # If node setup takes longer than expected, you want to increase `interval` and `retries` number.
           interval: 30s
-          retries: 5
+          retries: 60
 
       farmer:
         depends_on:
@@ -601,9 +601,10 @@ We will be downloading two files for your respective operating system.
 
 Now that your Node & Farmer have been started you will wait for the node to sync and the farmer to complete the initial plotting. While this is occurring you can check out some of the helpful resources below.
 
-**- [Telemetry Server](https://telemetry.subspace.network/#list/0xab946a15b37f59c5f4f27c5de93acde9fe67a28e0b724a43a30e4fe0e87246b7)**
+**- [Telemetry Server](https://telemetry.subspace.network/#list/0xa3cd4b592d93f79943fbc58fc90ca8f516106699c9cf4d7ada98ca22877bc1ae)**
 
-**- [Block Explorer](https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Feu-0.gemini-3e.subspace.network%2Fws#/explorer)**
+
+**- [Block Explorer](https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Frpc-0.gemini-3e.subspace.network%2Fws#/explorer)**
 
 
 ### Using a Custom Path
@@ -618,6 +619,7 @@ To set your node to use a custom path all you will need to do is add the `--base
 **Example:**
 ```
 .\subspace-node-ubuntu-x86_64-skylake-gemini-3e-2023-jul-03 --chain gemini-3e --base-path /path/to/directory/here --execution wasm --state-pruning archive --validator --name INSERT_YOUR_ID
+
 ```
 </TabItem>
 <TabItem value="farmer" label="2.🧑‍🌾 Farmer">
