@@ -90,6 +90,15 @@ If you're connected directly without any router, then again nothing needs to be 
 Subspace CLI is in **alpha**.
 Please feel free to file bug reports on our GitHub issues.
 :::
+<details>
+  <summary>
+  Prefer A video? Expand for our installation video
+  </summary>
+  <div>
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/h1-CX7lGl2w" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+  </div>
+</details>
+
 
 ### Download Binaries
 
