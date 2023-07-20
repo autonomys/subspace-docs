@@ -42,10 +42,28 @@ const config = {
       /** @type {import('@docusaurus/preset-classic').Options} */
       ({
         docs: {
-          sidebarPath: require.resolve('./sidebars.js'),
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
+          // Basic Docs Preferences
+          showLastUpdateAuthor: true,
+          showLastUpdateTime: true,
+          editCurrentVersion: true,
+          editLocalizedFiles: true,
           editUrl: 'https://github.com/subspace/subspace-docs/blob/main/',
+          sidebarPath: require.resolve('./sidebars.js'),
+
+          //Versioning Preferences
+          lastVersion: 'latest',
+          versions: {
+            current: {
+              label: 'Pre-Release',
+              path: '',
+              banner: 'unreleased',
+              badge: true, 
+            },
+            latest: {
+              label: 'Latest',
+              path: 'latest',
+            },
+          },
         },
         blog: {
           showReadingTime: true,
@@ -114,6 +132,11 @@ const config = {
                 href: '/docs/community',
               },
             ],
+          },
+          {
+            type: 'docsVersionDropdown',
+            position: 'right',
+            dropdownActiveClassDisabled: true,
           },
           {
             href: 'https://github.com/subspace',
