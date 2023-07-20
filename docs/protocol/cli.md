@@ -153,7 +153,7 @@ Some older processors/VMs are no longer supported by official releases, but can 
 :::warning
 The warning below may appear because the application is trying to access the internet. This is expected as it is how the farmer talks to other farmers on the network. Please select 'Allow access' to continue farming.
 :::
-![Windows Defender Firewall](../../src/Images/Windows_Security_Alert.png)
+![Windows Defender Firewall](/img/doc-imgs/Windows_Security_Alert.png)
 
 </TabItem>
 

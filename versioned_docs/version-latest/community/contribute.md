@@ -83,11 +83,11 @@ For larger, more advanced fixes please ensure you follow the basic principles be
 For advanced fixes you should follow the general pathway for GitHub.
 
 1. Create your own fork of the code.
-![Fork](../../src/Images/Fork_Instructions.png)
+![Fork](/img/doc-imgs/Fork_Instructions.png)
 2. Do the changes locally on your system in your preferred development environment. 
 3. Following the README.md instructions, test your changes locally with `yarn build` and `yarn run serve` or `npm build` and `npm run serve` to ensure there are no clear issues.
 4. Push the changes to your fork and submit a pull request by comparing across forks.
-![Submit Pull Request](../../src/Images/Submit_Pull.png)
+![Submit Pull Request](/img/doc-imgs/Submit_Pull.png)
 
 # How to report a bug or error
 
