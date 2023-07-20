@@ -51,17 +51,17 @@ const config = {
           sidebarPath: require.resolve('./sidebars.js'),
 
           //Versioning Preferences
-          lastVersion: 'latest',
+          lastVersion: "latest",
           versions: {
-            current: {
-              label: 'Pre-Release',
-              path: '',
-              banner: 'unreleased',
-              badge: true, 
-            },
             latest: {
               label: 'Latest',
-              path: 'latest',
+              path: '',
+            },
+            current: {
+              label: 'Pre-Release',
+              path: 'pre-release',
+              banner: 'unreleased',
+              badge: true, 
             },
           },
         },
@@ -136,7 +136,7 @@ const config = {
           {
             type: 'docsVersionDropdown',
             position: 'right',
-            dropdownActiveClassDisabled: true,
+            dropdownActiveClassDisabled: false,
           },
           {
             href: 'https://github.com/subspace',
