@@ -30,7 +30,7 @@ This is the barebones wallet. This is because it is the barebones Substrate wall
 
     ![step-2](/img/doc-imgs/polkadot/step-2.png)
 
-3. The extension will then show you your 12-work mnemonic seed.
+3. The extension will then show you your 12-word mnemonic seed.
 
     :::danger
     MAKE SURE YOU STORE THIS SECURELY, AND NEVER SHARE IT
