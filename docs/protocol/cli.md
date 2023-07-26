@@ -168,7 +168,7 @@ Some older processors/VMs are no longer supported by official releases, but can 
 
 <details>
   <summary>
-  Mac CLI Executable (Intel)
+  Mac CLI Executable (x86-64)
   </summary>
   <div className={styles.buttons}>
     <Link
@@ -181,7 +181,7 @@ Some older processors/VMs are no longer supported by official releases, but can 
 
 <details>
   <summary>
-  Mac CLI Executable (Apple M Series)
+  Mac CLI Executable (aarch64)
   </summary>
   <div className={styles.buttons}>
     <Link
@@ -224,7 +224,7 @@ Some older processors/VMs are no longer supported by official releases, but can 
       <Link
           className="button button--secondary button"
           to="https://github.com/subspace/subspace-cli/releases/download/v0.5.3-alpha-2/subspace-cli-ubuntu-x86_64-v2-v0.5.3-alpha-2">
-          Ubuntu Executable
+          aarch64
       </Link>
     </div>
   </details>
@@ -236,7 +236,7 @@ Some older processors/VMs are no longer supported by official releases, but can 
       <Link
           className="button button--secondary button"
           to="https://github.com/subspace/subspace-cli/releases/download/v0.5.3-alpha-2/subspace-cli-ubuntu-x86_64-skylake-v0.5.3-alpha-2">
-          Ubuntu Executable
+          x86-64
       </Link>
     </div>
   </details>
