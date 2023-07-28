@@ -3,11 +3,30 @@
 
 const lightCodeTheme = require('prism-react-renderer/themes/github');
 const darkCodeTheme = require('prism-react-renderer/themes/dracula');
+// @ts-ignore
+const ConfigLocalized = require('./docusaurus.config.localized.json');
+const defaultLocale = 'en';
+
+function getLocalizedConfigValue(/** @type {string} */ key) {
+  const currentLocale = process.env.DOCUSAURUS_CURRENT_LOCALE ?? defaultLocale;
+  const values = ConfigLocalized[key];
+  if (!values) {
+    throw new Error(`Localized config key=${key} not found`);
+  }
+  const value = values[currentLocale] ?? values[defaultLocale];
+  if (!value) {
+    throw new Error(
+      `Localized value for config key=${key} not found for both currentLocale=${currentLocale} or defaultLocale=${defaultLocale}`,
+    );
+  }
+  return value;
+}
+
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'Farm from Anywhere',
-  tagline: 'Earn rewards by running a farmer node by pledging spare disk. No expensive setup or upfront capital is required.',
+  title: getLocalizedConfigValue('title'),
+  tagline: getLocalizedConfigValue('tagline'),
   url: 'https://docs.subspace.network',
   baseUrl: '/',
   onBrokenLinks: 'throw',
@@ -23,8 +42,8 @@ const config = {
   // metadata like html lang. For example, if your site is Chinese, you may want
   // to replace "en" with "zh-Hans".
   i18n: {
-    defaultLocale: 'en',
-    locales: ['en'],
+    defaultLocale,
+    locales: ["bn", "de", "en", "es", "fr", "hi", "ja", "ko", "mr", "pa", "pt", "ru", "te", "tr", "zh"],
   },
   plugins: [
     [
@@ -139,14 +158,14 @@ const config = {
             dropdownActiveClassDisabled: false,
           },
           {
+            type: 'localeDropdown',
+            position: 'right',
+          },
+          {
             href: 'https://github.com/subspace',
             label: 'GitHub',
             position: 'right',
           },
-          {
-            type: 'localeDropdown',
-            position: 'right',
-          }
         ],
       },
       footer: {
