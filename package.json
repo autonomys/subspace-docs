@@ -12,6 +12,7 @@
     "serve": "docusaurus serve",
     "version-update": "node .github/scripts/version-update",
     "write-translations": "docusaurus write-translations",
+    "write-all-translations": "node write-all-translations.js",
     "write-heading-ids": "docusaurus write-heading-ids",
     "typecheck": "tsc"
   },
