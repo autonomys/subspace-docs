@@ -1,36 +1,36 @@
 {
     "title": {
+        "ar": "",
         "bn": "",
         "de": "",
         "en": "Farm from Anywhere",
         "es": "",
         "fr": "",
         "hi": "",
+        "id": "",
+        "it": "",
         "ja": "",
-        "ko": "",
-        "mr": "",
-        "pa": "",
+        "uk": "",
+        "zh": "",
         "pt": "",
         "ru": "",
-        "te": "",
-        "tr": "",
-        "zh": ""    
+        "tr": ""
     },
     "tagline": {
+        "ar": "",
         "bn": "",
         "de": "",
         "en": "Earn rewards by running a farmer node by pledging spare disk. No expensive setup or upfront capital is required.",
         "es": "",
         "fr": "",
         "hi": "",
+        "id": "",
+        "it": "",
         "ja": "",
-        "ko": "",
-        "mr": "",
-        "pa": "",
+        "uk": "",
+        "zh": "",
         "pt": "",
         "ru": "",
-        "te": "",
-        "tr": "",
-        "zh": ""    
+        "tr": ""
     }
-  }
+}
