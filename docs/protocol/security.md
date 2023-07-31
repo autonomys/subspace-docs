@@ -36,7 +36,7 @@ One of common hacking methods is called "dictionary attack". It happens when a p
 
 Weak password example:
 ```
-PickleRick420
+PickleRick!
 ```
 Strong password example:
 ```
