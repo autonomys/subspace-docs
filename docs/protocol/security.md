@@ -1,6 +1,6 @@
 ---
 title: Safety and Security
-sidebar_position: 2
+sidebar_position: 5
 description: Security and Scam Prevention
 keywords:
   - Security
@@ -15,13 +15,19 @@ import styles from '@site/src/pages/index.module.css';
 
 Navigating the internet and being part of a crypto project can be exciting! But it's crucial to use good security practices. This way, we can protect our digital community from cyber attacks, and enjoy our Subspace journey with peace of mind.
 
-## Password security
+
+## Wallet security
 
 ---
 
+:::danger NEVER SHARE YOUR KEYS
+
+Under any circumstances, do not share your 12-word seed phrase or private keys.
+:::
+
 ### Use strong passwords
 
-:::danger MOST ACCOUNT HACKS HAPPEN BECAUSE OF WEAK OR STOLEN PASSWORDS 
+:::caution MOST ACCOUNT HACKS HAPPEN BECAUSE OF WEAK OR STOLEN PASSWORDS 
 
 Make sure to make your password long and mix letters, numbers, and special symbols.
 :::
@@ -61,21 +67,12 @@ Popular password managers offer the following services:
 
 Example of a recommended password manager: [Bitwarden](https://bitwarden.com/).
 
-
-## Wallet security
-
----
-
-:::danger NEVER SHARE YOUR KEYS
-
-Under any circumstances, do not share your 12-word seed phrase or private keys.
-:::
-
 ### Use a hardware wallet
 
 A hardware wallet is by far the most secure way to store your private keys. Unlike online exchanges and wallets, hardware wallets store keys offline and locally and drastically reduce the chance of being hacked.
 
 The most popular hardware wallets are [Ledger](https://www.ledger.com/) and [Tresor](https://trezor.io/).
+
 
 ## Community security
 
