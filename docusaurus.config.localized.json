@@ -1,11 +1,11 @@
 {
     "title": {
+      "locales": {
         "ar": "",
         "bn": "",
         "de": "",
         "en": "Farm from Anywhere",
-        "es": "",
-        "fr": "",
+        "fr": "Farm from Anywhere",
         "hi": "",
         "id": "",
         "it": "",
@@ -14,15 +14,17 @@
         "zh": "",
         "pt": "",
         "ru": "",
+        "es": "",
         "tr": ""
+      }
     },
     "tagline": {
+      "locales": {
         "ar": "",
         "bn": "",
         "de": "",
         "en": "Earn rewards by running a farmer node by pledging spare disk. No expensive setup or upfront capital is required.",
-        "es": "",
-        "fr": "",
+        "fr": "EArn Da rewards",
         "hi": "",
         "id": "",
         "it": "",
@@ -31,6 +33,9 @@
         "zh": "",
         "pt": "",
         "ru": "",
+        "es": "",
         "tr": ""
+      }
     }
-}
+  }
+  

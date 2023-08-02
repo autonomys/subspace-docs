@@ -10,6 +10,7 @@
     "deploy": "docusaurus deploy",
     "clear": "docusaurus clear",
     "serve": "docusaurus serve",
+    "crowdin": "crowdin",
     "version-update": "node .github/scripts/version-update",
     "write-translations": "docusaurus write-translations",
     "write-all-translations": "node write-all-translations.js",
@@ -17,6 +18,7 @@
     "typecheck": "tsc"
   },
   "dependencies": {
+    "@crowdin/cli": "3",
     "@docusaurus/core": "^2.4.1",
     "@docusaurus/plugin-google-gtag": "^2.4.1",
     "@docusaurus/plugin-sitemap": "^2.4.1",

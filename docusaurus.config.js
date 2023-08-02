@@ -13,7 +13,7 @@ function getLocalizedConfigValue(/** @type {string} */ key) {
   if (!values) {
     throw new Error(`Localized config key=${key} not found`);
   }
-  const value = values[currentLocale] ?? values[defaultLocale];
+  const value = values.locales[currentLocale] ?? values.locales[defaultLocale];
   if (!value) {
     throw new Error(
       `Localized value for config key=${key} not found for both currentLocale=${currentLocale} or defaultLocale=${defaultLocale}`,
@@ -21,6 +21,7 @@ function getLocalizedConfigValue(/** @type {string} */ key) {
   }
   return value;
 }
+
 
 
 /** @type {import('@docusaurus/types').Config} */
@@ -72,10 +73,6 @@ const config = {
           //Versioning Preferences
           lastVersion: "latest",
           versions: {
-            latest: {
-              label: 'Latest',
-              path: '',
-            },
             current: {
               label: 'Pre-Release',
               path: 'pre-release',
