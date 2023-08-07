@@ -11,6 +11,7 @@
     "clear": "docusaurus clear",
     "serve": "docusaurus serve",
     "crowdin": "crowdin",
+    "crowdin:sync": "docusaurus write-translations && crowdin upload && crowdin download",
     "copy-all-versions": "node copy-all-versions.js",
     "version-update": "node .github/scripts/version-update",
     "write-translations": "docusaurus write-translations",
