@@ -538,13 +538,13 @@ Occasionally after updating to a new version of the CLI you will need to wipe yo
 
 To simply restart the node, go to the terminal where you started the `farm` command, and press `Ctrl + C` you should see a shutdown message appear and the application will attempt a simple shutdown, if you dont see the message press `Ctrl + C` again to force shutdown. You can then simply start the farmer again with the `farm` command you used prior.
 
-Use the same file name as the previous init and farm steps, then add the wipe command to free the previous memory that was being used. Generally, only do this if you have severe errors and are prompted by a staff member.
+Use the same file name as the previous init and farm steps, then add the wipe command to free the previous storage that was being used. Generally, only do this if you have severe errors and are prompted by a staff member.
 
 ```bash
 ./subspace-cli-file-name wipe
 ```
 
-After wiping, follow the init and farm steps above to start farming again!
+After wiping, follow the `init` and `farm` steps above to start farming again!
 
 ### View your Logs
 

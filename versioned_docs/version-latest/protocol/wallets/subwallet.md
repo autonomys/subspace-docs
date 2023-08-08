@@ -72,9 +72,9 @@ This tutorial assumes you have already completed the setup for SubWallet. If you
 
 :::
 
-SubWallet supports adding custom networks. This can be helpful for in-development networks such as the Subspace Network as we have regularly changing RPC points and versions of testnets, and soon various domains. Below you will find a simple guide on how to add these new networks. Additionally we will try and keep an updated list of active RPC points below for development. 
+SubWallet supports adding custom networks. This can be helpful for in-development networks such as the Subspace Network as we have regularly changing RPC endpoints and versions of testnets, and soon various domains. Below you will find a simple guide on how to add these new networks. Additionally we will try and keep an updated list of active RPC endpoints below for development. 
 
-:::info RPC Endpoints
+:::info RPC Endendpoints
 
 - **Gemini 3d Endpoint: ** wss://rpc.gemini-3d.subspace.network/ws
 - **Gemini 3e Endpoint: ** wss://rpc.gemini-3e.subspace.network/ws
@@ -90,7 +90,7 @@ SubWallet supports adding custom networks. This can be helpful for in-developmen
 
     ![rpc-step-2](/img/doc-imgs/subwallet/rpc-step-2.png)
 
-3. Within the *Manage Netowrks* menu you will see a `+` in the top right corner, click this
+3. Within the *Manage Networks* menu you will see a `+` in the top right corner, click this
 
     ![rpc-step-3](/img/doc-imgs/subwallet/rpc-step-3.png)
 
@@ -98,16 +98,16 @@ SubWallet supports adding custom networks. This can be helpful for in-developmen
     - Provider URL
     - Network Name
     - Symbol
-    - Blockexplorer
+    - Block explorer
     - Crowdloan URL
 
     The only option that is required is the Provider URL. You can add an explorer if you would like but it is not required. (The current Subspace Explorer is available [here](https://explorer.subspace.network).
 
-    You can refer to the *RPC Endpoints* above for available provider URL's for the Subspace Network. 
+    You can refer to the *RPC Endpoints* above for available provider URLs for the Subspace Network. 
 
     ![rpc-step-4](/img/doc-imgs/subwallet/rpc-step-4.png)
 
-5. Fill in the provider url, once you click out of this box it will check the URL and add the rest of the information, then click Save. 
+5. Fill in the provider URL, once you click out of this box it will check the URL and add the rest of the information, then click Save. 
     - *In this example we will be using `wss://rpc.devnet.subspace.network`*
 
     ![rpc-step-5](/img/doc-imgs/subwallet/rpc-step-5.png)
