@@ -74,7 +74,7 @@ This tutorial assumes you have already completed the setup for SubWallet. If you
 
 SubWallet supports adding custom networks. This can be helpful for in-development networks such as the Subspace Network as we have regularly changing RPC endpoints and versions of testnets, and soon various domains. Below you will find a simple guide on how to add these new networks. Additionally we will try and keep an updated list of active RPC endpoints below for development. 
 
-:::info RPC Endendpoints
+:::info RPC Endpoints
 
 - **Gemini 3d Endpoint: ** wss://rpc.gemini-3d.subspace.network/ws
 - **Gemini 3e Endpoint: ** wss://rpc.gemini-3e.subspace.network/ws
