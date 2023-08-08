@@ -64,6 +64,62 @@ To learn more about SubWallet visit their [Website](https://subwallet.app).
 
 8. Congratulations you have fully created your substrate wallet with subwallet! 
 
+## Adding New Networks to SubWallet
+
+:::caution
+
+This tutorial assumes you have already completed the setup for SubWallet. If you have not please refer to the **[section above](#create-or-import-a-new-wallet)**
+
+:::
+
+SubWallet supports adding custom networks. This can be helpful for in-development networks such as the Subspace Network as we have regularly changing RPC points and versions of testnets, and soon various domains. Below you will find a simple guide on how to add these new networks. Additionally we will try and keep an updated list of active RPC points below for development. 
+
+:::info RPC Endpoints
+
+- **Gemini 3d Endpoint: ** wss://rpc.gemini-3d.subspace.network/ws
+- **Gemini 3e Endpoint: ** wss://rpc.gemini-3e.subspace.network/ws
+
+
+:::
+
+1. Open SubWallet, Select the 3 Line menu in the top left of the wallet
+
+    ![rpc-step-1](/img/doc-imgs/subwallet/rpc-step-1.png)
+
+2. Inside the settings menu you will see the option to *Manage Networks*, click this.
+
+    ![rpc-step-2](/img/doc-imgs/subwallet/rpc-step-2.png)
+
+3. Within the *Manage Netowrks* menu you will see a `+` in the top right corner, click this
+
+    ![rpc-step-3](/img/doc-imgs/subwallet/rpc-step-3.png)
+
+4. This will open the *Import Network* menu, where you will see a few options
+    - Provider URL
+    - Network Name
+    - Symbol
+    - Blockexplorer
+    - Crowdloan URL
+
+    The only option that is required is the Provider URL. You can add an explorer if you would like but it is not required. (The current Subspace Explorer is available [here](https://explorer.subspace.network).
+
+    You can refer to the *RPC Endpoints* above for available provider URL's for the Subspace Network. 
+
+    ![rpc-step-4](/img/doc-imgs/subwallet/rpc-step-4.png)
+
+5. Fill in the provider url, once you click out of this box it will check the URL and add the rest of the information, then click Save. 
+    - *In this example we will be using `wss://rpc.devnet.subspace.network`*
+
+    ![rpc-step-5](/img/doc-imgs/subwallet/rpc-step-5.png)
+
+6. You will then be taken back to the network screen where you can then see your new network that was added.
+
+    ![rpc-step-6](/img/doc-imgs/subwallet/rpc-step-6.png)
+
+
+
+
+
 ## Troubleshooting
 
 If you face any trouble or would like to learn about other features for SubWallet, please see the [Official SubWallet Documentation.](https://docs.subwallet.app/) We have included some basic FAQ's below.

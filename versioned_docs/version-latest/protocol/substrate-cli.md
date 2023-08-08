@@ -765,3 +765,68 @@ If you are having some issues with running the node or the farmer for the subspa
 
 ###  - [Forums](https://forum.subspace.network)
 ###  - [Discord](https://discord.gg/subspace-network)
+
+### Enable Rust Backtrace 
+
+When running the Subspace Network Farmer & Node, sometimes you may encounter an error message that includes a line similar to the following:
+
+```
+Backtrace omitted. Run with RUST_BACKTRACE=1 environment variable to display it.
+```
+
+This error message means that Rust (the programming language that Subspace Network Farmer & Node is written in) has encountered a problem and has provided a diagnostic backtrace that can help diagnose the issue. However, by default, the backtrace is not displayed. To see the backtrace, you need to enable the RUST_BACKTRACE environment variable.
+
+In this section, we will show you how to enable the RUST_BACKTRACE environment variable on Linux, macOS, and Windows (PowerShell).
+
+<Tabs groupId="OS">
+<TabItem value="windows" label="🖼️ Windows" default>
+
+#### Enabling RUST_BACKTRACE on Windows (PowerShell)
+
+To enable the RUST_BACKTRACE environment variable on Windows using PowerShell, follow these steps:
+
+1. Open a PowerShell window.
+2. Type the following command:
+    ```bash
+    $Env:RUST_BACKTRACE=1
+    ```
+
+3. Press Enter.
+4. After exporting the environment variable, run the Subspace Network Farmer & Node as usual, and any errors encountered will display the backtrace.
+
+</TabItem>
+
+<TabItem value="macos" label="🍎macOS">
+
+#### Enabling RUST_BACKTRACE on macOS
+
+To enable the RUST_BACKTRACE environment variable on macOS, follow these steps:
+
+1. Open a terminal window.
+2. Type the following command:
+    ```bash
+    export RUST_BACKTRACE=1
+    ```
+
+3. Press Enter.
+4. After exporting the environment variable, run the Subspace Network Farmer & Node as usual, and any errors encountered will display the backtrace.
+
+</TabItem>
+
+<TabItem value="linux" label="🐧Ubuntu">
+
+#### Enabling RUST_BACKTRACE on Linux
+
+To enable the RUST_BACKTRACE environment variable on Linux, follow these steps:
+
+1. Open a terminal window.
+2. Type the following command:
+    ```bash
+    export RUST_BACKTRACE=1
+    ```
+
+3. Press Enter.
+4. After exporting the environment variable, run the Subspace Network Farmer & Node as usual, and any errors encountered will display the backtrace.
+
+</TabItem>
+</Tabs>

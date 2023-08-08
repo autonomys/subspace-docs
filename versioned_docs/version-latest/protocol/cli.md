@@ -522,6 +522,30 @@ $ screen -S farming -X quit
 
 If you are facing issues with your node/farmer you can try a few of the following things below, if you are unable to get your issue resolved please check our [Forums](https://forums.subspace.network) to see if your issue may have been solved, if its a new one feel free to post it! You can also join our [Discord](https://discord.gg/subspace-network) for additional Peer to Peer help.
 
+:::info
+
+We have included a few tutorials below that may help you in your support journey, this is not an all inclusive list but we welcome contributions
+
+:::
+
+### Wipe Node & Farmer
+
+:::tip Updated from a previous version and now having issues?
+
+Occasionally after updating to a new version of the CLI you will need to wipe your node and farmer, generally this should not be required but can be attempted if your farmer is having issues after having had worked fine previously.
+
+:::
+
+To simply restart the node, go to the terminal where you started the `farm` command, and press `Ctrl + C` you should see a shutdown message appear and the application will attempt a simple shutdown, if you dont see the message press `Ctrl + C` again to force shutdown. You can then simply start the farmer again with the `farm` command you used prior.
+
+Use the same file name as the previous init and farm steps, then add the wipe command to free the previous memory that was being used. Generally, only do this if you have severe errors and are prompted by a staff member.
+
+```bash
+./subspace-cli-file-name wipe
+```
+
+After wiping, follow the init and farm steps above to start farming again!
+
 ### View your Logs
 
 A good place to start if you are facing trouble is by viewing your logs and seeing if there are any errors or insights that might be available. You can find the location for your logs below
@@ -546,20 +570,67 @@ Your Logs will be found in `$HOME/.local/share/subspace-cli/logs`
 </TabItem>
 </Tabs>
 
-### Wipe Node & Farmer
+### Enable Rust Backtrace 
 
-:::tip Updated from a previous version and now having issues?
+When running the Subspace Network Farmer & Node, sometimes you may encounter an error message that includes a line similar to the following:
 
-Occasionally after updating to a new version of the CLI you will need to wipe your node and farmer, generally this should not be required but can be attempted if your farmer is having issues after having had worked fine previously.
-
-:::
-
-To simply restart the node, go to the terminal where you started the `farm` command, and press `Ctrl + C` you should see a shutdown message appear and the application will attempt a simple shutdown, if you dont see the message press `Ctrl + C` again to force shutdown. You can then simply start the farmer again with the `farm` command you used prior.
-
-Use the same file name as the previous init and farm steps, then add the wipe command to free the previous memory that was being used. Generally, only do this if you have severe errors and are prompted by a staff member.
-
-```bash
-./subspace-cli-file-name wipe
+```
+Backtrace omitted. Run with RUST_BACKTRACE=1 environment variable to display it.
 ```
 
-After wiping, follow the init and farm steps above to start farming again!
+This error message means that Rust (the programming language that Subspace Network Farmer & Node is written in) has encountered a problem and has provided a diagnostic backtrace that can help diagnose the issue. However, by default, the backtrace is not displayed. To see the backtrace, you need to enable the RUST_BACKTRACE environment variable.
+
+In this section, we will show you how to enable the RUST_BACKTRACE environment variable on Linux, macOS, and Windows (PowerShell).
+
+<Tabs groupId="OS">
+<TabItem value="windows" label="🖼️ Windows" default>
+
+#### Enabling RUST_BACKTRACE on Windows (PowerShell)
+
+To enable the RUST_BACKTRACE environment variable on Windows using PowerShell, follow these steps:
+
+1. Open a PowerShell window.
+2. Type the following command:
+    ```bash
+    $Env:RUST_BACKTRACE=1
+    ```
+
+3. Press Enter.
+4. After exporting the environment variable, run the Subspace Network Farmer & Node as usual, and any errors encountered will display the backtrace.
+
+</TabItem>
+
+<TabItem value="macos" label="🍎macOS">
+
+#### Enabling RUST_BACKTRACE on macOS
+
+To enable the RUST_BACKTRACE environment variable on macOS, follow these steps:
+
+1. Open a terminal window.
+2. Type the following command:
+    ```bash
+    export RUST_BACKTRACE=1
+    ```
+
+3. Press Enter.
+4. After exporting the environment variable, run the Subspace Network Farmer & Node as usual, and any errors encountered will display the backtrace.
+
+</TabItem>
+
+<TabItem value="linux" label="🐧Ubuntu">
+
+#### Enabling RUST_BACKTRACE on Linux
+
+To enable the RUST_BACKTRACE environment variable on Linux, follow these steps:
+
+1. Open a terminal window.
+2. Type the following command:
+    ```bash
+    export RUST_BACKTRACE=1
+    ```
+
+3. Press Enter.
+4. After exporting the environment variable, run the Subspace Network Farmer & Node as usual, and any errors encountered will display the backtrace.
+
+</TabItem>
+</Tabs>
