@@ -23,7 +23,7 @@ While Subspace strives to release bug-free software, users may encounter certain
 
 ### Error while dialing dns telemetry
 
-```bash
+```
 Error while dialing /dns/telemetry.subspace.network/tcp/443/x-parity-wss/%2Fsubmit%2F
 Custom { kind: Other, error: Timeout }
 ```
@@ -52,7 +52,7 @@ Most modern desktop processors starting with Broadwell on the Intel side and Ryz
 Please make sure to:
 - Use our latest stable release, as shown on our [Github releases](https://github.com/subspace/subspace-cli/releases)
 - Verify your farmer is present and on the highest block on our [telemetry server](https://telemetry.subspace.network/)
-- Verify your balance using the [proper explorer](https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Frpc-0.gemini-3e.subspace.network%2Fws#/explorer)
+- Verify your balance using the [Polkadot explorer](https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Frpc-0.gemini-3e.subspace.network%2Fws#/explorer)
 
 
 :::note
@@ -63,7 +63,7 @@ Make sure to select the correct testnet in the dropdown and tabs, e.g. gemini-3e
 ### Recovering missing piece failed
 
 
-```bash
+```
 ERROR single_disk_plot{disk_farm_index=0}:
 subspace_farmer_components::segment_reconstruction: Recovering missing piece failed. missing_piece_index=135
 ```
@@ -75,7 +75,7 @@ This is not a crucial error and it can be ignored.
 ### Importing block consensus error
 
 
-```bash
+```
 Error importing block "block_number", consensus error: Import failed: Database
 ```
 
@@ -86,7 +86,7 @@ Your PC likely ran out of space. Consider freeing up some space by removing unne
 ### Unable to author block in slot. No best block header
 
 
-```bash
+```
 Unable to author block in slot. No best block header: Chain lookup failed: Failed to get header for hash
 ```
 
@@ -97,13 +97,13 @@ Your PC likely ran out of space. Consider freeing up some space by removing unne
 ### Fast node synchronization (more than 100+ blocks per second) goes only up to ±20k blocks, then synchronization speed drops significantly.
 
 
-As the database gets fuller and blocks get bigger (as farmers started to produce votes), it is expected that the sync speed will settle on a smaller number. We have done some performance improvements in Gemini 3e and will do more performance tuning when the protocol is functionally complete.
+As the database size increases and blocks get bigger (as farmers started to produce votes), it is expected that the sync speed will settle on a smaller number. We have made some performance improvements in Gemini 3e and will do more performance tuning when the protocol is functionally complete.
 
 
 ### subspace_farmer::single_disk_plot::piece_receiver: Couldn't get a piece from DSN.
 
 
-```bash
+```
 subspace_farmer::single_disk_plot::piece_receiver: Couldn't get a piece from DSN. Retrying... piece_index=57
 ```
 
@@ -114,7 +114,7 @@ This isn’t a bug but rather a warning, it is something to be expected on a Dec
 ### Failed to build a farmer: File exists
 
 
-```bash
+```
 0: Failed to build a farmer
 1: Single disk plot creation error: I/O error: File exists (os error 17)
 2: I/O error: File exists (os error 17)
@@ -122,13 +122,13 @@ This isn’t a bug but rather a warning, it is something to be expected on a Dec
 ```
 
 
-The system is detecting a pre-existing installation. If this is the case, you might consider wiping the current setup and re-initializing the CLI to ensure a clean installation.
+The system is detecting a pre-existing installation. If this is the case, you might consider [wiping](../protocol/cli.md#wipe-node--farmer) the current setup and [re-initializing](../protocol/cli.md#configuration) the CLI to ensure a clean installation.
 
 
 ### Block import error: Potential long-range attack: block not in finalized chain.
 
 
-```bash
+```
 WARN sc_service::client::client: Block import error: Potential long-range attack: block not in finalized chain.
 ```
 The node somehow ended up being on a fork, try wiping and starting from scratch.
