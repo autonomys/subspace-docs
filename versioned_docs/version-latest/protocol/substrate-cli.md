@@ -604,7 +604,7 @@ Now that your Node & Farmer have been started you will wait for the node to sync
 **- [Substation Server](https://telemetry.subspace.network/#list/0xa3cd4b592d93f79943fbc58fc90ca8f516106699c9cf4d7ada98ca22877bc1ae)**
 
 
-**- [Block Explorer](https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Frpc-0.gemini-3e.subspace.network%2Fws#/explorer)**
+**- [Astral Explorer](https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Frpc-0.gemini-3e.subspace.network%2Fws#/explorer)**
 
 
 ### Using a Custom Path
