@@ -25,7 +25,7 @@ services:
       "--rpc-methods", "safe",
       "--unsafe-ws-external",
       "--validator",
-# Replace `INSERT_YOUR_ID` with your node ID (will be shown in telemetry)
+# Replace `INSERT_YOUR_ID` with your node ID (will be shown in Substation, our telemetry server)
       "--name", "INSERT_YOUR_ID"
     ]
     healthcheck:

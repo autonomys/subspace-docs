@@ -145,7 +145,7 @@ We will be downloading two files for your respective operating system.
           "--rpc-cors", "all",
           "--unsafe-rpc-external",
           "--rpc-methods", "safe",
-    # Replace `INSERT_YOUR_ID` with your node ID (will be shown in telemetry)
+    # Replace `INSERT_YOUR_ID` with your node ID (will be shown in Substation, our telemetry)
           "--name", "INSERT_YOUR_ID"
         ]
         healthcheck:
@@ -189,7 +189,7 @@ We will be downloading two files for your respective operating system.
 
   2. Now edit created file:
 
-  a. Replace `INSERT_YOUR_ID` with desired name that will be shown in telemetry (doesn't impact anything else)
+  a. Replace `INSERT_YOUR_ID` with desired name that will be shown in Substation, our telemetry server (doesn't impact anything else)
 
   b. Replace `WALLET_ADDRESS` with your wallet address
 
@@ -601,7 +601,7 @@ We will be downloading two files for your respective operating system.
 
 Now that your Node & Farmer have been started you will wait for the node to sync and the farmer to complete the initial plotting. While this is occurring you can check out some of the helpful resources below.
 
-**- [Telemetry Server](https://telemetry.subspace.network/#list/0xa3cd4b592d93f79943fbc58fc90ca8f516106699c9cf4d7ada98ca22877bc1ae)**
+**- [Substation Server](https://telemetry.subspace.network/#list/0xa3cd4b592d93f79943fbc58fc90ca8f516106699c9cf4d7ada98ca22877bc1ae)**
 
 
 **- [Block Explorer](https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Frpc-0.gemini-3e.subspace.network%2Fws#/explorer)**
