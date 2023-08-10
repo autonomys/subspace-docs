@@ -105,7 +105,7 @@ const config = {
             position: 'left',
             items: [
               {
-                label: 'Subspace Telemetry',
+                label: 'Substation Telemetry',
                 href: 'https://telemetry.subspace.network',
               },
               {
