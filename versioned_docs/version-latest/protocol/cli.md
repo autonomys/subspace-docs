@@ -1,5 +1,5 @@
 ---
-title: Simple CLI (Recommended)
+title: Pulsar (Recommended)
 sidebar_position: 2
 description: Farming on the Subspace Network
 keywords:
@@ -16,7 +16,7 @@ import Link from '@docusaurus/Link';
 import styles from '@site/src/pages/index.module.css';
 
 :::tip Recommended
-Simple CLI also known as [Subspace CLI](https://github.com/subspace/subspace-cli) is the recommended way to farm on the Subspace Network. To get started, follow the guide below. For more information, you can check out the project [README on GitHub](https://github.com/subspace/subspace-cli/blob/main/README.md).
+Pulsar also known as [Subspace Simple CLI](https://github.com/subspace/subspace-cli) is the recommended way to farm on the Subspace Network. To get started, follow the guide below. For more information, you can check out the project [README on GitHub](https://github.com/subspace/subspace-cli/blob/main/README.md).
 :::
 
 ## Pre-Requisites
