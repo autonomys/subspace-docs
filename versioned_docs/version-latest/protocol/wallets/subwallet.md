@@ -98,7 +98,7 @@ SubWallet supports adding custom networks. This can be helpful for in-developmen
     - Provider URL
     - Network Name
     - Symbol
-    - Block explorer
+    - Astral Explorer
     - Crowdloan URL
 
     The only option that is required is the Provider URL. You can add an explorer if you would like but it is not required. (The current Subspace Explorer is available [here](https://explorer.subspace.network).
