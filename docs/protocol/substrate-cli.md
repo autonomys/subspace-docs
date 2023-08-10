@@ -260,7 +260,7 @@ We will be downloading two files for your respective operating system.
   .\subspace-node-windows-x86_64-skylake-gemini-3e-2023-jul-03.exe `
     --chain gemini-3e `
     --execution wasm `
-    --blocks-pruning archive `
+    --blocks-pruning 256 `
     --state-pruning archive `
     --dsn-disable-private-ips `
     --no-private-ipv4 `
@@ -382,7 +382,7 @@ We will be downloading two files for your respective operating system.
   ./subspace-node-macos-x86_64-gemini-3e-2023-jul-03 \
     --chain gemini-3e \
     --execution wasm \
-    --blocks-pruning archive \
+    --blocks-pruning 256 \
     --state-pruning archive \
     --dsn-disable-private-ips \
     --no-private-ipv4 \
@@ -534,7 +534,7 @@ We will be downloading two files for your respective operating system.
   ./subspace-node-ubuntu-x86_64-skylake-gemini-3e-2023-jul-03 \
     --chain gemini-3e \
     --execution wasm \
-    --blocks-pruning archive \
+    --blocks-pruning 256 \
     --state-pruning archive \
     --dsn-disable-private-ips \
     --no-private-ipv4 \
