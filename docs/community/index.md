@@ -24,6 +24,10 @@ Please note, all community provided resources are **non-official**. For clarific
 
 🇹🇷 - [türk telegram topluluğu](https://t.me/subspacenetworkturkey)
 
+### Reddit
+
+🇺🇸 - [English Subreddit Community](https://www.reddit.com/r/SubspaceNetwork/) 
+
 ### Discord
 
 🇨🇳 - [中国不和谐社区](https://discord.com/channels/864285291518361610/940656159927451668)
