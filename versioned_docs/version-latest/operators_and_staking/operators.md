@@ -15,18 +15,18 @@ import styles from '@site/src/pages/index.module.css';
 
 
 :::note
-Currently, the domain chain does not support syncing from other operator nodes; it needs to be deterministically derived from the consensus chain, block by block.
+Currently, the domain chain does not support syncing from other operator nodes; it needs to be deterministically derived from the consensus chain block by block.
 :::
 
 
 ### Build from source
 
 
-The domain operator node is embedded within the `subspace-node` binary, please refer to [Subspace node](https://github.com/subspace/subspace/blob/main/crates/subspace-node/README.md) for how to build from the source.
+The domain operator node is embedded within the `subspace-node` binary, please refer to [Subspace node](https://github.com/subspace/subspace/blob/main/crates/subspace-node/README.md) for how to build from source.
 
 
-#### Create Operator key:
-An operator needs key pair to participate in Bundle production.
+#### Create operator key:
+An operator needs key pair to participate in bundle production.
 You can create a key using the following command:
 
 ```bash
@@ -34,11 +34,11 @@ target/production/subspace-node key generate --scheme sr25519
 ```
 
 
-Back up the key. Take the `Public key (hex)` of the Keypair. The public key is part of the Operator config.
+Back up the key. Take the `public key (hex)` of the Keypair. The public key is part of the operator config.
 
 
 #### Insert key to Keystore:
-The key generated above is added to the Keystore so that the Operator node can use it to participate in Bundle production.
+The key generated above is added to the Keystore so that the operator node can use it to participate in bundle production.
 The key is inserted using the following command:
 
 ```bash
@@ -47,12 +47,12 @@ target/production/subspace-node key insert \
 ```
 
 The command above assumes `/tmp/keystore` as the keystore location.
-`suri` is the secret phrase of the Operator key.
+`suri` is the secret phrase of the operator key.
 
 
-#### Register Operator:
-The operator needs to register to a domain they want to operate on using `register_operator`. Registration extrinsic requires Operator Config.
-Once the domain epoch is finished, the Operator can produce bundles from the new epoch.
+#### Register operator:
+The operator needs to register to a domain they want to operate on using `register_operator`. The registration extrinsic requires an operator configuration.
+Once the domain epoch is finished, the operator can produce bundles from the new epoch.
 
 
 ### Start the domain operator node
@@ -67,7 +67,7 @@ subspace-node [consensus-chain-args] -- [domain-args]
 
 
 Example:
-Start a node as Operator on `local` chain:
+Start a node as operator on `local` chain:
 <Tabs groupId="OS">
 <TabItem value="windows" label="🖼️ Windows" default>
 
@@ -226,26 +226,31 @@ target/production/subspace-node \
 Specified bootnode ID should always correspond to the `node key`, in the example above, bootnode ID `12D3KooWEyoppNCUx8Yx66oV9fJnriXwCcXwDDUA2kj6vnc6iDEp` corresponds to the `node key` `0000000000000000000000000000000000000000000000000000000000000001` 
 :::
 
-Since there is no `operator` flag, this node will not participate in Bundle production.
+Since there is no `operator` flag, this node will not participate in bundle production.
 By default, node data is written to `subspace-node/domain-{domain-id}` subdirectory of the OS-specific user's local data directory.
 
 
 <Tabs groupId="OS">
 <TabItem value="windows" label="🖼️ Windows" default>
-FOLDERID_LocalAppData C:\Users\Alice\AppData\Local
+FOLDERID_LocalAppData e.g. 
+
+`C:\Users\Alice\AppData\Local`
 
 </TabItem>
 
 
 <TabItem value="macos" label="🍎 macOS">
-$HOME/Library/Application Support /Users/Alice/Library/Application Support
+$HOME/Library/Application Support e.g.
+
+`/Users/Alice/Library/Application Support`
 
 </TabItem>
 
 
 <TabItem value="linux" label="🐧 Ubuntu">
-$XDG_DATA_HOME or /home/alice/.local/share
-$HOME/.local/share
+$XDG_DATA_HOME or /home/alice/.local/share e.g.
+
+`$HOME/.local/share`
 
 </TabItem>
 </Tabs>

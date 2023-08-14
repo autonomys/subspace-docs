@@ -11,7 +11,7 @@ keywords:
 ### Operator registration using [Polkadot.js](https://polkadot.js.org/)
 
 
-Any account with **minimum operator stake** can become an operator. 
+Any account with the **minimum operator stake** can become an operator. 
 
 1. Make sure to select the correct network at the top-left corner. 
 2. Select the account you want to use in `using the selected account`.
@@ -32,13 +32,13 @@ In the example below, 1000 SSC is selected for staking. 18 zeros are added becau
 
 
 
-Once registered, the operator has to wait until the domain epoch is complete to start operating for the **Domain**, participate in **Bundle submission**, and **receive rewards**.
+Once registered, the operator has to wait until the domain epoch is complete to start operating for the **domain**, participate in **bundle submission**, and **receive rewards**.
 
 
-### Operator Nomination using [Polkadot.js](https://polkadot.js.org/)
+### Operator nomination using [Polkadot.js](https://polkadot.js.org/)
 
 
-Any account can nominate any existing **Operators** with at least a minimum nominator stake set by the **Operator**. 
+Any account can nominate any existing **operator** with at least a minimum nominator stake set by the **operator**. 
 
 1. Make sure to select the correct network at the top-left corner. 
 2. Select the account you want to use in `using the selected account`.
@@ -48,19 +48,19 @@ Any account can nominate any existing **Operators** with at least a minimum nomi
 ![Nomination](/img/doc-imgs/operators-staking/Staking-2.png)
 
 
-Once **nomination** is finalized when the **Domain epoch** is complete, **Nominator** will start receiving rewards.
+Once **nomination** is finalized when the **domain epoch** is complete, **nominator** will start receiving rewards.
 
 
-Any **Operator** or **Nominator** can add more stake by using the same functionality.
+Any **operator** or **nominator** can add more stake by using the same functionality.
 
 
 ### Stake withdrawal using [Polkadot.js](https://polkadot.js.org/)
 
 
-Any **Operator** or **Nominator** can initiate withdrawal. They can withdraw the total staked amount or a portion of their stake.
+Any **operator** or **nominator** can initiate withdrawal. They can withdraw the total staked amount or a portion of their stake.
 
 
-- If an Operator is initiating a withdrawal, then their remaining balance should be at least minimum operator stake, else request is rejected.
+- If an operator is initiating a withdrawal, then their remaining balance should be at least minimum operator stake, else request is rejected.
 - If a nominator is initiating a withdrawal, and the remaining balance is less than the operator-defined minimum nominator stake, then the total nominator stake is unlocked else only the requested amount is unlocked.
 
 
@@ -71,7 +71,7 @@ Any **Operator** or **Nominator** can initiate withdrawal. They can withdraw the
 
 
 :::note
-Example of withdrawal of total stake amount from Operator `1`.
+Example of withdrawal of total stake amount from operator `1`.
 :::
 
 
@@ -84,13 +84,13 @@ Example of withdrawal of total stake amount from Operator `1`.
 ![Withdrawal custom amount](/img/doc-imgs/operators-staking/Staking-4.png)
 
 
-Once the withdrawal is submitted, it's finalized after **Domain epoch** is completed. All the withdrawn funds are unlocked after the **Unlocking period** is complete.
+Once the withdrawal is submitted, it's finalized after **domain epoch** is completed. All the withdrawn funds are unlocked after the **unlocking period** is complete.
 
 
 ### Operator De-registration
 
 
-An operator can stop **Operating** for a **Domain**. The de-registration is finalized once the **Domain epoch** is complete. Once de-registered, all the nominators stake under that operator is unlocked after the Unlocking period is complete.
+An operator can stop **operating** for a **domain**. The de-registration is finalized once the **domain epoch** is complete. Once de-registered, all the nominators stake under that operator is unlocked after the unlocking period is complete.
 
 
 1. Select the account you want to use in `using the selected account`.
