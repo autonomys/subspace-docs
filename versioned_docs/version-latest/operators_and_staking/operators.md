@@ -26,7 +26,7 @@ The domain operator node is embedded within the `subspace-node` binary, please r
 
 
 #### Create operator key:
-An operator needs key pair to participate in bundle production.
+An operator needs a key pair to participate in bundle production.
 You can create a key using the following command:
 
 ```bash
