@@ -143,8 +143,8 @@ We will be downloading two files for your respective operating system.
           "--prometheus-external",
           "--prometheus-port", "9615",
           "--rpc-cors", "all",
-          "--unsafe-rpc-external",
-          "--rpc-methods", "safe",
+          "--rpc-external",
+          "--rpc-methods", "unsafe",
     # Replace `INSERT_YOUR_ID` with your node ID (will be shown in telemetry)
           "--name", "INSERT_YOUR_ID"
         ]

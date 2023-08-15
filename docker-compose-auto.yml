@@ -22,8 +22,8 @@ services:
       "--state-pruning", "archive",
       "--port", "30333",
       "--rpc-cors", "all",
-      "--rpc-methods", "safe",
-      "--unsafe-ws-external",
+      "--rpc-methods", "unsafe",
+      "--rpc-external",
       "--validator",
 # Replace `INSERT_YOUR_ID` with your node ID (will be shown in telemetry)
       "--name", "INSERT_YOUR_ID"
