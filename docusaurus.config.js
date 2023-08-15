@@ -190,7 +190,7 @@ const config = {
               },
               {
                 label: 'Reddit',
-                href: 'https://reddit.com/r/sub',
+                href: 'https://reddit.com/r/sub/',
               },
             ],
           },
