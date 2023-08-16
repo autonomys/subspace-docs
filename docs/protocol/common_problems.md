@@ -122,7 +122,7 @@ This isn’t a bug but rather a warning, it is something to be expected on a Dec
 ```
 
 
-The system is detecting a pre-existing installation. If this is the case, you might consider [wiping](../protocol/cli.md#wipe-node--farmer) the current setup and [re-initializing](../protocol/cli.md#configuration) the CLI to ensure a clean installation.
+The system is detecting a pre-existing installation. If this is the case, you might consider [wiping](../protocol/cli.mdx#wipe-node--farmer) the current setup and [re-initializing](../protocol/cli.mdx#configuration) the CLI to ensure a clean installation.
 
 
 ### Block import error: Potential long-range attack: block not in finalized chain.
