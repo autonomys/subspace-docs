@@ -22,16 +22,15 @@ Subspace introduces the Decoupled Execution Framework (DecEx) to tackle the stat
 - **Lightweight Requirements**: The hardware requirements for farming are designed to be lightweight, making it accessible to anyone.
 - **Verification**: Farmers only verify the proof-of-election and ensure that the data is available.
 - **Transactions**: Farmers do not execute transactions; they focus on ordering them and including them in the blockchain.
-- **Primary Role**: Focuses on the probabilistic process of achieving consensus over transaction ordering.
 
 ### Being an operator
 
-- **Transaction Execution**: Operators are responsible for executing transactions and maintaining the resulting chain state.
-- **Higher Hardware Requirements**: Operators require more substantial hardware capabilities, as they must execute complex transactions.
+- **Transaction Submission and Execution**: Operators are responsible for batching transactions into bundles and submitting them to the consensus chain, executing transactions included in the consensus block and maintaining the resulting chain state.
+- **Higher [Hardware Requirements](https://wiki.polkadot.network/docs/maintain-guides-how-to-validate-polkadot#standard-hardware)**: Operators require more substantial hardware capabilities, as they must execute complex transactions.
 - **Require Initial Investment:** Operators are required to stake a certain amount of SSC. If an operator acts maliciously, their stake is at risk of being **slashed**. Engaging in such malicious behavior carries significant penalties, providing crypto-economic security to execution.
 - **Pre-Validation and Batching**: Operators pre-validate and batch transactions into bundles through a stake-weighted election process.
 - **Deterministic Execution**: The operators execute transactions in a specific, deterministic order, producing state commitments in the form of execution receipts.
-- **Secondary Network Role**: Participates in a more deterministic process involving the execution of transactions, potentially requiring specialized infrastructure or capabilities.
+- **Secondary Network Role**: Monitors the Domain chain for malicious activity and submits fraud proofs to consensus chain.
 - **Supports Various Environments**: Can support different smart contract execution environments like the Ethereum Virtual Machine (EVM) or Web-Assembly (WASM).
 
 ### Staking
