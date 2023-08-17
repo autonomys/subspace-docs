@@ -2,45 +2,53 @@
 
 Once you are prepared to merge your changes to the repo, please ensure you check out the [CONTRIBUTION.md](/.github/CONTRIBUTION.md) for proper procedures
 
-## Versioning & Multi-Instances
+## Versioning & Localization
 
-In our documentation we implement [docusaurus'](https://docusaurus.io/docs/versioning) versioning system. Additionally we also implement the [multi-instance](https://docusaurus.io/docs/docs-multi-instance) feature of docusaurus as well. 
+In our documentation we implement [docusaurus'](https://docusaurus.io/docs/versioning) versioning system. Additionally we also implement the [i18n Localization](https://docusaurus.io/docs/i18n/tutorial) feature of docusaurus as well. 
 
-The best way to think about our documentation is 4 sub-documentations within one main page, each sub-doc is an 'instance'
+The best way to think about our documentation is as follows
 
-### Current Docs Instances
-- **Protocol** - [Core Protocol](https://github.com/subspace/subspace) and CLI Documentation
-- **Subspace-Desktop** - [Subspace Desktop](https://github.com/subspace/subspace-desktop) documentation
-- **Subspace.js** - [Subspace.js](https://github.com/subspace/subspace.js) documentation 
-- **Community** - Community provided contributions and resources.
-
-### Instance Structure 
-
-Each instance will have a few items in regards to versioning. For this example we will use the protocol instance. 
-
-- Core Docs folder - *ie. `/protocol`*
-    - In this folder you will find the 'base' documentation, this folder is classified as `next` on the live version of the docs
-- Versioned Docs folder - *ie. `/protocol_versioned_docs`*
-    - In this folder will be each version that has been cut (see below on how to cut a version.) In the version folders will be the raw documentation files. *if you want to edit something from an existing version you must edit it in this version folder!*
-- Versioned Sidebars folder - *ie. `/protocol_versioned_sidebars`*
-    - The sidebars can be configured specially for each instance, in our case we use one master sidebar so you generally will not have to edit this. But same applies as above, if you want to change a sidebar on a specific version you will need to do this from here. 
-- Versions .json file - *ie. `protocol_versions.json`*
-    - This file specifies which versions are added to the documentation. 
+- **Docs/**: The "source" documentation, this is where we will create new pages, and update for latest changes on our products. When the site is built this directory will be served as the "pre-release" version
+- **Versioned_Docs/**: The versioned documentation, this is where you will find the latest stable release named "versioned-latest". When the site is built this directory will be served as the "latest" verison
+- **i18n/**: The localized documentation, this is where the localized files will be stored. Note: These files are part of the .gitignore so they will only be downloaded on build time. More on how this process works in the [localization](###Localization) section below.  
 
 ### Cutting a new Version
 
-to cut a new version you will need to run a command from the project directory. Before cutting the version ensure all changes have been made to the core docs folder as described above.
+When cutting a new version in docusaurus it pulls the files from the `/docs` folder and supplies them into the `/versioned_docs` folder. As we have a flattened version structure we only have two types of docs, `pre-release` and `latest` as such, we have built a custom command to cut new verions on our documentation. 
+
+to cut a new version you will need to run a command from the project directory. Before cutting the version ensure all changes have been made to the core `docs` folder as described above.
 
 ```
-yarn run docusaurus docs:version:[instance] [version]
-```
-For example:
-```
-yarn run docusaurus docs:version:subspace-desktop 6.5.1
+yarn run version-update
 ```
 
-We generally will keep 3 prior versions live on the documentation. Keep this in mind when doing improvements that are version agnostic. s
+This script is designed to manage the "latest" version of a Docusaurus project, performing several key actions:
 
+1. **Deleting Specific Files and Folders**: 
+   - Deletes the `versioned_docs/version-latest` folder.
+   - Deletes the `versions.json` file.
+   - Deletes the `versioned_sidebars/version-latest-sidebars.json` file.
+
+2. **Modifying Configuration File**: 
+   - Modifies the `docusaurus.config.js` file by commenting out the sections related to the "latest" version.
+
+3. **Running Docusaurus Command**: 
+   - Executes an internal Docusaurus command to create a new version of the documentation.
+
+4. **Reverting Configuration Changes**: 
+   - After the new version is created, the script uncomments the previously commented sections in the `docusaurus.config.js` file, reverting it back to its original state.
+
+Overall, this script facilitates the handling of the latest version in the Docusaurus documentation system, streamlining the process of deletion, creation, and modification as required. It ensures that the documentation maintains a consistent and controlled structure across different versions.
+
+### Localization
+
+Localization is managed with the [i18n docusaurus plugin](https://docusaurus.io/docs/versioning) in conjunction with the [Crowdin translation portal](https://support.crowdin.com/translation-process-overview/).
+
+**Our localization works in two parts**
+
+1. **i18n Plugin**: This plugin loads translated data for each language and allows the user to select which language they prefer. This plugin also handles all of the routing, and [code adjustment for static react pages](https://docusaurus.io/docs/i18n/tutorial#translate-your-react-code) on our documentation, aswell as [generate .json string](https://docusaurus.io/docs/i18n/tutorial#translate-plugin-data) files for other non-markdown pages. Additoinally it will help us in managing [translated .md files](https://docusaurus.io/docs/i18n/tutorial#translate-markdown-files)
+
+2. **Crowdin Translation Portal**: This 3rd party tool assists us in uploading our files to a dedicated platform to host translations from the broader community. Additionally, it has a cli, and crowdin.yml that is used for configuration of where from and where to take files that are configured. 
 
 ## Local Development
 
@@ -63,8 +71,9 @@ b) Run the dev server for each language with `yarn start -- --locale en` (Replac
 
 ### Deploy (Staff Use Only)
 
-This is only for preparing the documentation for deployment to GitHub Pages.
+While the section below may still be useful, its worth noting that we have automated this process with github actions, now a build we automatically be deployed anytime a push is made to main, aswell as once every 24hr's
 
+If you would like to manually deploy for whatever reason you can still use the instructions below. 
 
 1. Checkout to `main` branch.
 ```
