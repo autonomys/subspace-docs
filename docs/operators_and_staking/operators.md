@@ -51,7 +51,7 @@ The command above assumes `/tmp/keystore` as the keystore location.
 
 
 #### Register operator:
-The operator needs to register to a domain they want to operate on using `register_operator`. The registration extrinsic requires an operator configuration.
+The operator needs to register to a domain they want to operate on using [`register_operator`](./staking.md#operator-registration-using-polkadotjs). The registration extrinsic requires an operator configuration.
 Once the domain epoch is finished, the operator can produce bundles from the new epoch.
 
 

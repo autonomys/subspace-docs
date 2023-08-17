@@ -99,4 +99,3 @@ An operator can stop **operating** for a **domain**. The de-registration is fina
 
 
 ![De-registration](/img/doc-imgs/operators-staking/Staking-5.png)
-
