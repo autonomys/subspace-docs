@@ -10,12 +10,17 @@
     "deploy": "docusaurus deploy",
     "clear": "docusaurus clear",
     "serve": "docusaurus serve",
+    "crowdin": "crowdin",
+    "crowdin:sync": "docusaurus write-translations --locale en && crowdin upload && crowdin download && node .github/scripts/reorganize.js",
+    "copy-all-versions": "node copy-all-versions.js",
     "version-update": "node .github/scripts/version-update",
     "write-translations": "docusaurus write-translations",
     "write-heading-ids": "docusaurus write-heading-ids",
+    "reorganize": "node .github/scripts/reorganize.js",
     "typecheck": "tsc"
   },
   "dependencies": {
+    "@crowdin/cli": "3",
     "@docusaurus/core": "^2.4.1",
     "@docusaurus/plugin-google-gtag": "^2.4.1",
     "@docusaurus/plugin-sitemap": "^2.4.1",

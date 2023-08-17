@@ -1,0 +1,40 @@
+{
+  "title": {
+    "locales": {
+      "ar": "مزرعة من أي مكان",
+      "bn": "যেখানেই ফার্ম",
+      "de": "Farm von Überall",
+      "en": "Farm from Anywhere",
+      "fr": "Ferme de n'importe où",
+      "hi": "कहीं से भी खेती करें",
+      "id": "Berladang dari Mana Saja",
+      "it": "Coltiva da Ovunque",
+      "ja": "どこからでも農場",
+      "uk": "Ферма звідусіль",
+      "zh": "从任何地方农场",
+      "pt": "Fazenda de Qualquer Lugar",
+      "ru": "Ферма отовсюду",
+      "es": "Granja desde cualquier lugar",
+      "tr": "Her Yerden Çiftlik"
+    }
+  },
+  "tagline": {
+    "locales": {
+      "ar": "كسب المكافآت عن طريق تشغيل عقدة المزارع بواسطة تعهد القرص الفارغ. لا يلزم إعداد باهظ الثمن أو رأس مال مقدم.",
+      "bn": "অতিরিক্ত ডিস্ক প্রতিজ্ঞা করে একটি ফার্মার নোড চালানোর মাধ্যমে পুরস্কার অর্জন করুন। কোনও দামি সেটআপ বা আগের মূলধন প্রয়োজন নেই।",
+      "de": "Verdienen Sie Belohnungen, indem Sie einen Landwirtschaftsknoten betreiben, indem Sie freie Festplattenkapazität zusagen. Keine teure Einrichtung oder Vorabkapital erforderlich.",
+      "en": "Earn rewards by running a farmer node by pledging spare disk. No expensive setup or upfront capital is required.",
+      "fr": "Gagnez des récompenses en exécutant un nœud agriculteur en promettant un disque inutilisé. Aucune configuration coûteuse ou capital initial n'est requis.",
+      "hi": "स्पेयर डिस्क की प्रतिज्ञा करके एक किसान नोड चलाकर इनाम कमाएं। महंगी स्थापना या अग्रिम पूंजी की आवश्यकता नहीं है।",
+      "id": "Dapatkan hadiah dengan menjalankan simpul petani dengan menjanjikan disk sisa. Tidak diperlukan pengaturan mahal atau modal awal.",
+      "it": "Guadagna ricompense eseguendo un nodo agricoltore impegnando un disco di riserva. Non è richiesta alcuna configurazione costosa o capitale iniziale.",
+      "ja": "余分なディスクを誓約して農家ノードを実行することで報酬を獲得します。高価な設定や前払いの資本は必要ありません。",
+      "uk": "Заробляйте винагороди, запускаючи вузол фермера, даючи обіцянку вільного диска. Не потрібно дорогого налаштування або авансового капіталу.",
+      "zh": "通过承诺额外的磁盘来运行农民节点以获得奖励。不需要昂贵的设置或预付资本。",
+      "pt": "Ganhe recompensas executando um nó de agricultor, comprometendo um disco sobressalente. Não é necessária configuração cara ou capital antecipado.",
+      "ru": "Зарабатывайте награды, запуская фермерский узел, обещая свободный диск. Не требуется дорогая настройка или предварительный капитал.",
+      "es": "Gana recompensas ejecutando un nodo de agricultor comprometiendo un disco de repuesto. No se requiere una configuración costosa ni capital por adelantado.",
+      "tr": "Yedek disk taahhüt ederek bir çiftçi düğümü çalıştırarak ödüller kazanın. Pahalı bir kurulum veya peşin sermaye gerekli değildir."
+    }
+  }
+}

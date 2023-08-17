@@ -1,14 +1,3 @@
----
-title: Translation Guide
-sidebar_position: 3
-description: Translation Guide for the Subspace Docs
-keywords:
-    - Awesome
-    - Community
-    - Subspace
-    - Translate
----
-
 # Translation Guide
 
 This guide will show you how to provide translations for this documentation.
@@ -33,15 +22,15 @@ Below you will find the walkthrough of how to provide translations for the Subsp
 
 1. Visit the respective translation portal for which website you would like to help translate (See above)
 
-    ![translate-step-1](/img/doc-imgs/crowdin/login-page.png)
+    ![translate-step-1](/static/img/doc-imgs/crowdin/login-page.png)
 
 2. Once you have logged in and joined the project you will be taken to the project Dashboard, Select which language you would like to translate. (See below)
 
-    ![translate-step-2](/img/doc-imgs/crowdin/dashboard-page.png)
+    ![translate-step-2](/static/img/doc-imgs/crowdin/dashboard-page.png)
 
 3. You will find yourself at a screen with all of the source files listed, select `Translate All` in the top right (See Below)
 
-    ![translate-step-3](/img/doc-imgs/crowdin/translate-all.png)
+    ![translate-step-3](/static/img/doc-imgs/crowdin/translate-all.png)
 
 4. You will then be brought into the Translation Portal, In this portal you will find the following
     1. English Version of the Text
@@ -50,8 +39,10 @@ Below you will find the walkthrough of how to provide translations for the Subsp
     4. Word List that needs translating
     5. A spot for comments if something needs clarification
 
-    ![translate-step-4](/img/doc-imgs/crowdin/translation-page.png)
+    ![translate-step-4](/static/img/doc-imgs/crowdin/translation-page.png)
 
 5. From here you will fill in your translations as you would like and finalize once you are done.
 
 6. Your translation will be reviewed and approved on a timely basis, please note translations can take a couple days before they populate on the deployed documentation.
+
+If you are working on developing with translations in mind, please refer to the [Development](DEVELOPMENT.md) guide
