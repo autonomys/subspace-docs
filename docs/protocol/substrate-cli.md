@@ -118,7 +118,7 @@ We will be downloading two files for your respective operating system.
     services:
       node:
         # For running on Aarch64 add `-aarch64` after `DATE`
-        image: ghcr.io/subspace/node:gemini-3e-2023-jul-03
+        image: ghcr.io/subspace/node:gemini-3f-2023-aug-17
         volumes:
     # Instead of specifying volume (which will store data in `/var/lib/docker`), you can
     # alternatively specify path to the directory where files will be stored, just make
@@ -594,10 +594,10 @@ We will be downloading two files for your respective operating system.
 
 Now that your Node & Farmer have been started you will wait for the node to sync and the farmer to complete the initial plotting. While this is occurring you can check out some of the helpful resources below.
 
-**- [Telemetry Server](https://telemetry.subspace.network/#list/0xa3cd4b592d93f79943fbc58fc90ca8f516106699c9cf4d7ada98ca22877bc1ae)**
+**- [Telemetry Server](https://telemetry.subspace.network/#list/0x92e91e657747c41eeabed5129ff51689d2e935b9f6abfbd5dfcb2e1d0d035095)**
 
 
-**- [Block Explorer](https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Frpc-0.gemini-3e.subspace.network%2Fws#/explorer)**
+**- [Block Explorer](https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Frpc-0.gemini-3f.subspace.network%2Fws#/explorer)**
 
 
 ### Using a Custom Path
@@ -729,7 +729,7 @@ You'll have to have [Rust toolchain](https://rustup.rs/) installed as well as LL
 sudo apt-get install llvm clang
 ```
 
-Now clone the source and build snapshot `gemini-3e-2023-jul-03` (replace occurrences with the snapshot you want to build):
+Now clone the source and build snapshot `gemini-3f-2023-aug-17` (replace occurrences with the snapshot you want to build):
 ```bash
 git clone https://github.com/subspace/subspace.git
 cd subspace
