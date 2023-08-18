@@ -178,7 +178,7 @@ We will be downloading two files for your respective operating system.
 
   2. Now edit created file:
 
-    - Replace snapshot-DATE with the latest release (not pre-release!) snapshot (like snapshot-2022-apr-29)
+    - Replace snapshot-DATE with the latest release (not pre-release!) snapshot (like snapshot-2023-aug-18)
     - Replace INSERT_YOUR_ID with desired name that will be shown in telemetry (doesn't impact anything else)
     - Replace WALLET_ADDRESS with your wallet address
     - Replace PLOT_SIZE with plot size in gigabytes or terabytes, for example 100G or 2T (but leave at least 10G of disk space for node)
@@ -367,7 +367,7 @@ We will be downloading two files for your respective operating system.
   ```bash
   # Replace `INSERT_YOUR_ID` with a nickname you choose
   # Copy all of the lines below, they are all part of the same command
-  ./subspace-node-macos-x86_64-gemini-3f-2023-aug-18 \
+  ./subspace-node-macos-aarch64-gemini-3f-2023-aug-18 \
     --chain gemini-3f \
     --execution wasm \
     --blocks-pruning 256 \
@@ -686,11 +686,11 @@ You'll have to have [Rust toolchain](https://rustup.rs/) installed as well as LL
 sudo apt-get install llvm clang cmake
 ```
 
-Now clone the source and build snapshot `snapshot-2022-apr-29` (replace occurrences with the snapshot you want to build):
+Now clone the source and build snapshot `snapshot-2023-aug-18` (replace occurrences with the snapshot you want to build):
 ```bash
 git clone https://github.com/subspace/subspace.git
 cd subspace
-git checkout snapshot-2022-apr-29
+git checkout snapshot-2023-aug-18
 cargo build \
     --profile production \
     --bin subspace-node \
