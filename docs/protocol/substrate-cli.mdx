@@ -17,7 +17,7 @@ import styles from '@site/src/pages/index.module.css';
 
 
 :::caution Advanced Usage
-[Subspace CLI](https://github.com/subspace/subspace-cli) is the recommended way to farm on the Subspace Network. Follow the guide below to get started or check out the project [README on GitHub](https://github.com/subspace/subspace-cli/blob/main/README.md).
+[Pulsar](https://github.com/subspace/pulsar) (previously Simple CLI or Subspace CLI) is the recommended way to farm on the Subspace Network. Follow the guide below to get started or check out the project [README on GitHub](https://github.com/subspace/pulsar/blob/main/README.md).
 :::
 
 ## I. Pre-requisites
@@ -26,8 +26,22 @@ import styles from '@site/src/pages/index.module.css';
 
 ### A. System Requirements
 
-:::note Network Warning
-You will also want to ensure you have a stable Network connection. It is also important to note that plotting can be network intensive and may impact network usage if you have a hard data limit.
+:::danger Farming can be Network Intensive.
+
+Make sure you have a stable network connection. During the plotting phase of farming, it can be network intensive.
+
+This may impact your network usage so please check your network connection if you have a hard data limit.
+:::
+
+|Hardware|Specs|
+|-|-|
+|CPU|4 Core+|
+|RAM|8GB+|
+|SWAP|4GB|
+|Storage|100GB SSD|
+
+:::note SWAP Warning
+A swap is only necessary if you have a low amount of RAM. 
 :::
 
 :::note CoW File Systems Warning
@@ -41,14 +55,6 @@ sudo chattr +C path/to/data
 ```
 Alternatively, non-CoW file systems like ext4 or xfs can be used instead.
 :::
-
-
-|Hardware|Specs|
-|-|-|
-|CPU|4 Core+|
-|RAM|8GB+|
-|SWAP|4GB|
-|Storage|100GB SSD|
 
 
 ### B. Crypto Wallet
@@ -434,7 +440,7 @@ We will be downloading two files for your respective operating system.
 <TabItem value="linux" label="🐧Ubuntu">
   <details>
     <summary>
-    Intel CPU Ubuntu Executables
+    x86_64 Ubuntu Executables
     </summary>
     <details>
       <summary>
@@ -714,16 +720,16 @@ When running the Subspace Network Farmer & Node, sometimes you may encounter an 
 Backtrace omitted. Run with RUST_BACKTRACE=1 environment variable to display it.
 ```
 
-This error message means that Rust (the programming language that Subspace Network Farmer & Node is written in) has encountered a problem and has provided a diagnostic backtrace that can help diagnose the issue. However, by default, the backtrace is not displayed. To see the backtrace, you need to enable the RUST_BACKTRACE environment variable.
+This error message means that Rust (the programming language that Subspace Network Farmer & Node is written in) has encountered a problem and has provided a diagnostic backtrace that can help diagnose the issue. However, by default, the backtrace is not displayed. To see the backtrace, you need to enable the `RUST_BACKTRACE` environment variable.
 
-In this section, we will show you how to enable the RUST_BACKTRACE environment variable on Linux, macOS, and Windows (PowerShell).
+In this section, we will show you how to enable the `RUST_BACKTRACE` environment variable on Linux, macOS, and Windows (PowerShell).
 
 <Tabs groupId="OS">
 <TabItem value="windows" label="🖼️ Windows" default>
 
 #### Enabling RUST_BACKTRACE on Windows (PowerShell)
 
-To enable the RUST_BACKTRACE environment variable on Windows using PowerShell, follow these steps:
+To enable the `RUST_BACKTRACE` environment variable on Windows using PowerShell, follow these steps:
 
 1. Open a PowerShell window.
 2. Type the following command:
@@ -740,7 +746,7 @@ To enable the RUST_BACKTRACE environment variable on Windows using PowerShell, f
 
 #### Enabling RUST_BACKTRACE on macOS
 
-To enable the RUST_BACKTRACE environment variable on macOS, follow these steps:
+To enable the `RUST_BACKTRACE` environment variable on macOS, follow these steps:
 
 1. Open a terminal window.
 2. Type the following command:
@@ -757,7 +763,7 @@ To enable the RUST_BACKTRACE environment variable on macOS, follow these steps:
 
 #### Enabling RUST_BACKTRACE on Linux
 
-To enable the RUST_BACKTRACE environment variable on Linux, follow these steps:
+To enable the `RUST_BACKTRACE` environment variable on Linux, follow these steps:
 
 1. Open a terminal window.
 2. Type the following command:
