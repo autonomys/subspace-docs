@@ -1,5 +1,5 @@
 ---
-title: Simple CLI (Recommended)
+title: Pulsar (Recommended)
 sidebar_position: 2
 description: Farming on the Subspace Network
 keywords:
@@ -16,7 +16,7 @@ import Link from '@docusaurus/Link';
 import styles from '@site/src/pages/index.module.css';
 
 :::tip Recommended
-Simple CLI also known as [Subspace CLI](https://github.com/subspace/subspace-cli) is the recommended way to farm on the Subspace Network. To get started, follow the guide below. For more information, you can check out the project [README on GitHub](https://github.com/subspace/subspace-cli/blob/main/README.md).
+[Pulsar](https://github.com/subspace/pulsar) (previously Subspace CLI or Simple CLI) is the recommended way to farm on the Subspace Network. To get started, follow the guide below. For more information, you can check out the project [README on GitHub](https://github.com/subspace/pulsar/blob/main/README.md).
 :::
 
 ## Pre-Requisites
@@ -34,21 +34,15 @@ This may impact your network usage so please check your network connection if yo
 
 Subspace CLI requires commodity hardware specs to operate. At a **minimum**, it is recommended to have:
 
-| Hardware | Specs           |
-| -------- | --------------- |
-| CPU      | 4 Core+         |
-| RAM      | 4GB+ (Rec. 8GB) |
-| SWAP     | 4GB             |
-| Storage  | 100GB SSD       |
+| Hardware | Specs            |
+| -------- | ---------------- |
+| CPU      | 4 Core+          |
+| RAM      | 8GB+             |
+| SWAP     | 4GB              |
+| Storage  | 100GB SSD        |
 
-:::caution BUG#1388 - Storage Growing Too Large
-
-We are currently investigating a bug that is causing the node Archive to exceed its expected growth. As a result, we suggest having a minimum of 150-200GB of storage available for your system.
-
-Therefore, please make sure that you have at least ~150-200GB of storage in addition to your desired plot size.
-
-For more information, please visit: https://github.com/subspace/subspace/issues/1388
-
+:::note SWAP Warning
+A swap is only necessary if you have a low amount of RAM. 
 :::
 
 :::note CoW File Systems Warning
@@ -59,7 +53,7 @@ If BTRFS is used with Subspace, the directory/whole file system must be CoW disa
 **Command to Cow Disable**
 
 ```
-sudo chattr +C path/to/datasubspace-cli-windows-x86_64-skylake-v0.42-alpha.exe
+sudo chattr +C path/to/data
 ```
 
 Alternatively, non-CoW file systems like ext4 or xfs can be used instead.
@@ -78,6 +72,7 @@ If you have a server with no firewall, there is nothing to be done, but otherwis
 
 - `30333`
 - `30433`
+- `30533`
 
 On the desktop side if you have a router in front of your computer, you'll need to forward TCP ports to the machine on which your node is running (how this is done varies from router to router, but there is always a feature like this, refer to [How to Forward Ports](port-forwarding.md) for a more in-depth tutorial).
 If you're connected directly without any router, then again nothing needs to be done in such case.
@@ -87,7 +82,7 @@ If you're connected directly without any router, then again nothing needs to be 
 ## Installation
 
 :::caution ALPHA SOFTWARE
-Subspace CLI is in **alpha**.
+Pulsar is in **alpha**.
 Please feel free to file bug reports on our GitHub issues.
 :::
 <details>
@@ -106,7 +101,7 @@ Please feel free to file bug reports on our GitHub issues.
 
 ---
 
-Compiled versions of the Subspace CLI is [hosted on GitHub](https://github.com/subspace/subspace-cli/releases). This is the recommended way to install the application. Please find the appropriate binary for your operating system.
+Precompiled versions of the Pulsar is [hosted on GitHub](https://github.com/subspace/pulsar/releases). This is the recommended way to install the application. Please find the appropriate binary for your operating system.
 
 <Tabs groupId="OS">
 
@@ -126,7 +121,7 @@ Some older processors/VMs are no longer supported by official releases, but can 
   <div className={styles.buttons}>
     <Link
       className="button button--secondary button"
-      to="https://github.com/subspace/subspace-cli/releases/download/v0.5.3-alpha-2/subspace-cli-windows-x86_64-v2-v0.5.3-alpha-2.exe">
+      to="https://github.com/subspace/pulsar/releases/download/v0.6.0-alpha/pulsar-windows-x86_64-v2-v0.6.0-alpha.exe">
       Windows CLI Executable
     </Link>
   </div>
@@ -139,7 +134,7 @@ Some older processors/VMs are no longer supported by official releases, but can 
   <div className={styles.buttons}>
     <Link
       className="button button--secondary button"
-      to="https://github.com/subspace/subspace-cli/releases/download/v0.5.3-alpha-2/subspace-cli-windows-x86_64-skylake-v0.5.3-alpha-2.exe">
+      to="https://github.com/subspace/pulsar/releases/download/v0.6.0-alpha/pulsar-windows-x86_64-skylake-v0.6.0-alpha.exe">
       Windows CLI Executable
     </Link>
   </div>
@@ -173,7 +168,7 @@ Some older processors/VMs are no longer supported by official releases, but can 
   <div className={styles.buttons}>
     <Link
       className="button button--secondary button"
-      to="https://github.com/subspace/subspace-cli/releases/download/v0.5.3-alpha-2/subspace-cli-macos-x86_64-v0.5.3-alpha-2.zip">
+      to="https://github.com/subspace/pulsar/releases/download/v0.6.0-alpha/pulsar-macos-x86_64-v0.6.0-alpha.zip">
       Mac CLI Executable (Intel)
     </Link>
   </div>
@@ -186,7 +181,7 @@ Some older processors/VMs are no longer supported by official releases, but can 
   <div className={styles.buttons}>
     <Link
         className="button button--secondary button"
-        to="https://github.com/subspace/subspace-cli/releases/download/v0.5.3-alpha-2/subspace-cli-macos-aarch64-v0.5.3-alpha-2.zip">
+        to="https://github.com/subspace/pulsar/releases/download/v0.6.0-alpha/pulsar-macos-aarch64-v0.6.0-alpha.zip">
         Mac CLI Executable (Apple M Series)
     </Link>
   </div>
@@ -195,8 +190,8 @@ Some older processors/VMs are no longer supported by official releases, but can 
 2. Extract the `.zip` file.
 3. Open Terminal, type `cd Downloads` (or `cd Your-File-Location`).
 4. Make the binary executable by running:
-    * `chmod +x subspace-cli-macos-x86_64-v0.5.3-alpha-2` (Intel Chip)
-    * `chmod +x subspace-cli-macos-aarch64-v0.5.3-alpha-2` (Apple M Series)
+    * `chmod +x pulsar-macos-x86_64-v0.6.0-alpha` (Intel Chip)
+    * `chmod +x pulsar-macos-aarch64-v0.6.0-alpha` (Apple M Series)
 
 :::warning
 Your Mac may not let you open/initialize the file because of unidentified developer restrictions. To resolve this, go to Settings-> Security&Privacy -> General -> Allow
@@ -223,7 +218,7 @@ Some older processors/VMs are no longer supported by official releases, but can 
     <div className={styles.buttons}>
       <Link
           className="button button--secondary button"
-          to="https://github.com/subspace/subspace-cli/releases/download/v0.5.3-alpha-2/subspace-cli-ubuntu-x86_64-v2-v0.5.3-alpha-2">
+          to="https://github.com/subspace/pulsar/releases/download/v0.6.0-alpha/pulsar-ubuntu-x86_64-v2-v0.6.0-alpha">
           Ubuntu Executable
       </Link>
     </div>
@@ -235,7 +230,7 @@ Some older processors/VMs are no longer supported by official releases, but can 
     <div className={styles.buttons}>
       <Link
           className="button button--secondary button"
-          to="https://github.com/subspace/subspace-cli/releases/download/v0.5.3-alpha-2/subspace-cli-ubuntu-x86_64-skylake-v0.5.3-alpha-2">
+          to="https://github.com/subspace/pulsar/releases/download/v0.6.0-alpha/pulsar-ubuntu-x86_64-skylake-v0.6.0-alpha">
           Ubuntu Executable
       </Link>
     </div>
@@ -249,7 +244,7 @@ Some older processors/VMs are no longer supported by official releases, but can 
   <div className={styles.buttons}>
     <Link
         className="button button--secondary button"
-        to="https://github.com/subspace/subspace-cli/releases/download/v0.5.3-alpha-2/subspace-cli-ubuntu-aarch64-v0.5.3-alpha-2">
+        to="https://github.com/subspace/pulsar/releases/download/v0.6.0-alpha/pulsar-ubuntu-aarch64-v0.6.0-alpha">
         Ubuntu Executable (aarch64)
     </Link>
   </div>
@@ -257,8 +252,8 @@ Some older processors/VMs are no longer supported by official releases, but can 
 
 2. Open Terminal, type `cd Downloads` (or `cd Your-File-Location`).
 3. Make the binary executable by running:
-    * `chmod +x subspace-cli-ubuntu-x86_64-skylake-v0.5.3-alpha-2` (Ubuntu)
-    * `chmod +x subspace-cli-ubuntu-aarch64-v0.5.3-alpha-2` (Ubuntu aarch64)
+	* `chmod +x pulsar-ubuntu-x86_64-skylake-v0.6.0-alpha` (Ubuntu)
+    * `chmod +x pulsar-ubuntu-aarch64-v0.6.0-alpha` (Ubuntu aarch64)
 
 </TabItem>
 
@@ -274,7 +269,7 @@ To start we have to initialize our Farmer, this can be done with:
 <TabItem value="windows" label="🖼️ Windows" default>
 
 ```powershell
-./subspace-cli-windows-x86_64-skylake-v0.5.3-alpha-2.exe init
+./pulsar-windows-x86_64-skylake-v0.6.0-alpha.exe init
 ```
 
 </TabItem>
@@ -284,14 +279,14 @@ Intel Chip:
 
 ```bash
 
-./subspace-cli-macos-x86_64-v0.5.3-alpha-2 init
+./pulsar-macos-x86_64-v0.6.0-alpha  init
 
 ```
 Apple M Series:
 
 ```bash
 
-./subspace-cli-macos-aarch64-v0.5.3-alpha-2 init
+./pulsar-macos-aarch64-v0.6.0-alpha init
 
 ```
 
@@ -302,57 +297,58 @@ Ubuntu:
 
 ```bash
 
-./subspace-cli-ubuntu-x86_64-skylake-v0.5.3-alpha-2 init
+./pulsar-ubuntu-x86_64-skylake-v0.6.0-alpha  init
 
 ```
 Ubuntu Executable (aarch64):
 
 ```bash
 
-./subspace-cli-ubuntu-aarch64-v0.5.3-alpha-2 init
+./pulsar-ubuntu-aarch64-v0.6.0-alpha  init
 
 ```
 
 </TabItem>
 </Tabs>
 
-This will prompt you to setup your CLI configurations to begin farming. You should see a similar prompt like so (some info might be different than shown here w.r.t your OS):
+This will prompt you to setup your Pulsar configurations to begin farming. You should see a similar prompt like so (some info might be different than shown here w.r.t your OS):
 
 ```bash
-version: 0.5.0
+version: 0.6.0
 
 Configuration creation process has started...
+Do you have an existing farmer/reward address? [y/n]: y
 Enter your farmer/reward address: REDACTED_ADDRESS
-Enter your node name to be identified on the network(defaults to `username`, press enter to use the default):
-Specify a path for storing plot files (press enter to use the default: `"/home/username/.local/share/subspace-cli/plots"`):
-Specify a path for storing node files (press enter to use the default: `"/home/username/.local/share/subspace-cli/node"`):
-Specify a plot size (defaults to `1000.0 MB`, press enter to use the default):
-Specify the chain to farm. Available options are: [Gemini3e, Dev, DevNet].
+Enter your node name to be identified on the network(defaults to `subspace`, press enter to use the default):
+Specify a path for storing plot files (press enter to use the default: `"/home/username/.local/share/pulsar/plots"`):
+Specify a path for storing node files (press enter to use the default: `"/home/username/.local/share/pulsar/node"`):
+Specify a plot size (defaults to `2.0 GB`, press enter to use the default):
+Specify the chain to farm. Available options are: [Gemini3f, Dev, DevNet].
 Defaults to `Gemini3e`, press enter to use the default:
-Configuration has been generated at /home/username/.config/subspace-cli
+Configuration has been generated at /home/username/.config/pulsar
 Ready for lift off! Run the follow command to begin: `"path/to/executable" farm`
 ```
 
 :::info Finding your settings.toml
 
-After running `subspace-cli init`, the prompt will display where the `settings.toml` is generated. However in case you missed it, you can find the file based on your operating system:
+After running `pulsar init`, the prompt will display where the `settings.toml` is generated. However in case you missed it, you can find the file based on your operating system:
 
 <Tabs groupId="OS">
 <TabItem value="windows" label="🖼️ Windows" default>
 
-Your `settings.toml` will be found in `$FOLDERID_RoamingAppData/subspace-cli/settings.toml`
+Your `settings.toml` will be found in `$FOLDERID_RoamingAppData/pulsar/settings.toml`
 
 </TabItem>
 
 <TabItem value="macos" label="🍎macOS">
 
-Your `settings.toml` will be found in `$HOME/Library/Application Support/subspace-cli/settings.toml`
+Your `settings.toml` will be found in `$HOME/Library/Application Support/pulsar/settings.toml`
 
 </TabItem>
 
 <TabItem value="linux" label="🐧Ubuntu">
 
-Your `settings.toml` will be found in `$HOME/.config/subspace-cli/settings.toml`
+Your `settings.toml` will be found in `$HOME/.config/pulsar/settings.toml`
 
 </TabItem>
 </Tabs>
@@ -363,14 +359,14 @@ Your `settings.toml` will be found in `$HOME/.config/subspace-cli/settings.toml`
 
 ---
 
-If you are using the default configurations from Subspace CLI, you are ready to go with the Gemini 3 Testnet. Alternatively, you can ensure this occurs by manually setting the network like so.
+If you are using the default configurations from Pulsar, you are ready to go with the Gemini 3 Testnet. Alternatively, you can ensure this occurs by manually setting the network like so.
 
-Open your `settings.toml` directory and ensure your `chain` is correctly specified to `gemini-3e` as so:
+Open your `settings.toml` directory and ensure your `chain` is correctly specified to `gemini-3f` as so:
 
 ```toml
 # settings.toml
 [node]
-chain = 'gemini-3e'
+chain = 'gemini-3f'
 # ... redacted ...
 ```
 
@@ -378,7 +374,7 @@ chain = 'gemini-3e'
 
 ---
 
-To run Subspace CLI in a local development mode, modify your `settings.toml` and ensure your `chain` points to `dev`:
+To run Pulsar in a local development mode, modify your `settings.toml` and ensure your `chain` points to `dev`:
 
 ```toml
 # settings.toml
@@ -397,7 +393,7 @@ To begin farming on the network, just run the `farm` command with the CLI like s
 <TabItem value="windows" label="🖼️ Windows" default>
 
 ```powershell
-./subspace-cli-windows-x86_64-v0.5.3-alpha-2.exe farm
+./pulsar-windows-x86_64-skylake-v0.6.0-alpha.exe farm
 ```
 
 </TabItem>
@@ -408,14 +404,14 @@ Intel Chip:
 
 ```bash
 
-./subspace-cli-macos-x86_64-v0.5.3-alpha-2 farm
+./pulsar-macos-x86_64-v0.6.0-alpha farm
 
 ```
 Apple M1 Chip:
 
 ```bash
 
-./subspace-cli-macos-aarch64-v0.5.3-alpha-2 farm
+./pulsar-macos-aarch64-v0.6.0-alpha farm
 
 ```
 
@@ -427,14 +423,14 @@ Ubuntu:
 
 ```bash
 
-./subspace-cli-ubuntu-x86_64-skylake-v0.5.3-alpha-2 farm
+./pulsar-ubuntu-x86_64-skylake-v0.6.0-alpha farm
 
 ```
 Ubuntu Executable (aarch64):
 
 ```bash
 
-./subspace-cli-ubuntu-aarch64-v0.5.3-alpha-2 farm
+./pulsar-ubuntu-aarch64-v0.6.0-alpha farm
 
 ```
 
@@ -448,7 +444,7 @@ Starting node ... (this might take up to couple of minutes)
 Node started successfully!
 Starting farmer ...
 Farmer started successfully!
-Initial plotting for plot: #0 (/home/username/.local/share/subspace-cli/plots)
+Initial plotting for plot: #0 (/home/username/.local/share/pulsar/plots)
 ⠁ [00:00:00] 3% [=>                                      ]
       (31.00 MiB/953.67 MiB) 157.35 GiB/s, plotting, ETA: 0s
 ```
@@ -532,7 +528,7 @@ We have included a few tutorials below that may help you in your support journey
 
 :::tip Updated from a previous version and now having issues?
 
-Occasionally after updating to a new version of the CLI you will need to wipe your node and farmer, generally this should not be required but can be attempted if your farmer is having issues after having had worked fine previously.
+Occasionally after updating to a new version of the Pulsar you will need to wipe your node and farmer, generally this should not be required but can be attempted if your farmer is having issues after having had worked fine previously.
 
 :::
 
@@ -541,7 +537,7 @@ To simply restart the node, go to the terminal where you started the `farm` comm
 Use the same file name as the previous init and farm steps, then add the wipe command to free the previous storage that was being used. Generally, only do this if you have severe errors and are prompted by a staff member.
 
 ```bash
-./subspace-cli-file-name wipe
+./pulsar-file-name wipe
 ```
 
 After wiping, follow the `init` and `farm` steps above to start farming again!
@@ -553,19 +549,19 @@ A good place to start if you are facing trouble is by viewing your logs and seei
 <Tabs groupId="OS">
 <TabItem value="windows" label="🖼️ Windows" default>
 
-Your Logs will be found in `%USERPROFILE%/AppData/Local/subspace-cli/logs`
+Your Logs will be found in `%USERPROFILE%/AppData/Local/pulsar/logs`
 
 </TabItem>
 
 <TabItem value="macos" label="🍎macOS">
 
-Your Logs will be found in `$HOME/Library/Logs/subspace-cli/`
+Your Logs will be found in `$HOME/Library/Logs/pulsar/`
 
 </TabItem>
 
 <TabItem value="linux" label="🐧Ubuntu">
 
-Your Logs will be found in `$HOME/.local/share/subspace-cli/logs`
+Your Logs will be found in `$HOME/.local/share/pulsar/logs`
 
 </TabItem>
 </Tabs>
@@ -578,16 +574,16 @@ When running the Subspace Network Farmer & Node, sometimes you may encounter an 
 Backtrace omitted. Run with RUST_BACKTRACE=1 environment variable to display it.
 ```
 
-This error message means that Rust (the programming language that Subspace Network Farmer & Node is written in) has encountered a problem and has provided a diagnostic backtrace that can help diagnose the issue. However, by default, the backtrace is not displayed. To see the backtrace, you need to enable the RUST_BACKTRACE environment variable.
+This error message means that Rust (the programming language that Subspace Network Farmer & Node is written in) has encountered a problem and has provided a diagnostic backtrace that can help diagnose the issue. However, by default, the backtrace is not displayed. To see the backtrace, you need to enable the `RUST_BACKTRACE` environment variable.
 
-In this section, we will show you how to enable the RUST_BACKTRACE environment variable on Linux, macOS, and Windows (PowerShell).
+In this section, we will show you how to enable the `RUST_BACKTRACE` environment variable on Linux, macOS, and Windows (PowerShell).
 
 <Tabs groupId="OS">
 <TabItem value="windows" label="🖼️ Windows" default>
 
 #### Enabling RUST_BACKTRACE on Windows (PowerShell)
 
-To enable the RUST_BACKTRACE environment variable on Windows using PowerShell, follow these steps:
+To enable the `RUST_BACKTRACE` environment variable on Windows using PowerShell, follow these steps:
 
 1. Open a PowerShell window.
 2. Type the following command:
@@ -596,7 +592,7 @@ To enable the RUST_BACKTRACE environment variable on Windows using PowerShell, f
     ```
 
 3. Press Enter.
-4. After exporting the environment variable, run the Subspace Network Farmer & Node as usual, and any errors encountered will display the backtrace.
+4. After exporting the environment variable, run the Pulsar as usual, and any errors encountered will display the backtrace.
 
 </TabItem>
 
@@ -604,7 +600,7 @@ To enable the RUST_BACKTRACE environment variable on Windows using PowerShell, f
 
 #### Enabling RUST_BACKTRACE on macOS
 
-To enable the RUST_BACKTRACE environment variable on macOS, follow these steps:
+To enable the `RUST_BACKTRACE` environment variable on macOS, follow these steps:
 
 1. Open a terminal window.
 2. Type the following command:
@@ -613,7 +609,7 @@ To enable the RUST_BACKTRACE environment variable on macOS, follow these steps:
     ```
 
 3. Press Enter.
-4. After exporting the environment variable, run the Subspace Network Farmer & Node as usual, and any errors encountered will display the backtrace.
+4. After exporting the environment variable, run the Pulsar as usual, and any errors encountered will display the backtrace.
 
 </TabItem>
 
@@ -621,7 +617,7 @@ To enable the RUST_BACKTRACE environment variable on macOS, follow these steps:
 
 #### Enabling RUST_BACKTRACE on Linux
 
-To enable the RUST_BACKTRACE environment variable on Linux, follow these steps:
+To enable the `RUST_BACKTRACE` environment variable on Linux, follow these steps:
 
 1. Open a terminal window.
 2. Type the following command:
@@ -630,7 +626,7 @@ To enable the RUST_BACKTRACE environment variable on Linux, follow these steps:
     ```
 
 3. Press Enter.
-4. After exporting the environment variable, run the Subspace Network Farmer & Node as usual, and any errors encountered will display the backtrace.
+4. After exporting the environment variable, run the Pulsar as usual, and any errors encountered will display the backtrace.
 
 </TabItem>
 </Tabs>
