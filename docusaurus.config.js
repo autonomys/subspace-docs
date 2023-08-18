@@ -30,7 +30,7 @@ const config = {
   tagline: getLocalizedConfigValue('tagline'),
   url: 'https://docs.subspace.network',
   baseUrl: '/',
-  onBrokenLinks: 'throw',
+  onBrokenLinks: 'warn',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
 
