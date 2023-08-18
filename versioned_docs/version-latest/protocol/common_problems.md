@@ -50,9 +50,9 @@ Most modern desktop processors starting with Broadwell on the Intel side and Ryz
 
 
 Please make sure to:
-- Use our latest stable release, as shown on our [Github releases](https://github.com/subspace/subspace-cli/releases)
+- Use our latest stable release, as shown on our [Github releases](https://github.com/subspace/pulsar/releases)
 - Verify your farmer is present and on the highest block on our [telemetry server](https://telemetry.subspace.network/)
-- Verify your balance using the [Polkadot explorer](https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Frpc-0.gemini-3e.subspace.network%2Fws#/explorer)
+- Verify your balance using the [Polkadot explorer](https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Frpc-0.gemini-3f.subspace.network%2Fws#/explorer)
 
 
 :::note
@@ -97,7 +97,7 @@ Your PC likely ran out of space. Consider freeing up some space by removing unne
 ### Fast node synchronization (more than 100+ blocks per second) goes only up to ±20k blocks, then synchronization speed drops significantly.
 
 
-As the database size increases and blocks get bigger (as farmers started to produce votes), it is expected that the sync speed will settle on a smaller number. We have made some performance improvements in Gemini 3e and will do more performance tuning when the protocol is functionally complete.
+As the database size increases and blocks get bigger (as farmers started to produce votes), it is expected that the sync speed will settle on a smaller number. We have made some performance improvements in Gemini 3f and will do more performance tuning when the protocol is functionally complete.
 
 
 ### subspace_farmer::single_disk_plot::piece_receiver: Couldn't get a piece from DSN.
@@ -122,7 +122,7 @@ This isn’t a bug but rather a warning, it is something to be expected on a Dec
 ```
 
 
-The system is detecting a pre-existing installation. If this is the case, you might consider [wiping](../protocol/cli.mdx#wipe-node--farmer) the current setup and [re-initializing](../protocol/cli.mdx#configuration) the CLI to ensure a clean installation.
+The system is detecting a pre-existing installation. If this is the case, you might consider [wiping](../protocol/pulsar.mdx#wipe-node--farmer) the current setup and [re-initializing](../protocol/pulsar.mdx#configuration) the CLI to ensure a clean installation.
 
 
 ### Block import error: Potential long-range attack: block not in finalized chain.
@@ -132,23 +132,4 @@ The system is detecting a pre-existing installation. If this is the case, you mi
 WARN sc_service::client::client: Block import error: Potential long-range attack: block not in finalized chain.
 ```
 The node somehow ended up being on a fork, try wiping and starting from scratch.
-
-
-## Gemini 3e specific problems
-
-
-<details>
-<summary>
-Some large plots might not work correctly.
-</summary>
-We're looking more into enabling parallelism for larger plots and further protocol changes will certainly help with this. Stay tuned!
-</details>
-
-
-<details>
-<summary>
-Sector plotting attempt failed, will retry later sector_offset=0 sector_index=.... error=Failed to retrieve piece 192: Not enough pieces to reconstruct a segment
-</summary>
-The issue is related to a cache size restriction being hit rather than a particular point in time being reached. If that's the case, the team will enlarge cache size to get it resolved.
-</details>
 
