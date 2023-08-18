@@ -171,14 +171,14 @@ We will be downloading two files for your respective operating system.
         - "0.0.0.0:30533:30533"
       restart: unless-stopped
       command: [
-        # Replace `PLOT_SIZE` with plot size in gigabytes or terabytes, for example 100G or 2T (but leave at least 60G of disk space for node and some for OS)
-        "--farm", "path=/var/subspace,size=PLOT_SIZE",
-        "farm",
-        "--node-rpc-url", "ws://node:9944",
-        "--listen-on", "/ip4/0.0.0.0/tcp/30533",
-        # Replace `WALLET_ADDRESS` with your Subwallet / Polkadot.js wallet address
-        "--reward-address", "WALLET_ADDRESS",
-      ]
+      "farm",
+      "--node-rpc-url", "ws://node:9944",
+      "--listen-on", "/ip4/0.0.0.0/tcp/30533",
+# Replace `WALLET_ADDRESS` with your Polkadot.js wallet address
+      "--reward-address", "WALLET_ADDRESS",
+      # Replace `PLOT_SIZE` with plot size in gigabytes or terabytes, for example 100G or 2T (but leave at least 60G of disk space for node and some for OS)
+      "path=/var/subspace,size=PLOT_SIZE",
+    ]
     volumes:
       node-data:
       farmer-data:
@@ -292,7 +292,7 @@ We will be downloading two files for your respective operating system.
   # Replace `PLOT_SIZE` with plot size in gigabytes or terabytes, for example 100G or 2T (but leave at least 60G of disk space for node and some for OS)
   # Replace `WALLET_ADDRESS` below with your account address from Subwallet / Polkadot.js wallet
   .\subspace-farmer-windows-x86_64-skylake-gemini-3f-2023-aug-17.exe farm  `
-    --farm path=PATH_TO_PLOT,size=PLOT_SIZE farm --reward-address WALLET_ADDRESS
+    --reward-address WALLET_ADDRESS PATH=PATH_TO_FARM,size=PLOT_SIZE
   ```
   7. You should see something similar in the terminal:
   ```
@@ -412,7 +412,7 @@ We will be downloading two files for your respective operating system.
   # Replace `PLOT_SIZE` with plot size in gigabytes or terabytes, for example 100G or 2T (but leave at least 60G of disk space for node and some for OS)
   # Replace `WALLET_ADDRESS` below with your account address from Subwallet / Polkadot.js wallet
   ./subspace-farmer-macos-x86_64-gemini-3f-2023-aug-17 farm  `
-    --farm path=PATH_TO_PLOT,size=PLOT_SIZE farm --reward-address WALLET_ADDRESS
+    --reward-address WALLET_ADDRESS PATH=PATH_TO_FARM,size=PLOT_SIZE
   ```
   6. It may prompt again in here. Refer to the note on step 4.
 
@@ -563,7 +563,7 @@ We will be downloading two files for your respective operating system.
     # Replace `PLOT_SIZE` with plot size in gigabytes or terabytes, for example 100G or 2T (but leave at least 60G of disk space for node and some for OS)
     # Replace `WALLET_ADDRESS` below with your account address from Subwallet / Polkadot.js wallet
     ./subspace-farmer-ubuntu-x86_64-skylake-gemini-3f-2023-aug-17 farm  `
-    --farm path=PATH_TO_PLOT,size=PLOT_SIZE farm --reward-address WALLET_ADDRESS
+    --reward-address WALLET_ADDRESS PATH=PATH_TO_FARM,size=PLOT_SIZE
   ```
   6. You should see something similar in the terminal:
   ```
