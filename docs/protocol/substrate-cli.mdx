@@ -148,7 +148,7 @@ We will be downloading two files for your respective operating system.
         depends_on:
           node:
             condition: service_healthy
-        # Replace `snapshot-DATE` with latest release (like `snapshot-2022-apr-29`)
+        # Replace `snapshot-DATE` with latest release (like `snapshot-2023-aug-18`)
         # For running on Aarch64 add `-aarch64` after `DATE`
         image: ghcr.io/subspace/farmer:snapshot-DATE
         volumes:
@@ -205,7 +205,7 @@ We will be downloading two files for your respective operating system.
       </Link>
       <Link
         className="button button--secondary button"
-        to="https://github.com/subspace/subspace/releases/download/gemini-3f-2023-aug-18/subspace-farmer-windows-x86_64-v2-gemini-3e-2023-jul-03.exe">
+        to="https://github.com/subspace/subspace/releases/download/gemini-3f-2023-aug-18/subspace-farmer-windows-x86_64-v2-gemini-3f-2023-aug-18.exe">
         Download Farmer Executable
       </Link>
     </div>
@@ -639,11 +639,20 @@ In case of Docker setup run `docker-compose down -v` (and manually delete custom
 
 Now follow installation guide.
 
-### Help
+#### Help
 
 There are extra commands and parameters you can use on farmer or node, use the `--help` after any other command to display additional options.
 
-Below are some helpful samples:
+```bash
+# Replace `FARMER_FILE_NAME` with the name of the node file you downloaded from releases
+./FARMER_FILE_NAME farm --help
+```
+
+## IV. Advanced
+
+---
+
+### Helpful commands examples
 
 - `./FARMER_FILE_NAME info PATH_TO_FARM` : show information about the farm at `PATH_TO_FARM`
 - `./FARMER_FILE_NAME scrub PATH_TO_FARM` : Scrub the farm to find and fix farm at `PATH_TO_FARM` corruption
@@ -651,16 +660,7 @@ Below are some helpful samples:
 - `./NODE_FILE_NAME --base-path NODE_DATA_PATH --chain gemini-3f ...` : start node and store data in `NODE_DATA_PATH` instead of default location
 - `./NODE_FILE_NAME purge-chain --base-path NODE_DATA_PATH --chain gemini-3f` : erases data related to the node if data were stored in `NODE_DATA_PATH`
 
-Examples:
-```bash
-# Replace `FARMER_FILE_NAME` with the name of the node file you downloaded from releases
-./FARMER_FILE_NAME farm --help
-./FARMER_FILE_NAME wipe
-```
 
-## IV. Advanced
-
----
 ### Support for multiple disks
 
 Farm path and size you have seen above can be specified more than once to engage multiple disks.
