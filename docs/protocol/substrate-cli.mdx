@@ -30,6 +30,17 @@ import styles from '@site/src/pages/index.module.css';
 You will also want to ensure you have a stable Network connection. It is also important to note that plotting can be network intensive and may impact network usage if you have a hard data limit.
 :::
 
+|Hardware|Specs|
+|-|-|
+|CPU|4 Core+|
+|RAM|8GB+|
+|SWAP|4GB|
+|Storage|100GB SSD|
+
+:::note SWAP Warning
+A swap is only necessary if you have a low amount of RAM. 
+:::
+
 :::note CoW File Systems Warning
 It is advised not to use the Subspace farmer and node on CoW file systems for any OS.
 
@@ -41,14 +52,6 @@ sudo chattr +C path/to/data
 ```
 Alternatively, non-CoW file systems like ext4 or xfs can be used instead.
 :::
-
-
-|Hardware|Specs|
-|-|-|
-|CPU|4 Core+|
-|RAM|8GB+|
-|SWAP|4GB|
-|Storage|100GB SSD|
 
 
 ### B. Crypto Wallet
