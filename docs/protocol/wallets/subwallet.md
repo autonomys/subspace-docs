@@ -78,6 +78,7 @@ SubWallet supports adding custom networks. This can be helpful for in-developmen
 
 - **Gemini 3d Endpoint: ** wss://rpc.gemini-3d.subspace.network/ws
 - **Gemini 3e Endpoint: ** wss://rpc.gemini-3e.subspace.network/ws
+- **Gemini 3f Endpoint: ** wss://rpc.gemini-3f.subspace.network/ws
 
 
 :::
