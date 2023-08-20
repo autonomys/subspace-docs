@@ -14,6 +14,7 @@ import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import Link from '@docusaurus/Link';
 import styles from '@site/src/pages/index.module.css';
+import DockerFileGenerator from '@site/src/components/DockerFileGenerator/index.jsx'
 
 
 :::caution Advanced Usage
@@ -137,91 +138,13 @@ We will be downloading two files for your respective operating system.
 
 <TabItem value="docker" label="🐋 Docker" default>
 
-  1. Create `subspace` directory and `docker-compose.yml` in it with following contents:
+  1. Generate `docker-compose.yaml` file:
 
-  ```yml
-  version: "3.7"
-  services:
-  node:
-    # Replace `tag-name` with the latest release (like `gemini-3f-2023-aug-22`)
-    # For running on Aarch64 add `-aarch64` after `DATE`
-    image: ghcr.io/subspace/node:tag-name
-    volumes:
-  # Instead of specifying volume (which will store data in `/var/lib/docker`), you can
-  # alternatively specify path to the directory where files will be stored, just make
-  # sure everyone is allowed to write there
-      - node-data:/var/subspace:rw
-  #   - /path/to/subspace-node:/var/subspace:rw
-    ports:
-  # If port 30333 or 30433 is already occupied by another Substrate-based node, replace all
-  # occurrences of `30333` or `30433` in this file with another value
-      - "0.0.0.0:30333:30333"
-      - "0.0.0.0:30433:30433"
-    restart: unless-stopped
-    command: [
-      "--chain", "gemini-3f",
-      "--base-path", "/var/subspace",
-      "--execution", "wasm",
-      "--blocks-pruning", "256",
-      "--state-pruning", "archive",
-      "--port", "30333",
-      "--dsn-listen-on", "/ip4/0.0.0.0/tcp/30433",
-      "--rpc-cors", "all",
-      "--rpc-methods", "unsafe",
-      "--rpc-external",
-      "--no-private-ipv4",
-      "--validator",
-    # Replace `INSERT_YOUR_ID` with your node ID (will be shown in telemetry)
-      "--name", "INSERT_YOUR_ID"
-    ]
-    healthcheck:
-      timeout: 5s
-    # If node setup takes longer than expected, you want to increase `interval` and `retries` number.
-      interval: 30s
-      retries: 60
+  <DockerFileGenerator />
 
-      farmer:
-        depends_on:
-          node:
-            condition: service_healthy
-        # Replace `tag-name` with the latest release (like `gemini-3f-2023-aug-22`)
-        # For running on Aarch64 add `-aarch64` after `DATE`
-        image: ghcr.io/subspace/farmer:tag-name
-        volumes:
-    # Instead of specifying volume (which will store data in `/var/lib/docker`), you can
-    # alternatively specify path to the directory where files will be stored, just make
-    # sure everyone is allowed to write there
-        - farmer-data:/var/subspace:rw
-    #   - /path/to/subspace-farmer:/var/subspace:rw
-    ports:
-    # If port 30533 is already occupied by something else, replace all
-    # occurrences of `30533` in this file with another value
-        - "0.0.0.0:30533:30533"
-      restart: unless-stopped
-      command: [
-        "farm",
-        "--node-rpc-url", "ws://node:9944",
-        "--listen-on", "/ip4/0.0.0.0/tcp/30533",
-        # Replace `WALLET_ADDRESS` with your Polkadot.js wallet address
-        "--reward-address", "WALLET_ADDRESS",
-        # Replace `PLOT_SIZE` with plot size in gigabytes or terabytes, for example 100G or 2T (but leave at least 60G of disk space for node and some for OS)
-        "path=/var/subspace,size=PLOT_SIZE",
-      ]
-      volumes:
-        node-data:
-        farmer-data:
-  ```
-
-  2. Now edit created file:
-
-  - Replace snapshot-DATE with the latest release (not pre-release!) snapshot (like snapshot-2023-aug-18)
-  - Replace INSERT_YOUR_ID with desired name that will be shown in telemetry (doesn't impact anything else)
-  - Replace WALLET_ADDRESS with your wallet address
-  - Replace PLOT_SIZE with plot size in gigabytes or terabytes, for example 100G or 2T (but leave at least 10G of disk space for node)
+  2. Create the `subspace` directory and the `docker-compose.yaml` file in it. Paste the output from the generator into the file.
   
-  *If you want to store files on a separate disk or customize port, read comments in the file.*
-
-  3. Now go to directory with `docker-compose.yml` and type `docker-compose up -d` to start everything
+  3. Now go to directory with `docker-compose.yaml` and type `docker-compose up -d` to start everything
 
   You can read logs with `docker-compose logs --tail=1000 -f`, for the rest read [Docker Compose CLI reference](https://docs.docker.com/compose/reference/).
 
