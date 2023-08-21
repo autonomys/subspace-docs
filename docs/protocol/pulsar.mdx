@@ -479,6 +479,11 @@ Ctrl+b d OR ⌘+b d (Mac)
 $ tmux -S farming attach
 ```
 
+* Alternatively, you can use the following single command to both create (if not exists already) and attach to a session:
+```bash
+$ tmux new-session -A -D -s farming
+```
+
 * To delete farming session
 ```bash
 $ tmux kill-session -t farming
@@ -507,10 +512,17 @@ Ctrl+d a OR ⌘+d a (Mac)
 ```bash
 $ screen -r farming
 ```
+
+* Alternatively, you can use the following single command to both create (if not exists already) and attach to a session:
+```bash
+$ screen -D -R -S farming
+```
+
 * To delete farming session
 ```bash
 $ screen -S farming -X quit
 ```
+
 </TabItem>
 </Tabs>
 

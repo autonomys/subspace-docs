@@ -468,7 +468,6 @@ If you want to learn more about Tmux and its options check out their Repo [here]
 $ tmux -S farming
 ```
 
-
 * Move process to background by detaching
 ```bash
 Ctrl+b d OR ⌘+b d (Mac)
@@ -477,6 +476,11 @@ Ctrl+b d OR ⌘+b d (Mac)
 * To re-attach
 ```bash
 $ tmux -S farming attach
+```
+
+* Alternatively, you can use the following single command to both create (if not exists already) and attach to a session:
+```bash
+$ tmux new-session -A -D -s farming
 ```
 
 * To delete farming session
@@ -507,10 +511,17 @@ Ctrl+d a OR ⌘+d a (Mac)
 ```bash
 $ screen -r farming
 ```
+
+* Alternatively, you can use the following single command to both create (if not exists already) and attach to a session:
+```bash
+$ screen -D -R -S farming
+```
+
 * To delete farming session
 ```bash
 $ screen -S farming -X quit
 ```
+
 </TabItem>
 </Tabs>
 
