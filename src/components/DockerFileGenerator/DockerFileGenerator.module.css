@@ -10,18 +10,18 @@
 
 .theme-light .beautiful-form {
     background-color: #fff;
-    border: 1px solid #eaecef;
-    border-radius: 8px;
+    border: 0.0625rem solid #eaecef;
+    border-radius: 0.5rem;
     padding: 1.2rem; 
-    box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.05);
+    box-shadow: 0rem 0.125rem 0.375rem rgba(0, 0, 0, 0.05);
 }
 
 .theme-dark .beautiful-form {
     background-color: #282c34;
-    border: 1px solid #444;
-    border-radius: 8px;
+    border: 0.0625rem solid #444;
+    border-radius: 0.5rem;
     padding: 1.2rem;
-    box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.2);
+    box-shadow: 0rem 0.125rem 0.375rem rgba(0, 0, 0, 0.2);
 }
 
 .form-input,
@@ -47,19 +47,19 @@
     padding: 0.618rem;
     flex: 2;
     font-size: 1rem; 
-    border-radius: 4px;
-    border: 1px solid var(--ifm-color-primary-darker);
+    border-radius: 0.25rem;
+    border: 0.0625rem solid var(--ifm-color-primary-darker);
     transition: border-color 0.3s;
 }
 
 .form-input:hover {
-    border: 1px solid var(--ifm-color-primary); 
+    border: 0.0625rem solid var(--ifm-color-primary); 
 }
 
 .form-input:focus {
-    border: 1px solid var(--ifm-color-primary-light);
+    border: 0.0625rem solid var(--ifm-color-primary-light);
     outline: none;
-    box-shadow: 0px 0px 8px var(--ifm-color-primary-lighter);
+    box-shadow: 0rem 0rem 0.5rem var(--ifm-color-primary-lighter);
 }
 
 .text--error {
@@ -71,7 +71,7 @@
 .button--primary-emphasized {
     padding: 0.5rem 1rem;
     border: none;
-    border-radius: 5px;
+    border-radius: 0.313rem;
     background-color: var(--ifm-color-primary-lightest);
     color: #FFF;
     cursor: pointer;
@@ -97,7 +97,7 @@ html[data-theme='dark'] .form-input:hover {
 }
 
 html[data-theme='dark'] .form-input:focus {
-    box-shadow: 0px 0px 8px var(--ifm-color-primary-lighter);
+    box-shadow: 0rem 0rem 0.5rem var(--ifm-color-primary-lighter);
 }
 
 html[data-theme='dark'] .button--primary-emphasized {
