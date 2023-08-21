@@ -48,8 +48,18 @@
     flex: 2;
     font-size: 1rem; 
     border-radius: 4px;
-    border: 1px solid var(--ifm-color-primary);
+    border: 1px solid var(--ifm-color-primary-darker);
     transition: border-color 0.3s;
+}
+
+.form-input:hover {
+    border: 1px solid var(--ifm-color-primary); 
+}
+
+.form-input:focus {
+    border: 1px solid var(--ifm-color-primary-light);
+    outline: none;
+    box-shadow: 0px 0px 8px var(--ifm-color-primary-lighter);
 }
 
 .text--error {
@@ -62,29 +72,19 @@
     padding: 0.5rem 1rem;
     border: none;
     border-radius: 5px;
-    background-color: var(--ifm-color-primary);
+    background-color: var(--ifm-color-primary-lightest);
     color: #FFF;
     cursor: pointer;
     transition: background-color 0.3s, transform 0.1s;
 }
 
-.form-input:hover {
-    border: 1px solid var(--ifm-color-primary-light); 
-}
-
-.form-input:focus {
-    border: 1px solid var(--ifm-color-primary-lighter);
-    outline: none;
-    box-shadow: 0px 0px 8px rgba(87, 45, 142, 0.2);
-}
-
 .button--primary-emphasized:hover {
-    background-color: var(--ifm-color-primary-light);
+    filter: brightness(90%);
     cursor: pointer;
 }
 
 .button--primary-emphasized:active {
-    background-color: var(--ifm-color-primary-darker);
+    filter: brightness(80%);
     transform: scale(0.98);
 }
 
@@ -93,21 +93,21 @@ html[data-theme='dark'] .form-input {
 }
 
 html[data-theme='dark'] .form-input:hover {
-    border-color: var(--ifm-color-primary-lightest);
+    border-color: var(--ifm-color-primary);
 }
 
 html[data-theme='dark'] .form-input:focus {
-    box-shadow: 0px 0px 8px rgba(159, 109, 224, 0.2);
+    box-shadow: 0px 0px 8px var(--ifm-color-primary-lighter);
 }
 
 html[data-theme='dark'] .button--primary-emphasized {
-    background-color: var(--ifm-color-primary-darkest);
+    background-color: var(--ifm-color-primary-light);
 }
 
 html[data-theme='dark'] .button--primary-emphasized:hover {
-    background-color: var(--ifm-color-primary-lightest);
+    filter: brightness(120%);
 }
 
 html[data-theme='dark'] .button--primary-emphasized:active {
-    background-color: var(--ifm-color-primary-darker);
+    filter: brightness(130%);
 }
