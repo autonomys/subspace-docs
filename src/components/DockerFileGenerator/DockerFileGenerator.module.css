@@ -1,0 +1,113 @@
+.container--form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    max-width: 600px;
+    margin: 2rem auto;
+}
+
+.theme-light .beautiful-form {
+    background-color: #fff;
+    border: 1px solid #eaecef;
+    border-radius: 8px;
+    padding: 1.2rem; 
+    box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+.theme-dark .beautiful-form {
+    background-color: #282c34;
+    border: 1px solid #444;
+    border-radius: 8px;
+    padding: 1.2rem;
+    box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+.form-input,
+.form-label,
+.button--primary-emphasized {
+    font-family: var(--ifm-font-family-base);
+}
+
+.form-group {
+    margin-bottom: 1rem;
+}
+
+.form-label {
+    flex: 1;
+    font-weight: bold;
+    text-align: right;
+    padding-right: 1rem;
+    align-self: center;
+}
+
+.form-input {
+    width: 100%;
+    padding: 0.618rem;
+    flex: 2;
+    font-size: 1rem; 
+    border-radius: 4px;
+    border: 1px solid var(--ifm-color-primary);
+    transition: border-color 0.3s;
+}
+
+.text--error {
+    color: var(--ifm-color-danger-dark);
+    font-size: 0.8rem;
+    margin-top: 0.3rem;
+}
+
+.button--primary-emphasized {
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 5px;
+    background-color: var(--ifm-color-primary);
+    color: #FFF;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.1s;
+}
+
+.form-input:hover {
+    border: 1px solid var(--ifm-color-primary-light); 
+}
+
+.form-input:focus {
+    border: 1px solid var(--ifm-color-primary-lighter);
+    outline: none;
+    box-shadow: 0px 0px 8px rgba(87, 45, 142, 0.2);
+}
+
+.button--primary-emphasized:hover {
+    background-color: var(--ifm-color-primary-light);
+    cursor: pointer;
+}
+
+.button--primary-emphasized:active {
+    background-color: var(--ifm-color-primary-darker);
+    transform: scale(0.98);
+}
+
+html[data-theme='dark'] .form-input {
+    border-color: var(--ifm-color-primary-darkest);
+}
+
+html[data-theme='dark'] .form-input:hover {
+    border-color: var(--ifm-color-primary-lightest);
+}
+
+html[data-theme='dark'] .form-input:focus {
+    box-shadow: 0px 0px 8px rgba(159, 109, 224, 0.2);
+}
+
+html[data-theme='dark'] .button--primary-emphasized {
+    background-color: var(--ifm-color-primary-darkest);
+}
+
+html[data-theme='dark'] .button--primary-emphasized:hover {
+    background-color: var(--ifm-color-primary-lightest);
+}
+
+html[data-theme='dark'] .button--primary-emphasized:active {
+    background-color: var(--ifm-color-primary-darker);
+}
