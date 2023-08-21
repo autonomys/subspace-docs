@@ -164,7 +164,7 @@ node:
 				onChange={handleChange} 
 				value={formData.nodePort}
 			    />
-			    {errors.nodePort && <p className="text--error">{errors.nodePort}</p>}
+			    {errors.nodePort && <p style={{ color: 'red' }} className="text--error">{errors.nodePort}</p>}
 			</div>
 		    </div>
 
@@ -179,7 +179,7 @@ node:
 				onChange={handleChange} 
 				value={formData.nodeDsnPort}
 			    />
-			    {errors.nodeDsnPort && <p className="text--error">{errors.nodeDsnPort}</p>}
+			    {errors.nodeDsnPort && <p style={{ color: 'red' }} className="text--error">{errors.nodeDsnPort}</p>}
 			</div>
 		    </div>
 
@@ -194,7 +194,7 @@ node:
 				onChange={handleChange} 
 				value={formData.farmerPort}
 			    />
-			    {errors.farmerPort && <p className="text--error">{errors.farmerPort}</p>}
+			    {errors.farmerPort && <p style={{ color: 'red' }} className="text--error">{errors.farmerPort}</p>}
 			</div>
 		    </div>
 
@@ -209,7 +209,7 @@ node:
 				onChange={handleChange} 
 				value={formData.nodeName}
 			    />
-			    {errors.nodeName && <p className="text--error">{errors.nodeName}</p>}
+			    {errors.nodeName && <p style={{ color: 'red' }} className="text--error">{errors.nodeName}</p>}
 			</div>
 		    </div>
 
@@ -256,7 +256,7 @@ node:
 				onChange={handleChange} 
 				value={formData.plotSize}
 			    />
-			    {errors.plotSize && <p className="text--error">{errors.plotSize}</p>}
+			    {errors.plotSize && <p style={{ color: 'red' }} className="text--error">{errors.plotSize}</p>}
 			</div>
 		    </div>
 
@@ -271,7 +271,7 @@ node:
 				onChange={handleChange} 
 				value={formData.rewardAddress}
 			    />
-			    {errors.rewardAddress && <p className="text--error">{errors.rewardAddress}</p>}
+			    {errors.rewardAddress && <p style={{ color: 'red' }} className="text--error">{errors.rewardAddress}</p>}
 			</div>
 		    </div>
 
@@ -286,7 +286,7 @@ node:
 				onChange={handleChange} 
 				value={formData.nodeData}
 			    />
-			    {errors.nodeData && <p className="text--error">{errors.nodeData}</p>}
+			    {errors.nodeData && <p style={{ color: 'red' }} className="text--error">{errors.nodeData}</p>}
 			</div>
 		    </div>
 
@@ -301,7 +301,7 @@ node:
 				onChange={handleChange} 
 				value={formData.farmerData}
 			    />
-			    {errors.farmerData && <p className="text--error">{errors.farmerData}</p>}
+			    {errors.farmerData && <p style={{ color: 'red' }} className="text--error">{errors.farmerData}</p>}
 			</div>
 		    </div>
 
