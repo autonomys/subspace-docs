@@ -16,6 +16,9 @@ function DockerFileGenerator() {
         plotSize: '100G',
 	arch: 'x86_64',
     });
+
+    // Predefine the actual network
+    const network = 'gemini-3f';
     
     // State for the generated output (docker compose content)
     const [output, setOutput] = useState('');
@@ -41,7 +44,7 @@ function DockerFileGenerator() {
             .then(data => {
 		if (isMounted) {
 		    // Filter out valid snapshot tags based on naming convention
-                    const validSnapshots = data.map(release => release.tag_name).filter(tag => /^gemini-3f-.*$/.test(tag));
+                    const validSnapshots = data.map(release => release.tag_name).filter(tag => RegExp(`^${network}.*$`).test(tag));
 
 		    // Set the default snapshot and the list of snapshots
                     setFormData(prevData => ({ ...prevData, snapshot: validSnapshots[0] }));
@@ -90,7 +93,7 @@ node:
     - "0.0.0.0:${formData.nodeDsnPort}:30433"
   restart: unless-stopped
   command: [
-    "--chain", "gemini-3f",
+    "--chain", "${network}",
     "--base-path", "/var/subspace",
     "--execution", "wasm",
     "--blocks-pruning", "256",
