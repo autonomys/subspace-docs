@@ -76,64 +76,60 @@ function DockerFileGenerator() {
 
 	// Only generate the output if there are no validation errors
         if (Object.keys(validationErrors).length === 0) {
-	    let updatedSnapshot = formData.snapshot;
 	    let nodeDataOutput = formData.nodeData ? `${formData.nodeData}:/var/subspace:rw` : 'node-data:/var/subspace:rw';
 	    let farmerDataOutput = formData.farmerData ? `${formData.farmerData}:/var/subspace:rw` : 'farmer-data:/var/subspace:rw';
 
-	    if (formData.arch === 'aarch64') {
-		updatedSnapshot += '-aarch64';
-	    }
-            const template = `
+            const template = `\
 version: "3.7"
 services:
-node:
-  image: ghcr.io/subspace/node:${updatedSnapshot}
-  volumes:
-    - ${nodeDataOutput}
-  ports:
-    - "0.0.0.0:${formData.nodePort}:30333"
-    - "0.0.0.0:${formData.nodeDsnPort}:30433"
-  restart: unless-stopped
-  command: [
-    "--chain", "${network}",
-    "--base-path", "/var/subspace",
-    "--execution", "wasm",
-    "--blocks-pruning", "256",
-    "--state-pruning", "archive",
-    "--port", "30333",
-    "--dsn-listen-on", "/ip4/0.0.0.0/tcp/30433",
-    "--rpc-cors", "all",
-    "--rpc-methods", "unsafe",
-    "--rpc-external",
-    "--no-private-ipv4",
-    "--validator",
-    "--name", "${formData.nodeName}"
-  ]
-  healthcheck:
-    timeout: 5s
-    interval: 30s
-    retries: 60
+  node:
+    image: ghcr.io/subspace/node:${formData.snapshot}${formData.arch === "aarch64" ? "-aarch64" : ""}
+    volumes:
+      - ${formData.nodeData ? formData.nodeData : "node-data"}:/var/subspace:rw
+    ports:
+      - "0.0.0.0:${formData.nodePort}:30333"
+      - "0.0.0.0:${formData.nodeDsnPort}:30433"
+    restart: unless-stopped
+    command:
+      [
+        "--chain", "${network}",
+        "--base-path", "/var/subspace",
+        "--execution", "wasm",
+        "--blocks-pruning", "256",
+        "--state-pruning", "archive",
+        "--port", "30333",
+        "--dsn-listen-on", "/ip4/0.0.0.0/tcp/30433",
+        "--rpc-cors", "all",
+        "--rpc-methods", "unsafe",
+        "--rpc-external",
+        "--no-private-ipv4",
+        "--validator",
+        "--name", "${formData.nodeName}"
+      ]
+    healthcheck:
+      timeout: 5s
+      interval: 30s
+      retries: 60
 
-    farmer:
-      depends_on:
-        node:
-          condition: service_healthy
-      image: ghcr.io/subspace/farmer:${updatedSnapshot}
-      volumes:
-      - ${farmerDataOutput}
-  ports:
+  farmer:
+    depends_on:
+      node:
+        condition: service_healthy
+    image: ghcr.io/subspace/farmer:${formData.snapshot}${formData.arch === "aarch64" ? "-aarch64" : ""}
+    volumes:
+       - ${formData.farmerData ? formData.farmerData : "farmer-data"}:/var/subspace:rw
+    ports:
       - "0.0.0.0:${formData.farmerPort}:30533"
     restart: unless-stopped
-    command: [
-      "farm",
-      "--node-rpc-url", "ws://node:9944",
-      "--listen-on", "/ip4/0.0.0.0/tcp/30533",
-      "--reward-address", "${formData.rewardAddress}",
-      "path=/var/subspace,size=${formData.plotSize}",
-    ]
-    volumes:
-      node-data:
-      farmer-data:
+    command:
+      [
+        "farm",
+        "--node-rpc-url", "ws://node:9944",
+        "--listen-on", "/ip4/0.0.0.0/tcp/30533",
+        "--reward-address", "${formData.rewardAddress}",
+        "path=/var/subspace,size=${formData.plotSize}"
+      ]
+    volumes: ${formData.nodeData ? "" : "\n      node-data:"}${formData.farmerData ? "" : "\n      farmer-data:"}\
             `;
             setOutput(template);
             setErrors({});
