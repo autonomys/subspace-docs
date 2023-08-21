@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import CodeBlock from '@theme/CodeBlock'
 
+// This component is a Docker Compose File Generator for Subspace Docs.
 function DockerFileGenerator() {
+    // Initial state for form data
     const [formData, setFormData] = useState({
         nodePort: '30333',
         nodeDsnPort: '30433',
@@ -14,13 +16,21 @@ function DockerFileGenerator() {
         plotSize: '100G',
 	arch: 'x86_64',
     });
+    
+    // State for the generated output (docker compose content)
     const [output, setOutput] = useState('');
+
+    // List of available snapshots from GitHub releases
     const [snapshots, setSnapshots] = useState([]);
+
+    // Error messages state for validation purposes
     const [errors, setErrors] = useState({});
 
+    // Fetch Subspace releases on component mount and update the snapshot options
     useEffect(() => {
 	let isMounted = true;
-	
+
+	// Fetch latest releases from the Subspace GitHub repository
         fetch('https://api.github.com/repos/subspace/subspace/releases')
             .then(res => {
                 if (!res.ok) {
@@ -30,17 +40,22 @@ function DockerFileGenerator() {
             })
             .then(data => {
 		if (isMounted) {
+		    // Filter out valid snapshot tags based on naming convention
                     const validSnapshots = data.map(release => release.tag_name).filter(tag => /^gemini-3f-.*$/.test(tag));
+
+		    // Set the default snapshot and the list of snapshots
                     setFormData(prevData => ({ ...prevData, snapshot: validSnapshots[0] }));
                     setSnapshots(validSnapshots);
 		}
             })
 	    .then(() => {
 		if (isMounted) {
+		    // Generate the initial output based on default data
 		    generateOutput();
 		}
 	    })
             .catch(err => {
+		// Handle fetch errors
                 setErrors({ fetchError: err.message });
             });
 	
@@ -50,9 +65,11 @@ function DockerFileGenerator() {
     }, []);
 
 
+     // Generates the Docker Compose file content based on formData
     const generateOutput = () => {
         const validationErrors = validateInputs();
-	
+
+	// Only generate the output if there are no validation errors
         if (Object.keys(validationErrors).length === 0) {
 	    let updatedSnapshot = formData.snapshot;
 	    let nodeDataOutput = formData.nodeData ? `${formData.nodeData}:/var/subspace:rw` : 'node-data:/var/subspace:rw';
@@ -120,6 +137,7 @@ node:
         }
     };
 
+    // Validates the formData to ensure user input is correct and returns any error messages
     const validateInputs = () => {
         const errors = {};
 
@@ -151,6 +169,7 @@ node:
         return errors;
     };
 
+    // Handle changes in form input fields and update formData state
     const handleChange = (e) => {
         const { name, value } = e.target;
         setFormData(prevData => ({
