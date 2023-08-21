@@ -200,7 +200,7 @@ node:
 			{ label: 'Node Data (Optional)', name: 'nodeData' },
 			{ label: 'Farmer Data (Optional)', name: 'farmerData' }
                     ].map(({ label, name }) => (
-			<div className={styles['form-group']}>
+			<div key={name} className={styles['form-group']}>
                             <label htmlFor={name} className="form-label text--bold">{label}:</label>
                             <input
 				className={styles['form-input']}
@@ -213,7 +213,7 @@ node:
 			</div>
                     ))}
 
-		    <div className={styles['form-group']}>
+		    <div key="snapshot" className={styles['form-group']}>
 			<label htmlFor="snapshot" className="form-label text--bold">Snapshot:</label>
 			<select
 			    className={styles['form-input']}
@@ -225,7 +225,7 @@ node:
 			</select>
 		    </div>
 
-		    <div className={styles['form-group']}>		    
+		    <div key="arch" className={styles['form-group']}>		    
 		        <label htmlFor="arch" className="form-label text--bold">Architecture:</label>
 			<select
                             className={styles['form-input']}
