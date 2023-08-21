@@ -10,7 +10,7 @@ function DockerFileGenerator() {
         snapshot: '',
         nodeData: '',
         farmerData: '',
-        rewardAddress: 'st8rfuQPd5rgxRBvGuuGJzDQG9dXUNDj9vuR2r7n6wXqb2Ljk',
+        rewardAddress: 'st6GBwATPqtBkK5y4uXbV52euszPpFPw7wmkF8FywEqJaf8uP',
         plotSize: '100G',
 	arch: 'x86_64',
     });
