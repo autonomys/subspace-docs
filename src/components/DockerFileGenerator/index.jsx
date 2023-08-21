@@ -153,7 +153,7 @@ node:
 	    <div className="card">
                 <div className="card__body">
 		    
-		    <div className="form-group row margin-bottom--xs">
+		    <div className="form-group row margin-bottom--sm">
 			<label htmlFor="nodePort" className="col col--4 form-label text--bold">Node Port:</label>
 			<div className="col col--8" style={{ paddingLeft: '0rem', paddingRight: '1rem' }}>
 			    <input
@@ -168,7 +168,7 @@ node:
 			</div>
 		    </div>
 
-		    <div className="form-group row margin-bottom--xs">
+		    <div className="form-group row margin-bottom--sm">
 			<label htmlFor="nodeDsnPort" className="col col--4 form-label text--bold">Node DSN Port:</label>
 			<div className="col col--8" style={{ paddingLeft: '0rem', paddingRight: '1rem' }}> 
 			    <input
@@ -183,7 +183,7 @@ node:
 			</div>
 		    </div>
 
-		    <div className="form-group row margin-bottom--xs">
+		    <div className="form-group row margin-bottom--sm">
 			<label htmlFor="farmerPort" className="col col--4 form-label text--bold">Farmer Port:</label>
 			<div className="col col--8" style={{ paddingLeft: '0rem', paddingRight: '1rem' }}>
 			    <input
@@ -198,7 +198,7 @@ node:
 			</div>
 		    </div>
 
-		    <div className="form-group row margin-bottom--xs">
+		    <div className="form-group row margin-bottom--sm">
 			<label htmlFor="nodeName" className="col col--4 form-label text--bold">Node Name:</label>
 			<div className="col col--8" style={{ paddingLeft: '0rem', paddingRight: '1rem' }}>
 			    <input
@@ -213,7 +213,7 @@ node:
 			</div>
 		    </div>
 
-		    <div className="form-group row margin-bottom--xs">
+		    <div className="form-group row margin-bottom--sm">
 			<label htmlFor="snapshot" className="col col--4 form-label text--bold">Snapshot:</label>
 			<div className="col col--8" style={{ paddingLeft: '0rem', paddingRight: '1rem' }}>
 			    <select
@@ -228,7 +228,7 @@ node:
 			</div>
 		    </div>
 
-		    <div className="form-group row margin-bottom--xs">
+		    <div className="form-group row margin-bottom--sm">
 			<label htmlFor="arch" className="col col--4 form-label text--bold">Architecture:</label>
 			<div className="col col--8" style={{ paddingLeft: '0rem', paddingRight: '1rem' }}>
 			    <select
@@ -245,7 +245,7 @@ node:
 		    </div>
 
 
-		    <div className="form-group row margin-bottom--xs">
+		    <div className="form-group row margin-bottom--sm">
 			<label htmlFor="plotSizet" className="col col--4 form-label text--bold">Plot Size:</label>
 			<div className="col col--8" style={{ paddingLeft: '0rem', paddingRight: '1rem' }}>
 			    <input
@@ -260,7 +260,7 @@ node:
 			</div>
 		    </div>
 
-		    <div className="form-group row margin-bottom--xs">
+		    <div className="form-group row margin-bottom--sm">
 			<label htmlFor="rewardAddress" className="col col--4 form-label text--bold">Reward Address:</label>
 			<div className="col col--8" style={{ paddingLeft: '0rem', paddingRight: '1rem' }}> 
 			    <input
@@ -275,7 +275,7 @@ node:
 			</div>
 		    </div>
 
-		    <div className="form-group row margin-bottom--xs">
+		    <div className="form-group row margin-bottom--sm">
 			<label htmlFor="nodeData" className="col col--4 form-label text--bold">Node Data (Optional):</label>
 			<div className="col col--8" style={{ paddingLeft: '0rem', paddingRight: '1rem' }}>
 			    <input
@@ -290,7 +290,7 @@ node:
 			</div>
 		    </div>
 
-		    <div className="form-group row margin-bottom--xs">
+		    <div className="form-group row margin-bottom--sm">
 			<label htmlFor="farmerData" className="col col--4 form-label text--bold">Farmer Data (Optional):</label>
 			<div className="col col--8" style={{ paddingLeft: '0rem', paddingRight: '1rem' }}> 
 			    <input
