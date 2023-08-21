@@ -56,7 +56,7 @@ Please make sure to:
 
 
 :::note
-Make sure to select the correct testnet in the dropdown and tabs, e.g. gemini-3e
+Make sure to select the correct testnet in the dropdown and tabs, e.g. gemini-3f
 :::
 
 
@@ -97,7 +97,7 @@ Your PC likely ran out of space. Consider freeing up some space by removing unne
 ### Fast node synchronization (more than 100+ blocks per second) goes only up to ±20k blocks, then synchronization speed drops significantly.
 
 
-As the database size increases and blocks get bigger (as farmers started to produce votes), it is expected that the sync speed will settle on a smaller number. We have made some performance improvements in Gemini 3f and will do more performance tuning when the protocol is functionally complete.
+As the database size increases and blocks get bigger (as farmers started to produce votes), it is expected that the sync speed will settle on a smaller number. We have made some performance improvements in Gemini 3e and will do more performance tuning when the protocol is functionally complete.
 
 
 ### subspace_farmer::single_disk_plot::piece_receiver: Couldn't get a piece from DSN.
