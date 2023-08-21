@@ -244,11 +244,11 @@ node:
                     </div>
                 </div>
             </div>
-            
-            <div className="margin-top--lg">
-                <CodeBlock language="yaml" title="docker-compose.yaml">{output}</CodeBlock>
+	    
+            <div className={`margin-top--lg container`}>
+		<CodeBlock language="yaml" title="docker-compose.yaml">{output}</CodeBlock>
             </div>
-        </div>
+	</div>
     );
 }
 
