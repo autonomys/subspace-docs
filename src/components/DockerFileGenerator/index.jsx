@@ -76,9 +76,6 @@ function DockerFileGenerator() {
 
 	// Only generate the output if there are no validation errors
         if (Object.keys(validationErrors).length === 0) {
-	    let nodeDataOutput = formData.nodeData ? `${formData.nodeData}:/var/subspace:rw` : 'node-data:/var/subspace:rw';
-	    let farmerDataOutput = formData.farmerData ? `${formData.farmerData}:/var/subspace:rw` : 'farmer-data:/var/subspace:rw';
-
             const template = `\
 version: "3.7"
 services:
