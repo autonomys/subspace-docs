@@ -305,7 +305,7 @@ node:
 			</div>
 		    </div>
 
-		    <div className="form-group row margin-top--lg">
+		    <div className="form-group row margin-top--md">
                         <div className="col col--12 text--center">
                             <button className="button button--primary button--lg" onClick={generateOutput}>Generate</button>
                         </div>
