@@ -19,6 +19,8 @@ function DockerFileGenerator() {
     const [errors, setErrors] = useState({});
 
     useEffect(() => {
+	let isMounted = true;
+	
         fetch('https://api.github.com/repos/subspace/subspace/releases')
             .then(res => {
                 if (!res.ok) {
@@ -27,16 +29,24 @@ function DockerFileGenerator() {
                 return res.json();
             })
             .then(data => {
-                const validSnapshots = data.map(release => release.tag_name).filter(tag => /^gemini-3f-.*$/.test(tag));
-                setFormData(prevData => ({ ...prevData, snapshot: validSnapshots[0] }));
-                setSnapshots(validSnapshots, generateOutput);
+		if (isMounted) {
+                    const validSnapshots = data.map(release => release.tag_name).filter(tag => /^gemini-3f-.*$/.test(tag));
+                    setFormData(prevData => ({ ...prevData, snapshot: validSnapshots[0] }));
+                    setSnapshots(validSnapshots);
+		}
             })
 	    .then(() => {
-		generateOutput();
+		if (isMounted) {
+		    generateOutput();
+		}
 	    })
             .catch(err => {
                 setErrors({ fetchError: err.message });
             });
+	
+	return () => {
+            isMounted = false;
+	};
     }, []);
 
 
