@@ -31,6 +31,9 @@ function DockerFileGenerator() {
                 setFormData(prevData => ({ ...prevData, snapshot: validSnapshots[0] }));
                 setSnapshots(validSnapshots, generateOutput);
             })
+	    .then(() => {
+		generateOutput();
+	    })
             .catch(err => {
                 setErrors({ fetchError: err.message });
             });
