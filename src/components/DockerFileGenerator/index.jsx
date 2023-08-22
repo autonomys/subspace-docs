@@ -206,11 +206,11 @@ services:
     };
 
     return (
-        <div className={`container ${styles['container--form']} margin-vert--lg`} onKeyDown={handleKeyDown}>
+        <div className={`container ${styles['compose-generator-form__container']} margin-vert--lg`} onKeyDown={handleKeyDown}>
             <h2 className={`text--center margin-bottom--m`}>Docker Compose File Generator</h2>
-            <div className={`card ${styles['beautiful-form']}`} >
+            <div className={`card ${styles['compose-generator-form__card']}`} >
                 <div className="card__body">
-                    <div className={styles['form-columns']}>
+                    <div className={styles['compose-generator-form__grid']}>
                         {[
                             { label: 'Node Port', name: 'nodePort' },
                             { label: 'Node DSN Port', name: 'nodeDsnPort' },
@@ -221,36 +221,36 @@ services:
                             { label: 'Node Data (Optional)', name: 'nodeData' },
                             { label: 'Farmer Data (Optional)', name: 'farmerData' }
                         ].map(({ label, name }, index) => (
-                            <div key={name} className={styles['form-group']}>
+                            <div key={name} className={styles['compose-generator-form__group']}>
                                 <label
 				    htmlFor={name}
-				    className={`text--bold ${styles['form-label']} ${glowingLabels.includes(name) ? styles['form-label-glow'] : ""}`}
+				    className={`text--bold ${styles['compose-generator-form__label']} ${glowingLabels.includes(name) ? styles['compose-generator-form__label--glow'] : ""}`}
 				    onMouseEnter={() => startLabelGlow(name)}
 				    onAnimationEnd={() => endLabelGlow(name)}
 				>
 				    {label}:
 				</label>
                                 <input
-                                    className={styles['form-input']}
+                                    className={styles['compose-generator-form__input']}
                                     name={name}
                                     placeholder={label}
                                     onChange={handleChange}
                                     value={formData[name]}
                                 />
-                                {errors[name] && <p className={styles['text--error']}>{errors[name]}</p>}
+                                {errors[name] && <p className={styles['compose-generator-form__text--error']}>{errors[name]}</p>}
                             </div>
                         ))}
-			<div key="snapshot" className={styles['form-group']}>
+			<div key="snapshot" className={styles['compose-generator-form__group']}>
                             <label
 				htmlFor="snapshot"
-				className={`text--bold ${styles['form-label']} ${glowingLabels.includes('snapshot') ? styles['form-label-glow'] : ""}`}
+				className={`text--bold ${styles['compose-generator-form__label']} ${glowingLabels.includes('snapshot') ? styles['compose-generator-form__label--glow'] : ""}`}
 				onMouseEnter={() => startLabelGlow('snapshot')}
 				onAnimationEnd={() => endLabelGlow('snapshot')}
 			    >
 				Snapshot:
 			    </label>
                             <select
-				className={styles['form-input']}
+				className={styles['compose-generator-form__input']}
 				name="snapshot"
 				value={formData.snapshot}
 				onChange={handleChange}
@@ -258,17 +258,17 @@ services:
 				{snapshots.map(snap => <option key={snap} value={snap}>{snap}</option>)}
                             </select>
 			</div>
-			<div key="arch" className={styles['form-group']}>
+			<div key="arch" className={styles['compose-generator-form__group']}>
                             <label
 				htmlFor="arch"
-				className={`text--bold ${styles['form-label']} ${glowingLabels.includes('snapshot') ? styles['form-label-glow'] : ""}`}
+				className={`text--bold ${styles['compose-generator-form__label']} ${glowingLabels.includes('arch') ? styles['compose-generator-form__label--glow'] : ""}`}
 				onMouseEnter={() => startLabelGlow('arch')}
 				onAnimationEnd={() => endLabelGlow('arch')}
 			    >
 				Architecture:
 			    </label>
                             <select
-				className={styles['form-input']}
+				className={styles['compose-generator-form__input']}
 				name="arch"
 				value={formData.arch}
 				onChange={handleChange}
@@ -279,8 +279,8 @@ services:
 			</div>
                     </div>
 
-                    <div className={`${styles['form-group']} text--center`}>
-                        <button className={`button button--primary button--lg ${styles['button--primary-emphasized']}`} onClick={generateOutput}>Generate</button>
+                    <div className={`${styles['compose-generator-form__group']} text--center`}>
+                        <button className={`button button--primary button--lg ${styles['compose-generator-form__button--primary']}`} onClick={generateOutput}>Generate</button>
                     </div>
                 </div>
             </div>
