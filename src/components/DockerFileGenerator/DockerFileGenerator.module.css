@@ -115,7 +115,7 @@
     color: #FFF;
     cursor: pointer;
     box-shadow: 0 0.191rem 0.618rem rgba(0, 0, 0, 0.1);
-    transition: background-color 0.3s, transform 0.2s, box-shadow 0.3s;
+    transition: background-color 0.7s, filter 0.7s, transform 0.25s, box-shadow 0.7s;
 }
 
 .button--primary-emphasized:hover {
@@ -126,7 +126,7 @@
 
 .button--primary-emphasized:active {
     filter: brightness(80%);
-    transform: scale(0.98);
+    transform: scale(0.93);
     box-shadow: 0 0.095rem 0.309rem rgba(0, 0, 0, 0.2);
 }
 
