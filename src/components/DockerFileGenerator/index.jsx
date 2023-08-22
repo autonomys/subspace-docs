@@ -56,7 +56,7 @@ function DockerFileGenerator() {
 	    .then(() => {
 		if (isMounted) {
 		    // Generate the initial output based on default data
-		    generateOutput();
+		    generateOutput({ skipRewardAddressCheck: true });
 		}
 	    })
             .catch(err => {
@@ -71,8 +71,16 @@ function DockerFileGenerator() {
 
 
     // Generates the Docker Compose file content based on formData
-    const generateOutput = () => {
+    const generateOutput = ({ skipRewardAddressCheck = false } = {}) => {
         const validationErrors = validateInputs();
+
+	if (!skipRewardAddressCheck && formData.rewardAddress === 'st6GBwATPqtBkK5y4uXbV52euszPpFPw7wmkF8FywEqJaf8uP') {
+            setErrors({
+		...validationErrors,
+		rewardAddress: 'Please enter your reward address'
+            });
+            return;
+	}
 
 	// Only generate the output if there are no validation errors
         if (Object.keys(validationErrors).length === 0) {
