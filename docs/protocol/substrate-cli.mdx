@@ -131,20 +131,23 @@ We will be downloading two files for your respective operating system.
 1. `Subspace-Node` - This is the executable that actually makes the connection with the Subspace Network
 2. `Subspace-Farmer` - This is the executable that will actually farm for rewards on your allocated storage plot.
 
-- *Those using Docker will not have to download anything, just configure the `docker-compose.yml`*
+- *Those using Docker will not have to download anything, just configure the `docker-compose.yaml`*
 
 
 <Tabs groupId="OS">
 
 <TabItem value="docker" label="🐋 Docker" default>
 
-  1. Generate `docker-compose.yaml` file:
+  1. Input your parameters in the provided form and click `Generate`. 
+	 Don't forget to specify your reward address instead a default one!
+  
+  2. Copy the generated `docker-compose.yaml` file (the generated file should be in this section).
 
   <DockerFileGenerator />
 
-  2. Create the `subspace` directory and the `docker-compose.yaml` file in it. Paste the output from the generator into the file.
+  3. Create the `subspace` directory and the `docker-compose.yaml` file in it. Paste the output from the generator into the file.
   
-  3. Now go to directory with `docker-compose.yaml` and type `docker-compose up -d` to start everything
+  4. Now go to directory with `docker-compose.yaml` and type `docker-compose up -d` to start everything
 
   You can read logs with `docker-compose logs --tail=1000 -f`, for the rest read [Docker Compose CLI reference](https://docs.docker.com/compose/reference/).
 
