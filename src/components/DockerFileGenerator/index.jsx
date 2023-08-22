@@ -243,9 +243,9 @@ services:
 			<div key="snapshot" className={styles['form-group']}>
                             <label
 				htmlFor="snapshot"
-				className={`text--bold ${styles['form-label']} ${glowingLabels.includes(name) ? styles['form-label-glow'] : ""}`}
-				onMouseEnter={() => startLabelGlow(name)}
-				onAnimationEnd={() => endLabelGlow(name)}
+				className={`text--bold ${styles['form-label']} ${glowingLabels.includes('snapshot') ? styles['form-label-glow'] : ""}`}
+				onMouseEnter={() => startLabelGlow('snapshot')}
+				onAnimationEnd={() => endLabelGlow('snapshot')}
 			    >
 				Snapshot:
 			    </label>
@@ -261,9 +261,9 @@ services:
 			<div key="arch" className={styles['form-group']}>
                             <label
 				htmlFor="arch"
-				className={`text--bold ${styles['form-label']} ${glowingLabels.includes(name) ? styles['form-label-glow'] : ""}`}
-				onMouseEnter={() => startLabelGlow(name)}
-				onAnimationEnd={() => endLabelGlow(name)}
+				className={`text--bold ${styles['form-label']} ${glowingLabels.includes('snapshot') ? styles['form-label-glow'] : ""}`}
+				onMouseEnter={() => startLabelGlow('arch')}
+				onAnimationEnd={() => endLabelGlow('arch')}
 			    >
 				Architecture:
 			    </label>
