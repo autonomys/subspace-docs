@@ -28,7 +28,13 @@
 .form-label,
 .button--primary-emphasized {
     font-family: var(--ifm-font-family-base);
-    font-size: 0.995rem;
+    font-size: 1.008rem;
+}
+
+.form-columns {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.008rem;
 }
 
 .form-group {
@@ -47,7 +53,7 @@
     width: 100%;
     padding: 0.381rem;
     flex: 2;
-    border-radius: 0.191rem; 
+    border-radius: 0.309rem; 
     border: 0.038rem solid var(--ifm-color-primary-darker);
     transition: border-color 0.3s;
 }
@@ -59,7 +65,8 @@
 .form-input:focus {
     border-color: var(--ifm-color-primary-light);
     outline: none;
-    box-shadow: 0rem 0rem 0.309rem var(--ifm-color-primary-lighter); 
+    box-shadow: 0rem 0rem 0.309rem var(--ifm-color-primary-lighter);
+    transition: border-color 0.2s, box-shadow 0.2s;
 }
 
 .text--error {
@@ -69,23 +76,32 @@
 }
 
 .button--primary-emphasized {
+    grid-column: span 2;
     padding: 0.381rem 1.008rem; 
     border: none;
-    border-radius: 0.191rem;
+    border-radius: 0.309rem;
     background-color: var(--ifm-color-primary-lightest);
     color: #FFF;
     cursor: pointer;
-    transition: background-color 0.3s, transform 0.1s;
+    box-shadow: 0 0.191rem 0.618rem rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s, transform 0.2s, box-shadow 0.3s;
 }
 
 .button--primary-emphasized:hover {
     filter: brightness(90%);
     cursor: pointer;
+    box-shadow: 0 0.381rem 1.008rem rgba(0, 0, 0, 0.15);
 }
 
 .button--primary-emphasized:active {
     filter: brightness(80%);
     transform: scale(0.98);
+    box-shadow: 0 0.095rem 0.309rem rgba(0, 0, 0, 0.2);
+}
+
+.button--primary-emphasized:focus {
+    outline: none;
+    box-shadow: 0 0 0 0.095rem var(--ifm-color-primary-lighter);
 }
 
 html[data-theme='dark'] .form-input {
@@ -102,12 +118,18 @@ html[data-theme='dark'] .form-input:focus {
 
 html[data-theme='dark'] .button--primary-emphasized {
     background-color: var(--ifm-color-primary-light);
+    box-shadow: 0 0.191rem 0.618rem rgba(255, 255, 255, 0.1);
 }
 
 html[data-theme='dark'] .button--primary-emphasized:hover {
     filter: brightness(120%);
+    box-shadow: 0 0.381rem 1.008rem rgba(255, 255, 255, 0.15);
 }
 
 html[data-theme='dark'] .button--primary-emphasized:active {
-    filter: brightness(130%);
+    filter: brightness(130%);    
+}
+
+html[data-theme='dark'] .button--primary-emphasized:focus {
+    box-shadow: 0 0 0 0.095rem var(--ifm-color-primary-lighter), 0 0.191rem 0.618rem rgba(255, 255, 255, 0.1);
 }

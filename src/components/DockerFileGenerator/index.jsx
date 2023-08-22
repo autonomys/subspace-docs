@@ -188,69 +188,65 @@ services:
     return (
         <div className={`container ${styles['container--form']} margin-vert--lg`} onKeyDown={handleKeyDown}>
             <h2 className="text--center margin-bottom--m">Docker Compose File Generator</h2>
-
             <div className={`card ${styles['beautiful-form']}`} >
                 <div className="card__body">
-                    
-                    {[
-			{ label: 'Node Port', name: 'nodePort' },
-			{ label: 'Node DSN Port', name: 'nodeDsnPort' },
-			{ label: 'Farmer Port', name: 'farmerPort' },
-			{ label: 'Node Name', name: 'nodeName' },
-			{ label: 'Plot Size', name: 'plotSize' },
-			{ label: 'Reward Address', name: 'rewardAddress' },
-			{ label: 'Node Data (Optional)', name: 'nodeData' },
-			{ label: 'Farmer Data (Optional)', name: 'farmerData' }
-                    ].map(({ label, name }) => (
-			<div key={name} className={styles['form-group']}>
-                            <label htmlFor={name} className="form-label text--bold">{label}:</label>
-                            <input
+                    <div className={styles['form-columns']}>
+                        {[
+                            { label: 'Node Port', name: 'nodePort' },
+                            { label: 'Node DSN Port', name: 'nodeDsnPort' },
+                            { label: 'Farmer Port', name: 'farmerPort' },
+                            { label: 'Node Name', name: 'nodeName' },
+                            { label: 'Plot Size', name: 'plotSize' },
+                            { label: 'Reward Address', name: 'rewardAddress' },
+                            { label: 'Node Data (Optional)', name: 'nodeData' },
+                            { label: 'Farmer Data (Optional)', name: 'farmerData' }
+                        ].map(({ label, name }, index) => (
+                            <div key={name} className={styles['form-group']}>
+                                <label htmlFor={name} className="form-label text--bold">{label}:</label>
+                                <input
+                                    className={styles['form-input']}
+                                    name={name}
+                                    placeholder={label}
+                                    onChange={handleChange}
+                                    value={formData[name]}
+                                />
+                                {errors[name] && <p className={styles['text--error']}>{errors[name]}</p>}
+                            </div>
+                        ))}
+			<div key="snapshot" className={styles['form-group']}>
+                            <label htmlFor="snapshot" className="form-label text--bold">Snapshot:</label>
+                            <select
 				className={styles['form-input']}
-				name={name}
-				placeholder={label}
+				name="snapshot"
+				value={formData.snapshot}
 				onChange={handleChange}
-				value={formData[name]}
-                            />
-                            {errors[name] && <p className={styles['text--error']}>{errors[name]}</p>}
+                            >
+				{snapshots.map(snap => <option key={snap} value={snap}>{snap}</option>)}
+                            </select>
 			</div>
-                    ))}
+			<div key="arch" className={styles['form-group']}>
+                            <label htmlFor="arch" className="form-label text--bold">Architecture:</label>
+                            <select
+				className={styles['form-input']}
+				name="arch"
+				value={formData.arch}
+				onChange={handleChange}
+                            >
+				<option value="x86_64">x86_64 (skylake+)</option>
+				<option value="aarch64">aarch64</option>
+                            </select>
+			</div>
+                    </div>
 
-		    <div key="snapshot" className={styles['form-group']}>
-			<label htmlFor="snapshot" className="form-label text--bold">Snapshot:</label>
-			<select
-			    className={styles['form-input']}
-			    name="snapshot"
-			    value={formData.snapshot}
-			    onChange={handleChange}
-			>
-		            {snapshots.map(snap => <option key={snap} value={snap}>{snap}</option>)}
-			</select>
-		    </div>
-
-		    <div key="arch" className={styles['form-group']}>		    
-		        <label htmlFor="arch" className="form-label text--bold">Architecture:</label>
-			<select
-                            className={styles['form-input']}
-                            name="arch"
-                            value={formData.arch}
-                            onChange={handleChange}
-			>
-                            <option value="x86_64">x86_64 (skylake+)</option>
-                            <option value="aarch64">aarch64</option>
-			</select>
-		    </div>
-		    
-                    
                     <div className={`${styles['form-group']} text--center`}>
                         <button className={`button button--primary button--lg ${styles['button--primary-emphasized']}`} onClick={generateOutput}>Generate</button>
                     </div>
                 </div>
             </div>
-	    
             <div className="margin-top--lg container">
-		<CodeBlock language="yaml" title="docker-compose.yaml">{output}</CodeBlock>
+                <CodeBlock language="yaml" title="docker-compose.yaml">{output}</CodeBlock>
             </div>
-	</div>
+        </div>
     );
 }
 
