@@ -1,3 +1,28 @@
+@keyframes glow-effect {
+    0% {
+        text-shadow: none;
+    }
+    50% {
+	filter: brightness(130%);
+        text-shadow: 0 0 0.618rem var(--ifm-color-primary-lightest);
+    }
+    100% {
+        text-shadow: none;
+    }
+}
+
+@keyframes glow-effect-dark {
+    0% {
+        text-shadow: none;
+    }
+    50% {
+        text-shadow: 0 0 0.618rem rgba(255, 255, 255, 0.618);
+    }
+    100% {
+        text-shadow: none;
+    }
+}
+
 .container--form {
     display: flex;
     flex-direction: column;
@@ -49,6 +74,10 @@
     align-self: center;
 }
 
+.form-label-glow {
+    animation: glow-effect 1.6s ease-in-out 1 forwards;
+}
+
 .form-input {
     width: 100%;
     padding: 0.381rem;
@@ -60,6 +89,8 @@
 
 .form-input:hover {
     border-color: var(--ifm-color-primary-lightest);
+    box-shadow: 0rem 0rem 0.077rem var(--ifm-color-primary); 
+    transition: border-color 0.3s, box-shadow 0.2s; 
 }
 
 .form-input:focus {
@@ -102,6 +133,10 @@
 .button--primary-emphasized:focus {
     outline: none;
     box-shadow: 0 0 0 0.095rem var(--ifm-color-primary-lighter);
+}
+
+html[data-theme='dark'] .form-label-glow {
+    animation: glow-effect-dark 1.6s ease-in-out 1 forwards;
 }
 
 html[data-theme='dark'] .form-input {

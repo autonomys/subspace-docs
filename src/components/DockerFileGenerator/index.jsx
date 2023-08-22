@@ -31,6 +31,18 @@ function DockerFileGenerator() {
     // Error messages state for validation purposes
     const [errors, setErrors] = useState({});
 
+    const [glowingLabels, setGlowingLabels] = useState([]);
+
+    const startLabelGlow = (name) => {
+        if (!glowingLabels.includes(name)) {
+            setGlowingLabels([...glowingLabels, name]);
+        }
+    };
+
+    const endLabelGlow = (name) => {
+        setGlowingLabels(glowingLabels.filter(label => label !== name));
+    };
+    
     // Fetch Subspace releases on component mount and update the snapshot options
     useEffect(() => {
 	let isMounted = true;
@@ -195,7 +207,7 @@ services:
 
     return (
         <div className={`container ${styles['container--form']} margin-vert--lg`} onKeyDown={handleKeyDown}>
-            <h2 className="text--center margin-bottom--m">Docker Compose File Generator</h2>
+            <h2 className={`text--center margin-bottom--m`}>Docker Compose File Generator</h2>
             <div className={`card ${styles['beautiful-form']}`} >
                 <div className="card__body">
                     <div className={styles['form-columns']}>
@@ -210,7 +222,14 @@ services:
                             { label: 'Farmer Data (Optional)', name: 'farmerData' }
                         ].map(({ label, name }, index) => (
                             <div key={name} className={styles['form-group']}>
-                                <label htmlFor={name} className="form-label text--bold">{label}:</label>
+                                <label
+				    htmlFor={name}
+				    className={`text--bold ${styles['form-label']} ${glowingLabels.includes(name) ? styles['form-label-glow'] : ""}`}
+				    onMouseEnter={() => startLabelGlow(name)}
+				    onAnimationEnd={() => endLabelGlow(name)}
+				>
+				    {label}:
+				</label>
                                 <input
                                     className={styles['form-input']}
                                     name={name}
@@ -222,7 +241,14 @@ services:
                             </div>
                         ))}
 			<div key="snapshot" className={styles['form-group']}>
-                            <label htmlFor="snapshot" className="form-label text--bold">Snapshot:</label>
+                            <label
+				htmlFor="snapshot"
+				className={`text--bold ${styles['form-label']} ${glowingLabels.includes(name) ? styles['form-label-glow'] : ""}`}
+				onMouseEnter={() => startLabelGlow(name)}
+				onAnimationEnd={() => endLabelGlow(name)}
+			    >
+				Snapshot:
+			    </label>
                             <select
 				className={styles['form-input']}
 				name="snapshot"
@@ -233,7 +259,14 @@ services:
                             </select>
 			</div>
 			<div key="arch" className={styles['form-group']}>
-                            <label htmlFor="arch" className="form-label text--bold">Architecture:</label>
+                            <label
+				htmlFor="arch"
+				className={`text--bold ${styles['form-label']} ${glowingLabels.includes(name) ? styles['form-label-glow'] : ""}`}
+				onMouseEnter={() => startLabelGlow(name)}
+				onAnimationEnd={() => endLabelGlow(name)}
+			    >
+				Architecture:
+			    </label>
                             <select
 				className={styles['form-input']}
 				name="arch"
