@@ -2,7 +2,7 @@
     0% {
         text-shadow: none;
     }
-    50% {
+    20% {
 	filter: brightness(130%);
         text-shadow: 0 0 0.618rem var(--ifm-color-primary-lightest);
     }
@@ -15,7 +15,7 @@
     0% {
         text-shadow: none;
     }
-    50% {
+    20% {
         text-shadow: 0 0 0.618rem rgba(255, 255, 255, 0.618);
     }
     100% {
