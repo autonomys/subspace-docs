@@ -45,19 +45,49 @@ Pulsar requires commodity hardware specs to operate. At a **minimum**, it is rec
 A swap is only necessary if you have a low amount of RAM. 
 :::
 
-:::note CoW File Systems Warning
-It is advised not to use the Subspace farmer and node on CoW file systems for any OS.
+:::note CoW Filesystems Warning
+It is advised not to use the Subspace farmer and node on CoW file systems for any OS (ReFS, BTRFS, ZFS, bcachefs, HAMMER and some more).
 
-If BTRFS is used with Subspace, the directory/whole file system must be CoW disabled with the following command prior to starting Subspace.
+If BTRFS is used with Subspace, the directory/whole file system must be CoW disabled with the following command prior to starting Subspace, because it only applies to newly created files.
 
-**Command to Cow Disable**
+**Command to Disable CoW on BTRFS**
 
 ```
-sudo chattr +C path/to/data
+sudo chattr +C path/to/data/dir
 ```
 
-Alternatively, non-CoW file systems like ext4 or xfs can be used instead.
+Alternatively, non-CoW file systems like ext4 or XFS can be used instead.
 :::
+
+:::note Redundancy
+Using redundancy (RAID1/5/6, RAIDZ and others) on a filesystem with plot makes no sense, as the farmer uses checksums to verify the integrity of the plot, and is able to recover corrupted blocks if necessary in most cases. See `scrub` command below.
+:::
+
+:::tip Filesystem chunk size
+Creating a filesystem with a chunk (sunit) size of 32KB can prevent data fragmentation and improve performance, since the farmer operates on ~32KB chunks.
+
+**XFS**
+
+```
+sudo mkfs.xfs -d su=32k,sw=1 /path/to/dev
+```
+
+Then use `largeio` and `swalloc` mount options.
+
+**ext4**
+
+```
+sudo mkfs.ext4 -E stride=8,stripe-width=8 /path/to/dev
+```
+
+You can change these settings for an existing file system:
+
+```
+sudo tune2fs -E stride=8,stripe-width=8 /path/to/dev
+```
+
+:::
+
 
 ### Getting A Crypto Wallet
 
