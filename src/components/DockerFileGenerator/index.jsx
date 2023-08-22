@@ -167,6 +167,15 @@ services:
         return errors;
     };
 
+    
+    // Handles the "Enter" key press when any input or select field is focused, triggering the generation
+    const handleKeyDown = (event) => {
+        // Check if the pressed key is "Enter" and if any form element is focused
+        if (event.key === 'Enter' && (event.target.tagName.toLowerCase() === 'input' || event.target.tagName.toLowerCase() === 'select') ) {
+            generateOutput();
+        }
+    };
+
     // Handle changes in form input fields and update formData state
     const handleChange = (e) => {
         const { name, value } = e.target;
@@ -177,7 +186,7 @@ services:
     };
 
     return (
-        <div className={`container ${styles['container--form']} margin-vert--lg`}>
+        <div className={`container ${styles['container--form']} margin-vert--lg`} onKeyDown={handleKeyDown}>
             <h2 className="text--center margin-bottom--m">Docker Compose File Generator</h2>
 
             <div className={`card ${styles['beautiful-form']}`} >
