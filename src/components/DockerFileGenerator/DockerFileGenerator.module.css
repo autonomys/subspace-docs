@@ -33,20 +33,15 @@
     margin: 1.618rem auto;
 }
 
-.theme-light .beautiful-form {
-    background-color: #fff;
-    border: 0.038rem solid #eaecef; 
-    border-radius: 0.309rem; 
-    padding: 1.008rem;
-    box-shadow: 0rem 0.076rem 0.232rem rgba(0, 0, 0, 0.05);
+.beautiful-form { 
+    border-radius: 0.618rem;
+    transition: box-shadow 0.3s;
+    box-shadow: 0rem 0.1rem 0.5rem rgba(0, 0, 0, 0.08); 
 }
 
-.theme-dark .beautiful-form {
-    background-color: #282c34;
-    border: 0.038rem solid #444;
-    border-radius: 0.309rem;
-    padding: 1.008rem;
-    box-shadow: 0rem 0.076rem 0.232rem rgba(0, 0, 0, 0.2);
+html[data-theme='dark'] .beautiful-form {
+    border-radius: 0.618rem;
+    box-shadow: 0rem 0.076rem 0.232rem rgba(255, 255, 255, 0.08); 
 }
 
 .form-input,
