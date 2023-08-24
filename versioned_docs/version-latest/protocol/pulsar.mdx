@@ -171,8 +171,6 @@ Some older processors/VMs are no longer supported by official releases, but can 
 </details>
 
 
-
-
 2. Open Powershell, type `cd Downloads` (or `cd Your-File-Location`).
 
 :::warning Warning
@@ -301,6 +299,12 @@ To start we have to initialize our Farmer, this can be done with:
 ```powershell
 ./pulsar-windows-x86_64-skylake-v0.6.3-alpha.exe init
 ```
+
+:::note High RAM consumption
+  Operating systems, such as Windows, allocate memory for both visible tasks and behind-the-scenes processes. 
+  While this memory can be readily freed when necessary, Windows occasionally may not display these allocations accurately due to certain system nuances.
+  High RAM consumption should not be a cause for concern.
+:::
 
 </TabItem>
 
