@@ -9,12 +9,12 @@ keywords:
     - Binaries
     - Docker
 ---
-
+````mdx-code-block 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import Link from '@docusaurus/Link';
 import styles from '@site/src/pages/index.module.css';
-import DockerFileGenerator from '@site/src/components/DockerFileGenerator/index.jsx';
+import DockerFileGenerator from '@site/src/components/DockerFileGenerator/index.jsx'
 
 
 :::caution Advanced Usage
@@ -162,12 +162,12 @@ We will be downloading two files for your respective operating system.
     <div className={styles.buttons}>
       <Link
         className="button button--secondary button"
-        to="https://github.com/subspace/subspace/releases/download/gemini-3f-2023-aug-22/subspace-node-windows-x86_64-v2-gemini-3f-2023-aug-22.exe">
+        to="https://github.com/subspace/subspace/releases/download/gemini-3f-2023-aug-25-2/subspace-node-windows-x86_64-v2-gemini-3f-2023-aug-25-2.exe">
         Download Node Executable
       </Link>
       <Link
         className="button button--secondary button"
-        to="https://github.com/subspace/subspace/releases/download/gemini-3f-2023-aug-22/subspace-farmer-windows-x86_64-v2-gemini-3f-2023-aug-22.exe">
+        to="https://github.com/subspace/subspace/releases/download/gemini-3f-2023-aug-25-2/subspace-farmer-windows-x86_64-v2-gemini-3f-2023-aug-25-2.exe">
         Download Farmer Executable
       </Link>
     </div>
@@ -180,12 +180,12 @@ We will be downloading two files for your respective operating system.
     <div className={styles.buttons}>
       <Link
         className="button button--secondary button"
-        to="https://github.com/subspace/subspace/releases/download/gemini-3f-2023-aug-22/subspace-node-windows-x86_64-skylake-gemini-3f-2023-aug-22.exe">
+        to="https://github.com/subspace/subspace/releases/download/gemini-3f-2023-aug-25-2/subspace-node-windows-x86_64-skylake-gemini-3f-2023-aug-25-2.exe">
         Download Node Executable
       </Link>
       <Link
         className="button button--secondary button"
-        to="https://github.com/subspace/subspace/releases/download/gemini-3f-2023-aug-22/subspace-farmer-windows-x86_64-skylake-gemini-3f-2023-aug-22.exe">
+        to="https://github.com/subspace/subspace/releases/download/gemini-3f-2023-aug-25-2/subspace-farmer-windows-x86_64-skylake-gemini-3f-2023-aug-25-2.exe">
         Download Farmer Executable
       </Link>
     </div>
@@ -200,22 +200,15 @@ We will be downloading two files for your respective operating system.
 
 :::
 
-:::note High RAM consumption
-  Operating systems, such as Windows, allocate memory for both visible tasks and behind-the-scenes processes. 
-  While this memory can be readily freed when necessary, Windows occasionally may not display these allocations accurately due to certain system nuances.
-  High RAM consumption should not be a cause for concern.
-:::
-
   1. Open `Powershell` (we do not recommend using Command Prompt as its syntax is slightly different)
   2. In the terminal we will change to the Downloads directory using this command `cd Downloads`
   3. We will then start the node using the following command
   > You may get a popup asking for firewall permission, make sure to click `Allow`
 
-
   ```powershell
   # Replace `INSERT_YOUR_ID` with a nickname you choose
   # Copy all of the lines below, they are all part of the same command
-  .\subspace-node-windows-x86_64-skylake-gemini-3f-2023-aug-22.exe `
+  .\subspace-node-windows-x86_64-skylake-gemini-3f-2023-aug-25-2.exe `
     --chain gemini-3f `
     --execution wasm `
     --blocks-pruning 256 `
@@ -253,7 +246,7 @@ We will be downloading two files for your respective operating system.
     # Replace `PATH_TO_FARM` with location where you want you store plot files
     # Replace `WALLET_ADDRESS` below with your account address from Polkadot.js wallet
     # Replace `PLOT_SIZE` with plot size in gigabytes or terabytes, for example 100G or 2T (but leave at least 60G of disk space for node and some for OS)
-    .\subspace-farmer-windows-x86_64-skylake-gemini-3f-2023-aug-22.exe farm --reward-address WALLET_ADDRESS path=PATH_TO_FARM,size=PLOT_SIZE
+    .\subspace-node-windows-x86_64-skylake-gemini-3f-2023-aug-25-2.exe farm --reward-address WALLET_ADDRESS path=PATH_TO_FARM,size=PLOT_SIZE
   ```
   7. You should see something similar in the terminal:
   ```text
@@ -285,12 +278,12 @@ We will be downloading two files for your respective operating system.
     <div className={styles.buttons}>
       <Link
         className="button button--secondary button"
-        to="https://github.com/subspace/subspace/releases/download/gemini-3f-2023-aug-22/subspace-node-macos-x86_64-gemini-3f-2023-aug-22.zip">
+        to="https://github.com/subspace/subspace/releases/download/gemini-3f-2023-aug-25-2/subspace-node-macos-x86_64-gemini-3f-2023-aug-25-2.zip">
         Download Node Executable
       </Link>
       <Link
         className="button button--secondary button"
-        to="https://github.com/subspace/subspace/releases/download/gemini-3f-2023-aug-22/subspace-farmer-macos-x86_64-gemini-3f-2023-aug-22.zip">
+        to="https://github.com/subspace/subspace/releases/download/gemini-3f-2023-aug-25-2/subspace-farmer-macos-x86_64-gemini-3f-2023-aug-25-2.zip">
         Download Farmer Executable
       </Link>
     </div>
@@ -303,12 +296,12 @@ We will be downloading two files for your respective operating system.
     <div className={styles.buttons}>
       <Link
         className="button button--secondary button"
-        to="https://github.com/subspace/subspace/releases/download/gemini-3f-2023-aug-22/subspace-node-macos-aarch64-gemini-3f-2023-aug-22.zip">
+        to="https://github.com/subspace/subspace/releases/download/gemini-3f-2023-aug-25-2/subspace-node-macos-aarch64-gemini-3f-2023-aug-25-2.zip">
         Download Node Executable
       </Link>
       <Link
         className="button button--secondary button"
-        to="https://github.com/subspace/subspace/releases/download/gemini-3f-2023-aug-22/subspace-farmer-macos-aarch64-gemini-3f-2023-aug-22.zip">
+        to="https://github.com/subspace/subspace/releases/download/gemini-3f-2023-aug-25-2/subspace-farmer-macos-aarch64-gemini-3f-2023-aug-25-2.zip">
         Download Farmer Executable
       </Link>
     </div>
@@ -325,8 +318,8 @@ We will be downloading two files for your respective operating system.
 
   1. Open your favorite terminal, and change to the Downloads directory using `cd Downloads`
   2. Make the farmer & node executable:
-  - `chmod +x subspace-farmer-macos-aarch64-gemini-3f-2023-aug-22`
-  - `chmod +x subspace-node-macos-aarch64-gemini-3f-2023-aug-22`
+  - `chmod +x subspace-farmer-macos-aarch64-gemini-3f-2023-aug-25-2`
+  - `chmod +x subspace-node-macos-aarch64-gemini-3f-2023-aug-25-2`
   1. We will then start the node using the following command
 
   > *Note, when attempting to run this command you may be prompted:* Click on `cancel` instead of moving it to trash.
@@ -336,7 +329,7 @@ We will be downloading two files for your respective operating system.
   ```bash
   # Replace `INSERT_YOUR_ID` with a nickname you choose
   # Copy all of the lines below, they are all part of the same command
-  ./subspace-node-macos-aarch64-gemini-3f-2023-aug-22 \
+  ./subspace-node-macos-aarch64-gemini-3f-2023-aug-25-2 \
     --chain gemini-3f \
     --execution wasm \
     --blocks-pruning 256 \
@@ -373,7 +366,7 @@ We will be downloading two files for your respective operating system.
     # Replace `PATH_TO_FARM` with location where you want you store plot files
     # Replace `WALLET_ADDRESS` below with your account address from Polkadot.js wallet
     # Replace `PLOT_SIZE` with plot size in gigabytes or terabytes, for example 100G or 2T (but leave at least 60G of disk space for node and some for OS)
-    ./subspace-farmer-macos-aarch64-gemini-3f-2023-aug-22 farm --reward-address WALLET_ADDRESS path=PATH_TO_FARM,size=PLOT_SIZE
+    ./subspace-farmer-macos-aarch64-gemini-3f-2023-aug-25-2 farm --reward-address WALLET_ADDRESS path=PATH_TO_FARM,size=PLOT_SIZE
   ```
 
   6. It may prompt again in here. Refer to the note on step 4.
@@ -412,12 +405,12 @@ We will be downloading two files for your respective operating system.
       <div className={styles.buttons}>
         <Link
           className="button button--secondary button"
-          to="https://github.com/subspace/subspace/releases/download/gemini-3f-2023-aug-22/subspace-node-ubuntu-x86_64-v2-gemini-3f-2023-aug-22">
+          to="https://github.com/subspace/subspace/releases/download/gemini-3f-2023-aug-25-2/subspace-node-ubuntu-x86_64-v2-gemini-3f-2023-aug-25-2">
           Download Node Executable
         </Link>
         <Link
           className="button button--secondary button"
-          to="https://github.com/subspace/subspace/releases/download/gemini-3f-2023-aug-22/subspace-farmer-ubuntu-x86_64-v2-gemini-3f-2023-aug-22">
+          to="https://github.com/subspace/subspace/releases/download/gemini-3f-2023-aug-25-2/subspace-farmer-ubuntu-x86_64-v2-gemini-3f-2023-aug-25-2">
           Download Farmer Executable
         </Link>
       </div>
@@ -429,12 +422,12 @@ We will be downloading two files for your respective operating system.
       <div className={styles.buttons}>
         <Link
           className="button button--secondary button"
-          to="https://github.com/subspace/subspace/releases/download/gemini-3f-2023-aug-22/subspace-node-ubuntu-x86_64-skylake-gemini-3f-2023-aug-22">
+          to="https://github.com/subspace/subspace/releases/download/gemini-3f-2023-aug-25-2/subspace-node-ubuntu-x86_64-skylake-gemini-3f-2023-aug-25-2">
           Download Node Executable
         </Link>
         <Link
           className="button button--secondary button"
-          to="https://github.com/subspace/subspace/releases/download/gemini-3f-2023-aug-22/subspace-farmer-ubuntu-x86_64-skylake-gemini-3f-2023-aug-22">
+          to="https://github.com/subspace/subspace/releases/download/gemini-3f-2023-aug-25-2/subspace-farmer-ubuntu-x86_64-skylake-gemini-3f-2023-aug-25-2">
           Download Farmer Executable
         </Link>
       </div>
@@ -448,12 +441,12 @@ We will be downloading two files for your respective operating system.
     <div className={styles.buttons}>
       <Link
         className="button button--secondary button"
-        to="https://github.com/subspace/subspace/releases/download/gemini-3f-2023-aug-22/subspace-node-ubuntu-aarch64-gemini-3f-2023-aug-22">
+        to="https://github.com/subspace/subspace/releases/download/gemini-3f-2023-aug-25-2/subspace-node-ubuntu-aarch64-gemini-3f-2023-aug-25-2">
         1. Download Node Executable
       </Link>
       <Link
         className="button button--secondary button"
-        to="https://github.com/subspace/subspace/releases/download/gemini-3f-2023-aug-22/subspace-farmer-ubuntu-aarch64-gemini-3f-2023-aug-22">
+        to="https://github.com/subspace/subspace/releases/download/gemini-3f-2023-aug-25-2/subspace-farmer-ubuntu-aarch64-gemini-3f-2023-aug-25-2">
         2. Download Farmer Executable
       </Link>
     </div>
@@ -481,14 +474,14 @@ We will be downloading two files for your respective operating system.
   ---
   1. Open your favorite terminal, and change to the Downloads directory using `cd Downloads`
   2. Make the farmer & node executable
-  - `chmod +x subspace-farmer-ubuntu-x86_64-skylake-gemini-3f-2023-aug-22`
-  - `chmod +x subspace-node-ubuntu-x86_64-skylake-gemini-3f-2023-aug-22`
+  - `chmod +x subspace-farmer-ubuntu-x86_64-skylake-gemini-3f-2023-aug-25-2`
+  - `chmod +x subspace-node-ubuntu-x86_64-skylake-gemini-3f-2023-aug-25-2`
   3. We will then start the node using the following command
 
   ```bash
     # Replace `INSERT_YOUR_ID` with a nickname you choose
     # Copy all of the lines below, they are all part of the same command
-    ./subspace-node-ubuntu-x86_64-skylake-gemini-3f-2023-aug-22 \
+    ./subspace-node-ubuntu-x86_64-skylake-gemini-3f-2023-aug-25-2 \
       --chain gemini-3f \
       --execution wasm \
       --blocks-pruning 256 \
@@ -524,7 +517,7 @@ We will be downloading two files for your respective operating system.
     # Replace `PATH_TO_FARM` with location where you want you store plot files
     # Replace `WALLET_ADDRESS` below with your account address from Polkadot.js wallet
     # Replace `PLOT_SIZE` with plot size in gigabytes or terabytes, for example 100G or 2T (but leave at least 60G of disk space for node and some for OS)
-    ./subspace-farmer-ubuntu-x86_64-skylake-gemini-3f-2023-aug-22 farm --reward-address WALLET_ADDRESS path=PATH_TO_FARM,size=PLOT_SIZE
+    ./subspace-farmer-ubuntu-x86_64-skylake-gemini-3f-2023-aug-25-2 farm --reward-address WALLET_ADDRESS path=PATH_TO_FARM,size=PLOT_SIZE
   ```
   6. You should see something similar in the terminal:
   ```text
@@ -743,3 +736,5 @@ To enable the `RUST_BACKTRACE` environment variable on Linux, follow these steps
 
 </TabItem>
 </Tabs>
+
+````
