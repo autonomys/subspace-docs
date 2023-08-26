@@ -119,7 +119,6 @@ services:
         "--rpc-cors", "all",
         "--rpc-methods", "unsafe",
         "--rpc-external",
-        "--no-private-ipv4",
         "--validator",
         "--name", "${formData.nodeName}"
       ]
