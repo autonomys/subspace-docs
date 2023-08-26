@@ -133,7 +133,7 @@ services:
         condition: service_healthy
     image: ghcr.io/subspace/farmer:${formData.snapshot}${formData.arch === "aarch64" ? "-aarch64" : ""}
     volumes:
-       - ${formData.farmerData ? formData.farmerData : "farmer-data"}:/var/subspace:rw
+      - ${formData.farmerData ? formData.farmerData : "farmer-data"}:/var/subspace:rw
     ports:
       - "0.0.0.0:${formData.farmerPort}:30533"
     restart: unless-stopped
@@ -145,7 +145,7 @@ services:
         "--reward-address", "${formData.rewardAddress}",
         "path=/var/subspace,size=${formData.plotSize}"
       ]
-volumes: ${formData.nodeData ? "" : "\n      node-data:"}${formData.farmerData ? "" : "\n      farmer-data:"}\
+${formData.nodeData && formData.farmerData ? "" : "volumes:"}${formData.nodeData ? "" : "\n  node-data:"}${formData.farmerData ? "" : "\n  farmer-data:"}\
             `;
             setOutput(template);
             setErrors({});
