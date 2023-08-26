@@ -96,6 +96,13 @@ function DockerFileGenerator() {
 
 	// Only generate the output if there are no validation errors
         if (Object.keys(validationErrors).length === 0) {
+            const volumesSection = (
+                (!formData.nodeData && !formData.farmerData) ? 
+                `volumes:
+          node-data:
+          farmer-data:` : ""
+            );
+
             const template = `\
 version: "3.7"
 services:
@@ -133,7 +140,7 @@ services:
         condition: service_healthy
     image: ghcr.io/subspace/farmer:${formData.snapshot}${formData.arch === "aarch64" ? "-aarch64" : ""}
     volumes:
-       - ${formData.farmerData ? formData.farmerData : "farmer-data"}:/var/subspace:rw
+      - ${formData.farmerData ? formData.farmerData : "farmer-data"}:/var/subspace:rw
     ports:
       - "0.0.0.0:${formData.farmerPort}:30533"
     restart: unless-stopped
@@ -145,7 +152,7 @@ services:
         "--reward-address", "${formData.rewardAddress}",
         "path=/var/subspace,size=${formData.plotSize}"
       ]
-volumes: ${formData.nodeData ? "" : "\n      node-data:"}${formData.farmerData ? "" : "\n      farmer-data:"}\
+    ${volumesSection}
             `;
             setOutput(template);
             setErrors({});
