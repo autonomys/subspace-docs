@@ -145,7 +145,7 @@ services:
         "--reward-address", "${formData.rewardAddress}",
         "path=/var/subspace,size=${formData.plotSize}"
       ]
-    volumes: ${formData.nodeData ? "" : "\n      node-data:"}${formData.farmerData ? "" : "\n      farmer-data:"}\
+volumes: ${formData.nodeData ? "" : "\n      node-data:"}${formData.farmerData ? "" : "\n      farmer-data:"}\
             `;
             setOutput(template);
             setErrors({});
