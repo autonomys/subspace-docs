@@ -176,10 +176,10 @@ volumes: ${formData.nodeData ? "" : "\n      node-data:"}${formData.farmerData ?
         if (!/^st[a-zA-Z0-9]{47}$/.test(formData.rewardAddress)) {
             errors.rewardAddress = 'Invalid Reward Address';
         }
-	if (!/^(\/[^/]+)*$/.test(formData.nodeData)) {
+	if (!/^(\/([^/]*\/?)*)?$/.test(formData.nodeData)) {
 	    errors.nodeData = 'Invalid Node Data';
         }
-        if (!/^(\/[^/]+)*$/.test(formData.farmerData)) {
+        if (!/^(\/([^/]*\/?)*)?$/.test(formData.farmerData)) {
 	    errors.farmerData = 'Invalid Farmer Data';
         }
 
