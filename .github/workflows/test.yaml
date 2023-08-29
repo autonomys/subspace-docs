@@ -80,7 +80,8 @@ jobs:
           
           # Post comment if needed
           if [ -n "$COMMENT_BODY" ]; then
-            COMMENT_BODY+="\nPlease check the checkboxes above to acknowledge that merging this PR will notify the Discord community."
+            COMMENT_BODY+="
+            Please check the checkboxes above to acknowledge that merging this PR will notify the Discord community."
             echo "$COMMENT_BODY" > comment_body.txt
           fi
 
