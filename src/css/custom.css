@@ -11,7 +11,6 @@
   --ifm-font-family-base: "Montserrat", sans-serif;
 }
 
-
 /* You can override the default Infima variables here. */
 :root {  
   --ifm-color-primary-darkest: #26133f;
@@ -35,16 +34,123 @@ html[data-theme='dark'] {
   --ifm-color-primary-lightest: #d3a5fd;
 }
 
+html[data-theme='light'] {
+  --ifm-background-color: #f3f3f5;
+  --ifm-color-emphasis-0: #fafafa;
+  --ifm-color-emphasis-100: #e0e0e2;
+  --ifm-color-emphasis-200: #b0b0b3;
+  --ifm-color-emphasis-300: #78787c;
+  --ifm-link-color: #6f5ca0;
+  --ifm-link-hover-color: #594d8a;
+
+  --ifm-color-secondary-darkest: #53535a;
+  --ifm-color-secondary-darker: #6e6e76;
+  --ifm-color-secondary-dark: #898992;
+  --ifm-color-secondary: #a4a4ae;
+  --ifm-color-secondary-light: #bfbfc9;
+  --ifm-color-secondary-lighter: #d9d9e4;
+  --ifm-color-secondary-lightest: #f3f3ff;
+
+  --ifm-color-success-darkest: #2f6445;
+  --ifm-color-success-darker: #418052;
+  --ifm-color-success-dark: #54a260;
+  --ifm-color-success: #6dc474;
+  --ifm-color-success-light: #87d688;
+  --ifm-color-success-lighter: #a1e89c;
+  --ifm-color-success-lightest: #bbfbb0;
+
+  --ifm-color-info-darkest: #2f4861;
+  --ifm-color-info-darker: #416384;
+  --ifm-color-info-dark: #547fa8;
+  --ifm-color-info: #6a9bcc;
+  --ifm-color-info-light: #83b7df;
+  --ifm-color-info-lighter: #9cd4f2;
+  --ifm-color-info-lightest: #b6f1ff;
+
+  --ifm-color-warning-darkest: #644f2f;
+  --ifm-color-warning-darker: #896c40;
+  --ifm-color-warning-dark: #ae8a52;
+  --ifm-color-warning: #d3a963;
+  --ifm-color-warning-light: #e9c074;
+  --ifm-color-warning-lighter: #fcd886;
+  --ifm-color-warning-lightest: #ffef97;
+
+  --ifm-color-danger-darkest: #642f2f;
+  --ifm-color-danger-darker: #894141;
+  --ifm-color-danger-dark: #ae5353;
+  --ifm-color-danger: #d36666;
+  --ifm-color-danger-light: #e98383;
+  --ifm-color-danger-lighter: #fd9fa0;
+  --ifm-color-danger-lightest: #ffbcbc;
+}
+
 html[data-theme='dark'] .footer {
   background-color: #292929;
 }
 
 html[data-theme='light'] .footer {
-  background-color: #fafafa;
+  background-color: var(--ifm-background-color);
+  color: var(--ifm-color-primary-dark);
 }
 
 html[data-theme='light'] .footer .footer__link-item {
-  color: #000000;
+  color: var(--ifm-link-color);
+}
+
+html[data-theme='light'] .footer .footer__title {
+  color: var(--ifm-color-primary-darker);
+}
+
+html[data-theme='light'] .button--secondary {
+  background-color: var(--ifm-color-emphasis-100);
+  color: #2c2c2c;
+}
+
+html[data-theme='light'] .button--secondary:hover {
+  background-color: var(--ifm-color-emphasis-200);
+  color: #2c2c2c;  
+}
+
+html[data-theme='light'] .navbar {
+  background-color: var(--ifm-background-color);
+  border-bottom: 1px solid var(--ifm-color-emphasis-100);
+}
+
+html[data-theme='light'] .token {
+  color: var(--ifm-color-primary-darker);
+}
+
+html[data-theme='light'] .token.comment,
+html[data-theme='light'] .token.prolog,
+html[data-theme='light'] .token.doctype,
+html[data-theme='light'] .token.cdata {
+  color: var(--ifm-color-secondary-dark); 
+}
+
+html[data-theme='light'] .token.punctuation {
+  color: var(--ifm-color-emphasis-300);
+}
+
+html[data-theme='light'] .token.operator,
+html[data-theme='light'] .token.boolean,
+html[data-theme='light'] .token.number {
+  color: var(--ifm-color-primary);
+}
+
+html[data-theme='light'] .token.property,
+html[data-theme='light'] .token.tag,
+html[data-theme='light'] .token.string,
+html[data-theme='light'] .token.selector,
+html[data-theme='light'] .token.attr-name {
+  color: var(--ifm-color-primary-light);
+}
+
+html[data-theme='light'] .token.function {
+  color: var(--ifm-color-emphasis-200);
+}
+
+html[data-theme='light'] .token.keyword {
+  color: var(--ifm-color-primary-lighter);
 }
 
 .docusaurus-highlight-code-line {
