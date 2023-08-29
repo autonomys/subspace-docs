@@ -63,7 +63,7 @@ jobs:
   
             if [ -n "$new_pulsar_tag" ] && [ -n "$old_pulsar_tag" ] && [ "$new_pulsar_tag" != "$old_pulsar_tag" ]; then
               echo "Found Changes in Pulsar. Adding to Comment Block"
-              COMMENT_BODY+="- [ ] Detected version change on Pulsar: $old_pulsar_tag -> $new_pulsar_tag\n"
+              COMMENT_BODY+="- [ ] Detected version change on Pulsar: $old_pulsar_tag -> $new_pulsar_tag"
             fi
           fi
           
@@ -74,14 +74,15 @@ jobs:
           
             if [ -n "$new_substrate_cli_tag" ] && [ -n "$old_substrate_cli_tag" ] && [ "$new_substrate_cli_tag" != "$old_substrate_cli_tag" ]; then
               echo "Found Changes in Substrate-CLI. Adding to Comment Block"
-              COMMENT_BODY+="- [ ] Detected version change on Advanced CLI: $old_substrate_cli_tag -> $new_substrate_cli_tag\n"
+              COMMENT_BODY+="- [ ] Detected version change on Advanced CLI: $old_substrate_cli_tag -> $new_substrate_cli_tag"
             fi
           fi
           
           # Post comment if needed
           if [ -n "$COMMENT_BODY" ]; then
             COMMENT_BODY+="
-            Please check the checkboxes above to acknowledge that merging this PR will notify the Discord community."
+
+            ### Please check the checkboxes above to acknowledge that merging this PR will notify the Discord community."
             echo "$COMMENT_BODY" > comment_body.txt
           fi
 
