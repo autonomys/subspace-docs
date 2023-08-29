@@ -91,6 +91,7 @@ jobs:
 
   task-check:
     name: Verify Version Acknowledgement
+    if: needs.check_version_changes.result == 'success'
     runs-on: ubuntu-latest
     steps:
       - uses: kentaro-m/task-completed-checker-action@v0.1.2
