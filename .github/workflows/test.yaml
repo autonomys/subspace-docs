@@ -89,9 +89,11 @@ jobs:
         run: |
           if [[ -f comment_body.txt ]]; then
             PR_ID=$(jq -r ".number" "$GITHUB_EVENT_PATH")
-            COMMENT_BODY=$(jq -R . < comment_body.txt)
-            PAYLOAD="{\"body\": $COMMENT_BODY}"
+            COMMENT_CONTENT=$(<comment_body.txt)
+            PAYLOAD=$(jq -n --arg body "$COMMENT_CONTENT" '{"body": $body}')
+            
             echo "Payload being sent: $PAYLOAD"  # This line will print the payload
+
             RESPONSE=$(curl -s -o /dev/stderr -w "%{http_code}" -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
                   -d "$PAYLOAD" \
                   "https://api.github.com/repos/$GITHUB_REPOSITORY/issues/$PR_ID/comments")
