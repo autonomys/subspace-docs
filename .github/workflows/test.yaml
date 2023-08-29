@@ -2,12 +2,16 @@ name: Test deployment
 
 on:
   pull_request:
+    types:
+      - opened
+      - edited
     branches:
       - main
 
 jobs:
   test-deploy:
     name: Test deployment
+    if: github.event.action == 'opened'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -22,6 +26,7 @@ jobs:
 
   check_version_changes:
     name: Check for Version Changes
+    if: github.event.action == 'opened'
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
@@ -75,7 +80,9 @@ jobs:
             # Check if the checkbox information is already present
             if ! echo "$CURRENT_PR_BODY" | grep -q "Detected version change"; then
               # Update PR body
-              UPDATED_PR_BODY="$(cat comment_body.txt)\n\n$CURRENT_PR_BODY"
+              UPDATED_PR_BODY="$(cat comment_body.txt)
+              
+              $CURRENT_PR_BODY"
               PAYLOAD=$(jq -n --arg body "$UPDATED_PR_BODY" '{"body": $body}')
               
               RESPONSE=$(curl -s -o /dev/stderr -w "%{http_code}" -X PATCH -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
