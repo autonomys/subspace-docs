@@ -34,12 +34,6 @@ jobs:
           git fetch origin main:main
           git diff main...HEAD 'versioned_docs/version-latest/protocol/pulsar.mdx' > pulsar_diff.txt
           git diff main...HEAD 'versioned_docs/version-latest/protocol/substrate-cli.mdx' > substrate_cli_diff.txt
-          
-          echo "---- CONTENT OF PULSAR DIFF ----"
-          cat pulsar_diff.txt
-          
-          echo "---- CONTENT OF SUBSTRATE CLI DIFF ----"
-          cat substrate_cli_diff.txt
 
           COMMENT_BODY=""
           new_pulsar_tag=""
@@ -47,41 +41,23 @@ jobs:
           new_substrate_cli_tag=""
           old_substrate_cli_tag=""
           
-          if [[ ! -s pulsar_diff.txt && ! -s substrate_cli_diff.txt ]]; then
-            echo "No changes detected in the specified files."
-            exit 0
-          fi
-          
-          # Process Pulsar changes
-          if [[ -s pulsar_diff.txt ]]; then
-            echo "---- Extracting Pulsar Tags ----"
-            new_pulsar_tag=$(grep -o "\\+.*https://github.com/subspace/pulsar/releases/download/[^/]\\+/[^/]\\+" pulsar_diff.txt | head -1 | awk -F'/' '{print $8}')
-            old_pulsar_tag=$(grep -o "\\-.*https://github.com/subspace/pulsar/releases/download/[^/]\\+/[^/]\\+" pulsar_diff.txt | head -1 | awk -F'/' '{print $8}')
+          new_pulsar_tag=$(grep -o "\\+.*https://github.com/subspace/pulsar/releases/download/[^/]\\+/[^/]\\+" pulsar_diff.txt | head -1 | awk -F'/' '{print $8}')
+          old_pulsar_tag=$(grep -o "\\-.*https://github.com/subspace/pulsar/releases/download/[^/]\\+/[^/]\\+" pulsar_diff.txt | head -1 | awk -F'/' '{print $8}')
 
-            echo "New Pulsar Tag: $new_pulsar_tag"
-            echo "Old Pulsar Tag: $old_pulsar_tag"
-  
-            if [ -n "$new_pulsar_tag" ] && [ -n "$old_pulsar_tag" ] && [ "$new_pulsar_tag" != "$old_pulsar_tag" ]; then
-              echo "Found Changes in Pulsar. Adding to Comment Block"
-              COMMENT_BODY+="- [ ] Detected version change on Pulsar: $old_pulsar_tag -> $new_pulsar_tag"
-            fi
+          if [ -n "$new_pulsar_tag" ] && [ -n "$old_pulsar_tag" ] && [ "$new_pulsar_tag" != "$old_pulsar_tag" ]; then
+            COMMENT_BODY+="- [ ] Detected version change on Pulsar: $old_pulsar_tag -> $new_pulsar_tag"
           fi
-          
-          # Process Substrate CLI changes
-          if [[ -s substrate_cli_diff.txt ]]; then
-            new_substrate_cli_tag=$(grep -o "\\+.*https://github.com/subspace/subspace/releases/download/[^/]\\+/[^/]\\+" substrate_cli_diff.txt | head -1 | awk -F'/' '{print $8}')
-            old_substrate_cli_tag=$(grep -o "\\-.*https://github.com/subspace/subspace/releases/download/[^/]\\+/[^/]\\+" substrate_cli_diff.txt | head -1 | awk -F'/' '{print $8}')
-          
-            if [ -n "$new_substrate_cli_tag" ] && [ -n "$old_substrate_cli_tag" ] && [ "$new_substrate_cli_tag" != "$old_substrate_cli_tag" ]; then
-              echo "Found Changes in Substrate-CLI. Adding to Comment Block"
-              COMMENT_BODY+="- [ ] Detected version change on Advanced CLI: $old_substrate_cli_tag -> $new_substrate_cli_tag"
-            fi
+
+          new_substrate_cli_tag=$(grep -o "\\+.*https://github.com/subspace/subspace/releases/download/[^/]\\+/[^/]\\+" substrate_cli_diff.txt | head -1 | awk -F'/' '{print $8}')
+          old_substrate_cli_tag=$(grep -o "\\-.*https://github.com/subspace/subspace/releases/download/[^/]\\+/[^/]\\+" substrate_cli_diff.txt | head -1 | awk -F'/' '{print $8}')
+
+          if [ -n "$new_substrate_cli_tag" ] && [ -n "$old_substrate_cli_tag" ] && [ "$new_substrate_cli_tag" != "$old_substrate_cli_tag" ]; then
+            COMMENT_BODY+="- [ ] Detected version change on Advanced CLI: $old_substrate_cli_tag -> $new_substrate_cli_tag"
           fi
-          
-          # Post comment if needed
+
           if [ -n "$COMMENT_BODY" ]; then
             COMMENT_BODY+="
-
+            
             ### Please check the checkboxes above to acknowledge that merging this PR will notify the Discord community."
             echo "$COMMENT_BODY" > comment_body.txt
           fi
@@ -92,15 +68,11 @@ jobs:
             PR_ID=$(jq -r ".number" "$GITHUB_EVENT_PATH")
             COMMENT_CONTENT=$(<comment_body.txt)
             PAYLOAD=$(jq -n --arg body "$COMMENT_CONTENT" '{"body": $body}')
-            
-            echo "Payload being sent: $PAYLOAD"  # This line will print the payload
 
             RESPONSE=$(curl -s -o /dev/stderr -w "%{http_code}" -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
                   -d "$PAYLOAD" \
                   "https://api.github.com/repos/$GITHUB_REPOSITORY/issues/$PR_ID/comments")
-            if [ "$RESPONSE" -eq 201 ]; then
-              echo "Comment posted successfully"
-            else
+            if [ "$RESPONSE" -ne 201 ]; then
               echo "Failed to post comment"
               exit 1
             fi
