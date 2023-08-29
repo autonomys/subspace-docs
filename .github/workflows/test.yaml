@@ -21,6 +21,7 @@ jobs:
         run: yarn build --locale en
 
   check_version_changes:
+    name: Check for Version Changes
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
@@ -87,4 +88,9 @@ jobs:
               fi
             fi
           fi
+          
+      - name: Verify Acknowledgement
+        uses: kentaro-m/task-completed-checker-action@v0.1.2
+        with:
+          repo-token: "${{ secrets.GITHUB_TOKEN }}"
   
