@@ -88,12 +88,12 @@ jobs:
               fi
             fi
           fi
-          
+
   task-check:
+    name: Verify Version Acknowledgement
     runs-on: ubuntu-latest
     steps:
-      - name: Verify Acknowledgement
-        uses: kentaro-m/task-completed-checker-action@v0.1.2
+      - uses: kentaro-m/task-completed-checker-action@v0.1.2
         with:
           repo-token: "${{ secrets.GITHUB_TOKEN }}"
   
