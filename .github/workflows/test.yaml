@@ -55,8 +55,8 @@ jobs:
           # Process Pulsar changes
           if [[ -s pulsar_diff.txt ]]; then
             echo "---- Extracting Pulsar Tags ----"
-            new_pulsar_tag=$(grep -o "\\+.*https://github.com/subspace/pulsar/releases/download/[^/]\\+/[^/]\\+" pulsar_diff.txt | awk -F'/' '{print $8}')
-            old_pulsar_tag=$(grep -o "\\-.*https://github.com/subspace/pulsar/releases/download/[^/]\\+/[^/]\\+" pulsar_diff.txt | awk -F'/' '{print $8}')
+            new_pulsar_tag=$(grep -o "\\+.*https://github.com/subspace/pulsar/releases/download/[^/]\\+/[^/]\\+" pulsar_diff.txt | head -1 | awk -F'/' '{print $8}')
+            old_pulsar_tag=$(grep -o "\\-.*https://github.com/subspace/pulsar/releases/download/[^/]\\+/[^/]\\+" pulsar_diff.txt | head -1 | awk -F'/' '{print $8}')
 
             echo "New Pulsar Tag: $new_pulsar_tag"
             echo "Old Pulsar Tag: $old_pulsar_tag"
@@ -69,8 +69,8 @@ jobs:
           
           # Process Substrate CLI changes
           if [[ -s substrate_cli_diff.txt ]]; then
-            new_substrate_cli_tag=$(grep -o "\\+.*https://github.com/subspace/subspace/releases/download/[^/]\\+/[^/]\\+" substrate_cli_diff.txt | awk -F'/' '{print $8}')
-            old_substrate_cli_tag=$(grep -o "\\-.*https://github.com/subspace/subspace/releases/download/[^/]\\+/[^/]\\+" substrate_cli_diff.txt | awk -F'/' '{print $8}')
+            new_substrate_cli_tag=$(grep -o "\\+.*https://github.com/subspace/subspace/releases/download/[^/]\\+/[^/]\\+" substrate_cli_diff.txt | head -1 | awk -F'/' '{print $8}')
+            old_substrate_cli_tag=$(grep -o "\\-.*https://github.com/subspace/subspace/releases/download/[^/]\\+/[^/]\\+" substrate_cli_diff.txt | head -1 | awk -F'/' '{print $8}')
           
             if [ -n "$new_substrate_cli_tag" ] && [ -n "$old_substrate_cli_tag" ] && [ "$new_substrate_cli_tag" != "$old_substrate_cli_tag" ]; then
               echo "Found Changes in Substrate-CLI. Adding to Comment Block"
