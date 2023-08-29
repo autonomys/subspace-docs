@@ -40,7 +40,7 @@ jobs:
           old_pulsar_tag=""
           new_substrate_cli_tag=""
           old_substrate_cli_tag=""
-          
+
           new_pulsar_tag=$(grep -o "\\+.*https://github.com/subspace/pulsar/releases/download/[^/]\\+/[^/]\\+" pulsar_diff.txt | head -1 | awk -F'/' '{print $8}')
           old_pulsar_tag=$(grep -o "\\-.*https://github.com/subspace/pulsar/releases/download/[^/]\\+/[^/]\\+" pulsar_diff.txt | head -1 | awk -F'/' '{print $8}')
 
@@ -56,24 +56,35 @@ jobs:
           fi
 
           if [ -n "$COMMENT_BODY" ]; then
-            COMMENT_BODY+="
+            COMMENT_BODY="### Version Update Detected, please check the checkboxes below to acknowledge that merging this PR will notify the Discord community.
             
-            ### Please check the checkboxes above to acknowledge that merging this PR will notify the Discord community."
+            $COMMENT_BODY"
             echo "$COMMENT_BODY" > comment_body.txt
           fi
 
-      - name: Comment on PR
+      - name: Update PR Body
         run: |
           if [[ -f comment_body.txt ]]; then
             PR_ID=$(jq -r ".number" "$GITHUB_EVENT_PATH")
-            COMMENT_CONTENT=$(<comment_body.txt)
-            PAYLOAD=$(jq -n --arg body "$COMMENT_CONTENT" '{"body": $body}')
 
-            RESPONSE=$(curl -s -o /dev/stderr -w "%{http_code}" -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
+            # Fetch current PR body
+            CURRENT_PR_BODY=$(curl -s -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
+                  "https://api.github.com/repos/$GITHUB_REPOSITORY/pulls/$PR_ID" | jq -r .body)
+
+            # Check if the checkbox information is already present
+            if ! echo "$CURRENT_PR_BODY" | grep -q "Detected version change"; then
+              # Update PR body
+              UPDATED_PR_BODY="$(cat comment_body.txt)\n\n$CURRENT_PR_BODY"
+              PAYLOAD=$(jq -n --arg body "$UPDATED_PR_BODY" '{"body": $body}')
+              
+              RESPONSE=$(curl -s -o /dev/stderr -w "%{http_code}" -X PATCH -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
                   -d "$PAYLOAD" \
-                  "https://api.github.com/repos/$GITHUB_REPOSITORY/issues/$PR_ID/comments")
-            if [ "$RESPONSE" -ne 201 ]; then
-              echo "Failed to post comment"
-              exit 1
+                  "https://api.github.com/repos/$GITHUB_REPOSITORY/pulls/$PR_ID")
+
+              if [ "$RESPONSE" -ne 200 ]; then
+                echo "Failed to update PR body"
+                exit 1
+              fi
             fi
           fi
+  
