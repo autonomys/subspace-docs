@@ -66,7 +66,9 @@ jobs:
           if [ -n "$COMMENT_BODY" ]; then
             COMMENT_BODY="### Version Update Detected, please check the checkboxes below to acknowledge that merging this PR will notify the Discord community.
             
-            $COMMENT_BODY"
+            $COMMENT_BODY
+            
+            "
             echo "$COMMENT_BODY" > comment_body.txt
           fi
 
@@ -83,8 +85,11 @@ jobs:
             # Check if the checkbox information is already present
             if ! echo "$CURRENT_PR_BODY" | grep -q "Detected version change"; then
               # Update PR body
-              UPDATED_PR_BODY="$CURRENT_PR_BODY \r\n (cat comment_body.txt)"
+              UPDATED_PR_BODY="$(cat comment_body.txt)
+              
+              $CURRENT_PR_BODY"
               PAYLOAD=$(jq -n --arg body "$UPDATED_PR_BODY" '{"body": $body}')
+              
               RESPONSE=$(curl -s -o /dev/stderr -w "%{http_code}" -X PATCH -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
                   -d "$PAYLOAD" \
                   "https://api.github.com/repos/$GITHUB_REPOSITORY/pulls/$PR_ID")
@@ -102,11 +107,7 @@ jobs:
     if: needs.check_version_changes.result == 'success'
     runs-on: ubuntu-latest
     steps:
-      - name: Wait for PR Body to Update
-        run: sleep 30
-
-      - name: Check Version Checkbox
-        uses: kentaro-m/task-completed-checker-action@v0.1.2
+      - uses: kentaro-m/task-completed-checker-action@v0.1.2
         with:
           repo-token: "${{ secrets.GITHUB_TOKEN }}"
   
