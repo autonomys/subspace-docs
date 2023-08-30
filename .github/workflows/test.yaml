@@ -83,7 +83,7 @@ jobs:
             # Check if the checkbox information is already present
             if ! echo "$CURRENT_PR_BODY" | grep -q "Detected version change"; then
               # Update PR body
-              UPDATED_PR_BODY="$CURRENT_PR_BODY $'\n'(cat comment_body.txt)"
+              UPDATED_PR_BODY="$CURRENT_PR_BODY \r\n (cat comment_body.txt)"
               PAYLOAD=$(jq -n --arg body "$UPDATED_PR_BODY" '{"body": $body}')
               
               RESPONSE=$(curl -s -o /dev/stderr -w "%{http_code}" -X PATCH -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
