@@ -27,15 +27,16 @@ jobs:
 
   check_version_changes:
     name: Check for Version Changes
-    if: github.event.action == 'opened' || github.event.action == 'synchronize'
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
+        if: github.event.action == 'opened' || github.event.action == 'synchronize'
         uses: actions/checkout@v2
         with:
           fetch-depth: 10
 
       - name: Get and Parse File Diffs
+        if: github.event.action == 'opened' || github.event.action == 'synchronize'
         id: parse_diffs
         run: |
           git fetch origin main:main
@@ -70,6 +71,7 @@ jobs:
           fi
 
       - name: Update PR Body
+        if: github.event.action == 'opened' || github.event.action == 'synchronize'
         run: |
           if [[ -f comment_body.txt ]]; then
             PR_ID=$(jq -r ".number" "$GITHUB_EVENT_PATH")
@@ -81,9 +83,10 @@ jobs:
             # Check if the checkbox information is already present
             if ! echo "$CURRENT_PR_BODY" | grep -q "Detected version change"; then
               # Update PR body
-              UPDATED_PR_BODY="$(cat comment_body.txt)
+              UPDATED_PR_BODY="$CURRENT_PR_BODY
               
-              $CURRENT_PR_BODY"
+              
+              $(cat comment_body.txt)"
               PAYLOAD=$(jq -n --arg body "$UPDATED_PR_BODY" '{"body": $body}')
               
               RESPONSE=$(curl -s -o /dev/stderr -w "%{http_code}" -X PATCH -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
