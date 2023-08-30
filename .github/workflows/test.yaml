@@ -83,10 +83,7 @@ jobs:
             # Check if the checkbox information is already present
             if ! echo "$CURRENT_PR_BODY" | grep -q "Detected version change"; then
               # Update PR body
-              UPDATED_PR_BODY="$CURRENT_PR_BODY
-              
-              
-              $(cat comment_body.txt)"
+              UPDATED_PR_BODY="$CURRENT_PR_BODY $'\n'(cat comment_body.txt)"
               PAYLOAD=$(jq -n --arg body "$UPDATED_PR_BODY" '{"body": $body}')
               
               RESPONSE=$(curl -s -o /dev/stderr -w "%{http_code}" -X PATCH -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
@@ -106,7 +103,11 @@ jobs:
     if: needs.check_version_changes.result == 'success'
     runs-on: ubuntu-latest
     steps:
-      - uses: kentaro-m/task-completed-checker-action@v0.1.2
+      - name: Wait for PR Body to Update
+        run: sleep 30
+
+      - name: Check Version Checkbox
+        uses: kentaro-m/task-completed-checker-action@v0.1.2
         with:
           repo-token: "${{ secrets.GITHUB_TOKEN }}"
   
