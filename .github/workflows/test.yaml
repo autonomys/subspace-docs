@@ -85,7 +85,6 @@ jobs:
               # Update PR body
               UPDATED_PR_BODY="$CURRENT_PR_BODY \r\n (cat comment_body.txt)"
               PAYLOAD=$(jq -n --arg body "$UPDATED_PR_BODY" '{"body": $body}')
-              
               RESPONSE=$(curl -s -o /dev/stderr -w "%{http_code}" -X PATCH -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
                   -d "$PAYLOAD" \
                   "https://api.github.com/repos/$GITHUB_REPOSITORY/pulls/$PR_ID")
