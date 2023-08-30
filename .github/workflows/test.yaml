@@ -50,14 +50,16 @@ jobs:
           old_pulsar_tag=$(grep -o "\\-.*https://github.com/subspace/pulsar/releases/download/[^/]\\+/[^/]\\+" pulsar_diff.txt | head -1 | awk -F'/' '{print $8}')
 
           if [ -n "$new_pulsar_tag" ] && [ -n "$old_pulsar_tag" ] && [ "$new_pulsar_tag" != "$old_pulsar_tag" ]; then
-            COMMENT_BODY+="- [ ] Detected version change on Pulsar: $old_pulsar_tag -> $new_pulsar_tag"
+            COMMENT_BODY+="
+            - [ ] Detected version change on Pulsar: $old_pulsar_tag -> $new_pulsar_tag"
           fi
 
           new_substrate_cli_tag=$(grep -o "\\+.*https://github.com/subspace/subspace/releases/download/[^/]\\+/[^/]\\+" substrate_cli_diff.txt | head -1 | awk -F'/' '{print $8}')
           old_substrate_cli_tag=$(grep -o "\\-.*https://github.com/subspace/subspace/releases/download/[^/]\\+/[^/]\\+" substrate_cli_diff.txt | head -1 | awk -F'/' '{print $8}')
 
           if [ -n "$new_substrate_cli_tag" ] && [ -n "$old_substrate_cli_tag" ] && [ "$new_substrate_cli_tag" != "$old_substrate_cli_tag" ]; then
-            COMMENT_BODY+="- [ ] Detected version change on Advanced CLI: $old_substrate_cli_tag -> $new_substrate_cli_tag"
+            COMMENT_BODY+="
+            - [ ] Detected version change on Advanced CLI: $old_substrate_cli_tag -> $new_substrate_cli_tag"
           fi
 
           if [ -n "$COMMENT_BODY" ]; then
