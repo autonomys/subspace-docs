@@ -67,23 +67,19 @@ jobs:
           old_pulsar_tag=""
           new_substrate_cli_tag=""
           old_substrate_cli_tag=""
-
+      
           # Extract the new and old version tags for Pulsar
-          if grep -o 'https://github.com/subspace/pulsar/releases/download/' pulsar_diff.txt; then
-            new_pulsar_tag=$(grep -o '+.*https://github.com/subspace/pulsar/releases/download/[^/]\+' pulsar_diff.txt | awk -F'/' '{print $7}')
-            old_pulsar_tag=$(grep -o '-.*https://github.com/subspace/pulsar/releases/download/[^/]\+' pulsar_diff.txt | awk -F'/' '{print $7}')
-            if [ "$new_pulsar_tag" != "$old_pulsar_tag" ]; then
-              echo "new_pulsar_tag=${new_pulsar_tag}" >> $GITHUB_ENV
-            fi
+          new_pulsar_tag=$(grep -o "\\+.*https://github.com/subspace/pulsar/releases/download/[^/]\\+/[^/]\\+" pulsar_diff.txt | head -1 | awk -F'/' '{print $8}')
+          old_pulsar_tag=$(grep -o "\\-.*https://github.com/subspace/pulsar/releases/download/[^/]\\+/[^/]\\+" pulsar_diff.txt | head -1 | awk -F'/' '{print $8}')
+          if [ "$new_pulsar_tag" != "$old_pulsar_tag" ]; then
+            echo "new_pulsar_tag=${new_pulsar_tag}" >> $GITHUB_ENV
           fi
-
+      
           # Extract the new and old version tags for Advanced CLI
-          if grep -o 'https://github.com/subspace/subspace/releases/download/' substrate_cli_diff.txt; then
-            new_substrate_cli_tag=$(grep -o '+.*https://github.com/subspace/subspace/releases/download/[^/]\+' substrate_cli_diff.txt | awk -F'/' '{print $7}')
-            old_substrate_cli_tag=$(grep -o '-.*https://github.com/subspace/subspace/releases/download/[^/]\+' substrate_cli_diff.txt | awk -F'/' '{print $7}')
-            if [ "$new_substrate_cli_tag" != "$old_substrate_cli_tag" ]; then
-              echo "new_substrate_cli_tag=${new_substrate_cli_tag}" >> $GITHUB_ENV
-            fi
+          new_substrate_cli_tag=$(grep -o "\\+.*https://github.com/subspace/subspace/releases/download/[^/]\\+/[^/]\\+" substrate_cli_diff.txt | head -1 | awk -F'/' '{print $8}')
+          old_substrate_cli_tag=$(grep -o "\\-.*https://github.com/subspace/subspace/releases/download/[^/]\\+/[^/]\\+" substrate_cli_diff.txt | head -1 | awk -F'/' '{print $8}')
+          if [ "$new_substrate_cli_tag" != "$old_substrate_cli_tag" ]; then
+            echo "new_substrate_cli_tag=${new_substrate_cli_tag}" >> $GITHUB_ENV
           fi
 
       - name: Fetch Pulsar Release Notes
