@@ -5,13 +5,14 @@ on:
     types:
       - opened
       - edited
+      - synchronize
     branches:
       - main
 
 jobs:
   test-deploy:
     name: Test deployment
-    if: github.event.action == 'opened'
+    if: github.event.action == 'opened' || github.event.action == 'synchronize'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -26,7 +27,7 @@ jobs:
 
   check_version_changes:
     name: Check for Version Changes
-    if: github.event.action == 'opened'
+    if: github.event.action == 'opened' || github.event.action == 'synchronize'
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
