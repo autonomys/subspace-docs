@@ -12,7 +12,6 @@ on:
 jobs:
   test-deploy:
     name: Test deployment
-    if: github.event.action == 'opened' || github.event.action == 'synchronize'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -30,13 +29,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
-        if: github.event.action == 'opened' || github.event.action == 'synchronize'
         uses: actions/checkout@v2
         with:
           fetch-depth: 10
 
       - name: Get and Parse File Diffs
-        if: github.event.action == 'opened' || github.event.action == 'synchronize'
         id: parse_diffs
         run: |
           git fetch origin main:main
@@ -73,7 +70,6 @@ jobs:
           fi
 
       - name: Update PR Body
-        if: github.event.action == 'opened' || github.event.action == 'synchronize'
         run: |
           if [[ -f comment_body.txt ]]; then
             PR_ID=$(jq -r ".number" "$GITHUB_EVENT_PATH")
