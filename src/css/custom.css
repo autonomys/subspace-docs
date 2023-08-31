@@ -43,6 +43,12 @@ html[data-theme='light'] {
   --ifm-link-color: #6f5ca0;
   --ifm-link-hover-color: #594d8a;
 
+  --ifm-background-color-rgb: 243, 243, 245;
+  --ifm-color-emphasis-0-rgb: 250, 250, 250;
+  --ifm-color-emphasis-100-rgb: 224, 224, 226;
+  --ifm-color-emphasis-200-rgb: 176, 176, 179;
+  --ifm-color-emphasis-300-rgb: 120, 120, 124;
+
   --ifm-color-secondary-darkest: #53535a;
   --ifm-color-secondary-darker: #6e6e76;
   --ifm-color-secondary-dark: #898992;
