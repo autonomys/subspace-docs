@@ -52,7 +52,7 @@ If BTRFS is used with Subspace, the directory/whole file system must be CoW disa
 
 **Command to Disable CoW on BTRFS**
 
-```
+```shell-session
 sudo chattr +C path/to/data/dir
 ```
 
@@ -68,7 +68,7 @@ Creating a filesystem with a chunk (sunit) size of 32KB can prevent data fragmen
 
 **XFS**
 
-```
+```shell-session
 sudo mkfs.xfs -d su=32k,sw=1 /path/to/dev
 ```
 
@@ -76,13 +76,13 @@ Then use `largeio` and `swalloc` mount options.
 
 **ext4**
 
-```
+```shell-session
 sudo mkfs.ext4 -E stride=8,stripe-width=8 /path/to/dev
 ```
 
 You can change these settings for an existing file system:
 
-```
+```shell-session
 sudo tune2fs -E stride=8,stripe-width=8 /path/to/dev
 ```
 
@@ -568,8 +568,8 @@ You can set a custom path for your node & farmer to use if you want to use an ex
 To set your node to use a custom path all you will need to do is add the `--base-path` parameter.
 
 ```bash
-  # start node and store data in `NODE_DATA_PATH` instead of default location
-  ./NODE_FILE_NAME --base-path NODE_DATA_PATH --chain gemini-3f ...`
+# start node and store data in `NODE_DATA_PATH` instead of default location
+./NODE_FILE_NAME --base-path NODE_DATA_PATH --chain gemini-3f ...`
 ```
 </TabItem>
 </Tabs>
@@ -633,7 +633,7 @@ Farm path and size you have seen above can be specified more than once to engage
 It is recommended to specify multiple disks explicitly rather than using RAID for better hardware utilization and efficiency.
 
 Example:
-```bash
+```shell-session
 ./FARMER_FILE_NAME farm --reward-address WALLET_ADDRESS \
     path=/media/ssd1,size=100GiB \
     path=/media/ssd2,size=10T \
@@ -648,7 +648,7 @@ NOTE: This is primarily targeted at tech-savvy users and not recommended unless 
 Please try to find answer to your question online before reaching out to maintainers.
 
 You'll have to have [Rust toolchain](https://rustup.rs/) installed as well as LLVM, Clang and CMake in addition to usual developer tooling (Ubuntu example):
-```bash
+```text
 sudo apt-get install llvm clang cmake
 ```
 
@@ -657,7 +657,7 @@ The build with LLVM + Clang 16 ends with `UnknownOpcode(192)` error due to break
 :::
 
 Now clone the source and build snapshot `snapshot-2023-aug-18` (replace occurrences with the snapshot you want to build):
-```bash
+```shell-session
 git clone https://github.com/subspace/subspace.git
 cd subspace
 git checkout snapshot-2023-aug-18
@@ -680,7 +680,7 @@ If you are having some issues with running the node or the farmer for the subspa
 
 When running the Subspace Network Farmer & Node, sometimes you may encounter an error message that includes a line similar to the following:
 
-```
+```text
 Backtrace omitted. Run with RUST_BACKTRACE=1 environment variable to display it.
 ```
 
@@ -714,7 +714,7 @@ To enable the `RUST_BACKTRACE` environment variable on macOS, follow these steps
 
 1. Open a terminal window.
 2. Type the following command:
-    ```bash
+    ```shell-session
     export RUST_BACKTRACE=1
     ```
 
@@ -731,7 +731,7 @@ To enable the `RUST_BACKTRACE` environment variable on Linux, follow these steps
 
 1. Open a terminal window.
 2. Type the following command:
-    ```bash
+    ```shell-session
     export RUST_BACKTRACE=1
     ```
 
