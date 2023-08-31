@@ -95,7 +95,7 @@ html[data-theme='dark'] .footer {
 }
 
 html[data-theme='light'] .footer {
-  background-color: var(--ifm-background-color);
+  background-color: rgba(var(--ifm-color-emphasis-100-rgb), 0.151);
   color: var(--ifm-color-primary-dark);
 }
 
@@ -135,7 +135,7 @@ html[data-theme='light'] .details {
 }
 
 html[data-theme='light'] .prism-code {
-  border: 0.03rem solid rgba(176, 176, 179, 0.1);
+  border: 0.03rem solid rgba(var(--ifm-color-emphasis-200-rgb), 0.1);
   box-shadow: 0 0.18rem 0.31rem rgba(0, 0, 0, 0.05);
 }
 
