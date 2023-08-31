@@ -52,7 +52,7 @@ If BTRFS is used with Subspace, the directory/whole file system must be CoW disa
 
 **Command to Disable CoW on BTRFS**
 
-```
+```shell-session
 sudo chattr +C path/to/data/dir
 ```
 
@@ -68,7 +68,7 @@ Creating a filesystem with a chunk (sunit) size of 32KB can prevent data fragmen
 
 **XFS**
 
-```
+```shell-session
 sudo mkfs.xfs -d su=32k,sw=1 /path/to/dev
 ```
 
@@ -76,13 +76,13 @@ Then use `largeio` and `swalloc` mount options.
 
 **ext4**
 
-```
+```shell-session
 sudo mkfs.ext4 -E stride=8,stripe-width=8 /path/to/dev
 ```
 
 You can change these settings for an existing file system:
 
-```
+```shell-session
 sudo tune2fs -E stride=8,stripe-width=8 /path/to/dev
 ```
 
@@ -313,17 +313,13 @@ To start we have to initialize our Farmer, this can be done with:
 <TabItem value="macos" label="🍎 macOS">
 Intel Chip:
 
-```bash
-
+```shell-session
 ./pulsar-macos-x86_64-v0.6.4-alpha  init
-
 ```
 Apple M Series:
 
-```bash
-
+```shell-session
 ./pulsar-macos-aarch64-v0.6.4-alpha init
-
 ```
 
 </TabItem>
@@ -331,17 +327,13 @@ Apple M Series:
 <TabItem value="linux" label="🐧 Ubuntu">
 Ubuntu:
 
-```bash
-
+```shell-session
 ./pulsar-ubuntu-x86_64-skylake-v0.6.4-alpha  init
-
 ```
 Ubuntu Executable (aarch64):
 
-```bash
-
+```shell-session
 ./pulsar-ubuntu-aarch64-v0.6.4-alpha  init
-
 ```
 
 </TabItem>
@@ -438,17 +430,13 @@ To begin farming on the network, just run the `farm` command with the CLI like s
 
 Intel Chip:
 
-```bash
-
+```shell-session
 ./pulsar-macos-x86_64-v0.6.4-alpha farm
-
 ```
 Apple M1 Chip:
 
-```bash
-
+```shell-session
 ./pulsar-macos-aarch64-v0.6.4-alpha farm
-
 ```
 
 </TabItem>
@@ -457,17 +445,13 @@ Apple M1 Chip:
 
 Ubuntu:
 
-```bash
-
+```shell-session
 ./pulsar-ubuntu-x86_64-skylake-v0.6.4-alpha farm
-
 ```
 Ubuntu Executable (aarch64):
 
-```bash
-
+```shell-session
 ./pulsar-ubuntu-aarch64-v0.6.4-alpha farm
-
 ```
 
 </TabItem>
@@ -500,28 +484,28 @@ If you want to learn more about Tmux and its options check out their Repo [here]
 
 * Create a new tmux session using a socket file named farming
 
-```bash
+```shell-session
 $ tmux -S farming
 ```
 
 
 * Move process to background by detaching
-```bash
+```text
 Ctrl+b d OR ⌘+b d (Mac)
 ```
 
 * To re-attach
-```bash
+```shell-session
 $ tmux -S farming attach
 ```
 
 * Alternatively, you can use the following single command to both create (if not exists already) and attach to a session:
-```bash
+```shell-session
 $ tmux new-session -A -D -s farming
 ```
 
 * To delete farming session
-```bash
+```shell-session
 $ tmux kill-session -t farming
 ```
 
@@ -535,27 +519,27 @@ If you want to learn more about Screen and its options check out their Webpage [
 :::
 
 * Create new screen using a socket file named farming
-```bash
+```shell-session
 $ screen -S farming
 ```
 
 * Move process to background by detaching
-```bash
+```text
 Ctrl+d a OR ⌘+d a (Mac)
 ```
 
 * To re-attach
-```bash
+```shell-session
 $ screen -r farming
 ```
 
 * Alternatively, you can use the following single command to both create (if not exists already) and attach to a session:
-```bash
+```shell-session
 $ screen -D -R -S farming
 ```
 
 * To delete farming session
-```bash
+```shell-session
 $ screen -S farming -X quit
 ```
 
@@ -584,7 +568,7 @@ To simply restart the node, go to the terminal where you started the `farm` comm
 
 Use the same file name as the previous init and farm steps, then add the wipe command to free the previous storage that was being used. Generally, only do this if you have severe errors and are prompted by a staff member.
 
-```bash
+```shell-session
 ./pulsar-file-name wipe
 ```
 
@@ -618,7 +602,7 @@ Your Logs will be found in `$HOME/.local/share/pulsar/logs`
 
 When running the Subspace Network Farmer & Node, sometimes you may encounter an error message that includes a line similar to the following:
 
-```
+```text
 Backtrace omitted. Run with RUST_BACKTRACE=1 environment variable to display it.
 ```
 
@@ -635,7 +619,7 @@ To enable the `RUST_BACKTRACE` environment variable on Windows using PowerShell,
 
 1. Open a PowerShell window.
 2. Type the following command:
-    ```bash
+    ```powershell
     $Env:RUST_BACKTRACE=1
     ```
 
@@ -652,7 +636,7 @@ To enable the `RUST_BACKTRACE` environment variable on macOS, follow these steps
 
 1. Open a terminal window.
 2. Type the following command:
-    ```bash
+    ```shell-session
     export RUST_BACKTRACE=1
     ```
 
@@ -669,7 +653,7 @@ To enable the `RUST_BACKTRACE` environment variable on Linux, follow these steps
 
 1. Open a terminal window.
 2. Type the following command:
-    ```bash
+    ```shell-session
     export RUST_BACKTRACE=1
     ```
 
