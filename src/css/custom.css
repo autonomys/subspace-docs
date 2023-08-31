@@ -116,6 +116,36 @@ html[data-theme='light'] .navbar {
   border-bottom: 1px solid var(--ifm-color-emphasis-100);
 }
 
+.prism-code {
+    transition: box-shadow 0.0s;
+}
+
+html[data-theme='light'] .alert {
+  box-shadow: 0 0.18rem 0.31rem rgba(0, 0, 0, 0.05);
+}
+
+html[data-theme='light'] .details {
+  box-shadow: 0 0.18rem 0.31rem rgba(0, 0, 0, 0.05);
+}
+
+html[data-theme='light'] .prism-code {
+  border: 0.03rem solid rgba(176, 176, 179, 0.1);
+  box-shadow: 0 0.18rem 0.31rem rgba(0, 0, 0, 0.05);
+}
+
+html[data-theme='dark'] .alert {
+  box-shadow: 0 0.18rem 0.31rem rgba(0, 0, 0, 0.2);
+}
+
+html[data-theme='dark'] .details {
+  box-shadow: 0 0.18rem 0.31rem rgba(0, 0, 0, 0.2);
+}
+
+html[data-theme='dark'] .prism-code {
+  border: 0.03rem solid rgba(62, 62, 66, 0.3);
+  box-shadow: 0 0.18rem 0.31rem rgba(0, 0, 0, 0.2);
+}
+
 html[data-theme='light'] .token {
   color: var(--ifm-color-primary-darker);
 }
