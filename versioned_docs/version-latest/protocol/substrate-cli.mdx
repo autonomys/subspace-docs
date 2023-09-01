@@ -148,9 +148,9 @@ We will be downloading two files for your respective operating system.
 
   3. Create the `subspace` directory and the `docker-compose.yaml` file in it. Paste the output from the generator into the file.
   
-  4. Now go to directory with `docker-compose.yaml` and type `docker-compose up -d` to start everything
+  4. Now go to directory with `docker-compose.yaml` and type `docker compose up -d` to start everything
 
-  You can read logs with `docker-compose logs --tail=1000 -f`, for the rest read [Docker Compose CLI reference](https://docs.docker.com/compose/reference/).
+  You can read logs with `docker compose logs --tail=1000 -f`, for the rest read [Docker Compose CLI reference](https://docs.docker.com/compose/reference/).
 
 </TabItem>
 
@@ -601,7 +601,7 @@ Now follow installation guide.
 
 #### Docker Wipe & Purge
 
-In case of Docker setup run `docker-compose down -v` (and manually delete custom directories if you have specified them).
+In case of Docker setup run `docker compose down -v` (and manually delete custom directories if you have specified them).
 
 Now follow installation guide.
 
