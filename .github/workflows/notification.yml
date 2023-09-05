@@ -53,6 +53,8 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
+        with:
+          fetch-depth: 10
       
       - name: Get and Parse File Diffs
         id: parse_diffs
