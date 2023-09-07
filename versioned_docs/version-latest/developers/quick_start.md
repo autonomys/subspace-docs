@@ -15,10 +15,9 @@ Subspace utilizes EVM (Ethereum Virtual Machine) so any tool available for Ether
 
 ### Setup a MetaMask Wallet (or any other EVM-compatible wallet) and connect it to our custom EVM
 ---
-**COMING SOON - THIS WON'T WORK QUITE YET**
 ```
 Network Name: Subspace EVM
-New RPC URL: https://rpc.evm.gemini-3e.subspace.network/ws
+New RPC URL: https://domain-3.evm.gemini-3f.subspace.network/ws
 Chain ID: 1002
 Currency Symbol: TSSC
 ```

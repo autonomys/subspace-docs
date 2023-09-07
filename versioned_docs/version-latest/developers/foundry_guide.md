@@ -118,7 +118,7 @@ keywords:
     Environment variables can include database connection details, API keys, external resource URIs, or other configuration variables that might change depending on the environment in which the application is running. In our case, we would use it to point to our Core-EVM RPC url by setting
 
     ```bash
-    RPC_URL=https://rpc.evm.gemini-3e.subspace.network/ws
+    RPC_URL=https://domain-3.evm.gemini-3f.subspace.network/ws
     ```
 
     And then set a private key for the EVM-compatible wallet
