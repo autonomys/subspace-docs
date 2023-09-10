@@ -1,6 +1,6 @@
 ---
 title: Local development
-sidebar_position: 8
+sidebar_position: 9
 description: Guide on local development Subspace Node and Farmer
 keywords:
   - local development

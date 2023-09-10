@@ -1,6 +1,6 @@
 ---
 title: Subspace block explorer
-sidebar_position: 9
+sidebar_position: 10
 description: Subspace hosted block explorer
 keywords:
   - block explorer
@@ -9,7 +9,7 @@ keywords:
 
 ### Subspace Block Explorer
 
-**[Block explorer link](https://explorer.subspace.network/#/gemini-3d)**
+**[Block explorer link](https://explorer.subspace.network/#/gemini-3f)**
 
 This early version provides a clear and user-friendly visualization of Subspace-specific statistics that cater to the needs of our farmers and developers.
 
