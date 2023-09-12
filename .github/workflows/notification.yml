@@ -54,15 +54,27 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
         with:
-          fetch-depth: 10
+          fetch-depth: 0
       
       - name: Get and Parse File Diffs
         id: parse_diffs
         run: |
-          # Fetch the differences between the last commit and main for the relevant .mdx files
-          git fetch origin main:main
-          git diff main...HEAD 'versioned_docs/version-latest/protocol/pulsar.mdx' > pulsar_diff.txt
-          git diff main...HEAD 'versioned_docs/version-latest/protocol/substrate-cli.mdx' > substrate_cli_diff.txt
+          # Get the parent commits of the merge commit.
+          PARENT1=$(git rev-parse HEAD^1)
+          PARENT2=$(git rev-parse HEAD^2)
+
+          # Determine which parent commit is from main before the merge.
+          if git merge-base --is-ancestor $PARENT1 HEAD; then
+              MAIN_BEFORE_MERGE=$PARENT1
+              PR_LAST_COMMIT=$PARENT2
+          else
+              MAIN_BEFORE_MERGE=$PARENT2
+              PR_LAST_COMMIT=$PARENT1
+          fi
+          
+          # Extract the differences for the relevant .mdx files
+          git diff $MAIN_BEFORE_MERGE..$PR_LAST_COMMIT 'versioned_docs/version-latest/protocol/pulsar.mdx' > pulsar_diff.txt
+          git diff $MAIN_BEFORE_MERGE..$PR_LAST_COMMIT 'versioned_docs/version-latest/protocol/substrate-cli.mdx' > substrate_cli_diff.txt
           
           # Initialize variables to hold the new and old version tags
           new_pulsar_tag=""
