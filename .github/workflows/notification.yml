@@ -98,15 +98,19 @@ jobs:
 
       - name: Fetch Pulsar Release Notes
         if: ${{ env.new_pulsar_tag }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Add this line
         run: |
-          release_info=$(curl -s -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" "https://api.github.com/repos/subspace/pulsar/releases/tags/${{ env.new_pulsar_tag }}")
+          release_info=$(curl -s -H "Authorization: token $GITHUB_TOKEN" "https://api.github.com/repos/subspace/pulsar/releases/tags/${{ env.new_pulsar_tag }}")
           release_notes=$(echo "$release_info" | jq -r '.body')
           echo "pulsar_release_notes=${release_notes}" >> $GITHUB_ENV
 
       - name: Fetch Advanced CLI Release Notes
         if: ${{ env.new_substrate_cli_tag }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Add this line
         run: |
-          release_info=$(curl -s -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" "https://api.github.com/repos/subspace/subspace/releases/tags/${{ env.new_substrate_cli_tag }}")
+          release_info=$(curl -s -H "Authorization: token $GITHUB_TOKEN" "https://api.github.com/repos/subspace/subspace/releases/tags/${{ env.new_substrate_cli_tag }}")
           release_notes=$(echo "$release_info" | jq -r '.body')
           echo "substrate_cli_release_notes=${release_notes}" >> $GITHUB_ENV
 
