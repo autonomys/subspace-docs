@@ -33,7 +33,7 @@ After downloading both files that suit your system, start a node using your pref
 You can do this with the following command:
 
 ```bash
-./your_subspace_node_path --dev --alice --ws-port 2545 --domain-id 3 --dev --ws-port 8545
+./your_subspace_node_path --dev --alice --rpc-port 9444 -- --domain-id 3 --dev --rpc-port 8545
 ```
 
 This will create a local RPC on port **8545**.
@@ -41,7 +41,7 @@ This will create a local RPC on port **8545**.
 Secondly, you need to start a farmer by running the following command:
 
 ```bash
- ./your_subspace_farmer_path --base-path tmp-farmer farm --plot-size 100M --reward-address [YOUR_ADDRESS]
+ ./your_subspace_farmer_path farm --reward-address [YOUR REWARD ADDRESS] path=tmp-farm,size=100M
 ```
 
 You can specify the desired plot size, but 100M should be sufficient.

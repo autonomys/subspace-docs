@@ -17,7 +17,7 @@ Integrated Development Environments (IDEs) such as the [Remix IDE](https://remix
 
 For local development and testing, you have multiple options. You can spin up your own version of a Subspace Developer Node and farmer to deploy contracts, develop applications, and run tests. Alternatively, you can use Ethereum development tools like [Hardhat](https://hardhat.org/hardhat-network/docs/overview) or [Anvil](https://book.getfoundry.sh/anvil/), which are fully compatible with Subspace due to their EVM compatibility.
 
-For deploying and interacting with smart contracts, a JavaScript provider like the one injected by the [MetaMask](https://metamask.io/) browser extension is used. This provider enables JavaScript applications to communicate with the Subspace network or any Ethereum-compatible network. It's compatible with both [ethers.js](https://docs.ethers.org/v5/) and [web3.js](https://web3js.readthedocs.io/en/v1.10.0/), allowing developers to use either library for their blockchain operations.
+For deploying and interacting with smart contracts, a JavaScript provider like the one injected by the [MetaMask](https://metamask.io/) browser extension is used. This provider enables JavaScript applications to communicate with the Subspace network or any Ethereum-compatible network. It's compatible with both [ethers.js](https://docs.ethers.org/v5/), [web3.js](https://web3js.readthedocs.io/en/v1.10.0/) and [Web3.py](https://web3py.readthedocs.io/en/stable/), allowing developers to use either library for their blockchain operations.
 
 All these tools together provide an ecosystem for EVM-compatible smart contract development, making the process more manageable and efficient.
 

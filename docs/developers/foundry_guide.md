@@ -109,7 +109,7 @@ keywords:
     Nice, all tests are passing, meaning the smart contract is working as expected.
 
 6. Next, there are **two things** we need to set, in order to **deploy our smart contract**:
-    - We need to connect a wallet that has sufficient balance to cover the gas fees.
+    - We need to connect a wallet that has sufficient balance of TSSC to cover the gas fees.
     - We need to set an environment variable we will use later.
 
     In order to make our lives easier, let’s create a new `Makefile` as well as `.env` file at the root of our project.
@@ -138,10 +138,12 @@ keywords:
     -include .env
 
     # Builds
-    build  :; forge clean && forge build --optimize --optimizer-runs 1000000
+    build:
+	    @forge clean && forge build --optimize --optimizer-runs 1000000
 
     # Deployment
-    deploy: forge create Counter --private-key ${PRIVATE_KEY} --rpc-url ${RPC_URL}
+    deploy:
+	    @forge create Counter --private-key ${PRIVATE_KEY} --rpc-url ${RPC_URL}
     ```
 
     We're importing the values for a `PRIVATE_KEY` and `RPC_URL` from the `.env` file.

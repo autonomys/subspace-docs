@@ -74,9 +74,13 @@ Let’s first try to run a test as is without making any changes.
  ![Remix-7](/img/developers/Remix-7.png)
 
 8. As expected, the test failed because we manually changed the token name and symbol.
-This is Test Driven Development (TDD) in action! Let’s adjust the tests and add a few assertions for increment and decrement functions. In this example, we will set up an initial value of `number` to 2 and `increment` and then `decrement` it by 1. We would expect the number to increase to 3 and then decrease back to 2.
+This is Test Driven Development (TDD) in action! In order to make the test pass, replace the internals of `MyToken.sol` with the provided below code. In the test, we're adding a few assertions for the `increment()` and `decrement()` functions. In this example, we will set up an initial value of `number` to 2 and `increment` and then `decrement` it by 1. We would expect the number to increase to 3 and then decrease back to 2.
 
  ```bash
+  pragma solidity >=0.7.0 <0.9.0;
+  import "remix_tests.sol";
+  import "../contracts/MyToken.sol";
+
   contract CounterTest is Counter {
 
      function testTokenInitialValues() public {
