@@ -16,7 +16,7 @@ Polkadot.js is a Substrate/EVM wallet created by the creators of Substrate & Pol
 
 :::
 
-This is the barebones wallet. This is because it is the barebones Substrate wallet that supports all Substrate based networks. This is an extension that works similarly to Metamask, or most other browser based wallets you’ve likely used in the past.
+This is the barebones wallet. This is because it is the barebones Substrate wallet that supports all Substrate based networks. This is an extension that works similarly to MetaMask, or most other browser based wallets you’ve likely used in the past.
 
 ## Create A New Wallet
 
