@@ -31,3 +31,15 @@ Currency Symbol: TSSC
 You can use **[Remix](https://remix.ethereum.org/)**, **[Foundry](https://book.getfoundry.sh/)** or any other tool familiar to you for testing and deploying your smart contracts. Just make sure to use our custom EVM domain and you're all set.
 
 If anything above sounds unfamiliar, you can always fall back to our full guide. 
+
+### Have any questions? Feel free to post them on [our forum](https://forum.subspace.network/) or in our [Developer-chat on Discord](https://discord.gg/EAw6B48r).
+---
+
+In order to get access to the role-gated developer chat:
+1. Join our [Discord](https://discord.gg/vhv5cEZN)
+2. Click on Subspace Network at the top left corner and choose **Linked Roles**.
+
+   ![Discord-1](/img/developers/Discord-1.png)
+
+3. Link your GitHub account to get a developer role and gain access to **developer-chat**. 
+   ![Discord-2](/img/developers/Discord-2.png)
