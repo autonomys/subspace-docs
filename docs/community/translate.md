@@ -8,6 +8,12 @@ keywords:
     - Subspace
     - Translate
 ---
+import TranslationLeaderboard from '@site/src/components/TranslationLeaderboard/index.jsx';
+
+
+# Translation Leaderboard
+
+<TranslationLeaderboard />
 
 # Translation Guide
 
