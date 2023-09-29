@@ -7,7 +7,7 @@ const crypto = require('crypto');
 const CONFIG = {
     CROWDIN_API_ENDPOINT: process.env.CROWDIN_API_ENDPOINT || 'https://api.crowdin.com/api/v2',
     CROWDIN_PROJECT_ID: process.env.CROWDIN_PROJECT_ID || '604593',
-    BLACKLISTED_CONTRIBUTORS_FILE: process.env.BLACKLISTED_CONTRIBUTORS_FILE || 'blacklisted-contributors.json',
+    BLACKLISTED_CONTRIBUTORS_FILE: process.env.BLACKLISTED_CONTRIBUTORS_FILE || './.github/scripts/blacklisted-contributors.json',
     LEADERBOARD_FILE: process.env.LEADERBOARD_FILE || './src/components/TranslationLeaderboard/leaderboard.json',
     RETRY_DELAY: parseInt(process.env.RETRY_DELAY) || 2000,
     MAX_RETRIES: parseInt(process.env.MAX_RETRIES) || 5,
@@ -121,7 +121,8 @@ async function downloadReport(identifier) {
 async function loadBlacklistedContributors() {
     try {
         const data = await fs.readFile(CONFIG.BLACKLISTED_CONTRIBUTORS_FILE, 'utf8');
-        return new Set(JSON.parse(data));
+        const blacklistedSet = new Set(JSON.parse(data));
+        return blacklistedSet;
     } catch (error) {
         console.error('Error in loadBlacklistedContributors:', error);
         throw error;
@@ -146,7 +147,9 @@ async function processCsvData(csvData, membersMapping, blacklistedContributors) 
                     if (membersMapping[key]) {
                         Object.assign(record, membersMapping[key]);
                     }
-                    return !blacklistedContributors.has(record.originalName);
+                    const isBlacklisted = blacklistedContributors.has(record.originalName); // Check if originalName is blacklisted
+                    if(isBlacklisted) console.log('Filtered out blacklisted contributor:', record.originalName); // Log if a blacklisted contributor is filtered out
+                    return !isBlacklisted;
                 });
                 resolve(filteredRecords);
             });

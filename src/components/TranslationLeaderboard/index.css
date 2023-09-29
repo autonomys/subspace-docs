@@ -1,91 +1,107 @@
 @keyframes glow-effect {
-    0%, 100% {
-      text-shadow: none;
-    }
-    20% {
-      text-shadow: 0 0 0.618rem var(--ifm-color-primary-lightest);
-    }
-  }
-  
-  @keyframes glow-effect-dark {
-    0%, 100% {
-      text-shadow: none;
-    }
-    20% {
-      text-shadow: 0 0 0.618rem rgba(255, 255, 255, 0.618);
-    }
-  }
-  
-  .leaderboard-container {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    max-width: 61.8rem;
-    margin: 1.618rem auto;
-  }
-  
-  .user-card {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 15px;
-    margin-bottom: 10px;
-    background: #FAFAFA;
-    border: 2px solid var(--ifm-color-primary);
-    box-shadow: 0rem 0.154rem 0.618rem rgba(0, 0, 0, 0.08);
-    border-radius: 0.618rem;
-    transition: box-shadow 0.3s;
-  }
-  
-  .user-card:hover {
-    box-shadow: 0 0.381rem 1.008rem rgba(0, 0, 0, 0.15);
-  }
-  
-  .avatar-container {
-    display: flex;
-    align-items: center;
-  }
-  
-  .ranking {
-    font-weight: bold;
-    margin-right: 10px;
-    animation: glow-effect 1.6s ease-in-out 1 forwards;
-  }
-  
-  .avatar {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    object-fit: cover;
-    margin-right: 10px;
-  }
-  
-  .username {
-    font-size: 1.008rem;
-    font-family: var(--ifm-font-family-base);
-    color: #333333;
-  }
-  
-  .translated-words {
-    font-size: 1.008rem;
-    font-family: var(--ifm-font-family-base);
-    color: #333333;
-    text-align: right;
-  }
-  
-  /* Dark mode adjustments */
-  html[data-theme='dark'] .user-card {
-    background-color: #292929; /* Black background in dark mode */
-    border-color: var(--ifm-color-primary-lighter);
-    box-shadow: 0rem 0.077rem 0.304rem rgba(255, 255, 255, 0.08);
-  }
-  
-  html[data-theme='dark'] .ranking {
-    animation: glow-effect-dark 1.6s ease-in-out 1 forwards;
-  }
-  
-  html[data-theme='dark'] .username,
-  html[data-theme='dark'] .translated-words {
-    color: rgba(255, 255, 255, 0.87);
-  }
-  
+  0%, 100% { text-shadow: none; }
+  20% { text-shadow: 0 0 0.618rem var(--ifm-color-primary-lightest); }
+}
+
+@keyframes glow-effect-dark {
+  0%, 100% { text-shadow: none; }
+  20% { text-shadow: 0 0 0.618rem rgba(255, 255, 255, 0.618); }
+}
+
+.leaderboard-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 61.8rem;
+  margin: 1.618rem auto;
+}
+
+.user-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  background: #FAFAFA;
+  border: 2px solid var(--ifm-color-primary);
+  border-radius: 0.618rem;
+  box-shadow: 0 0.2rem 0.5rem rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s, transform 0.3s;
+}
+
+.user-card:hover {
+  box-shadow: 0 0.4rem 1rem rgba(0, 0, 0, 0.2);
+  transform: translateY(-0.5rem);
+}
+
+.avatar-container, .user-info {
+  display: flex;
+  align-items: center;
+}
+
+.avatar-container { justify-content: center; }
+
+.user-info {
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.ranking, .avatar, .username, .languages, .translated-words {
+  margin-right: 1rem;
+  font-family: var(--ifm-font-family-base);
+}
+
+.ranking {
+  font-size: 1.6rem;
+  min-width: 2rem;
+  font-weight: bold;
+  animation: glow-effect 1.6s ease-in-out 1 forwards;
+}
+
+.avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.username, .languages {
+  color: #333;
+  line-height: 1.5;
+}
+
+.username {
+  font-size: 1.2rem;
+  margin-bottom: 0.2rem;
+}
+
+.languages {
+  font-size: 0.9rem;
+  color: var(--ifm-color-primary);
+}
+
+.translated-words {
+  font-size: 1rem;
+  color: #333;
+  text-align: right;
+  flex-shrink: 0;
+}
+
+html[data-theme='dark'] .user-card {
+  background-color: #292929;
+  border-color: var(--ifm-color-primary-lighter);
+  box-shadow: 0 0.1rem 0.3rem rgba(255, 255, 255, 0.1);
+}
+
+html[data-theme='dark'] .username,
+html[data-theme='dark'] .languages,
+html[data-theme='dark'] .translated-words {
+  color: #FFF;
+}
+
+html[data-theme='dark'] .ranking {
+  animation: glow-effect-dark 1.6s ease-in-out 1 forwards;
+}
