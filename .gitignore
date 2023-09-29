@@ -4,6 +4,7 @@
 # Production
 /build
 /i18n/
+/src/components/TranslationLeaderboard/leaderboard.json
 
 # Generated files
 .docusaurus
@@ -25,3 +26,4 @@ yarn-error.log*
 \#*\#
 *~
 .\#*
+
