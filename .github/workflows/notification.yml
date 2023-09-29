@@ -56,7 +56,7 @@ jobs:
         with:
           fetch-depth: 0
       
-      - name: Get and Parse File Diffs
+      - name: Get and Parse File Diffs for release Tags
         id: parse_diffs
         run: |
           # Get the parent commits of the merge commit.
@@ -96,23 +96,45 @@ jobs:
             echo "new_substrate_cli_tag=${new_substrate_cli_tag}" >> $GITHUB_ENV
           fi
 
-      - name: Fetch Pulsar Release Notes
+      # Fetch commit SHA for Pulsar's release tag
+      - name: Get Pulsar Commit SHA by Tag
         if: ${{ env.new_pulsar_tag }}
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Add this line
+        id: get_pulsar_sha
         run: |
-          release_info=$(curl -s -H "Authorization: token $GITHUB_TOKEN" "https://api.github.com/repos/subspace/pulsar/releases/tags/${{ env.new_pulsar_tag }}")
-          release_notes=$(echo "$release_info" | jq -r '.body')
-          echo "pulsar_release_notes=${release_notes}" >> $GITHUB_ENV
+          commit_sha=$(curl -s -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" "https://api.github.com/repos/subspace/pulsar/git/ref/tags/${{ env.new_pulsar_tag }}" | jq -r '.object.sha')
+          echo "pulsar_commit_sha=$commit_sha" >> $GITHUB_ENV
 
-      - name: Fetch Advanced CLI Release Notes
-        if: ${{ env.new_substrate_cli_tag }}
+      # Fetch release details for Pulsar using the obtained commit SHA
+      - name: Get Pulsar Release Details
+        if: ${{ env.new_pulsar_tag }}
+        id: pulsar_release_info
+        uses: cardinalby/git-get-release-action@v1
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Add this line
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          repo: subspace/pulsar
+          commitSha: ${{ env.pulsar_commit_sha }}
+          prerelease: false
+
+      # Fetch commit SHA for Advanced CLI's release tag
+      - name: Get Advanced CLI Commit SHA by Tag
+        if: ${{ env.new_substrate_cli_tag }}
+        id: get_advanced_cli_sha
         run: |
-          release_info=$(curl -s -H "Authorization: token $GITHUB_TOKEN" "https://api.github.com/repos/subspace/subspace/releases/tags/${{ env.new_substrate_cli_tag }}")
-          release_notes=$(echo "$release_info" | jq -r '.body')
-          echo "substrate_cli_release_notes=${release_notes}" >> $GITHUB_ENV
+          commit_sha=$(curl -s -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" "https://api.github.com/repos/subspace/subspace/git/ref/tags/${{ env.new_substrate_cli_tag }}" | jq -r '.object.sha')
+          echo "advanced_cli_commit_sha=$commit_sha" >> $GITHUB_ENV
+
+      # Fetch release details for Advanced CLI using the obtained commit SHA
+      - name: Get Advanced CLI Release Details
+        if: ${{ env.new_substrate_cli_tag }}
+        id: advanced_cli_release_info
+        uses: cardinalby/git-get-release-action@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          repo: subspace/subspace
+          commitSha: ${{ env.advanced_cli_commit_sha }}
+          prerelease: false
 
 
       - name: Send Discord Message for Pulsar Update
@@ -121,19 +143,18 @@ jobs:
           DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
         uses: Ilshidur/action-discord@master
         with:
-         args: |
-          :arrow_up: **Documentation Update for Pulsar** :arrow_up:
-
-          :sparkles: New Pulsar Version: `${{ env.new_pulsar_tag }}` :sparkles:
-          
-          :page_facing_up: *Release Notes:* :page_facing_up:
-          ${{ env.pulsar_release_notes }}
-          
-          :book: *Download & Update Below:* :book:
-          https://docs.subspace.network/docs/protocol/pulsar
-          
-
-
+          args: |
+            :arrow_up: **Documentation Update for Pulsar** :arrow_up:
+      
+            :sparkles: New Pulsar Version: `${{ env.new_pulsar_tag }}` :sparkles:
+            
+            :page_facing_up: *Release Notes:* :page_facing_up:
+            ${{ steps.pulsar_release_info.outputs.body }}
+            
+            :book: *Download & Update Below:* :book:
+            https://docs.subspace.network/docs/protocol/pulsar
+      
+      
       - name: Send Discord Message for Advanced CLI Update
         if: ${{ env.new_substrate_cli_tag }} && ${{ !env.new_pulsar_tag }}
         env:
@@ -142,16 +163,16 @@ jobs:
         with:
           args: |
             :arrow_up: **Documentation Update for Advanced CLI** :arrow_up:
-
+      
             :sparkles: New Advanced CLI Version: `${{ env.new_substrate_cli_tag }}` :sparkles:
             
             :page_facing_up: *Release Notes:* :page_facing_up:
-            ${{ env.substrate_cli_release_notes }}
+            ${{ steps.advanced_cli_release_info.outputs.body }}
             
             :book: *Download & Update Below:* :book:
             https://docs.subspace.network/docs/protocol/substrate-cli
-            
-
+      
+      
       - name: Send Discord Message for Both Updates
         if: ${{ env.new_pulsar_tag }} && ${{ env.new_substrate_cli_tag }}
         env:
@@ -160,16 +181,17 @@ jobs:
         with:
           args: |
             :arrow_up: **Documentation Update for Pulsar & Advanced CLI** :arrow_up:
-
+      
             :sparkles: New Pulsar Version: `${{ env.new_pulsar_tag }}` :sparkles:
             :sparkles: New Advanced CLI Version: `${{ env.new_substrate_cli_tag }}` :sparkles:
             
             :page_facing_up: *Pulsar Release Notes:* :page_facing_up:
-            ${{ env.pulsar_release_notes }}
+            ${{ steps.pulsar_release_info.outputs.body }}
             
             :page_facing_up: *Advanced CLI Release Notes:* :page_facing_up:
-            ${{ env.substrate_cli_release_notes }}
+            ${{ steps.advanced_cli_release_info.outputs.body }}
             
             :book: *Download & Update Below:* :book:
             Pulsar: *https://docs.subspace.network/docs/protocol/pulsar*
             Subtrate-CLI: *https://docs.subspace.network/docs/protocol/substrate-cli*
+      

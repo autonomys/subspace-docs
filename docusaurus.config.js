@@ -116,6 +116,12 @@ const config = {
             label: 'Docs',
           },
           {
+            type: "doc",
+            docId: "developers/intro",
+            position: "left",
+            label: "Developer Docs",
+          },
+          {
             type: 'dropdown',
             label: 'Network Resources',
             position: 'left',
