@@ -28,7 +28,7 @@ A smart contract is a digital agreement coded into a blockchain network, designe
 ### Differences with Ethereum
 ---
 Subspace Token (TSSC) is the sole method of payment for gas within the Subspace EVM runtime.
-There will be a bridge to convert farmed tokens into EVM-compatible tokens to cover the gas fees, however, at the moment the only viable option to get some TSSC on your wallet is through the Subspace [faucet](https://forms.gle/qK7VMEFXDYzQ1u9N9).
+There will be a bridge to convert farmed tokens into EVM-compatible tokens to cover the gas fees, however, at the moment the only viable option to get some TSSC on your wallet is through the Subspace [faucet](faucet.md)
 
 ### What is Solidity? 
 ---
