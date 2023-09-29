@@ -24,7 +24,7 @@ Currency Symbol: TSSC
 
 ### Get tokens to your wallet using our faucet
 ---
-**Automated Faucet** is coming soon, for now, you can enter your wallet address into a **[Google Form](https://forms.gle/qK7VMEFXDYzQ1u9N9)** and we will send test tokens your way ASAP!
+Follow the instructions [here](faucet.md) to use our **Faucet** to get some TSSC.
 
 ### Test and deploy your smart contract
 ---
