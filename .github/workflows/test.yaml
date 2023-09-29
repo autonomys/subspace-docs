@@ -13,6 +13,8 @@ jobs:
   test-deploy:
     name: Test deployment
     runs-on: ubuntu-latest
+    env:
+      CROWDIN_PERSONAL_TOKEN: ${{ secrets.CROWDIN_PERSONAL_TOKEN }}
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v3
