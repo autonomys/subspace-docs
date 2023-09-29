@@ -21,6 +21,11 @@ jobs:
           cache: yarn
       - name: Install dependencies
         run: yarn install --frozen-lockfile
+
+      - name: Build Translation Leaderboard
+        run: yarn run generate-leaderboard
+
+
       - name: Test build website
         run: yarn build --locale en
 
