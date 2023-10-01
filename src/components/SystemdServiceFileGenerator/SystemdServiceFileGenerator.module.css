@@ -1,0 +1,183 @@
+@keyframes glow-effect {
+    0% {
+        text-shadow: none;
+    }
+    20% {
+	filter: brightness(130%);
+        text-shadow: 0 0 0.618rem var(--ifm-color-primary-lightest);
+    }
+    100% {
+        text-shadow: none;
+    }
+}
+
+@keyframes glow-effect-dark {
+    0% {
+        text-shadow: none;
+    }
+    20% {
+        text-shadow: 0 0 0.618rem rgba(255, 255, 255, 0.618);
+    }
+    100% {
+        text-shadow: none;
+    }
+}
+
+.systemd-service-generator-form__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1.008rem; 
+}
+
+.systemd-service-generator-form__card { 
+    border-radius: 0.618rem;
+    transition: box-shadow 0.3s;
+    box-shadow: 0rem 0.154rem 0.618rem rgba(0, 0, 0, 0.08); 
+}
+
+.systemd-service-generator-form__input,
+.systemd-service-generator-form__label,
+.systemd-service-generator-form__error-text,
+.systemd-service-generator-form__button--primary {
+    font-family: var(--ifm-font-family-base);
+    font-size: 1.008rem;
+}
+
+.systemd-service-generator-form__grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.008rem;
+}
+
+.systemd-service-generator-form__group {
+    margin-bottom: 0.618rem; 
+}
+
+.systemd-service-generator-form__checkbox-group {
+    margin-bottom: 0.618rem;
+}
+
+
+.systemd-service-generator-form__label {
+    flex: 1;
+    font-weight: bold;
+    text-align: right;
+    padding-right: 0.618rem; 
+    align-self: center;
+}
+
+.systemd-service-generator-form__label--glow {
+    animation: glow-effect 1.6s ease-in-out 1 forwards;
+}
+
+.systemd-service-generator-form__input {
+    width: 100%;
+    padding: 0.381rem;
+    flex: 2;
+    border-radius: 0.309rem; 
+    border: 0.038rem solid var(--ifm-color-primary-darker);
+    transition: border-color 0.3s;
+}
+
+.systemd-service-generator-form__input:hover {
+    border-color: var(--ifm-color-primary-lightest);
+    box-shadow: 0rem 0rem 0.077rem var(--ifm-color-primary); 
+    transition: border-color 0.3s, box-shadow 0.2s; 
+}
+
+.systemd-service-generator-form__input:focus {
+    border-color: var(--ifm-color-primary-light);
+    outline: none;
+    box-shadow: 0rem 0rem 0.309rem var(--ifm-color-primary-lighter);
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.systemd-service-generator-form__checkbox {
+    appearance: none;
+    border: 0.038rem solid var(--ifm-color-primary-darker);
+    border-radius: 0.309rem;
+    width: 1.618rem;
+    height: 1.618rem;
+    transition: border-color 0.3s, background-color 0.3s;
+}
+
+.systemd-service-generator-form__checkbox:checked {
+    background-color: var(--ifm-color-primary-lightest);
+    border-color: var(--ifm-color-primary);
+}
+
+.systemd-service-generator-form__text--error {
+    color: var(--ifm-color-danger-dark);
+    font-size: 0.764rem;  
+    margin-top: 0.191rem; 
+}
+
+.systemd-service-generator-form__button--primary {
+    grid-column: span 2;
+    padding: 0.381rem 1.008rem; 
+    border: none;
+    border-radius: 0.309rem;
+    background-color: var(--ifm-color-primary-lightest);
+    color: #FFF;
+    cursor: pointer;
+    box-shadow: 0 0.191rem 0.618rem rgba(0, 0, 0, 0.1);
+    transition: background-color 0.7s, filter 0.7s, transform 0.25s, box-shadow 0.7s;
+}
+
+.systemd-service-generator-form__button--primary:hover {
+    filter: brightness(90%);
+    cursor: pointer;
+    box-shadow: 0 0.381rem 1.008rem rgba(0, 0, 0, 0.15);
+}
+
+.systemd-service-generator-form__button--primary:active {
+    filter: brightness(80%);
+    transform: scale(0.93);
+    box-shadow: 0 0.095rem 0.309rem rgba(0, 0, 0, 0.2);
+}
+
+.systemd-service-generator-form__button--primary:focus {
+    outline: none;
+    box-shadow: 0 0 0 0.095rem var(--ifm-color-primary-lighter);
+}
+
+html[data-theme='dark'] .systemd-service-generator-form__card {
+    border-radius: 0.618rem;
+    box-shadow: 0rem 0.077rem 0.304rem rgba(255, 255, 255, 0.08); 
+}
+
+html[data-theme='dark'] .systemd-service-generator-form__label--glow {
+    animation: glow-effect-dark 1.6s ease-in-out 1 forwards;
+}
+
+html[data-theme='dark'] .systemd-service-generator-form__input {
+    border-color: var(--ifm-color-primary-darkest);
+}
+
+html[data-theme='dark'] .systemd-service-generator-form__input:hover {
+    border-color: var(--ifm-color-primary-lighter);
+}
+
+html[data-theme='dark'] .systemd-service-generator-form__input:focus {
+    box-shadow: 0rem 0rem 0.309rem var(--ifm-color-primary-lighter);
+}
+
+html[data-theme='dark'] .systemd-service-generator-form__button--primary {
+    background-color: var(--ifm-color-primary-light);
+    box-shadow: 0 0.191rem 0.618rem rgba(255, 255, 255, 0.1);
+}
+
+html[data-theme='dark'] .systemd-service-generator-form__button--primary:hover {
+    filter: brightness(120%);
+    box-shadow: 0 0.381rem 1.008rem rgba(255, 255, 255, 0.15);
+}
+
+html[data-theme='dark'] .systemd-service-generator-form__button--primary:active {
+    filter: brightness(130%);    
+}
+
+html[data-theme='dark'] .systemd-service-generator-form__button--primary:focus {
+    box-shadow: 0 0 0 0.095rem var(--ifm-color-primary-lighter), 0 0.191rem 0.618rem rgba(255, 255, 255, 0.1);
+}

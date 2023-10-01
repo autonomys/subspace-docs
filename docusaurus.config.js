@@ -253,7 +253,7 @@ const config = {
       prism: {
         theme: lightCodeTheme,
         darkTheme: darkCodeTheme,
-        additionalLanguages: ['toml', 'powershell', 'shell-session'],
+        additionalLanguages: ['toml', 'powershell', 'shell-session', 'ini'],
       },
     }),
 };
