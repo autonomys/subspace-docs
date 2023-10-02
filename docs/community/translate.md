@@ -7,27 +7,53 @@ keywords:
     - Community
     - Subspace
     - Translate
+    - Localization
 ---
+import TranslationLeaderboard from '@site/src/components/TranslationLeaderboard/index.jsx';
 
-# Translation Guide
+## Translation Guide
 
-This guide will show you how to provide translations for this documentation.
+Welcome to the Subspace Network Docs translation guide! This guide is here to help you contribute to our goal of making the Subspace Network more accessible and inclusive by providing translations. The Subspace Network is driven by a vision of a decentralized and equitable future, and we believe that overcoming language barriers is crucial to achieving this vision.
 
-## Prerequisites
+### Mission and Vision
+
+The Subspace Network is inherently driven by the vision of a more equitable and decentralized future. We believe that to truly fulfill our vision, we need content that caters to the linguistic diversity of the global community. Thus, the Subspace Network Translation Initiative is born.
+
+### Our mission
+1. Deliver translated versions of our content, empowering visitors worldwide to learn about Subspace Labs in their language.
+2. Expand the global Subspace community by onboarding members across language barriers.
+3. Facilitate accessible, inclusive sharing of Subspace Labs' information and knowledge.
+4. Encourage community members to contribute translations, impacting the ecosystem significantly.
+5. Identify, connect with, and mentor passionate contributors who want to be part of the ecosystem.
+
+### Our vision
+1. Translate essential content for Subspace community members worldwide.
+2. Support knowledge sharing across languages to foster a well-informed and educated Subspace community.
+3. Enhance the inclusivity and accessibility of Subspace by demolishing language barriers.
+
+As Nakamoto envisioned a more equitable and decentralized future, Subspace Labs sees a future where language is no longer a barrier but a bridge uniting the global crypto community. We are crafting a universal Subspace where everyone has a voice, a place, and a language.
+
+## Translation Leaderboard
+
+<TranslationLeaderboard />
+
+## Translation How-To Guide
+
+This guide will walk you through how to provide translations for this documentation. By contributing, you help in realizing our mission and vision, ensuring the inclusivity and accessibility of our content to non-English speakers around the world.
+
+### Prerequisites
 
 - Crowdin Account: They are free, and will be a necessity if you would like to contribute to our translations, you can create an account [here](https://accounts.crowdin.com/register)
 - Join the Subspace Network project on Crowdin.
     - [Documentation Project Portal](https://crowdin.com/project/subspace-docs)
     - [Website Project Portal](https://crowdin.com/project/subspace-website)
 
+### Guidelines
 
-## Guidelines
-
-- Our goal with providing translations on our docs is to crowd source a great multi-language environment. Due to this, if you see what you would like to translate has already been added, please do not add a second translation. Rather it would be more beneficial to peer review the existing translation, and provide any feedback, edits, or improvements.
-
+- Our goal is to crowdsource a multi-language environment. If a translation already exists, please review it instead of adding a second one.
 - Ensure you follow our [Contributing](contribute) Standards, and our [Code of Conduct](CODE_OF_CONDUCT).
 
-## How-To
+### How-To
 
 Below you will find the walkthrough of how to provide translations for the Subspace Network through the Crowdin translation portal. 
 
