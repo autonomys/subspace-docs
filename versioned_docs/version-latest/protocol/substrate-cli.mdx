@@ -1023,4 +1023,39 @@ To enable the `RUST_BACKTRACE` environment variable on Linux, follow these steps
 4. After exporting the environment variable, run the Subspace Network Farmer & Node as usual, and any errors encountered will display the backtrace.
 
 </TabItem>
+
+<TabItem value="systemd_service" label="⚙ Service (Linux)">
+
+#### Enabling RUST_BACKTRACE on Linux Service
+
+To enable the `RUST_BACKTRACE` environment variable on Linux Service, follow these steps:
+
+1. Open a terminal window.
+2. If you want to enable it for the node, then run the following command:
+   ```shell-session
+   sudo systemctl edit subspace-node
+   ```
+   
+   If you want to enable it for the farmer, then run the following command:
+   ```shell-session
+   sudo systemctl edit subspace-farmer
+   ```
+3. Between the warning comments, add two lines to the file:
+   ```shell-session
+   [Service]
+   Environment=RUST_BACKTRACE=1
+   ```
+4. Reload systemd daemon:
+   ```shell-session
+   sudo systemctl daemon-reload
+   ```
+5. Restart services:
+   ```shell-session
+   sudo systemctl restart subspace-{node,farmer}
+   ```
+   
+If you want to disable `RUST_BACKTRACE`, just follow the same steps above, 
+but in step 3 instead of adding, remove those 2 lines.
+
+</TabItem>
 </Tabs>
