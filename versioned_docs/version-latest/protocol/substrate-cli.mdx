@@ -12,9 +12,11 @@ keywords:
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
+import CodeBlock from '@theme/CodeBlock';
 import Link from '@docusaurus/Link';
 import styles from '@site/src/pages/index.module.css';
 import DockerFileGenerator from '@site/src/components/DockerFileGenerator/index.jsx';
+import { AdvancedSystemdServiceFileGenerator } from '@site/src/components/SystemdServiceFileGenerator/index.jsx';
 
 
 :::caution Advanced Usage
@@ -544,6 +546,288 @@ We will be downloading two files for your respective operating system.
   7. You are now Farming! Just wait for your node to fully sync, and for your farmer to fully plot.
 
 </TabItem>
+
+<TabItem value="systemd_service" label="⚙ Service (Linux)">
+
+:::warning Security risks
+Running a node as a root user carries significant risks for the system. 
+It is recommended to create a separate user for this purpose.
+:::
+
+<Tabs groudId="service_user">
+<TabItem value="root" label="🫚 Root" default>
+Create a Directory for Executable Files:
+
+```shell-session
+mkdir -p /root/.local/bin
+```
+
+Download the Executable Files, using the appropriate commands:
+
+<details>
+   <summary>
+    x86_64 Ubuntu Executables
+    </summary>
+    <details>
+        <summary>
+        Version 2 - for older processors since ~2009 and some old VMs
+        </summary>
+		Node:
+		<CodeBlock language="shell-session">
+		wget -O /root/.local/bin/subspace-node https://github.com/subspace/subspace/releases/download/gemini-3f-2023-sep-25/subspace-node-ubuntu-x86_64-v2-gemini-3f-2023-sep-25
+		</CodeBlock>
+		Farmer:
+		<CodeBlock language="shell-session">
+		wget -O /root/.local/bin/subspace-farmer https://github.com/subspace/subspace/releases/download/gemini-3f-2023-sep-25/subspace-farmer-ubuntu-x86_64-v2-gemini-3f-2023-sep-25
+		</CodeBlock>
+    </details>
+    <details>
+        <summary>
+        Version skylake - For newer processors since ~2015
+        </summary>
+		Node:
+		<CodeBlock language="shell-session">
+		wget -O /root/.local/bin/subspace-node https://github.com/subspace/subspace/releases/download/gemini-3f-2023-sep-25/subspace-node-ubuntu-x86_64-skylake-gemini-3f-2023-sep-25
+		</CodeBlock>
+		Farmer:
+		<CodeBlock language="shell-session">
+		wget -O /root/.local/bin/subspace-farmer https://github.com/subspace/subspace/releases/download/gemini-3f-2023-sep-25/subspace-farmer-ubuntu-x86_64-skylake-gemini-3f-2023-sep-25
+		</CodeBlock>
+    </details>
+</details>
+
+<details>
+    <summary>
+    Aarch64/64-bit Raspberry Pi Executables
+    </summary>
+		Node:
+		<CodeBlock language="shell-session">
+		wget -O /root/.local/bin/subspace-node https://github.com/subspace/subspace/releases/download/gemini-3f-2023-sep-25/subspace-node-ubuntu-aarch64-gemini-3f-2023-sep-25
+		</CodeBlock>
+		Farmer:
+		<CodeBlock language="shell-session">
+		wget -O /root/.local/bin/subspace-farmer https://github.com/subspace/subspace/releases/download/gemini-3f-2023-sep-25/subspace-farmer-ubuntu-aarch64-gemini-3f-2023-sep-25
+		</CodeBlock>
+</details>
+
+By default, these commands download the executable files to the `/root/.local/bin` directory. 
+You can change the directory by modifying the respective string.
+
+You can use the same commands to update the node.
+
+Make the Files Executable:
+```shell-session
+chmod +x /root/.local/bin/subspace-node
+chmod +x /root/.local/bin/subspace-farmer
+```
+
+Create a Directory for Node and Farmer Data:
+```shell-session
+mkdir -p /root/.local/share
+```
+
+</TabItem>
+
+<TabItem value="regular_user" label="👤 Regular User">
+Create a New User for Subspace:
+
+```shell-session
+sudo useradd -m -p ! -s /sbin/nologin -c "" subspace
+```
+
+You can also use an existing user, but having a separate user enhances the security of your server.
+
+Switch to the Newly Created User:
+```
+sudo su subspace -s /bin/bash
+```
+
+Create a Directory for Executable Files:
+
+```shell-session
+mkdir -p ~/.local/bin
+```
+
+Download the Executable Files, using the appropriate commands:
+
+<details>
+   <summary>
+    x86_64 Ubuntu Executables
+    </summary>
+    <details>
+        <summary>
+        Version 2 - for older processors since ~2009 and some old VMs
+        </summary>
+		Node:
+		<CodeBlock language="shell-session">
+		wget -O /root/.local/bin/subspace-node https://github.com/subspace/subspace/releases/download/gemini-3f-2023-sep-25/subspace-node-ubuntu-x86_64-v2-gemini-3f-2023-sep-25
+		</CodeBlock>
+		Farmer:
+		<CodeBlock language="shell-session">
+		wget -O /root/.local/bin/subspace-farmer https://github.com/subspace/subspace/releases/download/gemini-3f-2023-sep-25/subspace-farmer-ubuntu-x86_64-v2-gemini-3f-2023-sep-25
+		</CodeBlock>
+    </details>
+    <details>
+        <summary>
+        Version skylake - For newer processors since ~2015
+        </summary>
+		Node:
+		<CodeBlock language="shell-session">
+		wget -O /root/.local/bin/subspace-node https://github.com/subspace/subspace/releases/download/gemini-3f-2023-sep-25/subspace-node-ubuntu-x86_64-skylake-gemini-3f-2023-sep-25
+		</CodeBlock>
+		Farmer:
+		<CodeBlock language="shell-session">
+		wget -O /root/.local/bin/subspace-farmer https://github.com/subspace/subspace/releases/download/gemini-3f-2023-sep-25/subspace-farmer-ubuntu-x86_64-skylake-gemini-3f-2023-sep-25
+		</CodeBlock>
+    </details>
+</details>
+
+<details>
+    <summary>
+    Aarch64/64-bit Raspberry Pi Executables
+    </summary>
+		Node:
+		<CodeBlock language="shell-session">
+		wget -O /root/.local/bin/subspace-node https://github.com/subspace/subspace/releases/download/gemini-3f-2023-sep-25/subspace-node-ubuntu-aarch64-gemini-3f-2023-sep-25
+		</CodeBlock>
+		Farmer:
+		<CodeBlock language="shell-session">
+		wget -O /root/.local/bin/subspace-farmer https://github.com/subspace/subspace/releases/download/gemini-3f-2023-sep-25/subspace-farmer-ubuntu-aarch64-gemini-3f-2023-sep-25
+		</CodeBlock>
+</details>
+
+By default, these commands download the executable files to the `~/.local/bin` directory. 
+You can change the directory by modifying the respective string.
+
+You can use the same commands to update the node.
+
+Make the Files Executable:
+```shell-session
+chmod +x ~/.local/bin/subspace-node
+chmod +x ~/.local/bin/subspace-farmer
+```
+
+Create a Directory for Node and Farmer Data:
+```shell-session
+mkdir -p ~/.local/share
+```
+
+Exit from the User:
+```shell-session
+exit
+```
+</TabItem>
+</Tabs>
+
+---
+
+Generate Contents for the Service Files, replacing the relevant fields. 
+Remember to change the username if setting up the node from a regular user:
+
+<AdvancedSystemdServiceFileGenerator />
+
+Open the Node Service File and Paste the Corresponding Generated Content:
+```shell-session
+EDITOR=nano sudo -e /etc/systemd/system/subspace-node.service
+```
+
+Open the Farmer Service File and Paste the Corresponding Generated Content:
+```shell-session
+EDITOR=nano sudo -e /etc/systemd/system/subspace-farmer.service
+```
+
+Enable and Start the Node and Farmer:
+```shell-session
+sudo systemctl enable --now subspace-{node,farmer}
+```
+
+---
+
+### Useful Commands
+
+Start Node:
+```shell-session
+sudo systemctl start subspace-node
+```
+
+Start Farmer:
+```shell-session
+sudo systemctl start subspace-farmer
+```
+
+Stop Node:
+```shell-session
+sudo systemctl stop subspace-node
+```
+
+Stop Farmer:
+```shell-session
+sudo systemctl stop subspace-farmer
+```
+
+Enable Node (for automatic startup on system boot):
+```shell-session
+sudo systemctl enable subspace-node
+```
+
+Enable Farmer (for automatic startup on system boot):
+```shell-session
+sudo systemctl enable subspace-farmer
+```
+
+Disable Node (to prevent automatic startup on system boot):
+```shell-session
+sudo systemctl disable subspace-node
+```
+
+Disable Node (to prevent automatic startup on system boot):
+```shell-session
+sudo systemctl disable subspace-farmer
+```
+
+Check Node Service Status:
+```shell-session
+sudo systemctl status subspace-node
+```
+
+Check Farmer Service Status:
+```shell-session
+sudo systemctl status subspace-farmer
+```
+
+View Node Logs:
+```shell-session
+sudo journalctl -f -o cat -u subspace-node
+```
+
+View Farmer Logs:
+```shell-session
+sudo journalctl -f -o cat -u subspace-farmer
+```
+
+Count Farmer Rewards Received in the Last Hour:
+```shell-session
+sudo journalctl -o cat -u subspace-farmer --since="1 hour ago" | grep -i "Successfully signed reward hash" | wc -l
+```
+
+---
+
+### Upgrade
+
+To upgrade a node and farmer, first, stop running services:
+```shell-session
+sudo systemctl stop subspace-{node,farmer}
+```
+
+After using the commands from the beginning of the manual, download the executable files of the new release.
+And if you installed under a regular user, you will need to switch to that user beforehand.
+
+Now you can start the services:
+```shell-session
+sudo systemctl start subspace-{node,farmer}
+```
+
+</TabItem>
 </Tabs>
 
 ## III. Post Node & Farmer Install Care
@@ -737,6 +1021,41 @@ To enable the `RUST_BACKTRACE` environment variable on Linux, follow these steps
 
 3. Press Enter.
 4. After exporting the environment variable, run the Subspace Network Farmer & Node as usual, and any errors encountered will display the backtrace.
+
+</TabItem>
+
+<TabItem value="systemd_service" label="⚙ Service (Linux)">
+
+#### Enabling RUST_BACKTRACE on Linux Service
+
+To enable the `RUST_BACKTRACE` environment variable on Linux Service, follow these steps:
+
+1. Open a terminal window.
+2. If you want to enable it for the node, then run the following command:
+   ```shell-session
+   sudo systemctl edit subspace-node
+   ```
+   
+   If you want to enable it for the farmer, then run the following command:
+   ```shell-session
+   sudo systemctl edit subspace-farmer
+   ```
+3. Between the warning comments, add two lines to the file:
+   ```shell-session
+   [Service]
+   Environment=RUST_BACKTRACE=1
+   ```
+4. Reload systemd daemon:
+   ```shell-session
+   sudo systemctl daemon-reload
+   ```
+5. Restart services:
+   ```shell-session
+   sudo systemctl restart subspace-{node,farmer}
+   ```
+   
+If you want to disable `RUST_BACKTRACE`, just follow the same steps above, 
+but in step 3 instead of adding, remove those 2 lines.
 
 </TabItem>
 </Tabs>
