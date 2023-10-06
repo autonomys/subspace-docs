@@ -157,7 +157,7 @@ Start a node as operator on `gemini-3f` chain:
 target/production/subspace-node `
 --chain gemini-3f `
 --rpc-external `
---node-key 0000000000000000000000000000000000000000000000000000000000000001 `
+--node-key 0xxeea96fe9cfbd6c1d7e9657e36447a158c0c80432b2bc8869a1c6706707843f `
 -- `
 --domain-id 3 `
 --chain gemini-3f `
@@ -174,7 +174,7 @@ target/production/subspace-node `
 target/production/subspace-node \
 --chain gemini-3f \
 --rpc-external \
---node-key 0000000000000000000000000000000000000000000000000000000000000001 \
+--node-key 0xxeea96fe9cfbd6c1d7e9657e36447a158c0c80432b2bc8869a1c6706707843f \
 -- \
 --domain-id 3 \
 --chain gemini-3f \
@@ -191,7 +191,7 @@ target/production/subspace-node \
 target/production/subspace-node \
 --chain gemini-3f \
 --rpc-external \
---node-key 0000000000000000000000000000000000000000000000000000000000000001 \
+--node-key 0xxeea96fe9cfbd6c1d7e9657e36447a158c0c80432b2bc8869a1c6706707843f \
 -- \
 --domain-id 3 \
 --chain gemini-3f \
@@ -204,7 +204,7 @@ target/production/subspace-node \
 </Tabs>
 
 :::note
-The `node-key` in the example above can by any `hex` string of the same length.
+Make sure to use the public key (hex) that we generated earlier in the [Create Operator Key](#create-operator-key) section
 :::
 
 You should see the node start sucesfully and begin syncing
@@ -286,3 +286,22 @@ Number 256 above corresponds to the number of the domain blocks, and not the con
 ### Operator Stake Withdrawal
 
 **Operator** stake withdrawal works similarly to **Nominator** stake withdrawal. Refer to [this section](./staking.md#stake-withdrawal-using-polkadotjs) to withdraw your stake. 
+
+
+### Switch domains
+
+Any **Operator** can switch domain they operate on anytime. 
+In order to switch domain:
+
+1. Proceed to [PolkadotJS](https://polkadot.js.org/apps/#/explorer)
+2. Make sure to select the correct network at the top-left corner. 
+3. Select the account you want to use in `using the selected account`.
+4. Select `domains` under `submit the following extrinsic` and choose `switchDomain(operatorID, newDomainID)` in the dropdown.
+5. Add your `operatorID` and `newDomainID` to the corresponding fields. 
+
+![Staking-24](/img/doc-imgs/operators-staking/Staking-24.png)
+
+:::note
+Only the account who registered **Operator** can swith the domain. 
+:::
+

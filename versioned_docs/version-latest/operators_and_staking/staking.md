@@ -47,9 +47,9 @@ Once **nomination** is finalized when the **domain epoch** is complete, **nomina
 Any **nominator** can add more stake by using the same functionality.
 
 
-### To check if your **Nomination** worked succesfully. 
+### Check if your **Nomination** Worked Succesfully. 
 
-There are two ways to check your Nomination: 
+There are two ways to check your **nomination**: 
 
 1. You can use PolkadotJS **[Network Explorer](https://polkadot.js.org/apps/#/explorer)**.
 
@@ -104,3 +104,25 @@ Example of withdrawal of 1 TSSC stake amount from nominating an operator `17`.
 
 
 Once the withdrawal is submitted, it's finalized after **domain epoch** is completed. All the withdrawn funds are unlocked after the **unlocking period** is complete.
+
+
+### Calculating your nominator balance
+
+1. Proceed to PolkadotJS **[Network Explorer](https://polkadot.js.org/apps/#/explorer)**.
+2. Go to `Developer` -> `Chain state`.
+3. Select `domains` under `selected state query` and `nominators(u64, AccoundID32)`.
+4. Provide the `operatorID` and select your `account` from the dropdown. 
+5. Run the query, remember the `shares` number. 
+  ![Staking-25](/img/doc-imgs/operators-staking/Staking-25.png)
+6. At the same tab, choose `domainStakingSummary(u32)`.
+7. Provide the `domainID`. 
+8. Run the query, remember the `currentTotalStake` number.
+  ![Staking-26](/img/doc-imgs/operators-staking/Staking-26.png)
+9. At the tab, choose `operators(u64)`.
+10. Provide `operatorID` that you nominated previously. 
+11. Run the query, remember the `currentTotalStake` number. 
+  ![Staking-27](/img/doc-imgs/operators-staking/Staking-27.png)
+
+To calculate your nominator **balance**:
+1. Calculate **share price** by dividing **currentTotalStake** from the domain by operator **currentTotalStake**.
+2. Multiply **share price** and your nominator **shares** number. 
