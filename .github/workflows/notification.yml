@@ -136,6 +136,7 @@
             commitSha: ${{ env.advanced_cli_commit_sha }}
             prerelease: false
 
+        # Compile Embed Message Dynamically based on which releases were updated
         - name: Prepare Discord Embed Message
           id: prepare_embed
           run: |
