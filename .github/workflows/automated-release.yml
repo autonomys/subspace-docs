@@ -45,11 +45,11 @@ jobs:
           latest_pulsar_tag=${{ steps.pulsar_release.outputs.pulsar_tag }}
           latest_advanced_cli_tag=${{ steps.advanced_cli_release.outputs.advanced_cli_tag }}
 
-          # Define arrays for whitelists and blacklists for each repository
-          pulsar_whitelist=("gemini-3f" "another-word")
-          pulsar_blacklist=("Runtime" "unwanted-word")
-          advanced_cli_whitelist=("desired-prefix" "some-other-word")
-          advanced_cli_blacklist=("unwanted-word")
+          # Define arrays for whitelists and blacklists for each repository, each variable can hold an array such as ("first_word" "second_word")
+          pulsar_whitelist=("targetted-word")
+          pulsar_blacklist=("unwanted-word")
+          advanced_cli_whitelist=("gemini-3f")
+          advanced_cli_blacklist=("runtime" "snapshot")
 
           # Check if the latest release should be updated based on whitelists and blacklists
           update_pulsar=false
