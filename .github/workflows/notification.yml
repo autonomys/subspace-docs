@@ -135,71 +135,114 @@
             repo: subspace/subspace
             commitSha: ${{ env.advanced_cli_commit_sha }}
             prerelease: false
-  
-  
-        - name: Send Discord Message for Pulsar Update
-          if: env.new_pulsar_tag != '' && env.new_substrate_cli_tag == ''
+
+        # Compile Embed Message Dynamically based on which releases were updated
+        - name: Prepare Discord Embed Message
+          id: prepare_embed
+          run: |
+            pulsar_release_notes="${{ steps.pulsar_release_info.outputs.body }}"
+            advanced_cli_release_notes="${{ steps.advanced_cli_release_info.outputs.body }}"
+            
+            # Define Feedback Field
+            feedback_field="{
+              \"name\": \"Feedback\",
+              \"value\": \"Encountered any issues? Let us know [here](https://github.com/subspace/documentation/issues).\",
+              \"inline\": false
+            }"
+            
+            # Case 1: Only Pulsar Release
+            if [ "$new_pulsar_tag" ] && [ -z "$new_substrate_cli_tag" ]; then
+              if [ ${#pulsar_release_notes} -gt 1024 ]; then
+                pulsar_embed="{
+                  \"name\": \"☀️ Pulsar Version $new_pulsar_tag:\",
+                  \"value\": \"View the latest [Pulsar Docs](https://docs.subspace.network/docs/protocol/pulsar) and [Release Notes](https://github.com/subspace/pulsar/releases/tag/$new_pulsar_tag)\",
+                  \"inline\": false
+                }"
+              else
+                pulsar_embed="{
+                  \"name\": \"☀️ Pulsar Version $new_pulsar_tag:\",
+                  \"value\": \"View the latest [Pulsar Docs](https://docs.subspace.network/docs/protocol/pulsar) \\n\\nPulsar Release Notes:\\n```${pulsar_release_notes}```\",
+                  \"inline\": false
+                }"
+              fi
+              fields="[$pulsar_embed, $feedback_field]"
+              
+            # Case 2: Only Advanced CLI Release
+            elif [ "$new_substrate_cli_tag" ] && [ -z "$new_pulsar_tag" ]; then
+              if [ ${#advanced_cli_release_notes} -gt 1024 ]; then
+                advanced_cli_embed="{
+                  \"name\": \"🛠️ Advanced CLI $new_substrate_cli_tag\",
+                  \"value\": \"View the latest [Advanced CLI Docs](https://docs.subspace.network/docs/protocol/substrate-cli) and [Release Notes](https://github.com/subspace/subspace/releases/tag/$new_substrate_cli_tag)\",
+                  \"inline\": false
+                }"
+              else
+                advanced_cli_embed="{
+                  \"name\": \"🛠️ Advanced CLI $new_substrate_cli_tag\",
+                  \"value\": \"View the latest [Advanced CLI Docs](https://docs.subspace.network/docs/protocol/substrate-cli) \\n\\nAdvanced CLI Release Notes:\\n```${advanced_cli_release_notes}```\",
+                  \"inline\": false
+                }"
+              fi
+              fields="[$advanced_cli_embed, $feedback_field]"
+              
+            # Case 3: Both Pulsar & Advanced CLI Release
+            else
+              # Handle Pulsar
+              if [ ${#pulsar_release_notes} -gt 1024 ]; then
+                pulsar_embed="{
+                  \"name\": \"☀️ Pulsar Version $new_pulsar_tag:\",
+                  \"value\": \"View the latest [Pulsar Docs](https://docs.subspace.network/docs/protocol/pulsar) and [Release Notes](https://github.com/subspace/pulsar/releases/tag/$new_pulsar_tag)\",
+                  \"inline\": false
+                }"
+              else
+                pulsar_embed="{
+                  \"name\": \"☀️ Pulsar Version $new_pulsar_tag:\",
+                  \"value\": \"View the latest [Pulsar Docs](https://docs.subspace.network/docs/protocol/pulsar) \\n\\nPulsar Release Notes:\\n```${pulsar_release_notes}```\",
+                  \"inline\": false
+                }"
+              fi
+              
+              # Handle Advanced CLI
+              if [ ${#advanced_cli_release_notes} -gt 1024 ]; then
+                advanced_cli_embed="{
+                  \"name\": \"🛠️ Advanced CLI $new_substrate_cli_tag\",
+                  \"value\": \"View the latest [Advanced CLI Docs](https://docs.subspace.network/docs/protocol/substrate-cli) and [Release Notes](https://github.com/subspace/subspace/releases/tag/$new_substrate_cli_tag)\",
+                  \"inline\": false
+                }"
+              else
+                advanced_cli_embed="{
+                  \"name\": \"🛠️ Advanced CLI $new_substrate_cli_tag\",
+                  \"value\": \"View the latest [Advanced CLI Docs](https://docs.subspace.network/docs/protocol/substrate-cli) \\n\\nAdvanced CLI Release Notes:\\n```${advanced_cli_release_notes}```\",
+                  \"inline\": false
+                }"
+              fi
+              fields="[$pulsar_embed, $advanced_cli_embed, $feedback_field]"
+            fi
+            
+            # Combine the fields for the final embed message
+            final_embed="{
+              \"embeds\": [
+                {
+                  \"title\": \":arrow_up: **New Version Available** :arrow_up:\",
+                  \"description\": \"The latest documentation has updates.\",
+                  \"color\": 4321431,
+                  \"timestamp\": \"$(date --utc +%Y-%m-%dT%H:%M:%SZ)\",
+                  \"fields\": $fields,
+                  \"footer\": {
+                    \"text\": \"This message is auto-generated from our Documentation GitHub repository.\"
+                  }
+                }
+              ]
+            }"
+            
+            # Set the final embed to an environment variable for the next step
+            echo "DISCORD_EMBEDS=$final_embed" >> $GITHUB_ENV
+        
+        # Sending the prepared embed
+        - name: Send Discord Notification with Prepared Embed
+          id: send-message
           env:
             DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
+            DISCORD_EMBEDS: ${{ env.DISCORD_EMBEDS }}
           uses: Ilshidur/action-discord@master
           with:
             args: |
-              ### :arrow_up: **Documentation Update for Pulsar** :arrow_up:
-        
-              :sparkles: New Pulsar Version: `${{ env.new_pulsar_tag }}` :sparkles:
-              
-              :page_facing_up: *Release Notes:* :page_facing_up:
-              ```
-              ${{ steps.pulsar_release_info.outputs.body }}
-              ```
-  
-              :book: *Download & Update Below:* :book:
-              https://docs.subspace.network/docs/protocol/pulsar
-        
-        
-        - name: Send Discord Message for Advanced CLI Update
-          if: env.new_substrate_cli_tag != '' && env.new_pulsar_tag == ''
-          env:
-            DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
-          uses: Ilshidur/action-discord@master
-          with:
-            args: |
-              ### :arrow_up: **Documentation Update for Advanced CLI** :arrow_up:
-        
-              :sparkles: New Advanced CLI Version: `${{ env.new_substrate_cli_tag }}` :sparkles:
-              
-              :page_facing_up: *Release Notes:* :page_facing_up:
-              ```
-              ${{ steps.advanced_cli_release_info.outputs.body }}
-              ```
-              
-              :book: *Download & Update Below:* :book:
-              https://docs.subspace.network/docs/protocol/substrate-cli
-        
-        
-        - name: Send Discord Message for Both Updates
-          if: env.new_pulsar_tag != '' && env.new_substrate_cli_tag != ''
-          env:
-            DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
-          uses: Ilshidur/action-discord@master
-          with:
-            args: |
-              ### :arrow_up: **Documentation Update for Pulsar & Advanced CLI** :arrow_up:
-        
-              - :sparkles: New Pulsar Version: `${{ env.new_pulsar_tag }}` :sparkles:
-              - :sparkles: New Advanced CLI Version: `${{ env.new_substrate_cli_tag }}` :sparkles:
-              
-              :page_facing_up: *Pulsar Release Notes:* :page_facing_up:
-              ```
-              ${{ steps.pulsar_release_info.outputs.body }}
-              ```
-              
-              :page_facing_up: *Advanced CLI Release Notes:* :page_facing_up:
-              ```
-              ${{ steps.advanced_cli_release_info.outputs.body }}
-              ```
-              
-              :book: *Download & Update Below:* :book:
-              - Pulsar: *https://docs.subspace.network/docs/protocol/pulsar*
-              - Subtrate-CLI: *https://docs.subspace.network/docs/protocol/substrate-cli*
-        
