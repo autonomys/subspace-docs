@@ -902,7 +902,7 @@ There are extra commands and parameters you can use on farmer or node, use the `
 
 ---
 
-### Node & Farmer Command Guide
+### Node & Farmer Commands Guide
 
 Both the node and the farmer have a variety of flags and parameters. To see a full list, append the `--help` flag to either the node or the farmer command.
 
@@ -931,7 +931,7 @@ Example:
 ### Optimizing DSN Syncing
 
 :::warning Parameters to Use with Caution
-While it might be tempting to adjust certain parameters that seem related to DSN Syncing, it's advised to be cautious. Some options might not enhance syncing and are best left at their default values:
+While it might be tempting to adjust certain parameters that seem related to DSN Syncing, it's advised to be cautious. Some options will not enhance syncing and are best left at their default values:
 
 ```
 --out-peers
@@ -945,7 +945,7 @@ While it might be tempting to adjust certain parameters that seem related to DSN
 
 #### Recommended Parameters
 
-The default parameters are set with the capabilities of common consumer modem/routers in mind. Adjusting certain parameters can enhance DSN sync performance. However, if you decide to increase these parameters significantly, ensure that your modem/router is performant enough to handle the increased traffic.
+The default parameters are set with the capabilities of common consumer modem/routers in mind. Adjusting certain parameters could enhance DSN sync performance by increasing parallelism. However, if you decide to increase them significantly, ensure that your modem/router is performant enough to handle the increased traffic.
 
 **Node:**
 ```
@@ -954,6 +954,7 @@ The default parameters are set with the capabilities of common consumer modem/ro
 ```
 
 **Farmer:**
+Increasing the values of the farmer parameters could increase the plotting speed.
 ```
 --out-connections
 --pending-out-connections

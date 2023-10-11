@@ -898,23 +898,28 @@ There are extra commands and parameters you can use on farmer or node, use the `
 ./FARMER_FILE_NAME farm --help
 ```
 
+
 ## IV. Advanced
 
 ---
 
-### Helpful commands examples
+### Node & Farmer Commands Guide
 
-- `./FARMER_FILE_NAME info PATH_TO_FARM` : show information about the farm at `PATH_TO_FARM`
-- `./FARMER_FILE_NAME scrub PATH_TO_FARM` : Scrub the farm to find and fix farm at `PATH_TO_FARM` corruption
-- `./FARMER_FILE_NAME wipe PATH_TO_FARM` : erases everything related to farmer if data were stored in `PATH_TO_FARM`
-- `./NODE_FILE_NAME --base-path NODE_DATA_PATH --chain gemini-3f ...` : start node and store data in `NODE_DATA_PATH` instead of default location
-- `./NODE_FILE_NAME purge-chain --base-path NODE_DATA_PATH --chain gemini-3f` : erases data related to the node if data were stored in `NODE_DATA_PATH`
+Both the node and the farmer have a variety of flags and parameters. To see a full list, append the `--help` flag to either the node or the farmer command.
 
+### Common Command Examples
 
-### Support for multiple disks
+For both the node and the farmer, here are some frequently used commands:
 
-Farm path and size you have seen above can be specified more than once to engage multiple disks.
-It is recommended to specify multiple disks explicitly rather than using RAID for better hardware utilization and efficiency.
+- Display farm information: `./FARMER_FILE_NAME info PATH_TO_FARM`
+- Scrub the farm for errors: `./FARMER_FILE_NAME scrub PATH_TO_FARM`
+- Erase all farmer-related data: `./FARMER_FILE_NAME wipe PATH_TO_FARM`
+- Start the node with a custom data path: `./NODE_FILE_NAME --base-path NODE_DATA_PATH --chain gemini-3f`
+- Erase all node-related data: `./NODE_FILE_NAME purge-chain --base-path NODE_DATA_PATH --chain gemini-3f`
+
+### Utilizing Multiple Disks
+
+To maximize storage capabilities, you can engage multiple disks directly. This is often more efficient than relying on RAID configurations:
 
 Example:
 ```shell-session
@@ -922,6 +927,38 @@ Example:
     path=/media/ssd1,size=100GiB \
     path=/media/ssd2,size=10T \
     path=/media/ssd3,size=10T
+```
+
+### Optimizing DSN Syncing
+
+:::warning Parameters to Use with Caution
+While it might be tempting to adjust certain parameters that seem related to DSN Syncing, it's advised to be cautious. Some options will not enhance syncing and are best left at their default values:
+
+```
+--out-peers
+--in-peers
+--in-peers-light
+--dsn-target-connections
+--dsn-pending-in-connections
+--dsn-in-connections
+```
+:::
+
+#### Recommended Parameters
+
+The default parameters are set with the capabilities of common consumer modem/routers in mind. Adjusting certain parameters could enhance DSN sync performance by increasing parallelism. However, if you decide to increase them significantly, ensure that your modem/router is performant enough to handle the increased traffic.
+
+**Node:**
+```
+--dsn-out-connections
+--dsn-pending-out-connections
+```
+
+**Farmer:**
+Increasing the values of the farmer parameters could increase the plotting speed.
+```
+--out-connections
+--pending-out-connections
 ```
 
 ### Build from source (Linux)
@@ -932,7 +969,7 @@ NOTE: This is primarily targeted at tech-savvy users and not recommended unless 
 Please try to find answer to your question online before reaching out to maintainers.
 
 You'll have to have [Rust toolchain](https://rustup.rs/) installed as well as LLVM, Clang and CMake in addition to usual developer tooling (Ubuntu example):
-```shell-session
+```text
 sudo apt-get install llvm clang cmake
 ```
 
