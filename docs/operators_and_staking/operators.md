@@ -84,7 +84,7 @@ In the example below, 1 TSSC is selected for staking. 18 zeros are added because
 Make sure to use the signing key generated on the previous **[Create operator key](#create-operator-key)** step 
 :::
 
-5. Enter `MinimumOperatorStake` - in the example, it's set to `1 TSSC`.
+5. Enter `MinimumNominatorStake` - in the example, it's set to `1 TSSC`.
 6. Enter `nominatorTax` - in the example, it's set to `5%`.
 7. Sign and submit the transaction to register an operator.
 
