@@ -75,7 +75,7 @@ The actual forwarding process will vary based on your router, below is the gener
 2. Advanced Settings > Port Forwarding
 3. Within the port forwarding screen we will see the following fields, all fields have been filled accordingly to our defaults, except for the Computer IP Address, you will replace this with the computer IP address you received in the first steps.
     1. **Computer IP Address:** `192.168.0.25`
-    2. **Protocol:** `TCP`
+    2. **Protocols:** `TCP`, `UDP`
     3. **Starting Port:** `30333`
     4. **Ending Port:** `30333`
     * Note, that if you change from the default `30333` port on your node configuration you will need to forward the respective port used.
