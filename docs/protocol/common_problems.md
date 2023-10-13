@@ -133,3 +133,7 @@ WARN sc_service::client::client: Block import error: Potential long-range attack
 ```
 The node somehow ended up being on a fork, try wiping and starting from scratch.
 
+### Still Facing Trouble? Take a look at our forums below
+
+<iframe src="https://forum.subspace.network/search?expanded=true&q=tags%3Afaq%20order%3Alatest" width="100%" height="600px" frameborder="0" scrolling="auto"></iframe>
+
