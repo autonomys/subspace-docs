@@ -19,18 +19,11 @@ import styles from '@site/src/pages/index.module.css';
 [Pulsar](https://github.com/subspace/pulsar) (previously Subspace CLI or Simple CLI) is the recommended way to farm on the Subspace Network. To get started, follow the guide below. For more information, you can check out the project [README on GitHub](https://github.com/subspace/pulsar/blob/main/README.md).
 :::
 
-## Pre-Requisites
+## Quick Start
 
 ---
 
 ### System Requirements
-
-:::danger Farming can be Network Intensive.
-
-Make sure you have a stable network connection. During the plotting phase of farming, it can be network intensive.
-
-This may impact your network usage so please check your network connection if you have a hard data limit.
-:::
 
 Pulsar requires commodity hardware specs to operate. At a **minimum**, it is recommended to have:
 
@@ -41,12 +34,24 @@ Pulsar requires commodity hardware specs to operate. At a **minimum**, it is rec
 | SWAP     | 4GB              |
 | Storage  | 100GB SSD        |
 
-:::note SWAP Warning
-A swap is only necessary if you have a low amount of RAM. 
+:::caution
+
+Farming may cause high network and RAM consumption.
+
 :::
 
-:::note CoW Filesystems Warning
-It is advised not to use the Subspace farmer and node on CoW file systems for any OS (ReFS, BTRFS, ZFS, bcachefs, HAMMER and some more).
+<details>
+  <summary>
+  SWAP Warning
+  </summary>
+  A swap is only necessary if you have a low amount of RAM. 
+</details>
+
+<details>
+  <summary>
+  CoW Filesystems Warning
+  </summary>
+  It is advised not to use the Subspace farmer and node on CoW file systems for any OS (ReFS, BTRFS, ZFS, bcachefs, HAMMER and some more).
 
 If BTRFS is used with Subspace, the directory/whole file system must be CoW disabled with the following command prior to starting Subspace, because it only applies to newly created files.
 
@@ -57,14 +62,20 @@ sudo chattr +C path/to/data/dir
 ```
 
 Alternatively, non-CoW file systems like ext4 or XFS can be used instead.
-:::
+</details>
 
-:::note Redundancy
-Using redundancy (RAID1/5/6, RAIDZ and others) on a filesystem with plot makes no sense, as the farmer uses checksums to verify the integrity of the plot, and is able to recover corrupted blocks if necessary in most cases. See `scrub` command below.
-:::
+<details>
+  <summary>
+  Redundancy
+  </summary>
+  Using redundancy (RAID1/5/6, RAIDZ and others) on a filesystem with plot makes no sense, as the farmer uses checksums to verify the integrity of the plot, and is able to recover corrupted blocks if necessary in most cases. See `scrub` command below.
+</details>
 
-:::tip Filesystem chunk size
-Creating a filesystem with a chunk (sunit) size of 32KB can prevent data fragmentation and improve performance, since the farmer operates on ~32KB chunks.
+<details>
+  <summary>
+  tip Filesystem chunk size
+  </summary>
+  Creating a filesystem with a chunk (sunit) size of 32KB can prevent data fragmentation and improve performance, since the farmer operates on ~32KB chunks.
 
 **XFS**
 
@@ -86,38 +97,22 @@ You can change these settings for an existing file system:
 sudo tune2fs -E stride=8,stripe-width=8 /path/to/dev
 ```
 
-:::
+</details>
+
+### Step 1: Creating A Crypto Wallet
+
+The first thing you will need to start is a wallet to receive your farming rewards.
+Follow our how-to guides in the [Wallets section](/docs/category/wallets/) of the documentation for steps on how to setup your wallet.
 
 
-### Getting A Crypto Wallet
-
-Before running anything you need to have a wallet where you'll receive testnet coins.
-Follow our how-to guides in the [Wallets section](/docs/category/wallets/) of the documentation for steps on how to get your wallet setup.
-
-### Required ports
-
-Currently, a few ports need to be exposed for node to work properly.
-
-If you have a server with no firewall, there is nothing to be done, but otherwise make sure to open the following TCP ports for incoming connections.
-
-- `30333`
-- `30433`
-- `30533`
-
-On the desktop side if you have a router in front of your computer, you'll need to forward TCP ports to the machine on which your node is running (how this is done varies from router to router, but there is always a feature like this, refer to [How to Forward Ports](port-forwarding.md) for a more in-depth tutorial).
-If you're connected directly without any router, then again nothing needs to be done in such case.
-
-
-
-## Installation
+## Step 2: Installation
 
 :::caution ALPHA SOFTWARE
-Pulsar is in **alpha**.
-Please feel free to file bug reports on our GitHub issues.
+Pulsar is in **alpha** and may contain bugs.
 :::
 <details>
   <summary>
-  Prefer A video? Expand for our installation video
+  Prefer a video? Expand this section to view an installation video
   </summary>
   <div>
   <iframe width="560" height="315" src="https://www.youtube.com/embed/h1-CX7lGl2w" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
@@ -125,13 +120,13 @@ Please feel free to file bug reports on our GitHub issues.
 </details>
 
 
-### Download Binaries
+### Download Pulsar
 
 
 
 ---
 
-Precompiled versions of the Pulsar is [hosted on GitHub](https://github.com/subspace/pulsar/releases). This is the recommended way to install the application. Please find the appropriate binary for your operating system.
+Precompiled versions of Pulsar are [hosted on GitHub](https://github.com/subspace/pulsar/releases). This is the recommended way to install the application. Please find the appropriate binary for your operating system.
 
 <Tabs groupId="OS">
 
@@ -139,7 +134,7 @@ Precompiled versions of the Pulsar is [hosted on GitHub](https://github.com/subs
 
 :::caution
 
-Some older processors/VMs are no longer supported by official releases, but can still be compiled manually if desired
+Some older processors/VMs are no longer supported by official releases, but can still be compiled manually.
 
 :::
 1. Download the Release Binary below.
@@ -174,7 +169,7 @@ Some older processors/VMs are no longer supported by official releases, but can 
 2. Open Powershell, type `cd Downloads` (or `cd Your-File-Location`).
 
 :::warning Warning
-The warning below may appear because the application is trying to access the internet. This is expected as it is how the farmer talks to other farmers on the network. Please select 'Allow access' to continue farming.
+The warning below may appear because the application is trying to access the internet. This is expected as it is how the farmer talks to other farmers on the network. Select 'Allow access' to continue farming.
 :::
 ![Windows Defender Firewall](/img/doc-imgs/Windows_Security_Alert.png)
 
@@ -230,7 +225,7 @@ Your Mac may not let you open/initialize the file because of unidentified develo
 
 :::caution
 
-Some older processors/VMs are no longer supported by official releases, but can still be compiled manually if desired
+Some older processors/VMs are no longer supported by official releases, but can still be compiled manually.
 
 :::
 1. Download your Release Binary below.
@@ -287,11 +282,11 @@ Some older processors/VMs are no longer supported by official releases, but can 
 
 </Tabs>
 
-### Configuration
+### Step 3: Configuration
 
 ---
 
-To start we have to initialize our Farmer, this can be done with:
+Our next step is to initialize our Farmer, this can be done by running the command below:
 
 <Tabs groupId="OS">
 <TabItem value="windows" label="🖼️ Windows" default>
@@ -299,12 +294,6 @@ To start we have to initialize our Farmer, this can be done with:
 ```powershell
 ./pulsar-windows-x86_64-skylake-v0.6.14-alpha.exe init
 ```
-
-:::note High RAM consumption
-  Operating systems, such as Windows, allocate memory for both visible tasks and behind-the-scenes processes. 
-  While this memory can be readily freed when necessary, Windows occasionally may not display these allocations accurately due to certain system nuances.
-  High RAM consumption should not be a cause for concern.
-:::
 
 </TabItem>
 
@@ -337,7 +326,7 @@ Ubuntu Executable (aarch64):
 </TabItem>
 </Tabs>
 
-This will prompt you to setup your Pulsar configurations to begin farming. You should see a similar prompt like so (some info might be different than shown here w.r.t your OS):
+This will prompt you to configure your Pulsar settings for farming. You should see a similar prompt to the one below (some info might be different than shown here w.r.t your OS):
 
 ```shell-session
 version: 0.6.0
@@ -355,61 +344,7 @@ Configuration has been generated at /home/username/.config/pulsar
 Ready for lift off! Run the follow command to begin: `"path/to/executable" farm`
 ```
 
-:::info Finding your settings.toml
-
-After running `pulsar init`, the prompt will display where the `settings.toml` is generated. However in case you missed it, you can find the file based on your operating system:
-
-<Tabs groupId="OS">
-<TabItem value="windows" label="🖼️ Windows" default>
-
-Your `settings.toml` will be found in `$FOLDERID_RoamingAppData/pulsar/settings.toml`
-
-</TabItem>
-
-<TabItem value="macos" label="🍎macOS">
-
-Your `settings.toml` will be found in `$HOME/Library/Application Support/pulsar/settings.toml`
-
-</TabItem>
-
-<TabItem value="linux" label="🐧Ubuntu">
-
-Your `settings.toml` will be found in `$HOME/.config/pulsar/settings.toml`
-
-</TabItem>
-</Tabs>
-
-:::
-
-### Gemini 3 Testnet
-
----
-
-If you are using the default configurations from Pulsar, you are ready to go with the Gemini 3 Testnet. Alternatively, you can ensure this occurs by manually setting the network like so.
-
-Open your `settings.toml` directory and ensure your `chain` is correctly specified to `gemini-3f` as so:
-
-```toml
-# settings.toml
-[node]
-chain = 'gemini-3f'
-# ... redacted ...
-```
-
-### Local Development
-
----
-
-To run Pulsar in a local development mode, modify your `settings.toml` and ensure your `chain` points to `dev`:
-
-```toml
-# settings.toml
-[node]
-chain = 'dev'
-# ... redacted ...
-```
-
-## Farming
+## Step 4: Farming
 
 ---
 
@@ -469,7 +404,111 @@ Initial plotting for plot: #0 (/home/username/.local/share/pulsar/farms)
 
 That's it! Enjoy and Happy Farming!
 
-#### Moving the Farming Process to the Background
+
+## Troubleshooting
+
+---
+
+### Required ports
+
+Currently, a few ports need to be exposed for node to work properly.
+
+If you have a server with no firewall, there is nothing to be done, but otherwise make sure to open the following TCP ports for incoming connections.
+
+- `30333`
+- `30433`
+- `30533`
+
+On the desktop side if you have a router in front of your computer, you'll need to forward TCP ports to the machine on which your node is running (how this is done varies from router to router, but there is always a feature like this, refer to [How to Forward Ports](port-forwarding.md) for a more in-depth tutorial).
+If you're connected directly without any router, then again nothing needs to be done in such case.
+
+
+### View your Logs
+
+A good place to start if you are facing trouble is by viewing your logs and seeing if there are any errors or insights that might be available. You can find the location for your logs below
+
+<Tabs groupId="OS">
+<TabItem value="windows" label="🖼️ Windows" default>
+
+Your Logs will be found in `%USERPROFILE%/AppData/Local/pulsar/logs`
+
+</TabItem>
+
+<TabItem value="macos" label="🍎macOS">
+
+Your Logs will be found in `$HOME/Library/Logs/pulsar/`
+
+</TabItem>
+
+<TabItem value="linux" label="🐧Ubuntu">
+
+Your Logs will be found in `$HOME/.local/share/pulsar/logs`
+
+</TabItem>
+</Tabs>
+
+
+### Wipe Node & Farmer
+
+:::tip Updated from a previous version and now having issues?
+
+Occasionally after updating to a new version of the Pulsar you will need to wipe your node and farmer, generally this should not be required but can be attempted if your farmer is having issues after having had worked fine previously.
+
+:::
+
+To simply restart the node, go to the terminal where you started the `farm` command, and press `Ctrl + C` you should see a shutdown message appear and the application will attempt a simple shutdown, if you dont see the message press `Ctrl + C` again to force shutdown. You can then simply start the farmer again with the `farm` command you used prior.
+
+Use the same file name as the previous init and farm steps, then add the wipe command to free the previous storage that was being used. Generally, only do this if you have severe errors and are prompted by a staff member.
+
+```shell-session
+./pulsar-file-name wipe
+```
+
+After wiping, follow the `init` and `farm` steps above to start farming again!
+
+
+:::info Finding your settings.toml
+
+After running `pulsar init`, the prompt will display where the `settings.toml` is generated. However in case you missed it, you can find the file based on your operating system:
+
+<Tabs groupId="OS">
+<TabItem value="windows" label="🖼️ Windows" default>
+
+Your `settings.toml` will be found in `$FOLDERID_RoamingAppData/pulsar/settings.toml`
+
+</TabItem>
+
+<TabItem value="macos" label="🍎macOS">
+
+Your `settings.toml` will be found in `$HOME/Library/Application Support/pulsar/settings.toml`
+
+</TabItem>
+
+<TabItem value="linux" label="🐧Ubuntu">
+
+Your `settings.toml` will be found in `$HOME/.config/pulsar/settings.toml`
+
+</TabItem>
+</Tabs>
+
+:::
+
+
+
+## Still having trouble with your farmer?
+
+If you are facing issues with your node/farmer you can try a few of the following things below, if you are unable to get your issue resolved please check our [Forums](https://forums.subspace.network) to see if your issue may have been solved, if its a new one feel free to post it! You can also join our [Discord](https://discord.gg/subspace-network) for additional Peer to Peer help.
+
+:::info
+
+We have included a few tutorials below that may help you in your support journey, this is not an all inclusive list but we welcome contributions
+
+:::
+
+
+## Advanced settings
+
+### Moving the Farming Process to the Background
 
 <Tabs groupId="OS">
 <TabItem value="tmux" label="Tmux" default>
@@ -543,57 +582,19 @@ $ screen -S farming -X quit
 </TabItem>
 </Tabs>
 
-## Having Trouble?
 
-If you are facing issues with your node/farmer you can try a few of the following things below, if you are unable to get your issue resolved please check our [Forums](https://forums.subspace.network) to see if your issue may have been solved, if its a new one feel free to post it! You can also join our [Discord](https://discord.gg/subspace-network) for additional Peer to Peer help.
+### Local Development
 
-:::info
+---
 
-We have included a few tutorials below that may help you in your support journey, this is not an all inclusive list but we welcome contributions
+To run Pulsar in a local development mode, modify your `settings.toml` and ensure your `chain` points to `dev`:
 
-:::
-
-### Wipe Node & Farmer
-
-:::tip Updated from a previous version and now having issues?
-
-Occasionally after updating to a new version of the Pulsar you will need to wipe your node and farmer, generally this should not be required but can be attempted if your farmer is having issues after having had worked fine previously.
-
-:::
-
-To simply restart the node, go to the terminal where you started the `farm` command, and press `Ctrl + C` you should see a shutdown message appear and the application will attempt a simple shutdown, if you dont see the message press `Ctrl + C` again to force shutdown. You can then simply start the farmer again with the `farm` command you used prior.
-
-Use the same file name as the previous init and farm steps, then add the wipe command to free the previous storage that was being used. Generally, only do this if you have severe errors and are prompted by a staff member.
-
-```shell-session
-./pulsar-file-name wipe
+```toml
+# settings.toml
+[node]
+chain = 'dev'
+# ... redacted ...
 ```
-
-After wiping, follow the `init` and `farm` steps above to start farming again!
-
-### View your Logs
-
-A good place to start if you are facing trouble is by viewing your logs and seeing if there are any errors or insights that might be available. You can find the location for your logs below
-
-<Tabs groupId="OS">
-<TabItem value="windows" label="🖼️ Windows" default>
-
-Your Logs will be found in `%USERPROFILE%/AppData/Local/pulsar/logs`
-
-</TabItem>
-
-<TabItem value="macos" label="🍎macOS">
-
-Your Logs will be found in `$HOME/Library/Logs/pulsar/`
-
-</TabItem>
-
-<TabItem value="linux" label="🐧Ubuntu">
-
-Your Logs will be found in `$HOME/.local/share/pulsar/logs`
-
-</TabItem>
-</Tabs>
 
 ### Enable Rust Backtrace 
 
