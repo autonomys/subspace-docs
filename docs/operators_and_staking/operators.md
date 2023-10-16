@@ -37,7 +37,7 @@ To check the list of available domains:
 7. Review the list of available domains
  ![Staking-3](/img/doc-imgs/operators-staking/Staking-3.png)
 :::tip
-In the example above the number 3 corresponds to the domainID. 
+In the example above the number 3 corresponds to the domainId. 
 :::
 
 ### Register an operator on domain
