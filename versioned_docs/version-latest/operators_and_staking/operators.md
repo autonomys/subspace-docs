@@ -72,7 +72,7 @@ To register an operator on the domain:
 2. Make sure to select the correct network at the top-left corner. 
 3. Select the account you want to use in `using the selected account`.
 4. Select `domains` under `submit the following extrinsic` and choose `registerOperator(domainID, amount, config)` in the dropdown.
-5. Enter the `domainID` to be registered on. 
+5. Enter the `domainId` to be registered on. 
 6. Enter the desired staking amount in the `amount` field.
 7. Put your public signing key at the `signingKey` field. 
 
