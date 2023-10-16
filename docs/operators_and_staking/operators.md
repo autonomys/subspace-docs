@@ -72,11 +72,15 @@ To register an operator on the domain:
 2. Make sure to select the correct network at the top-left corner. 
 3. Select the account you want to use in `using the selected account`.
 4. Select `domains` under `submit the following extrinsic` and choose `registerOperator(domainID, amount, config)` in the dropdown.
-5. Enter the desired staking amount in the `amount` field.
+5. Enter the `domainID` to be registered on. 
+6. Enter the desired staking amount in the `amount` field.
+7. Put your public signing key at the `signingKey` field. 
+
 
 :::note
-In the example below, 1 TSSC is selected for staking. 18 zeros are added because of the `u128` type
+In the example below, 1 TSSC is selected for staking. 18 zeros are added because of the `u128` type, so make sure to put 1000000000000000000 instead. 
 :::
+
 
 ![Staking-5](/img/doc-imgs/operators-staking/Staking-5.png)
 
@@ -84,9 +88,9 @@ In the example below, 1 TSSC is selected for staking. 18 zeros are added because
 Make sure to use the signing key generated on the previous **[Create operator key](#create-operator-key)** step 
 :::
 
-5. Enter `MinimumNominatorStake` - in the example, it's set to `1 TSSC`.
-6. Enter `nominatorTax` - in the example, it's set to `5%`.
-7. Sign and submit the transaction to register an operator.
+8. Enter `minimumNominatorStake` - in the example, it's set to `1 TSSC`.
+9. Enter `nominatorTax` - in the example, it's set to `5%`.
+10. Sign and submit the transaction to register an operator.
 
 ![Staking-6](/img/doc-imgs/operators-staking/Staking-6.png)
 
@@ -94,15 +98,15 @@ Make sure to use the signing key generated on the previous **[Create operator ke
 Make sure to select **Submit Transaction** since the transaction needs to be signed.
 :::
 
-Once registered, the operator has to wait until the domain epoch is complete to start operating for the **domain**, participate in **bundle submission**, and **receive rewards**.
+Once registered, the operator has to wait until the domain epoch is complete to start operating for the **domain**, participate in **bundle production**, and **receive rewards**.
 
 Once the domain epoch is finished, the operator can produce bundles from the new epoch.
 
 Any **operator** can add more stake by using the same functionality.
 
-### Checking your operatorID
+### Checking your operatorId
 
-There are two ways to check your operatorID: 
+There are two ways to check your operatorId: 
 
 1. You can use PolkadotJS **[Network Explorer](https://polkadot.js.org/apps/#/explorer)**.
 
@@ -110,11 +114,11 @@ There are two ways to check your operatorID:
 2. Browse the **recent events** and you should see **domains.OperatorRegistered** event.
 
  ![Staking-8](/img/doc-imgs/operators-staking/Staking-8.png)
-3. Click on the dropdown arrow to view the **domainID** and **operatorID**.
+3. Click on the dropdown arrow to view the **domainID** and **operatorId**.
 
 ---
 
-Alternatively, you can use [Subscan](https://subspace.subscan.io/) which provides a slightly better UI. 
+Alternatively, you can use [Subscan](https://subspace.subscan.io/) which is a little easier to navigate for this job. 
 1. Navigate to **[Subspace Subscan](https://subspace.subscan.io/)** portal.
 2. Click on `Blockchain` -> `Extrinsics`.
 
@@ -267,7 +271,7 @@ Only account who registered an operator can deregister it. Make sure to use the 
 1. Proceed to [PolkadotJS](https://polkadot.js.org/apps/#/explorer)
 2. Make sure to select the correct network at the top-left corner. 
 3. Select the account you want to use in `using the selected account`.
-4. Select `domains` under `submit the following extrinsic` and choose `deregisterOperator(operatorID)` in the dropdown.
+4. Select `domains` under `submit the following extrinsic` and choose `deregisterOperator(operatorId)` in the dropdown.
 
  ![Staking-14](/img/doc-imgs/operators-staking/Staking-14.png)
 
@@ -296,12 +300,16 @@ In order to switch domain:
 1. Proceed to [PolkadotJS](https://polkadot.js.org/apps/#/explorer)
 2. Make sure to select the correct network at the top-left corner. 
 3. Select the account you want to use in `using the selected account`.
-4. Select `domains` under `submit the following extrinsic` and choose `switchDomain(operatorID, newDomainID)` in the dropdown.
-5. Add your `operatorID` and `newDomainID` to the corresponding fields. 
+4. Select `domains` under `submit the following extrinsic` and choose `switchDomain(operatorId, newDomainID)` in the dropdown.
+5. Add your `operatorId` and `newDomainID` to the corresponding fields. 
 
 ![Staking-24](/img/doc-imgs/operators-staking/Staking-24.png)
 
 :::note
 Only the account who registered **Operator** can swith the domain. 
+:::
+
+:::note
+Stake of your **Nominators** won't be released, but will be moved to the new domain as well. 
 :::
 

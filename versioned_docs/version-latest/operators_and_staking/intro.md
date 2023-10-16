@@ -39,9 +39,9 @@ The Subspace Network relies on staking from both domain operators and farmers to
 
 Our staking model consists of two tiers:
 
-- Farmers earn rewards proportional to their pledged storage. Farmers can choose to nominate operators and back them with their own stake, increasing their chance of being elected as a slot leader. Farmers, who have earned storage rewards, nominate operators to execute transactions. This nomination system balances the power between farmers and operators and both parties share the rewards and the potential penalties (slashing). 
+- Farmers earn rewards proportional to their pledged storage. Farmers can choose to nominate operators and back them with their own stake, increasing their chance of being elected as a slot leader. Farmers, who have earned storage rewards, nominate operators to execute transactions. This nomination system balances the power between farmers who nominate and operators and both parties share the rewards and the potential penalties (slashing). 
 
-- Operators stake to gain the right to execute transactions within a domain and produce blocks. They are responsible for validating and executing transactions, producing execution receipts, and applying state transitions and earn rewards for their work. The operator's chances to be elected as a slot leader are weighted by stake. Operators can be nominated by farmers. 
+- Operators stake to gain the right to produce bundles within a domain. They are responsible for validating and executing transactions, producing execution receipts, and applying state transitions and earn rewards for their work. The operator's chances to be elected as a slot leader and produce a bundle are weighted by their stake. Operators can be nominated by farmers or other SSC holders. 
 
 
 ### Stake epoch
@@ -51,4 +51,3 @@ Stake epoch is a designated period in domain blocks within a blockchain system t
 :::note
 Read [Subspace Subnomicon](https://subnomicon.subspace.network/docs/category/decoupled-execution) to get a full picture behind decoupled execution!
 :::
-
