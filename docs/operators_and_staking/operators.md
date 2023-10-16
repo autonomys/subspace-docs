@@ -301,7 +301,7 @@ In order to switch domain:
 2. Make sure to select the correct network at the top-left corner. 
 3. Select the account you want to use in `using the selected account`.
 4. Select `domains` under `submit the following extrinsic` and choose `switchDomain(operatorId, newDomainId)` in the dropdown.
-5. Add your `operatorId` and `newDomainID` to the corresponding fields. 
+5. Add your `operatorId` and `newDomainId` to the corresponding fields. 
 
 ![Staking-24](/img/doc-imgs/operators-staking/Staking-24.png)
 
