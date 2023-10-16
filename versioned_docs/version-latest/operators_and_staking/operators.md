@@ -114,7 +114,7 @@ There are two ways to check your operatorId:
 2. Browse the **recent events** and you should see **domains.OperatorRegistered** event.
 
  ![Staking-8](/img/doc-imgs/operators-staking/Staking-8.png)
-3. Click on the dropdown arrow to view the **domainID** and **operatorId**.
+3. Click on the dropdown arrow to view the **domainId** and **operatorId**.
 
 ---
 
