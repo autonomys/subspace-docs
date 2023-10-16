@@ -119,7 +119,7 @@ Once the withdrawal is submitted, it's finalized after the **domain epoch** is c
 5. Run the query, remember the `shares` number. 
   ![Staking-25](/img/doc-imgs/operators-staking/Staking-25.png)
 6. On the same screen, choose `domainStakingSummary(u32)`.
-7. Provide the `domainID`. 
+7. Provide the `domainId`. 
 8. Run the query, remember the `currentTotalStake` number.
   ![Staking-26](/img/doc-imgs/operators-staking/Staking-26.png)
 9. Without leaving the page, select `operators(u64)`.
