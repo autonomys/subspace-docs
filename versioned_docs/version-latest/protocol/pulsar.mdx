@@ -52,7 +52,7 @@ If BTRFS is used with Subspace, the directory/whole file system must be CoW disa
 
 **Command to Disable CoW on BTRFS**
 
-```
+```shell-session
 sudo chattr +C path/to/data/dir
 ```
 
@@ -171,9 +171,11 @@ Some older processors/VMs are no longer supported by official releases, but can 
 </details>
 
 
+
+
 2. Open Powershell, type `cd Downloads` (or `cd Your-File-Location`).
 
-:::warning Warning
+:::warning
 The warning below may appear because the application is trying to access the internet. This is expected as it is how the farmer talks to other farmers on the network. Please select 'Allow access' to continue farming.
 :::
 ![Windows Defender Firewall](/img/doc-imgs/Windows_Security_Alert.png)
@@ -339,13 +341,13 @@ Ubuntu Executable (aarch64):
 
 This will prompt you to setup your Pulsar configurations to begin farming. You should see a similar prompt like so (some info might be different than shown here w.r.t your OS):
 
-```shell-session
+```text
 version: 0.6.0
 
 Configuration creation process has started...
 Do you have an existing farmer/reward address? [y/n]: y
 Enter your farmer/reward address: REDACTED_ADDRESS
-Enter your node name to be identified on the network(defaults to `subspace`, press enter to use the default):
+Enter your node name to be identified on the network (defaults to `username`, press enter to use the default):
 Specify a path for storing plot files (press enter to use the default: `"/home/username/.local/share/pulsar/farms"`):
 Specify a path for storing node files (press enter to use the default: `"/home/username/.local/share/pulsar/node"`):
 Specify a plot size (defaults to `2.0 GB`, press enter to use the default):
@@ -486,8 +488,9 @@ If you want to learn more about Tmux and its options check out their Repo [here]
 $ tmux -S farming
 ```
 
+
 * Move process to background by detaching
-```shell-session
+```text
 Ctrl+b d OR ⌘+b d (Mac)
 ```
 
@@ -521,7 +524,7 @@ $ screen -S farming
 ```
 
 * Move process to background by detaching
-```shell-session
+```text
 Ctrl+d a OR ⌘+d a (Mac)
 ```
 
@@ -599,7 +602,7 @@ Your Logs will be found in `$HOME/.local/share/pulsar/logs`
 
 When running the Subspace Network Farmer & Node, sometimes you may encounter an error message that includes a line similar to the following:
 
-```
+```text
 Backtrace omitted. Run with RUST_BACKTRACE=1 environment variable to display it.
 ```
 
