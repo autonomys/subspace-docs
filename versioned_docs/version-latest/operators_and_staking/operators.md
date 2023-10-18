@@ -42,6 +42,15 @@ In the example above the number 3 corresponds to the domainId.
 
 ### Register an operator on domain
 
+<details>
+  <summary>
+  Prefer a video? Expand for our installation video
+  </summary>
+  <div>
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/w2U3CUJfI2c?si=mb-BRykmlrc49PPf" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen></iframe>
+  </div>
+</details>
+
 #### Create operator key:
 An operator needs a key pair to participate in bundle production.
 You can create a key using the following command:
@@ -300,7 +309,7 @@ In order to switch domain:
 1. Proceed to [PolkadotJS](https://polkadot.js.org/apps/#/explorer)
 2. Make sure to select the correct network at the top-left corner. 
 3. Select the account you want to use in `using the selected account`.
-4. Select `domains` under `submit the following extrinsic` and choose `switchDomain(operatorId, newDomainID)` in the dropdown.
+4. Select `domains` under `submit the following extrinsic` and choose `switchDomain(operatorId, newDomainId)` in the dropdown.
 5. Add your `operatorId` and `newDomainId` to the corresponding fields. 
 
 ![Staking-24](/img/doc-imgs/operators-staking/Staking-24.png)

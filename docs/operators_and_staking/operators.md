@@ -42,6 +42,15 @@ In the example above the number 3 corresponds to the domainId.
 
 ### Register an operator on domain
 
+<details>
+  <summary>
+  Prefer a video? Expand for our installation video
+  </summary>
+  <div>
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/w2U3CUJfI2c?si=mb-BRykmlrc49PPf" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen></iframe>
+  </div>
+</details>
+
 #### Create operator key:
 An operator needs a key pair to participate in bundle production.
 You can create a key using the following command:
