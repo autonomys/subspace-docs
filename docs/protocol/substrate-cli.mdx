@@ -868,6 +868,22 @@ In general you should be able to download the latest release, and re-start the N
 
 There are some cases where version updates will cause issue with your Node & Farmer and you may have to wipe & purge your node, typically when errors occur. If you have any issues you can always check our [Forums](https://forums.subspace.network) and hop in our [Discord](https://discord.gg/subspace-network) Server to ask for help.
 
+#### Benchmarking Your Farmer
+Benchmarking helps you test the plotting speed of your farmer against different versions of the Subspace Network.
+
+```
+./subspace-farmer benchmark audit /path/to/your/plot
+```
+Replace /path/to/your/plot with the actual path to your plot. This will provide you with metrics and insights regarding the plotting performance for the specified version.
+
+#### Scrubbing Your Farmer
+In certain situations, especially when the farmer terminates unexpectedly or encounters an error, it might fail to restart correctly. The scrub command assists in resolving such issues by cleaning or resetting the specified plot.
+
+```
+./subspace-farmer scrub /path/to/your/plot
+```
+Ensure to replace /path/to/your/plot with your actual plot path. Use this command cautiously as it modifies the plot state to recover from errors. Regular backups are recommended.
+
 #### Wipe & Purge
 
 If you were running a node previously, and want to switch to a new snapshot, please perform these steps and then follow the guideline again:
