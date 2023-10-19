@@ -34,48 +34,30 @@ Pulsar requires commodity hardware specs to operate. At a **minimum**, it is rec
 | SWAP     | 4GB              |
 | Storage  | 100GB SSD        |
 
-:::caution
-
-Farming may cause high network and RAM consumption.
-
+:::note SWAP Warning
+A swap is only necessary if you have a low amount of RAM. 
 :::
 
-<details>
-  <summary>
-  SWAP Warning
-  </summary>
-  A swap is only necessary if you have a low amount of RAM. 
-</details>
-
-<details>
-  <summary>
-  CoW Filesystems Warning
-  </summary>
-  It is advised not to use the Subspace farmer and node on CoW file systems for any OS (ReFS, BTRFS, ZFS, bcachefs, HAMMER and some more).
+:::note CoW Filesystems Warning
+It is advised not to use the Subspace farmer and node on CoW file systems for any OS (ReFS, BTRFS, ZFS, bcachefs, HAMMER and some more).
 
 If BTRFS is used with Subspace, the directory/whole file system must be CoW disabled with the following command prior to starting Subspace, because it only applies to newly created files.
 
 **Command to Disable CoW on BTRFS**
 
-```
+```shell-session
 sudo chattr +C path/to/data/dir
 ```
 
 Alternatively, non-CoW file systems like ext4 or XFS can be used instead.
-</details>
+:::
 
-<details>
-  <summary>
-  Redundancy
-  </summary>
-  Using redundancy (RAID1/5/6, RAIDZ and others) on a filesystem with plot makes no sense, as the farmer uses checksums to verify the integrity of the plot, and is able to recover corrupted blocks if necessary in most cases. See `scrub` command below.
-</details>
+:::note Redundancy
+Using redundancy (RAID1/5/6, RAIDZ and others) on a filesystem with plot makes no sense, as the farmer uses checksums to verify the integrity of the plot, and is able to recover corrupted blocks if necessary in most cases. See `scrub` command below.
+:::
 
-<details>
-  <summary>
-  tip Filesystem chunk size
-  </summary>
-  Creating a filesystem with a chunk (sunit) size of 32KB can prevent data fragmentation and improve performance, since the farmer operates on ~32KB chunks.
+:::tip Filesystem chunk size
+Creating a filesystem with a chunk (sunit) size of 32KB can prevent data fragmentation and improve performance, since the farmer operates on ~32KB chunks.
 
 **XFS**
 
@@ -97,9 +79,9 @@ You can change these settings for an existing file system:
 sudo tune2fs -E stride=8,stripe-width=8 /path/to/dev
 ```
 
-</details>
+:::
 
-### Step 1: Creating A Crypto Wallet
+## Step 1: Creating A Crypto Wallet
 
 The first thing you will need to start is a wallet to receive your farming rewards.
 Follow our how-to guides in the [Wallets section](/docs/category/wallets/) of the documentation for steps on how to setup your wallet.
@@ -108,11 +90,12 @@ Follow our how-to guides in the [Wallets section](/docs/category/wallets/) of th
 ## Step 2: Installation
 
 :::caution ALPHA SOFTWARE
-Pulsar is in **alpha** and may contain bugs.
+Pulsar is in **alpha**.
+Please feel free to file bug reports on our GitHub issues.
 :::
 <details>
   <summary>
-  Prefer a video? Expand this section to view an installation video
+  Prefer a video? Expand this section to view the installation video.
   </summary>
   <div>
   <iframe width="560" height="315" src="https://www.youtube.com/embed/h1-CX7lGl2w" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
@@ -121,7 +104,6 @@ Pulsar is in **alpha** and may contain bugs.
 
 
 ### Download Pulsar
-
 
 
 ---
@@ -134,7 +116,7 @@ Precompiled versions of Pulsar are [hosted on GitHub](https://github.com/subspac
 
 :::caution
 
-Some older processors/VMs are no longer supported by official releases, but can still be compiled manually.
+Some older processors/VMs are no longer supported by official releases, but can still be [compiled manually](https://github.com/subspace/subspace/blob/main/docs/development.md).
 
 :::
 1. Download the Release Binary below.
@@ -179,7 +161,7 @@ The warning below may appear because the application is trying to access the int
 
 :::caution
 
-Some older processors/VMs are no longer supported by official releases, but can still be compiled manually if desired
+Some older processors/VMs are no longer supported by official releases, but can still be [compiled manually](https://github.com/subspace/subspace/blob/main/docs/development.md).
 
 :::
 1. Download your Release Binary below.
@@ -282,7 +264,7 @@ Some older processors/VMs are no longer supported by official releases, but can 
 
 </Tabs>
 
-### Step 3: Configuration
+## Step 3: Configuration
 
 ---
 
@@ -423,7 +405,7 @@ On the desktop side if you have a router in front of your computer, you'll need 
 If you're connected directly without any router, then again nothing needs to be done in such case.
 
 
-### View your Logs
+### Inspecting Farmer Logs
 
 A good place to start if you are facing trouble is by viewing your logs and seeing if there are any errors or insights that might be available. You can find the location for your logs below
 
@@ -495,9 +477,9 @@ Your `settings.toml` will be found in `$HOME/.config/pulsar/settings.toml`
 
 
 
-## Still having trouble with your farmer?
+### Still having trouble with your farmer?
 
-If you are facing issues with your node/farmer you can try a few of the following things below, if you are unable to get your issue resolved please check our [Forums](https://forums.subspace.network) to see if your issue may have been solved, if its a new one feel free to post it! You can also join our [Discord](https://discord.gg/subspace-network) for additional Peer to Peer help.
+If you are facing issues with your node/farmer you can try a few of the following things below, if you are unable to get your issue resolved please check our [forum](https://forums.subspace.network) to see if your issue may have already been solved, if it's a new one feel free to post it! You can also join our [Discord](https://discord.gg/subspace-network) for additional Peer to Peer help.
 
 :::info
 
