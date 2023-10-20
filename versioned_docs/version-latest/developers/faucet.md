@@ -7,7 +7,6 @@ keywords:
   - subspace network
 ---
 
-
 ### How to get some test tokens
 
 **The Faucet** is available on our [**Discord server**](https://discord.gg/subspace-network).
