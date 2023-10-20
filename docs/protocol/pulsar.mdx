@@ -10,13 +10,17 @@ keywords:
   - GitHub
 ---
 
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
-import Link from '@docusaurus/Link';
-import styles from '@site/src/pages/index.module.css';
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import Link from "@docusaurus/Link";
+import styles from "@site/src/pages/index.module.css";
 
 :::tip Recommended
 [Pulsar](https://github.com/subspace/pulsar) (previously Subspace CLI or Simple CLI) is the recommended way to farm on the Subspace Network. To get started, follow the guide below. For more information, you can check out the project [README on GitHub](https://github.com/subspace/pulsar/blob/main/README.md).
+:::
+
+:::note We love feedback!
+Please share your thoughts on our recent releases via this [Typeform](https://c6gxctjlh68.typeform.com/to/Ks4Y16Fo). Your feedback is valuable in improving our project.
 :::
 
 ## Pre-Requisites
@@ -34,15 +38,15 @@ This may impact your network usage so please check your network connection if yo
 
 Pulsar requires commodity hardware specs to operate. At a **minimum**, it is recommended to have:
 
-| Hardware | Specs            |
-| -------- | ---------------- |
-| CPU      | 4 Core+          |
-| RAM      | 8GB+             |
-| SWAP     | 4GB              |
-| Storage  | 100GB SSD        |
+| Hardware | Specs     |
+| -------- | --------- |
+| CPU      | 4 Core+   |
+| RAM      | 8GB+      |
+| SWAP     | 4GB       |
+| Storage  | 100GB SSD |
 
 :::note SWAP Warning
-A swap is only necessary if you have a low amount of RAM. 
+A swap is only necessary if you have a low amount of RAM.
 :::
 
 :::note CoW Filesystems Warning
@@ -88,7 +92,6 @@ sudo tune2fs -E stride=8,stripe-width=8 /path/to/dev
 
 :::
 
-
 ### Getting A Crypto Wallet
 
 Before running anything you need to have a wallet where you'll receive testnet coins.
@@ -107,27 +110,29 @@ If you have a server with no firewall, there is nothing to be done, but otherwis
 On the desktop side if you have a router in front of your computer, you'll need to forward TCP ports to the machine on which your node is running (how this is done varies from router to router, but there is always a feature like this, refer to [How to Forward Ports](port-forwarding.md) for a more in-depth tutorial).
 If you're connected directly without any router, then again nothing needs to be done in such case.
 
-
-
 ## Installation
 
 :::caution ALPHA SOFTWARE
 Pulsar is in **alpha**.
 Please feel free to file bug reports on our GitHub issues.
 :::
+
 <details>
-  <summary>
-  Prefer A video? Expand for our installation video
-  </summary>
+  <summary>Prefer A video? Expand for our installation video</summary>
   <div>
-  <iframe width="560" height="315" src="https://www.youtube.com/embed/h1-CX7lGl2w" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+    <iframe
+      width="560"
+      height="315"
+      src="https://www.youtube.com/embed/h1-CX7lGl2w"
+      title="YouTube video player"
+      frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      allowfullscreen
+    ></iframe>
   </div>
 </details>
 
-
 ### Download Binaries
-
-
 
 ---
 
@@ -142,36 +147,34 @@ Precompiled versions of the Pulsar is [hosted on GitHub](https://github.com/subs
 Some older processors/VMs are no longer supported by official releases, but can still be compiled manually if desired
 
 :::
+
 1. Download the Release Binary below.
 
 <details>
   <summary>
-  Expand for Version 2 - For older processors since ~2009 and some old VMs
+    Expand for Version 2 - For older processors since ~2009 and some old VMs
   </summary>
   <div className={styles.buttons}>
     <Link
       className="button button--secondary button"
-      to="https://github.com/subspace/pulsar/releases/download/v0.6.14-alpha/pulsar-windows-x86_64-v2-v0.6.14-alpha.exe">
+      to="https://github.com/subspace/pulsar/releases/download/v0.6.14-alpha/pulsar-windows-x86_64-v2-v0.6.14-alpha.exe"
+    >
       Windows CLI Executable
     </Link>
   </div>
 </details>
 
 <details>
-  <summary>
-  Expand for Version 3 - For newer processors since ~2015
-  </summary>
+  <summary>Expand for Version 3 - For newer processors since ~2015</summary>
   <div className={styles.buttons}>
     <Link
       className="button button--secondary button"
-      to="https://github.com/subspace/pulsar/releases/download/v0.6.14-alpha/pulsar-windows-x86_64-skylake-v0.6.14-alpha.exe">
+      to="https://github.com/subspace/pulsar/releases/download/v0.6.14-alpha/pulsar-windows-x86_64-skylake-v0.6.14-alpha.exe"
+    >
       Windows CLI Executable
     </Link>
   </div>
 </details>
-
-
-
 
 2. Open Powershell, type `cd Downloads` (or `cd Your-File-Location`).
 
@@ -189,30 +192,29 @@ The warning below may appear because the application is trying to access the int
 Some older processors/VMs are no longer supported by official releases, but can still be compiled manually if desired
 
 :::
+
 1. Download your Release Binary below.
 
 <details>
-  <summary>
-  Mac CLI Executable (Intel)
-  </summary>
+  <summary>Mac CLI Executable (Intel)</summary>
   <div className={styles.buttons}>
     <Link
       className="button button--secondary button"
-      to="https://github.com/subspace/pulsar/releases/download/v0.6.14-alpha/pulsar-macos-x86_64-v0.6.14-alpha.zip">
+      to="https://github.com/subspace/pulsar/releases/download/v0.6.14-alpha/pulsar-macos-x86_64-v0.6.14-alpha.zip"
+    >
       Mac CLI Executable (Intel)
     </Link>
   </div>
 </details>
 
 <details>
-  <summary>
-  Mac CLI Executable (Apple M Series)
-  </summary>
+  <summary>Mac CLI Executable (Apple M Series)</summary>
   <div className={styles.buttons}>
     <Link
-        className="button button--secondary button"
-        to="https://github.com/subspace/pulsar/releases/download/v0.6.14-alpha/pulsar-macos-aarch64-v0.6.14-alpha.zip">
-        Mac CLI Executable (Apple M Series)
+      className="button button--secondary button"
+      to="https://github.com/subspace/pulsar/releases/download/v0.6.14-alpha/pulsar-macos-aarch64-v0.6.14-alpha.zip"
+    >
+      Mac CLI Executable (Apple M Series)
     </Link>
   </div>
 </details>
@@ -220,8 +222,8 @@ Some older processors/VMs are no longer supported by official releases, but can 
 2. Extract the `.zip` file.
 3. Open Terminal, type `cd Downloads` (or `cd Your-File-Location`).
 4. Make the binary executable by running:
-    * `chmod +x pulsar-macos-x86_64-v0.6.14-alpha` (Intel Chip)
-    * `chmod +x pulsar-macos-aarch64-v0.6.14-alpha` (Apple M Series)
+   - `chmod +x pulsar-macos-x86_64-v0.6.14-alpha` (Intel Chip)
+   - `chmod +x pulsar-macos-aarch64-v0.6.14-alpha` (Apple M Series)
 
 :::warning
 Your Mac may not let you open/initialize the file because of unidentified developer restrictions. To resolve this, go to Settings-> Security&Privacy -> General -> Allow
@@ -235,55 +237,53 @@ Your Mac may not let you open/initialize the file because of unidentified develo
 Some older processors/VMs are no longer supported by official releases, but can still be compiled manually if desired
 
 :::
+
 1. Download your Release Binary below.
 
 <details>
-  <summary>
-  Expand for Ubuntu Executable
-  </summary>
+  <summary>Expand for Ubuntu Executable</summary>
   <details>
     <summary>
-    Version 2 - for older processors since ~2009 and some old VMs
+      Version 2 - for older processors since ~2009 and some old VMs
     </summary>
     <div className={styles.buttons}>
       <Link
-          className="button button--secondary button"
-          to="https://github.com/subspace/pulsar/releases/download/v0.6.14-alpha/pulsar-ubuntu-x86_64-v2-v0.6.14-alpha">
-          Ubuntu Executable
+        className="button button--secondary button"
+        to="https://github.com/subspace/pulsar/releases/download/v0.6.14-alpha/pulsar-ubuntu-x86_64-v2-v0.6.14-alpha"
+      >
+        Ubuntu Executable
       </Link>
     </div>
   </details>
   <details>
-    <summary>
-    Version 3 - For newer processors since ~2015
-    </summary>
+    <summary>Version 3 - For newer processors since ~2015</summary>
     <div className={styles.buttons}>
       <Link
-          className="button button--secondary button"
-          to="https://github.com/subspace/pulsar/releases/download/v0.6.14-alpha/pulsar-ubuntu-x86_64-skylake-v0.6.14-alpha">
-          Ubuntu Executable
+        className="button button--secondary button"
+        to="https://github.com/subspace/pulsar/releases/download/v0.6.14-alpha/pulsar-ubuntu-x86_64-skylake-v0.6.14-alpha"
+      >
+        Ubuntu Executable
       </Link>
     </div>
   </details>
 </details>
 
 <details>
-  <summary>
-  Expand for Aarch64/64-bit Raspberry Pi Executables
-  </summary>
+  <summary>Expand for Aarch64/64-bit Raspberry Pi Executables</summary>
   <div className={styles.buttons}>
     <Link
-        className="button button--secondary button"
-        to="https://github.com/subspace/pulsar/releases/download/v0.6.14-alpha/pulsar-ubuntu-aarch64-v0.6.14-alpha">
-        Ubuntu Executable (aarch64)
+      className="button button--secondary button"
+      to="https://github.com/subspace/pulsar/releases/download/v0.6.14-alpha/pulsar-ubuntu-aarch64-v0.6.14-alpha"
+    >
+      Ubuntu Executable (aarch64)
     </Link>
   </div>
 </details>
 
 2. Open Terminal, type `cd Downloads` (or `cd Your-File-Location`).
 3. Make the binary executable by running:
-	* `chmod +x pulsar-ubuntu-x86_64-skylake-v0.6.14-alpha` (Ubuntu)
-    * `chmod +x pulsar-ubuntu-aarch64-v0.6.14-alpha` (Ubuntu aarch64)
+   - `chmod +x pulsar-ubuntu-x86_64-skylake-v0.6.14-alpha` (Ubuntu)
+   - `chmod +x pulsar-ubuntu-aarch64-v0.6.14-alpha` (Ubuntu aarch64)
 
 </TabItem>
 
@@ -303,9 +303,9 @@ To start we have to initialize our Farmer, this can be done with:
 ```
 
 :::note High RAM consumption
-  Operating systems, such as Windows, allocate memory for both visible tasks and behind-the-scenes processes. 
-  While this memory can be readily freed when necessary, Windows occasionally may not display these allocations accurately due to certain system nuances.
-  High RAM consumption should not be a cause for concern.
+Operating systems, such as Windows, allocate memory for both visible tasks and behind-the-scenes processes.
+While this memory can be readily freed when necessary, Windows occasionally may not display these allocations accurately due to certain system nuances.
+High RAM consumption should not be a cause for concern.
 :::
 
 </TabItem>
@@ -316,6 +316,7 @@ Intel Chip:
 ```shell-session
 ./pulsar-macos-x86_64-v0.6.14-alpha  init
 ```
+
 Apple M Series:
 
 ```shell-session
@@ -330,6 +331,7 @@ Ubuntu:
 ```shell-session
 ./pulsar-ubuntu-x86_64-skylake-v0.6.14-alpha  init
 ```
+
 Ubuntu Executable (aarch64):
 
 ```shell-session
@@ -433,6 +435,7 @@ Intel Chip:
 ```shell-session
 ./pulsar-macos-x86_64-v0.6.14-alpha farm
 ```
+
 Apple M1 Chip:
 
 ```shell-session
@@ -448,6 +451,7 @@ Ubuntu:
 ```shell-session
 ./pulsar-ubuntu-x86_64-skylake-v0.6.14-alpha farm
 ```
+
 Ubuntu Executable (aarch64):
 
 ```shell-session
@@ -482,29 +486,32 @@ If you want to learn more about Tmux and its options check out their Repo [here]
 
 :::
 
-* Create a new tmux session using a socket file named farming
+- Create a new tmux session using a socket file named farming
 
 ```shell-session
 $ tmux -S farming
 ```
 
+- Move process to background by detaching
 
-* Move process to background by detaching
 ```text
 Ctrl+b d OR ⌘+b d (Mac)
 ```
 
-* To re-attach
+- To re-attach
+
 ```shell-session
 $ tmux -S farming attach
 ```
 
-* Alternatively, you can use the following single command to both create (if not exists already) and attach to a session:
+- Alternatively, you can use the following single command to both create (if not exists already) and attach to a session:
+
 ```shell-session
 $ tmux new-session -A -D -s farming
 ```
 
-* To delete farming session
+- To delete farming session
+
 ```shell-session
 $ tmux kill-session -t farming
 ```
@@ -518,27 +525,32 @@ If you want to learn more about Screen and its options check out their Webpage [
 
 :::
 
-* Create new screen using a socket file named farming
+- Create new screen using a socket file named farming
+
 ```shell-session
 $ screen -S farming
 ```
 
-* Move process to background by detaching
+- Move process to background by detaching
+
 ```text
 Ctrl+d a OR ⌘+d a (Mac)
 ```
 
-* To re-attach
+- To re-attach
+
 ```shell-session
 $ screen -r farming
 ```
 
-* Alternatively, you can use the following single command to both create (if not exists already) and attach to a session:
+- Alternatively, you can use the following single command to both create (if not exists already) and attach to a session:
+
 ```shell-session
 $ screen -D -R -S farming
 ```
 
-* To delete farming session
+- To delete farming session
+
 ```shell-session
 $ screen -S farming -X quit
 ```
@@ -598,7 +610,7 @@ Your Logs will be found in `$HOME/.local/share/pulsar/logs`
 </TabItem>
 </Tabs>
 
-### Enable Rust Backtrace 
+### Enable Rust Backtrace
 
 When running the Subspace Network Farmer & Node, sometimes you may encounter an error message that includes a line similar to the following:
 
@@ -619,9 +631,10 @@ To enable the `RUST_BACKTRACE` environment variable on Windows using PowerShell,
 
 1. Open a PowerShell window.
 2. Type the following command:
-    ```powershell
-    $Env:RUST_BACKTRACE=1
-    ```
+
+   ```powershell
+   $Env:RUST_BACKTRACE=1
+   ```
 
 3. Press Enter.
 4. After exporting the environment variable, run the Pulsar as usual, and any errors encountered will display the backtrace.
@@ -636,9 +649,10 @@ To enable the `RUST_BACKTRACE` environment variable on macOS, follow these steps
 
 1. Open a terminal window.
 2. Type the following command:
-    ```shell-session
-    export RUST_BACKTRACE=1
-    ```
+
+   ```shell-session
+   export RUST_BACKTRACE=1
+   ```
 
 3. Press Enter.
 4. After exporting the environment variable, run the Pulsar as usual, and any errors encountered will display the backtrace.
@@ -653,9 +667,10 @@ To enable the `RUST_BACKTRACE` environment variable on Linux, follow these steps
 
 1. Open a terminal window.
 2. Type the following command:
-    ```shell-session
-    export RUST_BACKTRACE=1
-    ```
+
+   ```shell-session
+   export RUST_BACKTRACE=1
+   ```
 
 3. Press Enter.
 4. After exporting the environment variable, run the Pulsar as usual, and any errors encountered will display the backtrace.
