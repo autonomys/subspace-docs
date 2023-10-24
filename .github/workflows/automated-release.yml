@@ -45,19 +45,19 @@ jobs:
           latest_pulsar_tag=${{ steps.pulsar_release.outputs.pulsar_tag }}
           latest_advanced_cli_tag=${{ steps.advanced_cli_release.outputs.advanced_cli_tag }}
 
-          # Define arrays for whitelists and blacklists for each repository, each variable can hold an array such as ("first_word" "second_word")
-          pulsar_whitelist=("")
-          pulsar_blacklist=("")
-          advanced_cli_whitelist=("gemini-3f")
-          advanced_cli_blacklist=("runtime" "snapshot")
+          # Define arrays for allowlists and denylists for each repository, each variable can hold an array such as ("first_word" "second_word")
+          pulsar_allowlist=("")
+          pulsar_denylist=("")
+          advanced_cli_allowlist=("gemini-3f")
+          advanced_cli_denylist=("runtime" "snapshot")
 
-          # Check if the latest release should be updated based on whitelists and blacklists
+          # Check if the latest release should be updated based on allowlists and denylists
           update_pulsar=false
           update_advanced_cli=false
 
-          for white_word in "${pulsar_whitelist[@]}"; do
+          for white_word in "${pulsar_allowlist[@]}"; do
             if [[ $latest_pulsar_tag == *$white_word* ]]; then
-              for black_word in "${pulsar_blacklist[@]}"; do
+              for black_word in "${pulsar_denylist[@]}"; do
                 if [[ ! $latest_pulsar_tag == *$black_word* ]]; then
                   update_pulsar=true
                   break
@@ -67,9 +67,9 @@ jobs:
             fi
           done
 
-          for white_word in "${advanced_cli_whitelist[@]}"; do
+          for white_word in "${advanced_cli_allowlist[@]}"; do
             if [[ $latest_advanced_cli_tag == *$white_word* ]]; then
-              for black_word in "${advanced_cli_blacklist[@]}"; do
+              for black_word in "${advanced_cli_denylist[@]}"; do
                 if [[ ! $latest_advanced_cli_tag == *$black_word* ]]; then
                   update_advanced_cli=true
                   break
