@@ -46,8 +46,8 @@ jobs:
           latest_advanced_cli_tag=${{ steps.advanced_cli_release.outputs.advanced_cli_tag }}
 
           # Define arrays for whitelists and blacklists for each repository, each variable can hold an array such as ("first_word" "second_word")
-          pulsar_whitelist=("targetted-word")
-          pulsar_blacklist=("unwanted-word")
+          pulsar_whitelist=("")
+          pulsar_blacklist=("")
           advanced_cli_whitelist=("gemini-3f")
           advanced_cli_blacklist=("runtime" "snapshot")
 
