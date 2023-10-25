@@ -82,7 +82,6 @@ After=network.target
 User=${formData.user}
 Group=${formData.user}
 ExecStart=${formData.nodeBinPath} \\
-          --execution wasm \\
           --name ${formData.nodeName} \\
           --base-path ${formData.nodeData} \\
           --state-pruning archive \\

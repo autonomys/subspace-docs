@@ -111,7 +111,6 @@ services:
       [
         "--chain", "${network}",
         "--base-path", "/var/subspace",
-        "--execution", "wasm",
         "--blocks-pruning", "256",
         "--state-pruning", "archive",
         "--port", "30333",
