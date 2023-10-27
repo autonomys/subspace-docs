@@ -40,6 +40,10 @@ Subspace introduces the Decoupled Execution Framework (DecEx) to tackle the stat
 The hardware requirements have not been benchmarked, and these are our best estimates. We would appreciate your feedback if you feel that the requirements listed here are too high or too low. 
 :::
 
+:::tip
+Our suggested specs are not necessarily applicable to the Stake Wars. We encourage all interested participants to join the Stake Wars, even if your hardware does not meet the listed requirements. 
+:::
+
 **CPU**: 
 - x86-64 compatible;
 - Intel Ice Lake, or newer (Xeon or Core series); AMD Zen3, or newer (EPYC or Ryzen);
