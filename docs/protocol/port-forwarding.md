@@ -1,6 +1,6 @@
 ---
 title: How to Forward Ports
-sidebar_position: 4
+sidebar_position: 5
 description: How to forward TCP port 30333 for the Subspace Farmer
 keywords:
     - Farmer

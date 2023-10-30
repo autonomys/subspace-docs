@@ -1,6 +1,6 @@
 ---
 title: Common problems
-sidebar_position: 6
+sidebar_position: 7
 description: Common problems and ways to resolve them
 keywords:
 - Error
