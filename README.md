@@ -6,6 +6,13 @@
 
 This website is built using [Docusaurus 2](https://docusaurus.io/), a modern static website generator.
 
+### Structure
+
+This repo has two main folders: 'versioned_docs/version-latest' and 'docs'. 'versioned_docs/version-latest' holds the latest official release of our documentation, while 'docs' has pre-release versions for testing. Switch between them using the toggle in the top right corner.
+
+![folders toggle](static/img/doc-imgs/read-me/versioned-docs-toggle.png)
+
+
 ### Installation
 
 ```
