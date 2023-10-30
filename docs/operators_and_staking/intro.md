@@ -41,7 +41,7 @@ The hardware requirements have not been benchmarked, and these are our best esti
 :::
 
 :::tip
-Our suggested specs are not necessarily applicable to the Stake Wars. We encourage all interested participants to join the Stake Wars, even if your hardware does not meet the listed requirements. 
+Our suggested specs are not necessarily applicable to Stake Wars. We encourage all interested participants to join Stake Wars, even if your hardware does not meet the listed requirements. 
 :::
 
 **CPU**: 
