@@ -114,7 +114,7 @@ Once the withdrawal is submitted, it's finalized after the **domain epoch** is c
 
 1. Proceed to PolkadotJS **[Network Explorer](https://polkadot.js.org/apps/#/explorer)**.
 2. Go to `Developer` -> `Chain state`.
-3. Select `domains` under `selected state query` and `nominators(u64, AccoundId32)`.
+3. Select `domains` under `selected state query` and `nominators(u64, AccountId32)`.
 4. Provide the `operatorId` and select your `account` from the dropdown. 
 5. Run the query, remember the `shares` number. 
   ![Staking-25](/img/doc-imgs/operators-staking/Staking-25.png)
