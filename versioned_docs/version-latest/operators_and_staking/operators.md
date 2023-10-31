@@ -321,3 +321,4 @@ Only the account who registered **Operator** can swith the domain.
 :::note
 Stake of your **Nominators** won't be released, but will be moved to the new domain as well. 
 :::
+

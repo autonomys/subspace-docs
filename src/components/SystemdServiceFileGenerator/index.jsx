@@ -21,7 +21,7 @@ function AdvancedSystemdServiceFileGenerator() {
 	archival: "off",
 	sandbox: "on",
 	user: 'root',
-	quic: "off",
+	quic: "on",
 	extraNodeArgs: '',
 	extraFarmerArgs: '',
     });
@@ -90,9 +90,9 @@ ExecStart=${formData.nodeBinPath} \\
           --validator \\
           --no-private-ip \\
           --listen-addr /ip4/0.0.0.0/tcp/${formData.nodePort} \\
-          --dsn-listen-on /ip4/0.0.0.0/tcp/${formData.nodeDsnPort} ${formData.quic === "off" ? (formData.extraNodeArgs === "" ? "" : "\\\n") : "\\\n"}\
-          ${formData.quic === "on" ? `--dsn-listen-on /ip4/0.0.0.0/udp/${formData.nodeDsnPort}/quic \\
-         --dsn-listen-on /ip4/0.0.0.0/udp/${formData.nodeDsnPort}/quic-v1 ` : ""} ${formData.extraNodeArgs === "" || formData.quic === "off" ? "" : "\\\n"}${formData.extraNodeArgs} 
+          --dsn-listen-on /ip4/0.0.0.0/udp/${formData.nodeDsnPort}/quic-v1 \\
+          --dsn-listen-on /ip4/0.0.0.0/tcp/${formData.nodeDsnPort} \\
+          ${formData.extraNodeArgs ? "\\\n" + formData.extraNodeArgs : ""}
 KillSignal=SIGINT
 Restart=always
 RestartSec=10

@@ -902,12 +902,22 @@ There are extra commands and parameters you can use on farmer or node, use the `
 ## IV. Advanced
 
 ---
+### Timekeepers
+
+Gemini-3g introduces Proof-of-Time and a new, optional role has been added to the node. Timekeepers help run PoT to ensure the security of the network. Timekeeping requires a high-performance core CPU but can be undertaken by any node runner. You can enable timekeeping with the following commands.  
+- `--timekeeper`: To enable timekeeping on the node
+- `--timekeeper-cpu-cores`: To specify which cores the timekeeper will run on. 
+
 
 ### Node & Farmer Commands Guide
 
 Both the node and the farmer have a variety of flags and parameters. To see a full list, append the `--help` flag to either the node or the farmer command.
 
 ### Common Command Examples
+
+:::note Farming Changes
+Please note that as of `Gemini-3g` farming no longer occurs while plotting. This is to ensure the plotting process occurs in the most efficient manner. You can change this by adding the `--farm-during-initial-plotting` flag to the farmer. 
+:::
 
 For both the node and the farmer, here are some frequently used commands:
 
