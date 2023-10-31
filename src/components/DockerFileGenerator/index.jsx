@@ -20,7 +20,7 @@ function DockerFileGenerator() {
     });
 
     // Predefine the actual network
-    const network = 'gemini-3f';
+    const network = 'gemini-3g';
     
     // State for the generated output (docker compose content)
     const [output, setOutput] = useState('');
@@ -104,20 +104,23 @@ services:
     volumes:
       - ${formData.nodeData ? formData.nodeData : "node-data"}:/var/subspace:rw
     ports:
-      - "0.0.0.0:${formData.nodePort}:30333"
-      - "0.0.0.0:${formData.nodeDsnPort}:30433"
+      - "0.0.0.0:${formData.nodePort}:30333/tcp"
+      - "0.0.0.0:${formData.nodePort}:30333/udp"
+      - "0.0.0.0:${formData.nodeDsnPort}:30433/tcp"
+      - "0.0.0.0:${formData.nodeDsnPort}:30433/udp"
     restart: unless-stopped
     command:
       [
         "--chain", "${network}",
         "--base-path", "/var/subspace",
         "--blocks-pruning", "256",
-        "--state-pruning", "archive",
+        "--state-pruning", "archive-canonical",
         "--port", "30333",
         "--dsn-listen-on", "/ip4/0.0.0.0/tcp/30433",
         "--rpc-cors", "all",
         "--rpc-methods", "unsafe",
         "--rpc-external",
+        "--no-private-ipv4",
         "--validator",
         "--name", "${formData.nodeName}"
       ]
@@ -140,6 +143,7 @@ services:
       [
         "farm",
         "--node-rpc-url", "ws://node:9944",
+        "--listen-on", "/ip4/0.0.0.0/udp/30533/quic-v1",
         "--listen-on", "/ip4/0.0.0.0/tcp/30533",
         "--reward-address", "${formData.rewardAddress}",
         "path=/var/subspace,size=${formData.plotSize}"
