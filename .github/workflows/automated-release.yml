@@ -53,7 +53,7 @@ jobs:
           # Define arrays for allowlists and denylists for each repository, each variable can hold an array such as ("first_word" "second_word")
           pulsar_allowlist=("")
           pulsar_denylist=("")
-          advanced_cli_allowlist=("gemini-3f")
+          advanced_cli_allowlist=("gemini-")
           advanced_cli_denylist=("runtime" "snapshot")
 
           # Check if the latest release should be updated based on allowlists and denylists
