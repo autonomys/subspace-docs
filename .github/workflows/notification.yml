@@ -241,7 +241,7 @@
             }"
             
             # Set the final embed to an environment variable for the next step
-            echo "DISCORD_EMBEDS=$(echo "$final_embed" | jq -c .)" >> $GITHUB_ENV
+            echo 'DISCORD_EMBEDS='"$(echo "$final_embed" | jq -c .)" >> $GITHUB_ENV
         
         # Sending the prepared embed
         - name: Send Discord Notification with Prepared Embed
