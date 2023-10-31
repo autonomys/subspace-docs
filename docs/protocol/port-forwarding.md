@@ -12,7 +12,7 @@ keywords:
 ---
 
 :::caution
-If you are using Linux and enabled `ufw` (firewall), make sure you have opened up your firewall for TCP traffic on port 30333 with the following command `sudo ufw allow 30333/tcp`
+If you are using Linux and enabled `ufw` (firewall), make sure you have opened up your firewall for traffic on port 30333 with the following commands `sudo ufw allow 30333/tcp` for TCP and `sudo ufw allow 30333/udp` for UDP
 :::
 
 First before forwarding ports it is important to understand what that actually means. We would highly suggest reading some information on the topic, here is a guide we find helpful https://www.geeksforgeeks.org/port-forwarding-on-router-and-why-do-we-need-it/
@@ -75,7 +75,7 @@ The actual forwarding process will vary based on your router, below is the gener
 2. Advanced Settings > Port Forwarding
 3. Within the port forwarding screen we will see the following fields, all fields have been filled accordingly to our defaults, except for the Computer IP Address, you will replace this with the computer IP address you received in the first steps.
     1. **Computer IP Address:** `192.168.0.25`
-    2. **Protocol:** `TCP`
+    2. **Protocols:** `TCP`, `UDP`
     3. **Starting Port:** `30333`
     4. **Ending Port:** `30333`
     * Note, that if you change from the default `30333` port on your node configuration you will need to forward the respective port used.
