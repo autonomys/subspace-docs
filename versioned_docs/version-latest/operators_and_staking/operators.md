@@ -161,19 +161,19 @@ subspace-node [consensus-chain-args] -- [domain-args]
 
 
 Example:
-Start a node as operator on `gemini-3f` chain:
+Start a node as operator on `gemini-3g` chain:
 
 <Tabs groupId="OS">
 <TabItem value="windows" label="🖼️ Windows" default>
 
 ```powershell
 target/production/subspace-node `
---chain gemini-3f `
+--chain gemini-3g `
 --rpc-external `
 --node-key 0xxeea96fe9cfbd6c1d7e9657e36447a158c0c80432b2bc8869a1c6706707843f `
 -- `
 --domain-id 3 `
---chain gemini-3f `
+--chain gemini-3g `
 --operator `
 --keystore-path /tmp/keystore `
 --rpc-external
@@ -185,12 +185,12 @@ target/production/subspace-node `
 
 ```bash
 target/production/subspace-node \
---chain gemini-3f \
+--chain gemini-3g \
 --rpc-external \
 --node-key 0xxeea96fe9cfbd6c1d7e9657e36447a158c0c80432b2bc8869a1c6706707843f \
 -- \
 --domain-id 3 \
---chain gemini-3f \
+--chain gemini-3g \
 --operator \
 --keystore-path /tmp/keystore \
 --rpc-external
@@ -202,12 +202,12 @@ target/production/subspace-node \
 
 ```bash
 target/production/subspace-node \
---chain gemini-3f \
+--chain gemini-3g \
 --rpc-external \
 --node-key 0xxeea96fe9cfbd6c1d7e9657e36447a158c0c80432b2bc8869a1c6706707843f \
 -- \
 --domain-id 3 \
---chain gemini-3f \
+--chain gemini-3g \
 --operator \
 --keystore-path /tmp/keystore \
 --rpc-external

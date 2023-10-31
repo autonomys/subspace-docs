@@ -20,7 +20,7 @@ function DockerFileGenerator() {
     });
 
     // Predefine the actual network
-    const network = 'gemini-3f';
+    const network = 'gemini-3g';
     
     // State for the generated output (docker compose content)
     const [output, setOutput] = useState('');
@@ -112,7 +112,7 @@ services:
         "--chain", "${network}",
         "--base-path", "/var/subspace",
         "--blocks-pruning", "256",
-        "--state-pruning", "archive",
+        "--state-pruning", "archive-canonical",
         "--port", "30333",
         "--dsn-listen-on", "/ip4/0.0.0.0/tcp/30433",
         "--rpc-cors", "all",

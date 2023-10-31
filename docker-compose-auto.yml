@@ -18,7 +18,7 @@ services:
     command: [
       "--chain", "gemini-2a",
       "--base-path", "/var/subspace",
-      "--state-pruning", "archive",
+      "--state-pruning", "archive-canonical",
       "--port", "30333",
       "--rpc-cors", "all",
       "--rpc-methods", "unsafe",

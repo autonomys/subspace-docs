@@ -52,11 +52,11 @@ Most modern desktop processors starting with Broadwell on the Intel side and Ryz
 Please make sure to:
 - Use our latest stable release, as shown on our [Github releases](https://github.com/subspace/pulsar/releases)
 - Verify your farmer is present and on the highest block on our [telemetry server](https://telemetry.subspace.network/)
-- Verify your balance using the [Polkadot explorer](https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Frpc-0.gemini-3f.subspace.network%2Fws#/explorer)
+- Verify your balance using the [Polkadot explorer](https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Frpc-0.gemini-3g.subspace.network%2Fws#/explorer)
 
 
 :::note
-Make sure to select the correct testnet in the dropdown and tabs, e.g. gemini-3f
+Make sure to select the correct testnet in the dropdown and tabs, e.g. gemini-3g
 :::
 
 
