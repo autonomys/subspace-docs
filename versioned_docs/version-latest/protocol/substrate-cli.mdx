@@ -371,6 +371,8 @@ We will be downloading two files for your respective operating system.
   2022-02-03 10:52:29 ⚙️  Syncing, target=#215883 (2 peers), best: #55 (0xafc7…bccf), finalized #0 (0x6ada…0d38), ⬇ 850.1kiB/s ⬆ 1.5kiB/s
   ```
   5. We will then open another terminal, change to the downloads directory, then start the farmer node with the following command:
+  :::note Farming while Plotting changes
+  :::
    ```bash
     # Replace `PATH_TO_FARM` with location where you want you store plot files
     # Replace `WALLET_ADDRESS` below with your account address from Polkadot.js wallet
@@ -902,12 +904,22 @@ There are extra commands and parameters you can use on farmer or node, use the `
 ## IV. Advanced
 
 ---
+### Timekeepers
+
+Gemini-3g Introduces our Proof-of-Time, a new optional role that has been added to the node. The Timekeepers help run PoT on the network to ensure the security of the network. Timekeeping requires a high-performance core cpu but can be ran by any node runner. You can enable time keeping with the following commands. 
+- `--timekeeper`: To Enable Timekeeping on the node
+- `--timekeeper-cpu-cores`: To specify which cores the Timekeeper will run on. 
+
 
 ### Node & Farmer Commands Guide
 
 Both the node and the farmer have a variety of flags and parameters. To see a full list, append the `--help` flag to either the node or the farmer command.
 
 ### Common Command Examples
+
+:::note Farming Changes
+Please note that as of `Gemini-3g` Farming no longer occurs while plotting. This is to ensure the plotting process occurs in the most efficient manner. You can change this by adding the `--farm-during-initial-plotting` flag to the farmer. 
+:::
 
 For both the node and the farmer, here are some frequently used commands:
 
