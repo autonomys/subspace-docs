@@ -27,7 +27,7 @@ function AdvancedSystemdServiceFileGenerator() {
     });
 
     // Predefine the actual chain
-    const chain = 'gemini-3f';
+    const chain = 'gemini-3g';
     
     // State for the generated output (docker compose content)
     const [nodeOutput, setNodeOutput] = useState('');
@@ -84,8 +84,8 @@ Group=${formData.user}
 ExecStart=${formData.nodeBinPath} \\
           --name ${formData.nodeName} \\
           --base-path ${formData.nodeData} \\
-          --state-pruning archive-canonical \\
-          --keep-blocks ${formData.archival === "on" ? "archive" : "256"} \\
+          --state-pruning archive-canonical-canonical \\
+          --keep-blocks ${formData.archival === "on" ? "archive-canonical" : "256"} \\
           --chain ${chain} \\
           --validator \\
           --no-private-ip \\
