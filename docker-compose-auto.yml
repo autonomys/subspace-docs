@@ -16,7 +16,7 @@ services:
       - "0.0.0.0:30333:30333"
     restart: unless-stopped
     command: [
-      "--chain", "gemini-2a",
+      "--chain", "gemini-3g",
       "--base-path", "/var/subspace",
       "--state-pruning", "archive-canonical",
       "--port", "30333",
