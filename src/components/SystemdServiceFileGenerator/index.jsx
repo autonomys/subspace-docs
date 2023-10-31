@@ -84,7 +84,7 @@ Group=${formData.user}
 ExecStart=${formData.nodeBinPath} \\
           --name ${formData.nodeName} \\
           --base-path ${formData.nodeData} \\
-          --state-pruning archive-canonical-canonical \\
+          --state-pruning archive-canonical \\
           --keep-blocks ${formData.archival === "on" ? "archive-canonical" : "256"} \\
           --chain ${chain} \\
           --validator \\
