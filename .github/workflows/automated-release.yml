@@ -2,8 +2,13 @@ name: Check for Version Updates and Create PR
 
 on:
   schedule:
-    - cron: '0 0 * * *' # Trigger daily at midnight (adjust as needed)
-
+    - cron: '0 */3 * * *' # Trigger daily at midnight (adjust as needed)
+  workflow_dispatch:
+    inputs:
+      notify_community:
+        description: "I understand that running this workflow will attempt to automatically update the versions"
+        required: true
+        type: boolean
 jobs:
   check-and-create-pr:
     runs-on: ubuntu-latest
@@ -48,7 +53,7 @@ jobs:
           # Define arrays for allowlists and denylists for each repository, each variable can hold an array such as ("first_word" "second_word")
           pulsar_allowlist=("")
           pulsar_denylist=("")
-          advanced_cli_allowlist=("gemini-3f")
+          advanced_cli_allowlist=("gemini-")
           advanced_cli_denylist=("runtime" "snapshot")
 
           # Check if the latest release should be updated based on allowlists and denylists
@@ -91,7 +96,7 @@ jobs:
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v3
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.PAT }}
           branch: update-versions
           base: main
           title: 'Update version tags'

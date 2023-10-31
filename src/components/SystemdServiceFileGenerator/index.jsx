@@ -21,13 +21,13 @@ function AdvancedSystemdServiceFileGenerator() {
 	archival: "off",
 	sandbox: "on",
 	user: 'root',
-	quic: "off",
+	quic: "on",
 	extraNodeArgs: '',
 	extraFarmerArgs: '',
     });
 
     // Predefine the actual chain
-    const chain = 'gemini-3f';
+    const chain = 'gemini-3g';
     
     // State for the generated output (docker compose content)
     const [nodeOutput, setNodeOutput] = useState('');
@@ -84,15 +84,15 @@ Group=${formData.user}
 ExecStart=${formData.nodeBinPath} \\
           --name ${formData.nodeName} \\
           --base-path ${formData.nodeData} \\
-          --state-pruning archive \\
-          --keep-blocks ${formData.archival === "on" ? "archive" : "256"} \\
+          --state-pruning archive-canonical \\
+          --keep-blocks ${formData.archival === "on" ? "archive-canonical" : "256"} \\
           --chain ${chain} \\
           --validator \\
           --no-private-ip \\
           --listen-addr /ip4/0.0.0.0/tcp/${formData.nodePort} \\
-          --dsn-listen-on /ip4/0.0.0.0/tcp/${formData.nodeDsnPort} ${formData.quic === "off" ? (formData.extraNodeArgs === "" ? "" : "\\\n") : "\\\n"}\
-          ${formData.quic === "on" ? `--dsn-listen-on /ip4/0.0.0.0/udp/${formData.nodeDsnPort}/quic \\
-         --dsn-listen-on /ip4/0.0.0.0/udp/${formData.nodeDsnPort}/quic-v1 ` : ""} ${formData.extraNodeArgs === "" || formData.quic === "off" ? "" : "\\\n"}${formData.extraNodeArgs} 
+          --dsn-listen-on /ip4/0.0.0.0/udp/${formData.nodeDsnPort}/quic-v1 \\
+          --dsn-listen-on /ip4/0.0.0.0/tcp/${formData.nodeDsnPort} \\
+          ${formData.extraNodeArgs ? "\\\n" + formData.extraNodeArgs : ""}
 KillSignal=SIGINT
 Restart=always
 RestartSec=10
