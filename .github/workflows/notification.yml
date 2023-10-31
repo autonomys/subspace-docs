@@ -44,6 +44,12 @@
       paths:
         - 'versioned_docs/version-latest/protocol/pulsar.mdx'
         - 'versioned_docs/version-latest/protocol/substrate-cli.mdx'
+    workflow_dispatch:
+      inputs:
+        notify_community:
+          description: "I understand that running this workflow will automatically notify the community in Discord."
+          required: true
+          type: boolean
     
   jobs:
     notify:
