@@ -2,8 +2,13 @@ name: Check for Version Updates and Create PR
 
 on:
   schedule:
-    - cron: '0 0 * * *' # Trigger daily at midnight (adjust as needed)
-
+    - cron: '0 */3 * * *' # Trigger daily at midnight (adjust as needed)
+  workflow_dispatch:
+    inputs:
+      notify_community:
+        description: "I understand that running this workflow will attempt to automatically update the versions"
+        required: true
+        type: boolean
 jobs:
   check-and-create-pr:
     runs-on: ubuntu-latest
