@@ -1,6 +1,6 @@
 ---
 title: Common problems
-sidebar_position: 6
+sidebar_position: 7
 description: Common problems and ways to resolve them
 keywords:
 - Error
@@ -132,4 +132,8 @@ The system is detecting a pre-existing installation. If this is the case, you mi
 WARN sc_service::client::client: Block import error: Potential long-range attack: block not in finalized chain.
 ```
 The node somehow ended up being on a fork, try wiping and starting from scratch.
+
+### Still Facing Trouble? Take a look at our forums below
+
+<iframe src="https://forum.subspace.network/search?expanded=false&q=tags%3Afaq%20order%3Alatest" width="100%" height="600px" frameborder="0" scrolling="auto"></iframe>
 

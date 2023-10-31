@@ -82,10 +82,9 @@ After=network.target
 User=${formData.user}
 Group=${formData.user}
 ExecStart=${formData.nodeBinPath} \\
-          --execution wasm \\
           --name ${formData.nodeName} \\
           --base-path ${formData.nodeData} \\
-          --state-pruning archive \\
+          --state-pruning archive-canonical \\
           --keep-blocks ${formData.archival === "on" ? "archive" : "256"} \\
           --chain ${chain} \\
           --validator \\

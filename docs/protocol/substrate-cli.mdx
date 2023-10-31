@@ -23,6 +23,10 @@ import { AdvancedSystemdServiceFileGenerator } from '@site/src/components/System
 [Pulsar](https://github.com/subspace/pulsar) (previously Simple CLI or Subspace CLI) is the recommended way to farm on the Subspace Network. Follow the guide below to get started or check out the project [README on GitHub](https://github.com/subspace/pulsar/blob/main/README.md).
 :::
 
+:::note Feedback!
+Your insights on our releases elevate our progress. Fill out this [form](https://c6gxctjlh68.typeform.com/to/Ks4Y16Fo), your voice will be heard and addressed.
+:::
+
 ## I. Pre-requisites
 
 ---
@@ -219,9 +223,8 @@ We will be downloading two files for your respective operating system.
   # Copy all of the lines below, they are all part of the same command
   .\subspace-node-windows-x86_64-skylake-gemini-3f-2023-oct-06.exe `
     --chain gemini-3f `
-    --execution wasm `
     --blocks-pruning 256 `
-    --state-pruning archive `
+    --state-pruning archive-canonical `
     --validator `
     --name "INSERT_YOUR_ID"
   ```
@@ -339,9 +342,8 @@ We will be downloading two files for your respective operating system.
   # Copy all of the lines below, they are all part of the same command
   ./subspace-node-macos-aarch64-gemini-3f-2023-oct-06 \
     --chain gemini-3f \
-    --execution wasm \
     --blocks-pruning 256 \
-    --state-pruning archive \
+    --state-pruning archive-canonical \
     --validator \
     --name "INSERT_YOUR_ID"
   ```
@@ -490,9 +492,8 @@ We will be downloading two files for your respective operating system.
     # Copy all of the lines below, they are all part of the same command
     ./subspace-node-ubuntu-x86_64-skylake-gemini-3f-2023-oct-06 \
       --chain gemini-3f \
-      --execution wasm \
       --blocks-pruning 256 \
-      --state-pruning archive \
+      --state-pruning archive-canonical \
       --validator \
       --name "INSERT_YOUR_ID"
   ```

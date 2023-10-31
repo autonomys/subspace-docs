@@ -163,6 +163,16 @@ const config = {
           {
             type: 'localeDropdown',
             position: 'right',
+            dropdownItemsAfter: [
+              {
+                type: 'html',
+                value: '<hr style="margin: 0.3rem 0;">',
+              },
+              {
+                href: 'https://docs.subspace.network/docs/community/translate',
+                label: '🌏 Help Translate',
+              },
+            ],
           },
           {
             href: 'https://github.com/subspace',

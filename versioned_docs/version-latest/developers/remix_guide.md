@@ -132,3 +132,4 @@ Now your transaction is recorded and you can interact with your smart contract a
  ![Remix-12](/img/developers/Remix-12.png)
 
 Congratulations, you've just deployed your smart contract on Subspace Core EVM!
+
