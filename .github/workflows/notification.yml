@@ -47,7 +47,7 @@
     workflow_dispatch:
       inputs:
         notify_community:
-          description: "I understand that running this workflow will automatically notify the community in Discord."
+          description: "I understand that running this workflow will automatically notify the community."
           required: true
           type: boolean
     
@@ -241,7 +241,7 @@
             }"
             
             # Set the final embed to an environment variable for the next step
-            echo "DISCORD_EMBEDS=$final_embed" >> $GITHUB_ENV
+            echo "DISCORD_EMBEDS=$(echo "$final_embed" | jq -c .)" >> $GITHUB_ENV
         
         # Sending the prepared embed
         - name: Send Discord Notification with Prepared Embed
@@ -251,4 +251,4 @@
             DISCORD_EMBEDS: ${{ env.DISCORD_EMBEDS }}
           uses: Ilshidur/action-discord@master
           with:
-            args: |
+            args: '***Note:** This Notification was automatically sent via GitHub Actions*'
