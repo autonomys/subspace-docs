@@ -19,6 +19,10 @@ import styles from '@site/src/pages/index.module.css';
 [Pulsar](https://github.com/subspace/pulsar) (previously Subspace CLI or Simple CLI) is the recommended way to farm on the Subspace Network. To get started, follow the guide below. For more information, you can check out the project [README on GitHub](https://github.com/subspace/pulsar/blob/main/README.md).
 :::
 
+:::note Feedback!
+Your insights on our releases elevate our progress. Fill out this [form](https://c6gxctjlh68.typeform.com/to/Ks4Y16Fo), your voice will be heard and addressed
+:::
+
 ## Quick Start
 
 ---
@@ -81,9 +85,23 @@ sudo tune2fs -E stride=8,stripe-width=8 /path/to/dev
 
 ## Step 1: Creating A Crypto Wallet
 
-The first thing you will need to start is a wallet to receive your farming rewards.
-Follow our how-to guides in the [Wallets section](/docs/category/wallets/) of the documentation for steps on how to setup your wallet.
+### Getting A Crypto Wallet
 
+Before running anything you need to have a wallet where you'll receive testnet coins.
+Follow our how-to guides in the [Wallets section](/docs/category/wallets/) of the documentation for steps on how to get your wallet setup.
+
+### Required ports
+
+Currently, a few ports need to be exposed for node to work properly.
+
+If you have a server with no firewall, there is nothing to be done, but otherwise make sure to open the following TCP and UDP ports for incoming connections.
+
+- `30333`
+- `30433`
+- `30533`
+
+On the desktop side if you have a router in front of your computer, you'll need to forward TCP and UDP ports to the machine on which your node is running (how this is done varies from router to router, but there is always a feature like this, refer to [How to Forward Ports](port-forwarding.md) for a more in-depth tutorial).
+If you're connected directly without any router, then again nothing needs to be done in such case.
 
 ## Step 2: Installation
 

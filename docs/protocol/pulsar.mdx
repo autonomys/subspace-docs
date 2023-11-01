@@ -19,6 +19,10 @@ import styles from '@site/src/pages/index.module.css';
 [Pulsar](https://github.com/subspace/pulsar) (previously Subspace CLI or Simple CLI) is the recommended way to farm on the Subspace Network. To get started, follow the guide below. For more information, you can check out the project [README on GitHub](https://github.com/subspace/pulsar/blob/main/README.md).
 :::
 
+:::note Feedback!
+Your insights on our releases elevate our progress. Fill out this [form](https://c6gxctjlh68.typeform.com/to/Ks4Y16Fo), your voice will be heard and addressed.
+:::
+
 ## Pre-Requisites
 
 ---
@@ -98,13 +102,13 @@ Follow our how-to guides in the [Wallets section](/docs/category/wallets/) of th
 
 Currently, a few ports need to be exposed for node to work properly.
 
-If you have a server with no firewall, there is nothing to be done, but otherwise make sure to open the following TCP ports for incoming connections.
+If you have a server with no firewall, there is nothing to be done, but otherwise make sure to open the following TCP and UDP ports for incoming connections.
 
 - `30333`
 - `30433`
 - `30533`
 
-On the desktop side if you have a router in front of your computer, you'll need to forward TCP ports to the machine on which your node is running (how this is done varies from router to router, but there is always a feature like this, refer to [How to Forward Ports](port-forwarding.md) for a more in-depth tutorial).
+On the desktop side if you have a router in front of your computer, you'll need to forward TCP and UDP ports to the machine on which your node is running (how this is done varies from router to router, but there is always a feature like this, refer to [How to Forward Ports](port-forwarding.md) for a more in-depth tutorial).
 If you're connected directly without any router, then again nothing needs to be done in such case.
 
 
@@ -389,12 +393,12 @@ Your `settings.toml` will be found in `$HOME/.config/pulsar/settings.toml`
 
 If you are using the default configurations from Pulsar, you are ready to go with the Gemini 3 Testnet. Alternatively, you can ensure this occurs by manually setting the network like so.
 
-Open your `settings.toml` directory and ensure your `chain` is correctly specified to `gemini-3f` as so:
+Open your `settings.toml` directory and ensure your `chain` is correctly specified to `gemini-3g` as so:
 
 ```toml
 # settings.toml
 [node]
-chain = 'gemini-3f'
+chain = 'gemini-3g'
 # ... redacted ...
 ```
 
