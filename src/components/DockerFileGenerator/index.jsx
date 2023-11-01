@@ -16,7 +16,7 @@ function DockerFileGenerator() {
         farmerData: '',
         rewardAddress: 'st6GBwATPqtBkK5y4uXbV52euszPpFPw7wmkF8FywEqJaf8uP',
         plotSize: '100G',
-	arch: 'x86_64',
+	    arch: 'x86_64',
     });
 
     // Predefine the actual network
@@ -116,6 +116,7 @@ services:
         "--blocks-pruning", "256",
         "--state-pruning", "archive-canonical",
         "--port", "30333",
+        "--dsn-listen-on", "/ip4/0.0.0.0/udp/30433/quic-v1",
         "--dsn-listen-on", "/ip4/0.0.0.0/tcp/30433",
         "--rpc-cors", "all",
         "--rpc-methods", "unsafe",
