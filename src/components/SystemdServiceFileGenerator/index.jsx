@@ -291,17 +291,17 @@ WantedBy=multi-user.target`;
                         {[
                             { label: 'Node Port', name: 'nodePort' },
                             { label: 'Node DSN Port', name: 'nodeDsnPort' },
-			                { label: 'Farmer Port', name: 'farmerPort' },
+                            { label: 'Farmer Port', name: 'farmerPort' },
                             { label: 'Node Name', name: 'nodeName' },
-			                { label: 'Plot Size', name: 'plotSize' },
+                            { label: 'Plot Size', name: 'plotSize' },
                             { label: 'Reward Address', name: 'rewardAddress' },
                             { label: 'Node Data', name: 'nodeData' },
-			                { label: 'Farmer Data', name: 'farmerData' },
-			                { label: 'Node Binary Path', name: 'nodeBinPath' },
-			                { label: 'Farmer Binary Path', name: 'farmerBinPath' },
-			                { label: 'Extra Node Arguments', name: 'extraNodeArgs' },
-			                { label: 'Extra Farmer Arguments', name: 'extraFarmerArgs' },
-			                { label: 'System User', name: 'user' }
+                            { label: 'Farmer Data', name: 'farmerData' },
+                            { label: 'Node Binary Path', name: 'nodeBinPath' },
+                            { label: 'Farmer Binary Path', name: 'farmerBinPath' },
+                            { label: 'Extra Node Arguments', name: 'extraNodeArgs' },
+                            { label: 'Extra Farmer Arguments', name: 'extraFarmerArgs' },
+                            { label: 'System User', name: 'user' }
                         ].map(({ label, name }, index) => (
                             <div key={name} className={styles['systemd-service-generator-form__group']}>
                                 <label
@@ -325,7 +325,7 @@ WantedBy=multi-user.target`;
 
 			{[
                 { label: 'Archival', name: 'archival' },
-			    { label: 'Sandbox', name: 'sandbox' }
+                { label: 'Sandbox', name: 'sandbox' }
                         ].map(({ label, name }, index) => (
                             <div key={name} className={styles['systemd-service-generator-form__checkbox-group']}>
                                 <label
