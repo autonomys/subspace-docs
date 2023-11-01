@@ -8,22 +8,21 @@ import styles from './SystemdServiceFileGenerator.module.css';
 function AdvancedSystemdServiceFileGenerator() {
     // Initial state for form data
     const [formData, setFormData] = useState({
-	nodeBinPath: '/root/.local/bin/subspace-node',
-	farmerBinPath: '/root/.local/bin/subspace-farmer',
-	nodeData: '/root/.local/share/subspace-node',
-	farmerData: '/root/.local/share/subspace-farmer',
-	nodeName: 'subspace',
-	nodePort: '30333',
-	nodeDsnPort: '30433',
-	farmerPort: '30533',
-	rewardAddress: 'st6GBwATPqtBkK5y4uXbV52euszPpFPw7wmkF8FywEqJaf8uP',
+        nodeBinPath: '/root/.local/bin/subspace-node',
+        farmerBinPath: '/root/.local/bin/subspace-farmer',
+        nodeData: '/root/.local/share/subspace-node',
+        farmerData: '/root/.local/share/subspace-farmer',
+        nodeName: 'subspace',
+        nodePort: '30333',
+        nodeDsnPort: '30433',
+        farmerPort: '30533',
+        rewardAddress: 'st6GBwATPqtBkK5y4uXbV52euszPpFPw7wmkF8FywEqJaf8uP',
         plotSize: '100G',
-	archival: "off",
-	sandbox: "on",
-	user: 'root',
-	quic: "on",
-	extraNodeArgs: '',
-	extraFarmerArgs: '',
+        archival: "off",
+        sandbox: "on",
+        user: 'root',
+        extraNodeArgs: '',
+        extraFarmerArgs: '',
     });
 
     // Predefine the actual chain
@@ -158,9 +157,8 @@ Group=${formData.user}
 ExecStart=${formData.farmerBinPath} \\
           farm \\
           --reward-address ${formData.rewardAddress} \\
-          --listen-on /ip4/0.0.0.0/tcp/${formData.farmerPort} \\${formData.quic === "off" ? "" : "\n"}\
-          ${formData.quic === "on" ? `--listen-on /ip4/0.0.0.0/udp/${formData.farmerPort}/quic \\
-          --listen-on /ip4/0.0.0.0/udp/${formData.farmerPort}/quic-v1 ` : ""}${formData.quic === "off" ? "" : "\\"}
+          --listen-on /ip4/0.0.0.0/udp/${formData.farmerPort}/quic-v1 \\
+          --listen-on /ip4/0.0.0.0/tcp/${formData.farmerPort} \\
           path=${formData.farmerData},size=${formData.plotSize} ${formData.extraFarmerArgs === "" ? "" : "\\\n"}\
           ${formData.extraFarmerArgs}
 KillSignal=SIGINT
@@ -293,17 +291,17 @@ WantedBy=multi-user.target`;
                         {[
                             { label: 'Node Port', name: 'nodePort' },
                             { label: 'Node DSN Port', name: 'nodeDsnPort' },
-			    { label: 'Farmer Port', name: 'farmerPort' },
+			                { label: 'Farmer Port', name: 'farmerPort' },
                             { label: 'Node Name', name: 'nodeName' },
-			    { label: 'Plot Size', name: 'plotSize' },
+			                { label: 'Plot Size', name: 'plotSize' },
                             { label: 'Reward Address', name: 'rewardAddress' },
                             { label: 'Node Data', name: 'nodeData' },
-			    { label: 'Farmer Data', name: 'farmerData' },
-			    { label: 'Node Binary Path', name: 'nodeBinPath' },
-			    { label: 'Farmer Binary Path', name: 'farmerBinPath' },
-			    { label: 'Extra Node Arguments', name: 'extraNodeArgs' },
-			    { label: 'Extra Farmer Arguments', name: 'extraFarmerArgs' },
-			    { label: 'System User', name: 'user' }
+			                { label: 'Farmer Data', name: 'farmerData' },
+			                { label: 'Node Binary Path', name: 'nodeBinPath' },
+			                { label: 'Farmer Binary Path', name: 'farmerBinPath' },
+			                { label: 'Extra Node Arguments', name: 'extraNodeArgs' },
+			                { label: 'Extra Farmer Arguments', name: 'extraFarmerArgs' },
+			                { label: 'System User', name: 'user' }
                         ].map(({ label, name }, index) => (
                             <div key={name} className={styles['systemd-service-generator-form__group']}>
                                 <label
@@ -326,9 +324,8 @@ WantedBy=multi-user.target`;
                         ))}
 
 			{[
-                            { label: 'Archival', name: 'archival' },
-			    { label: 'Sandbox', name: 'sandbox' },
-			    { label: 'QUIC', name: 'quic' }
+                { label: 'Archival', name: 'archival' },
+			    { label: 'Sandbox', name: 'sandbox' }
                         ].map(({ label, name }, index) => (
                             <div key={name} className={styles['systemd-service-generator-form__checkbox-group']}>
                                 <label
