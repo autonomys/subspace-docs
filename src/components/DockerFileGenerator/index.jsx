@@ -104,10 +104,10 @@ services:
     volumes:
       - ${formData.nodeData ? formData.nodeData : "node-data"}:/var/subspace:rw
     ports:
-      - "0.0.0.0:${formData.nodePort}:30333/tcp"
       - "0.0.0.0:${formData.nodePort}:30333/udp"
-      - "0.0.0.0:${formData.nodeDsnPort}:30433/tcp"
+      - "0.0.0.0:${formData.nodePort}:30333/tcp"
       - "0.0.0.0:${formData.nodeDsnPort}:30433/udp"
+      - "0.0.0.0:${formData.nodeDsnPort}:30433/tcp"
     restart: unless-stopped
     command:
       [
@@ -138,7 +138,8 @@ services:
     volumes:
       - ${formData.farmerData ? formData.farmerData : "farmer-data"}:/var/subspace:rw
     ports:
-      - "0.0.0.0:${formData.farmerPort}:30533"
+      - "0.0.0.0:${formData.farmerPort}:30533/udp"
+      - "0.0.0.0:${formData.farmerPort}:30533/tcp"
     restart: unless-stopped
     command:
       [
