@@ -1,0 +1,414 @@
+---
+title: File systems and partitioning
+sidebar_position: 7
+description: essential info to partitions, file systems and mounts
+keywords:
+    - Partition
+    - Filesystem
+    - Mount
+    - Boot
+    - MBR
+    - GPT
+    - VFat
+    - BTRFS
+    - XFS
+    - EXT
+---
+
+#### Following issues will be covered here: 
+* How to partitions for various purposes 
+* How to create VFAT, EXT4, XFS and BTRFS and realted with them journal partition filesystems
+* How to mount these four file systems
+
+## Boot process
+
+#### *Boot* Partition:
+BIOS (Basic Input/Output System) and UEFI (Unified Extensible Firmware Interface) are firmware interfaces that control the booting process of a computer.
+MBR (Master Boot Record) and GPT (GUID Partition Table) are partitioning schemes that define how data is organized on a storage device.
+
+The main partition table in MBR partitioning scheme starts in the very first sector of the storage device (the 0th sector). This is also known as the Master Boot Record sector. This sector is a 512-byte region that contains both the partition table and the boot code. The partition table occupies the first 446 bytes, while the remaining 66 bytes are reserved for the boot code. The boot code is executed by the computer's BIOS during the boot process and is responsible for locating and loading the operating system's boot loader, which is stored in the active partition's boot sector. There are recommendations for [partition codes](https://en.wikipedia.org/wiki/GUID_Partition_Table): 0x07 for NTFS, 0x83 for Linux, 0x0B for FAT32, and for file systems for boot partition in MBR scheme: for Windows, the boot disk is usually formatted with the NTFS file system, for Linux, it might be formatted with ext4. The recommended size of this partition is between 100 and 200 MiB.
+
+
+The main partition table in a GPT partitioning scheme starts in sector 1 of the storage device. The first sector (sector 0) is reserved for Protective MBR (PMBR) in GPT to maintain compatibility with legacy systems. A GPT has a size of 32 sectors. These 32 sectors are typically 512 bytes each, making the GPT header structure 16KB in size. By the way you can see the contents of those sectors (0 - 2047) with `dd if=/dev/sdX bs=512 skip=1 count=2047 | xxd` command. GPT relies on EFI firmware and the presence of an EFI System Partition to boot the system. EFI System Partition (ESP) is a small partition that contains EFI boot loaders, firmware executables, language support, drivers, variables etc. The ESP is typically formatted with the FAT32 and has a specific [partition type code](https://en.wikipedia.org/wiki/GUID_Partition_Table) of "EF00" in GPT. The partition type code in GPT is used only to indicate the file system used and is recommended, but not mandatory. The recommended size of this partition is between 100 and 500 MiB. However, there are cases that require an EFI system partition of up to 1 GB.
+
+#### *Tmp* Partition:
+The tmp partition is used for temporary files. It is recommended to have a separate tmp partition to prevent temporary files from filling up other partitions and causing system instability. The size of the tmp partition depends on the expected usage and the size of the server. For tmp, then it is better to use the standard ext2 file system, as it will be cleaned up at system boot. For the rest it is recommended to use ext4 file system.
+
+  One of the reasons for having a separate /tmp partition is to isolate temporary files from the rest of the filesystem. If your server handles user uploads or processes untrusted data, isolating /tmp can help prevent certain types of security vulnerabilities. On servers If there is large amount of temporary data, having a separate /tmp partition can help prevent it from filling up the root filesystem and potentially causing system instability.
+
+---------------------------------------------------------------------------------------------------------------
+#### Checking Disks Condition
+```console
+    apt-get -y install nvme-cli
+    nvme list       
+    nvme --smart-log /dev/ng0n1
+    nvme --smart-log /dev/ng1n1
+```
+
+## Partitioning
+
+For partition manipulation, the most popular utilities are:
+
+[Parted](https://www.gnu.org/software/parted/)
+##### Works with both GPT and MBR partition tables. It can resize partitions, but it does not resize the file systems within them. To resize file systems, you may need to use utilities like e2fsprogs separately. Note that Parted may have some alignment issues with GPT partitions.
+
+[E2fsprogs](http://e2fsprogs.sourceforge.net/)
+##### This utility is specifically designed for working with ext2 and ext3 file systems.
+
+[Blocks to Gigabytes Calculator](https://www.unitconverters.net/data-storage/block-to-gigabyte.htm)
+##### This online tool can help you convert between different storage measurement units.
+
+[Gdisk](https://www.rodsbooks.com/gdisk/) and [its non-interactive version, sgdisk](https://www.rodsbooks.com/gdisk/sgdisk.html)
+##### These tools are primarily for GPT partitions. They are useful for tasks such as reordering partitions, aligning to the end, and labeling. However, they cannot resize partitions. 
+Sgdisk can be used as an automated script for partition tasks on multiple disks or partitions.
+
+    For example, the command below wipes any data on nvme1n1; creates a partition number 1, which started by default (from the beginning of the biggest unallocated space) sized 512 MiB (Mebibit), sets it's type as EFI (in GPT scheme EF00), names it 'boot'; creates second partition, aligns it to 2048 boundaries from disk's end started by default(from the beginning of the biggest unallocated space) & ends at 4076M from end of disk's logical space, sets it's type 8300, sets label 'main', verifies operation; creates 3-rd partition, started by default..., ended after 2038Mebibit, sets it's type=8300, labels the partition as j1, also verifies operation; creates 4-th partition, started by default, ended at +2038Mebibit, sets it's type 8300, labels the partition as j2, also verifies operation; and prints the result:
+    
+    sgdisk -z /dev/nvme1n1 -n 1::+512M -t 1:EF00 -c 1:boot -v /dev/nvme1n1 --align-end -n 2::-4076M -t 2:8300 -c 2:main -v /dev/nvme1n1 -n 3::+2038M -t 3:8300 -c 3:j1 -v /dev/nvme1n1 -n 4::+2038M -t 4:8300 -c 4:j2 -v /dev/nvme1n1 -p /dev/nvme1n1
+    
+ `-v	`checks for a variety of problems, such as incorrect CRCs and mismatched main and backup data. But does not automatically correct most problems; `-c`	change-name=partnum:name; `-t` partition_number:hexcode; `-p` prints info about this device; `-z`	wipes tables and all partitions; `-I, --align-end` aligns the end of the partition to a 2048-sector boundary to the end of disk.
+
+ *unlike gdisk sgdisk does not allign partitions in 2048 boundaries to the end of disk by default, so need to use `--align-end` option before the command that creates a partition.*
+
+
+### Resize Partition 
+During partition resizing, you need to make the size of the hive system smaller than (or equal to) the partition. First reduce it, resize the partition, and then adjust the fs to the size of the partition without explicitly specifying the size in the resize2fs tool. When u resize partition with Parted: copy old partition's GUID, delete old partition, create new one matching starting sector! (otherwise data will be lost), set old GUID to the new one. 
+
+Useful tools are:
+
+#### [Calculator](https://www.unitconverters.net/data-storage/block-to-gigabyte.htm) blocks to gigabytes
+[e2fsck](https://www.linode.com/docs/guides/using-e2fsck-to-fix-ext-disk-issues/) 
+(`e2fsck -f device`) - checking part for errors before resizing is mandatory; -f forces checking even if partition is empty
+
+## Creating File System
+
+## VFAT
+#### Creating FAT32 partition. It is recommended for boot in GPT:
+```console
+mkfs.vfat -c -n "boot" -F 32 -v /dev/nvme1n1p1  # c -check for errors; n-label; F -FAT size, v-verbose
+```
+
+## EXT(3,4)
+#### creating EXT4 filesystem with setting it's name (farmer-0):
+```console
+mkfs.ext4 -L "farmer-0" /dev/nvme0n1p1  # -L - label
+```
+#### Creating small EXT4 partition which will be used as external journal:
+:::note
+external-journal must have same block size as it's "data" filesystem (normally, it is so by default)
+:::
+
+```console
+mke2fs -L "j0" -O journal_dev /dev/nvme1n1p3
+```
+#### attaching the filesystem to the journal device located on /dev/nvme1n1p3.
+```console
+tune2fs -J device=/dev/nvme1n1p3 /dev/nvme0n1p1
+```
+[detailed EXT4 manual](https://linux.die.net/man/5/ext4)
+
+#### Resizing journal partition: 
+```console
+tune2fs -J size=256M /dev/device
+```
+Some useful options to add in command:
+ `-t` filesystem type
+ `-c`	checking for errors (`-cc` -- very thorough checking)
+ `-b`	set block size 4096
+ `-v`	verbose execution 
+ 
+To check/veryfy/repair external journal partition :
+```console
+e2fsck -j /dev/nvme1n1p3 /dev/nvme1n1p2  # Requires to unmount partition
+```
+
+It is allowed to switch journal on EXT4 partition from external to internal. 
+```console
+umount /dev/sdXY	    # unmount
+tune2fs -j /dev/sdXY	# create inner journal
+e2fsck -f /dev/sdXY	    # check file system
+mount /dev/sdXY /mount/point  
+```
+
+[detailed e2fsck manual](https://linux.die.net/man/8/e2fsck)
+
+
+
+## XFS
+* XFS provides various file system parameters that can be adjusted using the xfs_admin 
+* You can modify the mount options for an XFS file system to change its behavior.
+* XFS provides additional performance tuning options: delaylog ; allocsize ; inode64, You modify these options by editing the `/etc/default/grub`
+* When creating XFS file system, you should specify an external log device using the `-l logdev=device` option with the `mkfs.xfs` command. 
+If you do not specify a log device duiring creating the file system, you will not be able to add one later
+* You don't need to mount the journal separately! - Just the main partition mount is enough. The log will be hooked up automatically.
+
+Some interesting functions of XFS filsystem:
+    
+`-l` log_section_options (These options specify the location, size, and other parameters of the log section of the filesystem. The valid log_section_options are: `logdev=device`. This is used to specify that the log section should reside on the device separate from the data section.
+
+nobarrier (For ex. : `mount -o nobarrier /dev/device /mount/point`) For devices with non-volatile, battery-backed write caches and those with write-caching disabled, you can safely disable write barriers at mount time using the `-o nobarrier` option for mount. The role of write barriers in maintaining data integrity during power failures when dealing with storage devices that have extra caches.
+
+Metadata Update Process: File systems use transactions to bundle metadata updates. Transactions are sent to persistent storage, ensuring data consistency during power failures. Challenges with Storage Devices: Storage devices with extra caches, like write caches, can pose problems. Caches may report I/O as complete, but data is lost if the cache loses power. The commit block may be on disk without the complete transaction, leading to data inconsistency.
+
+Write Barriers: Write barriers are implemented in the Linux kernel. They involve flushing the storage write cache before and after I/O. This ensures: All data is on the disk; No data reordering occurs; An fsync() call triggers a storage cache flush, guaranteeing data persistence on disk, even in case of power loss.
+
+`sunit=values` specifies the alignment to be used for log writes. The value has to be specified in 512-byte block units. Use the su suboption to specify the log stripe unit size in bytes. Log writes will be aligned on this boundary, and rounded up to this boundary. This gives major improvements in performance on some configurations such as software RAID5 when the sunit is specified as the filesystem block size. The quivalent byte value must be a multiple of the filesystem block size. Version 2 logs are automatically selected if the log sunit suboption is specified.
+[Write barriers](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/storage_administration_guide/writebarrieronoff)
+
+
+#### Creating External XFS Journal Partition
+```console
+mkfs.xfs -L j0 /dev/nvme1n1p4
+```
+According to the XFS manual, the maximum size of the log partition is stated to be 2136997888 bytes or 2038 MB (in binary format). Therefore, this is the maximum size of the partition dedicated to it.
+
+#### Creating XFS Data Partition (named farmer-0) Mentioning it's Journal Partition
+```console
+mkfs.xfs -L farmer-0 -l logdev=/dev/nvme1n1p4 /dev/nvme0n1p1
+```	
+
+Manuals:
+[mkfs.xfs.8](https://www.man7.org/linux/man-pages//man8/mkfs.xfs.8.html)
+[xfs](https://linux.die.net/man/5/xfs)
+[xfsctl](https://linux.die.net/man/3/xfsctl)
+[mkfs.xfs](https://linux.die.net/man/8/mkfs.xfs)
+
+
+## BTRFS
+
+### What is BTRFS?
+
+Btrfs isn't a direct replacement for the standard Ext4 file system found in most Linux distributions, but it's likely to replace Ext4 in the future. Theodore Ts'o, a maintainer for Ext3 and Ext4, considers Btrfs a more promising technology.
+Btrfs aims to provide improved scalability and reliability compared to Ext4, addressing weaknesses in existing Linux file systems. It focuses on fault tolerance, repair capabilities, and straightforward administration.
+Ext4 is a journaling file system, which can be slow in checking large hard disks, particularly as disk sizes grow. Btrfs handles this more efficiently.
+Ext4 has limits, supporting up to 1 exbibyte for partitions and 16 tebibytes for file sizes. Btrfs, however, supports up to 16 exbibytes for partitions and files, making it significantly more scalable and is essential for enterprise environments and cloud storage. Btrfs isn't currently stable due to its ongoing development. In some sources it's considered experimental.
+
+
+Some interesting features
+
+    Unlike some other file systems that support external journals, such as XFS and ext4, Btrfs does not support external journaling. The journaling in Btrfs is integrated into its COW mechanism and is not a separate feature that can be moved to another device. 
+    If multiple devices are specified, btrfs is created spanning across the specified devices. `-l, --leafsize size`. Specifies the leaf size, the least data item in which btrfs stores data. The default value is the page size.
+    Specifying `commit=0` disables the automatic commit mechanism, which can improve performance by reducing the frequency of disk writes. However, it also increases the risk of data loss in the event of a system crash or power failure, as changes may not be immediately written to disk (in mounting command)
+
+[More info on Wikipedia](https://en.wikipedia.org/wiki/Btrfs)
+
+### DataCoW BTRFS
+                          
+ The `nodatacow` option in Btrfs controls copy-on-write behavior for newly created files. When this option is enabled, newly created files will not use copy-on-write, which can provide a slight performance boost by directly overwriting data, similar to how ext file systems work. However, it's important to note that enabling `nodatacow` also turns off checksumming, so data integrity may be compromised.
+ Here's how you can set the `nodatacow` option for a file or directory in Btrfs.
+
+ - To turn off COW on a file, you can use the `chattr` command with the `+C` option. For example:
+  ```bash
+sudo chattr +C /path/to/file
+  ```
+ - To turn off COW on a directory and all its contents recursively, you can use the `chattr` command with the `-R +C` option. For example:
+  ```bash
+sudo chattr -R +C /path/to/directory
+  ```
+ - To check if COW is enabled on a file or directory, you can use the `lsattr` command. For example:
+  ```bash
+lsattr /path/to/file
+lsattr -d /path/to/directory
+  ```
+ Remember, that `nodatacow` will only affect newly created files. If the files were copied over to the subvolume while COW was enabled, then it will remain enabled for those files.
+ It's worth mentioning that the `nodatacow` option also turns off compression in Btrfs.
+
+
+
+   mkfs.btrfs [ -A alloc-start ] [ -b byte-count ] [ -d data-profile ] [ -l leafsize ] [ -L label ] [ -m metadata profile ] [ -M mixed data+metadata ] [ -n nodesize ] [ -s sectorsize ] [ -rrootdir ] [ -K ] [ -h ] [ -V ] device [ device ... ] 
+
+### Formatting farmer-2 partition in BTRFS
+```console
+mkfs.btrfs -L far2 /dev/nvme2n1p1
+```
+
+[Manual btrfs](https://www.man7.org/linux/man-pages/man8/btrfs.8.html)
+[BTRFS device](https://www.man7.org/linux/man-pages/man8/btrfs-device.8.html)
+[BTRFS filesystem](https://www.man7.org/linux/man-pages/man8/btrfs-filesystem.8.html)
+
+
+## Mount
+
+`/mnt` directory is traditionally used for temporary mount points. For permanent mount points it's common to create a dedicated directory for the mount point.
+
+All systems, files, and devices can be mounted and unmounted as needed to adjust their properties (refer to the "Some useful mounting options" section below).
+
+## Mount Commands
+
+This command usually given in a bootscript causes all filesystems mentioned in fstab to be mounted, exept with -noauto flag:
+`mount -a [-t type] [-O optlist]` 
+
+To mount what already is in fstab - give it only device or only mount point:
+`mount farmer-1`
+
+To mount without reading fstab, specify both device and dir(mount point)
+`mount /dev/nvme0n1p1 /farmer-1`
+
+ #### Mounting XFS partition with an external journal:
+ 
+ ```console
+ mount -o logdev=/path/to/logdevice /path/to/datadevice /mount/point
+ ```
+ The `logdev=/path/to/logdevice` option in the mount command refers to the device identifier, not the mount point.
+
+`-o`  - options section, options must be comma separated by comma, no spaces; `-t` - file system type; `-a`  - to mount all devices which are written in the fstab; `-L`  - mount partition that has label (can be omitted if the device is already in fstab)
+  
+#### Mounting XFS data partition (farmer-2) hooking up it's journal partition (nvme0n1p5)
+```console
+mkdir /mnt/farmer-2
+mount -t xfs -o defaults,logdev=/dev/nvme0n1p5,swalloc,largeio /dev/nvme2n1p1 /mnt/farmer-2	
+```
+[brief mount options manual](https://linux.die.net/man/8/mkfs.xfs)
+
+
+#### Mounting BTRFS partition without CoW:
+```console
+mkdir /mnt/j2
+mount -t btrfs -o nodatacow,nobarrier,commit=0 /dev/nvme2n1p1 /mnt/far2
+```
+ 
+For BTRFS: Specifying commit=0 disables the automatic commit mechanism, which can improve performance by reducing the frequency of disk writes. However, it also increases the risk of data loss in the event of a system crash or power failure, as changes may not be immediately written to disk.
+
+
+- To check if COW is enabled on a file or directory, you can use the `lsattr` command. For example:
+  ```console
+  lsattr /path/to/file
+  lsattr -d /path/to/directory
+  ```
+
+
+### Chroot
+
+`chroot` (change root) command is used to switch to a temporary mounted filesystem containing another system (and root account), to perform actions like in that environment.
+
+`chroot /mnt/new-root-directory`   # Change the root directory to /mnt/newroot and run a new shell:
+Useful while in a rescue system.
+
+The chroot command (like many others) is a native Unix command, and its manual page can be accessed using the man command in a terminal:
+```console
+man chroot
+```
+
+
+### Fstab
+
+[Fstab manual](https://www.man7.org/linux/man-pages/man5/fstab.5.html)
+
+[Add partition to fstab manual](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/storage_administration_guide/s2-disk-storage-parted-create-part#s3-disk-storage-parted-create-part-fstab)
+
+The file fstab contains descriptive information about the filesystems the system can mount. Each filesystem is described on a separate line. 
+There will be six columns in the table of fstab file: 
+
+First column can be either path to device or UUID for example 'UUID=3e6be9de-8139-11d1-9106-a43f08d823a6' or 'LABEL=Boot'(Use a filesystem-specific tools to set LABELs on filesystems). It’s also possible to use PARTUUID= and PARTLABEL=... ; mount point; filesystem (for ex. ext4 or swap) ; mounting options ("defaults" means that the partition is mounted at boot time with default options. Multiple options can be used separated by commas w/o space) ;  automaticbackup-options (The value zero (0) denotes “no backup” and the value one (1) denotes “dump backup” of the partition. However, this column may be left blank if, no backup option is required); boot-check-priority (file system is being checked for errors at the time of system boot)
+
+As root, edit the `/etc/fstab` file to include the new partition using the partition's UUID.
+
+#### To get necessary info use the following commands:
+
+```console
+fdisk -l			    #  to view complete info of all the disks
+blkid -o list		#  to view disk tree with size of its partition
+blkid /dev/sda1	#  to know the UUID and file system of a partition
+```
+
+#### Example of fstab lines. Comments are only for explanation, indentations do not matter, can be tabs or spaces.
+
+```console
+UUID=E35A-641E /boot vfat defaults 0 2 # boot partition (EFI system)
+/dev/mapper/cpanel--backups-tmp /tmp xfs loop,nosuid,noexec,nodev,rw 0 0
+UUID=2de0e328-2bcd-4823-bfa5-3606f6fe9f92 /mnt ext4 defaults 0 1 # root partition
+UUID=75d99668-b3fe-49f7-847d-97fdc58f09b5 /j0 xfs defaults 0 0 # XFS journal partition
+UUID=75d99668-b3fe-49f7-847d-97fdc58f09b5 /mnt/farmer-0 xfs defaults,logdev=/dev/nvme1n1p5,swalloc,largeio 0 0 # /dev/nvme0n1p1 (farmer-0)	xfs data partition
+UUID=bdcaaf04-f085-4be8-b6ad-731fc326ba69 /mnt/farmer-2 btrfs defaults,commit=0,nodatacow,nobarrier 0 0 # /dev/nvme2n1p1 (farmer2)	btrfs
+
+```
+ 
+#### After editing fstab do regenerate mount units, so that your system registers the new configuration:
+```console
+systemctl daemon-reload
+```
+ Mounting all file systems written in fstab to verify that the configuration works:
+
+```console
+mount -a
+```
+
+
+##	Addon:  some useful mounting options
+
+### for all file systems
+
+`async`
+ All I/O to the filesystem should be done asynchronously. (See also the sync option.)
+`atime`
+ Do not use noatime feature, then the inode access time is controlled by kernel defaults. See also the description for strictatime and relatime mount options.
+`noatime`
+ Do not update inode access times on this filesystem (e.g, for faster access on the news spool to speed up news servers)
+`defaults`
+ Use default options: rw, suid, dev, exec, auto, nouser, async, and relatime. 
+`diratime`
+ Update directory inode access times on this filesystem. This is the default. 
+`nodiratime`
+ Do not update directory inode access times on this filesystem. 
+`dirsync`
+ All directory updates within the filesystem should be done synchronously. This affects the following system calls: creat, link, unlink, symlink, mkdir, rmdir, mknod and rename. 
+`exec`
+ Permit execution of binaries.
+`noexec`
+ Do not allow direct execution of any binaries on the mounted filesystem. (Until recently it was possible to run binaries anyway using a command like `/lib/ld*.so /mnt/binary`. This trick fails since Linux 2.4.25 / 2.6.0.) 
+`mount -o remount,rw /dev/foo /dir`
+ After this call all old mount options are replaced and arbitrary stuff from fstab is ignored, except the loop= option which is internally generated and maintained by the mount command. 
+`rw`
+ Mount the filesystem read-write
+`ro`
+ Mount the filesystem read-only. 
+### for EXT4: 
+`max_batch_time=usec`
+    Maximum amount of time ext4 should wait for additional filesystem operations to be batch together with a synchronous write operation. Since a synchronous write operation is going to force a commit and then a wait for the I/O complete, it doesn't cost much, and can be a huge throughput win, we wait for a small amount of time to see if any other transactions can piggyback on the synchronous write. The algorithm used is designed to automatically tune for the speed of the disk, by measuring the amount of time (on average) that it takes to finish committing a transaction. Call this time the "commit time". If the time that the transactoin has been running is less than the commit time, ext4 will try sleeping for the commit time to see if other operations will join the transaction. The commit time is capped by the `max_batch_time`, which defaults to 15000us (15ms). This optimization can be turned off entirely by setting `max_batch_time` to 0. 
+`journal_ioprio=prio`
+    The I/O priority (from 0 to 7, where 0 is the highest priorty) which should be used for I/O operations submitted by kjournald2 during a commit operation. This defaults to 3, which is a slightly higher priority than the default I/O priority.
+
+
+### for XFS:
+`logbufs=value`
+    Set the number of in-memory log buffers. Valid numbers range from 2-8 inclusive. The default value is 8 buffers for filesystems with a blocksize of 64KiB, 4 buffers for filesystems with a blocksize of 32KiB, 3 buffers for filesystems with a blocksize of 16KiB and 2 buffers for all other configurations. Increasing the number of buffers may increase performance on some workloads at the cost of the memory used for the additional log buffers and their associated control structures. 
+`logdev=device and rtdev=device`
+    Use an external log (metadata journal) and/or real-time device. An XFS filesystem has up to three parts: a data section, a log section, and a real-time section. The real-time section is optional, and the log section can be separate from the data section or contained within it. Refer to xfs(5).
+`osyncisosync`
+    Make `O_SYNC` writes implement true O_SYNC. WITHOUT this option, Linux XFS behaves as if an osyncisdsync option is used, which will make writes to files opened with the O_SYNC flag set behave as if the O_DSYNC flag had been used instead. This can result in better performance without compromising data safety. However if this option is not in effect, timestamp updates from O_SYNC writes can be lost if the system crashes. If timestamp updates are critical, use the osyncisosync option. 
+`swalloc`
+    Data allocations will be rounded up to stripe width boundaries when the current end of file is being extended and the file size is larger than the stripe width size. 
+`largeio|nolargeio`
+    If nolargeio is specified, the optimal I/O reported in `st_blksize` by stat(2) will be as small as possible to allow user applications to avoid inefficient read/modify/write I/O. If largeio is specified, a filesystem that has a swidth specified will return the swidth value (in bytes) in `st_blksize`. If the filesystem does not have a swidth specified but does specify an allocsize then allocsize (in bytes) will be returned instead. If neither of these two options are specified, then filesystem will behave as if nolargeio was specified.     
+    
+
+### DataCoW BTRFS
+                          
+The `nodatacow` option in Btrfs controls copy-on-write behavior for newly created files. When this option is enabled, newly created files will not use copy-on-write, which can provide a slight performance boost by directly overwriting data, similar to how ext file systems work. However, it's important to note that enabling `nodatacow` also turns off checksumming, so data integrity may be compromised.
+Here's how you can set the `nodatacow` option for a file or directory in Btrfs:
+
+- To turn off COW on a file, you can use the `chattr` command with the `+C` option. For example:
+  ```bash
+  sudo chattr +C /path/to/file
+  ```
+
+- To turn off COW on a directory and all its contents recursively, you can use the `chattr` command with the `-R +C` option. For example:
+  ```bash
+  sudo chattr -R +C /path/to/directory
+  ```
+
+- To check if COW is enabled on a file or directory, you can use the `lsattr` command. For example:
+  ```bash
+  lsattr /path/to/file
+  lsattr -d /path/to/directory
+  ```
+Remember that `nodatacow` will only affect newly created files. If the files were copied over to the subvolume while COW was enabled, then it will remain enabled for those files
+It's worth mentioning that the `nodatacow` option also turns off compression in Btrfs.
+
+More BTRFS reading:
+
+[BTRFS wiki kernel.org](https://btrfs.wiki.kernel.org/)
+
+[Arch Linux BTRFS Wiki](https://wiki.archlinux.org/title/btrfs)
+
+[The Btrfs Filesystem:Theory and Practice](https://www.kernel.org/doc/html/latest/filesystems/btrfs.html)
