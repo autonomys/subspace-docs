@@ -199,3 +199,15 @@ html[data-theme='light'] .token.keyword {
 html[data-theme='dark'] .docusaurus-highlight-code-line {
   background-color: rgba(0, 0, 0, 0.3);
 }
+
+.flexContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.buttons {
+  margin-bottom: 20px;
+}
+
