@@ -192,12 +192,12 @@ target/production/subspace-node `
 
 ```bash
 target/production/subspace-node \
---chain gemini-3g
+--chain gemini-3g \
 --rpc-external \
 --bootnodes /ip4/3.87.28.170/tcp/40333/p2p/12D3KooWGHtULvhdKMZtzigSK1438uWXPj9rBQHVzTaKMWv1WRXp \
 --name your_node_name \
 --base-path your_path_to_node_data \
--- `
+-- \
 --domain-id your_domain_id \
 --chain gemini-3g \
 --operator \
@@ -216,7 +216,7 @@ target/production/subspace-node \
 --bootnodes /ip4/3.87.28.170/tcp/40333/p2p/12D3KooWGHtULvhdKMZtzigSK1438uWXPj9rBQHVzTaKMWv1WRXp \
 --name your_node_name \
 --base-path your_path_to_node_data \
--- `
+-- \
 --domain-id your_domain_id \
 --chain gemini-3g \
 --operator \
@@ -227,7 +227,7 @@ target/production/subspace-node \
 </TabItem>
 </Tabs>
 
-You should see the node start sucesfully and begin syncing
+You should see the node start successfully and begin syncing
 
  ![Staking-13](/img/doc-imgs/operators-staking/Staking-13.png)
 
