@@ -79,11 +79,12 @@ The command above assumes `/tmp/keystore` as the keystore location.
 To register an operator on the domain: 
 1. Proceed to [PolkadotJS](https://polkadot.js.org/apps/#/explorer)
 2. Make sure to select the correct network at the top-left corner. 
-3. Select the account you want to use in `using the selected account`.
-4. Select `domains` under `submit the following extrinsic` and choose `registerOperator(domainID, amount, config)` in the dropdown.
-5. Enter the `domainId` to be registered on. 
-6. Enter the desired staking amount in the `amount` field.
-7. Put your public signing key at the `signingKey` field. 
+3. Navigate to Developer -> Extrinsics. 
+4. Select the account you want to use in `using the selected account`.
+5. Select `domains` under `submit the following extrinsic` and choose `registerOperator(domainID, amount, config)` in the dropdown.
+6. Enter the `domainId` to be registered on. 
+7. Enter the desired staking amount in the `amount` field.
+8. Put your public signing key at the `signingKey` field. 
 
 
 :::note
@@ -163,6 +164,10 @@ subspace-node [consensus-chain-args] -- [domain-args]
 Example:
 Start a node as operator on `gemini-3g` chain:
 
+:::note
+Ensure you replace `your_domain_id` with your domain identifier in the command. If your keystore is located in a different folder, adjust the `--keystore-path` accordingly. Setting `--base-path` is optional.
+:::
+
 <Tabs groupId="OS">
 <TabItem value="windows" label="🖼️ Windows" default>
 
@@ -170,9 +175,11 @@ Start a node as operator on `gemini-3g` chain:
 target/production/subspace-node `
 --chain gemini-3g `
 --rpc-external `
---node-key 0xxeea96fe9cfbd6c1d7e9657e36447a158c0c80432b2bc8869a1c6706707843f `
+--bootnodes /ip4/3.87.28.170/tcp/40333/p2p/12D3KooWGHtULvhdKMZtzigSK1438uWXPj9rBQHVzTaKMWv1WRXp `
+--name your_node_name `
+--base-path your_path_to_node_data `
 -- `
---domain-id 3 `
+--domain-id your_domain_id `
 --chain gemini-3g `
 --operator `
 --keystore-path /tmp/keystore `
@@ -185,11 +192,13 @@ target/production/subspace-node `
 
 ```bash
 target/production/subspace-node \
---chain gemini-3g \
+--chain gemini-3g
 --rpc-external \
---node-key 0xxeea96fe9cfbd6c1d7e9657e36447a158c0c80432b2bc8869a1c6706707843f \
--- \
---domain-id 3 \
+--bootnodes /ip4/3.87.28.170/tcp/40333/p2p/12D3KooWGHtULvhdKMZtzigSK1438uWXPj9rBQHVzTaKMWv1WRXp \
+--name your_node_name \
+--base-path your_path_to_node_data \
+-- `
+--domain-id your_domain_id \
 --chain gemini-3g \
 --operator \
 --keystore-path /tmp/keystore \
@@ -202,11 +211,13 @@ target/production/subspace-node \
 
 ```bash
 target/production/subspace-node \
---chain gemini-3g \
+--chain gemini-3g
 --rpc-external \
---node-key 0xxeea96fe9cfbd6c1d7e9657e36447a158c0c80432b2bc8869a1c6706707843f \
--- \
---domain-id 3 \
+--bootnodes /ip4/3.87.28.170/tcp/40333/p2p/12D3KooWGHtULvhdKMZtzigSK1438uWXPj9rBQHVzTaKMWv1WRXp \
+--name your_node_name \
+--base-path your_path_to_node_data \
+-- `
+--domain-id your_domain_id \
 --chain gemini-3g \
 --operator \
 --keystore-path /tmp/keystore \
@@ -215,10 +226,6 @@ target/production/subspace-node \
 
 </TabItem>
 </Tabs>
-
-:::note
-Make sure to use the public key (hex) that we generated earlier in the [Create Operator Key](#create-operator-key) section
-:::
 
 You should see the node start sucesfully and begin syncing
 
@@ -321,4 +328,3 @@ Only the account who registered **Operator** can swith the domain.
 :::note
 Stake of your **Nominators** won't be released, but will be moved to the new domain as well. 
 :::
-
