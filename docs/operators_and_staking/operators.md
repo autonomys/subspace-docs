@@ -174,7 +174,6 @@ Ensure you replace `your_domain_id` with your domain identifier in the command. 
 ```powershell
 target/production/subspace-node `
 --chain gemini-3g `
---rpc-external `
 --bootnodes /ip4/3.87.28.170/tcp/40333/p2p/12D3KooWGHtULvhdKMZtzigSK1438uWXPj9rBQHVzTaKMWv1WRXp `
 --name your_node_name `
 --base-path your_path_to_node_data `
@@ -182,8 +181,7 @@ target/production/subspace-node `
 --domain-id your_domain_id `
 --chain gemini-3g `
 --operator `
---keystore-path /tmp/keystore `
---rpc-external
+--keystore-path /tmp/keystore 
 ```
 
 </TabItem>
@@ -193,7 +191,6 @@ target/production/subspace-node `
 ```bash
 target/production/subspace-node \
 --chain gemini-3g \
---rpc-external \
 --bootnodes /ip4/3.87.28.170/tcp/40333/p2p/12D3KooWGHtULvhdKMZtzigSK1438uWXPj9rBQHVzTaKMWv1WRXp \
 --name your_node_name \
 --base-path your_path_to_node_data \
@@ -201,8 +198,7 @@ target/production/subspace-node \
 --domain-id your_domain_id \
 --chain gemini-3g \
 --operator \
---keystore-path /tmp/keystore \
---rpc-external
+--keystore-path /tmp/keystore 
 ```
 
 </TabItem>
@@ -212,7 +208,6 @@ target/production/subspace-node \
 ```bash
 target/production/subspace-node \
 --chain gemini-3g \
---rpc-external \
 --bootnodes /ip4/3.87.28.170/tcp/40333/p2p/12D3KooWGHtULvhdKMZtzigSK1438uWXPj9rBQHVzTaKMWv1WRXp \
 --name your_node_name \
 --base-path your_path_to_node_data \
@@ -220,8 +215,7 @@ target/production/subspace-node \
 --domain-id your_domain_id \
 --chain gemini-3g \
 --operator \
---keystore-path /tmp/keystore \
---rpc-external
+--keystore-path /tmp/keystore 
 ```
 
 </TabItem>
@@ -328,3 +322,78 @@ Only the account who registered **Operator** can swith the domain.
 :::note
 Stake of your **Nominators** won't be released, but will be moved to the new domain as well. 
 :::
+
+
+### Useful commands
+#### Running both validator (farmer) and operator nodes at the same time
+
+:::tip
+To run both operator and validator at the same time, provide requrired flags for both roles when starting your node. 
+:::
+
+<Tabs groupId="OS">
+<TabItem value="windows" label="🖼️ Windows" default>
+
+```powershell
+target/production/subspace-node `
+# validator flags
+--chain gemini-3g `
+--blocks-pruning 256 `
+--state-pruning archive `
+--no-private-ipv4 `
+--validator `
+--name your_node_name `
+# operator flags
+-- `
+--domain-id 1 `
+--operator `
+--keystore-path /tmp/keystore `
+--bootnodes /ip4/3.87.28.170/tcp/40333/p2p/12D3KooWGHtULvhdKMZtzigSK1438uWXPj9rBQHVzTaKMWv1WRXp `
+```
+
+</TabItem>
+
+
+<TabItem value="macos" label="🍎 macOS">
+
+```bash
+target/production/subspace-node `
+# validator flags
+--chain gemini-3g \
+--blocks-pruning 256 \
+--state-pruning archive \
+--no-private-ipv4 \
+--validator \
+--name your_node_name \
+# operator flags
+-- \
+--domain-id 1 \
+--operator \
+--keystore-path /tmp/keystore \
+--bootnodes /ip4/3.87.28.170/tcp/40333/p2p/12D3KooWGHtULvhdKMZtzigSK1438uWXPj9rBQHVzTaKMWv1WRXp
+--bootnodes /ip4/3.87.28.170/tcp/40333/p2p/12D3KooWGHtULvhdKMZtzigSK1438uWXPj9rBQHVzTaKMWv1WRXp `
+```
+
+</TabItem>
+
+<TabItem value="linux" label="🐧 Ubuntu">
+
+```bash
+target/production/subspace-node `
+# validator flags
+--chain gemini-3g \
+--blocks-pruning 256 \
+--state-pruning archive \
+--no-private-ipv4 \
+--validator \
+--name your_node_name \
+# operator flags
+-- \
+--domain-id 1 \
+--operator \
+--keystore-path /tmp/keystore \
+--bootnodes /ip4/3.87.28.170/tcp/40333/p2p/12D3KooWGHtULvhdKMZtzigSK1438uWXPj9rBQHVzTaKMWv1WRXp 
+```
+
+</TabItem>
+</Tabs>
