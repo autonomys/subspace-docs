@@ -348,7 +348,7 @@ target/production/subspace-node `
 --domain-id 1 `
 --operator `
 --keystore-path /tmp/keystore `
---bootnodes /ip4/3.87.28.170/tcp/40333/p2p/12D3KooWGHtULvhdKMZtzigSK1438uWXPj9rBQHVzTaKMWv1WRXp `
+--bootnodes /ip4/3.87.28.170/tcp/40333/p2p/12D3KooWGHtULvhdKMZtzigSK1438uWXPj9rBQHVzTaKMWv1WRXp 
 ```
 
 </TabItem>
@@ -371,7 +371,6 @@ target/production/subspace-node `
 --operator \
 --keystore-path /tmp/keystore \
 --bootnodes /ip4/3.87.28.170/tcp/40333/p2p/12D3KooWGHtULvhdKMZtzigSK1438uWXPj9rBQHVzTaKMWv1WRXp
---bootnodes /ip4/3.87.28.170/tcp/40333/p2p/12D3KooWGHtULvhdKMZtzigSK1438uWXPj9rBQHVzTaKMWv1WRXp `
 ```
 
 </TabItem>
