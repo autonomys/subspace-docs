@@ -192,7 +192,7 @@ target/production/subspace-node `
 
 ```bash
 target/production/subspace-node \
---chain gemini-3g
+--chain gemini-3g \
 --rpc-external \
 --bootnodes /ip4/3.87.28.170/tcp/40333/p2p/12D3KooWGHtULvhdKMZtzigSK1438uWXPj9rBQHVzTaKMWv1WRXp \
 --name your_node_name \
