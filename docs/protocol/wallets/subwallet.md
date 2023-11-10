@@ -66,6 +66,45 @@ To get your wallet public address, click on the tSSC token.
     ![wallet-4](/img/doc-imgs/subwallet/Subwallet-8.png)
 
 
+## Connect to Subspace via RPC
+
+Sometimes you won't see the network you would like to connect to in a list of available networks. In this case you can connect to Subspace Network manually via RPC.
+This also can be helpful for in-development networks such as the Subspace Network as we have regularly changing RPC endpoints and versions of testnets, and soon various domains. Below you will find a simple guide on how to add these new networks. Additionally we will try and keep an updated list of active RPC endpoints below for development.
+
+:::info RPC Endpoints
+- **Gemini 3d Endpoint: ** wss://rpc.gemini-3d.subspace.network/ws
+- **Gemini 3e Endpoint: ** wss://rpc.gemini-3e.subspace.network/ws
+- **Gemini 3f Endpoint: ** wss://rpc.gemini-3g.subspace.network/ws
+- **Gemini 3g Endpoint: ** wss://rpc-1.gemini-3g.subspace.network/ws
+:::
+
+1. Open SubWallet, Select the 3 Line menu in the top left of the wallet.
+    ![rpc-step-1](/img/doc-imgs/subwallet/rpc-1.png)
+
+2. Inside the settings menu you will see the option to Manage Networks, click this.
+    ![rpc-step-2](/img/doc-imgs/subwallet/rpc-2.png)
+    
+3. Within the Manage Networks menu you will see a + in the top right corner, click this.
+    ![rpc-step-3](/img/doc-imgs/subwallet/rpc-3.png)
+
+4. This will open the Import Network menu, where you will see a few options
+- Provider URL
+- Network Name
+- Symbol
+- Block explorer
+- Crowdloan URL
+The only option that is required is the Provider URL. You can add an explorer if you would like but it is not required. The current Subspace Explorer is available [here](https://explorer.subspace.network).
+You can refer to the *RPC Endpoints* above for available provider URLs for the Subspace Network.
+    
+5. Fill in the provider URL, once you click out of this box it will check the URL and add the rest of the information, then click Save. 
+- *In this example we will be using `wss://rpc-1.gemini-3g.subspace.network/ws`*
+
+![rpc-step-4](/img/doc-imgs/subwallet/rpc-4.png)
+
+6. You will then be taken back to the network screen where you can then select your new network that was added.
+
+![rpc-step-5](/img/doc-imgs/subwallet/rpc-5.png)
+
 ## Troubleshooting
 
 If you face any trouble or would like to learn about other features for SubWallet, please see the [Official SubWallet Documentation.](https://docs.subwallet.app/).
@@ -89,6 +128,3 @@ If you face any trouble or would like to learn about other features for SubWalle
 4. You will then enter your wallet password and click which preferred export method you would like to use, either `Seed phrase`, `JSON` or `QR code`.
 
     ![trouble-4](/img/doc-imgs/subwallet/Trouble-4.png)
-
-
-
