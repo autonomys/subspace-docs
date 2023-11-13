@@ -59,7 +59,7 @@ If you would like to Import an **Existing** Wallet, then select `Import an accou
 3. Go back to the first screen and you will see tSSC token with your balance.
 To get your wallet public address, click on the tSSC token.
 
-    ![wallet-3](/img/doc-imgs/subwallet/Subwallet-7.png)
+   ![wallet-3](/img/doc-imgs/subwallet/Subwallet-7.png)
 
 4. And then click on *Copy* sign to copy the public address. 
 
