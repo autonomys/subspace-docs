@@ -1,0 +1,91 @@
+import Link from '@docusaurus/Link';
+import styles from '@site/src/pages/index.module.css';
+
+
+### Windows Specific Warnings:
+:::note High RAM consumption
+Operating systems, such as Windows, allocate memory for both visible tasks and behind-the-scenes processes. 
+While this memory can be readily freed when necessary, Windows occasionally may not display these allocations accurately due to certain system nuances.
+High RAM consumption should not be a cause for concern.
+:::
+
+:::caution  Windows No Output Bug
+If you face an error where the node outputs nothing and no error code is given it is likely you just need to install the latest Visual C++ Redistributable package [here](https://learn.microsoft.com/en-us/cpp/windows/latest-supported-vc-redist?view=msvc-170)
+:::
+
+## Step 1: Download the Pulsar Executable
+---
+
+<div className={`${styles.buttons} ${styles.flexContainer}`}>
+  <Link
+    className="button button--secondary"
+    to="https://github.com/subspace/pulsar/releases/download/v0.6.14-alpha/pulsar-windows-x86_64-v2-v0.6.14-alpha.exe"
+    style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', textAlign: 'center', padding: '10px' }}>
+    <span style={{ fontSize: '20px' }}>Pulsar Executable</span>
+    <span style={{ fontSize: '14px' }}>(Legacy CPU)</span>
+  </Link>
+  <Link
+    className="button button--secondary"
+    to="https://github.com/subspace/pulsar/releases/download/v0.6.14-alpha/pulsar-windows-x86_64-skylake-v0.6.14-alpha.exe"
+    style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', textAlign: 'center', padding: '10px' }}>
+    <span style={{ fontSize: '20px' }}>Pulsar Executable</span>
+    <span style={{ fontSize: '14px' }}>(Skylake+ CPU)</span>
+  </Link>
+</div>
+
+## Step 2: Initialize Pulsar
+---
+
+We will now initialize Pulsar. This is where we will configure Reward Address, Plot Size, Plot Location, etc. 
+
+1. Open Powershell, type `cd Downloads` (or `cd Your-File-Location`).
+2. Execute the `init` command as seen below.
+```powershell
+./pulsar-windows-x86_64-skylake-v0.6.14-alpha.exe init
+```
+
+3. This will prompt you to setup your Pulsar configurations to begin farming. You should see a similar prompt like so:
+
+```bash
+Configuration creation process has started...
+Do you have an existing farmer/reward address? [y/n]: y
+Enter your farmer/reward address: REDACTED_ADDRESS
+Enter your node name to be identified on the network (defaults to `username`, press enter to use the default):
+Specify a path for storing plot files (press enter to use the default: `"/home/username/.local/share/pulsar/farms"`):
+Specify a path for storing node files (press enter to use the default: `"/home/username/.local/share/pulsar/node"`):
+Specify a plot size (defaults to `2.0 GB`, press enter to use the default):
+Specify the chain to farm. Available options are: [Gemini3f, Dev, DevNet].
+Defaults to `Gemini3f`, press enter to use the default:
+Configuration has been generated at /home/username/.config/pulsar
+Ready for lift off! Run the follow command to begin: `"path/to/executable" farm`
+```
+4. Once complete, the settings will be written to the `settings.toml`. You can find Your `settings.toml` in `$FOLDERID_RoamingAppData/pulsar/settings.toml`
+
+## Step 3. Start Farming with Pulsar
+---
+
+:::warning 
+A `Windows Defender Firewall has blocked some features of this app` warning may appear.
+This is because the application is trying to access the internet. This is expected as it is how the farmer talks to other farmers on the network, select `Allow access` to continue farming. 
+:::
+
+We will now start the farmer with the `farm` command
+
+1. Run the following command below to start farming with Pulsar. 
+```powershell
+./pulsar-windows-x86_64-skylake-v0.6.14-alpha.exe farm
+```
+
+2. You should see the farmer and node start successfully and begin syncing, plotting, and then farming:
+
+```text
+Starting node ... (this might take up to couple of minutes)
+Node started successfully!
+Starting farmer ...
+Farmer started successfully!
+Initial plotting for plot: #0 (/home/username/.local/share/pulsar/farms)
+⠁ [00:00:00] 3% [=>                                      ]
+      (31.00 MiB/953.67 MiB) 157.35 GiB/s, plotting, ETA: 0s
+```
+
+3. That's it! Enjoy and Happy Farming!

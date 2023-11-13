@@ -1,0 +1,61 @@
+---
+title: Install
+sidebar_position: 2
+description: How to run a Subspace Network Farmer with the Substrate CLI
+keywords:
+    - Farmer
+    - Farming
+    - CLI
+    - Binaries
+    - Docker
+---
+import DockerPage from './Platforms/_docker.mdx';
+import SystemDPage from './Platforms/_systemd.mdx';
+import WindowsPage from './Platforms/_windows.mdx';
+import MacOSPage from './Platforms/_macos.mdx';
+import LinuxPage from './Platforms/_linux.mdx';
+import SourcePage from './Platforms/_source.mdx';
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+:::caution Advanced Usage
+[Pulsar](https://github.com/subspace/pulsar) (previously Simple CLI or Subspace CLI) is the recommended way to farm on the Subspace Network. Follow the guide below to get started or check out the project [README on GitHub](https://github.com/subspace/pulsar/blob/main/README.md).
+:::
+
+:::tip Looking for all Releases?
+You can always find these executables in the [Releases](https://github.com/subspace/subspace/releases) section on our GitHub
+:::
+
+:::note Feedback!
+Your insights on our releases elevate our progress. Fill out this [form](https://c6gxctjlh68.typeform.com/to/Ks4Y16Fo), your voice will be heard and addressed.
+:::
+
+## Get Started with Advanced CLI Installation
+
+<Tabs groupId="OS">
+
+<TabItem value="windows" label="🖼️ Windows" default>
+<WindowsPage />
+</TabItem>
+
+<TabItem value="macos" label="🍎macOS" default>
+<MacOSPage />
+</TabItem>
+
+<TabItem value="linux" label="🐧Ubuntu">
+<LinuxPage />
+</TabItem>
+
+<TabItem value="docker" label="🐋 Docker" default>
+<DockerPage />
+</TabItem>
+
+<TabItem value="systemd_service" label="🤖 Service (Linux)">
+<SystemDPage />
+</TabItem>
+
+<TabItem value="source" label="⚙️ Build from Source" >
+<SourcePage />
+</TabItem>
+</Tabs>
