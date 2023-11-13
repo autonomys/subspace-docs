@@ -40,10 +40,113 @@ To check the list of available domains:
 In the example above the number 3 corresponds to the domainId. 
 :::
 
+### Start the domain operator node
+
+
+The domain operator node is running with an embedded consensus node, thus you need to specify the args for both the consensus node and the domain operator node:
+
+```bash
+subspace-node [consensus-chain-args] -- [domain-args]
+```
+
+
+Example:
+Start a node as operator on `gemini-3g` chain:
+
+:::note
+Ensure you replace `your_domain_id` with your domain identifier in the command. If your keystore is located in a different folder, adjust the `--keystore-path` accordingly. Setting `--base-path` is optional.
+:::
+
+<Tabs groupId="OS">
+<TabItem value="windows" label="🖼️ Windows" default>
+
+```powershell
+target/production/subspace-node `
+--chain gemini-3g `
+--bootnodes /ip4/3.87.28.170/tcp/40333/p2p/12D3KooWGHtULvhdKMZtzigSK1438uWXPj9rBQHVzTaKMWv1WRXp `
+--name your_node_name `
+--base-path your_path_to_node_data `
+-- `
+--domain-id your_domain_id `
+--chain gemini-3g `
+--operator `
+--keystore-path /tmp/keystore 
+```
+
+</TabItem>
+
+<TabItem value="macos" label="🍎 macOS">
+
+```bash
+target/production/subspace-node \
+--chain gemini-3g \
+--bootnodes /ip4/3.87.28.170/tcp/40333/p2p/12D3KooWGHtULvhdKMZtzigSK1438uWXPj9rBQHVzTaKMWv1WRXp \
+--name your_node_name \
+--base-path your_path_to_node_data \
+-- \
+--domain-id your_domain_id \
+--chain gemini-3g \
+--operator \
+--keystore-path /tmp/keystore 
+```
+
+</TabItem>
+
+<TabItem value="linux" label="🐧 Ubuntu">
+
+```bash
+target/production/subspace-node \
+--chain gemini-3g \
+--bootnodes /ip4/3.87.28.170/tcp/40333/p2p/12D3KooWGHtULvhdKMZtzigSK1438uWXPj9rBQHVzTaKMWv1WRXp \
+--name your_node_name \
+--base-path your_path_to_node_data \
+-- \
+--domain-id your_domain_id \
+--chain gemini-3g \
+--operator \
+--keystore-path /tmp/keystore 
+```
+
+</TabItem>
+</Tabs>
+
+You should see the node start successfully and begin syncing. 
+
+ ![Staking-13](/img/doc-imgs/operators-staking/Staking-13.png)
+
+
+
+To view the stored node information navigate to: 
+
+<Tabs groupId="OS">
+<TabItem value="windows" label="🖼️ Windows" default>
+FOLDERID_LocalAppData e.g. 
+
+`C:\Users\Alice\AppData\Local`
+
+</TabItem>
+
+
+<TabItem value="macos" label="🍎 macOS">
+$HOME/Library/Application Support e.g.
+
+`/Users/Alice/Library/Application Support`
+
+</TabItem>
+
+
+<TabItem value="linux" label="🐧 Ubuntu">
+$XDG_DATA_HOME or /home/alice/.local/share e.g.
+
+`$HOME/.local/share`
+
+</TabItem>
+</Tabs>
+
 ### Register an operator on domain
 
 :::info
-It's crucial to fully sync your node before registering as an operator. Please follow the commands in the Start the domain operator node section and only register as an operator once your node is fully synced. If many operators are registered but their nodes are still syncing or offline, it can adversely affect the speed of block production in the domain.
+It's crucial to fully sync your node before registering as an operator. Please follow the commands in the ***Start the domain operator*** node section and only register as an operator once your node is fully synced. If many operators are registered but their nodes are still syncing or offline, it can adversely affect the speed of block production in the domain.
 :::
 
 <details>
@@ -153,110 +256,6 @@ Alternatively, you can use [Subscan](https://subspace.subscan.io/) which is a li
   ![Staking-12](/img/doc-imgs/operators-staking/Staking-12.png)
 
 7. Inspect and remember your `domain_id`. 
-
-
-### Start the domain operator node
-
-
-The domain operator node is running with an embedded consensus node, thus you need to specify the args for both the consensus node and the domain operator node:
-
-```bash
-subspace-node [consensus-chain-args] -- [domain-args]
-```
-
-
-Example:
-Start a node as operator on `gemini-3g` chain:
-
-:::note
-Ensure you replace `your_domain_id` with your domain identifier in the command. If your keystore is located in a different folder, adjust the `--keystore-path` accordingly. Setting `--base-path` is optional.
-:::
-
-<Tabs groupId="OS">
-<TabItem value="windows" label="🖼️ Windows" default>
-
-```powershell
-target/production/subspace-node `
---chain gemini-3g `
---bootnodes /ip4/3.87.28.170/tcp/40333/p2p/12D3KooWGHtULvhdKMZtzigSK1438uWXPj9rBQHVzTaKMWv1WRXp `
---name your_node_name `
---base-path your_path_to_node_data `
--- `
---domain-id your_domain_id `
---chain gemini-3g `
---operator `
---keystore-path /tmp/keystore 
-```
-
-</TabItem>
-
-<TabItem value="macos" label="🍎 macOS">
-
-```bash
-target/production/subspace-node \
---chain gemini-3g \
---bootnodes /ip4/3.87.28.170/tcp/40333/p2p/12D3KooWGHtULvhdKMZtzigSK1438uWXPj9rBQHVzTaKMWv1WRXp \
---name your_node_name \
---base-path your_path_to_node_data \
--- \
---domain-id your_domain_id \
---chain gemini-3g \
---operator \
---keystore-path /tmp/keystore 
-```
-
-</TabItem>
-
-<TabItem value="linux" label="🐧 Ubuntu">
-
-```bash
-target/production/subspace-node \
---chain gemini-3g \
---bootnodes /ip4/3.87.28.170/tcp/40333/p2p/12D3KooWGHtULvhdKMZtzigSK1438uWXPj9rBQHVzTaKMWv1WRXp \
---name your_node_name \
---base-path your_path_to_node_data \
--- \
---domain-id your_domain_id \
---chain gemini-3g \
---operator \
---keystore-path /tmp/keystore 
-```
-
-</TabItem>
-</Tabs>
-
-You should see the node start successfully and begin syncing. 
-
- ![Staking-13](/img/doc-imgs/operators-staking/Staking-13.png)
-
-
-
-To view the stored node information navigate to: 
-
-<Tabs groupId="OS">
-<TabItem value="windows" label="🖼️ Windows" default>
-FOLDERID_LocalAppData e.g. 
-
-`C:\Users\Alice\AppData\Local`
-
-</TabItem>
-
-
-<TabItem value="macos" label="🍎 macOS">
-$HOME/Library/Application Support e.g.
-
-`/Users/Alice/Library/Application Support`
-
-</TabItem>
-
-
-<TabItem value="linux" label="🐧 Ubuntu">
-$XDG_DATA_HOME or /home/alice/.local/share e.g.
-
-`$HOME/.local/share`
-
-</TabItem>
-</Tabs>
 
 ### Embedded Docs
 
