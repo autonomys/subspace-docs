@@ -1,0 +1,29 @@
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+import CodeBlock from '@theme/CodeBlock';
+import Link from '@docusaurus/Link';
+import styles from '@site/src/pages/index.module.css';
+import DockerFileGenerator from '@site/src/components/DockerFileGenerator/index.jsx';
+import { AdvancedSystemdServiceFileGenerator } from '@site/src/components/SystemdServiceFileGenerator/index.jsx';
+
+## Step 1: Prepare Values
+---
+
+1. Input your parameters in the provided form and click `Generate`. 
+    Don't forget to specify your reward address instead of a default one!
+
+## Step 2: Fill in Generator
+---
+
+<DockerFileGenerator />
+
+## Step 3: Execute Docker Compose
+---
+
+2. Copy the generated `docker-compose.yaml` file.
+
+3. Create the `subspace` directory and the `docker-compose.yaml` file in it. Paste the output from the generator into the file.
+
+4. Now go to directory with `docker-compose.yaml` and type `docker compose up -d` to start everything
+
+You can read logs with `docker compose logs --tail=1000 -f`, for the rest read [Docker Compose CLI reference](https://docs.docker.com/compose/reference/).
