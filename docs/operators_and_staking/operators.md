@@ -42,6 +42,10 @@ In the example above the number 3 corresponds to the domainId.
 
 ### Register an operator on domain
 
+:::info
+It's crucial to fully sync your node before registering as an operator. Please follow the commands in the Start the domain operator node section and only register as an operator once your node is fully synced. If many operators are registered but their nodes are still syncing or offline, it can adversely affect the speed of block production in the domain.
+:::
+
 <details>
   <summary>
   Prefer a video? Expand for our installation video
