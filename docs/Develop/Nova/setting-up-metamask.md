@@ -68,4 +68,4 @@ First, let’s set up a MetaMask wallet and then go over connecting it to the Su
   Currency Symbol: TSSC
   ```
 
-You're all set, **you have successfully configured your MetaMask wallet** and connected it to **Subspace Core EVM**. To deploy your smart contract, you first need to get a small amount of **TSSC**  tokens into your wallet. Please make sure to refer to the [faucet section](../developers/faucet.md) of the guide to learn more about getting test tokens. 
+You're all set, **you have successfully configured your MetaMask wallet** and connected it to **Subspace Core EVM**. To deploy your smart contract, you first need to get a small amount of **TSSC**  tokens into your wallet. Please make sure to refer to the [faucet section](./faucet.md) of the guide to learn more about getting test tokens. 
