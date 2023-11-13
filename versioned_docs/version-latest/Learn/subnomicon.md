@@ -12,7 +12,7 @@ import Link from '@docusaurus/Link';
 
 # Discover the Subspace Protocol
 
-Unlock the capabilities of Subspace, a cutting-edge blockchain solution that perfectly balances scalability, security, and decentralization. With its innovative storage-based consensus mechanism and a commitment to core principles, Subspace stands as a beacon of a scalable and secure decentralized future.
+Unlock the capabilities of Subspace, a cutting-edge blockchain that perfectly balances scalability, security, and decentralization. With its innovative storage-based consensus mechanism and a commitment to core principles, Subspace stands as a beacon of a scalable and secure decentralized future.
 
 ## Embrace a New Era of Blockchain
 
