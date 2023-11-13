@@ -30,7 +30,6 @@ The Subnomicon is more than a guide; it's a deep dive into the philosophy, archi
     className="button button--primary"
     to="https://subnomicon.subspace.network/docs/intro"
     style={{ fontSize: '20px', padding: '15px 30px', borderRadius: '5px' }}>
-    
     Explore the Subnomicon
     </Link>
 </div>
