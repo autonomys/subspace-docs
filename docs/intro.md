@@ -25,7 +25,7 @@ The Subspace Network is an ambitious layer zero protocol which is the first scal
 Our goal is to bring an extremely low barrier to entry for participating on consensus. You can get started as long as you meet the simple requirements mentioned below.
 
 
-### - [Start Farming with Pulsar](Farming & Staking/Farming/Pulsar/pulsar-prerequisites)
+### - [Start Farming with Pulsar](./Farming%20&%20Staking/Farming/Pulsar/pulsar-prerequisites.mdx)
 
 ## 📖 Develop on Subspace Network
 ---

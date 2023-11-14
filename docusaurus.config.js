@@ -135,15 +135,15 @@ const config = {
             items: [
               {
                 label: 'Contribution Guide',
-                href: '/docs/community/contribute',
+                href: '/docs/participate/contribute',
               },
               {
                 label: 'Community Resources',
-                href: '/docs/community',
+                href: '/docs/category/participate',
               },
               {
                 label: 'Help Us Translate!',
-                href: '/docs/Participate/translate'
+                href: '/docs/participate/translate',
               }
             ],
           },
@@ -180,7 +180,7 @@ const config = {
                 value: '<hr style="margin: 0.3rem 0;">',
               },
               {
-                href: 'https://docs.subspace.network/docs/community/translate',
+                href: 'https://docs.subspace.network/docs/participate/translate',
                 label: '🌏 Help Translate',
               },
             ],
