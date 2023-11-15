@@ -110,16 +110,42 @@ const config = {
         },
         items: [
           {
-            type: 'doc',
-            docId: 'intro',
+            type: 'dropdown',
+            label: 'Documentation',
             position: 'left',
-            label: 'Docs',
+            items: [
+              {
+                label: 'Farming',
+                href: '/docs/category/farming'
+              },
+              {
+                label: 'Operators & Nominators',
+                href: '/docs/category/operators-and-nominators'
+              },
+              {
+                label: 'Develop on Subspace',
+                href: '/docs/category/develop',
+              }
+            ],
           },
           {
-            type: "doc",
-            docId: "developers/intro",
-            position: "left",
-            label: "Developer Docs",
+            type: 'dropdown',
+            label: 'Community',
+            position: 'left',
+            items: [
+              {
+                label: 'Contribution Guide',
+                href: '/docs/community/contribute',
+              },
+              {
+                label: 'Community Resources',
+                href: '/docs/community',
+              },
+              {
+                label: 'Help Us Translate!',
+                href: '/docs/Participate/translate'
+              }
+            ],
           },
           {
             type: 'dropdown',
@@ -137,21 +163,6 @@ const config = {
               {
                 label: 'PolkadotJS Portal',
                 href: 'https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Feu-1.gemini-3g.subspace.network%2Fws#/explorer',
-              },
-            ],
-          },
-          {
-            type: 'dropdown',
-            label: 'Community',
-            position: 'left',
-            items: [
-              {
-                label: 'Contribution Guide',
-                href: '/docs/community/contribute',
-              },
-              {
-                label: 'Community Resources',
-                href: '/docs/community',
               },
             ],
           },
