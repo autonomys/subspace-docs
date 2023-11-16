@@ -122,7 +122,7 @@ This isn’t a bug but rather a warning, it is something to be expected on a Dec
 ```
 
 
-The system is detecting a pre-existing installation. If this is the case, you might consider [wiping](../Farming & Staking/Farming/Pulsar/pulsar-troubleshooting) the current setup and [re-initializing](../Farming & Staking/Farming/Pulsar/pulsar-install) the CLI to ensure a clean installation.
+The system is detecting a pre-existing installation. If this is the case, you might consider [wiping](../farming-&-staking/Farming/Pulsar/pulsar-troubleshooting) the current setup and [re-initializing](../farming-&-staking/Farming/Pulsar/pulsar-install) the CLI to ensure a clean installation.
 
 
 ### Block import error: Potential long-range attack: block not in finalized chain.
