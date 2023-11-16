@@ -53,6 +53,10 @@ subspace-node [consensus-chain-args] -- [domain-args]
 Example:
 Start a node as operator on `gemini-3g` chain:
 
+:::info
+You need to wipe and sync your node from genesis block, since you need to sync both consensus and domain chains.
+:::
+
 :::note
 Ensure you replace `your_domain_id` with your domain identifier in the command. If your keystore is located in a different folder, adjust the `--keystore-path` accordingly. Setting `--base-path` is optional.
 :::

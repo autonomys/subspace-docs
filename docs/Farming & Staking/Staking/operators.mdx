@@ -53,6 +53,10 @@ subspace-node [consensus-chain-args] -- [domain-args]
 Example:
 Start a node as operator on `gemini-3g` chain:
 
+:::info
+You need to wipe and sync your node from genesis block, since you need to sync both consensus and domain chains.
+:::
+
 :::note
 Ensure you replace `your_domain_id` with your domain identifier in the command. If your keystore is located in a different folder, adjust the `--keystore-path` accordingly. Setting `--base-path` is optional.
 :::
@@ -148,6 +152,7 @@ $XDG_DATA_HOME or /home/alice/.local/share e.g.
 :::info
 It's crucial to fully sync your node before registering as an operator. Please follow the commands in the ***Start the domain operator*** node section and only register as an operator once your node is fully synced. If many operators are registered but their nodes are still syncing or offline, it can adversely affect the speed of block production in the domain.
 :::
+
 
 <details>
   <summary>
