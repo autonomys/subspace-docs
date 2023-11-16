@@ -110,16 +110,42 @@ const config = {
         },
         items: [
           {
-            type: 'doc',
-            docId: 'intro',
+            type: 'dropdown',
+            label: 'Documentation',
             position: 'left',
-            label: 'Docs',
+            items: [
+              {
+                label: 'Farming',
+                href: '/docs/category/farming'
+              },
+              {
+                label: 'Operators & Nominators',
+                href: '/docs/category/operators-and-nominators'
+              },
+              {
+                label: 'Develop on Subspace',
+                href: '/docs/category/develop',
+              }
+            ],
           },
           {
-            type: "doc",
-            docId: "developers/intro",
-            position: "left",
-            label: "Developer Docs",
+            type: 'dropdown',
+            label: 'Community',
+            position: 'left',
+            items: [
+              {
+                label: 'Contribution Guide',
+                href: '/docs/participate/contribute',
+              },
+              {
+                label: 'Community Resources',
+                href: '/docs/category/participate',
+              },
+              {
+                label: 'Help Us Translate!',
+                href: '/docs/participate/translate',
+              }
+            ],
           },
           {
             type: 'dropdown',
@@ -141,21 +167,6 @@ const config = {
             ],
           },
           {
-            type: 'dropdown',
-            label: 'Community',
-            position: 'left',
-            items: [
-              {
-                label: 'Contribution Guide',
-                href: '/docs/community/contribute',
-              },
-              {
-                label: 'Community Resources',
-                href: '/docs/community',
-              },
-            ],
-          },
-          {
             type: 'docsVersionDropdown',
             position: 'right',
             dropdownActiveClassDisabled: false,
@@ -169,7 +180,7 @@ const config = {
                 value: '<hr style="margin: 0.3rem 0;">',
               },
               {
-                href: 'https://docs.subspace.network/docs/community/translate',
+                href: 'https://docs.subspace.network/docs/participate/translate',
                 label: '🌏 Help Translate',
               },
             ],
