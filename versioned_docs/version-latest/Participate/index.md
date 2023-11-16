@@ -11,7 +11,7 @@ keywords:
 
 :::caution
 
-Please note, all community provided resources are **non-official**. For clarification please refer to [official materials](/docs/pre-release/intro).
+Please note, all community provided resources are **non-official**. For clarification please refer to [official materials](../learn/intro.md).
 
 :::
 
