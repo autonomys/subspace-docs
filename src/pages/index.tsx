@@ -24,7 +24,7 @@ function HomepageHeader() {
               farmingLink: (
                 <Link
                   className="button button--secondary button--lg"
-                  to="/docs/intro">
+                  to="/docs/learn/intro">
                     <Translate
                       id="homepage.startFarming.linkLabel"
                       description="The label for the link button">
