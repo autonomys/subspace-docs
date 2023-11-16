@@ -53,7 +53,47 @@ const config = {
         trackingID: 'G-25NWNJB9MR',
         anonymizeIP: false, 
       }
-    ]
+    ],
+    // Legacy Link Redirects
+    [
+      '@docusaurus/plugin-client-redirects',
+      {
+        redirects: [
+          {
+            to: '/docs/category/pulsar-reccomended',
+            from: '/docs/category/pulsar',
+          },
+          {
+            to: '/docs/participate/contribute/',
+            from: '/docs/community/contribute/',
+          },
+          {
+            to: '/docs/category/develop-on-nova-evm-',
+            from: '/docs/category/developer-documentation/',
+          },
+          {
+            to: "/docs/category/operators-and-nominators",
+            from: "/docs/operators_and_staking/intro"
+          },
+          {
+            to: "/docs/category/advanced-cli",
+            from: ["/docs/protocol/cli/", "/docs/protocol/substrate-cli/"]
+          },
+          {
+            to: "/docs/farming-&-staking/timekeeping",
+            from: "/docs/protocol/timekeeping"
+          },
+          {
+            to: "/docs/category/farming",
+            from: ["/docs/category/get-started-with-farming", "/protocol/farm/farming"]
+          },
+          {
+            to: "/docs/category/pulsar-reccomended",
+            from: "/docs/protocol/pulsar/"
+          }
+        ],
+      },
+    ],
   ],
 
   presets: [
@@ -115,7 +155,7 @@ const config = {
             position: 'left',
             items: [
               {
-                label: 'Farming',
+                label: 'farming',
                 href: '/docs/category/farming'
               },
               {
