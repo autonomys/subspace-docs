@@ -155,7 +155,7 @@ const config = {
             position: 'left',
             items: [
               {
-                label: 'farming',
+                label: 'Farming',
                 href: '/docs/category/farming'
               },
               {
