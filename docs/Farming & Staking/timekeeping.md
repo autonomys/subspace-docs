@@ -18,9 +18,14 @@ import styles from '@site/src/pages/index.module.css';
 
 Timekeeping is an essential component of securing the protocol. Without at least one timekeeper online there would be no block production. While it is possible to run a farmer or operator node with timekeeping activated, the ideal is that a high-spec, dedicated machine is used to mitigate processing loads altering the quality of the work they do.
 
-Having a good number of timekeepers distributed geographically is our goal to foster a healthy network. Our hope is that our dedicated community run a number in addition to those being run by the team to ensure resilience and decentralization of the protocol.
+Having a good number of timekeepers distributed geographically is our goal to foster a healthy network. Our hope is that our dedicated community run a number in addition to those being run by the team to ensure resilience and decentralization of the protocol. 
+
+:::note
+There is no explicit economic incentive to running a timekeeper, however, independent timekeeping contributes to stable block production, which benefits every participant of the network.
+:::
 
 You can read more about timekeeping in the [Proof-of-Time section of The Subnomicon](https://subnomicon.subspace.network/docs/consensus/pot/#timekeeping).
+
 
 ## Hardware Requirements
 

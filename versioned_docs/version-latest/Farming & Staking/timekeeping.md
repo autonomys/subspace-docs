@@ -20,7 +20,12 @@ Timekeeping is an essential component of securing the protocol. Without at least
 
 Having a good number of timekeepers distributed geographically is our goal to foster a healthy network. Our hope is that our dedicated community run a number in addition to those being run by the team to ensure resilience and decentralization of the protocol.
 
+:::note
+There is no explicit economic incentive to running a timekeeper, however, independent timekeeping contributes to stable block production, which benefits every participant of the network.
+:::
+
 You can read more about timekeeping in the [Proof-of-Time section of The Subnomicon](https://subnomicon.subspace.network/docs/consensus/pot/#timekeeping).
+
 
 ## Hardware Requirements
 
