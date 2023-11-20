@@ -54,7 +54,8 @@ Example:
 Start a node as operator on `gemini-3g` chain:
 
 :::info
-You need to wipe and sync your node from genesis block, since you need to sync both consensus and domain chains.
+You need to wipe (purge chain) and sync your node from genesis block, since you need to sync both consensus and domain chains.
+You do not need to wipe any existing plots. 
 :::
 
 :::note
@@ -64,52 +65,52 @@ Ensure you replace `your_domain_id` with your domain identifier in the command. 
 <Tabs groupId="OS">
 <TabItem value="windows" label="🖼️ Windows" default>
 
-```powershell
-target/production/subspace-node `
---chain gemini-3g `
---bootnodes /ip4/3.87.28.170/tcp/40333/p2p/12D3KooWGHtULvhdKMZtzigSK1438uWXPj9rBQHVzTaKMWv1WRXp `
---name your_node_name `
---base-path your_path_to_node_data `
--- `
---domain-id your_domain_id `
---chain gemini-3g `
---operator `
---keystore-path /tmp/keystore 
-```
+  ```powershell
+  target/production/subspace-node `
+  --chain gemini-3g `
+  --bootnodes /ip4/3.87.28.170/tcp/40333/p2p/12D3KooWGHtULvhdKMZtzigSK1438uWXPj9rBQHVzTaKMWv1WRXp `
+  --name your_node_name `
+  --base-path your_path_to_node_data `
+  -- `
+  --domain-id your_domain_id `
+  --chain gemini-3g `
+  --operator `
+  --keystore-path /tmp/keystore 
+  ```
 
 </TabItem>
 
 <TabItem value="macos" label="🍎 macOS">
 
-```bash
-target/production/subspace-node \
---chain gemini-3g \
---bootnodes /ip4/3.87.28.170/tcp/40333/p2p/12D3KooWGHtULvhdKMZtzigSK1438uWXPj9rBQHVzTaKMWv1WRXp \
---name your_node_name \
---base-path your_path_to_node_data \
--- \
---domain-id your_domain_id \
---chain gemini-3g \
---operator \
---keystore-path /tmp/keystore 
-```
+  ```bash
+  target/production/subspace-node \
+  --chain gemini-3g \
+  --bootnodes /ip4/3.87.28.170/tcp/40333/p2p/12D3KooWGHtULvhdKMZtzigSK1438uWXPj9rBQHVzTaKMWv1WRXp \
+  --name your_node_name \
+  --base-path your_path_to_node_data \
+  -- \
+  --domain-id your_domain_id \
+  --chain gemini-3g \
+  --operator \
+  --keystore-path /tmp/keystore 
+  ```
 
 </TabItem>
 
 <TabItem value="linux" label="🐧 Ubuntu">
 
-```bash
-target/production/subspace-node \
---chain gemini-3g \
---bootnodes /ip4/3.87.28.170/tcp/40333/p2p/12D3KooWGHtULvhdKMZtzigSK1438uWXPj9rBQHVzTaKMWv1WRXp \
---name your_node_name \
---base-path your_path_to_node_data \
--- \
---domain-id your_domain_id \
---chain gemini-3g \
---operator \
---keystore-path /tmp/keystore 
-```
+  ```bash
+  target/production/subspace-node \
+  --chain gemini-3g \
+  --bootnodes /ip4/3.87.28.170/tcp/40333/p2p/12D3KooWGHtULvhdKMZtzigSK1438uWXPj9rBQHVzTaKMWv1WRXp \
+  --name your_node_name \
+  --base-path your_path_to_node_data \
+  -- \
+  --domain-id your_domain_id \
+  --chain gemini-3g \
+  --operator \
+  --keystore-path /tmp/keystore 
+  ```
 
 </TabItem>
 </Tabs>
@@ -167,9 +168,9 @@ It's crucial to fully sync your node before registering as an operator. Please f
 An operator needs a key pair to participate in bundle production.
 You can create a key using the following command:
 
-```bash
-target/production/subspace-node key generate --scheme sr25519
-```
+  ```bash
+  target/production/subspace-node key generate --scheme sr25519
+  ```
 
  ![Staking-4](/img/doc-imgs/operators-staking/Staking-4.png)
 
@@ -180,10 +181,10 @@ The key generated above needs to be added to the Keystore so that the operator n
 
 To insert the key, use the following command:
 
-```bash
-target/production/subspace-node key insert \
---suri "<Secret phrase>" --key-type oper --scheme sr25519 --keystore-path /tmp/keystore
-```
+  ```bash
+  target/production/subspace-node key insert \
+  --suri "<Secret phrase>" --key-type oper --scheme sr25519 --keystore-path /tmp/keystore
+  ```
 
 The command above assumes `/tmp/keystore` as the keystore location.
 `suri` is the secret phrase of the operator key.
@@ -345,65 +346,67 @@ To run both operator and validator at the same time, provide requrired flags for
 <Tabs groupId="OS">
 <TabItem value="windows" label="🖼️ Windows" default>
 
-```powershell
-target/production/subspace-node `
-# validator flags
---chain gemini-3g `
---blocks-pruning 256 `
---state-pruning archive `
---no-private-ipv4 `
---validator `
---name your_node_name `
-# operator flags
--- `
---domain-id 1 `
---operator `
---keystore-path /tmp/keystore `
---bootnodes /ip4/3.87.28.170/tcp/40333/p2p/12D3KooWGHtULvhdKMZtzigSK1438uWXPj9rBQHVzTaKMWv1WRXp 
-```
+  ```powershell
+  target/production/subspace-node `
+  # validator flags
+  --chain gemini-3g `
+  --blocks-pruning 256 `
+  --state-pruning archive `
+  --no-private-ipv4 `
+  --validator `
+  --name your_node_name `
+  # operator flags
+  -- `
+  --domain-id 1 `
+  --operator `
+  --keystore-path /tmp/keystore `
+  --bootnodes /ip4/3.87.28.170/tcp/40333/p2p/12D3KooWGHtULvhdKMZtzigSK1438uWXPj9rBQHVzTaKMWv1WRXp 
+  ```
 
 </TabItem>
 
 
 <TabItem value="macos" label="🍎 macOS">
 
-```bash
-target/production/subspace-node `
-# validator flags
---chain gemini-3g \
---blocks-pruning 256 \
---state-pruning archive \
---no-private-ipv4 \
---validator \
---name your_node_name \
-# operator flags
--- \
---domain-id 1 \
---operator \
---keystore-path /tmp/keystore \
---bootnodes /ip4/3.87.28.170/tcp/40333/p2p/12D3KooWGHtULvhdKMZtzigSK1438uWXPj9rBQHVzTaKMWv1WRXp
-```
+  ```bash
+  target/production/subspace-node `
+  # validator flags
+  --chain gemini-3g \
+  --blocks-pruning 256 \
+  --state-pruning archive \
+  --no-private-ipv4 \
+  --validator \
+  --name your_node_name \
+  # operator flags
+  -- \
+  --domain-id 1 \
+  --operator \
+  --keystore-path /tmp/keystore \
+  --bootnodes /ip4/3.87.28.170/tcp/40333/p2p/12D3KooWGHtULvhdKMZtzigSK1438uWXPj9rBQHVzTaKMWv1WRXp
+  ```
 
 </TabItem>
 
 <TabItem value="linux" label="🐧 Ubuntu">
-
-```bash
-target/production/subspace-node `
-# validator flags
---chain gemini-3g \
---blocks-pruning 256 \
---state-pruning archive \
---no-private-ipv4 \
---validator \
---name your_node_name \
-# operator flags
--- \
---domain-id 1 \
---operator \
---keystore-path /tmp/keystore \
---bootnodes /ip4/3.87.28.170/tcp/40333/p2p/12D3KooWGHtULvhdKMZtzigSK1438uWXPj9rBQHVzTaKMWv1WRXp 
-```
-
+  ```bash
+  target/production/subspace-node `
+  # validator flags
+  --chain gemini-3g \
+  --blocks-pruning 256 \
+  --state-pruning archive \
+  --no-private-ipv4 \
+  --validator \
+  --name your_node_name \
+  # operator flags
+  -- \
+  --domain-id 1 \
+  --operator \
+  --keystore-path /tmp/keystore \
+  --bootnodes /ip4/3.87.28.170/tcp/40333/p2p/12D3KooWGHtULvhdKMZtzigSK1438uWXPj9rBQHVzTaKMWv1WRXp 
+  ```
 </TabItem>
 </Tabs>
+
+You should see the node start successfully and begin syncing. 
+
+ ![Staking-28](/img/doc-imgs/operators-staking/Staking-28.png)
