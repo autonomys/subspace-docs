@@ -153,6 +153,7 @@ $XDG_DATA_HOME or /home/alice/.local/share e.g.
 It's crucial to fully sync your node before registering as an operator. Please follow the commands in the ***Start the domain operator*** node section and only register as an operator once your node is fully synced. If many operators are registered but their nodes are still syncing or offline, it can adversely affect the speed of block production in the domain.
 :::
 
+
 <details>
   <summary>
   Prefer a video? Expand for our installation video
@@ -334,9 +335,8 @@ Stake of your **Nominators** won't be released, but will be moved to the new dom
 
 :::
 
-
-### Useful commands
-#### Running both validator (farmer) and operator nodes at the same time
+## Useful commands
+### Running both validator (farmer) and operator nodes at the same time
 
 :::tip
 To run both operator and validator at the same time, provide requrired flags for both roles when starting your node. 
@@ -407,3 +407,11 @@ target/production/subspace-node `
 
 </TabItem>
 </Tabs>
+
+### Switching to another server
+To ensure the minimum downtown during your switch, we propose the following: 
+
+1. Sync a new operator node using a throwaway key. You can generate a new key, just not insert it into your keystore. 
+2. Stop the original node and rename the keystore (or whatever you feel comfortable doing to prevent you accidentally starting the original node up with the original signing key).
+3. Update the keystore on the new node with the original signing key.
+4. Restart the new operator node.
