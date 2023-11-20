@@ -64,7 +64,7 @@ const config = {
             from: '/docs/category/pulsar',
           },
           {
-            to: '/docs/participate/contribute/',
+            to: '/docs/participate/contribute',
             from: '/docs/community/contribute/',
           },
           {
