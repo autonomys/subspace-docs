@@ -60,7 +60,7 @@ const config = {
       {
         redirects: [
           {
-            to: '/docs/category/pulsar-reccomended',
+            to: '/docs/category/pulsar-recommended',
             from: '/docs/category/pulsar',
           },
           {
@@ -88,7 +88,7 @@ const config = {
             from: ["/docs/category/get-started-with-farming", "/protocol/farm/farming"]
           },
           {
-            to: "/docs/category/pulsar-reccomended",
+            to: "/docs/category/pulsar-recommended",
             from: "/docs/protocol/pulsar/"
           }
         ],
