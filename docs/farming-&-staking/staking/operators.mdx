@@ -38,6 +38,7 @@ To check the list of available domains:
  ![Staking-3](/img/doc-imgs/operators-staking/Staking-3.png)
 :::tip
 In the example above the number 3 corresponds to the domainId. 
+The example is not Stake Wars specific, the operator is responsible for finding out the correct domain ID they want to operate on. **Stake Wars are using the domain with ID 1**.
 :::
 
 ### Start the domain operator node
@@ -75,7 +76,7 @@ Ensure you replace `your_domain_id` with your domain identifier in the command. 
   --chain gemini-3g `
   --operator `
   --bootnodes /ip4/3.87.28.170/tcp/40333/p2p/12D3KooWGHtULvhdKMZtzigSK1438uWXPj9rBQHVzTaKMWv1WRXp `
-  --keystore-path /tmp/keystore 
+  --keystore-path /keystore 
   ```
 
 </TabItem>
@@ -92,7 +93,7 @@ Ensure you replace `your_domain_id` with your domain identifier in the command. 
   --chain gemini-3g \
   --operator \
   --bootnodes /ip4/3.87.28.170/tcp/40333/p2p/12D3KooWGHtULvhdKMZtzigSK1438uWXPj9rBQHVzTaKMWv1WRXp \
-  --keystore-path /tmp/keystore 
+  --keystore-path /keystore 
   ```
 
 </TabItem>
@@ -109,7 +110,7 @@ Ensure you replace `your_domain_id` with your domain identifier in the command. 
   --chain gemini-3g \
   --operator \
   --bootnodes /ip4/3.87.28.170/tcp/40333/p2p/12D3KooWGHtULvhdKMZtzigSK1438uWXPj9rBQHVzTaKMWv1WRXp \
-  --keystore-path /tmp/keystore 
+  --keystore-path /keystore 
   ```
 
 </TabItem>
@@ -157,7 +158,7 @@ It's crucial to fully sync your node before registering as an operator. Please f
 
 <details>
   <summary>
-  Prefer a video? Expand for our installation video
+  Prefer a video? Expand for our installation video using PolkadotJS interface.
   </summary>
   <div>
   <iframe width="560" height="315" src="https://www.youtube.com/embed/w2U3CUJfI2c?si=mb-BRykmlrc49PPf" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen></iframe>
@@ -174,7 +175,7 @@ You can create a key using the following command:
 
  ![Staking-4](/img/doc-imgs/operators-staking/Staking-4.png)
 
-Back up the key. Take the `public key (hex)` of the Keypair. The public key is part of the operator config we will be using later on [PolkadotJS portal](https://polkadot.js.org/apps/#/explorer).
+Back up the key. Take the `public key (hex)` of the Keypair. The public key is part of the operator config we will be using later on [Staking portal](https://staking.subspace.tools) or [PolkadotJS portal](https://polkadot.js.org/apps/#/explorer).
 
 #### Insert key to Keystore:
 The key generated above needs to be added to the Keystore so that the operator node can use it to participate in bundle production.
@@ -183,12 +184,62 @@ To insert the key, use the following command:
 
   ```bash
   target/production/subspace-node key insert \
-  --suri "<Secret phrase>" --key-type oper --scheme sr25519 --keystore-path /tmp/keystore
+  --suri "<Secret phrase>" --key-type oper --scheme sr25519 --keystore-path /keystore
   ```
 
-The command above assumes `/tmp/keystore` as the keystore location.
+The command above assumes `/keystore` as the keystore location.
 `suri` is the secret phrase of the operator key.
 
+:::tip
+`tmp` folder on linux based systems will be emptied upon the system reboot. Make sure to store the keypair in a secure and permanent location.  
+:::
+
+#### Register an operator using Subspace Staking interface (recommended)
+1. Proceed to the [Subspace Staking portal](https://staking.subspace.tools) and connect your wallet.
+  
+  ![NStaking-1](/img/doc-imgs/operators-staking/NStaking-1.png)
+
+2. Select the wallet you would like to connect. Both **Subwallet** and **PolkadotJS** wallets are supported.
+  
+  ![NStaking-2](/img/doc-imgs/operators-staking/NStaking-2.png)
+
+3. Enter your password to give an access to your wallet.
+  
+  ![NStaking-3](/img/doc-imgs/operators-staking/NStaking-3.png)
+
+4. Select the account you'd like to use form the dropdown menu. You will see both available and locked (staked) token balances for each account. 
+  
+  ![NStaking-4](/img/doc-imgs/operators-staking/NStaking-4.png)
+5. Proceed to the `Stake as a pool operator` tab.
+
+  ![NStaking-5](/img/doc-imgs/operators-staking/NStaking-5.png)
+6. Select the `domainId` you would like to be registered on. Enter the `Minimum Operator Stake`, `Amount to Stake`, `Nomination Tax` and `Signing key` and then click `Next`.
+  
+  ![NStaking-6](/img/doc-imgs/operators-staking/NStaking-6.png)
+
+  :::info
+  Make sure to use the signing key generated on the previous **[Create operator key](#create-operator-key)** step.
+  :::
+7. Approve the request in the pop-up window. 
+
+  ![NStaking-8](/img/doc-imgs/operators-staking/NStaking-7.png)
+8. Congratulations, you're now registered as an **operator**! 
+
+  ![NStaking-8](/img/doc-imgs/operators-staking/NStaking-8.png)
+
+  :::info
+  It can take up to 10 minutes for the operator to be registered and appear on the page. 
+  You can check if the operator was created successfully by following the [steps](#checking-your-operatorid).
+  :::
+
+  :::tip
+  You can view some additional actions by clicking on `action` next to your operator. 
+  You can increase your stake, withdraw some stake and de-register your operator from there. 
+  :::
+
+#### Register an operator using PolkadotJS interface
+
+Alternatively, you can use **PolkadotJS** to register an operator on the domain. 
 To register an operator on the domain: 
 1. Proceed to [PolkadotJS](https://polkadot.js.org/apps/#/explorer)
 2. Make sure to select the correct network at the top-left corner. 
@@ -287,6 +338,42 @@ To deregister an operator on the domain and have your tokens released:
 Only account who registered an operator can deregister it. Make sure to use the same wallet / account to sign the transaction for deregistration. 
 :::
 
+#### Operator deregistration using **Subspace Staking interface** (recommended)
+
+1. Proceed to the [Subspace Staking portal](https://staking.subspace.tools) and connect your wallet.
+  
+  ![NStaking-1](/img/doc-imgs/operators-staking/NStaking-1.png)
+
+2. Select the wallet you would like to connect. Make sure to select the wallet you registered your operator with. Both **Subwallet** and **PolkadotJS** wallets are supported.
+  
+  ![NStaking-2](/img/doc-imgs/operators-staking/NStaking-2.png)
+
+3. Enter your password to give an access to your wallet.
+  
+  ![NStaking-3](/img/doc-imgs/operators-staking/NStaking-3.png)
+
+4. Click on `Manage your stake`.
+
+  ![NStaking-9](/img/doc-imgs/operators-staking/NStaking-9.png)
+
+5. Click on `Action` button next to an operator you would like to deregister and select `deregister`. 
+
+  ![NStaking-10](/img/doc-imgs/operators-staking/NStaking-10.png)
+
+6. Approve the request in the pop-up window. 
+
+  ![NStaking-8](/img/doc-imgs/operators-staking/NStaking-7.png)
+
+7. Congratulations, your operator was deregistered.
+
+  :::info
+  It can take up to 10 minutes for the operator to be deregistered and disappeared from the page. 
+  You can check if the operator was deregistered successfully on the [Subspace Subscan portal](https://subspace.subscan.io/extrinsic).
+  :::
+
+#### Operator deregistration using **PolkadotJS**
+Alternatively, you can use the **PolkadotJS** portal to deregister operator. 
+
 1. Proceed to [PolkadotJS](https://polkadot.js.org/apps/#/explorer)
 2. Make sure to select the correct network at the top-left corner. 
 3. Select the account you want to use in `using the selected account`.
@@ -360,7 +447,7 @@ To run both operator and validator at the same time, provide requrired flags for
   -- `
   --domain-id 1 `
   --operator `
-  --keystore-path /tmp/keystore `
+  --keystore-path /keystore `
   --bootnodes /ip4/3.87.28.170/tcp/40333/p2p/12D3KooWGHtULvhdKMZtzigSK1438uWXPj9rBQHVzTaKMWv1WRXp 
   ```
 
@@ -382,7 +469,7 @@ To run both operator and validator at the same time, provide requrired flags for
   -- \
   --domain-id 1 \
   --operator \
-  --keystore-path /tmp/keystore \
+  --keystore-path /keystore \
   --bootnodes /ip4/3.87.28.170/tcp/40333/p2p/12D3KooWGHtULvhdKMZtzigSK1438uWXPj9rBQHVzTaKMWv1WRXp
   ```
 
@@ -403,7 +490,7 @@ To run both operator and validator at the same time, provide requrired flags for
   -- \
   --domain-id 1 \
   --operator \
-  --keystore-path /tmp/keystore \
+  --keystore-path /keystore \
   --bootnodes /ip4/3.87.28.170/tcp/40333/p2p/12D3KooWGHtULvhdKMZtzigSK1438uWXPj9rBQHVzTaKMWv1WRXp 
 
   ```
