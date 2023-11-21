@@ -22,31 +22,36 @@ This is the barebones wallet. This is because it is the barebones Substrate wall
 
 1. Visit the [Polkadot.js](https://polkadot.js.org/extension/) Website and Download your respective version. 
 
-    :::tip
-    The Chrome option will work on all Chromium based browsers such as Brave, Vivaldi, & Edge
-    :::
+:::tip
+The Chrome option will work on all Chromium based browsers such as Brave, Vivaldi, & Edge
+:::
 
-2. Once extension is installed, Open it and click `+`, & `Create new account`
+2. Once extension is installed, Open it. Read the notes. 
 
-    ![step-2](/img/doc-imgs/polkadot/step-2.png)
+    ![step-2](/img/doc-imgs/polkadot/Polkadot-1.png)
 
-3. The extension will then show you your 12-word mnemonic seed.
+3. Click on + to add a new account. 
 
-    :::danger
-    MAKE SURE YOU STORE THIS SECURELY, AND NEVER SHARE IT
-    :::
+    ![step-3](/img/doc-imgs/polkadot/Polkadot-2.png)
 
-    ![step-3](/img/doc-imgs/polkadot/step-3.png)
+4. The extension will then show you your 12-word mnemonic seed.
 
-4. Once you seed is securely stored and saved, click the “I have saved my mnemonic seed safely” check box and click “Next Step”
+:::danger
+MAKE SURE YOU STORE THIS SECURELY, AND NEVER SHARE IT
+:::
 
-5. The next step will ask for a Name & Password for the wallet. then click “Add the account with the generated seed”
+![step-4](/img/doc-imgs/polkadot/Polkadot-3.png)
 
-    ![step-5](/img/doc-imgs/polkadot/step-5.png)
+5. Once you seed is securely stored and saved, click the “I have saved my mnemonic seed safely” check box and click “Next Step”
 
-6. Congratulations you have created a polkadot.js wallet!
+6. The next step will ask for a Name & Password for the wallet. then click “Add the account with the generated seed”
 
-    ![step-6](/img/doc-imgs/polkadot/step-6.png)
+    ![step-6](/img/doc-imgs/polkadot/Polkadot-4.png)
+
+7. Congratulations you have created a polkadot.js wallet!
+
+    ![step-7](/img/doc-imgs/polkadot/Polkadot-5.png)
+
 
 ## Importing an Existing Seed
 
