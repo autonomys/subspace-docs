@@ -95,6 +95,7 @@ Stake Wars are using the domain **Nova** with ID **1**.
 :::
 
 <Tabs groupId="OS">
+
 <TabItem value="windows" label="🖼️ Windows" default>
 
 ```powershell
@@ -108,6 +109,7 @@ target/production/subspace-node `
 --operator `
 --bootnodes /ip4/3.87.28.170/tcp/40333/p2p/12D3KooWGHtULvhdKMZtzigSK1438uWXPj9rBQHVzTaKMWv1WRXp `
 --keystore-path /keystore 
+
 ```
 
 </TabItem>
@@ -156,6 +158,7 @@ You should see the node start successfully and begin syncing.
 To view the stored node information navigate to: 
 
 <Tabs groupId="OS">
+
 <TabItem value="windows" label="🖼️ Windows" default>
 FOLDERID_LocalAppData e.g. 
 
@@ -195,6 +198,38 @@ It's crucial to fully sync your node before registering as an operator. Please f
   <iframe width="560" height="315" src="https://www.youtube.com/embed/w2U3CUJfI2c?si=mb-BRykmlrc49PPf" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen></iframe>
   </div>
 </details>
+
+
+#### Create operator key:
+An operator needs a key pair to participate in bundle production.
+You can create a key using the following command:
+
+  ```bash
+  target/production/subspace-node key generate --scheme sr25519
+  ```
+
+ ![Staking-4](/img/doc-imgs/operators-staking/Staking-4.png)
+
+Back up the key. Take the `public key (hex)` of the Keypair. The public key is part of the operator config we will be using later on [Staking portal](https://staking.subspace.tools) or [PolkadotJS portal](https://polkadot.js.org/apps/#/explorer).
+
+#### Insert key to Keystore:
+The key generated above needs to be added to the Keystore so that the operator node can use it to participate in bundle production.
+
+To insert the key, use the following command:
+
+  ```bash
+  target/production/subspace-node key insert \
+  --suri "<Secret phrase>" --key-type oper --scheme sr25519 --keystore-path /keystore
+  ```
+
+The command above assumes `/keystore` as the keystore location.
+`suri` is the secret phrase of the operator key.
+
+:::tip
+
+`tmp` folder on linux based systems will be emptied upon the system reboot. Make sure to store the keypair in a secure and permanent location.  
+
+:::
 
 #### Register an operator using Subspace Staking interface (recommended)
 1. Proceed to the [Subspace Staking portal](https://staking.subspace.tools) and connect your wallet.
@@ -434,6 +469,7 @@ To run both operator and validator at the same time, provide requrired flags for
 :::
 
 <Tabs groupId="OS">
+
 <TabItem value="windows" label="🖼️ Windows" default>
 
 ```powershell
@@ -445,7 +481,7 @@ target/production/subspace-node `
 --validator `
 --name your_node_name `
 -- `
---domain-id 1 `
+--domain-id your_domain_id `
 --operator `
 --keystore-path /keystore `
 --bootnodes /ip4/3.87.28.170/tcp/40333/p2p/12D3KooWGHtULvhdKMZtzigSK1438uWXPj9rBQHVzTaKMWv1WRXp 
@@ -465,7 +501,7 @@ target/production/subspace-node `
 --validator \
 --name your_node_name \
 -- \
---domain-id 1 \
+--domain-id your_domain_id \
 --operator \
 --keystore-path /keystore \
 --bootnodes /ip4/3.87.28.170/tcp/40333/p2p/12D3KooWGHtULvhdKMZtzigSK1438uWXPj9rBQHVzTaKMWv1WRXp
@@ -484,7 +520,7 @@ target/production/subspace-node `
 --validator \
 --name your_node_name \
 -- \
---domain-id 1 \
+--domain-id your_domain_id \
 --operator \
 --keystore-path /keystore \
 --bootnodes /ip4/3.87.28.170/tcp/40333/p2p/12D3KooWGHtULvhdKMZtzigSK1438uWXPj9rBQHVzTaKMWv1WRXp 
