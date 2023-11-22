@@ -43,13 +43,40 @@ The example is not Stake Wars specific, the operator is responsible for finding 
 
 ### Start the domain operator node
 
+#### Create operator key:
+An operator needs a key pair to participate in bundle production.
+You can create a key using the following command:
+
+```bash
+target/production/subspace-node key generate --scheme sr25519
+```
+
+ ![Staking-4](/img/doc-imgs/operators-staking/Staking-4.png)
+
+Back up the key. Take the `public key (hex)` of the Keypair. The public key is part of the operator config we will be using later on [Staking portal](https://staking.subspace.tools) or [PolkadotJS portal](https://polkadot.js.org/apps/#/explorer).
+
+#### Insert key to Keystore:
+The key generated above needs to be added to the Keystore so that the operator node can use it to participate in bundle production.
+
+To insert the key, use the following command:
+
+```bash
+target/production/subspace-node key insert \
+--suri "<Secret phrase>" --key-type oper --scheme sr25519 --keystore-path /keystore
+```
+
+The command above assumes `/keystore` as the keystore location.
+`suri` is the secret phrase of the operator key.
+
+:::tip
+`tmp` folder on linux based systems will be emptied upon the system reboot. Make sure to store the keypair in a secure and permanent location.  
+:::
 
 The domain operator node is running with an embedded consensus node, thus you need to specify the args for both the consensus node and the domain operator node:
 
 ```bash
 subspace-node [consensus-chain-args] -- [domain-args]
 ```
-
 
 Example:
 Start a node as operator on `gemini-3g` chain:
@@ -61,6 +88,10 @@ You do not need to wipe any existing plots.
 
 :::note
 Ensure you replace `your_domain_id` with your domain identifier in the command. If your keystore is located in a different folder, adjust the `--keystore-path` accordingly. Setting `--base-path` is optional.
+:::
+
+:::tip
+Stake Wars are using the domain **Nova** with ID **1**.
 :::
 
 <Tabs groupId="OS">
@@ -167,6 +198,7 @@ It's crucial to fully sync your node before registering as an operator. Please f
   <iframe width="560" height="315" src="https://www.youtube.com/embed/w2U3CUJfI2c?si=mb-BRykmlrc49PPf" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen></iframe>
   </div>
 </details>
+
 
 #### Create operator key:
 An operator needs a key pair to participate in bundle production.
@@ -442,14 +474,12 @@ To run both operator and validator at the same time, provide requrired flags for
 
 ```powershell
 target/production/subspace-node `
-# validator flags
 --chain gemini-3g `
 --blocks-pruning 256 `
 --state-pruning archive `
 --no-private-ipv4 `
 --validator `
 --name your_node_name `
-# operator flags
 -- `
 --domain-id your_domain_id `
 --operator `
@@ -464,14 +494,12 @@ target/production/subspace-node `
 
 ```bash
 target/production/subspace-node `
-# validator flags
 --chain gemini-3g \
 --blocks-pruning 256 \
 --state-pruning archive \
 --no-private-ipv4 \
 --validator \
 --name your_node_name \
-# operator flags
 -- \
 --domain-id your_domain_id \
 --operator \
@@ -485,21 +513,19 @@ target/production/subspace-node `
 
 ```bash
 target/production/subspace-node `
-# validator flags
 --chain gemini-3g \
 --blocks-pruning 256 \
 --state-pruning archive \
 --no-private-ipv4 \
 --validator \
 --name your_node_name \
-# operator flags
 -- \
 --domain-id your_domain_id \
 --operator \
 --keystore-path /keystore \
 --bootnodes /ip4/3.87.28.170/tcp/40333/p2p/12D3KooWGHtULvhdKMZtzigSK1438uWXPj9rBQHVzTaKMWv1WRXp 
-
 ```
+
 </TabItem>
 
 </Tabs>
