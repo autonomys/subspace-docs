@@ -68,7 +68,7 @@ Ensure you replace `your_domain_id` with your domain identifier in the command. 
 
 ```powershell
 target/production/subspace-node `
---chain gemini-3g `
+--chain agemini-3g `
 --name your_node_name `
 --base-path your_path_to_node_data `
 -- `
@@ -77,6 +77,7 @@ target/production/subspace-node `
 --operator `
 --bootnodes /ip4/3.87.28.170/tcp/40333/p2p/12D3KooWGHtULvhdKMZtzigSK1438uWXPj9rBQHVzTaKMWv1WRXp `
 --keystore-path /keystore 
+
 ```
 
 </TabItem>
@@ -445,7 +446,7 @@ target/production/subspace-node `
 --name your_node_name `
 # operator flags
 -- `
---domain-id 1 `
+--domain-id your_domain_id `
 --operator `
 --keystore-path /keystore `
 --bootnodes /ip4/3.87.28.170/tcp/40333/p2p/12D3KooWGHtULvhdKMZtzigSK1438uWXPj9rBQHVzTaKMWv1WRXp 
@@ -467,7 +468,7 @@ target/production/subspace-node `
 --name your_node_name \
 # operator flags
 -- \
---domain-id 1 \
+--domain-id your_domain_id \
 --operator \
 --keystore-path /keystore \
 --bootnodes /ip4/3.87.28.170/tcp/40333/p2p/12D3KooWGHtULvhdKMZtzigSK1438uWXPj9rBQHVzTaKMWv1WRXp
@@ -488,7 +489,7 @@ target/production/subspace-node `
 --name your_node_name \
 # operator flags
 -- \
---domain-id 1 \
+--domain-id your_domain_id \
 --operator \
 --keystore-path /keystore \
 --bootnodes /ip4/3.87.28.170/tcp/40333/p2p/12D3KooWGHtULvhdKMZtzigSK1438uWXPj9rBQHVzTaKMWv1WRXp 
