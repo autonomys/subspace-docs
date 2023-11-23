@@ -199,38 +199,6 @@ It's crucial to fully sync your node before registering as an operator. Please f
   </div>
 </details>
 
-
-#### Create operator key:
-An operator needs a key pair to participate in bundle production.
-You can create a key using the following command:
-
-  ```bash
-  target/production/subspace-node key generate --scheme sr25519
-  ```
-
- ![Staking-4](/img/doc-imgs/operators-staking/Staking-4.png)
-
-Back up the key. Take the `public key (hex)` of the Keypair. The public key is part of the operator config we will be using later on [Staking portal](https://staking.subspace.tools) or [PolkadotJS portal](https://polkadot.js.org/apps/#/explorer).
-
-#### Insert key to Keystore:
-The key generated above needs to be added to the Keystore so that the operator node can use it to participate in bundle production.
-
-To insert the key, use the following command:
-
-  ```bash
-  target/production/subspace-node key insert \
-  --suri "<Secret phrase>" --key-type oper --scheme sr25519 --keystore-path /keystore
-  ```
-
-The command above assumes `/keystore` as the keystore location.
-`suri` is the secret phrase of the operator key.
-
-:::tip
-
-`tmp` folder on linux based systems will be emptied upon the system reboot. Make sure to store the keypair in a secure and permanent location.  
-
-:::
-
 #### Register an operator using Subspace Staking interface (recommended)
 1. Proceed to the [Subspace Staking portal](https://staking.subspace.tools) and connect your wallet.
   
