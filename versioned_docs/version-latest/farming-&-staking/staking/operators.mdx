@@ -87,7 +87,11 @@ You do not need to wipe any existing plots.
 :::
 
 :::note
-Ensure you replace `your_domain_id` with your domain identifier in the command. If your keystore is located in a different folder, adjust the `--keystore-path` accordingly. Setting `--base-path` is optional.
+Ensure you replace `your_domain_id` with your domain identifier in the command and `your_operator_id` with your operator_id. If your keystore is located in a different folder, adjust the `--keystore-path` accordingly. Setting `--base-path` is optional.
+:::
+
+:::tip
+You can ignore setting up `your_operator_id` while you're syncing your node. Make sure to set it after syncing and registration.
 :::
 
 :::tip
@@ -106,7 +110,7 @@ target/production/subspace-node `
 -- `
 --domain-id your_domain_id `
 --chain gemini-3g `
---operator `
+--operator-id your_operator_id`
 --bootnodes /ip4/3.87.28.170/tcp/40333/p2p/12D3KooWGHtULvhdKMZtzigSK1438uWXPj9rBQHVzTaKMWv1WRXp `
 --keystore-path /keystore 
 
