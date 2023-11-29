@@ -31,13 +31,13 @@ To check the list of available domains:
 1. Proceed to [PolkadotJS](https://polkadot.js.org/apps/#/explorer)
 2. Make sure to select the correct network at the top-left corner.
 3. Go to Developer -> Chain state
- ![Staking-1](/img/doc-imgs/operators-staking/Staking-1.png)
+![Staking-1](/img/doc-imgs/operators-staking/Staking-1.png)
 4. Select `domains` under `selected state query` and choose `domainRegistry`
 5. Exclude `option`
 6. Click on `+` to query the chain state.
- ![Staking-2](/img/doc-imgs/operators-staking/Staking-2.png)
+![Staking-2](/img/doc-imgs/operators-staking/Staking-2.png)
 7. Review the list of available domains
- ![Staking-3](/img/doc-imgs/operators-staking/Staking-3.png)
+![Staking-3](/img/doc-imgs/operators-staking/Staking-3.png)
 :::tip
 In the example above the number 3 corresponds to the domainId. 
 The example is not Stake Wars specific, the operator is responsible for finding out the correct domain ID they want to operate on. **Stake Wars are using the domain with ID 1**.
@@ -65,13 +65,13 @@ You can adjust the `--keystore-path` if you prefer to generate the keys in a dif
 
 4. Proceed to the browswer and type `localhost` in the search bar. You should be taken to the polkadot portal. 
 
-  ![RPC-2](/img/doc-imgs/operators-staking/RPC-2.png)
+![RPC-2](/img/doc-imgs/operators-staking/RPC-2.png)
 
 5. Navigate to `developer` -> `rpc calls`
 
 6. Select `author` in `call the selected endpoint` and pick a `rotateKeys()` in the dropdown.
 
-  ![RPC-3](/img/doc-imgs/operators-staking/RPC-3.png)
+![RPC-3](/img/doc-imgs/operators-staking/RPC-3.png)
 
 7. Press on `Submit RPC call`.
 
@@ -119,7 +119,7 @@ Stake Wars are using the domain **Nova** with ID **1**.
 -- \`
 --domain-id your_domain_id \`
 --chain gemini-3g \`
---operator \`
+--operator-id-id your_operator_id\`
 --bootnodes /ip4/3.87.28.170/tcp/40333/p2p/12D3KooWGHtULvhdKMZtzigSK1438uWXPj9rBQHVzTaKMWv1WRXp \`
 --keystore-path /keystore`}
 </CodeBlock>
@@ -136,7 +136,7 @@ Stake Wars are using the domain **Nova** with ID **1**.
 -- \\
 --domain-id your_domain_id \\
 --chain gemini-3g \\
---operator \\
+--operator-id yoir_operator_id\\
 --bootnodes /ip4/3.87.28.170/tcp/40333/p2p/12D3KooWGHtULvhdKMZtzigSK1438uWXPj9rBQHVzTaKMWv1WRXp \\
 --keystore-path /keystore`}
 </CodeBlock>
@@ -153,7 +153,7 @@ Stake Wars are using the domain **Nova** with ID **1**.
 -- \\
 --domain-id your_domain_id \\
 --chain gemini-3g \\
---operator \\
+--operator-id your_operator_id\\
 --bootnodes /ip4/3.87.28.170/tcp/40333/p2p/12D3KooWGHtULvhdKMZtzigSK1438uWXPj9rBQHVzTaKMWv1WRXp \\
 --keystore-path /keystore`}
 </CodeBlock>
@@ -163,7 +163,7 @@ Stake Wars are using the domain **Nova** with ID **1**.
 
 You should see the node start successfully and begin syncing. 
 
- ![Staking-13](/img/doc-imgs/operators-staking/Staking-13.png)
+![Staking-13](/img/doc-imgs/operators-staking/Staking-13.png)
 
 
 
@@ -203,56 +203,56 @@ It's crucial to fully sync your node before registering as an operator. Please f
 
 
 <details>
-  <summary>
-  Prefer a video? Expand for our installation video using PolkadotJS interface.
-  </summary>
-  <div>
-  <iframe width="560" height="315" src="https://www.youtube.com/embed/w2U3CUJfI2c?si=mb-BRykmlrc49PPf" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen></iframe>
-  </div>
+<summary>
+Prefer a video? Expand for our installation video using PolkadotJS interface.
+</summary>
+<div>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/w2U3CUJfI2c?si=mb-BRykmlrc49PPf" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen></iframe>
+</div>
 </details>
 
 #### Register an operator using Subspace Staking interface (recommended)
 1. Proceed to the [Subspace Staking portal](https://staking.subspace.tools) and connect your wallet.
-  
-  ![NStaking-1](/img/doc-imgs/operators-staking/NStaking-1.png)
+
+![NStaking-1](/img/doc-imgs/operators-staking/NStaking-1.png)
 
 2. Select the wallet you would like to connect. Both **Subwallet** and **PolkadotJS** wallets are supported.
-  
-  ![NStaking-2](/img/doc-imgs/operators-staking/NStaking-2.png)
+
+![NStaking-2](/img/doc-imgs/operators-staking/NStaking-2.png)
 
 3. Enter your password to give an access to your wallet.
-  
-  ![NStaking-3](/img/doc-imgs/operators-staking/NStaking-3.png)
+
+![NStaking-3](/img/doc-imgs/operators-staking/NStaking-3.png)
 
 4. Select the account you'd like to use form the dropdown menu. You will see both available and locked (staked) token balances for each account. 
-  
-  ![NStaking-4](/img/doc-imgs/operators-staking/NStaking-4.png)
+
+![NStaking-4](/img/doc-imgs/operators-staking/NStaking-4.png)
 5. Proceed to the `Stake as a pool operator` tab.
 
-  ![NStaking-5](/img/doc-imgs/operators-staking/NStaking-5.png)
+![NStaking-5](/img/doc-imgs/operators-staking/NStaking-5.png)
 6. Select the `domainId` you would like to be registered on. Enter the `Minimum Operator Stake`, `Amount to Stake`, `Nomination Tax` and `Signing key` and then click `Next`.
-  
-  ![NStaking-6](/img/doc-imgs/operators-staking/NStaking-6.png)
 
-  :::info
-  Make sure to use the signing key generated on the previous **[Create operator key](#create-operator-key)** step.
-  :::
+![NStaking-6](/img/doc-imgs/operators-staking/NStaking-6.png)
+
+:::info
+Make sure to use the signing key generated on the previous **[Create operator key](#create-operator-key)** step.
+:::
 7. Approve the request in the pop-up window. 
 
-  ![NStaking-8](/img/doc-imgs/operators-staking/NStaking-7.png)
+![NStaking-8](/img/doc-imgs/operators-staking/NStaking-7.png)
 8. Congratulations, you're now registered as an **operator**! 
 
-  ![NStaking-8](/img/doc-imgs/operators-staking/NStaking-8.png)
+![NStaking-8](/img/doc-imgs/operators-staking/NStaking-8.png)
 
-  :::info
-  It can take up to 10 minutes for the operator to be registered and appear on the page. 
-  You can check if the operator was created successfully by following the [steps](#checking-your-operatorid).
-  :::
+:::info
+It can take up to 10 minutes for the operator to be registered and appear on the page. 
+You can check if the operator was created successfully by following the [steps](#checking-your-operatorid).
+:::
 
-  :::tip
-  You can view some additional actions by clicking on `action` next to your operator. 
-  You can increase your stake, withdraw some stake and de-register your operator from there. 
-  :::
+:::tip
+You can view some additional actions by clicking on `action` next to your operator. 
+You can increase your stake, withdraw some stake and de-register your operator from there. 
+:::
 
 #### Register an operator using PolkadotJS interface
 
@@ -301,10 +301,10 @@ There are two ways to check your operatorId:
 
 1. You can use PolkadotJS **[Network Explorer](https://polkadot.js.org/apps/#/explorer)**.
 
- ![Staking-7](/img/doc-imgs/operators-staking/Staking-7.png)
+![Staking-7](/img/doc-imgs/operators-staking/Staking-7.png)
 2. Browse the **recent events** and you should see **domains.OperatorRegistered** event.
 
- ![Staking-8](/img/doc-imgs/operators-staking/Staking-8.png)
+![Staking-8](/img/doc-imgs/operators-staking/Staking-8.png)
 3. Click on the dropdown arrow to view the **domainId** and **operatorId**.
 
 ---
@@ -313,21 +313,21 @@ Alternatively, you can use [Subscan](https://subspace.subscan.io/) which is a li
 1. Navigate to **[Subspace Subscan](https://subspace.subscan.io/)** portal.
 2. Click on `Blockchain` -> `Extrinsics`.
 
-  ![Staking-9](/img/doc-imgs/operators-staking/Staking-9.png)
+![Staking-9](/img/doc-imgs/operators-staking/Staking-9.png)
 
 3. Scroll to the bottom of the page to view all recent events, search for `register_operator` event.
 
- ![Staking-10](/img/doc-imgs/operators-staking/Staking-10.png)
+![Staking-10](/img/doc-imgs/operators-staking/Staking-10.png)
 
 4. Click on `Extrinsic ID` for the desired event.
 
 5. Scroll to `Parameters` and ensure that `signing_key` corresponds to your signing key.
 
- ![Staking-11](/img/doc-imgs/operators-staking/Staking-11.png)
+![Staking-11](/img/doc-imgs/operators-staking/Staking-11.png)
 
 6. Scroll to `Events` and click on dropdown arrow for `domains(OperatorRegistered)`.
 
-  ![Staking-12](/img/doc-imgs/operators-staking/Staking-12.png)
+![Staking-12](/img/doc-imgs/operators-staking/Staking-12.png)
 
 7. Inspect and remember your `domain_id`. 
 
@@ -358,35 +358,35 @@ Only account who registered an operator can deregister it. Make sure to use the 
 #### Operator deregistration using **Subspace Staking interface** (recommended)
 
 1. Proceed to the [Subspace Staking portal](https://staking.subspace.tools) and connect your wallet.
-  
-  ![NStaking-1](/img/doc-imgs/operators-staking/NStaking-1.png)
+
+![NStaking-1](/img/doc-imgs/operators-staking/NStaking-1.png)
 
 2. Select the wallet you would like to connect. Make sure to select the wallet you registered your operator with. Both **Subwallet** and **PolkadotJS** wallets are supported.
-  
-  ![NStaking-2](/img/doc-imgs/operators-staking/NStaking-2.png)
+
+![NStaking-2](/img/doc-imgs/operators-staking/NStaking-2.png)
 
 3. Enter your password to give an access to your wallet.
-  
-  ![NStaking-3](/img/doc-imgs/operators-staking/NStaking-3.png)
+
+![NStaking-3](/img/doc-imgs/operators-staking/NStaking-3.png)
 
 4. Click on `Manage your stake`.
 
-  ![NStaking-9](/img/doc-imgs/operators-staking/NStaking-9.png)
+![NStaking-9](/img/doc-imgs/operators-staking/NStaking-9.png)
 
 5. Click on `Action` button next to an operator you would like to deregister and select `deregister`. 
 
-  ![NStaking-10](/img/doc-imgs/operators-staking/NStaking-10.png)
+![NStaking-10](/img/doc-imgs/operators-staking/NStaking-10.png)
 
 6. Approve the request in the pop-up window. 
 
-  ![NStaking-8](/img/doc-imgs/operators-staking/NStaking-7.png)
+![NStaking-8](/img/doc-imgs/operators-staking/NStaking-7.png)
 
 7. Congratulations, your operator was deregistered.
 
-  :::info
-  It can take up to 10 minutes for the operator to be deregistered and disappeared from the page. 
-  You can check if the operator was deregistered successfully on the [Subspace Subscan portal](https://subspace.subscan.io/extrinsic).
-  :::
+:::info
+It can take up to 10 minutes for the operator to be deregistered and disappeared from the page. 
+You can check if the operator was deregistered successfully on the [Subspace Subscan portal](https://subspace.subscan.io/extrinsic).
+:::
 
 #### Operator deregistration using **PolkadotJS**
 Alternatively, you can use the **PolkadotJS** portal to deregister operator. 
@@ -396,7 +396,7 @@ Alternatively, you can use the **PolkadotJS** portal to deregister operator.
 3. Select the account you want to use in `using the selected account`.
 4. Select `domains` under `submit the following extrinsic` and choose `deregisterOperator(operatorId)` in the dropdown.
 
- ![Staking-14](/img/doc-imgs/operators-staking/Staking-14.png)
+![Staking-14](/img/doc-imgs/operators-staking/Staking-14.png)
 
 5. Your tokens and tokens of operator `Nominators` will be released after the `lockingPeriod`.
 6. To check the locking period you can go to `Developer` -> `Chain state` -> `Constants`.
@@ -422,7 +422,7 @@ You can create a key using the following command:
 target/production/subspace-node key generate --scheme sr25519
 ```
 
- ![Staking-4](/img/doc-imgs/operators-staking/Staking-4.png)
+![Staking-4](/img/doc-imgs/operators-staking/Staking-4.png)
 
 Back up the key. Take the `public key (hex)` of the Keypair. The public key is part of the operator config we will be using later on [Staking portal](https://staking.subspace.tools) or [PolkadotJS portal](https://polkadot.js.org/apps/#/explorer).
 
@@ -490,7 +490,7 @@ To run both operator and validator at the same time, provide requrired flags for
 --name your_node_name \`
 -- \`
 --domain-id your_domain_id \`
---operator \`
+--operator-id your_operator_id\`
 --keystore-path /keystore \`
 --bootnodes /ip4/3.87.28.170/tcp/40333/p2p/12D3KooWGHtULvhdKMZtzigSK1438uWXPj9rBQHVzTaKMWv1WRXp`}
 </CodeBlock>
@@ -510,7 +510,7 @@ To run both operator and validator at the same time, provide requrired flags for
 --name your_node_name \\
 -- \\
 --domain-id your_domain_id \\
---operator \\
+--operator-id your_operator_id\\
 --keystore-path /keystore \\
 --bootnodes /ip4/3.87.28.170/tcp/40333/p2p/12D3KooWGHtULvhdKMZtzigSK1438uWXPj9rBQHVzTaKMWv1WRXp`}
 </CodeBlock>
@@ -529,7 +529,7 @@ To run both operator and validator at the same time, provide requrired flags for
 --name your_node_name \\
 -- \\
 --domain-id your_domain_id \\
---operator \\
+--operator-id your_operator_id\\
 --keystore-path /keystore \\
 --bootnodes /ip4/3.87.28.170/tcp/40333/p2p/12D3KooWGHtULvhdKMZtzigSK1438uWXPj9rBQHVzTaKMWv1WRXp`}
 </CodeBlock>
@@ -540,7 +540,7 @@ To run both operator and validator at the same time, provide requrired flags for
 
 You should see the node start successfully and begin syncing. 
 
- ![Staking-28](/img/doc-imgs/operators-staking/Staking-28.png)
+![Staking-28](/img/doc-imgs/operators-staking/Staking-28.png)
 
 ### Switching to another server
 To ensure the minimum downtown during your switch, we propose the following: 
