@@ -10,8 +10,10 @@ keywords:
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
+import CodeBlock from '@theme/CodeBlock';
 import Link from '@docusaurus/Link';
 import styles from '@site/src/pages/index.module.css';
+
 
 
 :::note
@@ -102,53 +104,52 @@ Stake Wars are using the domain **Nova** with ID **1**.
 
 <TabItem value="windows" label="🖼️ Windows" default>
 
-```powershell
-target/production/subspace-node `
---chain gemini-3g `
---name your_node_name `
---base-path your_path_to_node_data `
--- `
---domain-id your_domain_id `
---chain gemini-3g `
---operator-id your_operator_id`
---bootnodes /ip4/3.87.28.170/tcp/40333/p2p/12D3KooWGHtULvhdKMZtzigSK1438uWXPj9rBQHVzTaKMWv1WRXp `
---keystore-path /keystore 
-
-```
+<CodeBlock>
+{`target/production/subspace-node \`
+--chain gemini-3g \`
+--name your_node_name \`
+--base-path your_path_to_node_data \`
+-- \`
+--domain-id your_domain_id \`
+--chain gemini-3g \`
+--operator \`
+--bootnodes /ip4/3.87.28.170/tcp/40333/p2p/12D3KooWGHtULvhdKMZtzigSK1438uWXPj9rBQHVzTaKMWv1WRXp \`
+--keystore-path /keystore`}
+</CodeBlock>
 
 </TabItem>
 
 <TabItem value="macos" label="🍎 macOS">
 
-```bash
-target/production/subspace-node \
---chain gemini-3g \
---name your_node_name \
---base-path your_path_to_node_data \
--- \
---domain-id your_domain_id \
---chain gemini-3g \
---operator \
---bootnodes /ip4/3.87.28.170/tcp/40333/p2p/12D3KooWGHtULvhdKMZtzigSK1438uWXPj9rBQHVzTaKMWv1WRXp \
---keystore-path /keystore 
-```
+<CodeBlock>
+{`target/production/subspace-node \\
+--chain gemini-3g \\
+--name your_node_name \\
+--base-path your_path_to_node_data \\
+-- \\
+--domain-id your_domain_id \\
+--chain gemini-3g \\
+--operator \\
+--bootnodes /ip4/3.87.28.170/tcp/40333/p2p/12D3KooWGHtULvhdKMZtzigSK1438uWXPj9rBQHVzTaKMWv1WRXp \\
+--keystore-path /keystore`}
+</CodeBlock>
 
 </TabItem>
 
 <TabItem value="linux" label="🐧 Ubuntu">
 
-```bash
-target/production/subspace-node \
---chain gemini-3g \
---name your_node_name \
---base-path your_path_to_node_data \
--- \
---domain-id your_domain_id \
---chain gemini-3g \
---operator \
---bootnodes /ip4/3.87.28.170/tcp/40333/p2p/12D3KooWGHtULvhdKMZtzigSK1438uWXPj9rBQHVzTaKMWv1WRXp \
---keystore-path /keystore 
-```
+<CodeBlock>
+{`target/production/subspace-node \\
+--chain gemini-3g \\
+--name your_node_name \\
+--base-path your_path_to_node_data \\
+-- \\
+--domain-id your_domain_id \\
+--chain gemini-3g \\
+--operator \\
+--bootnodes /ip4/3.87.28.170/tcp/40333/p2p/12D3KooWGHtULvhdKMZtzigSK1438uWXPj9rBQHVzTaKMWv1WRXp \\
+--keystore-path /keystore`}
+</CodeBlock>
 
 </TabItem>
 </Tabs>
@@ -444,59 +445,59 @@ To run both operator and validator at the same time, provide requrired flags for
 
 <TabItem value="windows" label="🖼️ Windows" default>
 
-```powershell
-target/production/subspace-node `
---chain gemini-3g `
---blocks-pruning 256 `
---state-pruning archive `
---no-private-ipv4 `
---validator `
---name your_node_name `
--- `
---domain-id your_domain_id `
---operator `
---keystore-path /keystore `
---bootnodes /ip4/3.87.28.170/tcp/40333/p2p/12D3KooWGHtULvhdKMZtzigSK1438uWXPj9rBQHVzTaKMWv1WRXp 
-```
+<CodeBlock>
+{`target/production/subspace-node \`
+--chain gemini-3g \`
+--blocks-pruning 256 \`
+--state-pruning archive \`
+--no-private-ipv4 \`
+--validator \`
+--name your_node_name \`
+-- \`
+--domain-id your_domain_id \`
+--operator \`
+--keystore-path /keystore \`
+--bootnodes /ip4/3.87.28.170/tcp/40333/p2p/12D3KooWGHtULvhdKMZtzigSK1438uWXPj9rBQHVzTaKMWv1WRXp`}
+</CodeBlock>
 
 </TabItem>
 
 
 <TabItem value="macos" label="🍎 macOS">
 
-```bash
-target/production/subspace-node `
---chain gemini-3g \
---blocks-pruning 256 \
---state-pruning archive \
---no-private-ipv4 \
---validator \
---name your_node_name \
--- \
---domain-id your_domain_id \
---operator \
---keystore-path /keystore \
---bootnodes /ip4/3.87.28.170/tcp/40333/p2p/12D3KooWGHtULvhdKMZtzigSK1438uWXPj9rBQHVzTaKMWv1WRXp
-```
+<CodeBlock>
+{`target/production/subspace-node \\
+--chain gemini-3g \\
+--blocks-pruning 256 \\
+--state-pruning archive \\
+--no-private-ipv4 \\
+--validator \\
+--name your_node_name \\
+-- \\
+--domain-id your_domain_id \\
+--operator \\
+--keystore-path /keystore \\
+--bootnodes /ip4/3.87.28.170/tcp/40333/p2p/12D3KooWGHtULvhdKMZtzigSK1438uWXPj9rBQHVzTaKMWv1WRXp`}
+</CodeBlock>
 
 </TabItem>
 
 <TabItem value="linux" label="🐧 Ubuntu">
 
-```bash
-target/production/subspace-node `
---chain gemini-3g \
---blocks-pruning 256 \
---state-pruning archive \
---no-private-ipv4 \
---validator \
---name your_node_name \
--- \
---domain-id your_domain_id \
---operator \
---keystore-path /keystore \
---bootnodes /ip4/3.87.28.170/tcp/40333/p2p/12D3KooWGHtULvhdKMZtzigSK1438uWXPj9rBQHVzTaKMWv1WRXp 
-```
+<CodeBlock>
+{`target/production/subspace-node \\
+--chain gemini-3g \\
+--blocks-pruning 256 \\
+--state-pruning archive \\
+--no-private-ipv4 \\
+--validator \\
+--name your_node_name \\
+-- \\
+--domain-id your_domain_id \\
+--operator \\
+--keystore-path /keystore \\
+--bootnodes /ip4/3.87.28.170/tcp/40333/p2p/12D3KooWGHtULvhdKMZtzigSK1438uWXPj9rBQHVzTaKMWv1WRXp`}
+</CodeBlock>
 
 </TabItem>
 
