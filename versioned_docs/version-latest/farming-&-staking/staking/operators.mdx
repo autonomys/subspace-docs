@@ -45,33 +45,40 @@ The example is not Stake Wars specific, the operator is responsible for finding 
 
 ### Start the domain operator node
 
-#### Create operator key:
+#### Create operator key (recommended way)
+
 An operator needs a key pair to participate in bundle production.
-You can create a key using the following command:
 
-```bash
-target/production/subspace-node key generate --scheme sr25519
-```
-
- ![Staking-4](/img/doc-imgs/operators-staking/Staking-4.png)
-
-Back up the key. Take the `public key (hex)` of the Keypair. The public key is part of the operator config we will be using later on [Staking portal](https://staking.subspace.tools) or [PolkadotJS portal](https://polkadot.js.org/apps/#/explorer).
-
-#### Insert key to Keystore:
-The key generated above needs to be added to the Keystore so that the operator node can use it to participate in bundle production.
-
-To insert the key, use the following command:
-
-```bash
-target/production/subspace-node key insert \
---suri "<Secret phrase>" --key-type oper --scheme sr25519 --keystore-path /keystore
-```
-
-The command above assumes `/keystore` as the keystore location.
-`suri` is the secret phrase of the operator key.
+1. Make sure to have [Docker installed](https://www.docker.com/get-started/).
+You can run `docker -v` in the terminal of your choice to make sure it's installed. 
+2. Start a developer node by running
+`./target/release/subspace-node --chain dev -- --domain-id 0 --keystore-path tmp/keystore --rpc-cors all`
 
 :::tip
-`tmp` folder on linux based systems will be emptied upon the system reboot. Make sure to store the keypair in a secure and permanent location.  
+You can use any chain to generate a keypair, we recommend using a `dev` chain for simplicity. 
+You can adjust the `--keystore-path` if you prefer to generate the keys in a different location.  
+:::
+
+3. Start a local polkadot interface portal by running a docker contrainer.
+
+`docker run --rm -it --name polkadot-ui -e WS_URL=ws://0.0.0.0:9945 -p 80:80 jacogr/polkadot-js-apps:latest`
+
+4. Proceed to the browswer and type `localhost` in the search bar. You should be taken to the polkadot portal. 
+
+  ![RPC-2](/img/doc-imgs/operators-staking/RPC-2.png)
+
+5. Navigate to `developer` -> `rpc calls`
+
+6. Select `author` in `call the selected endpoint` and pick a `rotateKeys()` in the dropdown.
+
+  ![RPC-3](/img/doc-imgs/operators-staking/RPC-3.png)
+
+7. Press on `Submit RPC call`.
+
+8. You will see a newly generated key on the screen. The key will also be written in a `keystore` location you specified earlier. 
+
+:::tip
+You will use this key in order to register an operator later.
 :::
 
 The domain operator node is running with an embedded consensus node, thus you need to specify the args for both the consensus node and the domain operator node:
@@ -407,6 +414,34 @@ Number 256 above corresponds to the number of the domain blocks, and not the con
 
 **Operator** stake withdrawal works similarly to **Nominator** stake withdrawal. Refer to [this section](./staking.md#stake-withdrawal-using-polkadotjs) to withdraw your stake. 
 
+### Create operator key (alternative, less secure way):
+An operator needs a key pair to participate in bundle production.
+You can create a key using the following command:
+
+```bash
+target/production/subspace-node key generate --scheme sr25519
+```
+
+ ![Staking-4](/img/doc-imgs/operators-staking/Staking-4.png)
+
+Back up the key. Take the `public key (hex)` of the Keypair. The public key is part of the operator config we will be using later on [Staking portal](https://staking.subspace.tools) or [PolkadotJS portal](https://polkadot.js.org/apps/#/explorer).
+
+#### Insert key to Keystore:
+The key generated above needs to be added to the Keystore so that the operator node can use it to participate in bundle production.
+
+To insert the key, use the following command:
+
+```bash
+target/production/subspace-node key insert \
+--suri "<Secret phrase>" --key-type oper --scheme sr25519 --keystore-path /keystore
+```
+
+The command above assumes `/keystore` as the keystore location.
+`suri` is the secret phrase of the operator key.
+
+:::tip
+`tmp` folder on linux based systems will be emptied upon the system reboot. Make sure to store the keypair in a secure and permanent location.  
+:::
 
 ### Switch domains
 
