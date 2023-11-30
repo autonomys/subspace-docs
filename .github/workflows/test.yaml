@@ -1,4 +1,4 @@
-name: Test deployment
+name: Test Deployment
 
 on:
   pull_request:
@@ -10,8 +10,21 @@ on:
       - main
 
 jobs:
-  test-deploy:
-    name: Test deployment
+  setup:
+    name: Install Dependencies
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v3
+        with:
+          node-version: '16'
+          cache: 'yarn'
+      - name: Install dependencies
+        run: yarn install --frozen-lockfile
+
+  build-leaderboard:
+    name: Test Build Translation Leaderboard
+    needs: setup
     runs-on: ubuntu-latest
     env:
       CROWDIN_PERSONAL_TOKEN: ${{ secrets.CROWDIN_PERSONAL_TOKEN }}
@@ -19,103 +32,38 @@ jobs:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v3
         with:
-          node-version: 16.15.0
-          cache: yarn
-      - name: Install dependencies
-        run: yarn install --frozen-lockfile
+          node-version: '16'
+          cache: 'yarn'
+          cache-dependency-path: '**/yarn.lock'
+      - run: yarn install --frozen-lockfile
+      - run: yarn run generate-leaderboard
 
-      - name: Build Translation Leaderboard
-        run: yarn run generate-leaderboard
+  sync-localization:
+    name: Test Sync Localization Files
+    needs: setup
+    runs-on: ubuntu-latest
+    env:
+      CROWDIN_PERSONAL_TOKEN: ${{ secrets.CROWDIN_PERSONAL_TOKEN }}
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v3
+        with:
+          node-version: '16'
+          cache: 'yarn'
+          cache-dependency-path: '**/yarn.lock'
+      - run: yarn install --frozen-lockfile
+      - run: yarn crowdin:sync
 
-
-      - name: Test build website
-        run: yarn build --locale en
-
-  check_version_changes:
-    name: Check for Version Changes
+  build-website:
+    name: Test Build Website
+    needs: [build-leaderboard, sync-localization]
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v3
         with:
-          fetch-depth: 10
-
-      - name: Get and Parse File Diffs
-        id: parse_diffs
-        run: |
-          git fetch origin main:main
-          git diff main...HEAD 'versioned_docs/version-latest/protocol/pulsar.mdx' > pulsar_diff.txt
-          git diff main...HEAD 'versioned_docs/version-latest/protocol/substrate-cli.mdx' > substrate_cli_diff.txt
-
-          COMMENT_BODY=""
-          new_pulsar_tag=""
-          old_pulsar_tag=""
-          new_substrate_cli_tag=""
-          old_substrate_cli_tag=""
-
-          new_pulsar_tag=$(grep -o "\\+.*https://github.com/subspace/pulsar/releases/download/[^/]\\+/[^/]\\+" pulsar_diff.txt | head -1 | awk -F'/' '{print $8}')
-          old_pulsar_tag=$(grep -o "\\-.*https://github.com/subspace/pulsar/releases/download/[^/]\\+/[^/]\\+" pulsar_diff.txt | head -1 | awk -F'/' '{print $8}')
-
-          if [ -n "$new_pulsar_tag" ] && [ -n "$old_pulsar_tag" ] && [ "$new_pulsar_tag" != "$old_pulsar_tag" ]; then
-            COMMENT_BODY+="
-            - [ ] Detected version change on Pulsar: $old_pulsar_tag -> $new_pulsar_tag"
-          fi
-
-          new_substrate_cli_tag=$(grep -o "\\+.*https://github.com/subspace/subspace/releases/download/[^/]\\+/[^/]\\+" substrate_cli_diff.txt | head -1 | awk -F'/' '{print $8}')
-          old_substrate_cli_tag=$(grep -o "\\-.*https://github.com/subspace/subspace/releases/download/[^/]\\+/[^/]\\+" substrate_cli_diff.txt | head -1 | awk -F'/' '{print $8}')
-
-          if [ -n "$new_substrate_cli_tag" ] && [ -n "$old_substrate_cli_tag" ] && [ "$new_substrate_cli_tag" != "$old_substrate_cli_tag" ]; then
-            COMMENT_BODY+="
-            - [ ] Detected version change on Advanced CLI: $old_substrate_cli_tag -> $new_substrate_cli_tag"
-          fi
-
-          if [ -n "$COMMENT_BODY" ]; then
-            COMMENT_BODY="### Version Update Detected, please check the checkboxes below to acknowledge that merging this PR will notify the Discord community.
-            
-            $COMMENT_BODY
-            
-            "
-            echo "$COMMENT_BODY" > comment_body.txt
-          fi
-
-      - name: Update PR Body
-        run: |
-          if [[ -f comment_body.txt ]]; then
-            PR_ID=$(jq -r ".number" "$GITHUB_EVENT_PATH")
-
-            # Fetch current PR body
-            CURRENT_PR_BODY=$(curl -s -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
-                  "https://api.github.com/repos/$GITHUB_REPOSITORY/pulls/$PR_ID" | jq -r .body)
-
-            # Check if the checkbox information is already present
-            if ! echo "$CURRENT_PR_BODY" | grep -q "Detected version change"; then
-              # Update PR body
-              UPDATED_PR_BODY="$(cat comment_body.txt)
-              
-              $CURRENT_PR_BODY"
-              PAYLOAD=$(jq -n --arg body "$UPDATED_PR_BODY" '{"body": $body}')
-              
-              RESPONSE=$(curl -s -o /dev/stderr -w "%{http_code}" -X PATCH -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
-                  -d "$PAYLOAD" \
-                  "https://api.github.com/repos/$GITHUB_REPOSITORY/pulls/$PR_ID")
-
-              if [ "$RESPONSE" -ne 200 ]; then
-                echo "Failed to update PR body"
-                exit 1
-              fi
-            fi
-          fi
-
-  task-check:
-    needs: check_version_changes
-    name: Verify Version Acknowledgement
-    if: needs.check_version_changes.result == 'success'
-    runs-on: ubuntu-latest
-    steps:
-      - name: Wait for PR Body to Update
-        run: sleep 30
-
-      - name: Check Version Checkbox
-        uses: kentaro-m/task-completed-checker-action@v0.1.2
-        with:
-          repo-token: "${{ secrets.GITHUB_TOKEN }}"
+          node-version: '16'
+          cache: 'yarn'
+          cache-dependency-path: '**/yarn.lock'
+      - run: yarn install --frozen-lockfile
+      - run: yarn build --locale en  # Assuming the test build is specific to 'en' locale
