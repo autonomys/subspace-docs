@@ -59,7 +59,7 @@ You can use any chain to generate a keypair, we recommend using a `dev` chain fo
 You can adjust the `--keystore-path` if you prefer to generate the keys in a different location.  
 :::
 
-3. Start a local polkadot interface portal by running a docker contrainer.
+3. Start a local polkadot interface portal by running a docker container.
 
 `docker run --rm -it --name polkadot-ui -e WS_URL=ws://0.0.0.0:9945 -p 80:80 jacogr/polkadot-js-apps:latest`
 
@@ -400,7 +400,7 @@ Alternatively, you can use the **PolkadotJS** portal to deregister operator.
 
 5. Your tokens and tokens of operator `Nominators` will be released after the `lockingPeriod`.
 6. To check the locking period you can go to `Developer` -> `Chain state` -> `Constants`.
-7. Select `domains` under `selected contant query` and choose `stakeWithdrawalLockingPeriod`. 
+7. Select `domains` under `selected constant query` and choose `stakeWithdrawalLockingPeriod`. 
 8. Click on `+` to run the query. 
 
 ![Staking-15](/img/doc-imgs/operators-staking/Staking-15.png)
