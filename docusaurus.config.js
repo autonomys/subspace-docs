@@ -90,6 +90,10 @@ const config = {
           {
             to: "/docs/category/pulsar-recommended",
             from: "/docs/protocol/pulsar/"
+          },
+          {
+            to: "/docs/farming-&-staking/farming/advanced-cli/cli-install",
+            from: "/docs/Farming%20&%20Staking/Farming/Advanced-Cli/cli-install"
           }
         ],
       },
