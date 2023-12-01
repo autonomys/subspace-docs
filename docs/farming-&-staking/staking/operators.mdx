@@ -43,11 +43,72 @@ In the example above the number 3 corresponds to the domainId.
 The example is not Stake Wars specific, the operator is responsible for finding out the correct domain ID they want to operate on. **Stake Wars are using the domain with ID 1**.
 :::
 
-### Start the domain operator node
-
-#### Create operator key (recommended way)
+### Create operator key (recommended way)
 
 An operator needs a key pair to participate in bundle production.
+
+<Tabs groupId="PreferredMethod">
+
+<TabItem value="curl" label="Curl" default>
+
+1. Start a node on a developer chain by running
+`./target/release/subspace-node --chain dev -- --domain-id 0 --keystore-path tmp/keystore --rpc-cors all`
+
+:::tip
+You can use any chain to generate a keypair, we recommend using a `dev` chain for simplicity. 
+You can adjust the `--keystore-path` if you prefer to generate the keys in a different location.  
+:::
+
+2. Open another terminal and use the `curl` command to make an **RPC** call to your node. This will generate a new key in a `--keystore-path` location you specified earlier. 
+
+<Tabs groupId="OS">
+
+<TabItem value="windows" label="🖼️ Windows" default>
+
+<CodeBlock>
+{`curl -X POST http://127.0.0.1:9945 \`
+-H "Content-Type: application/json;charset=utf-8" \`
+-d '{
+  "jsonrpc":"2.0",
+  "id":1,
+  "method":"author_rotateKeys",
+  "params": []
+}'`}
+</CodeBlock>
+</TabItem>
+
+
+<TabItem value="macos" label="🍎 macOS">
+<CodeBlock>
+{`curl -X POST http://127.0.0.1:9945 \\
+-H "Content-Type: application/json;charset=utf-8" \\
+-d '{
+  "jsonrpc":"2.0",
+  "id":1,
+  "method":"author_rotateKeys",
+  "params": []
+}'`}
+</CodeBlock> 
+</TabItem>
+
+<TabItem value="linux" label="🐧 Ubuntu">
+
+<CodeBlock>
+{`curl -X POST http://127.0.0.1:9945 \\
+-H "Content-Type: application/json;charset=utf-8" \\
+-d '{
+  "jsonrpc":"2.0",
+  "id":1,
+  "method":"author_rotateKeys",
+  "params": []
+}'`}
+</CodeBlock>
+</TabItem>
+
+</Tabs>
+</TabItem>
+
+<TabItem value="docker" label="UI(using Docker)">
 
 1. Make sure to have [Docker installed](https://www.docker.com/get-started/).
 You can run `docker -v` in the terminal of your choice to make sure it's installed. 
@@ -80,6 +141,14 @@ You can adjust the `--keystore-path` if you prefer to generate the keys in a dif
 :::tip
 You will use this key in order to register an operator later.
 :::
+
+</TabItem>
+
+</Tabs>
+
+**You have successfully generated an operator's key, congratulations!**
+
+### Start the domain operator node
 
 The domain operator node is running with an embedded consensus node, thus you need to specify the args for both the consensus node and the domain operator node:
 
