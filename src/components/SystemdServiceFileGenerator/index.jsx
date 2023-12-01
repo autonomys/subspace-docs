@@ -8,10 +8,10 @@ import styles from './SystemdServiceFileGenerator.module.css';
 function AdvancedSystemdServiceFileGenerator() {
     // Initial state for form data
     const [formData, setFormData] = useState({
-        nodeBinPath: '/root/.local/bin/subspace-node',
-        farmerBinPath: '/root/.local/bin/subspace-farmer',
-        nodeData: '/root/.local/share/subspace-node',
-        farmerData: '/root/.local/share/subspace-farmer',
+        nodeBinPath: '/home/subspace/.local/bin/subspace-node',
+        farmerBinPath: '/home/subspace/.local/bin/subspace-farmer',
+        nodeData: '/home/subspace/.local/share/subspace-node',
+        farmerData: '/home/subspace/.local/share/subspace-farmer',
         nodeName: 'subspace',
         nodePort: '30333',
         nodeDsnPort: '30433',
@@ -19,8 +19,8 @@ function AdvancedSystemdServiceFileGenerator() {
         rewardAddress: 'st6GBwATPqtBkK5y4uXbV52euszPpFPw7wmkF8FywEqJaf8uP',
         plotSize: '100G',
         archival: "off",
-        sandbox: "on",
-        user: 'root',
+        sandbox: "off",
+        user: 'subspace',
         extraNodeArgs: '',
         extraFarmerArgs: '',
     });
