@@ -49,7 +49,7 @@ An operator needs a key pair to participate in bundle production.
 
 <Tabs groupId="PreferredMethod">
 
-<TabItem value="curl" label="Curl" default>
+<TabItem value="curl" label="curl" default>
 
 1. Start a node on a developer chain by running
 `./target/release/subspace-node --chain dev -- --domain-id 0 --keystore-path tmp/keystore --rpc-cors all`
@@ -59,14 +59,14 @@ You can use any chain to generate a keypair, we recommend using a `dev` chain fo
 You can adjust the `--keystore-path` if you prefer to generate the keys in a different location.  
 :::
 
-2. Open another terminal and use the `curl` command to make an **RPC** call to your node. This will generate a new key in a `--keystore-path` location you specified earlier. 
+2. Open another terminal and use the `curl` command to make an **RPC** call to your node. This will generate a new key in the `--keystore-path` location you specified earlier. 
 
 <Tabs groupId="OS">
 
 <TabItem value="windows" label="🖼️ Windows" default>
 
 <CodeBlock>
-{`curl -X POST http://127.0.0.1:9945 \`
+{`curl.exe -X POST http://127.0.0.1:9945 \`
 -H "Content-Type: application/json;charset=utf-8" \`
 -d '{
   "jsonrpc":"2.0",
@@ -108,7 +108,7 @@ You can adjust the `--keystore-path` if you prefer to generate the keys in a dif
 </Tabs>
 </TabItem>
 
-<TabItem value="docker" label="UI(using Docker)">
+<TabItem value="docker" label="UI (using Docker)">
 
 1. Make sure to have [Docker installed](https://www.docker.com/get-started/).
 You can run `docker -v` in the terminal of your choice to make sure it's installed. 
@@ -146,7 +146,7 @@ You will use this key in order to register an operator later.
 
 </Tabs>
 
-**You have successfully generated an operator's key, congratulations!**
+**You have successfully generated an operator key, congratulations!**
 
 ### Start the domain operator node
 
