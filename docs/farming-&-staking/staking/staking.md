@@ -13,6 +13,17 @@ keywords:
 Three important factors to pay attention to are `minimumNominatorStake`, `nominationTax`, and `status`.
 :::
 
+
+1. Visit [**Subspace Staking Interface**](https://staking.subspace.tools). 
+  ![N-nominators-1](/img/doc-imgs/operators-staking/N-Nominators-1.png)
+2. Click on **Operators** to view the list of available **operators**.
+  ![N-nominators-4](/img/doc-imgs/operators-staking/N-Nominators-4.png)
+3. Scroll the page down, pay close attention to the **Nominator Tax**, **Min Nominator Stake**, and **Nominators Count**, as these three parameters help you choose an operator to nominate. 
+  ![N-nominators-5](/img/doc-imgs/operators-staking/N-Nominators-5.png)
+
+---
+**Alternativaly**, you can use **PolkadotJS** interface to view the list of available operators.
+
 1. Visit PolkadotJS **[Network Explorer](https://polkadot.js.org/apps/#/explorer)**.
 2. Go to `Developer` -> `Chain state`.
 
@@ -25,6 +36,35 @@ Three important factors to pay attention to are `minimumNominatorStake`, `nomina
 :::note
 Number 17 on the screenshot above corresponds to `operatorId`.
 :::
+
+### Operator Nomination using [Subspace Staking Interface](https://staking.subspace.tools/)
+
+Any account can nominate any existing **operator** with at least a minimum nominator stake set by the **operator**. 
+
+:::info
+The only staking mechanism available to non-operators is nominating an operator.
+:::
+
+1. Visit [**Subspace Staking Interface**](https://staking.subspace.tools). 
+  ![N-nominators-1](/img/doc-imgs/operators-staking/N-Nominators-1.png)
+2. Connect your PolkadotJS or Subwallet wallet. 
+![N-nominators-2](/img/doc-imgs/operators-staking/N-Nominators-2.png)
+3. As soon as you connect your wallet, you will see your **available** and **locked(stakes**) wallet balance. 
+![N-nominators-3](/img/doc-imgs/operators-staking/N-Nominators-3.png)
+4. Click on **Operators** to view the list of available **Operators**.
+  ![N-nominators-4](/img/doc-imgs/operators-staking/N-Nominators-4.png)
+5. Scroll the page down, pay close attention to the **Nominator Tax**, **Min Nominator Stake**, and **Nominators Count**, as these three parameters help you choose an operator to nominate. 
+  ![N-nominators-5](/img/doc-imgs/operators-staking/N-Nominators-5.png)
+6. You can toggle the view between the table and a pallet. 
+  ![N-nominators-6](/img/doc-imgs/operators-staking/N-Nominators-6.png)
+7. Once you picked the operator to nominate, click on **Action** -> **AddFunds**.
+  ![N-nominators-7](/img/doc-imgs/operators-staking/N-Nominators-7.png)
+8. Choose the token amount you want to nominate the operator with.  It is also possible to nominate multiple operators. Click on **Submit** and approve the transaction in a pop-up window. 
+  ![N-nominators-9](/img/doc-imgs/operators-staking/N-Nominators-9.png)
+9. Wait for the transaction to go through. It takes 100 blocks (1 epoch duration) to complete the nomination.
+![N-nominators-10](/img/doc-imgs/operators-staking/N-Nominators-10.png)
+10. You will see the previousle **available** become **locked** amount. Congratulations, you succesfully became a **nominator**.
+![N-nominators-11](/img/doc-imgs/operators-staking/N-Nominators-11.png)
 
 ### Operator Nomination using [Polkadot.js](https://polkadot.js.org/)
 
