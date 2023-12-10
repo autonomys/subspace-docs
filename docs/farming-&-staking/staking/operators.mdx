@@ -69,10 +69,10 @@ You can adjust the `--keystore-path` if you prefer to generate the keys in a dif
 {`curl.exe -X POST http://127.0.0.1:9945 \`
 -H "Content-Type: application/json;charset=utf-8" \`
 -d '{
-  "jsonrpc":"2.0",
-  "id":1,
-  "method":"author_rotateKeys",
-  "params": []
+"jsonrpc":"2.0",
+"id":1,
+"method":"author_rotateKeys",
+"params": []
 }'`}
 </CodeBlock>
 </TabItem>
@@ -83,10 +83,10 @@ You can adjust the `--keystore-path` if you prefer to generate the keys in a dif
 {`curl -X POST http://127.0.0.1:9945 \\
 -H "Content-Type: application/json;charset=utf-8" \\
 -d '{
-  "jsonrpc":"2.0",
-  "id":1,
-  "method":"author_rotateKeys",
-  "params": []
+"jsonrpc":"2.0",
+"id":1,
+"method":"author_rotateKeys",
+"params": []
 }'`}
 </CodeBlock> 
 </TabItem>
@@ -97,10 +97,10 @@ You can adjust the `--keystore-path` if you prefer to generate the keys in a dif
 {`curl -X POST http://127.0.0.1:9945 \\
 -H "Content-Type: application/json;charset=utf-8" \\
 -d '{
-  "jsonrpc":"2.0",
-  "id":1,
-  "method":"author_rotateKeys",
-  "params": []
+"jsonrpc":"2.0",
+"id":1,
+"method":"author_rotateKeys",
+"params": []
 }'`}
 </CodeBlock>
 </TabItem>
@@ -190,6 +190,8 @@ Stake Wars are using the domain **Nova** with ID **1**.
 --chain gemini-3g \`
 --operator-id your_operator_id \`
 --bootnodes /ip4/3.87.28.170/tcp/40333/p2p/12D3KooWGHtULvhdKMZtzigSK1438uWXPj9rBQHVzTaKMWv1WRXp \`
+--bootnodes /ip4/140.82.45.36/tcp/40333/p2p/12D3KooWJxB2PVzyNqZywoCWAMLGhKr2LCbFMXbAPzUPQZon7yt1 \`
+--bootnodes /ip4/167.179.116.135/tcp/40333/p2p/12D3KooWHsRae3ip2uQAUPtpMcStHGGw777SJT3nu9maFmtsGry7 \`
 --keystore-path /keystore`}
 </CodeBlock>
 
@@ -207,6 +209,8 @@ Stake Wars are using the domain **Nova** with ID **1**.
 --chain gemini-3g \\
 --operator-id your_operator_id \\
 --bootnodes /ip4/3.87.28.170/tcp/40333/p2p/12D3KooWGHtULvhdKMZtzigSK1438uWXPj9rBQHVzTaKMWv1WRXp \\
+--bootnodes /ip4/140.82.45.36/tcp/40333/p2p/12D3KooWJxB2PVzyNqZywoCWAMLGhKr2LCbFMXbAPzUPQZon7yt1 \\
+--bootnodes /ip4/167.179.116.135/tcp/40333/p2p/12D3KooWHsRae3ip2uQAUPtpMcStHGGw777SJT3nu9maFmtsGry7 \\
 --keystore-path /keystore`}
 </CodeBlock>
 
@@ -224,6 +228,8 @@ Stake Wars are using the domain **Nova** with ID **1**.
 --chain gemini-3g \\
 --operator-id your_operator_id \\
 --bootnodes /ip4/3.87.28.170/tcp/40333/p2p/12D3KooWGHtULvhdKMZtzigSK1438uWXPj9rBQHVzTaKMWv1WRXp \\
+--bootnodes /ip4/140.82.45.36/tcp/40333/p2p/12D3KooWJxB2PVzyNqZywoCWAMLGhKr2LCbFMXbAPzUPQZon7yt1 \\
+--bootnodes /ip4/167.179.116.135/tcp/40333/p2p/12D3KooWHsRae3ip2uQAUPtpMcStHGGw777SJT3nu9maFmtsGry7 \\
 --keystore-path /keystore`}
 </CodeBlock>
 
@@ -561,7 +567,9 @@ To run both operator and validator at the same time, provide requrired flags for
 --domain-id your_domain_id \`
 --operator-id your_operator_id \`
 --keystore-path /keystore \`
---bootnodes /ip4/3.87.28.170/tcp/40333/p2p/12D3KooWGHtULvhdKMZtzigSK1438uWXPj9rBQHVzTaKMWv1WRXp`}
+--bootnodes /ip4/3.87.28.170/tcp/40333/p2p/12D3KooWGHtULvhdKMZtzigSK1438uWXPj9rBQHVzTaKMWv1WRXp \`
+--bootnodes /ip4/140.82.45.36/tcp/40333/p2p/12D3KooWJxB2PVzyNqZywoCWAMLGhKr2LCbFMXbAPzUPQZon7yt1 \`
+--bootnodes /ip4/167.179.116.135/tcp/40333/p2p/12D3KooWHsRae3ip2uQAUPtpMcStHGGw777SJT3nu9maFmtsGry7 `}
 </CodeBlock>
 
 </TabItem>
@@ -581,7 +589,9 @@ To run both operator and validator at the same time, provide requrired flags for
 --domain-id your_domain_id \\
 --operator-id your_operator_id \\
 --keystore-path /keystore \\
---bootnodes /ip4/3.87.28.170/tcp/40333/p2p/12D3KooWGHtULvhdKMZtzigSK1438uWXPj9rBQHVzTaKMWv1WRXp`}
+--bootnodes /ip4/3.87.28.170/tcp/40333/p2p/12D3KooWGHtULvhdKMZtzigSK1438uWXPj9rBQHVzTaKMWv1WRXp \\
+--bootnodes /ip4/140.82.45.36/tcp/40333/p2p/12D3KooWJxB2PVzyNqZywoCWAMLGhKr2LCbFMXbAPzUPQZon7yt1 \\
+--bootnodes /ip4/167.179.116.135/tcp/40333/p2p/12D3KooWHsRae3ip2uQAUPtpMcStHGGw777SJT3nu9maFmtsGry7 `}
 </CodeBlock>
 
 </TabItem>
@@ -600,7 +610,9 @@ To run both operator and validator at the same time, provide requrired flags for
 --domain-id your_domain_id \\
 --operator-id your_operator_id \\
 --keystore-path /keystore \\
---bootnodes /ip4/3.87.28.170/tcp/40333/p2p/12D3KooWGHtULvhdKMZtzigSK1438uWXPj9rBQHVzTaKMWv1WRXp`}
+--bootnodes /ip4/3.87.28.170/tcp/40333/p2p/12D3KooWGHtULvhdKMZtzigSK1438uWXPj9rBQHVzTaKMWv1WRXp \\
+--bootnodes /ip4/140.82.45.36/tcp/40333/p2p/12D3KooWJxB2PVzyNqZywoCWAMLGhKr2LCbFMXbAPzUPQZon7yt1 \\
+--bootnodes /ip4/167.179.116.135/tcp/40333/p2p/12D3KooWHsRae3ip2uQAUPtpMcStHGGw777SJT3nu9maFmtsGry7 `}
 </CodeBlock>
 
 </TabItem>
