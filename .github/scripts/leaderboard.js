@@ -8,7 +8,7 @@ const CONFIG = {
     CROWDIN_API_ENDPOINT: process.env.CROWDIN_API_ENDPOINT || 'https://api.crowdin.com/api/v2',
     CROWDIN_PROJECT_ID: process.env.CROWDIN_PROJECT_ID || '604593',
     BLACKLISTED_CONTRIBUTORS_FILE: process.env.BLACKLISTED_CONTRIBUTORS_FILE || './.github/scripts/blacklisted-contributors.json',
-    LEADERBOARD_FILE: process.env.LEADERBOARD_FILE || './src/components/TranslationLeaderboard/leaderboard.json',
+    LEADERBOARD_FILE: process.env.LEADERBOARD_FILE || './src/components/TranslationLeaderboard/leaderboard',
     RETRY_DELAY: parseInt(process.env.RETRY_DELAY) || 2000,
     MAX_RETRIES: parseInt(process.env.MAX_RETRIES) || 5,
     HTTP_TIMEOUT: parseInt(process.env.HTTP_TIMEOUT) || 10000,
@@ -19,6 +19,8 @@ if (!CROWDIN_PERSONAL_TOKEN) {
     console.error('CROWDIN_PERSONAL_TOKEN is not set');
     process.exit(1);
 }
+
+const date = new Date(); 
 
 async function delay(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
@@ -57,6 +59,15 @@ function generateKey(name) {
     return crypto.createHash('sha256').update(normalized).digest('hex');
 }
 
+function formatDateToBeginningOfMonth(date) {
+    const year = date.getFullYear();
+    const month = date.getMonth() + 1; // getMonth() is zero-indexed
+
+    return `${year}-${month.toString().padStart(2, '0')}-01T00:00:00+00:00`;
+}
+
+const formattedDate = formatDateToBeginningOfMonth(date);
+
 async function getProjectMembers() {
     try {
         const response = await makeRequest('get', `${CONFIG.CROWDIN_API_ENDPOINT}/projects/${CONFIG.CROWDIN_PROJECT_ID}/members`, {
@@ -79,7 +90,25 @@ async function getProjectMembers() {
     }
 }
 
-async function generateReport() {
+
+
+async function generateMonthlyReport() {
+    try {
+        const response = await makeRequest('post', `${CONFIG.CROWDIN_API_ENDPOINT}/projects/${CONFIG.CROWDIN_PROJECT_ID}/reports`, {
+            data: {
+                name: "top-members",
+                schema: { unit: "words", format: "csv", dateFrom: formattedDate }
+            },
+            headers: { 'Authorization': `Bearer ${CROWDIN_PERSONAL_TOKEN}`, 'Content-Type': 'application/json' }
+        });
+        return response.data.data.identifier;
+    } catch (error) {
+        console.error('Error in generateReport:', error);
+        throw error;
+    }
+}
+
+async function generateAllTimeReport() {
     try {
         const response = await makeRequest('post', `${CONFIG.CROWDIN_API_ENDPOINT}/projects/${CONFIG.CROWDIN_PROJECT_ID}/reports`, {
             data: {
@@ -162,25 +191,38 @@ async function processCsvData(csvData, membersMapping, blacklistedContributors) 
     });
 }
 
-async function saveDataToJson(data) {
+async function saveDataToJson(data, filePath) {
     try {
-        await fs.writeFile(CONFIG.LEADERBOARD_FILE, JSON.stringify(data, null, 2), 'utf8');
+        await fs.writeFile(filePath, JSON.stringify(data, null, 2), 'utf8');
     } catch (error) {
         console.error('Error in saveDataToJson:', error);
         throw error;
     }
 }
 
+
 (async function main() {
     try {
+        // Load blacklisted contributors and project members
         const blacklistedContributors = await loadBlacklistedContributors();
         const membersMapping = await getProjectMembers();
-        const reportIdentifier = await generateReport();
-        const downloadUrl = await downloadReport(reportIdentifier);
-        const csvDataResponse = await makeRequest('get', downloadUrl);
-        const leaderboardData = await processCsvData(csvDataResponse.data, membersMapping, blacklistedContributors);
-        await saveDataToJson(leaderboardData);
+
+        // Generating and processing the all-time report
+        const allTimeReportIdentifier = await generateAllTimeReport();
+        const allTimeDownloadUrl = await downloadReport(allTimeReportIdentifier);
+        const allTimeCsvDataResponse = await makeRequest('get', allTimeDownloadUrl);
+        const allTimeLeaderboardData = await processCsvData(allTimeCsvDataResponse.data, membersMapping, blacklistedContributors);
+        await saveDataToJson(allTimeLeaderboardData, `${CONFIG.LEADERBOARD_FILE}.json`); // Save the all-time data
+
+        // Generating and processing the monthly report
+        const monthlyReportIdentifier = await generateMonthlyReport();
+        const monthlyDownloadUrl = await downloadReport(monthlyReportIdentifier);
+        const monthlyCsvDataResponse = await makeRequest('get', monthlyDownloadUrl);
+        const monthlyLeaderboardData = await processCsvData(monthlyCsvDataResponse.data, membersMapping, blacklistedContributors);
+        await saveDataToJson(monthlyLeaderboardData, `${CONFIG.LEADERBOARD_FILE}-monthly.json`); // Save the monthly data
+
     } catch (error) {
         console.error('Error in main function:', error);
     }
 })();
+
