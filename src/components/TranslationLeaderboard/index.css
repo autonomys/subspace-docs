@@ -105,3 +105,22 @@ html[data-theme='dark'] .translated-words {
 html[data-theme='dark'] .ranking {
   animation: glow-effect-dark 1.6s ease-in-out 1 forwards;
 }
+
+.leaderboard-buttons {
+  margin-bottom: 1rem;
+}
+
+.leaderboard-buttons button {
+  margin-right: 0.5rem;
+  padding: 0.5rem 1rem;
+  background-color: var(--ifm-color-primary);
+  color: white;
+  border: none;
+  border-radius: 0.3rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.leaderboard-buttons button:hover {
+  background-color: var(--ifm-color-primary-dark);
+}
