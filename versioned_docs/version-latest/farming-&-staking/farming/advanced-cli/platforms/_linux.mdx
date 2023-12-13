@@ -102,7 +102,7 @@ import styles from '@site/src/pages/index.module.css';
     --name "INSERT_YOUR_ID"
 ```
 4. You should see something similar in the terminal:
-```text
+```
 2022-02-03 10:52:23 Subspace
 2022-02-03 10:52:23 ✌️  version 0.1.0-35cf6f5-x86_64-ubuntu
 2022-02-03 10:52:23 ❤️  by Subspace Labs <https://subspace.network>, 2021-2022
@@ -128,15 +128,15 @@ import styles from '@site/src/pages/index.module.css';
 ---
 
 1. We will then open another terminal, change to the downloads directory, then start the farmer node with the following command:
-  ```bash
-  # Replace `PATH_TO_FARM` with location where you want you store plot files
-  # Replace `WALLET_ADDRESS` below with your account address from Polkadot.js wallet
-  # Replace `PLOT_SIZE` with plot size in gigabytes or terabytes, for example 100G or 2T (but leave at least 60G of disk space for node and some for OS)
-  ./subspace-farmer-ubuntu-x86_64-skylake-gemini-3g-2023-dec-11 farm --reward-address WALLET_ADDRESS path=PATH_TO_FARM,size=PLOT_SIZE
+```bash
+# Replace `PATH_TO_FARM` with location where you want you store plot files
+# Replace `WALLET_ADDRESS` below with your account address from Polkadot.js wallet
+# Replace `PLOT_SIZE` with plot size in gigabytes or terabytes, for example 100G or 2T (but leave at least 60G of disk space for node and some for OS)
+./subspace-farmer-ubuntu-x86_64-skylake-gemini-3g-2023-dec-11 farm --reward-address WALLET_ADDRESS path=PATH_TO_FARM,size=PLOT_SIZE
 ```
 
 2. You should see something similar in the terminal:
-```text
+```
 2022-06-02T00:02:04.552120Z  INFO subspace_farmer::commands::farm: Connecting to node at ws://127.0.0.1:9944
 2022-06-02T00:02:04.557220Z  INFO jsonrpsee_client_transport::ws: Connection established to target: Target sockaddrs: , host: "127.0.0.1", host_header: "127.0.0.1:9944", _mode: Plain, path_and_query: "/"
 2022-06-02T00:02:04.575669Z  INFO subspace_farmer::commands::farm: Opening object mapping
