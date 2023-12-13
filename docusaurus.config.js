@@ -1,8 +1,9 @@
 // @ts-check
 // Note: type annotations allow type checking and IDEs autocompletion
 
-const lightCodeTheme = require('prism-react-renderer/themes/github');
-const darkCodeTheme = require('prism-react-renderer/themes/dracula');
+const { themes } = require('prism-react-renderer');
+const lightCodeTheme = themes.github;
+const darkCodeTheme = themes.dracula;
 // @ts-ignore
 const ConfigLocalized = require('./docusaurus.config.localized.json');
 const defaultLocale = 'en';
@@ -318,7 +319,7 @@ const config = {
       prism: {
         theme: lightCodeTheme,
         darkTheme: darkCodeTheme,
-        additionalLanguages: ['toml', 'powershell', 'shell-session', 'ini'],
+        additionalLanguages: ['toml', 'powershell', 'shell-session', 'ini', 'json', 'diff', 'bash'],
       },
     }),
 };
