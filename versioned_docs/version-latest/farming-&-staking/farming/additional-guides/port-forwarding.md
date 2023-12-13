@@ -11,7 +11,7 @@ keywords:
     - Subspace Desktop
 ---
 
-:::caution
+:::warning
 If you are using Linux and enabled `ufw` (firewall), make sure you have opened up your firewall for traffic on port 30333 with the following commands `sudo ufw allow 30333/tcp` for TCP and `sudo ufw allow 30333/udp` for UDP
 :::
 

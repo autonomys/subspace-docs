@@ -9,7 +9,7 @@ keywords:
     - Subspace
 ---
 
-:::caution
+:::warning
 
 Please note, all community provided resources are **non-official**. For clarification please refer to [official materials](../learn/intro.md).
 

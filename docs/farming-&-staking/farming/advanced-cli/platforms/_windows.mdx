@@ -2,7 +2,7 @@ import Link from '@docusaurus/Link';
 import styles from '@site/src/pages/index.module.css';
 
 ### Windows Specific Warnings:
-:::caution  Windows No Output Bug
+:::warning  Windows No Output Bug
 If you face an error where the node outputs nothing and no error code is given it is likely you just need to install the latest Visual C++ Redistributable package [here](https://learn.microsoft.com/en-us/cpp/windows/latest-supported-vc-redist?view=msvc-170)
 :::
  
@@ -47,7 +47,7 @@ If you face an error where the node outputs nothing and no error code is given i
 ## Step 2: Start Advanced CLI Node
 ---
 
-:::warning 
+:::danger 
 A `Windows Defender Firewall has blocked some features of this app` warning may appear.
 This is because the application is trying to access the internet. This is expected as it is how the farmer talks to other farmers on the network, select `Allow access` to continue setup. 
 :::

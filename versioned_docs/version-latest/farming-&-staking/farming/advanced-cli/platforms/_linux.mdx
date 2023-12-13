@@ -21,7 +21,7 @@ import styles from '@site/src/pages/index.module.css';
 
 :::
 
-:::caution System Adjustments
+:::warning System Adjustments
 - **File Descriptor Limit**: Linux has a hard limit of 100k file descriptors. Exceeding this may cause errors. Substrate has a default limit of 10k. Check and adjust the limit at `/proc/sys/fs/file-max`. Refer to this [tutorial](https://www.tutorialspoint.com/increase-number-of-maximum-open-files-in-linux) for changing the limit.
 
 - **Dependencies**: If you encounter an error related to `libgomp.so.1`, install the `libgomp1` library with `sudo apt-get install libgomp1`.

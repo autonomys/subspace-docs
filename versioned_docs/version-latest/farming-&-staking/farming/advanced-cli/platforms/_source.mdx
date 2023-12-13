@@ -19,7 +19,7 @@ You'll have to have [Rust toolchain](https://rustup.rs/) installed as well as LL
 sudo apt-get install llvm clang cmake
 ```
 
-:::warning LLVM + Clang 16
+:::danger LLVM + Clang 16
 The build with LLVM + Clang 16 ends with `UnknownOpcode(192)` error due to breaking changes concerning WASM in LLVM 16. You can read more about this issue [here](https://github.com/paritytech/substrate/issues/13636). At this point, the solution is to use LLVM + Clang 15 and add the `-Z build-std` flag to the `cargo build` command. 
 :::
 
