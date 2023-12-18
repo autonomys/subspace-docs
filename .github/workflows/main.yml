@@ -6,76 +6,41 @@ on:
       - main
 
 jobs:
-  setup:
-    name: Install Dependencies
-    runs-on: ubuntu-latest
-    outputs:
-      yarn-cache: ${{ steps.yarn-cache-dir.path }}
-    steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v3
-        with:
-          node-version: '16'
-          cache: 'yarn'
-      - name: Get Yarn cache directory path
-        id: yarn-cache-dir
-        run: echo "::set-output name=path::$(yarn cache dir)"
-      - name: Install dependencies
-        run: yarn install --frozen-lockfile
-
-  build-leaderboard:
-    name: Build Translation Leaderboard
-    needs: setup
+  build-and-deploy:
+    name: Build, Sync Localization, and Deploy Website
     runs-on: ubuntu-latest
     env:
       CROWDIN_PERSONAL_TOKEN: ${{ secrets.CROWDIN_PERSONAL_TOKEN }}
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     steps:
+      # Checkout the repository
       - uses: actions/checkout@v2
+
+      # Setup Node.js environment
       - name: Use Node.js
         uses: actions/setup-node@v3
         with:
           node-version: '16'
           cache: 'yarn'
           cache-dependency-path: '**/yarn.lock'
+
+      # Install dependencies
       - name: Install dependencies
         run: yarn install --frozen-lockfile
+
+      # Build Translation Leaderboard
       - name: Build leaderboard
         run: yarn run generate-leaderboard
 
-  sync-localization:
-    name: Sync Localization Files
-    needs: setup
-    runs-on: ubuntu-latest
-    env:
-      CROWDIN_PERSONAL_TOKEN: ${{ secrets.CROWDIN_PERSONAL_TOKEN }}
-    steps:
-      - uses: actions/checkout@v2
-      - name: Use Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: '16'
-          cache: 'yarn'
-          cache-dependency-path: '**/yarn.lock'
-      - name: Install dependencies
-        run: yarn install --frozen-lockfile
+      # Sync Localization Files
       - name: Sync localization files
         run: yarn crowdin:sync
 
-  build-and-deploy:
-    name: Build and Deploy Website
-    needs: [build-leaderboard, sync-localization]
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v3
-        with:
-          node-version: '16'
-          cache: 'yarn'
-          cache-dependency-path: '**/yarn.lock'
-      - name: Install dependencies
-        run: yarn install --frozen-lockfile
+      # Build website
       - name: Build website
         run: yarn build
+
+      # Deploy to GitHub Pages
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
