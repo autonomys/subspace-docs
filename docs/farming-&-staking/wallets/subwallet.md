@@ -42,7 +42,7 @@ If you would like to Import an **Existing** Wallet, then select `Import an accou
 
     ![step-5](/img/doc-imgs/subwallet/Subwallet-3.png)
 
-6. Congratulations you have fully created your substrate wallet with subwallet.
+6. Congratulations you have fully created your Substrate wallet with SubWallet.
 
     ![step-6](/img/doc-imgs/subwallet/Subwallet-4.png)
 
