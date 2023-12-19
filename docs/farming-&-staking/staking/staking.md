@@ -63,7 +63,7 @@ The only staking mechanism available to non-operators is nominating an operator.
   ![N-nominators-9](/img/doc-imgs/operators-staking/N-Nominators-9.png)
 9. Wait for the transaction to go through. It takes 100 blocks (1 epoch duration) to complete the nomination.
 ![N-nominators-10](/img/doc-imgs/operators-staking/N-Nominators-10.png)
-10. You will see the previousle **available** become **locked** amount. Congratulations, you succesfully became a **nominator**.
+10. You will see the previously **available** become **locked** amount. Congratulations, you succesfully became a **nominator**.
 ![N-nominators-11](/img/doc-imgs/operators-staking/N-Nominators-11.png)
 
 ### Operator Nomination using [Polkadot.js](https://polkadot.js.org/)
@@ -77,7 +77,7 @@ The only staking mechanism available to non-operators is nominating an operator.
 1. Make sure to select the correct network at the top-left corner. 
 2. Select the account you want to use in `using the selected account`.
 3. Select `domains` under `submit the following extrinsic` and choose `nominateOperator(operatorId, amount)` in the dropdown.
-4. Set an `operatorId` - in the example, it's set to **1**. 
+4. Set an `operatorId` - in the example, it's set to **17**. 
 :::note
 In the example below, 1 TSSC is selected for staking. 18 zeros are added because of the `u128` type, so make sure to put 1000000000000000000 instead. 
 :::

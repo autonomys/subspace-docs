@@ -49,7 +49,7 @@ Our suggested specs are not necessarily applicable to Stake Wars. We encourage a
 - Intel Ice Lake, or newer (Xeon or Core series); AMD Zen3, or newer (EPYC or Ryzen);
 - 4 physical cores @ 3.4GHz;
 - Simultaneous multithreading disabled (Hyper-Threading on Intel, SMT on AMD);
-- Prefer single-threaded performance over higher cores count. A comparison of single-threaded performance can be found here.
+- Prefer single-threaded performance over higher cores count. A comparison of single-threaded performance can be found [here](https://www.cpubenchmark.net/singleThread.html).
 
 **Storage**:
 - An NVMe SSD of 1 TB. In general, the latency is more important than the throughput.
