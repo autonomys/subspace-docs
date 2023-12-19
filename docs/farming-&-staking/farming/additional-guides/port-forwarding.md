@@ -17,7 +17,7 @@ If you are using Linux and enabled `ufw` (firewall), make sure you have opened u
 
 First before forwarding ports it is important to understand what that actually means. We would highly suggest reading some information on the topic, here is a guide we find helpful https://www.geeksforgeeks.org/port-forwarding-on-router-and-why-do-we-need-it/
 
-Forwarding ports on your router will open up one specific lane on your router to allow external traffic to flow in or out. This is usually automatically done for most applications such as port 80 for Hypertext Transfer Protocol, in our case we will need to do this manually.
+Forwarding ports on your router will open up one specific lane on your router to allow external traffic to flow in or out. This is usually automatically done for most applications such as port 80 for File Transfer Protocol, in our case we will need to do this manually.
 
 It is important to note that forwarding ports is going to be different for most routers, but we have included some general instructions, as well as some links for some major brands.
 
