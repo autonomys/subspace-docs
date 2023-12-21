@@ -244,10 +244,12 @@ Stake Wars are using the domain **Nova** with ID **1**.
 {`version: "3.7"
 services:
   node:
-    # Replace snapshot-DATE with the latest release (like snapshot-2023-dec-11)
+    # Replace snapshot-DATE with the latest release (like snapshot-2022-apr-29)
     # For running on Aarch64 add -aarch64 after DATE
     image: ghcr.io/subspace/node:snapshot-DATE
     volumes:
+    # Replace path/to/keystore with your actual path to keystore. 
+      - /path/to/keystore:/keystore:ro
 # Instead of specifying volume (which will store data in /var/lib/docker), you can
 # alternatively specify path to the directory where files will be stored, just make
 # sure everyone is allowed to write there
@@ -260,24 +262,27 @@ services:
       - "0.0.0.0:30333:30333/tcp"
       - "0.0.0.0:30433:30433/udp"
       - "0.0.0.0:30433:30433/tcp"
+      - "0.0.0.0:40333:40333/udp"
+      - "0.0.0.0:40333:40333/tcp"
     restart: unless-stopped
     command: [
-# Make sure to replace your_domain_id and your_operator_id with your domain ID and operator ID
-# Adjust the keystore path to the location where you generated your operator keypair.
       "--chain", "gemini-3g",
-      "-- ",
-      "--domain-id", "your_domain_id",
-      "--operator-id", "your_operator_id",
+      "--base-path", "/var/subspace",
+      "--port", "30333",
+      "--dsn-listen-on", "/ip4/0.0.0.0/udp/30433/quic-v1",
+      "--dsn-listen-on", "/ip4/0.0.0.0/tcp/30433",
+      # Replace INSERT_YOUR_ID with your node ID (will be shown in telemetry)
+      "--name", "INSERT_YOUR_ID",
+      "--",
+      # Replace INSERT_YOUR_DOMAIN_ID with domain ID you want to be operator on
+      "--domain-id", "INSERT_YOUR_DOMAIN_ID",
+      # Replace INSERT_YOUR_OPERATOR_ID with your operator ID
+      "--operator-id", "INSERT_YOUR_OPERATOR_ID",
+      "--listen-addr", "/ip4/0.0.0.0/tcp/40333",
       "--bootnodes", "/ip4/3.87.28.170/tcp/40333/p2p/12D3KooWGHtULvhdKMZtzigSK1438uWXPj9rBQHVzTaKMWv1WRXp",
       "--bootnodes", "/ip4/140.82.45.36/tcp/40333/p2p/12D3KooWJxB2PVzyNqZywoCWAMLGhKr2LCbFMXbAPzUPQZon7yt1",
       "--bootnodes", "/ip4/167.179.116.135/tcp/40333/p2p/12D3KooWHsRae3ip2uQAUPtpMcStHGGw777SJT3nu9maFmtsGry7",
-      "--listen-addr", "/ip4/0.0.0.0/tcp/40333",
-      "--rpc-cors", "all",
-      "--rpc-methods", "unsafe",
-      "--rpc-external",
       "--keystore-path", "/keystore"
-# Replace INSERT_YOUR_ID with your node ID (will be shown in telemetry)
-      "--name", "INSERT_YOUR_ID"
     ]
     healthcheck:
       timeout: 5s
@@ -680,10 +685,12 @@ To run both operator and validator at the same time, provide requrired flags for
 {`version: "3.7"
 services:
   node:
-    # Replace snapshot-DATE with the latest release (like snapshot-2023-dec-11)
+    # Replace snapshot-DATE with the latest release (like snapshot-2022-apr-29)
     # For running on Aarch64 add -aarch64 after DATE
     image: ghcr.io/subspace/node:snapshot-DATE
     volumes:
+    # Replace path/to/keystore with your actual path to keystore. 
+      - /path/to/keystore:/keystore:ro
 # Instead of specifying volume (which will store data in /var/lib/docker), you can
 # alternatively specify path to the directory where files will be stored, just make
 # sure everyone is allowed to write there
@@ -696,39 +703,45 @@ services:
       - "0.0.0.0:30333:30333/tcp"
       - "0.0.0.0:30433:30433/udp"
       - "0.0.0.0:30433:30433/tcp"
+      - "0.0.0.0:40333:40333/udp"
+      - "0.0.0.0:40333:40333/tcp"
     restart: unless-stopped
     command: [
-# Make sure to replace your_domain_id and your_operator_id with your domain ID and operator ID
-# Adjust the keystore path to the location where you generated your operator keypair.
       "--chain", "gemini-3g",
+      "--base-path", "/var/subspace",
       "--blocks-pruning", "256",
-      "--state-pruning", "archive",
-      "--no-private-ipv4",
-      "--validator",
-      "-- ",
-      "--domain-id", "your_domain_id"
-      "--operator-id", "your_operator_id",
-      "--keystore-path", "/keystore",
-      "--bootnodes", "/ip4/3.87.28.170/tcp/40333/p2p/12D3KooWGHtULvhdKMZtzigSK1438uWXPj9rBQHVzTaKMWv1WRXp",
-      "--bootnodes", "/ip4/140.82.45.36/tcp/40333/p2p/12D3KooWJxB2PVzyNqZywoCWAMLGhKr2LCbFMXbAPzUPQZon7yt1",
-      "--bootnodes", "/ip4/167.179.116.135/tcp/40333/p2p/12D3KooWHsRae3ip2uQAUPtpMcStHGGw777SJT3nu9maFmtsGry7",
-      "--listen-addr", "/ip4/0.0.0.0/tcp/40333",
+      "--state-pruning", "archive-canonical",
+      "--port", "30333",
+      "--dsn-listen-on", "/ip4/0.0.0.0/udp/30433/quic-v1",
+      "--dsn-listen-on", "/ip4/0.0.0.0/tcp/30433",
       "--rpc-cors", "all",
       "--rpc-methods", "unsafe",
       "--rpc-external",
+      "--no-private-ipv4",
+      "--validator",
+      "--name", "INSERT_YOUR_ID",
+      "--",
+      # Replace INSERT_YOUR_DOMAIN_ID with domain ID you want to be operator on
+      "--domain-id", "INSERT_YOUR_DOMAIN_ID",
+      # Replace INSERT_YOUR_OPERATOR_ID with your operator ID
+      "--operator-id", "INSERT_YOUR_OPERATOR_ID",
+      "--keystore-path", "/keystore",
+      "--listen-addr", "/ip4/0.0.0.0/tcp/40333",
+      "--bootnodes", "/ip4/3.87.28.170/tcp/40333/p2p/12D3KooWGHtULvhdKMZtzigSK1438uWXPj9rBQHVzTaKMWv1WRXp",
+      "--bootnodes", "/ip4/140.82.45.36/tcp/40333/p2p/12D3KooWJxB2PVzyNqZywoCWAMLGhKr2LCbFMXbAPzUPQZon7yt1",
+      "--bootnodes", "/ip4/167.179.116.135/tcp/40333/p2p/12D3KooWHsRae3ip2uQAUPtpMcStHGGw777SJT3nu9maFmtsGry7",
 # Replace INSERT_YOUR_ID with your node ID (will be shown in telemetry)
-      "--name", "INSERT_YOUR_ID"
     ]
     healthcheck:
       timeout: 5s
 # If node setup takes longer than expected, you want to increase interval and retries number.
       interval: 30s
       retries: 60
-      farmer:
+  farmer:
     depends_on:
       node:
         condition: service_healthy
-    # Replace snapshot-DATE with latest release (like snapshot-2023-dec-11)
+    # Replace snapshot-DATE with latest release (like snapshot-2022-apr-29)
     # For running on Aarch64 add -aarch64 after DATE
     image: ghcr.io/subspace/farmer:snapshot-DATE
     volumes:
