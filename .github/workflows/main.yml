@@ -24,6 +24,17 @@ jobs:
           cache: 'yarn'
           cache-dependency-path: '**/yarn.lock'
 
+      # Cache Node.js modules
+      - name: Cache Node.js modules
+        uses: actions/cache@v2
+        with:
+          path: |
+            **/node_modules
+            **/yarn.lock
+          key: ${{ runner.os }}-node-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+
       # Install dependencies
       - name: Install dependencies
         run: yarn install --frozen-lockfile
