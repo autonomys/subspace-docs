@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import './index.css'; 
 
-const isDev = process.env.NODE_ENV === 'production';
+const isDev = process.env.NODE_ENV === 'development';
 const dummyData = isDev ? require('./dummyLeaderboard.json') : null;
 
 const TranslationsLeaderboard = () => {
