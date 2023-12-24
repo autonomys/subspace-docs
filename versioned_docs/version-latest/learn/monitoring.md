@@ -588,7 +588,7 @@ guide](https://docs.subspace.network/docs/farming-&-staking/farming/advanced-cli
     grafana_data:
     prometheus_data:
 ```
-End of the file
+> End of the file
 
 ------------
 
