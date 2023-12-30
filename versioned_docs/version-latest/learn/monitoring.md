@@ -1,5 +1,5 @@
 ---
-title: Subspace Node and Server Monitoring
+title: Monitoring
 sidebar_position: 4
 description: Monitoring server with Grafana and Prometheus. Scraping metrics from Subspace Node.
 keywords:
@@ -19,81 +19,100 @@ import styles from '@site/src/pages/index.module.css';
 
 -----------
 
-### Scheme
+### Setting Up Monitoring Infrastructure
 
-1. Start with the installation and setup of exporters (for example, Node Exporter) on the servers you want to monitor. Additionally, sometimes Prometheus client libraries are embedded into application code to expose metrics to Prometheus at `<host>/metrics`, enabling monitoring of that specific application (Subspace node has it!). On these servers, you don't need to modify anything in the exporter configuration files. You can leave their configurations as default.
+**Infrastructure Setup:**
 
-2. Install and configure Prometheus to collect data from Node Exporter: configure its settings in the `prometheus.yml` file, typically located in `/etc/prometheus`. In this file, you will specify the addresses of remote servers where the exporters are running as scraping targets for Prometheus to gather metrics. Exporters expose metrics via HTTP, and Prometheus collects these metrics by making HTTP requests to the `/metrics` endpoint of these exporters. This communication typically occurs over port 9090 by default. 
+Commence by installing and configuring exporters, such as Node Exporter, on the servers earmarked for monitoring. Occasionally, Prometheus client libraries are integrated into application code to reveal metrics at `<host>/metrics`, facilitating the monitoring of specific applications (e.g., Subspace node leverages this functionality). No alterations are necessary in the exporter configuration files on these servers; the default configurations suffice.
 
-3. Install and set up a Grafana server or any other tool that interacts with Prometheus for querying metrics and creating visualizations. This process typically involves establishing connections to databases containing metrics, configuring dashboards, graphs, variables, and jobs to effectively manage the visual representation of data.
+Configure Prometheus to collect data from Node Exporter by specifying settings in the `prometheus.yml` file, often found in `/etc/prometheus`. This file defines remote server addresses where exporters operate as scraping targets for Prometheus to retrieve metrics. Exporters make metrics available via HTTP, accessible through HTTP requests to the `/metrics` endpoint. Typically, this communication occurs over port 9090 by default.
 
-It's generally advisable to install Prometheus and Grafana on a separate server dedicated to monitoring and visualizing data. This approach ensures improved performance, security, and simplified management.
+Set up a Grafana server or any tool interacting with Prometheus to query metrics and craft visualizations. This process encompasses establishing connections to databases housing metrics, configuring dashboards, graphs, variables, and jobs to aptly represent the data.
 
-4. Add ports to the firewall for all of these components to communicate.
+For enhanced performance, security, and ease of management, it's advisable to install Prometheus and Grafana on a dedicated server for monitoring purposes.
 
-On the server where Prometheus is installed:
-In the `prometheus.yml` under the `scrape_configs` section, you'll need to add a block of code like in this example from each monitored server:
+**Configuration Steps:**
+
+Facilitate communication among these components by adding ports to the firewall.
+
+On the server hosting Prometheus, modify the `prometheus.yml` file under the `scrape_configs` section. Below is an example block for each monitored server:
+
+```yaml
+- job_name: 'server-farmer-1'
+  scrape_interval: 5s
+  static_configs:
+    - targets: ['localhost:9100']
+
+- job_name: 'server-farmer-2'
+  scrape_interval: 5s
+  static_configs:
+    - targets: ['localhost:9100']
 ```
-  - job_name: 'server-farmer-1'
-    scrape_interval: 5s
-    static_configs:
-      - targets: ['localhost:9100']
 
-  - job_name: 'server-farmer-2'
-    scrape_interval: 5s
-    static_configs:
-      - targets: ['localhost:9100']
-```
-etc ..
+Configure the port for communication between Prometheus and Grafana in the `prometheus.yml` file under either the "global" or "global_config" section (default is port 9090).
 
-The port for communication between Prometheus and Grafana is specified in the `prometheus.yml` file under either the "global" or "global_config" section (default port is 9090) .
-
-The port on which Prometheus listens for metrics from the observed machine is defined in the prometheus.yml file under the "scrape_config" section as 'target_port'. For Node Exporter it is `9100`, and for Subspace Node built-in Prometheus client libraries this is `9615`
+Define the port on which Prometheus listens for metrics from the observed machines in the `prometheus.yml` file under the "scrape_config" section as `target_port`. For Node Exporter, it's 9100, and for Subspace Node using built-in Prometheus client libraries, it is 9615.
 
 
-### Prerequisites
-For a central Prometheus server and Grafana, the minimum specifications can vary based on factors like the number of monitored systems, the frequency of metrics collected, and the desired retention period. However, here are some general recommendations for minimum specifications:
+### Prerequisites for Central Prometheus Server and Grafana
 
-Central Prometheus Server:
-    CPU: Dual-core or higher
-    RAM: 4GB or more
-    Storage: Depending on the retention period and the volume of data collected, consider a minimum of 50GB to start. This could increase significantly based on the data retention policies.
+**Central Prometheus Server:**
+- **CPU:** A dual-core processor or higher is recommended.
+- **RAM:** Aim for a minimum of 4GB or more to handle data effectively.
+- **Storage:** Consider at least 50GB as a starting point, with flexibility based on data retention policies. The actual storage requirement will vary depending on the retention period and data volume collected.
 
-Grafana Server:
-    CPU: Dual-core or higher
-    RAM: 2GB or more
-    Storage: 20GB for Grafana installation and to store dashboard configurations and additional data. The actual storage depends on the number and complexity of dashboards and visualizations.
+**Grafana Server:**
+- **CPU:** Similar to the Prometheus server, a dual-core processor or higher is advised.
+- **RAM:** Allocate a minimum of 2GB or more to support Grafana's functionalities.
+- **Storage:** Plan for 20GB to accommodate Grafana's installation and storage of dashboard configurations and additional data. The exact storage demand depends on the number and complexity of dashboards and visualizations.
 
+These recommendations provide a foundation; however, actual resource needs might scale according to the number of monitored systems, data collection frequency, and retention duration.
 
----------
+---
+---
 
 ## 1. Node Exporter
 
 ### Creating a User
+To create a user:
+
 ```bash
 sudo useradd --no-create-home --shell /sbin/nologin node_exporter
 ```
-### Installing
 
-From [Prometheus homepage](https://prometheus.io/download) download archived latest version binary:
+### Installation
+
+Download the latest version binary from the [Prometheus homepage](https://prometheus.io/download):
+
 ```bash
 wget https://github.com/prometheus/node_exporter/releases/download/v1.7.0/node_exporter-1.7.0.linux-amd64.tar.gz
 tar xvfz node_exporter-*-amd64.tar.gz
 ```
 
-Copy binary:
+Copy the binary:
+
 ```bash
 sudo cp node_exporter*amd64/node_exporter /usr/local/bin
 sudo chown node_exporter:node_exporter /usr/local/bin/node_exporter
 rm -R node_exporter*
 ```
 
-### NodeExporter Service
+---
+
+Here's a revised version:
+
+---
+
+### Node Exporter Service Setup
+
+Open the service file using your preferred text editor:
 
 ```bash
 sudo vi /etc/systemd/system/node_exporter.service
 ```
-Copy-paste this into the file:
+
+Paste the following configuration into the file:
+
 ```bash
 [Unit]
 Description=Node Exporter
@@ -105,30 +124,39 @@ User=node_exporter
 Group=node_exporter
 Type=simple
 ExecStart=/usr/local/bin/node_exporter --collector.systemd --collector.processes
-#arguments recommended for prometheus-node-exporter ‘–collector.systemd –collector.processes’ because the graph uses some of their metrics
+# Recommended arguments for prometheus-node-exporter to support necessary metrics for graphing.
 
 [Install]
 WantedBy=multi-user.target
 ```
 
-Run this everytime any service has been changed:
+After making changes to any service, reload the daemon:
+
 ```bash
 sudo systemctl daemon-reload			
 ```
 
--------
+### Service Management Commands:
 
-Service Management Commands:
+Enable automatic start on boot:
 
 ```bash
-#autostart
 sudo systemctl enable node_exporter		
-#start
+```
+
+Start the service:
+
+```bash
 sudo systemctl start node_exporter		
-#status
+```
+
+Check the status of the service:
+
+```bash
 sudo systemctl status node_exporter		
 ```
-------
+
+---
 
 ## 2. Prometheus
 
@@ -185,13 +213,20 @@ Copy `prometheus.yml` to `/etc/prometheus/`:
 sudo cp prometheus.yml /etc/prometheus/
 sudo chown prometheus:prometheus /etc/prometheus/prometheus.yml
 ```
+
+
+---
+
 ### Prometheus.yml on a Prometheus Server
-(with the job for scraping Subspace node added)
+(incorporating the job for scraping the Subspace node)
+
+To edit the Prometheus configuration file:
 
 ```bash
 sudo vi /etc/prometheus/prometheus.yml
 ```
-Copy these lines to the file:
+
+Copy and paste these lines into the file:
 
 ```bash
 global:
@@ -210,7 +245,7 @@ scrape_configs:
     scrape_interval: 5s
     static_configs:
       - targets: ['<farmer-3-ip>:xxxx']
-# job for scraping metrics from node
+# Job for scraping metrics from node
   - job_name: "subspace"
     scrape_interval: 5s
     static_configs:
@@ -220,22 +255,38 @@ scrape_configs:
       - targets: ["localhost:9100"]
 
 ```
-After making changes to the `prometheus.yml` file, do also reload the service:
+
+Once modifications are done in the `prometheus.yml` file, remember to reload the service:
+
 ```bash
 sudo systemctl daemon-reload
 ```
 
-Here you need to come up with names for `job_name`
+Ensure to provide names for the `job_name`.
 
+Please remember to delete archives and all extracted files from the home directory after distributing all components:
 
-Remember to delete archives and all extracted files from home directory after distributing all components.
+```bash
 cd ~
 rm -r prometheus*
+```
 
-### Creating a Service
+---
+
+Here's a revised version:
+
+---
+
+### Creating a Service for Prometheus
+
+Open the service file using your preferred text editor:
+
 ```bash
 sudo vi /etc/systemd/system/prometheus.service
 ```
+
+Add the following configuration to the file:
+
 ```bash
 [Unit]
 Description=Prometheus
@@ -256,53 +307,68 @@ ExecStart=/usr/local/bin/prometheus \
 WantedBy=multi-user.target
 ```
 
-------
+Remember to reload the daemon after making any service changes:
+
 ```bash
 sudo systemctl daemon-reload			
-# first of all run this everytime any service has been changed
+# Run this whenever any service configuration changes
 ```
-------
 
-### UFW
+---
+Here's a revised version for better readability:
 
-On Prometheus server:
+---
+
+### UFW Configuration
+
+On the Prometheus Server:
 ```bash
-sudo ufw allow from <farmer-server-1-ip> to any proto tcp port 9100 comment 'Exproter-farmer-1'
-sudo ufw allow from <farmer-server-2-ip> to any proto tcp port 9100 comment 'Exproter-farmer-2' 
+sudo ufw allow from <farmer-server-1-ip> to any proto tcp port 9100 comment 'Exporter-farmer-1'
+sudo ufw allow from <farmer-server-2-ip> to any proto tcp port 9100 comment 'Exporter-farmer-2' 
 ```
-etc.
+Repeat this configuration for other farmer servers as necessary.
 
-On monitored servers:
+On the Monitored Servers:
 ```bash
-sudo ufw allow from <prometheus-server-ip> to any proto tcp port 9100 comment 'Exproter-PrometheusServer'
+sudo ufw allow from <prometheus-server-ip> to any proto tcp port 9100 comment 'Exporter-PrometheusServer'
 ```
--------
 
-Service Management Commands:
+### Service Management Commands:
 
 ```bash
 sudo systemctl start prometheus			
-#start
-sudo systemctl status prometheus
+# Start Prometheus service
+
+sudo systemctl status prometheus			
+# Check Prometheus service status
 
 sudo systemctl enable prometheus			
-#autostart
-sudo systemctl disable prometheus
+# Enable Prometheus service for autostart
+
+sudo systemctl disable prometheus			
+# Disable autostart for Prometheus service
 ```
 
-------------------------------------------------------------------------------------------------------------------------
+---
+
+Here's a revised version for improved readability:
+
+---
+
 ## 3. Grafana Server
 
+You have the option to utilize Grafana Cloud instead of managing and scaling your instance of Grafana. [Sign up for a free account](https://grafana.com/auth/sign-up?pg=download&plcmt=box-right), offering free access to 10k metrics, 50GB logs, 50GB traces, and more.
 
-You can use Grafana Cloud instead of installation, maintaining, and scaling your own instance of Grafana. [Create a free account to get started](https://grafana.com/auth/sign-up?pg=download&plcmt=box-right), which includes free forever access to 10k metrics, 50GB logs, 50GB traces, & more.
-
-How to install latest Open Source Grafana release from APT repository:
+### Installation Guide - Latest Open Source Grafana Release (APT repository)
 
 :::note
-Enterprise: This is the recommended version. It is functionally identical to the open source version, but includes features you can unlock with a license, if you so choose.
-Open Source: This version is functionally identical to the Enterprise version, but you will need to download the Enterprise version if you want Enterprise features.
+Choose between:
+- Enterprise: Identical to the open-source version but offers additional features unlockable with a license.
+- Open Source: Functionally identical to the Enterprise version without enterprise-specific features.
 :::
-### Download
+
+### Steps to Download
+
 ```bash
 sudo apt-get install -y apt-transport-https software-properties-common wget
 sudo mkdir -p /etc/apt/keyrings/
@@ -310,18 +376,25 @@ wget -q -O - https://apt.grafana.com/gpg.key | gpg --dearmor | sudo tee /etc/apt
 echo "deb [signed-by=/etc/apt/keyrings/grafana.gpg] https://apt.grafana.com stable main" | sudo tee -a /etc/apt/sources.list.d/grafana.list
 sudo apt-get update
 sudo apt-get install grafana
-# or `sudo apt-get install grafana-enterprise` for Enterprise version.
+# Alternatively, use `sudo apt-get install grafana-enterprise` for the Enterprise version.
 ```
-> *This commands will also run post-install script*:
+
+> *These commands execute a post-install script*:
 ```bash
 addgroup --system grafana
 adduser --system --home /usr/share/grafana --no-create-home --ingroup grafana --disabled-password --shell /bin/false grafana
 ```
-> and gives permissions for system user grafana to needed folders.
+> They grant necessary permissions for the system user 'grafana' to required folders.
 
 :::note
-During installation in some cases you may encounter the error "cannot access /etc/grafana/*: No such file or directory". This is because of VM doesn’t had the permissions to create the missing configuration files, and the solution is to proceed to  /var/cache/apt/archives directory - this is the default location where apt stores downloaded packages before installing them - or to download the .deb file manually and use `--force flag of dpkg`. For example: dpkg --force-all -i grafana_10.2.2_amd64.deb
+In some cases during installation, you might encounter the error:  
+> cannot access /etc/grafana/*: No such file or directory.  
+
+This might occur due to VM permissions issues in creating missing configuration files. A solution is to navigate to the `/var/cache/apt/archives` directory—where apt stores downloaded packages before installation—or manually download the `.deb` file and use `dpkg --force flag`. For example: `dpkg --force-all -i grafana_10.2.2_amd64.deb`
 :::
+
+---
+
 ### Starting Server
 
 ```bash 
@@ -331,116 +404,135 @@ sudo systemctl daemon-reload
 sudo systemctl start grafana-server
 sudo systemctl status grafana-server
 ```
+
 ### Configuration
-There is configuration file for configuring different parameters including those not provided via Grafana's web interface.
+A configuration file, `grafana.ini`, manages various parameters not available through Grafana's web interface.
+
 ```bash
 cd /etc/grafana
 sudo vi grafana.ini
 ```
-Here are some settings that can be adjusted in grafana.ini:
 
-> *Server Settings: Port where Grafana operates or the IP address it binds to.  *
-A*uthentication and Authorization Settings: User settings, email authentication, LDAP binding, or OAuth configurations.  
-Database: Settings to connect to a database like MySQL or PostgreSQL. * 
-*Caching and Performance: Cache settings to improve Grafana's performance. * 
-*SSL and HTTPS: Configurations for SSL operation, certificate settings, and keys.  *
+Adjust settings in `grafana.ini` for:
 
-The grafana server runs on port 3000 by default, and you can change this port as you see fit. But we will connect to Grafana UI via SSH tunnel to avoid opening any additional port on our server for the best security.
+- **Server Settings**: Define the port or IP Grafana operates on.
+- **Authentication and Authorization Settings**: Configure user settings, email authentication, LDAP binding, or OAuth configurations.
+- **Database**: Connect to databases like MySQL or PostgreSQL.
+- **Caching and Performance**: Improve Grafana's performance with cache settings.
+- **SSL and HTTPS**: Set up SSL operation, certificate settings, and keys.
+
+By default, Grafana runs on port 3000, but for secure access, we'll use an SSH tunnel to avoid opening additional ports.
 
 ### Entering your Grafana Server
 :::note
-Opening Grafana web server for access from the Internet poses a security risk if you do not take appropriate security measures.
+Opening Grafana to the Internet poses security risks if not properly secured.
 :::
-> *There are methods of securely connecting to the Grafana server:  *
-*HTTPS (TLS/SSL) : Enabling HTTPS ensures encrypted communication between the browser and the Grafana server, securing data transmission.  *
-*SSH Tunneling: Creating an SSH tunnel allows a secure connection between your local machine and the remote Grafana server. It encrypts traffic between your machine and the server.  
-VPN: Using a Virtual Private Network (VPN) establishes a secure, encrypted connection over a public network, enabling access to the Grafana server within a private network.  *
-*Two-Factor Authentication (2FA) : Implementing 2FA adds an extra layer of security by requiring not only a password but also a second form of verification.  *
-*Firewalls and Network Security: Configuring firewalls and network security rules to control access to the Grafana server from specific IPs or networks enhances security.*
 
-Here we will look at the most secure method of interacting with our Grafana server - SSH tunnel. It allows connection only with ssh keys!
+### Secure Connection Methods:
+- **HTTPS (TLS/SSL)**: Encrypts communication between the browser and Grafana for secure data transmission.
+- **SSH Tunneling**: Creates a secure connection between your local machine and the remote Grafana server, encrypting traffic.
+- **VPN**: Establishes a secure, encrypted connection over a public network, providing access to the Grafana server within a private network.
+- **Two-Factor Authentication (2FA)**: Adds an extra layer of security by requiring a password and a second form of verification.
+- **Firewalls and Network Security**: Configure rules to control access to Grafana from specific IPs or networks for enhanced security.
 
-### Creating SSH Tunnel
-**It is assumed that you already have SSH access to your server configured.**
+An SSH tunnel stands out as one of the most secure methods for interacting with a Grafana server, primarily due to its reliance on SSH keys for connection.
 
-Get IP on your server:
+### SSH Tunnel Setup
+Ensure SSH access to your server is configured. Get the server's IP:
+
 ```bash
 ip -4 addr
 ```
 
-From your home PC sent the command to forward all data from port 3000 on your remote server to port 3000 on your local machine:
+Set up an SSH tunnel from your home PC to the remote server:
+
 ```bash
 ssh -L 3000:localhost:3000 -p xxxx username@xx.xx.xx.xx -N -f
 ```
-Where 
-`-p xxxxx` is a custom SSH port to connect to your server; 
-`-N` tells SSH not to start the shell after a connection is established. Useful for tunneling or port forwarding, without having to interact with the remote shell.
-`-f` tells SSH to run the connection in the background.
-**But you can of course assign any other port Grafana will run it's server on and use it in your local machine browser accordingly.**
+Replace `-p xxxx` with your custom SSH port. `-N` and `-f` run the connection in the background without starting the shell.
 
-After that you can open you grafana server as if it's hosting on your home PC. Type in browser:
+Access Grafana on your local machine:
+
 ```
 http://localhost:3000
 ```
-Enter default login and password: `admin` `admin` and set up your own ones.
+
+Login using default credentials (`admin` `admin`) and update your credentials.
+:::note
+To reset your Grafana password:
+
+```bash
+sudo apt-get update
+sudo apt-get install sqlite3
+sudo sqlite3 /var/lib/grafana/grafana.db
+sqlite> update user set password = '59acf18b94d7eb0694c61e60ce44c110c7a683ac6a8f09580d626f90f4a242000746579358d77dd9e570e83fa24faa88a8a6', salt = 'F3FAxVm33R' where login = 'admin';
+sqlite> .exit
+```
+This command resets `admin`'s password to default without requiring a restart.
+:::
 
 ### Breaking SSH Tunnel
-To break the tunnel
+
+To break the tunnel:
+
 ```bash
 ps aux | grep 'ssh -L'
-#look for ssh tunnel process PID 
+# Look for the SSH tunnel process PID 
 kill PID
 ```
---------
 
 ### Adjusting Grafana Server Settings
-In your Grafana instance open the "three lines" menu.
-Go to Connections, choose Prometheus, click "Add new data source".
-Than in Prometheus Settings:
-In "Connections" section make sure using the same port as you have in Prometheus. Default is 9090. Adjust other parametres as desired.
+In your Grafana instance, open the "three lines" menu and navigate to Connections, select Prometheus, then "Add new data source."
+
+For Prometheus Settings:
+
+- Ensure you're using the same port as in Prometheus (default is 9090).
+- Adjust other parameters as needed.
+
 :::note
-your Prometheus service must be running (wherever it is) so that there is no error in Grafana Connections section.
+Ensure your Prometheus service is running to prevent errors in Grafana's Connections section.
 :::
-Go to Menu: Dashboards/New/Import..
-
-To add a dashboard for whole server monitoring you can import most rated dashboard: ["Node Exporter full"](https://grafana.com/grafana/dashboards/1860-node-exporter-full/) by its ID 1860. 
-
-The Dashboard for scraping Subspace Node metrics is available on [this URL](https://github.com/counterpointsoftware/subspace-monitoring/blob/main/grafana/provisioning/dashboards/subspace-dashboard-counterpoint.json). To add it to your Grafana just copy-paste the content.
-
 
 ### Jobs and Variables
-It is important and useful to know how to manage jobs in Grafana. As it is said in `Prometheus.yml` notes, " The job name is added as a label `job=<job_name>` to any timeseries scraped from this config." 
+Managing jobs in Grafana is crucial. The `job_name` added in `Prometheus.yml` becomes a label `job=<job_name>` to any timeseries scraped from the config.
 
-In Grafana's "Node Exporter Full" Dashboard, variables are used to dynamically change the content of charts, queries, and other components depending on the selected variable values, for example jobs. Please read this [documentation](https://grafana.com/docs/grafana/latest/dashboards/variables/) for learning variables setup.
+In the "Node Exporter Full" Dashboard, variables dynamically change the content of charts, queries, etc., based on selected variable values, like jobs. Refer to the [documentation](https://grafana.com/docs/grafana/latest/dashboards/variables/) for setting up variables.
 
-Use "gear" pictogram to open Dashboard settings.
+Use the gear icon to open Dashboard settings.
 
-According to the example `prometheus.yml` file given in this guide with `job_name` equal to `subspace` and `server` respectively, the `Variables` setting will be as follows:
-for Node Exporter Full:
-In `Home/Dashboard/Node Exporter Full/Variables/Job` there are already almost everything you need, just make sure you have (For Node-Exporter-Full -Dashboard):
+Based on the `prometheus.yml` example:
+
+**For Node Exporter Full Dashboard:**
+
+Navigate to `Home/Dashboard/Node Exporter Full/Variables/Job`:
 ```bash
 Query type = Label values
 Label* = job
 Regex = /.*server*/
-Click `Save dashboard` btn.
+Click `Save dashboard`.
 ```
 
-This setting filters out all jobs containing the word `server` in the `prometheus.yml` file, so that this dashboard will only be available for jobs related to the metrics collected from the Node Exporters.
+This setting filters jobs with the word `server`, making the dashboard available for Node Exporter-related jobs.
 
-For the built-in exporter in Subspace-node (For Subspace-dashboard):
+**For Subspace-dashboard:**
+
+Create a variable:
+
 ```bash
-Click `create variables`...
 Query type = Label values
 Label* = job
 Regex = /.*subspace*/
-Remember to click `Save dashboard` btn.
+Remember to click `Save dashboard`.
 ```
 
-This setting will filter out all jobs containing the word `subspace` in the `prometheus.yml` file, so that this dashboard will only be available for jobs related to Subspace nodes metrics given by Subspace-node built-in exporters.
+This setting filters jobs with the word `subspace`, linking the dashboard to Subspace-node-related exporters.
 
-------------------------------------------------------
+---
 
 ## 4. Scraping Metrics from Subspace Node application
+:::note
+Only for node running in Docker!
+:::
 
 
 The Subspace Node provides it's metrics on port 9615 via prometheus client libraries.
@@ -459,6 +551,9 @@ expose:
 
 ### The `Docker-Compose.yml` for Monitoring the Subspace Node
 
+:::note
+If you're using an external Prometheus located on a different server, the setup might exclude the monitoring stack configuration provided in this template.
+:::
 
 > The following section should be copied from the [official Subspace Docker Compose
 guide](https://docs.subspace.network/docs/farming-&-staking/farming/advanced-cli/cli-install)
@@ -590,6 +685,39 @@ guide](https://docs.subspace.network/docs/farming-&-staking/farming/advanced-cli
 ```
 > End of the file
 
-------------
 
-If you do use external Prometheus, that is on a different server, the bottom part - monitoring the stack - will not be needed.
+---
+
+## 5. Alerting
+
+Access your Grafana page and navigate to Alerting / Contact Point in the menu, accessed via `http://localhost:3000/alerting/notifications`. Click the `[+Add contact point]` button, specify a name (e.g., "grafana"), and choose Telegram from the Integration dropdown menu.
+
+### Creating a Telegram Bot
+To fill in the required fields, begin by creating a Telegram bot using the official Telegram [BotFather](https://t.me/BotFather). Running the `/start` command in the BotFather chat and following the instructions will guide you through the bot creation process (more details on using **@BotFather** can be found [here](https://core.telegram.org/bots/features#botfather)). Save the bot's token in a secure location.
+
+Create a group for your alerting bot or add it to an existing group, ensuring the bot has administrator privileges. Obtain the chat ID by visiting the URL `https://api.telegram.org/botXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX/getUpdates`, replacing the Xs with your bot's token. Copy-paste the chat ID with the hyphen. Please `Test` to ensure everything is functioning properly.
+
+You can receive alerts with Grafana graphs, rendered images, by installing [Grafana image renderer](https://grafana.com/grafana/plugins/grafana-image-renderer/). Use the following command on your server:
+
+```bash
+grafana-cli plugins install grafana-image-renderer
+```
+### Getting chat ID
+
+Navigate to `Home/Alerting/Notification Policies`, access the three dots menu: -> Edit -> Default -> contact point: choose your Telegram contact point name, and click `Update default policies`.
+
+### Setting up alert conditions:
+
+1. Go to Dashboards, find the needed dashboard, and select the panel for alerting.
+2. From the panel's dropdown menu (three dots), choose `Edit`, then go to the `Alert` tab and hit `Create new rules`.
+3. You will be directed to the `Alert rules` section. Key options include `time range`, `folder` for saving rules, `group`, and `conditions`.
+4. In the `Expression` section, you can set conditions. For `instance`, adding a new expression `Classic condition` and defining a Condition 
+```
+WHEN last() OF A (query) IS ABOVE 6
+```
+will trigger a notification when the observed parameter in query "A" exceeds this threshold value (`6` in this example). Ensure your Expression is marked as an Alert condition (green-colored).
+
+5. To configure alerts for server downtimes or data collection interruptions from targets, adjust settings in the "Configure no data and error handling" section on the `Alert rules` page.
+
+Refer to the official [Alert rules guide on Grafana's site](https://grafana.com/docs/grafana/latest/alerting/fundamentals/alert-rules/) for more detailed instructions.
+
