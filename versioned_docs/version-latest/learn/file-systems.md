@@ -64,6 +64,7 @@ Example command with `sgdisk`:
 ```console
 sgdisk -z /dev/nvme1n1 -n 1::+512M -t 1:EF00 -c 1:boot -v /dev/nvme1n1 --align-end -n 2::-4076M -t 2:8300 -c 2:main -v /dev/nvme1n1 -n 3::+2038M -t 3:8300 -c 3:j1 -v /dev/nvme1n1 -n 4::+2038M -t 4:8300 -c 4:j2 -v /dev/nvme1n1 -p /dev/nvme1n1
 ```
+
 Explanation of options: `-v` checks for errors, `-c` changes partition names, `-t` sets partition types, `-p` prints device info, `-z` wipes tables and partitions, `--align-end` aligns partitions.
 
 ### Resize Partition 
@@ -117,7 +118,6 @@ mount /dev/sdXY /mount/point
 [Detailed e2fsck manual](https://linux.die.net/man/8/e2fsck)
 
 ---
-Absolutely, I'll refine and structure the content for the XFS and BTRFS sections to enhance readability while preserving the detailed explanations you've provided.
 
 ---
 
@@ -190,7 +190,6 @@ Manuals:
 For more information, Wikipedia provides a comprehensive overview of [Btrfs](https://en.wikipedia.org/wiki/Btrfs).
 
 
-Absolutely, I'll refine and structure the content for the "Mount," "Chroot," and "Fstab" sections to ensure clarity and readability.
 
 ---
 
@@ -255,7 +254,6 @@ UUID=2de0e328-2bcd-4823-bfa5-3606f6fe9f92 /mnt ext4 defaults 0 1 # Root partitio
 After editing fstab, regenerate mount units using `systemctl daemon-reload`, and verify the configuration with `mount -a`.
 
 
-Certainly! Here's a polished version of the text:
 
 ---
 
