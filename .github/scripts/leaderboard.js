@@ -20,7 +20,18 @@ if (!CROWDIN_PERSONAL_TOKEN) {
     process.exit(1);
 }
 
-const date = new Date(); 
+let date = new Date(); 
+
+// the next line is temporary, if accidentally merged needs to be deleted. 
+date.setMonth(date.getMonth() - 1);
+
+// next function is temporary, if accidentally merged needs to be deleted.
+function last_day_of_2023() {
+    return `2023-12-31T00:00:00+00:00`
+}
+
+// temporary variable
+const lastDayOf2023 = last_day_of_2023()
 
 async function delay(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
@@ -63,6 +74,7 @@ function formatDateToBeginningOfMonth(date) {
     const year = date.getFullYear();
     const month = date.getMonth() + 1; // getMonth() is zero-indexed
 
+    console.log(year)
     return `${year}-${month.toString().padStart(2, '0')}-01T00:00:00+00:00`;
 }
 
@@ -97,7 +109,7 @@ async function generateMonthlyReport() {
         const response = await makeRequest('post', `${CONFIG.CROWDIN_API_ENDPOINT}/projects/${CONFIG.CROWDIN_PROJECT_ID}/reports`, {
             data: {
                 name: "top-members",
-                schema: { unit: "words", format: "csv", dateFrom: formattedDate }
+                schema: { unit: "words", format: "csv", dateFrom: formattedDate, dateTo: lastDayOf2023 }
             },
             headers: { 'Authorization': `Bearer ${CROWDIN_PERSONAL_TOKEN}`, 'Content-Type': 'application/json' }
         });
