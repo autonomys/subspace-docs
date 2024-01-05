@@ -129,7 +129,10 @@ Since we already have a MetaMask Account set up, let’s use this option.
 12. Adjust the gas limit and deploy your smart contract on Subspace Core EVM.
 Now your transaction is recorded and you can interact with your smart contract at the bottom of the page - it's possible to call the functions `increment()` and `decrement()` as well as `setNumber()`
 
+:::caution
+Do not speed up the transaction (do not include the tip on top of the gas fees). To read more about this, please refer to [this section](quick_start.md#important-note-about-submitting-the-transaction).
+:::
+
  ![Remix-12](/img/developers/Remix-12.png)
 
 Congratulations, you've just deployed your smart contract on Subspace Core EVM!
-
