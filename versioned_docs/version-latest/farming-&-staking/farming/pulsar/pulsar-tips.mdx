@@ -44,40 +44,51 @@ Set the `chain` value to your target network identifier.
 - Local Development: Set to `dev`
 - Gemini Testnet: Set to `gemini-3g`
 
+
+### Switching to a new release
+
+:::info
+Unless specifically mentioned by the Development team you should **NOT** have to wipe your node and configuration on new releases.
+:::
+
+In general you should be able to download the latest release of **Pulsar**, and re-start with the same commands as you started to prior version with no errors.
+
+There are some cases where version updates will cause issue with **Pulsar** and you may have to use the `./pulsar_release wipe` command, typically when errors occur. 
+If you have any issues you can always check our [Forums](https://forums.subspace.network) and hop in our [Discord](https://discord.gg/subspace-network) Server to ask for help.
+
 ### Moving the Farming Process to the Background
 
 <Tabs groupId="OS">
 <TabItem value="tmux" label="Tmux" default>
 
 :::tip Learn More about Tmux
-
 If you want to learn more about Tmux and its options check out their Repo [here](https://github.com/tmux/tmux/wiki)
-
 :::
 
-* Create a new tmux session using a socket file named farming
+**Create a new tmux session using a socket file named farming**.
 
 ```shell-session
 $ tmux -S farming
 ```
 
-
-* Move process to background by detaching
+**Move process to background by detaching**.
 ```text
 Ctrl+b d OR ⌘+b d (Mac)
 ```
 
-* To re-attach
+**To re-attach**.
+
 ```shell-session
 $ tmux -S farming attach
 ```
 
-* Alternatively, you can use the following single command to both create (if not exists already) and attach to a session:
+Alternatively, you can use the following single command to both create (if not exists already) and attach to a session:
+
 ```shell-session
 $ tmux new-session -A -D -s farming
 ```
 
-* To delete farming session
+To delete farming session:
 ```shell-session
 $ tmux kill-session -t farming
 ```
@@ -91,27 +102,32 @@ If you want to learn more about Screen and its options check out their Webpage [
 
 :::
 
-* Create new screen using a socket file named farming
+**Create new screen using a socket file named farming**.
+
 ```shell-session
 $ screen -S farming
 ```
 
-* Move process to background by detaching
+**Move process to background by detaching**.
+
 ```text
 Ctrl+d a OR ⌘+d a (Mac)
 ```
 
-* To re-attach
+To re-attach:
+
 ```shell-session
 $ screen -r farming
 ```
 
-* Alternatively, you can use the following single command to both create (if not exists already) and attach to a session:
+Alternatively, you can use the following single command to both create (if not exists already) and attach to a session:
+
 ```shell-session
 $ screen -D -R -S farming
 ```
 
-* To delete farming session
+To delete farming session:
+
 ```shell-session
 $ screen -S farming -X quit
 ```
