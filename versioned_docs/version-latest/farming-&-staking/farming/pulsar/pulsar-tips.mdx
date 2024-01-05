@@ -17,6 +17,59 @@ import TabItem from '@theme/TabItem';
 
 Welcome to the Additional Tips section! Whether you're a seasoned farmer or just starting out with the Subspace Network, these tips and tricks are designed to enhance your experience and efficiency. Here, we delve into practical advice and lesser-known techniques to help you fine-tune your farming setup and navigate common challenges with ease. From configuring your environment to managing background processes, these insights are tailored to ensure your Farmer operates smoothly and effectively. Let's dive in and explore how you can get the most out of your Subspace Network Farmer.
 
+### Switching to a new release
+
+:::info
+Unless specifically mentioned by the Development team you should **NOT** have to wipe your node and configuration on new releases.
+:::
+
+In general you should be able to download the latest release of **Pulsar**, and re-start with the same commands as you started to prior version with no errors.
+
+There are some cases where version updates will cause issue with **Pulsar** and you may have to use the `./pulsar_release wipe` command, typically when errors occur. 
+If you have any issues you can always check our [Forums](https://forums.subspace.network) and hop in our [Discord](https://discord.gg/subspace-network) Server to ask for help.
+
+### Wipe Node & Farmer
+
+:::tip Updated from a previous version and now having issues?
+
+Occasionally after updating to a new version of the Pulsar you will need to wipe your node and farmer, generally this should not be required but can be attempted if your farmer is having issues after having had worked fine previously.
+
+:::
+
+To simply restart the node, go to the terminal where you started the `farm` command, and press `Ctrl + C` you should see a shutdown message appear and the application will attempt a simple shutdown, if you dont see the message press `Ctrl + C` again to force shutdown. You can then simply start the farmer again with the `farm` command you used prior.
+
+Use the same file name as the previous init and farm steps, then add the wipe command to free the previous storage that was being used. Generally, only do this if you have severe errors and are prompted by a staff member.
+
+```bash
+./pulsar-file-name wipe
+```
+
+After wiping, follow the [get started with Pulsar](pulsar-install) section to start farming again!
+
+### View your Logs
+
+A good place to start if you are facing trouble is by viewing your logs and seeing if there are any errors or insights that might be available. You can find the location for your logs below
+
+<Tabs groupId="OS">
+<TabItem value="windows" label="🖼️ Windows" default>
+
+Your Logs will be found in `%USERPROFILE%/AppData/Local/pulsar/logs`
+
+</TabItem>
+
+<TabItem value="macos" label="🍎macOS">
+
+Your Logs will be found in `$HOME/Library/Logs/pulsar/`
+
+</TabItem>
+
+<TabItem value="linux" label="🐧Ubuntu">
+
+Your Logs will be found in `$HOME/.local/share/pulsar/logs`
+
+</TabItem>
+</Tabs>
+
 ### Telemetry & Block Explorer
 
 Explore the Subspace Network in depth with our variety of telemetry tools and block explorers. Whether you're monitoring network activity or exploring blockchain data, these resources provide comprehensive insights into the network's performance and transactions.
@@ -44,23 +97,6 @@ Set the `chain` value to your target network identifier.
 - Local Development: Set to `dev`
 - Gemini Testnet: Set to `gemini-3g`
 
-
-### Switching to a new release
-
-:::info
-Unless specifically mentioned by the Development team you should **NOT** have to wipe your node and configuration on new releases.
-:::
-
-In general you should be able to download the latest release of **Pulsar**, and re-start with the same commands as you started to prior version with no errors.
-
-There are some cases where version updates will cause issue with **Pulsar** and you may have to use the `./pulsar_release wipe` command, typically when errors occur. 
-If you have any issues you can always check our [Forums](https://forums.subspace.network) and hop in our [Discord](https://discord.gg/subspace-network) Server to ask for help.
-
-### Pulsar wipe
-
-To wipe the node and plots for the Pulsar, run the following command:
-
-`./pulsar_release wipe`.
 
 ### Moving the Farming Process to the Background
 
