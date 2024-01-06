@@ -18,9 +18,7 @@ import styles from '@site/src/pages/index.module.css';
 
 ### Monitoring Infrastructure
 
-**Infrastructure Setup Overview:**
-
-1) Commence by installing and configuring metrics exporters, such as Node Exporter, on the servers earmarked for monitoring. Occasionally, Prometheus compatible endpoints are integrated into application code to reveal metrics at `<host>/metrics`, facilitating the monitoring of specific applications (e.g. Subspace node leverages this functionality).  
+1) Commence by installing and configuring metric exporters like Node Exporter on servers intended for monitoring. Additionally, developers sometimes integrate Prometheus libraries into their application code to expose metrics through endpoints, enabling the monitoring of specific applications. For instance, the Subspace node utilizes this functionality. 
 No alterations are necessary in the exporter configuration files on these servers; the default configurations suffice.
 
 2) Configure Prometheus to collect data from Node Exporter by specifying settings in the `prometheus.yml` file, often found in `/etc/prometheus`. This file defines remote server addresses where exporters operate as scraping targets for Prometheus to retrieve metrics. Exporters make metrics available via HTTP, accessible through HTTP requests to the `/metrics` endpoint. For Node Exporter, this communication occurs over port 9090 by default.
