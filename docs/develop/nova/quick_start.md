@@ -17,7 +17,7 @@ Subspace utilizes EVM (Ethereum Virtual Machine) so any tool available for Ether
 ---
 ```
 Network Name: Subspace EVM
-New RPC URL: https://domain-3.evm.gemini-3g.subspace.network/ws
+New RPC URL: https://nova.gemini-3g.subspace.network/ws
 Chain ID: 1002
 Currency Symbol: TSSC
 ```
