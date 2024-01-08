@@ -35,7 +35,7 @@ If anything above sounds unfamiliar, you can always fall back to our full guide.
 ---
 ### Important note about submitting the transaction
 
-Please avoid attempting to accelerate the transaction by including the tip alongside the gas fees. The transaction queue operates differently with Subspace, leading to the possibility of two transactions sharing the same nonce. This could result in dual charges for gas fees—once for the execution and storage in the first transaction, and solely for storage in the second transaction. To prevent this scenario, ensure that you refrain from adding a tip or speeding up the transaction.
+Please avoid attempting to accelerate a transaction by including a tip alongside the gas fees. The transaction queue operates differently with Subspace, leading to the possibility of two transactions sharing the same nonce. This could result in dual charges for gas fees - once for the execution and storage in the first transaction, and solely for storage in the second transaction. To prevent this scenario, ensure that you refrain from adding a tip in an attempt to speed the transaction up.
 
 ---
 ### Have any questions? Feel free to post them on [our forum](https://forum.subspace.network/) or in our [Developer-chat on Discord](https://discord.gg/EAw6B48r).
