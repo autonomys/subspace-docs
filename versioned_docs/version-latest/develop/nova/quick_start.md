@@ -33,7 +33,7 @@ You can use **[Remix](https://remix.ethereum.org/)**, **[Foundry](https://book.g
 If anything above sounds unfamiliar, you can always fall back to our full guide. 
 
 ---
-### Important note about submitting the transaction
+### Important note about submitting a transaction
 
 Please avoid attempting to accelerate a transaction by including a tip alongside the gas fees. The transaction queue operates differently with Subspace, leading to the possibility of two transactions sharing the same nonce. This could result in dual charges for gas fees - once for the execution and storage in the first transaction, and solely for storage in the second transaction. To prevent this scenario, ensure that you refrain from adding a tip in an attempt to speed the transaction up.
 
