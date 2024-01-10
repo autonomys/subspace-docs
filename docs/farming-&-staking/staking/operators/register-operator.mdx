@@ -388,46 +388,7 @@ You can view some additional actions by clicking on `action` next to your operat
 You can increase your stake, withdraw some stake and de-register your operator from there. 
 :::
 
-#### Register an operator using PolkadotJS interface
-
-Alternatively, you can use **PolkadotJS** to register an operator on the domain. 
-To register an operator on the domain: 
-1. Proceed to [PolkadotJS](https://polkadot.js.org/apps/#/explorer)
-2. Make sure to select the correct network at the top-left corner. 
-3. Navigate to Developer -> Extrinsics. 
-4. Select the account you want to use in `using the selected account`.
-5. Select `domains` under `submit the following extrinsic` and choose `registerOperator(domainID, amount, config)` in the dropdown.
-6. Enter the `domainId` to be registered on. 
-7. Enter the desired staking amount in the `amount` field.
-8. Put your public signing key at the `signingKey` field. 
-
-
-:::note
-In the example below, 1 TSSC is selected for staking. 18 zeros are added because of the `u128` type, so make sure to put 1000000000000000000 instead. 
-:::
-
-
-![Staking-5](/img/doc-imgs/operators-staking/Staking-5.png)
-
-:::info
-Make sure to use the signing key generated on the previous **[Create operator key](#create-operator-key)** step 
-:::
-
-8. Enter `minimumNominatorStake` - in the example, it's set to `1 TSSC`.
-9. Enter `nominatorTax` - in the example, it's set to `5%`.
-10. Sign and submit the transaction to register an operator.
-
-![Staking-6](/img/doc-imgs/operators-staking/Staking-6.png)
-
-:::info
-Make sure to select **Submit Transaction** since the transaction needs to be signed.
-:::
-
-Once registered, the operator has to wait until the domain epoch is complete to start operating for the **domain**, participate in **bundle production**, and **receive rewards**.
-
-Once the domain epoch is finished, the operator can produce bundles from the new epoch.
-
-Any **operator** can add more stake by using the same functionality.
+If you prefer to use a native PolkadotJS, or faced any issues in one of the steps above, you can try using [PolkadotJS interface guide](tips-operator#register-an-operator-using-polkadotjs-interface-alternative-way) to register an operator on the domain. 
 
 ### Checking your operatorId
 
