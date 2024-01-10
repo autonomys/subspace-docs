@@ -65,15 +65,24 @@ If you're connected directly without any router, then again nothing needs to be 
 
 ### Storage
 
-HDDs are not supported and will never be. We don't recommended trying to use smart caching, tiered storage or other ways to accelerate it, you'll be 100% disappointed and just waste your time.
+**HDDs are not supported and will never be**. We don't recommended trying to use smart caching, tiered storage or other ways to accelerate it, you'll be 100% disappointed and just waste your time.
 
-Node will require 100 GiB of good quality SSD. It doesn't have to be anything amazing, but something mid-range from a reputable manufacturer with decent endurance is recommended.
+**Node will require 100 GiB of good quality SSD**. Doesn't have to be anything amazing, but something mid-range from a
+reputable manufacturer with decent endurance is recommended.
 
-Farmer side can work with pretty much any SSD whatsoever that is not fake and not outright broken, dedicating high quality high endurance SSD is pointless unless you already have it for reasons unrelated to Subspace. Software writes to disk in near-perfect for SSD way, effectively doing write leveling if SSD is solely dedicated to farming.
+**Farmer side can work with pretty much any SSD whatsoever that is not fake and not outright broken**, dedicating high
+quality high endurance SSD is pointless unless you already have it for reasons unrelated to Subspace. Software writes to
+disk in near-perfect for SSD way, effectively doing write leveling if SSD is solely dedicated to farming.
 
-RAID of any kind is pointless and can only harm performance and/or rewards. RAID0 will most likely make things slower rather than faster (application benefits from knowing underlying hardware topology). RAID1 or any other redundancy level is 100% pointless too since farms are stateless and can be removed if disk breaks without losing data on other disks, it'll just make thing slower and reduce effective capacity that can be used for farming, reducing farming rewards for literally no benefit in exchange.
-
+**RAID of any kind is pointless and can only harm** performance and/or rewards. RAID0 will most likely make things
+slower rather than faster (application benefits from knowing underlying hardware topology). RAID1 or any other
+redundancy level is 100% pointless too since farms are stateless and can be removed if disk breaks without losing data
+on other disks, it'll just make thing slower and reduce effective capacity that can be used for farming, *reducing
+farming rewards for literally no benefit in exchange*.
 
 ### File System
 
-You can use any file system with default settings, but in case of CoW file systems like **ZFS** or **BTRFS** disable **CoW** for farmer directory, avoid **RAID** of any level.
+You can use any file system with default settings, but in case of CoW file systems like **ZFS** or **BTRFS** disable **CoW** for farmer directory.
+
+In order to disable **CoW**, run the command `chattr +C /your_farmer_directory/`.
+
