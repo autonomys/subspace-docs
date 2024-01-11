@@ -82,7 +82,8 @@ farming rewards for literally no benefit in exchange*.
 
 ### File System
 
-You can use any file system with default settings, but in case of CoW file systems like **ZFS** or **BTRFS** disable **CoW** for farmer directory.
+You can use any file system with default settings, but in case of CoW file systems like **ZFS** or **BTRFS** you need to disable **CoW** for farmer directory, or adjust the **recordsize**.
 
-In order to disable **CoW**, run the command `chattr +C /your_farmer_directory/`.
+In order to disable **CoW** on **BTRFS**, run the command `chattr +C /your_farmer_directory/`.
 
+In case of **ZFS**, you can try adjusting the **recordsize** by running `zfs set recordsize=128K tank/dataset`, or creating a separate **dataset** for the farmer with adjusted **recordsize** parameters.
