@@ -1,6 +1,6 @@
 ---
 title: Partitioning and Mounting
-sidebar_position: 7
+sidebar_position: 1
 description: essential info to file systems. partitioning, and mounting.
 keywords:
     - Partition
