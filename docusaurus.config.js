@@ -94,6 +94,10 @@ const config = {
           {
             to: "/docs/farming-&-staking/farming/advanced-cli/cli-install",
             from: "/docs/Farming%20&%20Staking/Farming/Advanced-Cli/cli-install"
+          },
+          {
+            to: "/docs/pre-release/farming-&-staking/staking/operators/register-operator",
+            from: "/docs/farming-&-staking/staking/operators"
           }
         ],
       },

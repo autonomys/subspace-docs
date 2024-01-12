@@ -1,0 +1,98 @@
+---
+title: Deregister an Operator
+sidebar_position: 2
+description: Operators Uninstall guide
+keywords:
+- Operator
+- Guide
+---
+
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+import CodeBlock from '@theme/CodeBlock';
+import Link from '@docusaurus/Link';
+import styles from '@site/src/pages/index.module.css';
+
+### Embedded Docs
+
+
+The following command can be used to explore all parameters and subcommands:
+
+
+```bash
+target/production/subspace-node --help
+```
+
+
+### Build from source
+
+If you prefer to build from the source rather using existing builds, the domain operator node is embedded within the `subspace-node` binary, please refer to [Subspace node](https://github.com/subspace/subspace/blob/main/crates/subspace-node/README.md) for how to build from source.
+
+
+### Operator deregistration
+
+To deregister an operator on the domain and have your tokens released:
+
+:::info
+Only account who registered an operator can deregister it. Make sure to use the same wallet / account to sign the transaction for deregistration. 
+:::
+
+#### Operator deregistration using **Subspace Staking interface** (recommended)
+
+1. Proceed to the [Subspace Staking portal](https://staking.subspace.tools) and connect your wallet.
+
+![NStaking-1](/img/doc-imgs/operators-staking/NStaking-1.png)
+
+2. Select the wallet you would like to connect. Make sure to select the wallet you registered your operator with. Both **Subwallet** and **PolkadotJS** wallets are supported.
+
+![NStaking-2](/img/doc-imgs/operators-staking/NStaking-2.png)
+
+3. Enter your password to give an access to your wallet.
+
+![NStaking-3](/img/doc-imgs/operators-staking/NStaking-3.png)
+
+4. Click on `Manage your stake`.
+
+![NStaking-9](/img/doc-imgs/operators-staking/NStaking-9.png)
+
+5. Click on `Action` button next to an operator you would like to deregister and select `deregister`. 
+
+![NStaking-10](/img/doc-imgs/operators-staking/NStaking-10.png)
+
+6. Approve the request in the pop-up window. 
+
+![NStaking-8](/img/doc-imgs/operators-staking/NStaking-7.png)
+
+7. Congratulations, your operator was deregistered.
+
+:::info
+It can take up to 10 minutes for the operator to be deregistered and disappeared from the page. 
+You can check if the operator was deregistered successfully on the [Subspace Subscan portal](https://subspace.subscan.io/extrinsic).
+:::
+
+#### Operator deregistration using **PolkadotJS**
+Alternatively, you can use the **PolkadotJS** portal to deregister operator. 
+
+1. Proceed to [PolkadotJS](https://polkadot.js.org/apps/#/explorer)
+2. Make sure to select the correct network at the top-left corner. 
+3. Select the account you want to use in `using the selected account`.
+4. Select `domains` under `submit the following extrinsic` and choose `deregisterOperator(operatorId)` in the dropdown.
+
+![Staking-14](/img/doc-imgs/operators-staking/Staking-14.png)
+
+5. Your tokens and tokens of operator `Nominators` will be released after the `lockingPeriod`.
+6. To check the locking period you can go to `Developer` -> `Chain state` -> `Constants`.
+7. Select `domains` under `selected contant query` and choose `stakeWithdrawalLockingPeriod`. 
+8. Click on `+` to run the query. 
+
+![Staking-15](/img/doc-imgs/operators-staking/Staking-15.png)
+
+:::info
+Number 256 above corresponds to the number of the domain blocks, and not the consensus chain blocks. 
+:::
+
+
+### Operator Stake Withdrawal
+
+**Operator** stake withdrawal works similarly to **Nominator** stake withdrawal. Refer to [this section](../staking.md#stake-withdrawal-using-polkadotjs) to withdraw your stake. 
