@@ -71,6 +71,29 @@ In general you should be able to download the latest release, and re-start the N
 
 There are some cases where version updates will cause issue with your Node & Farmer and you may have to wipe & purge your node, typically when errors occur. If you have any issues you can always check our [Forums](https://forums.subspace.network) and hop in our [Discord](https://discord.gg/subspace-network) Server to ask for help.
 
+### Wipe & Purge
+
+If you were running a node previously, and want to switch to a new network, please perform these steps and then follow the guide again:
+```bash
+# Replace `FARMER_FILE_NAME` with the name of the farmer file you downloaded from releases
+./FARMER_FILE_NAME wipe PATH_TO_FARM
+# Replace `NODE_FILE_NAME` with the name of the node file you downloaded from releases
+./NODE_FILE_NAME purge-chain --chain gemini-3g
+```
+It does not matter if the node/farmer executable is the previous one or from the new snapshot, both will work :)
+
+Now follow installation guide.
+
+### Docker Wipe & Purge
+
+In case of Docker setup run `docker compose down -v` (and manually delete custom directories if you have specified them).
+
+Now follow the installation guide.
+
+If you are having issues with running a node or farmer for Subspace, feel free to join our Discord or even better you can take a look at our forums and review existing questions or post a new one if needed!
+
+- [Forum](https://forum.subspace.network)
+- [Discord](https://discord.gg/subspace-network)
 
 ### Help
 

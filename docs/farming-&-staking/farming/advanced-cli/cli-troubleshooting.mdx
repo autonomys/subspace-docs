@@ -15,38 +15,9 @@ keywords:
 If you are facing issues with your node/farmer you can try a few of the following things below, if you are unable to get your issue resolved please check our [Forums](https://forums.subspace.network) to see if your issue may have been solved, if its a new one feel free to post it! You can also join our [Discord](https://discord.gg/subspace-network) for additional Peer to Peer help.
 
 :::info
-
-We have included a few tutorials below that may help you in your support journey, this is not an all inclusive list but we welcome contributions
-
+We have included a few tutorials below that may help you in your support journey, this is not an all inclusive list and we welcome contributions
 :::
 
-
-
-### Wipe & Purge
-
-If you were running a node previously, and want to switch to a new snapshot, please perform these steps and then follow the guideline again:
-```bash
-# Replace `FARMER_FILE_NAME` with the name of the farmer file you downloaded from releases
-./FARMER_FILE_NAME wipe PATH_TO_FARM
-# Replace `NODE_FILE_NAME` with the name of the node file you downloaded from releases
-./NODE_FILE_NAME purge-chain --chain gemini-3g
-```
-Does not matter if the node/farmer executable is the previous one or from the new snapshot, both will work :)
-The reason we require this is, with every snapshot change, the network might get partitioned, and you may be on a different genesis than the current one.
-In plain English, these commands are like a `reset` button for snapshot changes.
-
-Now follow installation guide.
-
-### Docker Wipe & Purge
-
-In case of Docker setup run `docker compose down -v` (and manually delete custom directories if you have specified them).
-
-Now follow installation guide.
-
-If you are having some issues with running the node or the farmer for the subspace network, feel free to join our Discord or even better you can take a look at our Forums and review and existing questions or post a new one if needed!
-
-###  - [Forums](https://forum.subspace.network)
-###  - [Discord](https://discord.gg/subspace-network)
 
 ### Enable Rust Backtrace 
 
