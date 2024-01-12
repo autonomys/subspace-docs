@@ -24,10 +24,9 @@ The Subspace Network is an ambitious layer zero protocol which is the first scal
 ---
 ### **Become a farmer**
 
-Farmers on the Subspace Network are responsible for maintaining consensus, or safety of the Consensus Chain.
-A Farmer plots pieces of Archival History to disk, farms the created plot for block rewards, and joins the DSN as a node for data retrieval.
+**Farmers** on the Subspace Network are responsible for maintaining consensus, or safety of the Consensus Chain. A **farmer** plots pieces of Archival History to disk, farms the created plot for block rewards, and joins the DSN as a node for data retrieval.
 
-Choose one of the following methods to start farming on the Network (from easy to more complex):
+Choose one of the following methods to **start farming** on the Network (from easy to more complex):
 
 #### - [Start Farming with Pulsar](../farming-&-staking/farming/pulsar/pulsar-prerequisites)
 #### - [Start Farming with Advanced CLI](../farming-&-staking/farming/advanced-cli/cli-install)
@@ -55,7 +54,7 @@ Farmers can nominate **operators** and back them with their tokens, increasing t
 
 ### Utilize the EVM Domain
 
-The Subspace Network has a running **EVM (Ethereum Virtual Machine)**, that allows you to deploy your smart contracts. 
+The Subspace Network has a running **EVM (Ethereum Virtual Machine)**, that allows you to deploy your **smart contracts.** 
 
 #### - [EVM Development](../develop/nova/intro)
 
