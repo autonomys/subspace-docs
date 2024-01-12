@@ -115,7 +115,7 @@ const config = {
           showLastUpdateTime: true,
           editCurrentVersion: true,
           editLocalizedFiles: true,
-          editUrl: 'https://github.com/subspace/subspace-docs/blob/main/',
+          editUrl: 'https://github.com/subspace/subspace-docs/edit/main/',
           sidebarPath: require.resolve('./sidebars.js'),
 
           //Versioning Preferences
