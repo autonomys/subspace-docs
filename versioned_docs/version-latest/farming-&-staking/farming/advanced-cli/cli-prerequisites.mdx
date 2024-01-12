@@ -75,7 +75,7 @@ If you're connected directly without any router, then again nothing needs to be 
 
 ### File System
 
-You can use any file system with default settings, but in the case of CoW file systems like **ZFS** or **BTRFS** you need to disable **CoW** for the farmer directory, or adjust the **recordsize**.
+You can use any file system with default settings, we advise against their use for Subspace but in the case of CoW file systems like **ZFS** or **BTRFS** you need to disable **CoW** for the farmer directory, or adjust the **recordsize**.
 
 In order to disable **CoW** on **BTRFS**, run the command `chattr +C /your_farmer_directory/`.
 
