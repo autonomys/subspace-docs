@@ -115,14 +115,14 @@ services:
         "--base-path", "/var/subspace",
         "--blocks-pruning", "256",
         "--state-pruning", "archive-canonical",
-        "--port", "30333",
+        "--listen-on", "30333",
         "--dsn-listen-on", "/ip4/0.0.0.0/udp/30433/quic-v1",
         "--dsn-listen-on", "/ip4/0.0.0.0/tcp/30433",
         "--rpc-cors", "all",
         "--rpc-methods", "unsafe",
-        "--rpc-external",
+        "--rpc-listen-on",
         "--no-private-ipv4",
-        "--validator",
+        "--farmer",
         "--name", "${formData.nodeName}"
       ]
     healthcheck:

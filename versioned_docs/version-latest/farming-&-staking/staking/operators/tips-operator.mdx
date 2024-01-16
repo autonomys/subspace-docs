@@ -127,16 +127,16 @@ To run both operator and validator at the same time, provide requrired flags for
 --blocks-pruning 256 \`
 --state-pruning archive \`
 --no-private-ipv4 \`
---validator \`
+--farmer \`
 --name your_node_name \`
 -- \`
 --domain-id your_domain_id \`
 --operator-id your_operator_id \`
 --keystore-path /keystore \`
---listen-addr /ip4/0.0.0.0/tcp/40333 \`
---bootnodes /ip4/3.87.28.170/tcp/40333/p2p/12D3KooWGHtULvhdKMZtzigSK1438uWXPj9rBQHVzTaKMWv1WRXp \`
---bootnodes /ip4/140.82.45.36/tcp/40333/p2p/12D3KooWJxB2PVzyNqZywoCWAMLGhKr2LCbFMXbAPzUPQZon7yt1 \`
---bootnodes /ip4/167.179.116.135/tcp/40333/p2p/12D3KooWHsRae3ip2uQAUPtpMcStHGGw777SJT3nu9maFmtsGry7 `}
+--listen-on /ip4/0.0.0.0/tcp/40333 \`
+--bootstrap-nodes /ip4/3.87.28.170/tcp/40333/p2p/12D3KooWGHtULvhdKMZtzigSK1438uWXPj9rBQHVzTaKMWv1WRXp \`
+--bootstrap-nodes /ip4/140.82.45.36/tcp/40333/p2p/12D3KooWJxB2PVzyNqZywoCWAMLGhKr2LCbFMXbAPzUPQZon7yt1 \`
+--bootstrap-nodes /ip4/167.179.116.135/tcp/40333/p2p/12D3KooWHsRae3ip2uQAUPtpMcStHGGw777SJT3nu9maFmtsGry7 `}
 </CodeBlock>
 
 </TabItem>
@@ -150,16 +150,16 @@ To run both operator and validator at the same time, provide requrired flags for
 --blocks-pruning 256 \\
 --state-pruning archive \\
 --no-private-ipv4 \\
---validator \\
+--farmer \\
 --name your_node_name \\
 -- \\
 --domain-id your_domain_id \\
 --operator-id your_operator_id \\
 --keystore-path /keystore \\
---listen-addr /ip4/0.0.0.0/tcp/40333 \\
---bootnodes /ip4/3.87.28.170/tcp/40333/p2p/12D3KooWGHtULvhdKMZtzigSK1438uWXPj9rBQHVzTaKMWv1WRXp \\
---bootnodes /ip4/140.82.45.36/tcp/40333/p2p/12D3KooWJxB2PVzyNqZywoCWAMLGhKr2LCbFMXbAPzUPQZon7yt1 \\
---bootnodes /ip4/167.179.116.135/tcp/40333/p2p/12D3KooWHsRae3ip2uQAUPtpMcStHGGw777SJT3nu9maFmtsGry7 `}
+--listen-on /ip4/0.0.0.0/tcp/40333 \\
+--bootstrap-nodes /ip4/3.87.28.170/tcp/40333/p2p/12D3KooWGHtULvhdKMZtzigSK1438uWXPj9rBQHVzTaKMWv1WRXp \\
+--bootstrap-nodes /ip4/140.82.45.36/tcp/40333/p2p/12D3KooWJxB2PVzyNqZywoCWAMLGhKr2LCbFMXbAPzUPQZon7yt1 \\
+--bootstrap-nodes /ip4/167.179.116.135/tcp/40333/p2p/12D3KooWHsRae3ip2uQAUPtpMcStHGGw777SJT3nu9maFmtsGry7 `}
 </CodeBlock>
 
 </TabItem>
@@ -172,16 +172,16 @@ To run both operator and validator at the same time, provide requrired flags for
 --blocks-pruning 256 \\
 --state-pruning archive \\
 --no-private-ipv4 \\
---validator \\
+--farmer \\
 --name your_node_name \\
 -- \\
 --domain-id your_domain_id \\
 --operator-id your_operator_id \\
 --keystore-path /keystore \\
---listen-addr /ip4/0.0.0.0/tcp/40333 \\
---bootnodes /ip4/3.87.28.170/tcp/40333/p2p/12D3KooWGHtULvhdKMZtzigSK1438uWXPj9rBQHVzTaKMWv1WRXp \\
---bootnodes /ip4/140.82.45.36/tcp/40333/p2p/12D3KooWJxB2PVzyNqZywoCWAMLGhKr2LCbFMXbAPzUPQZon7yt1 \\
---bootnodes /ip4/167.179.116.135/tcp/40333/p2p/12D3KooWHsRae3ip2uQAUPtpMcStHGGw777SJT3nu9maFmtsGry7 `}
+--listen-on /ip4/0.0.0.0/tcp/40333 \\
+--bootstrap-nodes /ip4/3.87.28.170/tcp/40333/p2p/12D3KooWGHtULvhdKMZtzigSK1438uWXPj9rBQHVzTaKMWv1WRXp \\
+--bootstrap-nodes /ip4/140.82.45.36/tcp/40333/p2p/12D3KooWJxB2PVzyNqZywoCWAMLGhKr2LCbFMXbAPzUPQZon7yt1 \\
+--bootstrap-nodes /ip4/167.179.116.135/tcp/40333/p2p/12D3KooWHsRae3ip2uQAUPtpMcStHGGw777SJT3nu9maFmtsGry7 `}
 </CodeBlock>
 </TabItem>
 
@@ -217,14 +217,14 @@ services:
       "--base-path", "/var/subspace",
       "--blocks-pruning", "256",
       "--state-pruning", "archive-canonical",
-      "--port", "30333",
+      "--listen-on", "30333",
       "--dsn-listen-on", "/ip4/0.0.0.0/udp/30433/quic-v1",
       "--dsn-listen-on", "/ip4/0.0.0.0/tcp/30433",
       "--rpc-cors", "all",
       "--rpc-methods", "unsafe",
-      "--rpc-external",
+      "--rpc-listen-on",
       "--no-private-ipv4",
-      "--validator",
+      "--farmer",
       "--name", "INSERT_YOUR_ID",
       "--",
       # Replace INSERT_YOUR_DOMAIN_ID with domain ID you want to be operator on
@@ -232,10 +232,10 @@ services:
       # Replace INSERT_YOUR_OPERATOR_ID with your operator ID
       "--operator-id", "INSERT_YOUR_OPERATOR_ID",
       "--keystore-path", "/keystore",
-      "--listen-addr", "/ip4/0.0.0.0/tcp/40333",
-      "--bootnodes", "/ip4/3.87.28.170/tcp/40333/p2p/12D3KooWGHtULvhdKMZtzigSK1438uWXPj9rBQHVzTaKMWv1WRXp",
-      "--bootnodes", "/ip4/140.82.45.36/tcp/40333/p2p/12D3KooWJxB2PVzyNqZywoCWAMLGhKr2LCbFMXbAPzUPQZon7yt1",
-      "--bootnodes", "/ip4/167.179.116.135/tcp/40333/p2p/12D3KooWHsRae3ip2uQAUPtpMcStHGGw777SJT3nu9maFmtsGry7",
+      "--listen-on", "/ip4/0.0.0.0/tcp/40333",
+      "--bootstrap-nodes", "/ip4/3.87.28.170/tcp/40333/p2p/12D3KooWGHtULvhdKMZtzigSK1438uWXPj9rBQHVzTaKMWv1WRXp",
+      "--bootstrap-nodes", "/ip4/140.82.45.36/tcp/40333/p2p/12D3KooWJxB2PVzyNqZywoCWAMLGhKr2LCbFMXbAPzUPQZon7yt1",
+      "--bootstrap-nodes", "/ip4/167.179.116.135/tcp/40333/p2p/12D3KooWHsRae3ip2uQAUPtpMcStHGGw777SJT3nu9maFmtsGry7",
 # Replace INSERT_YOUR_ID with your node ID (will be shown in telemetry)
     ]
     healthcheck:
