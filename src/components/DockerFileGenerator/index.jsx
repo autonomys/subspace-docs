@@ -111,6 +111,7 @@ services:
     restart: unless-stopped
     command:
       [
+        "run",
         "--chain", "${network}",
         "--base-path", "/var/subspace",
         "--blocks-pruning", "256",

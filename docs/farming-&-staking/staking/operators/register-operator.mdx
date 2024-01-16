@@ -180,7 +180,7 @@ Stake Wars are using the domain **Nova** with ID **1**.
 <TabItem value="windows" label="🖼️ Windows" default>
 
 <CodeBlock>
-{`target/production/subspace-node \`
+{`target/production/subspace-node run \`
 --chain gemini-3g \`
 --name your_node_name \`
 --base-path your_path_to_node_data \`
@@ -199,7 +199,7 @@ Stake Wars are using the domain **Nova** with ID **1**.
 <TabItem value="macos" label="🍎 macOS">
 
 <CodeBlock>
-{`target/production/subspace-node \\
+{`target/production/subspace-node run \\
 --chain gemini-3g \\
 --name your_node_name \\
 --base-path your_path_to_node_data \\
@@ -218,7 +218,7 @@ Stake Wars are using the domain **Nova** with ID **1**.
 <TabItem value="linux" label="🐧 Ubuntu">
 
 <CodeBlock>
-{`target/production/subspace-node \\
+{`target/production/subspace-node run \\
 --chain gemini-3g \\
 --name your_node_name \\
 --base-path your_path_to_node_data \\
@@ -262,6 +262,7 @@ services:
       - "0.0.0.0:40333:40333/tcp"
     restart: unless-stopped
     command: [
+      "run",
       "--chain", "gemini-3g",
       "--base-path", "/var/subspace",
       "--listen-on", "30333",

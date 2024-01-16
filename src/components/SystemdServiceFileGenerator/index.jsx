@@ -81,6 +81,7 @@ After=network.target
 User=${formData.user}
 Group=${formData.user}
 ExecStart=${formData.nodeBinPath} \\
+          run \\ 
           --name ${formData.nodeName} \\
           --base-path ${formData.nodeData} \\
           --state-pruning archive-canonical \\
