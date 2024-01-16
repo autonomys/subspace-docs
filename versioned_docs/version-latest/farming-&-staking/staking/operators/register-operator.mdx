@@ -51,7 +51,7 @@ An operator needs a key pair to participate in bundle production.
 
 <TabItem value="curl" label="curl" default>
 
-1. Start a node on a developer chain by running `./target/release/subspace-node --chain dev -- --domain-id 0 --keystore-path tmp/keystore --rpc-cors all`
+1. Start a node on a developer chain by running `./target/release/subspace-node -- --domain-id 0 --keystore-path tmp/keystore --rpc-cors all`
 
 :::tip
 You can use any chain to generate a keypair, we recommend using a `dev` chain for simplicity. 
@@ -112,7 +112,7 @@ You can adjust the `--keystore-path` if you prefer to generate the keys in a dif
 1. Make sure to have [Docker installed](https://www.docker.com/get-started/).
 You can run `docker -v` in the terminal of your choice to make sure it's installed. 
 2. Start a developer node by running
-`./target/release/subspace-node --chain dev -- --domain-id 0 --keystore-path tmp/keystore --rpc-cors all`
+`./target/release/subspace-node --dev -- --domain-id 0 --keystore-path tmp/keystore --rpc-cors all`
 
 :::tip
 You can use any chain to generate a keypair, we recommend using a `dev` chain for simplicity. 
@@ -186,7 +186,6 @@ Stake Wars are using the domain **Nova** with ID **1**.
 --base-path your_path_to_node_data \`
 -- \`
 --domain-id your_domain_id \`
---chain gemini-3g \`
 --operator-id your_operator_id \`
 --bootstrap-nodes /ip4/3.87.28.170/tcp/40333/p2p/12D3KooWGHtULvhdKMZtzigSK1438uWXPj9rBQHVzTaKMWv1WRXp \`
 --bootstrap-nodes /ip4/140.82.45.36/tcp/40333/p2p/12D3KooWJxB2PVzyNqZywoCWAMLGhKr2LCbFMXbAPzUPQZon7yt1 \`
@@ -206,7 +205,6 @@ Stake Wars are using the domain **Nova** with ID **1**.
 --base-path your_path_to_node_data \\
 -- \\
 --domain-id your_domain_id \\
---chain gemini-3g \\
 --operator-id your_operator_id \\
 --bootstrap-nodes /ip4/3.87.28.170/tcp/40333/p2p/12D3KooWGHtULvhdKMZtzigSK1438uWXPj9rBQHVzTaKMWv1WRXp \\
 --bootstrap-nodes /ip4/140.82.45.36/tcp/40333/p2p/12D3KooWJxB2PVzyNqZywoCWAMLGhKr2LCbFMXbAPzUPQZon7yt1 \\
@@ -226,7 +224,6 @@ Stake Wars are using the domain **Nova** with ID **1**.
 --base-path your_path_to_node_data \\
 -- \\
 --domain-id your_domain_id \\
---chain gemini-3g \\
 --operator-id your_operator_id \\
 --bootstrap-nodes /ip4/3.87.28.170/tcp/40333/p2p/12D3KooWGHtULvhdKMZtzigSK1438uWXPj9rBQHVzTaKMWv1WRXp \\
 --bootstrap-nodes /ip4/140.82.45.36/tcp/40333/p2p/12D3KooWJxB2PVzyNqZywoCWAMLGhKr2LCbFMXbAPzUPQZon7yt1 \\
