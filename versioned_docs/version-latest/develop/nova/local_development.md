@@ -33,7 +33,7 @@ After downloading both files that suit your system, start a node using your pref
 You can do this with the following command:
 
 ```bash
-./your_subspace_node_path --dev --rpc-listen-on 9444 -- --domain-id 3 --dev --rpc-listen-on 8545
+./your_subspace_node_path run --dev --rpc-listen-on 9444 -- --domain-id 3 --dev --rpc-listen-on 8545
 ```
 
 This will create a local RPC on port **8545**.
