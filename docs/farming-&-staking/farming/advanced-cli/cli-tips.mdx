@@ -64,27 +64,27 @@ To set your node to use a custom path all you will need to do is add the `--base
 ### Switching to a new snapshot from older/different versions of Subspace
 
 :::info
-Unless specifically mentioned by the Development team you should **NOT** have to wipe & purge your configuration on new releases.
+Unless specifically mentioned by the Development team you should **NOT** have to wipe your configuration on new releases.
 :::
 
 In general you should be able to download the latest release, and re-start the Node & Farmer with the same commands as you started to prior version with no errors.
 
-There are some cases where version updates will cause issue with your Node & Farmer and you may have to wipe & purge your node, typically when errors occur. If you have any issues you can always check our [Forums](https://forums.subspace.network) and hop in our [Discord](https://discord.gg/subspace-network) Server to ask for help.
+There are some cases where version updates will cause issue with your Node & Farmer and you may have to wipe your node, typically when errors occur. If you have any issues you can always check our [Forums](https://forums.subspace.network) and hop in our [Discord](https://discord.gg/subspace-network) Server to ask for help.
 
-### Wipe & Purge
+### Wipe
 
 If you were running a node previously, and want to switch to a new network, please perform these steps and then follow the guide again:
 ```bash
 # Replace `FARMER_FILE_NAME` with the name of the farmer file you downloaded from releases
 ./FARMER_FILE_NAME wipe PATH_TO_FARM
 # Replace `NODE_FILE_NAME` with the name of the node file you downloaded from releases
-./NODE_FILE_NAME purge-chain --chain gemini-3g
+./NODE_FILE_NAME wipe PATH_TO_NODE
 ```
 It does not matter if the node/farmer executable is the previous one or from the new snapshot, both will work :)
 
 Now follow installation guide.
 
-### Docker Wipe & Purge
+### Docker Wipe
 
 In case of Docker setup run `docker compose down -v` (and manually delete custom directories if you have specified them).
 
@@ -129,7 +129,7 @@ For both the node and the farmer, here are some frequently used commands:
 - Scrub the farm for errors: `./FARMER_FILE_NAME scrub PATH_TO_FARM`
 - Erase all farmer-related data: `./FARMER_FILE_NAME wipe PATH_TO_FARM`
 - Start the node with a custom data path: `./NODE_FILE_NAME --base-path NODE_DATA_PATH --chain gemini-3g`
-- Erase all node-related data: `./NODE_FILE_NAME purge-chain --base-path NODE_DATA_PATH --chain gemini-3g`
+- Erase all node-related data: `./NODE_FILE_NAME wipe NODE_DATA_PATH`
 
 ### Utilizing Multiple Disks
 

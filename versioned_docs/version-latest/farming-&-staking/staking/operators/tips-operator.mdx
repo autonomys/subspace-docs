@@ -31,8 +31,8 @@ The key generated above needs to be added to the Keystore so that the operator n
 To insert the key, use the following command:
 
 ```bash
-target/production/subspace-node key insert \
---suri "<Secret phrase>" --key-type oper --scheme sr25519 --keystore-path /keystore
+target/production/subspace-node domain insert-key \
+--base-path /tmp/node --domain-id 0 --keystore-suri "<Secret phrase>" --key-type oper --scheme sr25519
 ```
 
 The command above assumes `/keystore` as the keystore location.
