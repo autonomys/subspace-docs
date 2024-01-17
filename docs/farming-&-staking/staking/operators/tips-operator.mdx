@@ -18,7 +18,7 @@ An operator needs a key pair to participate in bundle production.
 You can create a key using the following command:
 
 ```bash
-target/production/subspace-node key generate --scheme sr25519
+target/production/subspace-node run key generate --scheme sr25519
 ```
 
 ![Staking-4](/img/doc-imgs/operators-staking/Staking-4.png)
@@ -31,8 +31,8 @@ The key generated above needs to be added to the Keystore so that the operator n
 To insert the key, use the following command:
 
 ```bash
-target/production/subspace-node domain insert-key \
---base-path /tmp/node --domain-id 0 --keystore-suri "<Secret phrase>" --key-type oper --scheme sr25519
+target/production/subspace-node run domain insert-key \
+--base-path PATH_TO_NODE --domain-id 0 --keystore-suri "<Secret phrase>" --key-type oper --scheme sr25519
 ```
 
 The command above assumes `/keystore` as the keystore location.

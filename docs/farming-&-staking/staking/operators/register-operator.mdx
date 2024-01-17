@@ -51,14 +51,14 @@ An operator needs a key pair to participate in bundle production.
 
 <TabItem value="curl" label="curl" default>
 
-1. Start a node on a developer chain by running `./target/release/subspace-node -- --domain-id 0 --keystore-path tmp/keystore --rpc-cors all`
+1. Start a node on a developer chain by running `./target/release/subspace-node run --dev --base-path PATH_TO_YOUR_NODE -- --domain-id 0 --rpc-cors all`
 
 :::tip
 You can use any chain to generate a keypair, we recommend using a `dev` chain for simplicity. 
-You can adjust the `--keystore-path` if you prefer to generate the keys in a different location.  
+It's important to specify the correct **PATH_TO_NODE** and **domain_id**, and use the same values when you start an **operator node** on one of the next steps.
 :::
 
-2. Open another terminal and use the `curl` command to make an **RPC** call to your node. This will generate a new key in the `--keystore-path` location you specified earlier. 
+2. Open another terminal and use the `curl` command to make an **RPC** call to your node. This will generate a new key in the subfolder of **PATH_TO_NODE** you previously specified.
 
 <Tabs groupId="OS">
 
@@ -112,7 +112,7 @@ You can adjust the `--keystore-path` if you prefer to generate the keys in a dif
 1. Make sure to have [Docker installed](https://www.docker.com/get-started/).
 You can run `docker -v` in the terminal of your choice to make sure it's installed. 
 2. Start a developer node by running
-`./target/release/subspace-node --dev -- --domain-id 0 --keystore-path tmp/keystore --rpc-cors all`
+`./target/release/subspace-node run --dev --base-path PATH_TO_YOUR_NODE -- --domain-id 0 --rpc-cors all`
 
 :::tip
 You can use any chain to generate a keypair, we recommend using a `dev` chain for simplicity. 
@@ -147,6 +147,12 @@ You will use this key in order to register an operator later.
 
 **You have successfully generated an operator key, congratulations!**
 
+The keys were generated in the subfolder of **PATH_TO_NODE** you speficied and will be following [the updated Subspace node folder structure](../intro#folder-structure). If you don't see the generated keypair in the folder with name of the **domain ID** you specified, something went wrong. 
+
+#### Example
+
+If I wanted to generate a keypair for **the domain ID 1**, my keypair needs to be located under `PATH_TO_NODE/1/keystore`.
+
 ### Start the domain operator node
 
 The domain operator node is running with an embedded consensus node, thus you need to specify the args for both the consensus node and the domain operator node:
@@ -164,15 +170,11 @@ You do not need to wipe any existing plots.
 :::
 
 :::note
-Ensure you replace `your_domain_id` with your domain identifier in the command and `your_operator_id` with your operator_id. If your keystore is located in a different folder, adjust the `--keystore-path` accordingly. Setting `--base-path` is optional.
+Ensure you replace `your_domain_id` with your domain identifier in the command and `your_operator_id` with your operator_id.
 :::
 
 :::tip
 You can ignore setting up `your_operator_id` while you're syncing your node. Make sure to set it after syncing and registration.
-:::
-
-:::tip
-Stake Wars are using the domain **Nova** with ID **1**.
 :::
 
 <Tabs groupId="OS">
@@ -181,7 +183,7 @@ Stake Wars are using the domain **Nova** with ID **1**.
 
 <CodeBlock>
 {`target/production/subspace-node run \`
---chain gemini-3g \`
+--chain gemini-3h \`
 --name your_node_name \`
 --base-path your_path_to_node_data \`
 -- \`
@@ -200,7 +202,7 @@ Stake Wars are using the domain **Nova** with ID **1**.
 
 <CodeBlock>
 {`target/production/subspace-node run \\
---chain gemini-3g \\
+--chain gemini-3h \\
 --name your_node_name \\
 --base-path your_path_to_node_data \\
 -- \\
@@ -219,7 +221,7 @@ Stake Wars are using the domain **Nova** with ID **1**.
 
 <CodeBlock>
 {`target/production/subspace-node run \\
---chain gemini-3g \\
+--chain gemini-3h \\
 --name your_node_name \\
 --base-path your_path_to_node_data \\
 -- \\
@@ -263,7 +265,7 @@ services:
     restart: unless-stopped
     command: [
       "run",
-      "--chain", "gemini-3g",
+      "--chain", "gemini-3h",
       "--base-path", "/var/subspace",
       "--listen-on", "30333",
       "--dsn-listen-on", "/ip4/0.0.0.0/udp/30433/quic-v1",
@@ -297,35 +299,6 @@ You should see the node start successfully and begin syncing.
 
 ![Staking-13](/img/doc-imgs/operators-staking/Staking-13.png)
 
-
-
-To view the stored node information navigate to: 
-
-<Tabs groupId="OS">
-
-<TabItem value="windows" label="🖼️ Windows" default>
-FOLDERID_LocalAppData e.g. 
-
-`C:\Users\Alice\AppData\Local`
-
-</TabItem>
-
-
-<TabItem value="macos" label="🍎 macOS">
-$HOME/Library/Application Support e.g.
-
-`/Users/Alice/Library/Application Support`
-
-</TabItem>
-
-
-<TabItem value="linux" label="🐧 Ubuntu">
-$XDG_DATA_HOME or /home/alice/.local/share e.g.
-
-`$HOME/.local/share`
-
-</TabItem>
-</Tabs>
 
 ### Register an operator on domain
 
