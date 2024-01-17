@@ -63,7 +63,18 @@ Our suggested specs are not necessarily applicable to Stake Wars. We encourage a
 **Network**:
 - The minimum symmetric networking speed is set to 500 Mbit/s.
 
+### Folder structure
 
+Starting with Gemini 3h, **Subspace Node** will create a following directory structure:
+
+- subspace-node/db
+- subspace-node/domains/0/keystore
+- subspace-node/domains/0/db
+- subspace-node/domains/1/keystore
+- subspace-node/domains/1/db
+- subspace-node/network
+
+For operators it means that you no longer can create a keystore in a random location, the keystore has to be located in a specific subfolder of the desired domain. 
 
 ### Staking
 
@@ -83,9 +94,3 @@ Stake epoch is a designated period in domain blocks within a blockchain system t
 :::note
 Read [Subspace Subnomicon](https://subnomicon.subspace.network/docs/category/decoupled-execution) to get a full picture behind decoupled execution!
 :::
-
-
-
-
-
-
