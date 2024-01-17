@@ -60,7 +60,7 @@ const config = {
       {
         redirects: [
           {
-            to: '/docs/category/pulsar-recommended',
+            to: '/docs/category/pulsar',
             from: '/docs/category/pulsar',
           },
           {
@@ -76,8 +76,8 @@ const config = {
             from: "/docs/operators_and_staking/intro"
           },
           {
-            to: "/docs/category/advanced-cli",
-            from: ["/docs/protocol/cli/", "/docs/protocol/substrate-cli/"]
+            to: "/docs/category/advanced-cli-recommended",
+            from: ["/docs/protocol/cli/", "/docs/protocol/substrate-cli/", "/docs/category/advanced-cli"]
           },
           {
             to: "/docs/farming-&-staking/timekeeping",
@@ -88,8 +88,8 @@ const config = {
             from: ["/docs/category/get-started-with-farming", "/protocol/farm/farming"]
           },
           {
-            to: "/docs/category/pulsar-recommended",
-            from: "/docs/protocol/pulsar/"
+            to: "/docs/category/pulsar",
+            from: ["/docs/protocol/pulsar/", "/docs/category/pulsar-recommended"]
           },
           {
             to: "/docs/farming-&-staking/farming/advanced-cli/cli-install",
