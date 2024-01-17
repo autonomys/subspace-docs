@@ -20,7 +20,7 @@ function DockerFileGenerator() {
     });
 
     // Predefine the actual network
-    const network = 'gemini-3g';
+    const network = 'gemini-3h';
     
     // State for the generated output (docker compose content)
     const [output, setOutput] = useState('');

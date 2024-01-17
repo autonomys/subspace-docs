@@ -64,13 +64,18 @@ After this, simply repeat the step you prompted for (step 4 or 6). This time, cl
 # Replace `INSERT_YOUR_ID` with a nickname you choose
 # Copy all of the lines below, they are all part of the same command
 ./subspace-node-macos-aarch64-gemini-3g-2024-jan-08 run \
-  --chain gemini-3g \
+  --base-path path_to_node \
+  --chain gemini-3h \
   --blocks-pruning 256 \
   --state-pruning archive-canonical \
   --no-private-ipv4 \
   --farmer \
   --name "INSERT_YOUR_ID"
 ```
+
+:::note
+Setting **--base-path** and specifying **--chain** became mandatory starting with Gemini 3h. 
+:::
 
 4. You should see something similar in the terminal:
 ```
