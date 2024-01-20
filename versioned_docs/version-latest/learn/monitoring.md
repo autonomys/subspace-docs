@@ -24,9 +24,9 @@ import styles from '@site/src/pages/index.module.css';
 * Facilitate communication among these components by configuring the firewall to expose necessary ports.
 :::
 
-:::note 
-For enhanced performance, security, and ease of management, it's advisable to install Prometheus and Grafana on a dedicated (separate) server.
-:::
+:::tip
+To improve performance and security, it is recommended to install Prometheus and Grafana on a separate server from the exporters.
+:::  
 
 ### Prerequisites
 
@@ -41,7 +41,6 @@ For enhanced performance, security, and ease of management, it's advisable to in
 - **Storage:** 20GB+
 
 ---
-
 ## 1. Node Exporter
 
 ### Creating a User
@@ -380,9 +379,9 @@ Opening Grafana to the Internet poses security risks if not properly secured.
 - **Firewalls and Network Security**: Configure rules to control access to Grafana from specific IPs or networks for enhanced security.
 
 ### Adjusting Grafana Server Settings
-In your Grafana instance, open the "three lines" menu and navigate to Connections, select Prometheus, then "Add new data source."
+In your Grafana instance, open the *three lines* menu and navigate to `Connections`, select `Prometheus`, then `Add new data source.`
 
-For Prometheus Settings:
+In Prometheus Settings:
 
 - Ensure you're using the same port as in Prometheus (default is 9090).
 - Adjust other parameters as needed.
@@ -391,37 +390,43 @@ For Prometheus Settings:
 Ensure your Prometheus service is running to prevent errors.
 :::
 
+### Dashboards
+
+Dashboards in Grafana serve as a visual representation of your data. They provide a way to display and monitor key metrics and performance indicators in a consolidated, user-friendly interface.
+
+To add a dashboard for whole server monitoring you can import most rated dashboard: ["Node Exporter Full"](https://grafana.com/grafana/dashboards/1860-node-exporter-full/) by its ID 1860. 
+
+The Dashboard for scraping Subspace Node metrics is available on [this URL](https://github.com/counterpointsoftware/subspace-monitoring/blob/main/grafana/provisioning/dashboards/subspace-dashboard-counterpoint.json). To add it to your Grafana just copy-paste the content.
+
 ### Jobs and Variables
 
 In the "Node Exporter Full" Dashboard, variables dynamically change the content of charts, queries, etc., based on selected variable values, like jobs. Refer to the [documentation](https://grafana.com/docs/grafana/latest/dashboards/variables/) for setting up variables.
 
 Use the gear icon to open Dashboard settings.
 
-Based on the given `prometheus.yml` example:
-* for Node Exporter Full Dashboard:
-
-navigate to `Home/Dashboard/Node Exporter Full/Variables/Job`:
+Based on the given `prometheus.yml` example:  
+* ** for Node Exporter Full Dashboard: ** navigate to `Home/Dashboard/Node Exporter Full/Variables/Job`:
 ```bash
 Query type = Label values
 Label* = job
-Regex = /.*server*/
-Click `Save dashboard`.
+Regex = /.*server.*/
 ```
+Click the `Save Dashboard` button.
 
-This setting filters jobs with the word `server`, making the dashboard available for Node Exporter related jobs.
 
-* For Subspace-dashboard:
+This setting filters jobs with the word `server`, surrounded by any characters, making the dashboard available for Node Exporter related jobs.
 
-Create a variable:
+* ** For Subspace-dashboard ** you will have to create a variable and edit `/Variables/Job` section in a similar way:
 
 ```bash
 Query type = Label values
 Label* = job
-Regex = /.*subspace*/
-Remember to click `Save dashboard`.
+Regex = /.*subspace.*/
 ```
+Click the `Save Dashboard` button.
 
-This setting filters jobs with the word `subspace`, linking the dashboard to Subspace node related exporters.
+
+This setting filters jobs with the word `subspace`, surrounded by any characters, linking the dashboard to Subspace node related exporters.
 
 ## 4. Scraping Metrics from Subspace Node application
 :::note
