@@ -80,15 +80,3 @@ You can use any file system with default settings, we advise against their use f
 In order to disable **CoW** on **BTRFS**, run the command `chattr +C /your_farmer_directory/`.
 
 In case of **ZFS**, you can try adjusting the **recordsize** by running `zfs set recordsize=128K tank/dataset`, or creating a separate **dataset** for the farmer with adjusted **recordsize** parameters.
-
-
-### Folder structure
-
-Starting with Gemini 3h, **Subspace Node** will create a following directory structure:
-
-- subspace-node/db
-- subspace-node/domains/0/keystore
-- subspace-node/domains/0/db
-- subspace-node/domains/1/keystore
-- subspace-node/domains/1/db
-- subspace-node/network
