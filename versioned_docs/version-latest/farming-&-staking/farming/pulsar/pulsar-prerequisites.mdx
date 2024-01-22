@@ -52,15 +52,33 @@ For help refer to our forum post [How to setup Subwallet & a Polkadot.js Wallet]
 - *make sure to follow the Bonus section of the bottom of the post above.*
 
 
-### Required ports
 
-Currently, a few ports need to be exposed for node to work properly.
+### Required Ports
 
-If you have a server with no firewall, there is nothing to be done, but otherwise make sure to open the following TCP and UDP ports for incoming connections.
+For the smooth operation of our blockchain node, specific ports must be open to handle incoming connections. These ports are essential for various functions within our network.
 
-- `30333`
-- `30433`
-- `30533`
+#### Ports to Open
 
-On the desktop side if you have a router in front of your computer, you'll need to forward TCP and UDP ports to the machine on which your node is running (how this is done varies from router to router, but there is always a feature like this, refer to [How to Forward Ports](../additional-guides/port-forwarding) for a more in-depth tutorial).
-If you're connected directly without any router, then again nothing needs to be done in such case.
+Ensure the following **TCP** and **UDP** ports are open for incoming connections:
+
+1. **30333 (Blockchain Network Port):** This is the primary port for blockchain network communication. It's essential for the node to connect and interact with the blockchain network.
+
+2. **30433 (DSN Listener Port):** This port is used by the node to listen to the Decentralized Storage Network (DSN). It's crucial for data storage and retrieval operations within the blockchain ecosystem.
+
+3. **30533 (Farmer Listener Port):** This port is designated for the farmer to listen to the DSN. It plays a key role in managing and operating the decentralized farming activities on the network.
+
+#### Special Note on Port 9944
+
+- **9944 (RPC Port):** This port is used for Remote Procedure Call (RPC) between the node and the farmer. It's important to note that port 9944 does **not** require forwarding if the node and farmer are on the same local network, as they communicate internally.
+
+#### Configuring Your Network
+
+- **Router Configuration (Desktop):** If you're using a router, you'll need to forward the specified TCP and UDP ports to the machine running your node. The process varies across different router models. Please refer to our [How to Forward Ports](../Additional-Guides/port-forwarding) guide for a detailed tutorial.
+
+- **No Firewall Scenario:** If your server operates without a firewall, no additional configuration is needed.
+
+- **With Firewall:** Ensure that the above-mentioned TCP and UDP ports are open in your firewall settings.
+
+- **Direct Connection:** If your computer is connected directly to the internet (without a router), no further action is required.
+
+By correctly configuring these ports, you ensure reliable and secure communication within our blockchain network.
