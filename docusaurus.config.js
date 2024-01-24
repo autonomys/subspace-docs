@@ -61,10 +61,6 @@ const config = {
         redirects: [
           //Latest Links
           {
-            to: '/docs/category/pulsar',
-            from: '/docs/category/pulsar',
-          },
-          {
             to: '/docs/participate/contribute',
             from: '/docs/community/contribute/',
           },
@@ -134,11 +130,11 @@ const config = {
             from: "/docs/farming-&-staking/pre-release/staking/operators"
           },
           {
-            to: "/docs/networking",
+            to: "/docs/farming-&-staking/farming/additional-guides/networking",
             from: "/docs/farming-&-staking/farming/additional-guides/port-forwarding"
           },
           {
-            to: "/docs/pre-release/networking",
+            to: "/docs/pre-release/farming-&-staking/farming/additional-guides/networking",
             from: "/docs/pre-release/farming-&-staking/farming/additional-guides/port-forwarding"
           }
         ],
