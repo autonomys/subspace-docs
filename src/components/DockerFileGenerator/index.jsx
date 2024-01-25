@@ -121,8 +121,7 @@ services:
         "--dsn-listen-on", "/ip4/0.0.0.0/tcp/30433",
         "--rpc-cors", "all",
         "--rpc-methods", "unsafe",
-        "--rpc-listen-on",
-        "--no-private-ipv4",
+        "--rpc-listen-on", "0.0.0.0:9944",
         "--farmer",
         "--name", "${formData.nodeName}"
       ]

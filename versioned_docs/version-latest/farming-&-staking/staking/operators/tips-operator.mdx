@@ -13,34 +13,20 @@ import CodeBlock from '@theme/CodeBlock';
 import Link from '@docusaurus/Link';
 import styles from '@site/src/pages/index.module.css';
 
-### Create operator key (alternative, less secure way):
-An operator needs a key pair to participate in bundle production.
-You can create a key using the following command:
-
-```bash
-target/production/subspace-node run key generate --scheme sr25519
-```
-
-![Staking-4](/img/doc-imgs/operators-staking/Staking-4.png)
-
-Back up the key. Take the `public key (hex)` of the Keypair. The public key is part of the operator config we will be using later on [Staking portal](https://staking.subspace.tools) or [PolkadotJS portal](https://polkadot.js.org/apps/#/explorer).
 
 #### Insert key to Keystore:
-The key generated above needs to be added to the Keystore so that the operator node can use it to participate in bundle production.
+This might be useful if you decicded to switch domains and already have **the secret phrase**. Read more about switching domain in the next section.
 
 To insert the key, use the following command:
 
 ```bash
-target/production/subspace-node run domain insert-key \
---base-path PATH_TO_NODE --domain-id 0 --keystore-suri "<Secret phrase>" --key-type oper --scheme sr25519
+target/production/subspace-node domain key insert \
+--base-path PATH_TO_NODE --domain-id DOMAIN_ID --keystore-suri "<Secret phrase>" --key-type oper --scheme sr25519
 ```
 
-The command above assumes `/keystore` as the keystore location.
-`suri` is the secret phrase of the operator key.
+The command above will insert the keypair in the subfolder of `PATH_TO_NODE/domains/DOMAIN_ID/keystore`.
 
-:::tip
-`tmp` folder on linux based systems will be emptied upon the system reboot. Make sure to store the keypair in a secure and permanent location.  
-:::
+`suri` is the secret phrase of the operator key.
 
 ### Switch domains
 
@@ -59,6 +45,10 @@ In order to switch domain:
 
 Only the account who registered **Operator** can swith the domain.
 
+:::
+
+:::note
+You need to update the move your keypain to a new location, if you switch domains. Follow the [insert key to keystore section](#insert-key-to-keystore)
 :::
 
 :::note
@@ -126,17 +116,15 @@ To run both operator and validator at the same time, provide requrired flags for
 --chain gemini-3g \`
 --blocks-pruning 256 \`
 --state-pruning archive \`
---no-private-ipv4 \`
 --farmer \`
 --name your_node_name \`
 -- \`
 --domain-id your_domain_id \`
 --operator-id your_operator_id \`
---keystore-path /keystore \`
 --listen-on /ip4/0.0.0.0/tcp/40333 \`
---bootstrap-nodes /ip4/3.87.28.170/tcp/40333/p2p/12D3KooWGHtULvhdKMZtzigSK1438uWXPj9rBQHVzTaKMWv1WRXp \`
---bootstrap-nodes /ip4/140.82.45.36/tcp/40333/p2p/12D3KooWJxB2PVzyNqZywoCWAMLGhKr2LCbFMXbAPzUPQZon7yt1 \`
---bootstrap-nodes /ip4/167.179.116.135/tcp/40333/p2p/12D3KooWHsRae3ip2uQAUPtpMcStHGGw777SJT3nu9maFmtsGry7 `}
+--bootstrap-nodes /dns/bootstrap-0.nova.gemini-3h.subspace.network/tcp/30334/p2p/12D3KooWGHtULvhdKMZtzigSK1438uWXPj9rBQHVzTaKMWv1WRXp \`
+--bootstrap-nodes /dns/bootstrap-1.nova.gemini-3h.subspace.network/tcp/30334/p2p/12D3KooWJxB2PVzyNqZywoCWAMLGhKr2LCbFMXbAPzUPQZon7yt1 \`
+--bootstrap-nodes /dns/bootstrap-2.nova.gemini-3h.subspace.network/tcp/30334/p2p/12D3KooWHsRae3ip2uQAUPtpMcStHGGw777SJT3nu9maFmtsGry7 `}
 </CodeBlock>
 
 </TabItem>
@@ -149,17 +137,15 @@ To run both operator and validator at the same time, provide requrired flags for
 --chain gemini-3g \\
 --blocks-pruning 256 \\
 --state-pruning archive \\
---no-private-ipv4 \\
 --farmer \\
 --name your_node_name \\
 -- \\
 --domain-id your_domain_id \\
 --operator-id your_operator_id \\
---keystore-path /keystore \\
 --listen-on /ip4/0.0.0.0/tcp/40333 \\
---bootstrap-nodes /ip4/3.87.28.170/tcp/40333/p2p/12D3KooWGHtULvhdKMZtzigSK1438uWXPj9rBQHVzTaKMWv1WRXp \\
---bootstrap-nodes /ip4/140.82.45.36/tcp/40333/p2p/12D3KooWJxB2PVzyNqZywoCWAMLGhKr2LCbFMXbAPzUPQZon7yt1 \\
---bootstrap-nodes /ip4/167.179.116.135/tcp/40333/p2p/12D3KooWHsRae3ip2uQAUPtpMcStHGGw777SJT3nu9maFmtsGry7 `}
+--bootstrap-nodes /dns/bootstrap-0.nova.gemini-3h.subspace.network/tcp/30334/p2p/12D3KooWGHtULvhdKMZtzigSK1438uWXPj9rBQHVzTaKMWv1WRXp \\
+--bootstrap-nodes /dns/bootstrap-1.nova.gemini-3h.subspace.network/tcp/30334/p2p/12D3KooWJxB2PVzyNqZywoCWAMLGhKr2LCbFMXbAPzUPQZon7yt1 \\
+--bootstrap-nodes /dns/bootstrap-2.nova.gemini-3h.subspace.network/tcp/30334/p2p/12D3KooWHsRae3ip2uQAUPtpMcStHGGw777SJT3nu9maFmtsGry7 `}
 </CodeBlock>
 
 </TabItem>
@@ -171,17 +157,15 @@ To run both operator and validator at the same time, provide requrired flags for
 --chain gemini-3g \\
 --blocks-pruning 256 \\
 --state-pruning archive \\
---no-private-ipv4 \\
 --farmer \\
 --name your_node_name \\
 -- \\
 --domain-id your_domain_id \\
 --operator-id your_operator_id \\
---keystore-path /keystore \\
 --listen-on /ip4/0.0.0.0/tcp/40333 \\
---bootstrap-nodes /ip4/3.87.28.170/tcp/40333/p2p/12D3KooWGHtULvhdKMZtzigSK1438uWXPj9rBQHVzTaKMWv1WRXp \\
---bootstrap-nodes /ip4/140.82.45.36/tcp/40333/p2p/12D3KooWJxB2PVzyNqZywoCWAMLGhKr2LCbFMXbAPzUPQZon7yt1 \\
---bootstrap-nodes /ip4/167.179.116.135/tcp/40333/p2p/12D3KooWHsRae3ip2uQAUPtpMcStHGGw777SJT3nu9maFmtsGry7 `}
+--bootstrap-nodes /dns/bootstrap-0.nova.gemini-3h.subspace.network/tcp/30334/p2p/12D3KooWGHtULvhdKMZtzigSK1438uWXPj9rBQHVzTaKMWv1WRXp \\
+--bootstrap-nodes /dns/bootstrap-1.nova.gemini-3h.subspace.network/tcp/30334/p2p/12D3KooWJxB2PVzyNqZywoCWAMLGhKr2LCbFMXbAPzUPQZon7yt1 \\
+--bootstrap-nodes /dns/bootstrap-2.nova.gemini-3h.subspace.network/tcp/30334/p2p/12D3KooWHsRae3ip2uQAUPtpMcStHGGw777SJT3nu9maFmtsGry7 `}
 </CodeBlock>
 </TabItem>
 
@@ -223,8 +207,7 @@ services:
       "--dsn-listen-on", "/ip4/0.0.0.0/tcp/30433",
       "--rpc-cors", "all",
       "--rpc-methods", "unsafe",
-      "--rpc-listen-on",
-      "--no-private-ipv4",
+      "--rpc-listen-on", "0.0.0.0:9944",
       "--farmer",
       "--name", "INSERT_YOUR_ID",
       "--",
@@ -232,11 +215,10 @@ services:
       "--domain-id", "INSERT_YOUR_DOMAIN_ID",
       # Replace INSERT_YOUR_OPERATOR_ID with your operator ID
       "--operator-id", "INSERT_YOUR_OPERATOR_ID",
-      "--keystore-path", "/keystore",
       "--listen-on", "/ip4/0.0.0.0/tcp/40333",
-      "--bootstrap-nodes", "/ip4/3.87.28.170/tcp/40333/p2p/12D3KooWGHtULvhdKMZtzigSK1438uWXPj9rBQHVzTaKMWv1WRXp",
-      "--bootstrap-nodes", "/ip4/140.82.45.36/tcp/40333/p2p/12D3KooWJxB2PVzyNqZywoCWAMLGhKr2LCbFMXbAPzUPQZon7yt1",
-      "--bootstrap-nodes", "/ip4/167.179.116.135/tcp/40333/p2p/12D3KooWHsRae3ip2uQAUPtpMcStHGGw777SJT3nu9maFmtsGry7",
+      "--bootstrap-nodes", "/dns/bootstrap-0.nova.gemini-3h.subspace.network/tcp/30334/p2p/12D3KooWGHtULvhdKMZtzigSK1438uWXPj9rBQHVzTaKMWv1WRXp",
+      "--bootstrap-nodes", "/dns/bootstrap-1.nova.gemini-3h.subspace.network/tcp/30334/p2p/12D3KooWJxB2PVzyNqZywoCWAMLGhKr2LCbFMXbAPzUPQZon7yt1",
+      "--bootstrap-nodes", "/dns/bootstrap-2.nova.gemini-3h.subspace.network/tcp/30334/p2p/12D3KooWHsRae3ip2uQAUPtpMcStHGGw777SJT3nu9maFmtsGry7",
 # Replace INSERT_YOUR_ID with your node ID (will be shown in telemetry)
     ]
     healthcheck:

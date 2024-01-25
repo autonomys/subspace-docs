@@ -45,113 +45,14 @@ The example is not Stake Wars specific, the operator is responsible for finding 
 
 ### Create operator key (recommended way)
 
-An operator needs a key pair to participate in bundle production.
+To create a new operator key, run the following command:
+`subspace-node domain key create --base-path /tmp/node --domain-id 0`
 
-<Tabs groupId="PreferredMethod">
-
-<TabItem value="curl" label="curl" default>
-
-1. Start a node on a developer chain by running `./target/release/subspace-node run --dev --base-path PATH_TO_YOUR_NODE -- --domain-id 0 --rpc-cors all`
-
-:::tip
-You can use any chain to generate a keypair, we recommend using a `dev` chain for simplicity. 
-It's important to specify the correct **PATH_TO_NODE** and **domain_id**, and use the same values when you start an **operator node** on one of the next steps.
-:::
-
-2. Open another terminal and use the `curl` command to make an **RPC** call to your node. This will generate a new key in the subfolder of **PATH_TO_NODE** you previously specified.
-
-<Tabs groupId="OS">
-
-<TabItem value="windows" label="🖼️ Windows" default>
-
-<CodeBlock>
-{`curl.exe -X POST http://127.0.0.1:9945 \`
--H "Content-Type: application/json;charset=utf-8" \`
--d '{
-"jsonrpc":"2.0",
-"id":1,
-"method":"author_rotateKeys",
-"params": []
-}'`}
-</CodeBlock>
-</TabItem>
-
-
-<TabItem value="macos" label="🍎 macOS">
-<CodeBlock>
-{`curl -X POST http://127.0.0.1:9945 \\
--H "Content-Type: application/json;charset=utf-8" \\
--d '{
-"jsonrpc":"2.0",
-"id":1,
-"method":"author_rotateKeys",
-"params": []
-}'`}
-</CodeBlock> 
-</TabItem>
-
-<TabItem value="linux" label="🐧 Ubuntu">
-
-<CodeBlock>
-{`curl -X POST http://127.0.0.1:9945 \\
--H "Content-Type: application/json;charset=utf-8" \\
--d '{
-"jsonrpc":"2.0",
-"id":1,
-"method":"author_rotateKeys",
-"params": []
-}'`}
-</CodeBlock>
-</TabItem>
-
-</Tabs>
-</TabItem>
-
-<TabItem value="docker" label="UI (using Docker)">
-
-1. Make sure to have [Docker installed](https://www.docker.com/get-started/).
-You can run `docker -v` in the terminal of your choice to make sure it's installed. 
-2. Start a developer node by running
-`./target/release/subspace-node run --dev --base-path PATH_TO_YOUR_NODE -- --domain-id 0 --rpc-cors all`
-
-:::tip
-You can use any chain to generate a keypair, we recommend using a `dev` chain for simplicity. 
-You can adjust the `--keystore-path` if you prefer to generate the keys in a different location.  
-:::
-
-3. Start a local polkadot interface portal by running a docker contrainer.
-
-`docker run --rm -it --name polkadot-ui -e WS_URL=ws://0.0.0.0:9945 -p 80:80 jacogr/polkadot-js-apps:latest`
-
-4. Proceed to the browswer and type `localhost` in the search bar. You should be taken to the polkadot portal. 
-
-![RPC-2](/img/doc-imgs/operators-staking/RPC-2.png)
-
-5. Navigate to `developer` -> `rpc calls`
-
-6. Select `author` in `call the selected endpoint` and pick a `rotateKeys()` in the dropdown.
-
-![RPC-3](/img/doc-imgs/operators-staking/RPC-3.png)
-
-7. Press on `Submit RPC call`.
-
-8. You will see a newly generated key on the screen. The key will also be written in a `keystore` location you specified earlier. 
-
-:::tip
-You will use this key in order to register an operator later.
-:::
-
-</TabItem>
-
-</Tabs>
+Make sure to use the base **--base-path** for the key generation, and running an operator node and make sure to replace **--domain-id value** with the domainID you would like to be an operator on.
 
 **You have successfully generated an operator key, congratulations!**
 
-The keys were generated in the subfolder of **PATH_TO_NODE** you speficied and will be following [the updated Subspace node folder structure](../intro#folder-structure). If you don't see the generated keypair in the folder with name of the **domain ID** you specified, something went wrong. 
-
-#### Example
-
-If I wanted to generate a keypair for **the domain ID 1**, my keypair needs to be located under `PATH_TO_NODE/1/keystore`.
+The keys were generated in the subfolder of **PATH_TO_NODE** under `/domains/domainID/keystore`. If you don't see the generated keypair in the subfolder, something went wrong. 
 
 ### Start the domain operator node
 
@@ -162,7 +63,7 @@ subspace-node [consensus-chain-args] -- [domain-args]
 ```
 
 Example:
-Start a node as operator on `gemini-3g` chain:
+Start a node as operator on `gemini-3h` chain:
 
 :::info
 You need to **wipe** and sync your node from genesis block, since you need to sync both consensus and domain chains.
@@ -189,11 +90,10 @@ You can ignore setting up `your_operator_id` while you're syncing your node. Mak
 -- \`
 --domain-id your_domain_id \`
 --operator-id your_operator_id \`
---bootstrap-nodes /ip4/3.87.28.170/tcp/40333/p2p/12D3KooWGHtULvhdKMZtzigSK1438uWXPj9rBQHVzTaKMWv1WRXp \`
---bootstrap-nodes /ip4/140.82.45.36/tcp/40333/p2p/12D3KooWJxB2PVzyNqZywoCWAMLGhKr2LCbFMXbAPzUPQZon7yt1 \`
---bootstrap-nodes /ip4/167.179.116.135/tcp/40333/p2p/12D3KooWHsRae3ip2uQAUPtpMcStHGGw777SJT3nu9maFmtsGry7 \`
---listen-on /ip4/0.0.0.0/tcp/40333 \`
---keystore-path /keystore`}
+--bootstrap-nodes /dns/bootstrap-0.nova.gemini-3h.subspace.network/tcp/30334/p2p/12D3KooWGHtULvhdKMZtzigSK1438uWXPj9rBQHVzTaKMWv1WRXp \`
+--bootstrap-nodes /dns/bootstrap-1.nova.gemini-3h.subspace.network/tcp/30334/p2p/12D3KooWJxB2PVzyNqZywoCWAMLGhKr2LCbFMXbAPzUPQZon7yt1 \`
+--bootstrap-nodes /dns/bootstrap-2.nova.gemini-3h.subspace.network/tcp/30334/p2p/12D3KooWHsRae3ip2uQAUPtpMcStHGGw777SJT3nu9maFmtsGry7 \`
+--listen-on /ip4/0.0.0.0/tcp/40333`}
 </CodeBlock>
 
 </TabItem>
@@ -208,11 +108,10 @@ You can ignore setting up `your_operator_id` while you're syncing your node. Mak
 -- \\
 --domain-id your_domain_id \\
 --operator-id your_operator_id \\
---bootstrap-nodes /ip4/3.87.28.170/tcp/40333/p2p/12D3KooWGHtULvhdKMZtzigSK1438uWXPj9rBQHVzTaKMWv1WRXp \\
---bootstrap-nodes /ip4/140.82.45.36/tcp/40333/p2p/12D3KooWJxB2PVzyNqZywoCWAMLGhKr2LCbFMXbAPzUPQZon7yt1 \\
---bootstrap-nodes /ip4/167.179.116.135/tcp/40333/p2p/12D3KooWHsRae3ip2uQAUPtpMcStHGGw777SJT3nu9maFmtsGry7 \\
---listen-on /ip4/0.0.0.0/tcp/40333 \\
---keystore-path /keystore`}
+--bootstrap-nodes /dns/bootstrap-0.nova.gemini-3h.subspace.network/tcp/30334/p2p/12D3KooWGHtULvhdKMZtzigSK1438uWXPj9rBQHVzTaKMWv1WRXp \\
+--bootstrap-nodes /dns/bootstrap-1.nova.gemini-3h.subspace.network/tcp/30334/p2p/12D3KooWJxB2PVzyNqZywoCWAMLGhKr2LCbFMXbAPzUPQZon7yt1 \\
+--bootstrap-nodes /dns/bootstrap-2.nova.gemini-3h.subspace.network/tcp/30334/p2p/12D3KooWHsRae3ip2uQAUPtpMcStHGGw777SJT3nu9maFmtsGry7 \\
+--listen-on /ip4/0.0.0.0/tcp/40333`}
 </CodeBlock>
 
 </TabItem>
@@ -227,11 +126,10 @@ You can ignore setting up `your_operator_id` while you're syncing your node. Mak
 -- \\
 --domain-id your_domain_id \\
 --operator-id your_operator_id \\
---bootstrap-nodes /ip4/3.87.28.170/tcp/40333/p2p/12D3KooWGHtULvhdKMZtzigSK1438uWXPj9rBQHVzTaKMWv1WRXp \\
---bootstrap-nodes /ip4/140.82.45.36/tcp/40333/p2p/12D3KooWJxB2PVzyNqZywoCWAMLGhKr2LCbFMXbAPzUPQZon7yt1 \\
---bootstrap-nodes /ip4/167.179.116.135/tcp/40333/p2p/12D3KooWHsRae3ip2uQAUPtpMcStHGGw777SJT3nu9maFmtsGry7 \\
---listen-on /ip4/0.0.0.0/tcp/40333 \\
---keystore-path /keystore`}
+--bootstrap-nodes /dns/bootstrap-0.nova.gemini-3h.subspace.network/tcp/30334/p2p/12D3KooWGHtULvhdKMZtzigSK1438uWXPj9rBQHVzTaKMWv1WRXp \\
+--bootstrap-nodes /dns/bootstrap-1.nova.gemini-3h.subspace.network/tcp/30334/p2p/12D3KooWJxB2PVzyNqZywoCWAMLGhKr2LCbFMXbAPzUPQZon7yt1 \\
+--bootstrap-nodes /dns/bootstrap-2.nova.gemini-3h.subspace.network/tcp/30334/p2p/12D3KooWHsRae3ip2uQAUPtpMcStHGGw777SJT3nu9maFmtsGry7 \\
+--listen-on /ip4/0.0.0.0/tcp/40333`}
 </CodeBlock>
 
 </TabItem>
@@ -267,7 +165,7 @@ services:
       "run",
       "--chain", "gemini-3h",
       "--base-path", "/var/subspace",
-      "--listen-on", "30333",
+      "--listen-on", "0.0.0.0:30333",
       "--dsn-listen-on", "/ip4/0.0.0.0/udp/30433/quic-v1",
       "--dsn-listen-on", "/ip4/0.0.0.0/tcp/30433",
       # Replace INSERT_YOUR_ID with your node ID (will be shown in telemetry)
@@ -278,10 +176,9 @@ services:
       # Replace INSERT_YOUR_OPERATOR_ID with your operator ID
       "--operator-id", "INSERT_YOUR_OPERATOR_ID",
       "--listen-on", "/ip4/0.0.0.0/tcp/40333",
-      "--bootstrap-nodes", "/ip4/3.87.28.170/tcp/40333/p2p/12D3KooWGHtULvhdKMZtzigSK1438uWXPj9rBQHVzTaKMWv1WRXp",
-      "--bootstrap-nodes", "/ip4/140.82.45.36/tcp/40333/p2p/12D3KooWJxB2PVzyNqZywoCWAMLGhKr2LCbFMXbAPzUPQZon7yt1",
-      "--bootstrap-nodes", "/ip4/167.179.116.135/tcp/40333/p2p/12D3KooWHsRae3ip2uQAUPtpMcStHGGw777SJT3nu9maFmtsGry7",
-      "--keystore-path", "/keystore"
+      "--bootstrap-nodes", "/dns/bootstrap-0.nova.gemini-3h.subspace.network/tcp/30334/p2p/12D3KooWGHtULvhdKMZtzigSK1438uWXPj9rBQHVzTaKMWv1WRXp",
+      "--bootstrap-nodes", "/dns/bootstrap-1.nova.gemini-3h.subspace.network/tcp/30334/p2p/12D3KooWJxB2PVzyNqZywoCWAMLGhKr2LCbFMXbAPzUPQZon7yt1",
+      "--bootstrap-nodes", "/dns/bootstrap-2.nova.gemini-3h.subspace.network/tcp/30334/p2p/12D3KooWHsRae3ip2uQAUPtpMcStHGGw777SJT3nu9maFmtsGry7"
     ]
     healthcheck:
       timeout: 5s
@@ -395,4 +292,4 @@ Alternatively, you can use [Subscan](https://subspace.subscan.io/) which is a li
 
 ![Staking-12](/img/doc-imgs/operators-staking/Staking-12.png)
 
-7. Inspect and remember your `domain_id`. 
+7. Inspect and remember your `domain_id`.

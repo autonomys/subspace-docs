@@ -88,7 +88,6 @@ ExecStart=${formData.nodeBinPath} \\
           --keep-blocks ${formData.archival === "on" ? "archive-canonical" : "256"} \\
           --chain ${chain} \\
           --farmer \\
-          --no-private-ipv4 \\
           --listen-on /ip4/0.0.0.0/tcp/${formData.nodePort} \\
           --dsn-listen-on /ip4/0.0.0.0/udp/${formData.nodeDsnPort}/quic-v1 \\
           --dsn-listen-on /ip4/0.0.0.0/tcp/${formData.nodeDsnPort} \\
