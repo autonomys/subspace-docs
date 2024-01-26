@@ -24,7 +24,7 @@ The Subspace Network is an ambitious layer zero protocol which is the first scal
 ---
 ### **Become a farmer**
 
-**Farmers** on the Subspace Network are responsible for maintaining consensus, or safety of the Consensus Chain. A **farmer** plots pieces of Archival History to disk, farms the created plot for block rewards, and joins the DSN as a node for data retrieval.
+**Farmers** on the Subspace Network are responsible for maintaining consensus, they do this by securing the **consensus chain**. A **farmer** plots pieces of **archival history** to disk, farms the created plot for block and vote rewards, and joins the DSN as a node for data retrieval.
 
 Choose one of the following methods to **start farming** on the Network (from easy to more complex):
 
@@ -33,7 +33,7 @@ Choose one of the following methods to **start farming** on the Network (from ea
 
 ### **Become a nominator**
 
-Farmers can nominate **operators** and back them with their tokens, increasing their stake and chance of being elected as slot leaders. Generally speaking, any SSC token holder can stake their tokens by **nominating** a domain operator, without having to become an operator or farmer themselves. **Nominators** are earning **staking** rewards, propotional to their **staking amount** and **nominators tax**.
+Farmers can nominate **operators** and back them with their tokens, increasing their stake and chance of being elected as slot leaders. Generally speaking, any SSC token holder can stake their tokens by **nominating** a domain operator without having to become an operator or farmer themselves. **Nominators** earn **staking** rewards, proportional to their **staking amount** and pay the nominator a pre-agreed **tax** on them.
 
 #### - [Start Nominating](../farming-&-staking/staking/)
 
@@ -45,20 +45,20 @@ Farmers can nominate **operators** and back them with their tokens, increasing t
 
 ### **Become a timekeeper**
 
-**Timekeepers** on the Subspace Network responsible for running the **Proof-of-Time chain** and maintaining the randomness beacon for the **Consensus Chain**.
+**Timekeepers** on the Subspace Network are responsible for running the **Proof-of-Time chain** and maintaining the randomness beacon for the **consensus chain**.
 
 #### - [Start timekeeping](../farming-&-staking/timekeeping)
 
-## 📖 Develop on the Subspace Network
+## 📖 Develop on The Subspace Network
 ---
 
 ### Utilize the EVM Domain
 
-The Subspace Network has a running **EVM (Ethereum Virtual Machine)**, that allows you to deploy your **smart contracts.** 
+The Subspace Network hosts an **EVM (Ethereum Virtual Machine)**, that allows you to deploy your **smart contracts.** 
 
 #### - [EVM Development](../develop/nova/intro)
 
 ### Utilize the Core Protocol
-The Subspace Network aims to provide an amazing developer experience to anyone who wishes to build on top of the protocol. As such we have started working on a variety of tools to help with development within our network. 
+The Subspace Network aims to provide an amazing developer experience to anyone who wishes to build on top of the protocol. As such we have started working on a variety of tools to assist and promote development on our network. 
 
 #### - [Core Protocol Development](https://github.com/subspace/subspace/blob/main/docs/development.md)
