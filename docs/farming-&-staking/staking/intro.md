@@ -74,7 +74,7 @@ Starting with Gemini 3h, **Subspace Node** will create the following directory s
 - subspace-node/domains/1/db
 - subspace-node/network
 
-For operators it means that you can no longer create a keystore in a random location, the keystore has to be located in a specific subfolder of the desired domain and will be
+For operators it means that you can find your key pair under `/domains/domainID/keystore`.
 
 ### Staking
 
