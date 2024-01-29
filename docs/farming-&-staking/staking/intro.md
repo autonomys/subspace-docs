@@ -65,7 +65,7 @@ Our suggested specs are not necessarily applicable to Stake Wars. We encourage a
 
 ### Folder structure
 
-Starting with Gemini 3h, **Subspace Node** will create a following directory structure:
+Starting with Gemini 3h, **Subspace Node** will create the following directory structure:
 
 - subspace-node/db
 - subspace-node/domains/0/keystore
@@ -74,7 +74,7 @@ Starting with Gemini 3h, **Subspace Node** will create a following directory str
 - subspace-node/domains/1/db
 - subspace-node/network
 
-For operators it means that you no longer can create a keystore in a random location, the keystore has to be located in a specific subfolder of the desired domain. 
+For operators it means that you can no longer create a keystore in a random location, the keystore has to be located in a specific subfolder of the desired domain and will be
 
 ### Staking
 
@@ -82,9 +82,9 @@ The Subspace Network relies on staking from both domain operators and farmers to
 
 Our staking model consists of two tiers:
 
-- Farmers earn rewards proportional to their pledged storage. Farmers can choose to nominate operators and back them with their own stake, increasing their chance of being elected as a slot leader. Farmers, who have earned storage rewards, nominate operators to execute transactions. This nomination system balances the power between farmers who nominate and operators and both parties share the execution fees and the potential penalties (slashing). 
+- Farmers earn rewards proportional to their pledged storage. Farmers can choose to nominate operators and back them with their own stake, increasing their chance of being elected as a slot leader. Farmers, who have earned storage rewards, nominate operators to execute transactions. This nomination system balances the power between farmers who nominate and operators with both parties sharing the execution fees and the potential penalties (slashing). 
 
-- Operators stake to gain the right to produce bundles within a domain. They are responsible for validating and executing transactions, producing execution receipts, applying state transitions, submitting a storage fee for the bundle execution and earning fees for their work. The operator's chances to be elected as a slot leader and produce a bundle are weighted by their stake. Operators can be nominated by farmers or other SSC holders. 
+- Operators stake to gain the right to produce bundles within a domain. They are responsible for validating and executing transactions, producing execution receipts, applying state transitions, submitting a storage fee for bundle execution and earning fees for their work. The operator's chances to be elected as a slot leader and produce a bundle are weighted by their stake. Operators can be nominated by farmers or other SSC holders.
 
 The nomination pools in Subspace are "lazy": any fees earned by the operator are assigned to the pool and are not deposited to the nominators wallet unless they ask for a withdrawal. Unless withdrawn, the fees are "auto-staked" - they count towards the total stake of the pool, increasing its chance of being elected to produce bundles.
 

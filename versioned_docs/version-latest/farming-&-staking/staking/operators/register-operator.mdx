@@ -48,11 +48,15 @@ The example is not Stake Wars specific, the operator is responsible for finding 
 To create a new operator key, run the following command:
 `subspace-node domain key create --base-path /tmp/node --domain-id 0`
 
-Make sure to use the base **--base-path** for the key generation, and running an operator node and make sure to replace **--domain-id value** with the domainID you would like to be an operator on.
+Make sure to specify the base **--base-path** for the key generation, and running an operator node and make sure to replace **--domain-id value** with the domain ID you would like to be an operator on.
 
 **You have successfully generated an operator key, congratulations!**
 
-The keys were generated in the subfolder of **PATH_TO_NODE** under `/domains/domainID/keystore`. If you don't see the generated keypair in the subfolder, something went wrong. 
+:::note
+Be sure to record and securely store the printed seed phrase. If it is leaked or stolen, both your operator and nominator stakes could be at risk of being slashed.
+:::
+
+The keys were generated in the subfolder of **NODE_DATA_PATH** under `/domains/domainID/keystore`. If you don't see the generated keypair in the subfolder, something went wrong. 
 
 ### Start the domain operator node
 
@@ -86,7 +90,7 @@ You can ignore setting up `your_operator_id` while you're syncing your node. Mak
 {`target/production/subspace-node run \`
 --chain gemini-3h \`
 --name your_node_name \`
---base-path your_path_to_node_data \`
+--base-path NODE_DATA_PATH \`
 -- \`
 --domain-id your_domain_id \`
 --operator-id your_operator_id \`
@@ -104,7 +108,7 @@ You can ignore setting up `your_operator_id` while you're syncing your node. Mak
 {`target/production/subspace-node run \\
 --chain gemini-3h \\
 --name your_node_name \\
---base-path your_path_to_node_data \\
+--base-path NODE_DATA_PATH \\
 -- \\
 --domain-id your_domain_id \\
 --operator-id your_operator_id \\
@@ -122,7 +126,7 @@ You can ignore setting up `your_operator_id` while you're syncing your node. Mak
 {`target/production/subspace-node run \\
 --chain gemini-3h \\
 --name your_node_name \\
---base-path your_path_to_node_data \\
+--base-path NODE_DATA_PATH \\
 -- \\
 --domain-id your_domain_id \\
 --operator-id your_operator_id \\

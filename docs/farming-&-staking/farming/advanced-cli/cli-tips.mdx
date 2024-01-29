@@ -63,7 +63,7 @@ If you were running a node previously, and want to switch to a new network, plea
 # Replace `FARMER_FILE_NAME` with the name of the farmer file you downloaded from releases
 ./FARMER_FILE_NAME wipe PATH_TO_FARM
 # Replace `NODE_FILE_NAME` with the name of the node file you downloaded from releases
-./NODE_FILE_NAME wipe PATH_TO_NODE
+./NODE_FILE_NAME wipe NODE_DATA_PATH
 ```
 It does not matter if the node/farmer executable is the previous one or from the new snapshot, both will work.
 
@@ -167,11 +167,11 @@ NUMA support will benefit farmers with large, powerful CPUs and lots of RAM avai
 
 Previously plotting/replotting thread pools were created for each farm separately even though only a configured number of them can be used at a time (by default just one).
 With the introduction of NUMA support, the farmer application has a thread pool manager that will create a necessary number of thread pools that will be allocated to currently plotting/replotting farms. 
-When a thread pool is created, it is assigned to a set of CPU cores and will only be able to use those cores. Pinning doesn’t pin threads to cores 1:1, instead, OS is free to move threads between cores, but only within CPU cores allocated for thread pool. This will ensure plotting for a particular sector only happens on a particular CPU/NUMA node.
+When a thread pool is created, it is assigned to a set of CPU cores and will only be able to use those cores. Pinning doesn’t pin threads to cores 1:1, instead, the OS is free to move threads between cores, but only within CPU cores allocated for the thread pool. This will ensure plotting for a particular sector only happens on a particular CPU/NUMA node.
 
 #### Enabling NUMA on Windows/Linux machines
 
-On Linux and Windows, the farmer will detect NUMA systems and create a number of thread pools that correspond to a number of NUMA nodes. This means the default behavior will change for large CPUs and consume more memory as a result, but that can be changed to the previous behavior with CLI options if desired.
+On Linux and Windows, the farmer will detect NUMA systems and create a number of thread pools that correspond to the number of NUMA nodes. This means the default behavior will change for large CPUs and consume more memory as a result, but that can be changed to the previous behavior with CLI options if desired.
 To use NUMA, you need to enable it via the BIOS of your motherboard for the farmer to know it exists. This option is present in motherboards for **Threadripper/Epyc processors** but might exist in others too. If you don’t enable it, both OS and farmer will think you have a single UMA processor and will not be able to apply optimizations.
 
 To read more about NUMA support and benefits it provides for large CPUs read [this forum post](https://forum.subspace.network/t/numa-support-is-coming/2299?u=nazar-pc).

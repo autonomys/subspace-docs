@@ -147,7 +147,7 @@ Example of withdrawal of 1 TSSC stake amount from nominating an operator `17`.
 ![Staking-23](/img/doc-imgs/operators-staking/Staking-23.png)
 
 
-Once the withdrawal is submitted, it's finalized after the **domain epoch** is completed. All the withdrawn funds are unlocked after the **unlocking period** is complete. The curret **unlocking period** is set to 28 800 blocks, or about 48 hours. The locking period is necessary to ensure that the domain block executing the withdrawal is confirmed and not challenged by a fraud proof and to increase the economic stability of domains.
+Once the withdrawal is submitted, it's finalized after the **domain epoch** is completed. All the withdrawn funds are unlocked after the **unlocking period** is complete. The current **unlocking period** is set to 28,800 blocks, or about 48 hours. The locking period is necessary to ensure that the domain block executing the withdrawal is confirmed and not challenged by a fraud proof and to increase the economic stability of domains.
 
 
 ### Calculating your nominator balance

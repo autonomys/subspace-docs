@@ -15,16 +15,16 @@ import styles from '@site/src/pages/index.module.css';
 
 
 #### Insert key to Keystore:
-This might be useful if you decicded to switch domains and already have **the secret phrase**. Read more about switching domain in the next section.
+This might be useful if you decided to switch domains or already have **the secret phrase**. Read more about switching domain in the next section.
 
 To insert the key, use the following command:
 
 ```bash
 target/production/subspace-node domain key insert \
---base-path PATH_TO_NODE --domain-id DOMAIN_ID --keystore-suri "<Secret phrase>" --key-type oper --scheme sr25519
+--base-path NODE_DATA_PATH --domain-id DOMAIN_ID --keystore-suri "<Secret phrase>"
 ```
 
-The command above will insert the keypair in the subfolder of `PATH_TO_NODE/domains/DOMAIN_ID/keystore`.
+The command above will insert the keypair in the subfolder of `NODE_DATA_PATH/domains/DOMAIN_ID/keystore`.
 
 `suri` is the secret phrase of the operator key.
 
@@ -48,7 +48,7 @@ Only the account who registered **Operator** can swith the domain.
 :::
 
 :::note
-You need to update the move your keypain to a new location, if you switch domains. Follow the [insert key to keystore section](#insert-key-to-keystore)
+You need to move your keypair to a new location, if you switch domains. Follow the [insert key to keystore section](#insert-key-to-keystore)
 :::
 
 :::note

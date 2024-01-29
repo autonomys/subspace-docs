@@ -64,7 +64,7 @@ After this, simply repeat the step you prompted for (step 4 or 6). This time, cl
 # Replace `INSERT_YOUR_ID` with a nickname you choose
 # Copy all of the lines below, they are all part of the same command
 ./subspace-node-macos-aarch64-gemini-3g-2024-jan-08 run \
-  --base-path path_to_node \
+  --base-path NODE_DATA_PATH \
   --chain gemini-3h \
   --blocks-pruning 256 \
   --state-pruning archive-canonical \
@@ -128,4 +128,4 @@ Setting **--base-path** and specifying **--chain** became mandatory starting wit
 2022-06-02T00:02:09.492868Z  INFO subspace_farmer::archiving: Plotted segment segment_index=5
 ```
 
-3. You are now Farming! Just wait for your node to fully sync, and for your farmer to fully plot.
+3. You are now farming! Just wait for your node to fully sync, and for your farmer to fully plot.
