@@ -45,6 +45,15 @@ In certain situations, especially when the farmer terminates unexpectedly or enc
 
 Ensure to replace /path/to/your/plot with your actual plot path. Use this command cautiously as it modifies the plot state to recover from errors.
 
+### Specify Exact CPU Cores for Plotting/Replotting
+This option will override any custom logic that the **subspace farmer** might otherwise use.
+You can specify the plotting CPU cores by adding `--plotting-cpu-cores`, followed by the desired cores parameters. Cores should be listed as comma-separated values, with whitespace used to separate different thread pools or encoding instances.
+For example, `--plotting-cpu-cores 0,1 2,3` will result in two sectors being encoded simultaneously, each using a pair of CPU cores.
+
+Similarly, you can customize the replotting CPU cores using `--replotting-cpu-cores`, followed by arguments similar to those used in the `--plotting-cpu-cores` example above.
+
+Note that setting `--plotting-cpu-cores` requires `--replotting-cpu-cores` to be configured with the same number of CPU core groups. If the `--replotting-cpu-cores` setting is omitted, the node will default to using the same thread pool as for plotting.
+
 ### Using a Custom Path
 You can set a custom path for your node & farmer to use if you want to use an external hard drive, or set a custom path from the default. You can set the node and farmer to different directories if you would like.
 
