@@ -183,4 +183,4 @@ When a thread pool is created, it is assigned to a set of CPU cores and will onl
 On Linux and Windows, the farmer will detect NUMA systems and create a number of thread pools that correspond to the number of NUMA nodes. This means the default behavior will change for large CPUs and consume more memory as a result, but that can be changed to the previous behavior with CLI options if desired.
 To use NUMA, you need to enable it via the BIOS of your motherboard for the farmer to know it exists. This option is present in motherboards for **Threadripper/Epyc processors** but might exist in others too. If you don’t enable it, both OS and farmer will think you have a single UMA processor and will not be able to apply optimizations.
 
-To read more about NUMA support and benefits it provides for large CPUs read [this forum post](https://forum.subspace.network/t/numa-support-is-coming/2299?u=nazar-pc).
+To read more about NUMA support and the benefits it provides for large CPUs read [this forum post](https://forum.subspace.network/t/numa-support-is-coming/2299?u=nazar-pc).

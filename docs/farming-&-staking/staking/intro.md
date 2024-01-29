@@ -74,7 +74,7 @@ Starting with Gemini 3h, **Subspace Node** will create the following directory s
 - subspace-node/domains/1/db
 - subspace-node/network
 
-For operators it means that you can find your key pair under `/domains/domainID/keystore`.
+For operators it means that you can find your key pair under `NODE_DATA_PATH/domains/domainID/keystore`.
 
 ### Staking
 
