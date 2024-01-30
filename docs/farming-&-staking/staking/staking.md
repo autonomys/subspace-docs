@@ -134,11 +134,12 @@ Any **operator** or **nominator** can initiate withdrawal. They can withdraw the
 - If an operator is initiating a withdrawal, then their remaining balance should be at least the minimum operator stake, otherwise the request is rejected.
 - If a nominator is initiating a withdrawal, and the remaining balance is less than the operator-defined minimum nominator stake, then the total nominator stake is unlocked otherwise, only the requested amount is unlocked.
 
-
-1. Select the account you want to use in `using the selected account`.
-2. Select `domains` under `submit the following extrinsic` and choose `withdrawStake(operatorId, withdraw)` in the dropdown.
-3. Choose an operator by selecting an `operatorId` - in the example, it's set to `17`.
-4. Choose the withdrawal amount in the `withdraw` field - you can specify to withdraw `all` or `some` staking amount. 
+1. Proceed to [PolkadotJS](https://polkadot.js.org/apps/#/explorer).
+2. Navigate to Developer -> Extrinsics. 
+3. Select the account you want to use in `using the selected account`.
+4. Select `domains` under `submit the following extrinsic` and choose `withdrawStake(operatorId, withdraw)` 5n the dropdown.
+6. Choose an operator by selecting an `operatorId` - in the example, it's set to `17`.
+7. Choose the withdrawal amount in the `withdraw` field - you can specify to withdraw `all` or `some` staking amount. 
 
 :::note
 Example of withdrawal of 1 TSSC stake amount from nominating an operator `17`.
@@ -147,8 +148,18 @@ Example of withdrawal of 1 TSSC stake amount from nominating an operator `17`.
 ![Staking-23](/img/doc-imgs/operators-staking/Staking-23.png)
 
 
-Once the withdrawal is submitted, it's finalized after the **domain epoch** is completed. All the withdrawn funds are unlocked after the **unlocking period** is complete. The current **unlocking period** is set to 28,800 blocks, or about 48 hours. The locking period is necessary to ensure that the domain block executing the withdrawal is confirmed and not challenged by a fraud proof and to increase the economic stability of domains.
+Once the withdrawal is submitted, it's finalized after the **domain epoch** is completed. All the withdrawn funds are unlocked after the **locking period** is complete. The current **locking period** is set to 28,800 blocks, or about 48 hours. The locking period is necessary to ensure that the domain block executing the withdrawal is confirmed and not challenged by a fraud proof and to increase the economic stability of domains.
 
+After the **locking period**, the withdrawn amount can be unlocked in the user's account with the `unlock_funds` extrinsic.
+
+1. Proceed to [PolkadotJS](https://polkadot.js.org/apps/#/explorer).
+2. Navigate to Developer -> Extrinsics. 
+3. Select the account you want to use in `using the selected account`.
+4. Select `domains` under `submit the following extrinsic` and choose `unlockFinds(operatorId)` in the dropdown.
+5. Provide the `operatorID` you were staking with. 
+6. Submit the transaction, your funds should be unclocked and available once the epoch is complete (up to 10 minutes).
+
+![Staking-29](/img/doc-imgs/operators-staking/Staking-29.png)
 
 ### Calculating your nominator balance
 
