@@ -13,34 +13,20 @@ import CodeBlock from '@theme/CodeBlock';
 import Link from '@docusaurus/Link';
 import styles from '@site/src/pages/index.module.css';
 
-### Create operator key (alternative, less secure way):
-An operator needs a key pair to participate in bundle production.
-You can create a key using the following command:
-
-```bash
-target/production/subspace-node key generate --scheme sr25519
-```
-
-![Staking-4](/img/doc-imgs/operators-staking/Staking-4.png)
-
-Back up the key. Take the `public key (hex)` of the Keypair. The public key is part of the operator config we will be using later on [Staking portal](https://staking.subspace.tools) or [PolkadotJS portal](https://polkadot.js.org/apps/#/explorer).
 
 #### Insert key to Keystore:
-The key generated above needs to be added to the Keystore so that the operator node can use it to participate in bundle production.
+This might be useful if you decided to switch domains or already have **the secret phrase**. Read more about switching domain in the next section.
 
 To insert the key, use the following command:
 
 ```bash
-target/production/subspace-node key insert \
---suri "<Secret phrase>" --key-type oper --scheme sr25519 --keystore-path /keystore
+target/production/subspace-node domain key insert \
+--base-path NODE_DATA_PATH --domain-id DOMAIN_ID --keystore-suri "<Secret phrase>"
 ```
 
-The command above assumes `/keystore` as the keystore location.
-`suri` is the secret phrase of the operator key.
+The command above will insert the keypair in the subfolder of `NODE_DATA_PATH/domains/DOMAIN_ID/keystore`.
 
-:::tip
-`tmp` folder on linux based systems will be emptied upon the system reboot. Make sure to store the keypair in a secure and permanent location.  
-:::
+`suri` is the secret phrase of the operator key.
 
 ### Switch domains
 
@@ -59,6 +45,10 @@ In order to switch domain:
 
 Only the account who registered **Operator** can swith the domain.
 
+:::
+
+:::note
+You need to move your keypair to a new location, if you switch domains. Follow the [insert key to keystore section](#insert-key-to-keystore).
 :::
 
 :::note
@@ -122,21 +112,19 @@ To run both operator and validator at the same time, provide requrired flags for
 <TabItem value="windows" label="🖼️ Windows" default>
 
 <CodeBlock>
-{`target/production/subspace-node \`
---chain gemini-3g \`
+{`target/production/subspace-node run \`
+--chain gemini-3h \`
 --blocks-pruning 256 \`
 --state-pruning archive \`
---no-private-ipv4 \`
---validator \`
+--farmer \`
 --name your_node_name \`
 -- \`
 --domain-id your_domain_id \`
 --operator-id your_operator_id \`
---keystore-path /keystore \`
---listen-addr /ip4/0.0.0.0/tcp/40333 \`
---bootnodes /ip4/3.87.28.170/tcp/40333/p2p/12D3KooWGHtULvhdKMZtzigSK1438uWXPj9rBQHVzTaKMWv1WRXp \`
---bootnodes /ip4/140.82.45.36/tcp/40333/p2p/12D3KooWJxB2PVzyNqZywoCWAMLGhKr2LCbFMXbAPzUPQZon7yt1 \`
---bootnodes /ip4/167.179.116.135/tcp/40333/p2p/12D3KooWHsRae3ip2uQAUPtpMcStHGGw777SJT3nu9maFmtsGry7 `}
+--listen-on /ip4/0.0.0.0/tcp/40333 \`
+--bootstrap-nodes /dns/bootstrap-0.nova.gemini-3h.subspace.network/tcp/30334/p2p/12D3KooWBm1PHFHAP9mA6LNd72uFimyPoo6ixjdfgajzizXDYND2 \`
+--bootstrap-nodes /dns/bootstrap-1.nova.gemini-3h.subspace.network/tcp/30334/p2p/12D3KooWD3Q8JpAPoXR67ZQ1H1nXfPqCgPHCvWVcGxNKbfFmuPnu \`
+--bootstrap-nodes /dns/bootstrap-2.nova.gemini-3h.subspace.network/tcp/30334/p2p/12D3KooWEYs5yikat5NanzN7c2Sb4ngxJoCro9vXMULM2ZYVWW9H `}
 </CodeBlock>
 
 </TabItem>
@@ -145,21 +133,19 @@ To run both operator and validator at the same time, provide requrired flags for
 <TabItem value="macos" label="🍎 macOS">
 
 <CodeBlock>
-{`target/production/subspace-node \\
---chain gemini-3g \\
+{`target/production/subspace-node run \\
+--chain gemini-3h \\
 --blocks-pruning 256 \\
 --state-pruning archive \\
---no-private-ipv4 \\
---validator \\
+--farmer \\
 --name your_node_name \\
 -- \\
 --domain-id your_domain_id \\
 --operator-id your_operator_id \\
---keystore-path /keystore \\
---listen-addr /ip4/0.0.0.0/tcp/40333 \\
---bootnodes /ip4/3.87.28.170/tcp/40333/p2p/12D3KooWGHtULvhdKMZtzigSK1438uWXPj9rBQHVzTaKMWv1WRXp \\
---bootnodes /ip4/140.82.45.36/tcp/40333/p2p/12D3KooWJxB2PVzyNqZywoCWAMLGhKr2LCbFMXbAPzUPQZon7yt1 \\
---bootnodes /ip4/167.179.116.135/tcp/40333/p2p/12D3KooWHsRae3ip2uQAUPtpMcStHGGw777SJT3nu9maFmtsGry7 `}
+--listen-on /ip4/0.0.0.0/tcp/40333 \\
+--bootstrap-nodes /dns/bootstrap-0.nova.gemini-3h.subspace.network/tcp/30334/p2p/12D3KooWBm1PHFHAP9mA6LNd72uFimyPoo6ixjdfgajzizXDYND2 \\
+--bootstrap-nodes /dns/bootstrap-1.nova.gemini-3h.subspace.network/tcp/30334/p2p/12D3KooWD3Q8JpAPoXR67ZQ1H1nXfPqCgPHCvWVcGxNKbfFmuPnu \\
+--bootstrap-nodes /dns/bootstrap-2.nova.gemini-3h.subspace.network/tcp/30334/p2p/12D3KooWEYs5yikat5NanzN7c2Sb4ngxJoCro9vXMULM2ZYVWW9H `}
 </CodeBlock>
 
 </TabItem>
@@ -167,21 +153,19 @@ To run both operator and validator at the same time, provide requrired flags for
 <TabItem value="linux" label="🐧 Ubuntu">
 
 <CodeBlock>
-{`target/production/subspace-node \\
---chain gemini-3g \\
+{`target/production/subspace-node run \\
+--chain gemini-3h \\
 --blocks-pruning 256 \\
 --state-pruning archive \\
---no-private-ipv4 \\
---validator \\
+--farmer \\
 --name your_node_name \\
 -- \\
 --domain-id your_domain_id \\
 --operator-id your_operator_id \\
---keystore-path /keystore \\
---listen-addr /ip4/0.0.0.0/tcp/40333 \\
---bootnodes /ip4/3.87.28.170/tcp/40333/p2p/12D3KooWGHtULvhdKMZtzigSK1438uWXPj9rBQHVzTaKMWv1WRXp \\
---bootnodes /ip4/140.82.45.36/tcp/40333/p2p/12D3KooWJxB2PVzyNqZywoCWAMLGhKr2LCbFMXbAPzUPQZon7yt1 \\
---bootnodes /ip4/167.179.116.135/tcp/40333/p2p/12D3KooWHsRae3ip2uQAUPtpMcStHGGw777SJT3nu9maFmtsGry7 `}
+--listen-on /ip4/0.0.0.0/tcp/40333 \\
+--bootstrap-nodes /dns/bootstrap-0.nova.gemini-3h.subspace.network/tcp/30334/p2p/12D3KooWBm1PHFHAP9mA6LNd72uFimyPoo6ixjdfgajzizXDYND2 \\
+--bootstrap-nodes /dns/bootstrap-1.nova.gemini-3h.subspace.network/tcp/30334/p2p/12D3KooWD3Q8JpAPoXR67ZQ1H1nXfPqCgPHCvWVcGxNKbfFmuPnu \\
+--bootstrap-nodes /dns/bootstrap-2.nova.gemini-3h.subspace.network/tcp/30334/p2p/12D3KooWEYs5yikat5NanzN7c2Sb4ngxJoCro9vXMULM2ZYVWW9H `}
 </CodeBlock>
 </TabItem>
 
@@ -213,29 +197,28 @@ services:
       - "0.0.0.0:40333:40333/tcp"
     restart: unless-stopped
     command: [
-      "--chain", "gemini-3g",
+      "run",
+      "--chain", "gemini-3h",
       "--base-path", "/var/subspace",
       "--blocks-pruning", "256",
       "--state-pruning", "archive-canonical",
-      "--port", "30333",
+      "--listen-on", "30333",
       "--dsn-listen-on", "/ip4/0.0.0.0/udp/30433/quic-v1",
       "--dsn-listen-on", "/ip4/0.0.0.0/tcp/30433",
       "--rpc-cors", "all",
       "--rpc-methods", "unsafe",
-      "--rpc-external",
-      "--no-private-ipv4",
-      "--validator",
+      "--rpc-listen-on", "0.0.0.0:9944",
+      "--farmer",
       "--name", "INSERT_YOUR_ID",
       "--",
       # Replace INSERT_YOUR_DOMAIN_ID with domain ID you want to be operator on
       "--domain-id", "INSERT_YOUR_DOMAIN_ID",
       # Replace INSERT_YOUR_OPERATOR_ID with your operator ID
       "--operator-id", "INSERT_YOUR_OPERATOR_ID",
-      "--keystore-path", "/keystore",
-      "--listen-addr", "/ip4/0.0.0.0/tcp/40333",
-      "--bootnodes", "/ip4/3.87.28.170/tcp/40333/p2p/12D3KooWGHtULvhdKMZtzigSK1438uWXPj9rBQHVzTaKMWv1WRXp",
-      "--bootnodes", "/ip4/140.82.45.36/tcp/40333/p2p/12D3KooWJxB2PVzyNqZywoCWAMLGhKr2LCbFMXbAPzUPQZon7yt1",
-      "--bootnodes", "/ip4/167.179.116.135/tcp/40333/p2p/12D3KooWHsRae3ip2uQAUPtpMcStHGGw777SJT3nu9maFmtsGry7",
+      "--listen-on", "/ip4/0.0.0.0/tcp/40333",
+      "--bootstrap-nodes", "/dns/bootstrap-0.nova.gemini-3h.subspace.network/tcp/30334/p2p/12D3KooWBm1PHFHAP9mA6LNd72uFimyPoo6ixjdfgajzizXDYND2",
+      "--bootstrap-nodes", "/dns/bootstrap-1.nova.gemini-3h.subspace.network/tcp/30334/p2p/12D3KooWD3Q8JpAPoXR67ZQ1H1nXfPqCgPHCvWVcGxNKbfFmuPnu",
+      "--bootstrap-nodes", "/dns/bootstrap-2.nova.gemini-3h.subspace.network/tcp/30334/p2p/12D3KooWEYs5yikat5NanzN7c2Sb4ngxJoCro9vXMULM2ZYVWW9H",
 # Replace INSERT_YOUR_ID with your node ID (will be shown in telemetry)
     ]
     healthcheck:

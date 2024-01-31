@@ -19,18 +19,17 @@ services:
       - "0.0.0.0:30433:30433/tcp"
     restart: unless-stopped
     command: [
-      "--chain", "gemini-3g",
+      "--chain", "gemini-3h",
       "--base-path", "/var/subspace",
       "--blocks-pruning", "256",
       "--state-pruning", "archive-canonical",
-      "--port", "30333",
+      "--listen-on", "30333",
       "--dsn-listen-on", "/ip4/0.0.0.0/udp/30433/quic-v1",
       "--dsn-listen-on", "/ip4/0.0.0.0/tcp/30433",
       "--rpc-cors", "all",
       "--rpc-methods", "unsafe",
-      "--rpc-external",
-      "--no-private-ipv4",
-      "--validator",
+      "--rpc-listen-on", "0.0.0.0:9944",
+      "--farmer",
 # Replace `INSERT_YOUR_ID` with your node ID (will be shown in telemetry)
       "--name", "INSERT_YOUR_ID"
     ]

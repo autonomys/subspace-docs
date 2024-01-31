@@ -54,46 +54,31 @@ Similarly, you can customize the replotting CPU cores using `--replotting-cpu-co
 
 Note that setting `--plotting-cpu-cores` requires `--replotting-cpu-cores` to be configured with the same number of CPU core groups. If the `--replotting-cpu-cores` setting is omitted, the node will default to using the same thread pool as for plotting.
 
-### Using a Custom Path
-You can set a custom path for your node & farmer to use if you want to use an external hard drive, or set a custom path from the default. You can set the node and farmer to different directories if you would like.
-
-<Tabs>
-<TabItem value="node" label="1.🚩 Node">
-
-#### Set Node Custom Path.
-To set your node to use a custom path all you will need to do is add the `--base-path` parameter.
-
-```bash
-# start node and store data in `NODE_DATA_PATH` instead of default location
-./NODE_FILE_NAME --base-path NODE_DATA_PATH --chain gemini-3g ...`
-```
-</TabItem>
-</Tabs>
 
 ### Switching to a new snapshot from older/different versions of Subspace
 
 :::info
-Unless specifically mentioned by the Development team you should **NOT** have to wipe & purge your configuration on new releases.
+Unless specifically mentioned by the Development team you should **NOT** have to wipe your configuration on new releases.
 :::
 
 In general you should be able to download the latest release, and re-start the Node & Farmer with the same commands as you started to prior version with no errors.
 
-There are some cases where version updates will cause issue with your Node & Farmer and you may have to wipe & purge your node, typically when errors occur. If you have any issues you can always check our [Forums](https://forums.subspace.network) and hop in our [Discord](https://discord.gg/subspace-network) Server to ask for help.
+There are some cases where version updates will cause issue with your Node & Farmer and you may have to wipe your node, typically when errors occur. If you have any issues you can always check our [Forums](https://forums.subspace.network) and hop in our [Discord](https://discord.gg/subspace-network) Server to ask for help.
 
-### Wipe & Purge
+### Wipe
 
 If you were running a node previously, and want to switch to a new network, please perform these steps and then follow the guide again:
 ```bash
 # Replace `FARMER_FILE_NAME` with the name of the farmer file you downloaded from releases
 ./FARMER_FILE_NAME wipe PATH_TO_FARM
 # Replace `NODE_FILE_NAME` with the name of the node file you downloaded from releases
-./NODE_FILE_NAME purge-chain --chain gemini-3g
+./NODE_FILE_NAME wipe NODE_DATA_PATH
 ```
-It does not matter if the node/farmer executable is the previous one or from the new snapshot, both will work :)
+It does not matter if the node/farmer executable is the previous one or from the new snapshot, both will work.
 
-Now follow installation guide.
+Now follow the installation guide from the beginning.
 
-### Docker Wipe & Purge
+### Docker Wipe
 
 In case of Docker setup run `docker compose down -v` (and manually delete custom directories if you have specified them).
 
@@ -137,8 +122,7 @@ For both the node and the farmer, here are some frequently used commands:
 - Display farm information: `./FARMER_FILE_NAME info PATH_TO_FARM`
 - Scrub the farm for errors: `./FARMER_FILE_NAME scrub PATH_TO_FARM`
 - Erase all farmer-related data: `./FARMER_FILE_NAME wipe PATH_TO_FARM`
-- Start the node with a custom data path: `./NODE_FILE_NAME --base-path NODE_DATA_PATH --chain gemini-3g`
-- Erase all node-related data: `./NODE_FILE_NAME purge-chain --base-path NODE_DATA_PATH --chain gemini-3g`
+- Erase all node-related data: `./NODE_FILE_NAME wipe NODE_DATA_PATH`
 
 ### Utilizing Multiple Disks
 
@@ -160,7 +144,6 @@ While it might be tempting to adjust certain parameters that seem related to DSN
 ```
 --out-peers
 --in-peers
---in-peers-light
 --dsn-target-connections
 --dsn-pending-in-connections
 --dsn-in-connections
@@ -183,3 +166,21 @@ Increasing the values of the farmer parameters could increase the plotting speed
 --out-connections
 --pending-out-connections
 ```
+
+
+### NUMA Support
+
+:::note
+NUMA support will benefit farmers with large, powerful CPUs and lots of RAM available. The required RAM amount depends on the processor and the number of threads.  
+:::
+
+Previously plotting/replotting thread pools were created for each farm separately even though only a configured number of them can be used at a time (by default just one).
+With the introduction of NUMA support, the farmer application has a thread pool manager that will create a necessary number of thread pools that will be allocated to currently plotting/replotting farms. 
+When a thread pool is created, it is assigned to a set of CPU cores and will only be able to use those cores. Pinning doesn’t pin threads to cores 1:1, instead, the OS is free to move threads between cores, but only within CPU cores allocated for the thread pool. This will ensure plotting for a particular sector only happens on a particular CPU/NUMA node.
+
+#### Enabling NUMA on Windows/Linux machines
+
+On Linux and Windows, the farmer will detect NUMA systems and create a number of thread pools that correspond to the number of NUMA nodes. This means the default behavior will change for large CPUs and consume more memory as a result, but that can be changed to the previous behavior with CLI options if desired.
+To use NUMA, you need to enable it via the BIOS of your motherboard for the farmer to know it exists. This option is present in motherboards for **Threadripper/Epyc processors** but might exist in others too. If you don’t enable it, both OS and farmer will think you have a single UMA processor and will not be able to apply optimizations.
+
+To read more about NUMA support and the benefits it provides for large CPUs read [this forum post](https://forum.subspace.network/t/numa-support-is-coming/2299?u=nazar-pc).

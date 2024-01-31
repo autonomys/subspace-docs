@@ -20,7 +20,7 @@ function DockerFileGenerator() {
     });
 
     // Predefine the actual network
-    const network = 'gemini-3g';
+    const network = 'gemini-3h';
     
     // State for the generated output (docker compose content)
     const [output, setOutput] = useState('');
@@ -111,18 +111,18 @@ services:
     restart: unless-stopped
     command:
       [
+        "run",
         "--chain", "${network}",
         "--base-path", "/var/subspace",
         "--blocks-pruning", "256",
         "--state-pruning", "archive-canonical",
-        "--port", "30333",
+        "--listen-on", "30333",
         "--dsn-listen-on", "/ip4/0.0.0.0/udp/30433/quic-v1",
         "--dsn-listen-on", "/ip4/0.0.0.0/tcp/30433",
         "--rpc-cors", "all",
         "--rpc-methods", "unsafe",
-        "--rpc-external",
-        "--no-private-ipv4",
-        "--validator",
+        "--rpc-listen-on", "0.0.0.0:9944",
+        "--farmer",
         "--name", "${formData.nodeName}"
       ]
     healthcheck:
