@@ -59,10 +59,7 @@ const config = {
       '@docusaurus/plugin-client-redirects',
       {
         redirects: [
-          {
-            to: '/docs/category/pulsar',
-            from: '/docs/category/pulsar',
-          },
+          //Latest Links
           {
             to: '/docs/participate/contribute',
             from: '/docs/community/contribute/',
@@ -96,8 +93,49 @@ const config = {
             from: "/docs/Farming%20&%20Staking/Farming/Advanced-Cli/cli-install"
           },
           {
-            to: "/docs/pre-release/farming-&-staking/staking/operators/register-operator",
+            to: "/docs/farming-&-staking/staking/operators/register-operator",
             from: "/docs/farming-&-staking/staking/operators"
+          },
+          //Pre-Release Links
+          {
+            to: "/docs/pre-release/participate/contribute",
+            from: "/docs/pre-release/community/contribute/",
+          },
+          {
+            to: "/docs/pre-release/category/develop-on-nova-evm-",
+            from: "/docs/pre-release/category/developer-documentation/",
+          },
+          {
+            to: "/docs/pre-release/category/operators-and-nominators",
+            from: "/docs/pre-release/operators_and_staking/intro"
+          },
+          {
+            to: "/docs/pre-release/category/advanced-cli-recommended",
+            from: ["/docs/pre-release/protocol/cli/", "/docs/pre-release/protocol/substrate-cli/", "/docs/pre-release/category/advanced-cli"]
+          },
+          {
+            to: "/docs/pre-release/farming-&-staking/timekeeping",
+            from: "/docs/pre-release/protocol/timekeeping"
+          },
+          {
+            to: "/docs/pre-release/category/farming",
+            from: ["/docs/pre-release/category/get-started-with-farming", "/protocol/pre-release/farm/farming"]
+          },
+          {
+            to: "/docs/pre-release/farming-&-staking/farming/advanced-cli/cli-install",
+            from: "/docs/Farming%20&%20Staking/Pre-Release/Farming/Advanced-Cli/cli-install"
+          },
+          {
+            to: "/docs/pre-release/farming-&-staking/staking/operators/register-operator",
+            from: "/docs/farming-&-staking/pre-release/staking/operators"
+          },
+          {
+            to: "/docs/farming-&-staking/farming/additional-guides/networking",
+            from: "/docs/farming-&-staking/farming/additional-guides/port-forwarding"
+          },
+          {
+            to: "/docs/pre-release/farming-&-staking/farming/additional-guides/networking",
+            from: "/docs/pre-release/farming-&-staking/farming/additional-guides/port-forwarding"
           }
         ],
       },
