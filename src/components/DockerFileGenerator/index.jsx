@@ -116,7 +116,7 @@ services:
         "--base-path", "/var/subspace",
         "--blocks-pruning", "256",
         "--state-pruning", "archive-canonical",
-        "--listen-on", "30333",
+        "--listen-on", "/ip4/0.0.0.0/tcp/30333",
         "--dsn-listen-on", "/ip4/0.0.0.0/udp/30433/quic-v1",
         "--dsn-listen-on", "/ip4/0.0.0.0/tcp/30433",
         "--rpc-cors", "all",
