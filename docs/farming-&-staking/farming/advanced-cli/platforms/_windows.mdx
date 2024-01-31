@@ -60,7 +60,9 @@ This is because the application is trying to access the internet. This is expect
 # Replace `INSERT_YOUR_ID` with a nickname you choose
 # Copy all of the lines below, they are all part of the same command
 .\subspace-node-windows-x86_64-skylake-gemini-3g-2024-jan-31.exe `
+  run `
   --chain gemini-3h `
+  --base-path NODE_DATA_PATH `
   --blocks-pruning 256 `
   --state-pruning archive-canonical `
   --farmer `
