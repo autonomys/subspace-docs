@@ -59,7 +59,7 @@ This is because the application is trying to access the internet. This is expect
 ```powershell
 # Replace `INSERT_YOUR_ID` with a nickname you choose
 # Copy all of the lines below, they are all part of the same command
-.\subspace-node-windows-x86_64-skylake-gemini-3g-2024-jan-31.exe `
+.\subspace-node-windows-x86_64-skylake-gemini-3h-2024-jan-31-2.exe `
   run `
   --chain gemini-3h `
   --base-path NODE_DATA_PATH `
@@ -104,7 +104,7 @@ Setting **--base-path** and specifying **--chain** became mandatory starting wit
   # Replace `PATH_TO_FARM` with location where you want you store plot files
   # Replace `WALLET_ADDRESS` below with your account address from Polkadot.js wallet
   # Replace `PLOT_SIZE` with plot size in gigabytes or terabytes, for example 100G or 2T (but leave at least 60G of disk space for node and some for OS)
-  .\subspace-farmer-windows-x86_64-skylake-gemini-3g-2024-jan-31.exe farm --reward-address WALLET_ADDRESS path=PATH_TO_FARM,size=PLOT_SIZE
+  .\subspace-farmer-windows-x86_64-skylake-gemini-3h-2024-jan-31-2.exe farm --reward-address WALLET_ADDRESS path=PATH_TO_FARM,size=PLOT_SIZE
 ```
 
 2. You should see something similar in the terminal:
