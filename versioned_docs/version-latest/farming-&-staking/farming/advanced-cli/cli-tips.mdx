@@ -65,16 +65,16 @@ In general you should be able to download the latest release, and re-start the N
 
 There are some cases where version updates will cause issue with your Node & Farmer and you may have to wipe your node, typically when errors occur. If you have any issues you can always check our [Forums](https://forums.subspace.network) and hop in our [Discord](https://discord.gg/subspace-network) Server to ask for help.
 
-### Wipe
+### Wipe & Purge
 
 If you were running a node previously, and want to switch to a new network, please perform these steps and then follow the guide again:
 ```bash
 # Replace `FARMER_FILE_NAME` with the name of the farmer file you downloaded from releases
 ./FARMER_FILE_NAME wipe PATH_TO_FARM
 # Replace `NODE_FILE_NAME` with the name of the node file you downloaded from releases
-./NODE_FILE_NAME wipe NODE_DATA_PATH
+./NODE_FILE_NAME purge-chain --chain gemini-3g
 ```
-It does not matter if the node/farmer executable is the previous one or from the new snapshot, both will work.
+It does not matter if the node/farmer executable is the previous one or from the new snapshot, both will work :)
 
 Now follow the installation guide from the beginning.
 
