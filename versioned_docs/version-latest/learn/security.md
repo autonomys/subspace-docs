@@ -289,9 +289,9 @@ According to the ordering of UFW rules (DENY rules should come first, followed b
 your existing rules
 ...
 
-sudo ufw allow from anywhere to any proto tcp port 30333 comment 'The node port '
-sudo ufw allow from anywhere to any proto tcp port 30433 comment 'DSN port'
-sudo ufw allow from anywhere to any proto tcp port 30533 comment 'Farmer port'
+sudo ufw allow 30333 comment 'The node port'
+sudo ufw allow 30433 comment 'DSN port'
+sudo ufw allow 30533 comment 'Farmer port'
 ```
 
 Now with peace of mind you may go back to installing Node and Farmer.
