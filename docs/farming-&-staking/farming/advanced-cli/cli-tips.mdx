@@ -36,6 +36,27 @@ Benchmarking helps you test the plotting speed of your farmer against different 
 
 Replace /path/to/your/plot with the actual path to your plot. This will provide you with metrics and insights regarding plotting performance.
 
+At the moment, Subspace Node supports `rayon` implementation mechanism, that opens files as many times as there are farming threads and, for each thread, uses a dedicated file handle.
+
+To interpret the results: typically, you assess throughput to determine the maximum auditable size across any number of disks. Both CPU and disk performance influence this metric.
+
+To read more about audit benchmarking, [read this forum post](https://forum.subspace.network/t/audit-benchmark-result-explanation-please/2149).
+
+There is a second command available, which helps you determine how much time your farmer has after auditing to provide proof.
+
+```
+./subspace-farmer benchmark prove /path/to/your/plot
+```
+
+Each farmer has ~4 seconds to audit and prove, so depending on how fast auditing is, the remaining time will be used for proving.
+Proving performance doesn’t depend on the plot size.
+
+If an environment does not have enough time for the proving step, a message such as this is logged by the farmer:
+
+`Proving for solution skipped due to farming time limit slot=6723846 sector_index=46`
+
+To read more about prove benchmarking, [read this forum post](https://forum.subspace.network/t/audit-benchmark-result-explanation-please/2150).
+
 ### Scrubbing Your Farmer
 In certain situations, especially when the farmer terminates unexpectedly or encounters an error, it might fail to restart correctly. The scrub command assists in resolving such issues by cleaning or resetting the specified plot.
 
