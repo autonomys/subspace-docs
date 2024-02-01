@@ -4,7 +4,7 @@ import CodeBlock from '@theme/CodeBlock'
 import styles from './DockerFileGenerator.module.css';
 
 // This component is a Docker Compose File Generator for Subspace Docs.
-function DockerFileGenerator() {
+function DockerFileGeneratorPreRelease() {
     // Initial state for form data
     const [formData, setFormData] = useState({
         nodePort: '30333',
@@ -295,4 +295,4 @@ ${formData.nodeData && formData.farmerData ? "" : "volumes:"}${formData.nodeData
     );
 }
 
-export default DockerFileGenerator;
+export default DockerFileGeneratorPreRelease;
