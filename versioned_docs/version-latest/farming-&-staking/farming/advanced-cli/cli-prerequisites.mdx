@@ -25,6 +25,12 @@ Make sure you have a stable network connection. During the plotting phase of far
 This may impact your network usage so please check your network connection if you have a hard data limit.
 :::
 
+:::note
+
+The Subspace Networ is based on Proof of Archival Storage, as such your storage contribution will directly correlate to your rewards. For insights on how this choice impacts our network's consensus mechanism and your potential rewards, see [this guide](https://subnomicon.subspace.network/docs/consensus/overview).
+
+:::
+
 |Hardware|Specs|
 |-|-|
 |CPU|4 Core+|
@@ -70,3 +76,4 @@ You can use any file system with default settings, we advise against their use f
 In order to disable **CoW** on **BTRFS**, run the command `chattr +C /your_farmer_directory/`.
 
 In case of **ZFS**, you can try adjusting the **recordsize** by running `zfs set recordsize=128K tank/dataset`, or creating a separate **dataset** for the farmer with adjusted **recordsize** parameters.
+
