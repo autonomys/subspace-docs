@@ -114,8 +114,6 @@ To run both operator and validator at the same time, provide requrired flags for
 <CodeBlock>
 {`target/production/subspace-node run \`
 --chain gemini-3h \`
---blocks-pruning 256 \`
---state-pruning archive \`
 --farmer \`
 --name your_node_name \`
 -- \`
@@ -135,8 +133,6 @@ To run both operator and validator at the same time, provide requrired flags for
 <CodeBlock>
 {`target/production/subspace-node run \\
 --chain gemini-3h \\
---blocks-pruning 256 \\
---state-pruning archive \\
 --farmer \\
 --name your_node_name \\
 -- \\
@@ -155,8 +151,6 @@ To run both operator and validator at the same time, provide requrired flags for
 <CodeBlock>
 {`target/production/subspace-node run \\
 --chain gemini-3h \\
---blocks-pruning 256 \\
---state-pruning archive \\
 --farmer \\
 --name your_node_name \\
 -- \\
@@ -200,8 +194,6 @@ services:
       "run",
       "--chain", "gemini-3h",
       "--base-path", "/var/subspace",
-      "--blocks-pruning", "256",
-      "--state-pruning", "archive-canonical",
       "--listen-on", "30333",
       "--dsn-listen-on", "/ip4/0.0.0.0/udp/30433/quic-v1",
       "--dsn-listen-on", "/ip4/0.0.0.0/tcp/30433",
