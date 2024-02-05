@@ -1,19 +1,17 @@
 import Link from '@docusaurus/Link';
 import styles from '@site/src/pages/index.module.css';
 
+### Linux Filesystem Recommendations
+:::note Important Notices for Linux Users
+- **SWAP**:  A swap is necessary only if your system has a low amount of RAM.
 
-### Linux Specific Warnings:
+- **RAID**:  Avoid redundancy setups (RAID1/5/6, RAIDZ) for filesystems with plots. The subspace farmer uses checksums for data integrity and can often recover corrupted blocks. Use `scrub` for maintenance.  RAID0 accomplishes little more than to put more of your plots at risk in case of a drive failure.
 
-::: Linux Filesystem Recommendations
-- **SWAP**: A swap is necessary only if your system has a low amount of RAM.
+- **ext4**:  The recommended formatting command for drives dedicated solely to subspace is `sudo mkfs.ext4 -m 0 -T largefile4 /path/to/dev`, as it maximizes usable space and the plot resizing functionality operates flawlessly.  Previously recommended striping and chunk size parameters have not demonstrated any appreciable benefit or harm.
 
-- **CoW Filesystems**: Avoid using Copy-on-Write (CoW) file systems (like ReFS, BTRFS, ZFS, bcachefs, HAMMER) with Subspace. If using BTRFS, disable CoW using `sudo chattr +C path/to/data/dir` before starting Subspace. This applies only to newly created files. Alternatively, use non-CoW filesystems like ext4 or XFS.
+- **XFS**:  No longer recommended as attempting to resize the plot (larger or smaller) with the drive nearly full (98%+) will render the plot unfarmable unless sufficient extra space can be freed up by means other than trying to shrink the plot (try deleting piece_cache.bin if this happens to you).  Full XFS disk utilization can only be achieved during the plot's initial creation, and will still yield less usable space than the ext4 recommendation above.
 
-- **Redundancy**: Avoid redundancy setups (RAID1/5/6, RAIDZ) for filesystems with plots. Subspace farmer uses checksums for data integrity and can often recover corrupted blocks. Use `scrub` for maintenance.
-
-- **XFS**:  Not recommended as resizing the plot to be either larger or smaller with the drive nearly full will fail irrevocably and the plot will be lost unless sufficient extra space can be freed up (try deleting piece_cache.bin if this happens to you).  Full XFS disk utilization can only be achieved during the plot's initial creation.
-
-- **ext4**: `sudo mkfs.ext4 -m 0 -T largefile4 /path/to/dev` is the recommended formatting command to use for drives dedicated solely to subspace, as it maximizes usable space and the plot resizing functionality operates flawlessly.
+- **CoW Filesystems**: Avoid using Copy-on-Write (CoW) file systems (like ReFS, BTRFS, ZFS, bcachefs, HAMMER) with Subspace. If using BTRFS, disable CoW using `sudo chattr +C path/to/data/dir` before starting Subspace. This applies only to newly created files. Alternatively, use a non-CoW filesystem like ext4 as recommended above.
 :::
 
 :::caution System Adjustments
