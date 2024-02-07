@@ -1,49 +1,23 @@
 import Link from '@docusaurus/Link';
 import styles from '@site/src/pages/index.module.css';
 
+### Linux Filesystem Recommendations
+:::note Important Notices for Linux Users
+- **SWAP**: A swap file is necessary only if your system has a low amount of RAM.
 
-### Linux Specific Warnings:
+- **RAID**:  Avoid redundancy setups (RAID1/5/6, RAIDZ) for filesystems with plots. The subspace farmer uses checksums for data integrity and can often recover corrupted blocks. Use `scrub` for maintenance.  RAID0 accomplishes little more than to put more of your plots at risk in case of a drive failure.
 
-:::note CoW Filesystems Warning
-It is advised not to use the Subspace farmer and node on CoW file systems for any OS (ReFS, BTRFS, ZFS, bcachefs, HAMMER and some more).
+- **ext4**:  The recommended formatting command for drives dedicated solely to subspace is `sudo mkfs.ext4 -m 0 -T largefile4 /path/to/dev`, as it maximizes usable space and the plot resizing functionality operates flawlessly.  Previously recommended striping and chunk size parameters have not demonstrated any appreciable benefit or harm.
 
-If BTRFS is used with Subspace, the directory/whole file system must be CoW disabled with the following command prior to starting Subspace, because it only applies to newly created files.
+- **XFS**:  No longer recommended as attempting to resize the plot (larger or smaller) with the drive nearly full (98%+) will render the plot unfarmable unless sufficient extra space can be freed up by means other than trying to shrink the plot (try deleting piece_cache.bin if this happens to you).  Full XFS disk utilization can only be achieved during the plot's initial creation, and will still yield less usable space than the ext4 recommendation above.
 
-**Command to Disable CoW on BTRFS**
-
-```shell-session
-sudo chattr +C path/to/data/dir
-```
-
-Alternatively, non-CoW file systems like ext4 or XFS can be used instead.
+- **CoW Filesystems**: Avoid using Copy-on-Write (CoW) file systems (like ReFS, BTRFS, ZFS, bcachefs, HAMMER) with Subspace. If using BTRFS, disable CoW using `sudo chattr +C path/to/data/dir` before starting Subspace. This applies only to newly created files. Alternatively, use a non-CoW filesystem like ext4 as recommended above.
 :::
 
-:::note Redundancy
-Using redundancy (RAID1/5/6, RAIDZ and others) on a filesystem with plot makes no sense, as the farmer uses checksums to verify the integrity of the plot, and is able to recover corrupted blocks if necessary in most cases. See `scrub` command below.
-:::
+:::caution System Adjustments
+- **File Descriptor Limit**: Linux has a hard limit of 100k file descriptors. Exceeding this may cause errors. Substrate has a default limit of 10k. Check and adjust the limit at `/proc/sys/fs/file-max`. Refer to this [tutorial](https://www.tutorialspoint.com/increase-number-of-maximum-open-files-in-linux) for changing the limit.
 
-:::tip Filesystem chunk size
-Creating a filesystem with a chunk (sunit) size of 32KB can prevent data fragmentation and improve performance, since the farmer operates on ~32KB chunks.
-
-**XFS**
-
-```shell-session
-sudo mkfs.xfs -d su=32k,sw=1 /path/to/dev
-```
-
-Then use `largeio` and `swalloc` mount options.
-
-**ext4**
-
-```shell-session
-sudo mkfs.ext4 -E stride=8,stripe-width=8 /path/to/dev
-```
-
-You can change these settings for an existing file system:
-
-```shell-session
-sudo tune2fs -E stride=8,stripe-width=8 /path/to/dev
-```
+- **Dependencies**: If you encounter an error related to `libgomp.so.1`, install the `libgomp1` library with `sudo apt-get install libgomp1`.
 :::
 
 ## Step 1: Download the Pulsar Binaries
