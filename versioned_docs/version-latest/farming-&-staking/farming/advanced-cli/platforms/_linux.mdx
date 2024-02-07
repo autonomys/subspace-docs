@@ -7,7 +7,7 @@ import styles from '@site/src/pages/index.module.css';
 ### Linux Filesystem Recommendations:
 
 :::note Important Notices for Linux Users
-- **SWAP**:  A swap is necessary only if your system has a low amount of RAM.
+- **SWAP**: A swap file is necessary only if your system has a low amount of RAM.
 
 - **RAID**:  Avoid redundancy setups (RAID1/5/6, RAIDZ) for filesystems with plots. The subspace farmer uses checksums for data integrity and can often recover corrupted blocks. Use `scrub` for maintenance.  RAID0 accomplishes little more than to put more of your plots at risk in case of a drive failure.
 
