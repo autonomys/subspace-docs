@@ -4,21 +4,18 @@ import CodeBlock from '@theme/CodeBlock';
 import Link from '@docusaurus/Link';
 import styles from '@site/src/pages/index.module.css';
 
-### Linux Specific Warnings:
+### Linux Filesystem Recommendations:
 
 :::note Important Notices for Linux Users
-- **SWAP**: A swap is necessary only if your system has a low amount of RAM.
+- **SWAP**: A swap file is necessary only if your system has a low amount of RAM.
 
-- **CoW Filesystems**: Avoid using Copy-on-Write (CoW) file systems (like ReFS, BTRFS, ZFS, bcachefs, HAMMER) with Subspace. If using BTRFS, disable CoW using `sudo chattr +C path/to/data/dir` before starting Subspace. This applies only to newly created files. Alternatively, use non-CoW filesystems like ext4 or XFS.
+- **RAID**:  Avoid redundancy setups (RAID1/5/6, RAIDZ) for filesystems with plots. The subspace farmer uses checksums for data integrity and can often recover corrupted blocks. Use `scrub` for maintenance.  RAID0 accomplishes little more than to put more of your plots at risk in case of a drive failure.
 
-- **Redundancy**: Avoid redundancy setups (RAID1/5/6, RAIDZ) for filesystems with plots. Subspace farmer uses checksums for data integrity and can often recover corrupted blocks. Use `scrub` for maintenance.
+- **ext4**:  The recommended formatting command for drives dedicated solely to subspace is `sudo mkfs.ext4 -m 0 -T largefile4 /path/to/dev`, as it maximizes usable space and the plot resizing functionality operates flawlessly. Previously recommended striping and chunk size parameters have not demonstrated any appreciable benefit or harm.
 
-- **Filesystem Optimization**: For performance enhancement, create filesystems with a 32KB chunk size, aligning with the farmer's operation on ~32KB chunks.
+- **XFS**:  No longer recommended as attempting to resize the plot (larger or smaller) with the drive nearly full (98%+) will render the plot unfarmable unless sufficient extra space can be freed up by means other than trying to shrink the plot (try deleting piece_cache.bin if this happens to you).  Full XFS disk utilization can only be achieved during the plot's initial creation, and will still yield less usable space than the ext4 recommendation above.
 
-  - For XFS: `sudo mkfs.xfs -d su=32k,sw=1 /path/to/dev` and use `largeio` and `swalloc` mount options.
-
-  - For ext4: `sudo mkfs.ext4 -E stride=8,stripe-width=8 /path/to/dev` or `sudo tune2fs -E stride=8,stripe-width=8 /path/to/dev` for existing filesystems.
-
+- **CoW Filesystems**: Avoid using Copy-on-Write (CoW) file systems (like ReFS, BTRFS, ZFS, bcachefs, HAMMER) with Subspace. If using BTRFS, disable CoW using `sudo chattr +C path/to/data/dir` before starting Subspace. This applies only to newly created files. Alternatively, use a non-CoW filesystem like ext4 as recommended above.
 :::
 
 :::caution System Adjustments
@@ -33,14 +30,14 @@ import styles from '@site/src/pages/index.module.css';
 <div className={`${styles.buttons} ${styles.flexContainer}`}>
   <Link
     className="button button--secondary"
-    to="https://github.com/subspace/subspace/releases/download/gemini-3g-2024-feb-01/subspace-node-ubuntu-x86_64-skylake-gemini-3g-2024-feb-01"
+    to="https://github.com/subspace/subspace/releases/download/gemini-3h-2024-feb-05/subspace-node-ubuntu-x86_64-skylake-gemini-3h-2024-feb-05"
     style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', textAlign: 'center', padding: '10px' }}>
     <span style={{ fontSize: '20px' }}>Node Executable</span>
     <span style={{ fontSize: '14px' }}>(Skylake+ CPU)</span>
   </Link>
   <Link
     className="button button--secondary"
-    to="https://github.com/subspace/subspace/releases/download/gemini-3g-2024-feb-01/subspace-farmer-ubuntu-x86_64-skylake-gemini-3g-2024-feb-01"
+    to="https://github.com/subspace/subspace/releases/download/gemini-3h-2024-feb-05/subspace-farmer-ubuntu-x86_64-skylake-gemini-3h-2024-feb-05"
     style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', textAlign: 'center', padding: '10px' }}>
     <span style={{ fontSize: '20px' }}>Farmer Executable</span>
     <span style={{ fontSize: '14px' }}>(Skylake+ CPU)</span>
@@ -50,14 +47,14 @@ import styles from '@site/src/pages/index.module.css';
 <div className={`${styles.buttons} ${styles.flexContainer}`}>
   <Link
     className="button button--secondary"
-    to="https://github.com/subspace/subspace/releases/download/gemini-3g-2024-feb-01/subspace-node-ubuntu-x86_64-v2-gemini-3g-2024-feb-01"
+    to="https://github.com/subspace/subspace/releases/download/gemini-3h-2024-feb-05/subspace-node-ubuntu-x86_64-v2-gemini-3h-2024-feb-05"
     style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', textAlign: 'center', padding: '10px' }}>
     <span style={{ fontSize: '20px' }}>Node Executable</span>
     <span style={{ fontSize: '14px' }}>(Legacy CPU)</span>
   </Link>
   <Link
     className="button button--secondary"
-    to="https://github.com/subspace/subspace/releases/download/gemini-3g-2024-feb-01/subspace-farmer-ubuntu-x86_64-v2-gemini-3g-2024-feb-01"
+    to="https://github.com/subspace/subspace/releases/download/gemini-3h-2024-feb-05/subspace-farmer-ubuntu-x86_64-v2-gemini-3h-2024-feb-05"
     style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', textAlign: 'center', padding: '10px' }}>
     <span style={{ fontSize: '20px' }}>Farmer Executable</span>
     <span style={{ fontSize: '14px' }}>(Legacy CPU)</span>
@@ -67,14 +64,14 @@ import styles from '@site/src/pages/index.module.css';
 <div className={`${styles.buttons} ${styles.flexContainer}`}>
   <Link
     className="button button--secondary"
-    to="https://github.com/subspace/subspace/releases/download/gemini-3g-2024-feb-01/subspace-node-ubuntu-aarch64-gemini-3g-2024-feb-01"
+    to="https://github.com/subspace/subspace/releases/download/gemini-3h-2024-feb-05/subspace-node-ubuntu-aarch64-gemini-3h-2024-feb-05"
     style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', textAlign: 'center', padding: '10px' }}>
     <span style={{ fontSize: '20px' }}>Node Executable</span>
     <span style={{ fontSize: '14px' }}>(Aarch64/Raspberry Pi)</span>
   </Link>
   <Link
     className="button button--secondary"
-    to="https://github.com/subspace/subspace/releases/download/gemini-3g-2024-feb-01/subspace-farmer-ubuntu-aarch64-gemini-3g-2024-feb-01"
+    to="https://github.com/subspace/subspace/releases/download/gemini-3h-2024-feb-05/subspace-farmer-ubuntu-aarch64-gemini-3h-2024-feb-05"
     style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', textAlign: 'center', padding: '10px' }}>
     <span style={{ fontSize: '20px' }}>Farmer Executable</span>
     <span style={{ fontSize: '14px' }}>(Aarch64/Raspberry Pi)</span>
@@ -86,20 +83,24 @@ import styles from '@site/src/pages/index.module.css';
 
 1. Open your favorite terminal, and change to the Downloads directory using `cd Downloads`
 2. Make the farmer & node executable
-- `chmod +x subspace-farmer-ubuntu-x86_64-skylake-gemini-3g-2024-feb-01`
-- `chmod +x subspace-node-ubuntu-x86_64-skylake-gemini-3g-2024-feb-01`
+- `chmod +x subspace-farmer-ubuntu-x86_64-skylake-gemini-3h-2024-feb-05`
+- `chmod +x subspace-node-ubuntu-x86_64-skylake-gemini-3h-2024-feb-05`
 3. We will then start the node using the following command
 
 ```bash
   # Replace `INSERT_YOUR_ID` with a nickname you choose
   # Copy all of the lines below, they are all part of the same command
-  ./subspace-node-ubuntu-x86_64-skylake-gemini-3g-2024-feb-01 \
-    --chain gemini-3g \
-    --blocks-pruning 256 \
-    --state-pruning archive-canonical \
-    --validator \
+  ./subspace-node-ubuntu-x86_64-skylake-gemini-3h-2024-feb-05 \
+    run \
+    --chain gemini-3h \
+    --base-path NODE_DATA_PATH \
+    --farmer \
     --name "INSERT_YOUR_ID"
 ```
+
+:::note
+Using **run**, setting **--base-path** and specifying **--chain** became mandatory starting with Gemini 3h. The parameter `--validator` was switched to `--farmer` at the same time.
+:::
 
 4. You should see something similar in the terminal:
 ```
@@ -132,7 +133,7 @@ import styles from '@site/src/pages/index.module.css';
 # Replace `PATH_TO_FARM` with location where you want you store plot files
 # Replace `WALLET_ADDRESS` below with your account address from Polkadot.js wallet
 # Replace `PLOT_SIZE` with plot size in gigabytes or terabytes, for example 100G or 2T (but leave at least 60G of disk space for node and some for OS)
-./subspace-farmer-ubuntu-x86_64-skylake-gemini-3g-2024-feb-01 farm --reward-address WALLET_ADDRESS path=PATH_TO_FARM,size=PLOT_SIZE
+./subspace-farmer-ubuntu-x86_64-skylake-gemini-3h-2024-feb-05 farm --reward-address WALLET_ADDRESS path=PATH_TO_FARM,size=PLOT_SIZE
 ```
 
 2. You should see something similar in the terminal:
