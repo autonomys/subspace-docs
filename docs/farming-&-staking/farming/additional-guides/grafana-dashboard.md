@@ -50,7 +50,7 @@ On Linux machines, you can typically find the `prometheus.yml` file at the follo
 Restart Prometheus with the new configuration.
 
 :::note
-Prometheus can reload its configuration without restarting by using the SIGHUP signal. If you're running on Linux this can be performed by using `kill -s SIGHUP <PID>`, replacing <PID> with your Prometheus process ID.
+Prometheus can reload its configuration without restarting by using the SIGHUP signal. If you're running on Linux this can be performed by using `kill -s SIGHUP <PID>`, replacing `<PID>` with your Prometheus process ID.
 :::
 
 ## Configure Grafana
