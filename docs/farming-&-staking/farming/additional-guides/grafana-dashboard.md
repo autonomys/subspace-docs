@@ -65,7 +65,7 @@ Add your Prometheus Data Source:
 
 Click `Save & test` to test the configuration, if everything is alright you'll see the green message "Data source is working".
 
-## Import grafana dashboard
+## Import Grafana dashboard
 
 Copy and paste the [Grafana Dashboard ID](https://grafana.com/grafana/dashboards/20433) `20433` and click `Load` to complete importing:
 
