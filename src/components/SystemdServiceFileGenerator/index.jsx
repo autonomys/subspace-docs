@@ -84,13 +84,11 @@ ExecStart=${formData.nodeBinPath} \\
           run \\ 
           --name ${formData.nodeName} \\
           --base-path ${formData.nodeData} \\
-          --state-pruning archive-canonical \\
-          --keep-blocks ${formData.archival === "on" ? "archive-canonical" : "256"} \\
           --chain ${chain} \\
           --farmer \\
           --listen-on /ip4/0.0.0.0/tcp/${formData.nodePort} \\
           --dsn-listen-on /ip4/0.0.0.0/udp/${formData.nodeDsnPort}/quic-v1 \\
-          --dsn-listen-on /ip4/0.0.0.0/tcp/${formData.nodeDsnPort} \\
+          --dsn-listen-on /ip4/0.0.0.0/tcp/${formData.nodeDsnPort}
           ${formData.extraNodeArgs ? "\\\n" + formData.extraNodeArgs : ""}
 KillSignal=SIGINT
 Restart=always
