@@ -10,6 +10,10 @@ keywords:
     - Sub-domain
 ---
 
+:::note 
+This guide is focused on how to setup Operators, if you would like to learn more about the function of operators read the [Subspace Subnomicon](https://subnomicon.subspace.network/docs/category/decoupled-execution) to get a better understanding.
+:::
+
 ## Operators are a key part in solving the farmer's dilemma
 
 Subspace introduces the Decoupled Execution Framework (DecEx) to tackle the state-bloat issue by separating transaction ordering from execution. Farmers confirm and order transactions, while staked operator nodes execute them, allowing different hardware requirements for each role. This keeps farming accessible and lays the groundwork for scalable execution. Users submit transactions to operators who batch them into bundles. Farmers verify and order them, with operators executing the transactions in this order. The process forms a deterministic receipt chain, with an initial implementation using an optimistic fraud-proof validation scheme. 
