@@ -210,9 +210,9 @@ To read more about NUMA support and the benefits it provides for large CPUs read
 
 Changing the number of open files limit on Linux is sometimes necessary for both system and application performance tuning. Applications that manage file sharing or distribution, including peer-to-peer systems, may require opening numerous connections to different peers simultaneously. A higher open files limit allows these applications to maintain more connections, improving data transfer rates and system efficiency.
 
-This can also help avoiding `Too Many Open Files` error. 
+This can also help to mitigate the `Too Many Open Files` error. 
 
-You can use the `ulimit` command to change the limit for open files temporarily. For example, setting `ulimit -n 2048` will set the limit to 2048.
+You can use the `ulimit` command to change the limit for open files temporarily. For example, setting `ulimit -n 2048` will set the limit to 2048. This change is reverted after logging out or a reboot.
 
 For a permanent change, you have two approaches:
 - To modify the kernel parameter `fs.file-max`. You can do this using the `sysctl` command `sysctl -w fs.file-max=500000`.
