@@ -25,21 +25,21 @@ import styles from '@site/src/pages/index.module.css';
 <div className={`${styles.buttons} ${styles.flexContainer}`}>
   <Link
     className="button button--secondary"
-    to="https://github.com/subspace/pulsar/releases/download/v0.7.4-alpha/pulsar-ubuntu-x86_64-v2-v0.7.4-alpha"
+    to="https://github.com/subspace/pulsar/releases/download/v0.8.0-alpha/pulsar-ubuntu-x86_64-v2-v0.8.0-alpha"
     style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', textAlign: 'center', padding: '10px' }}>
     <span style={{ fontSize: '20px' }}>Pulsar Binary</span>
     <span style={{ fontSize: '14px' }}>(Legacy CPU)</span>
   </Link>
   <Link
     className="button button--secondary"
-    to="https://github.com/subspace/pulsar/releases/download/v0.7.4-alpha/pulsar-ubuntu-x86_64-skylake-v0.7.4-alpha"
+    to="https://github.com/subspace/pulsar/releases/download/v0.8.0-alpha/pulsar-ubuntu-x86_64-skylake-v0.8.0-alpha"
     style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', textAlign: 'center', padding: '10px' }}>
     <span style={{ fontSize: '20px' }}>Pulsar Binary</span>
     <span style={{ fontSize: '14px' }}>(Skylake+ CPU)</span>
   </Link>
   <Link
     className="button button--secondary"
-    to="https://github.com/subspace/pulsar/releases/download/v0.7.4-alpha/pulsar-ubuntu-aarch64-v0.7.4-alpha"
+    to="https://github.com/subspace/pulsar/releases/download/v0.8.0-alpha/pulsar-ubuntu-aarch64-v0.8.0-alpha"
     style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', textAlign: 'center', padding: '10px' }}>
     <span style={{ fontSize: '20px' }}>Pulsar Binary</span>
     <span style={{ fontSize: '14px' }}>(Aarch64/Raspberry Pi)</span>
@@ -57,7 +57,7 @@ We will now initialize Pulsar. This is where we will configure Reward Address, P
     - `chmod +x [pulsary-binary-filename-here]`
 3. Execute the `init` command as seen below.
 ```shell-session
-./pulsar-ubuntu-x86_64-skylake-v0.7.4-alpha  init
+./pulsar-ubuntu-x86_64-skylake-v0.8.0-alpha  init
 ```
 
 4. This will prompt you to setup your Pulsar configurations to begin farming. You should see a similar prompt like so:
@@ -84,7 +84,7 @@ We will now start the farmer with the `farm` command
 
 1. Run the following command below to start farming with Pulsar.
 ```shell-session
-./pulsar-ubuntu-x86_64-skylake-v0.7.4-alpha farm
+./pulsar-ubuntu-x86_64-skylake-v0.8.0-alpha farm
 ```
 
 2. You should see the farmer and node start successfully and begin syncing, plotting, and then farming:
