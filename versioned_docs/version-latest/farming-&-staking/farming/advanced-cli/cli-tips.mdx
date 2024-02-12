@@ -204,3 +204,16 @@ On Linux and Windows, the farmer will detect NUMA systems and create a number of
 To use NUMA, you need to enable it via the BIOS of your motherboard for the farmer to know it exists. This option is present in motherboards for **Threadripper/Epyc processors** but might exist in others too. If you don’t enable it, both OS and farmer will think you have a single UMA processor and will not be able to apply optimizations.
 
 To read more about NUMA support and the benefits it provides for large CPUs read [this forum post](https://forum.subspace.network/t/numa-support-is-coming/2299?u=nazar-pc).
+
+
+#### Changing number of open files limit (Linux)
+
+Changing the number of open files limit on Linux is sometimes necessary for both system and application performance tuning. Applications that manage file sharing or distribution, including peer-to-peer systems, may require opening numerous connections to different peers simultaneously. A higher open files limit allows these applications to maintain more connections, improving data transfer rates and system efficiency.
+
+This can also help to mitigate the `Too Many Open Files` error. 
+
+You can use the `ulimit` command to change the limit for open files temporarily. For example, setting `ulimit -n 2048` will set the limit to 2048. This change is reverted after logging out or a reboot.
+
+For a permanent change, you have two approaches:
+- To modify the kernel parameter `fs.file-max`. You can do this using the `sysctl` command `sysctl -w fs.file-max=500000`.
+- To set limits for individual users, you need to edit the `/etc/security/limits.conf` file. You can specify hard and soft limits for the number of open files `username soft nofile 10000` for the soft limit and `username hard nofile 30000` for the hard limit. 
