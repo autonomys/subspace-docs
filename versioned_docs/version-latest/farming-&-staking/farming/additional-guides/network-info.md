@@ -1,6 +1,6 @@
 ---
 title: Ports & Network Information
-sidebar_position: 5
+sidebar_position: 1
 description: Comprehensive guide on port forwarding and network information for Subspace Network products.
 slug: networking
 keywords:
