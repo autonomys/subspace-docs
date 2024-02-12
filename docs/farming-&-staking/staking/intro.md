@@ -11,7 +11,7 @@ keywords:
 ---
 
 :::note 
-This guide is focused on how to setup Operators, if you would like to learn more about the function of operators read the [Subspace Subnomicon](https://subnomicon.subspace.network/docs/category/decoupled-execution) to get a better understanding.
+This guide is focused on how to setup an operator, if you would like to learn more about the function of operators read the [Subspace Subnomicon](https://subnomicon.subspace.network/docs/category/decoupled-execution) to get a better understanding.
 :::
 
 ## Operators are a key part in solving the farmer's dilemma
