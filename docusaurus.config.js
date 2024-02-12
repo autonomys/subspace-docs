@@ -253,6 +253,29 @@ const config = {
             ],
           },
           {
+            type: 'dropdown',
+            label: 'Learn',
+            position: 'left',
+            items: [
+              {
+                label: 'Subspace Subnomicon',
+                href: 'https://subnomicon.subspace.network',
+              },
+              {
+                label: 'Subspace Hitchikers Guide',
+                href: 'https://blog.subspace.network/guidetosubspace/home',
+              },
+              {
+                label: 'Subspace Original Whitepaper',
+                href: 'https://subspace.network/news/subspace-network-whitepaper',
+              },
+              {
+                label: 'Additional Videos',
+                href: 'https://subspace.network/learn',
+              }
+            ]
+          },
+          {
             type: 'docsVersionDropdown',
             position: 'right',
             dropdownActiveClassDisabled: false,
@@ -356,6 +379,14 @@ const config = {
           href: 'https://subspace.network',
         },
         copyright: `Copyright © ${new Date().getFullYear()} Subspace Labs, Inc.`,
+      },
+      announcementBar: {
+        id: 'subnomicon',
+        content:
+          '<br /><h4>Learn more about the Subspace Network by visiting our <a target="_blank" href="https://subnomicon.subspace.network">Subnomicon</a></h4>',
+        backgroundColor: '#ac9dc7',
+        textColor: '#292929',
+        isCloseable: false,
       },
       prism: {
         theme: lightCodeTheme,
