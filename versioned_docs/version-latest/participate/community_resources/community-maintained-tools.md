@@ -1,7 +1,7 @@
 ---
 title: Community Built Tools
 sidebar_position: 2
-description: essential info to file systems. partitioning, and mounting.
+description: Community built and maintained tools
 keywords:
     - Subspace Network
     - Community built tools
