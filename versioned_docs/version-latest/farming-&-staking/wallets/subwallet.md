@@ -71,12 +71,13 @@ To get your wallet public address, click on the tSSC token.
 Sometimes you won't see the network you would like to connect to in a list of available networks. In this case you can connect to Subspace Network manually via RPC.
 This also can be helpful for in-development networks such as the Subspace Network as we have regularly changing RPC endpoints and versions of testnets, and soon various domains. Below you will find a simple guide on how to add these new networks. Additionally we will try and keep an updated list of active RPC endpoints below for development.
 
-:::info RPC Endpoints
-- **Gemini 3d Endpoint: ** wss://rpc.gemini-3d.subspace.network/ws
-- **Gemini 3e Endpoint: ** wss://rpc.gemini-3e.subspace.network/ws
-- **Gemini 3f Endpoint: ** wss://rpc-1.gemini-3f.subspace.network/ws
-- **Gemini 3g Endpoint: ** wss://rpc-1.gemini-3g.subspace.network/ws
-- **Gemini 3h Endpoint: ** wss://rpc-1.gemini-3h.subspace.network/ws
+:::info
+RPC Endpoints
+- **Gemini 3d Endpoint:** `wss://rpc.gemini-3d.subspace.network/ws`
+- **Gemini 3e Endpoint:** `wss://rpc.gemini-3e.subspace.network/ws`
+- **Gemini 3f Endpoint:** `wss://rpc-1.gemini-3f.subspace.network/ws`
+- **Gemini 3g Endpoint:** `wss://rpc-1.gemini-3g.subspace.network/ws`
+- **Gemini 3h Endpoint:** `wss://rpc-1.gemini-3h.subspace.network/ws`
 :::
 
 1. Open SubWallet, Select the 3 Line menu in the top left of the wallet.
