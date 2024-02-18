@@ -74,8 +74,9 @@ This also can be helpful for in-development networks such as the Subspace Networ
 :::info RPC Endpoints
 - **Gemini 3d Endpoint: ** wss://rpc.gemini-3d.subspace.network/ws
 - **Gemini 3e Endpoint: ** wss://rpc.gemini-3e.subspace.network/ws
-- **Gemini 3g Endpoint: ** wss://rpc.gemini-3g.subspace.network/ws
+- **Gemini 3f Endpoint: ** wss://rpc-1.gemini-3f.subspace.network/ws
 - **Gemini 3g Endpoint: ** wss://rpc-1.gemini-3g.subspace.network/ws
+- **Gemini 3h Endpoint: ** wss://rpc-1.gemini-3h.subspace.network/ws
 :::
 
 1. Open SubWallet, Select the 3 Line menu in the top left of the wallet.
