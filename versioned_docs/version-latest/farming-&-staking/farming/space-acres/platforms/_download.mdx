@@ -1,0 +1,26 @@
+import Link from '@docusaurus/Link';
+import styles from '@site/src/pages/index.module.css';
+
+<div className={`${styles.buttons} ${styles.flexContainer}`}>
+  <Link
+    className="button button--secondary"
+    to="https://github.com/subspace/space-acres/releases/download/0.1.3/space-acres-0.1.3-x86_64.msi"
+    style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', textAlign: 'center', padding: '10px' }}>
+    <span style={{ fontSize: '20px' }}>Windows Installer</span>
+    <span style={{ fontSize: '14px' }}>(.MSI)</span>
+  </Link>
+  <Link
+    className="button button--secondary"
+    to="https://github.com/subspace/space-acres/releases/download/0.1.3/space-acres_0.1.3-1_amd64.deb"
+    style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', textAlign: 'center', padding: '10px' }}>
+    <span style={{ fontSize: '20px' }}>Linux Installer</span>
+    <span style={{ fontSize: '14px' }}>(.DEB)</span>
+  </Link>
+    <Link
+    className="button button--secondary"
+    to="https://github.com/subspace/space-acres/releases/download/0.1.3/space-acres-0.1.3-x86_64.AppImage"
+    style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', textAlign: 'center', padding: '10px' }}>
+    <span style={{ fontSize: '20px' }}>Linux Installer</span>
+    <span style={{ fontSize: '14px' }}>(AppImage)</span>
+  </Link>
+</div>

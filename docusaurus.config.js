@@ -85,8 +85,8 @@ const config = {
             from: ["/docs/category/get-started-with-farming", "/protocol/farm/farming"]
           },
           {
-            to: "/docs/category/pulsar",
-            from: ["/docs/protocol/pulsar/", "/docs/category/pulsar-recommended"]
+            to: "/docs/category/space-acres",
+            from: ["/docs/protocol/pulsar/", "/docs/category/pulsar-recommended", "/docs/category/pulsar"]
           },
           {
             to: "/docs/farming-&-staking/farming/advanced-cli/cli-install",
@@ -136,7 +136,11 @@ const config = {
           {
             to: "/docs/pre-release/farming-&-staking/farming/additional-guides/networking",
             from: "/docs/pre-release/farming-&-staking/farming/additional-guides/port-forwarding"
-          }
+          },
+          {
+            to: "/docs/pre-release/category/space-acres",
+            from: ["/docs/pre-release/protocol/pulsar/", "/docs/pre-release/category/pulsar-recommended", "/docs/pre-release/category/pulsar"]
+          },
         ],
       },
     ],

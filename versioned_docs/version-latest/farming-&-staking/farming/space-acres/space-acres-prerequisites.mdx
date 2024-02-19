@@ -76,3 +76,16 @@ In order to disable **CoW** on **BTRFS**, run the command `chattr +C /your_farme
 
 In case of **ZFS**, you can try adjusting the **recordsize** by running `zfs set recordsize=128K tank/dataset`, or creating a separate **dataset** for the farmer with adjusted **recordsize** parameters.
 
+### Dependencies
+
+:::caution  Windows No Output Bug
+If you face an error where the node outputs nothing and no error code is given it is likely you just need to install the latest Visual C++ Redistributable package [here](https://learn.microsoft.com/en-us/cpp/windows/latest-supported-vc-redist?view=msvc-170)
+:::
+
+:::caution Linux `libcomp.so.1` error.
+If you encounter an error related to `libgomp.so.1`, install the `libgomp1` library with `sudo apt-get install libgomp1`.
+:::
+
+:::caution Linux File Descriptor Limit
+Linux has a hard limit of 100k file descriptors. Exceeding this may cause errors. Substrate has a default limit of 10k. Check and adjust the limit at `/proc/sys/fs/file-max`. Refer to this [tutorial](https://www.tutorialspoint.com/increase-number-of-maximum-open-files-in-linux) for changing the limit.
+:::
