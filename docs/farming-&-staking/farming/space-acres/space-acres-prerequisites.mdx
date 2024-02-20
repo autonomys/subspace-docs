@@ -1,0 +1,79 @@
+---
+title: Prerequisites
+sidebar_position: 1
+description: Prerequisites for a Subspace Farmer
+keywords:
+    - Farmer
+    - Farming
+    - CLI
+    - Binaries
+    - Docker
+    - Node
+    - CLI
+    - Substrate
+    - Binaries
+    - Docker
+    - Service
+---
+
+### System Requirements
+
+:::danger Farming can be Network Intensive.
+
+Make sure you have a stable network connection. During the plotting phase of farming, it can be network intensive.
+
+This may impact your network usage so please check your network connection if you have a hard data limit.
+:::
+
+:::note
+
+The Subspace Network is based on Proof of Archival Storage, as such your storage contribution will directly correlate to your rewards. For insights on how this choice impacts our network's consensus mechanism and your potential rewards, see [this guide](https://subnomicon.subspace.network/docs/consensus/overview).
+
+:::
+
+|Hardware|Specs|
+|-|-|
+|CPU|4 Core+|
+|RAM|8GB+|
+|SWAP|4GB|
+|Storage|100GB SSD|
+
+
+### Security Considerations
+
+For a secure farming setup, ensure your system is updated, use a secure wallet, configure firewalls properly, and follow network safety protocols. Detailed security practices are available on our [Security Best Practices page](../../../learn/security).
+
+### Crypto Wallet
+
+Before running anything you need to have a wallet where you'll receive testnet coins. There are currently two wallets we suggest using, SubWallet being the preferred route.
+- [SubWallet](https://subwallet.app/)
+- [PolkadotJS](https://polkadot.js.org/extension/)
+
+Install one of the two wallets above into your browser and create a new account there.
+The address of your account will be necessary at the last step.
+
+For help refer to our forum post [How to setup Subwallet & a Polkadot.js Wallet](https://forum.subspace.network/t/subspace-wallet/61)
+- *make sure to follow the Bonus section of the bottom of the post above.*
+
+### Networking Information
+
+For comprehensive details on network configurations, port management, firewall settings, and related networking requirements, please consult our dedicated [Networking Guide](../additional-guides/networking). This resource provides in-depth information to ensure seamless integration and optimal security of your network connections.
+
+### Storage
+
+**HDDs are not supported and will never be.** We don't recommended trying to use smart caching, tiered storage or other ways to accelerate it, you'll be 100% disappointed and just waste your time.
+
+**The node will require 100 GiB of good quality SSD**. Doesn't have to be anything amazing, but something mid-range from a reputable manufacturer with decent endurance is recommended.
+
+**The farmer side can work with pretty much any SSD whatsoever that is not fake and not outright broken**, dedicating high quality high endurance SSD is pointless unless you already have it for reasons unrelated to Subspace. Software writes to disk in near-perfect for SSD way, effectively doing write leveling if SSD is solely dedicated to farming.
+
+**RAID of any kind is pointless and can only harm performance and/or rewards.** RAID0 will most likely make things slower rather than faster (application benefits from knowing underlying hardware topology). RAID1 or any other redundancy level is 100% pointless too since farms are stateless and can be removed if a disk breaks without losing data on other disks, it'll just make thing slower and reduce the effective capacity that can be used for farming, *reducing farming rewards for literally no benefit in exchange*.
+
+### File System
+
+You can use any file system with default settings, we advise against their use for Subspace but in the case of CoW file systems like **ZFS** or **BTRFS** you need to disable **CoW** for the farmer directory, or adjust the **recordsize**.
+
+In order to disable **CoW** on **BTRFS**, run the command `chattr +C /your_farmer_directory/`.
+
+In case of **ZFS**, you can try adjusting the **recordsize** by running `zfs set recordsize=128K tank/dataset`, or creating a separate **dataset** for the farmer with adjusted **recordsize** parameters.
+
