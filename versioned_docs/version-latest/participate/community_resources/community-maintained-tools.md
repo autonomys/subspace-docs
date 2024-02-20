@@ -7,7 +7,7 @@ keywords:
     - Community built tools
 ---
 
-### Community-maintained list of useful, third-party tools
+### Community-maintained list of userful, third-party tools
 
 [Wolfrage76](https://github.com/wolfrage76)'s **list of third-party tools**. 
 - Link to the [website](https://subspace.ifhya.com/).
