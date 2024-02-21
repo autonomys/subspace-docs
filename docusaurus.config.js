@@ -73,7 +73,7 @@ const config = {
             from: "/docs/operators_and_staking/intro"
           },
           {
-            to: "/docs/category/advanced-cli-recommended",
+            to: "/docs/category/advanced-cli",
             from: ["/docs/protocol/cli/", "/docs/protocol/substrate-cli/", "/docs/category/advanced-cli"]
           },
           {
@@ -85,7 +85,7 @@ const config = {
             from: ["/docs/category/get-started-with-farming", "/protocol/farm/farming"]
           },
           {
-            to: "/docs/category/space-acres",
+            to: "/docs/category/space-acres-recommended",
             from: ["/docs/protocol/pulsar/", "/docs/category/pulsar-recommended", "/docs/category/pulsar"]
           },
           {
@@ -110,7 +110,7 @@ const config = {
             from: "/docs/pre-release/operators_and_staking/intro"
           },
           {
-            to: "/docs/pre-release/category/advanced-cli-recommended",
+            to: "/docs/pre-release/category/advanced-cli",
             from: ["/docs/pre-release/protocol/cli/", "/docs/pre-release/protocol/substrate-cli/", "/docs/pre-release/category/advanced-cli"]
           },
           {
@@ -138,7 +138,7 @@ const config = {
             from: "/docs/pre-release/farming-&-staking/farming/additional-guides/port-forwarding"
           },
           {
-            to: "/docs/pre-release/category/space-acres",
+            to: "/docs/pre-release/category/space-acres-recommended",
             from: ["/docs/pre-release/protocol/pulsar/", "/docs/pre-release/category/pulsar-recommended", "/docs/pre-release/category/pulsar"]
           },
         ],
