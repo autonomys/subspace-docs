@@ -73,8 +73,8 @@ const config = {
             from: "/docs/operators_and_staking/intro"
           },
           {
-            to: "/docs/category/advanced-cli-recommended",
-            from: ["/docs/protocol/cli/", "/docs/protocol/substrate-cli/", "/docs/category/advanced-cli"]
+            to: "/docs/category/advanced-cli",
+            from: ["/docs/protocol/cli/", "/docs/protocol/substrate-cli/", "/docs/category/advanced-cli", "/docs/category/advanced-cli-recommended"]
           },
           {
             to: "/docs/farming-&-staking/timekeeping",
@@ -85,8 +85,8 @@ const config = {
             from: ["/docs/category/get-started-with-farming", "/protocol/farm/farming"]
           },
           {
-            to: "/docs/category/pulsar",
-            from: ["/docs/protocol/pulsar/", "/docs/category/pulsar-recommended"]
+            to: "/docs/category/space-acres-recommended",
+            from: ["/docs/protocol/pulsar/", "/docs/category/pulsar-recommended", "/docs/category/pulsar"]
           },
           {
             to: "/docs/farming-&-staking/farming/advanced-cli/cli-install",
@@ -110,8 +110,8 @@ const config = {
             from: "/docs/pre-release/operators_and_staking/intro"
           },
           {
-            to: "/docs/pre-release/category/advanced-cli-recommended",
-            from: ["/docs/pre-release/protocol/cli/", "/docs/pre-release/protocol/substrate-cli/", "/docs/pre-release/category/advanced-cli"]
+            to: "/docs/pre-release/category/advanced-cli",
+            from: ["/docs/pre-release/protocol/cli/", "/docs/pre-release/protocol/substrate-cli/", "/docs/pre-release/category/advanced-cli", "/docs/pre-release/category/advanced-cli-recommended"]
           },
           {
             to: "/docs/pre-release/farming-&-staking/timekeeping",
@@ -136,7 +136,11 @@ const config = {
           {
             to: "/docs/pre-release/farming-&-staking/farming/additional-guides/networking",
             from: "/docs/pre-release/farming-&-staking/farming/additional-guides/port-forwarding"
-          }
+          },
+          {
+            to: "/docs/pre-release/category/space-acres-recommended",
+            from: ["/docs/pre-release/protocol/pulsar/", "/docs/pre-release/category/pulsar-recommended", "/docs/pre-release/category/pulsar"]
+          },
         ],
       },
     ],

@@ -1,0 +1,107 @@
+---
+title: Install
+sidebar_position: 2
+description: How to run a Subspace Network Farmer with Space Acres GUI Application
+keywords:
+    - Farmer
+    - Farming
+    - GUI
+    - Executable
+---
+
+import DownloadButtons from './platforms/_download.mdx'
+
+## Get Started with Space Acres installation
+
+## Step 1: Download the Space-Acres Installer
+
+<DownloadButtons />
+
+## Step 2: Install Space-Acres
+
+1. Open the downloaded Space-Acres installer to launch the Setup Wizard. This wizard will guide you through the installation process.
+    
+    ![space-acres-install-1](/img/doc-imgs/space-acres/space-acres-install-1.png) 
+
+2. Choose your installation preferences, such as the destination folder and whether to create shortcuts. You can also select to have Space Acres launch at startup.
+
+    ![space-acres-install-2](/img/doc-imgs/space-acres/space-acres-install-2.png)
+
+3. Review your settings and click `Install` to commence the installation. The wizard will then install Space Acres on your system.
+
+    ![space-acres-install-3](/img/doc-imgs/space-acres/space-acres-install-3.png)
+
+4. The installation progress will be displayed, showing the status of new files being copied.
+
+    ![space-acres-install-4](/img/doc-imgs/space-acres/space-acres-install-4.png)
+
+5. Once the installation is complete, you will see a completion screen where you can choose to run Space Acres immediately by checking the box before clicking Finish.
+
+    ![space-acres-install-5](/img/doc-imgs/space-acres/space-acres-install-5.png)
+
+## Step 3: Initalize Space-Acres
+
+1. The welcome screen provides an overview of the necessary prerequisites for running Space Acres effectively. Make sure you meet all listed requirements before proceeding. For a comprehensive list of prerequisites and explanations, refer to our [prerequisites guide.](../prerequisites)  
+
+    ![space-acres-setup-1](/img/doc-imgs/space-acres/space-acres-setup-1.png)
+
+2. Configure your node and farmer settings by providing the following:
+    - Node path 
+    - Rewards address
+    - Farm path
+    - Farm size
+    - *(Optional) Add additional farms by selecting `Add farm`*
+
+    Click Start after the configuration is complete.
+
+    ![space-acres-setup-2](/img/doc-imgs/space-acres/space-acres-setup-2.png)
+
+3. (Optional) If you want to configure advanced settings, toggle the `Advanced configuration` section. This will allow you to set the following:
+    - Substrate Node P2P Port
+    - Subspace DSN P2P Port
+    - Enable Faster Networking (QUIC)
+
+    For more information on networking and its implications, refer to our [networking guide.](../additional-guides/networking)
+
+    ![space-acres-setup-3](/img/doc-imgs/space-acres/space-acres-setup-3.png)
+
+4. The application will then proceed to load, creating the consensus node and connecting to the network.
+
+    ![space-acres-setup-4](/img/doc-imgs/space-acres/space-acres-setup-4.png)
+
+5. Finally, you will see the main interface of Space Acres, where your consensus node is running and your farmer is progressing along. Initial syncing & plotting may take some time to complete. Below are examples of the various stages you can expect. 
+
+    a. Cache Syncing
+
+    ![space-acres-setup-5](/img/doc-imgs/space-acres/space-acres-setup-5.png) 
+
+    b. Initial Plotting
+
+    ![space-acres-setup-6](/img/doc-imgs/space-acres/space-acres-setup-6.png)
+
+    c. Plotting Complete, now farming.
+
+    ![space-acres-setup-6](/img/doc-imgs/space-acres/space-acres-setup-7.png)
+
+6. With Space Acres configured, your farming operation will commence seamlessly. Keep an eye on the application to track the progress of your farm and the accumulation of rewards. For your convenience, we've provided a table detailing the color codes associated with different sector statuses. This will enhance your insight into the activities and conditions of your plot.
+
+    | Status            | Color Preview | Description                          |
+    |-------------------|---------------|--------------------------------------|
+    | Default           | ![#727272](https://via.placeholder.com/15/727272/000000?text=+) #727272 | Default state of a farm sector       |
+    | Plotted           | ![#9fc4ff](https://via.placeholder.com/15/9fc4ff/000000?text=+) #9fc4ff | Sector is plotted                    |
+    | About to Expire   | ![#ffd678](https://via.placeholder.com/15/ffd678/000000?text=+) #ffd678 | Sector is nearing expiration         |
+    | Expired           | ![#ff877c](https://via.placeholder.com/15/ff877c/000000?text=+) #ff877c | Sector has expired                   |
+    | Downloading       | ![#499249](https://via.placeholder.com/15/499249/000000?text=+) #499249 | Sector is in the process of downloading (animated) |
+    | Encoding          | ![#ff5365](https://via.placeholder.com/15/ff5365/000000?text=+) #ff5365 | Sector is encoding data (animated)   |
+    | Writing           | ![#9fc4ff](https://via.placeholder.com/15/9fc4ff/000000?text=+) #9fc4ff | Sector is writing data (animated)    |
+
+
+
+:::note Learn More About Syncing, Plotting & Farming
+
+If you would like to learn more about how the syncing, plotting and farming processes works on the Subspace Network, please refer to our Subnomicon links below.
+- [Synchronization](https://subnomicon.subspace.network/docs/network/network_protocols/#synchronization)
+- [Plotting](https://subnomicon.subspace.network/docs/consensus/consensus/plotting)
+- [Farming](https://subnomicon.subspace.network/docs/consensus/consensus/farming)
+
+:::

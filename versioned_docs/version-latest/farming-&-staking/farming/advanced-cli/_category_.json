@@ -1,6 +1,6 @@
 {
-  "label": "Advanced CLI (Recommended)",
-  "position": 2,
+  "label": "Advanced CLI",
+  "position": 3,
   "link": {
     "type": "generated-index",
     "description": "Subspace Advanced CLI"

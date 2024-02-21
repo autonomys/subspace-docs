@@ -1,6 +1,6 @@
 ---
 title: Common problems
-sidebar_position: 7
+sidebar_position: 6
 description: Common problems and ways to resolve them
 keywords:
 - Error
@@ -50,7 +50,7 @@ Most modern desktop processors starting with Broadwell on the Intel side and Ryz
 
 
 Please make sure to:
-- Use our latest stable release, as shown on our [Github releases](https://github.com/subspace/pulsar/releases)
+- Use our latest stable release, as shown on our [Github releases](https://github.com/subspace/space-acres/releases)
 - Verify your farmer is present and on the highest block on our [telemetry server](https://telemetry.subspace.network/)
 - Verify your balance using the [Polkadot explorer](https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Frpc-0.gemini-3g.subspace.network%2Fws#/explorer)
 
@@ -109,20 +109,6 @@ subspace_farmer::single_disk_plot::piece_receiver: Couldn't get a piece from DSN
 
 
 This isn’t a bug but rather a warning, it is something to be expected on a Decentralized Storage Network. There is nothing you need to do as a user with this warning, it's likely it will come up occasionally but as long as there aren’t other more catastrophic errors it can be ignored.
-
-
-### Failed to build a farmer: File exists
-
-
-```
-0: Failed to build a farmer
-1: Single disk plot creation error: I/O error: File exists (os error 17)
-2: I/O error: File exists (os error 17)
-3: File exists (os error 17)
-```
-
-
-The system is detecting a pre-existing installation. If this is the case, you might consider [wiping](./pulsar/pulsar-troubleshooting) the current setup and [re-initializing](./pulsar/pulsar-install) the CLI to ensure a clean installation.
 
 
 ### Block import error: Potential long-range attack: block not in finalized chain.
