@@ -27,6 +27,18 @@ Explore the Subspace Network in depth with our variety of telemetry tools and bl
 
 - **[Polkadot.js Block Explorer](https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Frpc-1.gemini-3g.subspace.network%2Fws#/accounts)**: For users familiar with the Polkadot ecosystem, this explorer offers a seamless experience for exploring the Subspace Network using the Polkadot.js interface.
 
+
+### Plotting concurrency
+
+Starting with the February 19th release, plotting performance was improved by increasing internal concurrency.
+
+During plotting, there are both parallel and sequential parts of the table generation. By generating several tables simultaneously, we can overlap the sequential parts with parallel parts, thus improving CPU utilization. While generating tables for all records requires significant RAM, producing tables for only a few records at a time offers an optimal balance between CPU and RAM usage.
+
+We added the `--record-encoding-concurrency` option to override the default behavior, which allocates one record for every two cores but does not exceed eight in parallel. According to our internal testing with P-cores, E-cores, and combinations of P+E cores, this setting appears to achieve peak performance.
+
+If you prefer to use the previous behavior, or if your RAM usage becomes too high, you can set `--record-encoding-concurrency` to `1`. You may also experiment with setting it to `2`, `3`, etc., which may yield better results depending on your specific CPU/RAM configuration.
+
+
 ### Benchmarking Your Farmer
 Benchmarking helps you test the plotting speed of your farmer against different versions of the Subspace Network.
 

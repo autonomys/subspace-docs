@@ -37,6 +37,10 @@ We will download two files for your respective operating system.
 1. `Subspace-Node` - This is the executable that actually makes the connection with the Subspace Network
 2. `Subspace-Farmer` - This is the executable that will actually farm for rewards on your allocated storage plots.
 
+:::note
+Starting with the February 19th release, we've **enhanced plotting performance** by increasing internal concurrency. This enhancement leads to improved CPU utilization and increased RAM usage. If you prefer to revert your farmer to its previous behavior, you can use the flag `--record-encoding-concurrency 1`.
+:::
+
 <Tabs groupId="OS">
 
 <TabItem value="windows" label="🖼️ Windows" default>
