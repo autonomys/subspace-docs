@@ -76,6 +76,7 @@ In order to disable **CoW** on **BTRFS**, run the command `chattr +C /your_farme
 
 In case of **ZFS**, you can try adjusting the **recordsize** by running `zfs set recordsize=128K tank/dataset`, or creating a separate **dataset** for the farmer with adjusted **recordsize** parameters.
 
+
 ### Dependencies
 
 :::caution  Windows No Output Bug
