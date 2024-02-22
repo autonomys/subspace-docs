@@ -23,3 +23,8 @@ keywords:
 - Link to the [YouTube channel](https://www.youtube.com/channel/UCakvG7QQp4oL0Rtpiei1yKg).
 
 <iframe src="https://plotreport.hakedev.com/" width="100%" height="400px" frameborder="0" scrolling="auto"></iframe>
+
+### Port Metrics Backend Written in Express.JS + CLI GUI 
+[SubspaceMetricsExpressJS](https://github.com/jw287962/subspaceMetricsExpress) **Port Metrics Backend** that can serve the data for any front-end website through a get request to /api/data after starting it up.
+  - has a basic rudimentary WebUI on Home Page
+  - Inspired by & Edited [RS_00's parser function and his GUI CLI Design](https://github.com/irbujam/ss_log_event_monitor).
