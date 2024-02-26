@@ -83,7 +83,7 @@ Both parties negotiate a session key using the Diffie-Hellman algorithm to ensur
 After establishing session encryption, user authentication begins.
 Password authentication involves securely transmitting the user's account password.
 SSH key pairs, consisting of public and private keys, are a recommended alternative for authentication. The client sends a key pair ID to the server, which checks for a matching public key.
-The server encrypts a random number with the public key, sent to the client, who decrypts it with the private key.
+The server encrypts a random number with the public key, sends to the client, who decrypts it with the private key.
 The client computes an MD5 hash using the decrypted number and the shared session key, sending it back to the server for verification.
 
 **RSA encryption**.
@@ -132,7 +132,7 @@ If you have created keys before and store them elsewhere, you can use rsync to c
 ```console
 sudo rsync -e "ssh -p 12345" ~/.ssh/user2/id_rsa.pub USER@SERVER_IP:~/.ssh/authorized_keys
 ```		
-*Use `-p` flag for specifying not standatr port*
+*Use `-p` flag for specifying non-standard port*
 
 This command will create an .ssh dir on a server(or skip if it has) and add the keys to the end of `authorized_keys` file:
 
@@ -159,7 +159,7 @@ ssh username@your-server-ip-addr
 ```
 
 ### Streamlining SSH Connections Management With Aliases
-Managing connections can be much simplier and more enjoyable by creating aliases!
+Managing connections can be much simpler and more enjoyable by creating aliases!
 Create a file named "config" in the `~/.ssh` directory (where the keys are), simply add your server or other users for the same server to it, like in example below. Feel free to add as many as you want.
 
 ```console

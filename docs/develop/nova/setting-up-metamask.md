@@ -63,8 +63,8 @@ First, let’s set up a MetaMask wallet and then go over connecting it to the Su
 
   ```
   Network Name: Subspace EVM
-  New RPC URL: https://nova.gemini-3g.subspace.network/ws
-  Chain ID: 1002
+  New RPC URL: https://nova-0.gemini-3h.subspace.network/ws
+  Chain ID: 490000
   Currency Symbol: TSSC
   ```
 
