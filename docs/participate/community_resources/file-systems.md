@@ -312,5 +312,3 @@ For further information on Btrfs, refer to these resources:
 - [Arch Linux BTRFS Wiki](https://wiki.archlinux.org/title/btrfs)
 - [The Btrfs Filesystem: Theory and Practice](https://www.kernel.org/doc/html/latest/filesystems/btrfs.html)
 - [Btrfs Requires Noatime](https://gms.tf/btrfs-requires-noatime.html)
-
-

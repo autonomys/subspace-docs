@@ -169,7 +169,7 @@ Btrfs, although not a direct replacement for Ext4, is considered a promising tec
 #### Some Interesting Features:
 
 - Unlike other file systems supporting external journals like XFS and ext4, Btrfs doesn't offer support for external journaling. Its journaling is integrated into the COW mechanism.
-- Multiple devices specified during Btrfs creation span across those devices.
+- Btrfs can span across multiple devices specified during its creation.
 - `commit=0` can be used to disable the automatic commit mechanism for potential performance boosts but at the risk of data loss during system crashes or power failures.
 
 #### DataCoW in BTRFS:
@@ -312,5 +312,3 @@ For further information on Btrfs, refer to these resources:
 - [Arch Linux BTRFS Wiki](https://wiki.archlinux.org/title/btrfs)
 - [The Btrfs Filesystem: Theory and Practice](https://www.kernel.org/doc/html/latest/filesystems/btrfs.html)
 - [Btrfs Requires Noatime](https://gms.tf/btrfs-requires-noatime.html)
-
-
