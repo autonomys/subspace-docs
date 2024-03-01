@@ -19,8 +19,23 @@ if (!CROWDIN_PERSONAL_TOKEN) {
     console.error('CROWDIN_PERSONAL_TOKEN is not set');
     process.exit(1);
 }
+ 
+let date = new Date(); 
 
-const date = new Date(); 
+// the next line is temporary, if accidentally merged needs to be deleted. 
+date.setMonth(date.getMonth() - 1);
+
+// next function is temporary, if accidentally merged needs to be deleted.
+function last_day_of_february() {
+    return `2024-02-29T00:00:00+00:00`
+}
+
+function first_day_of_february() {
+    return `2024-02-01T00:00:00+00:00`
+}
+const first_day_of_feb = first_day_of_february();
+// temporary variable
+const last_day_of_feb = last_day_of_february();
 
 async function delay(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
@@ -61,7 +76,7 @@ function generateKey(name) {
 
 function formatDateToBeginningOfMonth(date) {
     const year = date.getFullYear();
-    const month = date.getMonth() + 1; // getMonth() is zero-indexed
+    const month = date.getMonth(); // getMonth() is zero-indexed
 
     return `${year}-${month.toString().padStart(2, '0')}-01T00:00:00+00:00`;
 }
@@ -97,7 +112,7 @@ async function generateMonthlyReport() {
         const response = await makeRequest('post', `${CONFIG.CROWDIN_API_ENDPOINT}/projects/${CONFIG.CROWDIN_PROJECT_ID}/reports`, {
             data: {
                 name: "top-members",
-                schema: { unit: "words", format: "csv", dateFrom: formattedDate }
+                schema: { unit: "words", format: "csv", dateFrom: first_day_of_feb, dateTo: last_day_of_feb }
             },
             headers: { 'Authorization': `Bearer ${CROWDIN_PERSONAL_TOKEN}`, 'Content-Type': 'application/json' }
         });
