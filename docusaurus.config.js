@@ -66,7 +66,7 @@ const config = {
           },
           {
             to: '/docs/category/develop-on-nova-evm-',
-            from: '/docs/category/developer-documentation/',
+            from: ['/docs/category/developer-documentation/','/docs/developers/intro']
           },
           {
             to: "/docs/category/operators-and-nominators",
@@ -95,10 +95,6 @@ const config = {
           {
             to: "/docs/farming-&-staking/staking/operators/register-operator",
             from: "/docs/farming-&-staking/staking/operators"
-          },
-          {
-            to: "/docs/category/develop-on-nova-evm-",
-            from: "/docs/developers/intro",
           },
           //Pre-Release Links
           {
