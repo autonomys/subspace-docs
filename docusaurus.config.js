@@ -96,6 +96,10 @@ const config = {
             to: "/docs/farming-&-staking/staking/operators/register-operator",
             from: "/docs/farming-&-staking/staking/operators"
           },
+          {
+            to: "/docs/category/develop-on-nova-evm-",
+            from: "/docs/developers/intro",
+          },
           //Pre-Release Links
           {
             to: "/docs/pre-release/participate/contribute",
