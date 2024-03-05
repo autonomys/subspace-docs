@@ -65,8 +65,8 @@ const config = {
             from: '/docs/community/contribute/',
           },
           {
-            to: '/docs/category/develop-on-nova-evm-',
-            from: ['/docs/category/developer-documentation/','/docs/developers/intro']
+            to: '/docs/category/develop-on-nova-evm',
+            from: ['/docs/category/developer-documentation/','/docs/developers/intro/']
           },
           {
             to: "/docs/category/operators-and-nominators",
@@ -102,7 +102,7 @@ const config = {
             from: "/docs/pre-release/community/contribute/",
           },
           {
-            to: "/docs/pre-release/category/develop-on-nova-evm-",
+            to: "/docs/pre-release/category/develop-on-nova-evm",
             from: "/docs/pre-release/category/developer-documentation/",
           },
           {
