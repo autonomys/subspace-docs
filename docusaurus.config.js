@@ -303,6 +303,10 @@ const config = {
             label: 'GitHub',
             position: 'right',
           },
+          {
+            type: 'search',
+            position: 'right',
+          }
         ],
       },
       footer: {
@@ -399,10 +403,10 @@ const config = {
       },
       algolia: {
             // The application ID provided by Algolia
-            appId: 'YOUR_APP_ID',
+            appId: 'Y894NAOZLC',
 
             // Public API key: it is safe to commit it
-            apiKey: 'YOUR_SEARCH_API_KEY',
+            apiKey: 'd416924e1132276fb233aa2aa6e46187',
 
             indexName: 'subspace-documentation',
 
