@@ -316,16 +316,12 @@ const config = {
                 href: 'https://subspace.network'
               },
               {
-                label: 'Subspace Desktop',
-                href: 'https://github.com/subspace/subspace-desktop'
+                label: 'Space Acres Desktop GUI',
+                href: 'https://github.com/subspace/space-acres'
               },
               {
-                label: 'Subspace Explorer',
-                href: 'https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Ftest-rpc.subspace.network#/explorer'
-              },
-              {
-                label: 'Subspace Relayer',
-                href: 'https://testnet-relayer.subspace.network/'
+                label: 'Astral Subspace Explorer',
+                href: 'https://explorer.subspace.network/#/gemini-3h/consensus'
               }
             ],
           },
@@ -344,10 +340,6 @@ const config = {
                 label: 'Telegram',
                 href: 'https://t.me/subspace_network',
               },
-              {
-                label: 'Reddit',
-                href: 'https://reddit.com/r/sub/',
-              },
             ],
           },
           {
@@ -363,15 +355,11 @@ const config = {
               },
               {
                 label: 'Twitter',
-                href: 'https://twitter.com/network_subspace',
+                href: 'https://twitter.com/NetworkSubspace',
               },
               {
                 label: 'Medium',
                 href: 'https://medium.com/subspace-network',
-              },
-              {
-                label: 'Subsocial',
-                href: 'https://app.subsocial.network/@NetworkSubspace'
               }
             ],
           },
