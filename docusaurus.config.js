@@ -131,11 +131,11 @@ const config = {
           },
           {
             to: "/docs/farming-&-staking/farming/additional-guides/networking",
-            from: "/docs/farming-&-staking/farming/additional-guides/port-forwarding"
+            from:["/docs/farming-&-staking/additional-guides/networking",  "/docs/farming-&-staking/farming/additional-guides/port-forwarding"]
           },
           {
             to: "/docs/pre-release/farming-&-staking/farming/additional-guides/networking",
-            from: "/docs/pre-release/farming-&-staking/farming/additional-guides/port-forwarding"
+            from:["/docs/pre-release/farming-&-staking/additional-guides/networking",  "/docs/pre-release/farming-&-staking/farming/additional-guides/port-forwarding"]
           },
           {
             to: "/docs/pre-release/category/space-acres-recommended",
