@@ -403,10 +403,10 @@ const config = {
       },
       algolia: {
             // The application ID provided by Algolia
-            appId: 'Y894NAOZLC',
+            appId: 'PURWQGSNUR',
 
             // Public API key: it is safe to commit it
-            apiKey: 'd416924e1132276fb233aa2aa6e46187',
+            apiKey: '3317f8373bc49a240f45964de434250c',
 
             indexName: 'subspace-documentation',
 
