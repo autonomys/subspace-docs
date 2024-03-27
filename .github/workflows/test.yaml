@@ -14,10 +14,9 @@ jobs:
     name: Install Dependencies
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v3
+      - uses: actions/checkout@v4
         with:
-          node-version: '16'
+          node-version: '18'
           cache: 'yarn'
       - name: Install dependencies
         run: yarn install --frozen-lockfile
@@ -29,10 +28,9 @@ jobs:
     env:
       CROWDIN_PERSONAL_TOKEN: ${{ secrets.CROWDIN_PERSONAL_TOKEN }}
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v3
+      - uses: actions/setup-node@v4
         with:
-          node-version: '16'
+          node-version: '18'
           cache: 'yarn'
           cache-dependency-path: '**/yarn.lock'
       - run: yarn install --frozen-lockfile
@@ -45,10 +43,9 @@ jobs:
     env:
       CROWDIN_PERSONAL_TOKEN: ${{ secrets.CROWDIN_PERSONAL_TOKEN }}
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v3
+      - uses: actions/checkout@v4
         with:
-          node-version: '16'
+          node-version: '18'
           cache: 'yarn'
           cache-dependency-path: '**/yarn.lock'
       - run: yarn install --frozen-lockfile
@@ -59,10 +56,9 @@ jobs:
     needs: [build-leaderboard, sync-localization]
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v3
+      - uses: actions/checkout@v4
         with:
-          node-version: '16'
+          node-version: '18'
           cache: 'yarn'
           cache-dependency-path: '**/yarn.lock'
       - run: yarn install --frozen-lockfile
