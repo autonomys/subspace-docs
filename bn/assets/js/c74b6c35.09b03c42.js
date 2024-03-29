@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkportal=self.webpackChunkportal||[]).push([[9056],{570:e=>{e.exports=JSON.parse('{"title":"Learn","description":"Learn about the Subspace Network","slug":"/category/learn","permalink":"/bn/docs/pre-release/category/learn","navigation":{"next":{"title":"Getting Started","permalink":"/bn/docs/pre-release/learn/intro"}}}')}}]);
