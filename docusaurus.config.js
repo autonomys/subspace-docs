@@ -396,7 +396,7 @@ const config = {
             // Public API key: it is safe to commit it
             apiKey: 'd416924e1132276fb233aa2aa6e46187',
 
-            indexName: 'subspace',
+            indexName: 'subspace-documentation',
 
             // Optional: see doc section below
             contextualSearch: true,
