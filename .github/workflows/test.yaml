@@ -31,12 +31,12 @@ jobs:
     steps:
         - uses: actions/checkout@v4
         - uses: actions/setup-node@v4
-        with:
-          node-version: '18'
-          cache: 'yarn'
-          cache-dependency-path: '**/yarn.lock'
-      - run: yarn install --frozen-lockfile
-      - run: yarn run generate-leaderboard
+          with:
+            node-version: '18'
+            cache: 'yarn'
+            cache-dependency-path: '**/yarn.lock'
+        - run: yarn install --frozen-lockfile
+        - run: yarn run generate-leaderboard
 
   sync-localization:
     name: Test Sync Localization Files
@@ -47,12 +47,12 @@ jobs:
     steps:
         - uses: actions/checkout@v4
         - uses: actions/setup-node@v4
-        with:
-          node-version: '18'
-          cache: 'yarn'
-          cache-dependency-path: '**/yarn.lock'
-      - run: yarn install --frozen-lockfile
-      - run: yarn crowdin:sync
+          with:
+            node-version: '18'
+            cache: 'yarn'
+            cache-dependency-path: '**/yarn.lock'
+        - run: yarn install --frozen-lockfile
+        - run: yarn crowdin:sync
 
   build-website:
     name: Test Build Website
