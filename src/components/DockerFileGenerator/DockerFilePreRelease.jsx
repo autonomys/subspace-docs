@@ -104,9 +104,7 @@ services:
     volumes:
       - ${formData.nodeData ? formData.nodeData : "node-data"}:/var/subspace:rw
     ports:
-      - "0.0.0.0:${formData.nodePort}:30333/udp"
       - "0.0.0.0:${formData.nodePort}:30333/tcp"
-      - "0.0.0.0:${formData.nodeDsnPort}:30433/udp"
       - "0.0.0.0:${formData.nodeDsnPort}:30433/tcp"
     restart: unless-stopped
     command:
@@ -115,7 +113,6 @@ services:
         "--chain", "${network}",
         "--base-path", "/var/subspace",
         "--listen-on", "/ip4/0.0.0.0/tcp/30333",
-        "--dsn-listen-on", "/ip4/0.0.0.0/udp/30433/quic-v1",
         "--dsn-listen-on", "/ip4/0.0.0.0/tcp/30433",
         "--rpc-cors", "all",
         "--rpc-methods", "unsafe",

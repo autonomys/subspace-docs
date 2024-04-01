@@ -70,9 +70,9 @@ The process varies based on your router. Generally, navigate to Advanced Setting
 
 ## Network Configuration Scenarios
 
-- **Router Configuration (Desktop):** Forward the specified TCP and UDP ports to the machine running your node.
+- **Router Configuration (Desktop):** Forward the specified TCP ports to the machine running your node.
 - **No Firewall Scenario:** No additional configuration needed if operating without a firewall.
-- **With Firewall:** Ensure TCP and UDP ports are open in your firewall settings.
+- **With Firewall:** Ensure TCP ports are open in your firewall settings.
 - **Direct Connection:** No further action if directly connected to the internet.
 
 Proper configuration of these ports ensures reliable and secure communication within the Subspace Network.

@@ -11,7 +11,6 @@ keywords:
     - Port Forwarding
     - Subspace Desktop
     - Ports
-    - QUIC
     - Networking
     - Network
 ---
@@ -34,7 +33,7 @@ Below is a table summarizing the necessary port configurations for uninterrupted
 
 | Port  | Protocol            | Exposure                                                | Short Description           | Used By                                                                                                                                                              | Purpose                                              |
 |-------|---------------------|---------------------------------------------------------|----------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------|
-| 30333 | TCP      | Always public                                           | Substrate networking P2P   | <ul><li>[Space Acres](../../../category/space-acres/)</li><li>[Advanced CLI Node (Consensus)](../../../category/advanced-cli)</li></ul> | Connecting to the rest of the network for exchanging blocks, transactions, PoT gossip, etc. |
+| 30333 | TCP     | Always public                                           | Substrate networking P2P   | <ul><li>[Space Acres](../../../category/space-acres/)</li><li>[Advanced CLI Node (Consensus)](../../../category/advanced-cli)</li></ul> | Connecting to the rest of the network for exchanging blocks, transactions, PoT gossip, etc. |
 | 30433 | TCP      | Always public                                           | Subspace networking P2P    | <ul><li>[Space Acres](../../../category/space-acres/)</li><li>[Advanced CLI Node (Consensus)](../../../category/advanced-cli)</li></ul> | Connecting to the rest of the network and retrieving archival history.            |
 | 30533 | TCP     | Always public                                           | Subspace networking P2P    | <ul><li>[Advanced CLI Node (Consensus)](../../../category/advanced-cli)</li></ul>                                                                        | Connecting to the rest of the network and retrieving archival history, not required for Space Acres because the node and the farmer share the Subspace networking stack there. |
 | 40333 | TCP          | Always public                                           | Subspace networking P2P    | <ul><li>[Advanced CLI Node (Domain)](../../../category/operators-and-nominators)</li></ul>                                                                           | Connecting to the rest of the domain network for transaction gossipping.      |
@@ -70,9 +69,9 @@ The process varies based on your router. Generally, navigate to Advanced Setting
 
 ## Network Configuration Scenarios
 
-- **Router Configuration (Desktop):** Forward the specified TCP and UDP ports to the machine running your node.
+- **Router Configuration (Desktop):** Forward the specified TCP ports to the machine running your node.
 - **No Firewall Scenario:** No additional configuration needed if operating without a firewall.
-- **With Firewall:** Ensure TCP and UDP ports are open in your firewall settings.
+- **With Firewall:** Ensure TCP ports are open in your firewall settings.
 - **Direct Connection:** No further action if directly connected to the internet.
 
 Proper configuration of these ports ensures reliable and secure communication within the Subspace Network.

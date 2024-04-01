@@ -87,7 +87,6 @@ ExecStart=${formData.nodeBinPath} \\
           --chain ${chain} \\
           --farmer \\
           --listen-on /ip4/0.0.0.0/tcp/${formData.nodePort} \\
-          --dsn-listen-on /ip4/0.0.0.0/udp/${formData.nodeDsnPort}/quic-v1 \\
           --dsn-listen-on /ip4/0.0.0.0/tcp/${formData.nodeDsnPort} ${formData.extraNodeArgs === "" ? "" : "\\\n"}\          ${formData.extraNodeArgs}
 KillSignal=SIGINT
 Restart=always
