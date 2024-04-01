@@ -183,11 +183,8 @@ services:
     ports:
 # If port 30333 or 30433 is already occupied by another Substrate-based node, replace all
 # occurrences of 30333 or 30433 in this file with another value
-      - "0.0.0.0:30333:30333/udp"
       - "0.0.0.0:30333:30333/tcp"
-      - "0.0.0.0:30433:30433/udp"
       - "0.0.0.0:30433:30433/tcp"
-      - "0.0.0.0:40333:40333/udp"
       - "0.0.0.0:40333:40333/tcp"
     restart: unless-stopped
     command: [
@@ -195,7 +192,6 @@ services:
       "--chain", "gemini-3h",
       "--base-path", "/var/subspace",
       "--listen-on", "30333",
-      "--dsn-listen-on", "/ip4/0.0.0.0/udp/30433/quic-v1",
       "--dsn-listen-on", "/ip4/0.0.0.0/tcp/30433",
       "--rpc-cors", "all",
       "--rpc-methods", "unsafe",
@@ -234,13 +230,11 @@ services:
     ports:
 # If port 30533 is already occupied by something else, replace all
 # occurrences of 30533 in this file with another value
-      - "0.0.0.0:30533:30533/udp"
       - "0.0.0.0:30533:30533/tcp"
     restart: unless-stopped
     command: [
       "farm",
       "--node-rpc-url", "ws://node:9944",
-      "--listen-on", "/ip4/0.0.0.0/udp/30533/quic-v1",
       "--listen-on", "/ip4/0.0.0.0/tcp/30533",
 # Replace WALLET_ADDRESS with your Polkadot.js wallet address
       "--reward-address", "WALLET_ADDRESS",

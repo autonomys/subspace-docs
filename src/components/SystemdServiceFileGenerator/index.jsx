@@ -87,7 +87,6 @@ ExecStart=${formData.nodeBinPath} \\
           --chain ${chain} \\
           --farmer \\
           --listen-on /ip4/0.0.0.0/tcp/${formData.nodePort} \\
-          --dsn-listen-on /ip4/0.0.0.0/udp/${formData.nodeDsnPort}/quic-v1 \\
           --dsn-listen-on /ip4/0.0.0.0/tcp/${formData.nodeDsnPort} ${formData.extraNodeArgs === "" ? "" : "\\\n"}\          ${formData.extraNodeArgs}
 KillSignal=SIGINT
 Restart=always
@@ -154,7 +153,6 @@ Group=${formData.user}
 ExecStart=${formData.farmerBinPath} \\
           farm \\
           --reward-address ${formData.rewardAddress} \\
-          --listen-on /ip4/0.0.0.0/udp/${formData.farmerPort}/quic-v1 \\
           --listen-on /ip4/0.0.0.0/tcp/${formData.farmerPort} \\
           path=${formData.farmerData},size=${formData.plotSize} ${formData.extraFarmerArgs === "" ? "" : "\\\n"}\          ${formData.extraFarmerArgs}
 KillSignal=SIGINT

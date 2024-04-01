@@ -104,9 +104,7 @@ services:
     volumes:
       - ${formData.nodeData ? formData.nodeData : "node-data"}:/var/subspace:rw
     ports:
-      - "0.0.0.0:${formData.nodePort}:30333/udp"
       - "0.0.0.0:${formData.nodePort}:30333/tcp"
-      - "0.0.0.0:${formData.nodeDsnPort}:30433/udp"
       - "0.0.0.0:${formData.nodeDsnPort}:30433/tcp"
     restart: unless-stopped
     command:
@@ -115,7 +113,6 @@ services:
         "--chain", "${network}",
         "--base-path", "/var/subspace",
         "--listen-on", "/ip4/0.0.0.0/tcp/30333",
-        "--dsn-listen-on", "/ip4/0.0.0.0/udp/30433/quic-v1",
         "--dsn-listen-on", "/ip4/0.0.0.0/tcp/30433",
         "--rpc-cors", "all",
         "--rpc-methods", "unsafe",
@@ -136,14 +133,12 @@ services:
     volumes:
       - ${formData.farmerData ? formData.farmerData : "farmer-data"}:/var/subspace:rw
     ports:
-      - "0.0.0.0:${formData.farmerPort}:30533/udp"
       - "0.0.0.0:${formData.farmerPort}:30533/tcp"
     restart: unless-stopped
     command:
       [
         "farm",
         "--node-rpc-url", "ws://node:9944",
-        "--listen-on", "/ip4/0.0.0.0/udp/30533/quic-v1",
         "--listen-on", "/ip4/0.0.0.0/tcp/30533",
         "--reward-address", "${formData.rewardAddress}",
         "path=/var/subspace,size=${formData.plotSize}"
