@@ -11,7 +11,6 @@ keywords:
     - Port Forwarding
     - Subspace Desktop
     - Ports
-    - QUIC
     - Networking
     - Network
 ---
