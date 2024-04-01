@@ -391,12 +391,12 @@ const config = {
       },
       algolia: {
             // The application ID provided by Algolia
-            appId: 'PURWQGSNUR',
+            appId: 'Y894NAOZLC',
 
             // Public API key: it is safe to commit it
-            apiKey: '3317f8373bc49a240f45964de434250c',
+            apiKey: 'd416924e1132276fb233aa2aa6e46187',
 
-            indexName: 'subspace-documentation',
+            indexName: 'subspace',
 
             // Optional: see doc section below
             contextualSearch: true,
