@@ -4,14 +4,14 @@ import CodeBlock from '@theme/CodeBlock';
 import { AdvancedSystemdServiceFileGenerator } from '@site/src/components/SystemdServiceFileGenerator/index.jsx';
 
 
+--- 
+
+Create a New User for Subspace:
+
 :::warning Security risks
 Running a node as a root user carries significant risks for the system. 
 It is recommended to create a separate user for this purpose.
 :::
-
-<Tabs groudId="service_user">
-<TabItem value="regular_user" label="👤 Regular User" default>
-Create a New User for Subspace:
 
 <CodeBlock language="shell-session">
 {`sudo useradd -m -p ! -s /sbin/nologin -c "" subspace`}
@@ -98,81 +98,6 @@ Exit from the User:
 <CodeBlock language="shell-session">
 {`exit`}
 </CodeBlock>
-</TabItem>
-
-<TabItem value="root" label="🫚 Root">
-Create a Directory for Executable Files:
-
-```shell-session
-mkdir -p /root/.local/bin
-```
-
-Download the Executable Files, using the appropriate commands:
-
-<details>
-    <summary>
-    x86_64 Ubuntu Executables
-	</summary>
-    <details>
-        <summary>
-        Version 2 - for older processors since ~2009 and some old VMs
-        </summary>
-		Node:
-		<CodeBlock language="shell-session">
-		{`wget -O /root/.local/bin/subspace-node https://github.com/subspace/subspace/releases/download/gemini-3h-2024-mar-29/subspace-node-ubuntu-x86_64-v2-gemini-3h-2024-mar-29`}
-		</CodeBlock>
-		Farmer:
-		<CodeBlock language="shell-session">
-		{`wget -O /root/.local/bin/subspace-farmer https://github.com/subspace/subspace/releases/download/gemini-3h-2024-mar-29/subspace-farmer-ubuntu-x86_64-v2-gemini-3h-2024-mar-29`}
-		</CodeBlock>
-    </details>
-    <details>
-        <summary>
-        Version skylake - For newer processors since ~2015
-        </summary>
-		Node:
-		<CodeBlock language="shell-session">
-		{`wget -O /root/.local/bin/subspace-node https://github.com/subspace/subspace/releases/download/gemini-3h-2024-mar-29/subspace-node-ubuntu-x86_64-skylake-gemini-3h-2024-mar-29`}
-		</CodeBlock>
-		Farmer:
-		<CodeBlock language="shell-session">
-		{`wget -O /root/.local/bin/subspace-farmer https://github.com/subspace/subspace/releases/download/gemini-3h-2024-mar-29/subspace-farmer-ubuntu-x86_64-skylake-gemini-3h-2024-mar-29`}
-		</CodeBlock>
-    </details>
-</details>
-
-<details>
-    <summary>
-    Aarch64/64-bit Raspberry Pi Executables
-    </summary>
-	Node:
-	<CodeBlock language="shell-session">
-	{`wget -O /root/.local/bin/subspace-node https://github.com/subspace/subspace/releases/download/gemini-3h-2024-mar-29/subspace-node-ubuntu-aarch64-gemini-3h-2024-mar-29`}
-	</CodeBlock>
-	Farmer:
-	<CodeBlock language="shell-session">
-	{`wget -O /root/.local/bin/subspace-farmer https://github.com/subspace/subspace/releases/download/gemini-3h-2024-mar-29/subspace-farmer-ubuntu-aarch64-gemini-3h-2024-mar-29`}
-	</CodeBlock>
-</details>
-
-By default, these commands download the executable files to the `/root/.local/bin` directory. 
-You can change the directory by modifying the respective string.
-
-You can use the same commands to update the node.
-
-Make the Files Executable:
-<CodeBlock language="shell-session">
-{`chmod +x /root/.local/bin/subspace-node
-chmod +x /root/.local/bin/subspace-farmer`}
-</CodeBlock>
-
-Create a Directory for Node and Farmer Data:
-<CodeBlock language="shell-session">
-{`mkdir -p /root/.local/share`}
-</CodeBlock>
-
-</TabItem>
-</Tabs>
 
 ---
 
