@@ -1,7 +1,7 @@
 ---
-title: Introduction
+title: Pendahuluan
 sidebar_position: 1
-description: A developer guide for the Subspace Network
+description: Panduan pengembang untuk Jaringan Subspace
 keywords:
     - Getting Started
     - Learn
@@ -9,42 +9,42 @@ keywords:
     - Development
 ---
 
-# Developer Guide
+# Panduan Pengembang
 ---
-Subspace is a secure, scalable, decentralized blockchain that resolves the **[blockchain trilemma](https://vitalik.ca/general/2017/12/31/sharding_faq.html#this-sounds-like-theres-some-kind-of-scalability-trilemma-at-play-what-is-this-trilemma-and-can-we-break-through-it)** without making compromises. This guide will cover some of the main aspects of Subspace, if you’re willing to learn more about the technology behind Subspace it’s better to refer to the [Whitepaper - _Full-Length_](https://assets.website-files.com/61526a2af87a54e565b0ae92/617759c00edd0e3bd279aa29_Subspace_%20A%20solution%20to%20the%20farmer%27s%20dilemma.pdf) or [Whitepaper - _Summarized_](https://subspace.network/news/subspace-network-whitepaper)
+Subspace adalah blockchain yang aman, dapat diskalakan, dan terdesentralisasi yang menyelesaikan **[blockchain trilemma](https://vitalik.ca/general/2017/12/31/sharding_faq.html#this-sounds-like-theres-some-kind-of-scalability-trilemma-at-play-what-is-this-trilemma-and-can-we-break-through-it)** tanpa membuat kompromi. Panduan ini akan membahas beberapa aspek utama Subspace, jika Anda ingin mempelajari lebih lanjut tentang teknologi di balik Subspace, lebih baik merujuk ke [Whitepaper - _Full-Length_](https://assets.website-files.com/61526a2af87a54e565b0ae92/617759c00edd0e3bd279aa29_Subspace_%20A%20solution%20to%20the%20farmer%27s%20dilemma.pdf) atau [Whitepaper - _Summarized_](https://subspace.network/news/subspace-network-whitepaper)
 
-## What makes the Subspace Network protocol different?
+## Apa yang membuat protokol Subspace Network berbeda?
 ---
-Some new blockchain protocols, designed to be more efficient, fair, and decentralized, are using a system called Proof-of-Capacity (PoC) that prioritizes storage-intensive farming over compute-intensive mining. However, this poses a challenge known as the farmer's dilemma, where users must decide whether to allocate their limited storage to maintain the blockchain's state and history, or to use it for consensus. This may lead to a centralization of farming among a few trusted operators. Subspace, a novel Proof-of-Archival-Storage (PoAS) blockchain, resolves this issue by allowing farmers to store the blockchain's history collectively, separating the processes of consensus and computation. This results in reduced overheads and facilitates participation by regular users, even in complex execution models.
+Beberapa protokol blockchain baru, yang dirancang agar lebih efisien, adil, dan terdesentralisasi, menggunakan sebuah sistem yang disebut Proof-of-Capacity (PoC) yang memprioritaskan penambagan intensif penyimpanan daripada penambangan intensif komputasi. Akan tetapi, hal ini menimbulkan sebuah tantangan yang dikenal sebagai dilema petani, di mana pengguna harus memutuskan apakah akan mengalokasikan penyimpanan mereka yang terbatas untuk menjaga status dan riwayat blockchain, atau menggunakannya untuk konsensus. Hal ini dapat mengarah pada sentralisasi farming di antara beberapa operator tepercaya. Subspace, sebuah blockchain Proof-of-Archival-Storage (PoAS) yang baru, menyelesaikan masalah ini dengan mengizinkan para petani untuk menyimpan riwayat blockchain secara kolektif, memisahkan proses konsensus dan perhitungan. Hal ini menghasilkan pengurangan biaya overhead dan memfasilitasi partisipasi oleh pengguna biasa, bahkan dalam model eksekusi yang kompleks.
 
-Decoupled execution keeps farming lightweight and resistant to pooling, while the farmer storage network enables the blockchain to scale massively without becoming centralized.
+Eksekusi yang terpisah membuat farming tetap ringan dan tahan terhadap penggabungan, sementara jaringan penyimpanan petani memungkinkan blockchain untuk menskalakan secara besar-besaran tanpa menjadi terpusat.
 
 ![Intro-1](/img/developers/Intro-1.png)
 
-## What is a Proof-of-Archival-Storage?
+## Apa yang dimaksud dengan Penyimpanan Bukti Arsip?
 ---
-At Subspace, we implement a Proof-of-Archival-Storage protocol based on the following:
-- A Nakamoto (or longest-chain) consensus protocol
-- Employing a proof-of-capacity resource puzzle for space-bound Sybil resistance
-- The space reflects some useful storage (as in Proof-of-Replication)
-- And the specific data being replicated is the archival history of the Subspace chain
+Di Subspace, kami menerapkan protokol Penyimpanan Bukti Arsip berdasarkan yang berikut ini:
+- Protokol konsensus Nakamoto (atau rantai terpanjang)
+- Menggunakan teka-teki sumber daya bukti-kapasitas untuk resistensi Sybil yang terikat ruang
+- Ruang tersebut mencerminkan beberapa penyimpanan yang berguna (seperti pada Proof-of-Replication)
+- Dan data spesifik yang direplikasi adalah riwayat arsip dari rantai Subspace
 
-In its simplest form, our Proof-of-Archival-Storage consensus is a 3-phase protocol:
-- **Archiving phase**: given new blocks of the chain, construct canonical history.
-- **Plotting phase**: given the canonical history of the blockchain, generate a unique replica (the plot) and store it on disk.
-- **Consensus phase**: given a challenge from a secure randomness beacon, audit the plot for a solution that satisfies some threshold, return a proof, and propose a block.
+Dalam bentuk yang paling sederhana, konsensus Proof-of-Archival-Storage kami adalah protokol 3 fase:
+- **Fase pengarsipan**: dengan adanya blok-blok baru pada rantai, buatlah sejarah kanonik.
+- **Fase perencanaan**: diberikan sejarah kanonik blockchain, buat replika unik (plot) dan simpan pada disk.
+- Fase konsensus**: diberikan sebuah tantangan dari sebuah mercusuar keacakan yang aman, audit plot untuk sebuah solusi yang memenuhi ambang batas, kembalikan bukti, dan ajukan sebuah blok.
 
-If you’re curious to read more about our consensus, [here](https://blog.subspace.network/dilithium-the-subspace-consensus-v2-3c5df0759e72) is a great overview written by one of our researchers, Dariia Porechna.
+Jika Anda ingin membaca lebih lanjut tentang konsensus kami, [here] (https://blog.subspace.network/dilithium-the-subspace-consensus-v2-3c5df0759e72) adalah rangkuman yang bagus yang ditulis oleh salah satu peneliti kami, Dariia Porechna.
 
-## A few words about Subspace's consensus protocol **Dilithium**
+## Beberapa kata tentang protokol konsensus Subspace **Dilithium**
 ---
-As we transition to our Dilithium v2 consensus, we've recognized the essential role polynomial schemes will play in the next era of blockchain design, just as hash functions, Merkle trees, and ECC signatures did in the previous decade. Subspace is distinctively equipped to utilize these schemes effectively due to our proof-of-archival-storage (PoAS) consensus, which enables a self-regulating feedback loop for storage costs, helping us scale with demand. This enables us to leverage polynomial schemes for linear blockspace scaling proportional to the number of network participants. We specifically employ Reed-Solomon erasure coding and Kate-Zaverucha-Goldberg (KZG) commitments in our v2 consensus, allowing efficient data recovery and authentication.
+Ketika kami bertransisi ke konsensus Dilithium v2, kami menyadari peran penting skema polinomial yang akan dimainkan di era desain blockchain berikutnya, seperti halnya fungsi hash, pohon Merkle, dan tanda tangan ECC pada dekade sebelumnya. Subspace memiliki kemampuan khusus untuk menggunakan skema ini secara efektif karena konsensus proof-of-archival-storage (PoAS) kami, yang memungkinkan loop umpan balik yang dapat diatur sendiri untuk biaya penyimpanan, sehingga membantu kami menyesuaikan dengan permintaan. Hal ini memungkinkan kami untuk memanfaatkan skema polinomial untuk penskalaan ruang blok linier yang sebanding dengan jumlah peserta jaringan. Kami secara khusus menggunakan pengkodean penghapusan Reed-Solomon dan komitmen Kate-Zaverucha-Goldberg (KZG) dalam konsensus v2 kami, yang memungkinkan pemulihan dan otentikasi data yang efisien.
 
-When archiving the history of Subspace, we replace Merkle roots with KZG commitments. Farmers can then provide constant-sized Kate proofs to clients of the Distributed Storage Network (DSN) as the witness for their pledged archival storage space. We construct generic proofs-of-replication (PoR) from RS-KZG schemes and extend these into an extremely simple and efficient proof-of-archival-storage (PoAS).
+Ketika mengarsipkan sejarah Subspace, kami mengganti akar Merkle dengan komitmen KZG. Petani kemudian dapat memberikan bukti Kate berukuran konstan kepada klien Distributed Storage Network (DSN) sebagai saksi untuk ruang penyimpanan arsip yang dijaminkan. Kami membangun bukti replikasi umum (PoR) dari skema RS-KZG dan memperluasnya menjadi bukti penyimpanan arsip yang sangat sederhana dan efisien (PoAS).
 
-## Is it difficult to build applications on Subspace Network?
+## Apakah sulit untuk membangun aplikasi di Subspace Network?
 ---
 
-Our primary objective is to maintain a minimum barrier to entry for both our farmers and developers. The installation of a Subspace Network node can be accomplished in less than 15 minutes and is compatible with an extensive array of computer systems given the highly accessible minimum requirements for the hardware.
+Tujuan utama kami adalah untuk mempertahankan penghalang minimum untuk masuk bagi petani dan pengembang kami. Pemasangan node Subspace Network dapat dilakukan dalam waktu kurang dari 15 menit dan kompatibel dengan beragam sistem komputer karena persyaratan minimum perangkat keras yang sangat mudah diakses.
 
-When it comes to development on the Subspace Network, we offer a range of flexible options. At present, you can make use of our multiple Ethereum Virtual Machine (EVM) domains for a familiar experience. Soon, we will also provide the functionality for you to build your own local custom virtual machine if that's your preference. We take pride in the unlimited possibilities we provide - there are no boundaries!
+Dalam hal pengembangan di Subspace Network, kami menawarkan berbagai opsi yang fleksibel. Saat ini, Anda dapat menggunakan beberapa domain Ethereum Virtual Machine (EVM) kami untuk mendapatkan pengalaman yang familiar. Dalam waktu dekat, kami juga akan menyediakan fungsionalitas bagi Anda untuk membuat mesin virtual khusus lokal Anda sendiri jika itu yang Anda inginkan. Kami bangga dengan kemungkinan tak terbatas yang kami sediakan - tidak ada batasan!
