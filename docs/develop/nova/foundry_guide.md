@@ -1,39 +1,39 @@
 ---
-title: Foundry - testing and deployment
+title: Foundry - pengujian dan penerapan
 sidebar_position: 7
-description: Testing and Deploying Smart Contracts using Foundry
+description: Menguji dan Menerapkan Kontrak Cerdas menggunakan Foundry
 keywords:
   - subspace network
   - book getfoundry
   - foundry
 ---
 
-### Testing and deploying smart contracts using [Foundry](https://book.getfoundry.sh/)
+### Menguji dan menerapkan kontrak pintar menggunakan [Foundry](https://book.getfoundry.sh/)
 ---
 
-1. Use `foundryup` toolchain installer
+1. Gunakan penginstalasi rantai alat `foundryup`
  ```bash
  curl -L https://foundry.paradigm.xyz | bash
  ```
- This will install `foundryup`, then simply follow the instructions on-screen, which will make the foundryup command available in your CLI.
- Running `foundryup` by itself will install the latest precompiled binaries: `forge`, `cast`, `anvil`, and `chisel`. See `foundryup --help` for more options.
+ Ini akan menginstal `foundryup`, kemudian cukup ikuti instruksi pada layar, yang akan membuat perintah foundryup tersedia di CLI Anda.
+ Menjalankan `foundryup` dengan sendirinya akan menginstal binari terbaru yang sudah dikompilasi: `forge`, `cast`, `anvil`, dan `chisel`. Lihat `foundryup --help` untuk opsi lainnya.
 
  :::note
- If you're on Windows, you will need to install and use [Git BASH](https://gitforwindows.org/) or [WSL](https://learn.microsoft.com/en-us/windows/wsl/install), as your terminal, since Foundryup does not currently support `PowerShell` or `Cmd`.
+ Jika Anda menggunakan Windows, Anda harus menginstal dan menggunakan [Git BASH](https://gitforwindows.org/) atau [WSL](https://learn.microsoft.com/en-us/windows/wsl/install), sebagai terminal Anda, karena Foundryup saat ini tidak mendukung `PowerShell` atau `Cmd`.
  :::
 
-2.  Once installed, create a project. Let’s name it `hello_subspace`.
+2.  Setelah terinstal, buatlah sebuah proyek. Beri nama `hello_subspace`.
 
-    To initialize the project, run 
+    Untuk menginisialisasi proyek, jalankan 
     ```bash
     forge init hello_subspace
     ```
-    cd into `hello_subspace` directory and let’s have a look at the project’s structure.
+    cd ke dalam direktori `hello_subspace` dan mari kita lihat struktur proyek.
 
     ![Foundry-1](/img/developers/Foundry-1.png)
 
-3. All the necessary repo structure was created automatically, so we can start writing and testing our smart contracts right away. As you can see, there are separate directories for storing smart contracts (src) and testing smart contracts (test).
-    Let’s have a look at the `Counter.sol` smart contract and add a few more functions to the standard behavior. Our smart contract will have three functions: `setNumber()` that sets the uint256 number to the provided value, `increment()` which increases the value by 1 and `decrement()` which decreases the value by 1.
+3. Semua struktur repo yang diperlukan dibuat secara otomatis, sehingga kita dapat mulai menulis dan menguji smart contract kita segera. Seperti yang dapat Anda lihat, ada direktori terpisah untuk menyimpan smart contract (src) dan menguji smart contract (test).
+    Mari kita lihat smart contract `Counter.sol` dan tambahkan beberapa fungsi lagi ke dalam perilaku standar. Smart contract kita akan memiliki tiga fungsi: `setNumber()` yang menetapkan angka uint256 ke nilai yang disediakan, `increment()` yang menambah nilai sebesar 1 dan `decrement()` yang mengurangi nilai sebesar 1.
 
     ```
     // SPDX-License-Identifier: UNLICENSED
@@ -56,7 +56,7 @@ keywords:
     }
     ```
 
-4. Let’s make sure that all functions are working properly by adding a couple of tests to the `Counter.t.sol` test file and check if they pass.
+4. Mari kita pastikan bahwa semua fungsi bekerja dengan baik dengan menambahkan beberapa tes ke file tes `Counter.t.sol` dan periksa apakah tes tersebut lulus.
 
     ```
     // SPDX-License-Identifier: UNLICENSED
@@ -91,14 +91,14 @@ keywords:
     ```
 
 
-5. In our tests, we first set the initial value of number to two, then check if function `increment()` increases the value by 1 and if `decrement()` decreases the value by 1.
-    Let’s build a project by running: 
+5. Dalam pengujian kami, pertama-tama kami menetapkan nilai awal angka menjadi dua, kemudian memeriksa apakah fungsi `increment()` meningkatkan nilai sebesar 1 dan jika `decrement()` mengurangi nilai sebesar 1.
+    Mari kita buat sebuah proyek dengan menjalankannya: 
 
     ```bash
     forge build
     ```
 
-    and ensure that tests are working as expected by running 
+    dan memastikan bahwa pengujian bekerja seperti yang diharapkan dengan menjalankan 
 
     ```bash
     forge test
@@ -106,32 +106,32 @@ keywords:
 
     ![Foundry-2](/img/developers/Foundry-2.png)
 
-    Nice, all tests are passing, meaning the smart contract is working as expected.
+    Bagus, semua tes lulus, yang berarti kontrak pintar bekerja seperti yang diharapkan.
 
-6. Next, there are **two things** we need to set, in order to **deploy our smart contract**:
-    - We need to connect a wallet that has sufficient balance of TSSC to cover the gas fees.
-    - We need to set an environment variable we will use later.
+6. Selanjutnya, ada **dua hal** yang perlu kita atur, untuk **menerapkan kontrak pintar kita**:
+    - Kita perlu menghubungkan dompet yang memiliki saldo TSSC yang cukup untuk menutupi biaya gas.
+    - Kita perlu mengatur variabel lingkungan yang akan kita gunakan nanti.
 
-    In order to make our lives easier, let’s create a new `Makefile` as well as `.env` file at the root of our project.
-    `.env` files are typically used to store environment variables for your application. They are particularly useful for managing settings that change between deployment environments (e.g., development, testing, staging, and production), and for storing sensitive information.
+    Untuk mempermudah pekerjaan kita, mari kita buat file `Makefile` dan juga file `.env` baru di root proyek kita.
+    File `.env` biasanya digunakan untuk menyimpan variabel lingkungan untuk aplikasi Anda. File ini sangat berguna untuk mengelola pengaturan yang berubah di antara lingkungan penerapan (misalnya, pengembangan, pengujian, pementasan, dan produksi), dan untuk menyimpan informasi sensitif.
 
-    Environment variables can include database connection details, API keys, external resource URIs, or other configuration variables that might change depending on the environment in which the application is running. In our case, we would use it to point to our Core-EVM RPC url by setting
+    Variabel lingkungan dapat mencakup detail koneksi basis data, kunci API, URI sumber daya eksternal, atau variabel konfigurasi lain yang mungkin berubah tergantung pada lingkungan tempat aplikasi berjalan. Dalam kasus kita, kita akan menggunakannya untuk mengarahkan ke url RPC Core-EVM kita dengan mengatur
 
     ```bash
     RPC_URL=https://nova.gemini-3g.subspace.network/ws
     ```
 
-    And then set a private key for the EVM-compatible wallet
+    Dan kemudian atur kunci pribadi untuk dompet yang kompatibel dengan EVM
 
     ```bash
     PRIVATE_KEY=”your_private_key_value”
     ```
     
     :::tip
-    It's important to note that .env files should not be committed to your source control (like Git), especially when they contain sensitive data, like your private key. To prevent this, add .env to your .gitignore file. This helps to keep sensitive keys secure and avoids the risk of exposing them in the application's code or version control history.
+    Penting untuk dicatat bahwa file .env tidak boleh dikomit ke kontrol sumber (seperti Git), terutama jika mengandung data sensitif, seperti kunci pribadi Anda. Untuk mencegah hal ini, tambahkan .env ke file .gitignore Anda. Ini membantu menjaga kunci sensitif tetap aman dan menghindari risiko mengeksposnya dalam kode aplikasi atau riwayat kontrol versi.
     :::
 
-    In the Makefile, let’s create shortcuts to the main features of the application
+    Di dalam Makefile, mari kita buat pintasan ke fitur-fitur utama aplikasi
 
     ```bash
     # include .env file and export its env vars
@@ -146,28 +146,28 @@ keywords:
 	    @forge create Counter --private-key ${PRIVATE_KEY} --rpc-url ${RPC_URL}
     ```
 
-    We're importing the values for a `PRIVATE_KEY` and `RPC_URL` from the `.env` file.
+    Kita mengimpor nilai untuk `PRIVATE_KEY` dan `RPC_URL` dari berkas `.env`.
 
-    This allows us to run `make build` for building the project and `make deploy` for deploying the project pointing to the provided RPC and using the provided private_key.
+    Hal ini memungkinkan kita untuk menjalankan `make build` untuk membangun proyek dan `make deploy` untuk men-deploy proyek yang mengarah ke RPC yang disediakan dan menggunakan private_key yang disediakan.
 
-    Let’s run 
+    Mari kita jalankan 
 
     ```
     make build
     ```
 
-    to make sure it’s working properly.
+    untuk memastikannya berfungsi dengan baik.
 
     ![Foundry-3](/img/developers/Foundry-3.png)
 
-7. In order to deploy your contract using the specified **`RPC`** and **`PRIVATE_KEY`** just run
+7. Untuk menerapkan kontrak Anda menggunakan **`RPC`** dan **`PRIVATE_KEY`** yang ditentukan, jalankan saja
 
     ```
     make deploy
     ```
     
     :::caution
-    Do not attempt to speed up a transaction (do not include a tip on top of the gas fees). To read more about this, please refer to [this section](quick_start.md#important-note-about-submitting-the-transaction).
+    Jangan mencoba untuk mempercepat transaksi (jangan menyertakan tip di atas biaya bensin). Untuk membaca lebih lanjut mengenai hal ini, silakan lihat [this section](quick_start.md#important-note-about-submitting-the-transaction).
     :::
 
-8. **Congratulations**, you've successfully deployed your smart contract on Subspace EVM! 
+8. **Selamat.**, Anda telah berhasil menerapkan kontrak pintar Anda di Subspace EVM! 
