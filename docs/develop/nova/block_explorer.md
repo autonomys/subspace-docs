@@ -1,18 +1,18 @@
 ---
-title: Subspace block explorer
+title: Penjelajah blok subruang
 sidebar_position: 10
-description: Subspace hosted block explorer
+description: Penjelajah blok yang di-host di Subspace
 keywords:
   - block explorer
   - subspace network
 ---
 
-### Subspace Block Explorer
+### Penjelajah Blok Subruang
 
 **[Block explorer link](https://explorer.subspace.network/#/gemini-3g)**
 
-This early version provides a clear and user-friendly visualization of Subspace-specific statistics that cater to the needs of our farmers and developers.
+Versi awal ini menyediakan visualisasi yang jelas dan mudah digunakan untuk statistik khusus Subspace yang memenuhi kebutuhan petani dan pengembang kami.
 
-On the top of the page, you can easily toggle between **all available networks** and **EVM**. 
+Di bagian atas halaman, Anda dapat dengan mudah beralih antara **semua jaringan yang tersedia** dan **EVM**. 
 
  ![BlockExplorer-1](/img/developers/BlockExplorer-1.png)
