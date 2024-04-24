@@ -1,29 +1,29 @@
 ---
 title: Hardhat
 sidebar_position: 8
-description: Testing and Deploying Smart Contracts using HardHat
+description: Menguji dan Menerapkan Kontrak Cerdas menggunakan HardHat
 keywords:
   - subspace network
   - hardhat
 ---
 
-### Hardhat testing and deployment
+### Pengujian dan penerapan Hardhat
 ---
-Hardhat is an excellent tool that facilitates building on the Ethereum Virtual Machine. It helps developers manage and automate the recurring tasks that are inherent to the process of building smart contracts and dApps, and it allows them to easily introduce more functionality around this workflow. This includes compiling and testing at the very core. Flexible deployment options also allow you to point to the Subspace EVM domain RPC to deploy your contracts and dApps.
+Hardhat adalah alat luar biasa yang memfasilitasi pembangunan di atas Mesin Virtual Ethereum. Hardhat membantu pengembang mengelola dan mengotomatiskan tugas-tugas berulang yang melekat pada proses pembuatan kontrak pintar dan dApps, dan memungkinkan mereka untuk dengan mudah memperkenalkan lebih banyak fungsionalitas di sekitar alur kerja ini. Ini termasuk kompilasi dan pengujian pada intinya. Opsi penerapan yang fleksibel juga memungkinkan Anda untuk mengarahkan ke RPC domain Subspace EVM untuk menerapkan kontrak dan dApps Anda.
 
-Official documentation for Hardhat is available [on their website](https://hardhat.org/docs), but this guide will cover everything required to get you started.
+Dokumentasi resmi untuk Hardhat tersedia [di situs web mereka] (https://hardhat.org/docs), tetapi panduan ini akan mencakup semua yang diperlukan untuk membantu Anda memulai.
 
-**Prerequisites**
-Make sure you have [NodeJS](https://nodejs.org/en) version >=16.0 installed.
+Prasyarat **Prasyarat**
+Pastikan Anda telah menginstal [NodeJS] (https://nodejs.org/en) versi >=16.0.
 
-1. Open a new terminal and run these commands to create a new folder for the project. 
+1. Buka terminal baru dan jalankan perintah berikut untuk membuat folder baru untuk proyek. 
 
 ```
 mkdir subspace-hardhat
 cd subspace-hardhat
 ```
 
-2. Then initialize an npm project as shown below. You'll be prompted to answer some questions.
+2. Kemudian inisialisasi proyek npm seperti yang ditunjukkan di bawah ini. Anda akan diminta untuk menjawab beberapa pertanyaan.
 
 ```
 npm install --save-dev hardhat
@@ -31,17 +31,17 @@ npm install --save-dev @openzeppelin/contracts
 npx hardhat
 ```
 
-Select "Create a JavaScript Project" from the list of the available options. Select project root folder and select to create a .gitignore file (optional). 
+Pilih "Buat Proyek JavaScript" dari daftar pilihan yang tersedia. Pilih folder root proyek dan pilih untuk membuat file .gitignore (opsional). 
 
 ![Hardhat-1](/img/developers/Hardhat-1.png)
 
-3. Right after you create your workspace, you will notice several folders. All of your contracts will reside inside the `contracts` folder, deployment scripts are available inside the `scripts` folder, and tests can be found inside the `test` folder. Click on the contracts folder and open `Lock.sol`.
+3. Tepat setelah Anda membuat ruang kerja, Anda akan melihat beberapa folder. Semua kontrak Anda akan berada di dalam folder `contracts`, skrip penerapan tersedia di dalam folder `scripts`, dan tes dapat ditemukan di dalam folder `test`. Klik pada folder kontrak dan buka `Lock.sol`.
 
 ![Hardhat-3](/img/developers/Hardhat-3.png)
 
-4. When in `Lock.sol`, you can change the name of your contract (in the example, to `Counter`), the name of the token (in this example, we're calling it `SubspaceTestToken`) and the token symbol (we're using `TSSCtest`).
+4. Ketika berada di dalam `Lock.sol`, Anda dapat mengubah nama kontrak Anda (dalam contoh, menjadi `Counter`), nama token (dalam contoh ini, kita menyebutnya `SubspaceTestToken`) dan simbol token (kita menggunakan `TSSCtest`).
 
-Let’s add a simple smart contract that has three functions - `setNumber()`, `increment()` and `decrement()`.
+Mari kita tambahkan smart contract sederhana yang memiliki tiga fungsi - `setNumber()`, `increment()`, dan `decrement()`.
 
 ```
 // SPDX-License-Identifier: UNLICENSED
@@ -68,10 +68,10 @@ contract Counter is ERC20 {
 }
 ```
 
-Let's also rename the filename to `Counter.sol` for consistency. 
+Mari kita juga mengganti nama file menjadi `Counter.sol` untuk konsistensi. 
 
 
-5. Deploying a smart contract can be an expensive procedure due to the gas costs associated with the transaction. Hence, it’s advisable to thoroughly test the smart contracts for correctness before proceeding with deployment. To test the contract, open the tests folder and examine the Lock.js file created for us. Replace the internals of the file with the following code:
+5. Menerapkan smart contract dapat menjadi sebuah prosedur yang mahal karena biaya gas yang terkait dengan transaksi. Oleh karena itu, disarankan untuk menguji kebenaran smart contract secara menyeluruh sebelum melanjutkan dengan penerapan. Untuk menguji kontrak, buka folder tests dan periksa file Lock.js yang dibuat untuk kita. Ganti bagian dalam file tersebut dengan kode berikut:
 
 ```
 const { expect } = require("chai");
@@ -114,16 +114,16 @@ describe("Counter operations", function() {
 });
 ```
 
-For consistency, let's also rename `Lock.js` to `CounterTest.js`
+Untuk konsistensi, mari kita ganti juga nama `Lock.js` menjadi `CounterTest.js`
 
-7. To run the test, simply type `npx hardhat test`
+7. Untuk menjalankan tes, cukup ketik `npx hardhat test`
 
  ![Hardhat-4](/img/developers/Hardhat-4.png)
 
-Great, looks like everything is working as expected. We’re all set for the deployment!
+Bagus, sepertinya semuanya berjalan seperti yang diharapkan. Kami sudah siap untuk penerapan!
 
-8. In order to deploy the contract, we need to set a deployment network for hardhat. 
-Open `hardhat.config.js` file and add the subspace to the list of networks. 
+8. Untuk menerapkan kontrak, kita perlu mengatur jaringan penerapan untuk hardhat. 
+Buka berkas `hardhat.config.js` dan tambahkan subruang ke daftar jaringan. 
 
 ```
 require("@nomicfoundation/hardhat-toolbox");
@@ -139,10 +139,10 @@ networks: {
 ```
 
 :::tip
-Be careful to not commit hardhat.config.js file as it contain your private key. You can use NPM tools like [dotenv](https://www.npmjs.com/package/dotenv) to securely store your private keys in the `.env` file.
+Berhati-hatilah untuk tidak melakukan komit pada berkas hardhat.config.js karena berkas ini berisi kunci privat Anda. Anda dapat menggunakan alat NPM seperti [dotenv](https://www.npmjs.com/package/dotenv) untuk menyimpan kunci privat Anda dengan aman di berkas `.env`.
 :::
 
-9. Open to `deploy.js` file and replace the content with the code. 
+9. Buka file `deploy.js` dan ganti kontennya dengan kode. 
 
 ![Hardhat-5](/img/developers/Hardhat-5.png)
 
@@ -162,13 +162,13 @@ process.exitCode = 1;
 });
 ```
 
-10. You're all set to deploy your smart contract on Subspace Network!
-In order to deploy, run `npx hardhat run scripts/deploy.js --network subspace`. 
+10. Anda sudah siap untuk menggunakan smart contract Anda di Subspace Network!
+Untuk menerapkan, jalankan `npx hardhat run scripts/deploy.js --network subspace`. 
 
-This command will deploy your smart contract on the network we've just specified in `hardhat.config.js` file. 
+Perintah ini akan menyebarkan smart contract Anda di jaringan yang baru saja kita tentukan di file `hardhat.config.js`. 
 
-In case of success deployment, you should see `Contract deployed to: transaction hash`.  
+Jika penerapan berhasil, Anda akan melihat `Contract deployed to: transaction hash`.  
 
 ![Hardhat-6](/img/developers/Hardhat-6.png)
 
-11. **Congratulations**, you've successfully deployed your smart contract on the Subspace EVM domain! 
+11. **Selamat**, Anda telah berhasil menggunakan smart contract Anda pada domain Subspace EVM! 
