@@ -1,11 +1,11 @@
 ---
-title: Common problems
+title: Masalah Umum
 sidebar_position: 6
-description: Common problems and ways to resolve them
+description: Masalah umum dan cara mengatasinya
 keywords:
 - Error
 - Problem
-- Issues
+- Isu
 ---
 
 
@@ -15,52 +15,51 @@ import Link from '@docusaurus/Link';
 import styles from '@site/src/pages/index.module.css';
 
 
-While Subspace strives to release bug-free software, users may encounter certain errors. Some of these can be safely ignored, while others require attention.
+Meskipun Subspace berusaha merilis perangkat lunak bebas bug, pengguna mungkin mengalami beberapa kesalahan. Beberapa di antaranya bisa diabaikan dengan aman, sementara yang lain memerlukan perhatian.
 
 
-# Common problems and ways to resolve them
+# Masalah Umum dan Cara Mengatasinya
 
 
-### Error while dialing dns telemetry
-
+### Kesalahan saat menelepon telemetri dns
 ```
 Error while dialing /dns/telemetry.subspace.network/tcp/443/x-parity-wss/%2Fsubmit%2F
 Custom { kind: Other, error: Timeout }
 ```
-This error is related only to the telemetry server. It's something that can happen occasionally, but doesn't affect farming. You can safely ignore it.
+Kesalahan ini terkait hanya dengan server telemetri. Ini sesuatu yang kadang-kadang bisa terjadi, tetapi tidak memengaruhi penanaman. Anda bisa mengabaikannya dengan aman.
 
 
-### Farmer stuck on plotting, no progress is made in several hours
-Try restarting your node or farmer. We've noticed that sometimes, when creating larger plots, the process might appear to be stalled, but it automatically continues after some time.
+### Petani terjebak pada plotting, tidak ada kemajuan yang dibuat dalam beberapa jam
+Coba restart node atau petani Anda. Kami perhatikan bahwa kadang-kadang, saat membuat plot yang lebih besar, proses tersebut mungkin terlihat terhenti, tetapi secara otomatis akan berlanjut setelah beberapa waktu.
 
 
-### Illegal instruction (core dumped)
+### Instruksi ilegal (inti ditumpahkan)
 
 
-This error is caused by old CPUs without necessary instruction support (e.g. ADX 4). Can be fixed by compiling software from the source on that machine.
+Kesalahan ini disebabkan oleh CPU lama tanpa dukungan instruksi yang diperlukan (misalnya, ADX 4). Dapat diperbaiki dengan mengkompilasi perangkat lunak dari sumber pada mesin tersebut.
 
 
-While processors without ADX instructions are supported, their performance will be impacted significantly compared to processors that do support ADX instructions.
+Meskipun prosesor tanpa instruksi ADX didukung, kinerja mereka akan terpengaruh secara signifikan dibandingkan dengan prosesor yang mendukung instruksi ADX.
 
 
-Most modern desktop processors starting with Broadwell on the Intel side and Ryzen (ZEN 1) on the AMD side do support necessary ADX instructions support and shouldn't be affected by the error.
+Sebagian besar prosesor desktop modern mulai dari Broadwell di sisi Intel dan Ryzen (ZEN 1) di sisi AMD mendukung dukungan instruksi ADX yang diperlukan dan seharusnya tidak terpengaruh oleh kesalahan ini.
 
 
-### No rewards after multiple days of farming
+### Tidak ada reward setelah beberapa hari penanaman
 
 
-Please make sure to:
-- Use our latest stable release, as shown on our [Github releases](https://github.com/subspace/space-acres/releases)
-- Verify your farmer is present and on the highest block on our [telemetry server](https://telemetry.subspace.network/)
-- Verify your balance using the [Polkadot explorer](https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Frpc-0.gemini-3g.subspace.network%2Fws#/explorer)
 
+Pastikan untuk:
+- Gunakan rilis stabil terbaru kami, seperti yang ditunjukkan di [rilis Github kami](https://github.com/subspace/space-acres/releases)
+- Verifikasi bahwa petani Anda ada dan pada blok tertinggi di [server telemetri kami](https://telemetry.subspace.network/)
+- Verifikasi saldo Anda menggunakan [penjelajah Polkadot](https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Frpc-0.gemini-3g.subspace.network%2Fws#/explorer)
 
 :::note
-Make sure to select the correct testnet in the dropdown and tabs, e.g. gemini-3g
+Pastikan untuk memilih testnet yang benar dalam dropdown dan tab, misalnya gemini-3g
 :::
 
 
-### Recovering missing piece failed
+### Pemulihan kehilangan potongan gagal
 
 
 ```
@@ -69,10 +68,10 @@ subspace_farmer_components::segment_reconstruction: Recovering missing piece fai
 ```
 
 
-This is not a crucial error and it can be ignored.
+Ini bukan kesalahan penting dan bisa diabaikan.
 
 
-### Importing block consensus error
+### Kesalahan konsensus impor blok
 
 
 ```
@@ -80,10 +79,10 @@ Error importing block "block_number", consensus error: Import failed: Database
 ```
 
 
-Your PC likely ran out of space. Consider freeing up some space by removing unnecessary files, and then try again. Alternatively, you may adjust the plot amount to match the available disk space
+PC Anda kemungkinan kehabisan ruang. Pertimbangkan untuk membebaskan sebagian ruang dengan menghapus file yang tidak perlu, lalu coba lagi. Atau, Anda dapat menyesuaikan jumlah plot untuk cocok dengan ruang disk yang tersedia.
 
 
-### Unable to author block in slot. No best block header
+### Tidak dapat membuat blok di slot. Tidak ada header blok terbaik
 
 
 ```
@@ -91,16 +90,15 @@ Unable to author block in slot. No best block header: Chain lookup failed: Faile
 ```
 
 
-Your PC likely ran out of space. Consider freeing up some space by removing unnecessary files, and then try again. Alternatively, you may adjust the plot amount to match the available disk space
+PC Anda kemungkinan kehabisan ruang. Pertimbangkan untuk membebaskan sebagian ruang dengan menghapus file yang tidak perlu, lalu coba lagi. Atau, Anda dapat menyesuaikan jumlah plot untuk cocok dengan ruang disk yang tersedia.
 
 
-### Fast node synchronization (more than 100+ blocks per second) goes only up to ±20k blocks, then synchronization speed drops significantly.
+### Tidak dapat membuat blok di slot. Tidak ada header blok terbaik
+
+Ketika ukuran database bertambah dan blok menjadi lebih besar (saat petani mulai menghasilkan suara), diharapkan kecepatan sinkronisasi akan menurun pada angka yang lebih kecil. Kami telah melakukan beberapa peningkatan kinerja di Gemini 3e dan akan melakukan lebih banyak penyesuaian kinerja ketika protokol telah selesai secara fungsional.
 
 
-As the database size increases and blocks get bigger (as farmers started to produce votes), it is expected that the sync speed will settle on a smaller number. We have made some performance improvements in Gemini 3e and will do more performance tuning when the protocol is functionally complete.
-
-
-### subspace_farmer::single_disk_plot::piece_receiver: Couldn't get a piece from DSN.
+### subspace_farmer::single_disk_plot::piece_receiver: Tidak dapat memperoleh bagian dari DSN.
 
 
 ```
@@ -108,18 +106,18 @@ subspace_farmer::single_disk_plot::piece_receiver: Couldn't get a piece from DSN
 ```
 
 
-This isn’t a bug but rather a warning, it is something to be expected on a Decentralized Storage Network. There is nothing you need to do as a user with this warning, it's likely it will come up occasionally but as long as there aren’t other more catastrophic errors it can be ignored.
+Ini bukan bug melainkan peringatan, ini adalah sesuatu yang diharapkan pada Jaringan Penyimpanan Terdesentralisasi. Anda tidak perlu melakukan apa pun terhadap peringatan ini, kemungkinan besar peringatan ini akan muncul sesekali, tetapi selama tidak ada kesalahan lain yang lebih berbahaya, peringatan ini dapat diabaikan.
 
 
-### Block import error: Potential long-range attack: block not in finalized chain.
+### Kesalahan impor blok: Potensi serangan jarak jauh: blok tidak dalam rantai yang diselesaikan.
 
 
 ```
 WARN sc_service::client::client: Block import error: Potential long-range attack: block not in finalized chain.
 ```
-The node somehow ended up being on a fork, try wiping and starting from scratch.
+Node tersebut entah bagaimana berakhir di percabangan, coba hapus dan mulai dari awal.
 
-### Still Facing Trouble? Take a look at our forums below
+### Masih Menghadapi Masalah? Lihatlah forum kami di bawah ini
 
 <iframe src="https://forum.subspace.network/search?expanded=false&q=tags%3Afaq%20order%3Alatest" width="100%" height="600px" frameborder="0" scrolling="auto"></iframe>
 
