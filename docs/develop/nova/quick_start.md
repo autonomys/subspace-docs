@@ -1,19 +1,19 @@
 ---
-title: Quick start
+title: Quick Start
 sidebar_position: 2
-description: Quick start one-pager
+description: Mulai cepat satu halaman
 keywords:
   - subspace network
   - quickstart
 ---
 
-## The only tools needed to get you started
+## Satu-satunya alat yang dibutuhkan untuk memulai
 ---
-The Quick Start is designed with the presumption that you are not a novice developer and have some basic understanding or experience. The Quick Start also anticipates that you seek a straightforward initiation into setting up a remote development environment.
+Quick Start dirancang dengan anggapan bahwa Anda bukan pengembang pemula dan memiliki pemahaman atau pengalaman dasar. Quick Start juga mengantisipasi agar Anda mencari inisiasi yang mudah untuk menyiapkan lingkungan pengembangan jarak jauh.
 
-Subspace utilizes EVM (Ethereum Virtual Machine) so any tool available for Ethereum development is compatible with Subspace.
+Subspace menggunakan EVM (Ethereum Virtual Machine) sehingga alat apa pun yang tersedia untuk pengembangan Ethereum kompatibel dengan Subspace.
 
-### Setup a MetaMask Wallet (or any other EVM-compatible wallet) and connect it to our custom EVM
+### Siapkan Dompet MetaMask (atau dompet lain yang kompatibel dengan EVM) dan sambungkan ke EVM khusus kami
 ---
 ```
 Network Name: Subspace EVM
@@ -22,31 +22,31 @@ Chain ID: 1002
 Currency Symbol: TSSC
 ```
 
-### Get tokens to your wallet using our faucet
+### Dapatkan token ke dompet Anda menggunakan faucet kami
 ---
-Follow the instructions [here](faucet.md) to use our **Faucet** to get some TSSC.
+Ikuti instruksi [di sini] (faucet.md) untuk menggunakan **Faucet** kami untuk mendapatkan TSSC.
 
-### Test and deploy your smart contract
+### Menguji dan menerapkan kontrak pintar Anda
 ---
-You can use **[Remix](https://remix.ethereum.org/)**, **[Foundry](https://book.getfoundry.sh/)** or any other tool familiar to you for testing and deploying your smart contracts. Just make sure to use our custom EVM domain and you're all set.
+Anda dapat menggunakan **[Remix](https://remix.ethereum.org/)**, **[Foundry](https://book.getfoundry.sh/)** atau alat lain yang sudah Anda kenal untuk menguji dan menggunakan smart contract Anda. Pastikan Anda menggunakan domain EVM khusus kami dan Anda sudah siap.
 
-If anything above sounds unfamiliar, you can always fall back to our full guide. 
-
----
-### Important note about submitting a transaction
-
-Please avoid attempting to accelerate a transaction by including a tip alongside the gas fees. The transaction queue operates differently with Subspace, leading to the possibility of two transactions sharing the same nonce. This could result in dual charges for gas fees - once for the execution and storage in the first transaction, and solely for storage in the second transaction. To prevent this scenario, ensure that you refrain from adding a tip in an attempt to speed the transaction up.
+Jika ada hal di atas yang terdengar asing, Anda dapat kembali ke panduan lengkap kami. 
 
 ---
+### Catatan penting tentang mengirimkan transaksi
 
-### Have any questions? Feel free to post them on [our forum](https://forum.subspace.network/) or in our [Developer-chat on Discord](https://discord.gg/EAw6B48r).
+Harap hindari upaya untuk mempercepat transaksi dengan menyertakan tip di samping biaya bensin. Antrian transaksi beroperasi secara berbeda dengan Subspace, sehingga ada kemungkinan dua transaksi berbagi nonce yang sama. Hal ini dapat mengakibatkan biaya gas dibebankan dua kali - satu kali untuk eksekusi dan penyimpanan pada transaksi pertama, dan hanya untuk penyimpanan pada transaksi kedua. Untuk mencegah skenario ini, pastikan Anda tidak menambahkan tip untuk mempercepat transaksi.
+
 ---
 
-In order to get access to the role-gated developer chat:
-1. Join our [Discord](https://discord.gg/vhv5cEZN)
-2. Click on Subspace Network at the top left corner and choose **Linked Roles**.
+### Punya pertanyaan? Jangan ragu untuk mempostingnya di [forum kami] (https://forum.subspace.network/) atau di [Obrolan Pengembang di Discord] (https://discord.gg/EAw6B48r).
+---
+
+Untuk mendapatkan akses ke obrolan pengembang yang dibatasi peran:
+1. Gabung [Discord](https://discord.gg/vhv5cEZN)
+2. Klik Subspace Network di sudut kiri atas dan pilih **Linked Roles**.
 
    ![Discord-1](/img/developers/Discord-1.png)
 
-3. Link your GitHub account to get a developer role and gain access to **developer-chat**. 
+3. Tautkan akun GitHub Anda untuk mendapatkan peran sebagai pengembang dan dapatkan akses ke **developer-chat**. 
    ![Discord-2](/img/developers/Discord-2.png)
