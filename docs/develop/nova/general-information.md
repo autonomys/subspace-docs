@@ -1,44 +1,44 @@
 ---
-title: General information on dev tools and Subspace EVM
+title: Informasi umum tentang alat bantu pengembangan dan Subspace EVM
 sidebar_position: 3
-description: Guide on setting up
+description: Panduan tentang pengaturan
 keywords:
   - metamask
   - subspace network
 ---
 
-### What tools are available for developers?
+### Alat bantu apa saja yang tersedia untuk pengembang?
 ---
-Developing smart contracts involves a suite of tools that aid in writing, testing and deploying code on the blockchain. **Subspace utilizes an instance of the Ethereum Virtual Machine. Therefore, every tool used to build, test, and deploy smart contracts on Ethereum is also available for Subspace!**
+Mengembangkan kontrak pintar melibatkan serangkaian alat yang membantu dalam menulis, menguji, dan menerapkan kode pada blockchain. **Subspace menggunakan instance dari Mesin Virtual Ethereum. Oleh karena itu, setiap alat yang digunakan untuk membangun, menguji, dan menggunakan kontrak pintar di Ethereum juga tersedia untuk Subspace!
 
-First, Solidity is the primary programming language for writing smart contracts. It is statically typed, supports inheritance, libraries, and complex user-defined types, making it familiar for developers with a background in other statically typed languages such as C++, Java, or JavaScript.
+Pertama, Solidity adalah bahasa pemrograman utama untuk menulis smart contract. Bahasa ini diketik secara statis, mendukung pewarisan, pustaka, dan tipe yang ditentukan pengguna yang kompleks, sehingga familiar bagi pengembang dengan latar belakang bahasa yang diketik secara statis seperti C++, Java, atau JavaScript.
 
-Integrated Development Environments (IDEs) such as the [Remix IDE](https://remix.ethereum.org/) are often used to aid in writing smart contracts. Remix IDE is a browser-based IDE that enables you to write, deploy, and interact with Solidity smart contracts. It features a built-in static analysis tool that checks your code for common errors.
+Integrated Development Environments (IDE) seperti [Remix IDE] (https://remix.ethereum.org/) sering digunakan untuk membantu menulis smart contract. Remix IDE adalah sebuah IDE berbasis browser yang memungkinkan Anda untuk menulis, menggunakan, dan berinteraksi dengan smart contract Solidity. IDE ini memiliki alat analisis statis bawaan yang memeriksa kode Anda untuk kesalahan umum.
 
-For local development and testing, you have multiple options. You can spin up your own version of a Subspace Developer Node and farmer to deploy contracts, develop applications, and run tests. Alternatively, you can use Ethereum development tools like [Hardhat](https://hardhat.org/hardhat-network/docs/overview) or [Anvil](https://book.getfoundry.sh/anvil/), which are fully compatible with Subspace due to their EVM compatibility.
+Untuk pengembangan dan pengujian lokal, Anda memiliki beberapa opsi. Anda dapat membuat Subspace Developer Node dan farmer versi Anda sendiri untuk menyebarkan kontrak, mengembangkan aplikasi, dan menjalankan pengujian. Atau, Anda dapat menggunakan alat pengembangan Ethereum seperti [Hardhat] (https://hardhat.org/hardhat-network/docs/overview) atau [Anvil] (https://book.getfoundry.sh/anvil/), yang sepenuhnya kompatibel dengan Subspace karena kompatibilitas EVM-nya.
 
-For deploying and interacting with smart contracts, a JavaScript provider like the one injected by the [MetaMask](https://metamask.io/) browser extension is used. This provider enables JavaScript applications to communicate with the Subspace network or any Ethereum-compatible network. It's compatible with both [ethers.js](https://docs.ethers.org/v5/), [web3.js](https://web3js.readthedocs.io/en/v1.10.0/) and [Web3.py](https://web3py.readthedocs.io/en/stable/), allowing developers to use either library for their blockchain operations.
+Untuk menerapkan dan berinteraksi dengan smart contract, penyedia JavaScript seperti yang disuntikkan oleh ekstensi peramban [MetaMask](https://metamask.io/) digunakan. Penyedia ini memungkinkan aplikasi JavaScript untuk berkomunikasi dengan jaringan Subspace atau jaringan yang kompatibel dengan Ethereum. Ini kompatibel dengan [ethers.js] (https://docs.ethers.org/v5/), [web3.js] (https://web3js.readthedocs.io/en/v1.10.0/) dan [Web3.py] (https://web3py.readthedocs.io/en/stable/), yang memungkinkan para pengembang untuk menggunakan salah satu pustaka untuk operasi blockchain mereka.
 
-All these tools together provide an ecosystem for EVM-compatible smart contract development, making the process more manageable and efficient.
+Semua alat ini bersama-sama menyediakan ekosistem untuk pengembangan smart contract yang kompatibel dengan EVM, membuat prosesnya lebih mudah dikelola dan efisien.
 
-### Smart Contract
+### Kontrak Cerdas
 ---
-A smart contract is a digital agreement coded into a blockchain network, designed to automatically execute or enforce the terms of a contract. These self-executing contracts, primarily developed on decentralized computer systems, eliminate the need for an intermediary by conducting transactions directly between parties. Smart contracts are transparent, traceable, and irreversible, providing immediate certainty about outcomes once preset conditions are met. They streamline various applications, from finance to supply chain management, by automating workflows and facilitating trustless interactions.
+Kontrak pintar adalah perjanjian digital yang dikodekan ke dalam jaringan blockchain, yang dirancang untuk secara otomatis mengeksekusi atau menegakkan ketentuan kontrak. Kontrak yang dapat dijalankan sendiri ini, terutama dikembangkan pada sistem komputer terdesentralisasi, menghilangkan kebutuhan akan perantara dengan melakukan transaksi secara langsung antara para pihak. Smart contract bersifat transparan, dapat dilacak, dan tidak dapat diubah, memberikan kepastian langsung mengenai hasil setelah syarat-syarat yang telah ditentukan terpenuhi. Kontrak pintar merampingkan berbagai aplikasi, mulai dari keuangan hingga manajemen rantai pasokan, dengan mengotomatiskan alur kerja dan memfasilitasi interaksi tanpa kepercayaan.
 
-### Differences with Ethereum
+### Perbedaan dengan Ethereum
 ---
-Subspace Token (TSSC) is the sole method of payment for gas within the Subspace EVM runtime.
-There will be a bridge to convert farmed tokens into EVM-compatible tokens to cover the gas fees, however, at the moment the only viable option to get some TSSC on your wallet is through the Subspace [faucet](faucet.md)
+Token Subspace (TSSC) adalah satu-satunya metode pembayaran untuk gas dalam proses kerja Subspace EVM.
+Akan ada jembatan untuk mengubah token yang ditambang menjadi token yang kompatibel dengan EVM untuk menutupi biaya gas, namun, saat ini satu-satunya pilihan yang layak untuk mendapatkan TSSC di dompet Anda adalah melalui Subspace [faucet] (faucet.md)
 
-### What is Solidity? 
+### Apa itu Soliditas? 
 ---
-Solidity is a statically typed, contract-oriented, high-level language primarily used for implementing smart contracts on blockchain platforms like Ethereum. Its syntax is similar to that of JavaScript and C++, which makes it relatively easy for developers from those language backgrounds to pick it up. Its features such as contract classes, inheritance, complex user-defined types, and libraries bring object-oriented programming capabilities to blockchain development.
+Solidity adalah bahasa tingkat tinggi yang diketik secara statis, berorientasi pada kontrak, dan terutama digunakan untuk mengimplementasikan kontrak pintar pada platform blockchain seperti Ethereum. Sintaksnya mirip dengan JavaScript dan C++, yang membuatnya relatif mudah bagi para pengembang dari latar belakang bahasa tersebut untuk memahaminya. Fitur-fiturnya seperti kelas kontrak, pewarisan, tipe yang ditentukan pengguna yang kompleks, dan pustaka membawa kemampuan pemrograman berorientasi objek untuk pengembangan blockchain.
 
 
-One of the key features of Solidity is its first-class support for "contracts." These are akin to classes in object-oriented languages but are deployed on the Ethereum blockchain, allowing them to maintain a persistent state over time and interact with other contracts, the same way as objects interact in traditional programming.
+Salah satu fitur utama Solidity adalah dukungan kelas satu untuk "kontrak". Kontrak ini mirip dengan kelas dalam bahasa berorientasi objek tetapi digunakan pada blockchain Ethereum, yang memungkinkannya untuk mempertahankan status persisten dari waktu ke waktu dan berinteraksi dengan kontrak lain, dengan cara yang sama seperti objek berinteraksi dalam pemrograman tradisional.
 
 
-Moreover, Solidity comes with safety features, such as a robust type system and control structures, which help prevent bugs. It also provides a variety of built-in functions for performing operations like cryptographic hashing, signature verification, and address checking, making it easier to write secure code.
+Selain itu, Solidity dilengkapi dengan fitur keamanan, seperti sistem tipe yang kuat dan struktur kontrol, yang membantu mencegah bug. Solidity juga menyediakan berbagai fungsi bawaan untuk melakukan operasi seperti hashing kriptografi, verifikasi tanda tangan, dan pengecekan alamat, sehingga lebih mudah untuk menulis kode yang aman.
 
 
 The popularity of Solidity is primarily due to its design for Ethereum, the leading smart contract platform. As Ethereum gained traction for decentralized applications (dApps), Solidity became the go-to language for writing smart contracts for these applications. Furthermore, its resemblance to widely-used languages like JavaScript and C++ helped its adoption amongst developers.
