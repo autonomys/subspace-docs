@@ -1,27 +1,27 @@
 ---
-title: Setting up MetaMask
+title: Menyiapkan MetaMask
 sidebar_position: 4
-description: Guide on setting up MetaMask for development purposes
+description: Panduan tentang pengaturan MetaMask untuk tujuan pengembangan
 keywords:
   - metamask
   - subspace network
 ---
 
-### Adding Subspace RPC using MetaMask
+### Adding Subspace RPC menggunakan MetaMask
 ---
-You can use any EVM-compatible wallet, this guide will be using [**MetaMask**](https://metamask.io/) wallet.
+Anda dapat menggunakan dompet yang kompatibel dengan EVM, panduan ini akan menggunakan dompet [**MetaMask**](https://metamask.io/).
 
-First, let’s set up a MetaMask wallet and then go over connecting it to the Subspace Development Network.
+Pertama, mari kita siapkan dompet MetaMask dan kemudian menghubungkannya ke Subspace Development Network.
 
-1. Go to the [MetaMask Website](https://metamask.io/) and download an extension for your browser.
-   Select your preferred language in the top-right corner. 
-   Read and agree to MetaMask's terms of use.
+1. Buka [Situs Web MetaMask](https://metamask.io/) dan unduh ekstensi untuk peramban Anda.
+   Pilih bahasa yang Anda inginkan di sudut kanan atas. 
+   Baca dan setujui persyaratan penggunaan MetaMask.
 
   ![MetaMask-1](/img/developers/MetaMask-1.png)
 
 
-2. Click on “Create a new wallet”.
-  Read a note on gathering usage data and either agree to collect your anonymized data, or skip this step. It does not affect the creation of a wallet. 
+2. Klik "Buat dompet baru".
+  Baca catatan tentang pengumpulan data penggunaan dan setujui untuk mengumpulkan data anonim Anda, atau lewati langkah ini. Ini tidak memengaruhi pembuatan dompet. 
 
   ![MetaMask-2](/img/developers/MetaMask-2.png)
 
@@ -29,37 +29,37 @@ First, let’s set up a MetaMask wallet and then go over connecting it to the Su
 
   ![MetaMask-3](/img/developers/MetaMask-3.png)
 
-4. MetaMask automatically assesses the strength of your password. 
+4. MetaMask secara otomatis menilai kekuatan kata sandi Anda. 
   :::tip
-  As a rule of thumb, you should set a strong password, meaning that it includes uppercase letters, lowercase letters, numbers and special characters.
+  Sebagai aturan praktis, Anda harus membuat kata sandi yang kuat, yang berarti kata sandi tersebut mencakup huruf besar, huruf kecil, angka, dan karakter khusus.
   :::
 
   ![MetaMask-4](/img/developers/MetaMask-4.png)
 
-5. Watch a video to learn more about your Secret Recovery Phrase before proceeding to the next step. 
+5. Tonton video untuk mempelajari lebih lanjut tentang Frasa Pemulihan Rahasia Anda sebelum melanjutkan ke langkah berikutnya. 
 
   ![MetaMask-5](/img/developers/MetaMask-5.png)
 
-6. Have a look and write down your 12-word recovery phrase. 
+6. Lihatlah dan tuliskan frasa pemulihan 12 kata Anda. 
   :::info
-  The wallet with the recovery phrase for this guide will be deleted right after the guide is complete.
+  Dompet dengan frasa pemulihan untuk panduan ini akan dihapus segera setelah panduan ini selesai.
   ::: 
 
   ![MetaMask-6](/img/developers/MetaMask-6.png)
 
-7. Confirm that you’ve written down the recovery phrase by filling in the missing words of your recovery phrase. 
+7. Konfirmasikan bahwa Anda telah menuliskan frasa pemulihan dengan mengisi kata-kata yang hilang dari frasa pemulihan Anda. 
 
   ![MetaMask-7](/img/developers/MetaMask-7.png)
 
-8. Now that your wallet is created, let’s connect to the Subspace Core EVM. Click on the Ethereum Mainnet logo and select Add Network.
+8. Setelah wallet Anda dibuat, mari terhubung ke Subspace Core EVM. Klik pada logo Ethereum Mainnet dan pilih Add Network.
 
   ![MetaMask-8](/img/developers/MetaMask-8.png)
 
-9. At the settings, click on “Add a network manually”
+9. Pada pengaturan, klik "Tambahkan jaringan secara manual"
 
   ![MetaMask-9](/img/developers/MetaMask-9.png)
 
-10. To connect to Subspace RPC specify the values below
+10. Untuk menyambung ke Subspace RPC, tentukan nilai di bawah ini
 
   ```
   Network Name: Subspace EVM
@@ -68,4 +68,4 @@ First, let’s set up a MetaMask wallet and then go over connecting it to the Su
   Currency Symbol: TSSC
   ```
 
-You're all set, **you have successfully configured your MetaMask wallet** and connected it to **Subspace Core EVM**. To deploy your smart contract, you first need to get a small amount of **TSSC**  tokens into your wallet. Please make sure to refer to the [faucet section](./faucet.md) of the guide to learn more about getting test tokens. 
+Anda sudah siap, **Anda telah berhasil mengonfigurasi dompet MetaMask Anda** dan menghubungkannya ke **Subspace Core EVM**. Untuk menggunakan smart contract Anda, pertama-tama Anda harus memasukkan sejumlah kecil token **TSSC** ke dalam dompet Anda. Pastikan untuk merujuk ke [bagian faucet](./faucet.md) dari panduan ini untuk mempelajari lebih lanjut tentang cara mendapatkan token uji. 
