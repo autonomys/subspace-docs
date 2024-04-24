@@ -7,26 +7,26 @@ keywords:
   - subspace network
 ---
 
-### How to get some test tokens
+### Cara mendapatkan token uji coba
 
-**The Faucet** is available on our [**Discord server**](https://discord.gg/subspace-network).
+**Faucet** tersedia di situs web kami [**Discord server**](https://discord.gg/subspace-network).
 
 
-In order to get access to the role-gated developer chat and faucet channel:
-1. Join our [Discord](https://discord.gg/subspace-network)
-2. Click on Subspace Network at the top left corner and choose **Linked Roles**.
+Untuk mendapatkan akses ke saluran obrolan dan faucet pengembang yang dibatasi peran:
+1. Gabung dengan [Discord](https://discord.gg/subspace-network)
+2. Klik Subspace Network di sudut kiri atas dan pilih **Linked Roles**.
 
    ![Discord-1](/img/developers/Discord-1.png)
 
-3. Link your GitHub account to get a developer role and gain access to **developer-chat**. 
+3. Tautkan akun GitHub Anda untuk mendapatkan peran sebagai pengembang dan dapatkan akses ke **developer-chat**. 
    ![Discord-2](/img/developers/Discord-2.png)
 
-4. As soon as you get a **Developer** role, the [**Faucet**](https://discord.com/channels/864285291518361610/1133496871499862077) channel will become available to you. 
+4. Segera setelah Anda mendapatkan peran **Developer**, maka [**Faucet**](https://discord.com/channels/864285291518361610/1133496871499862077) akan tersedia untuk Anda. 
 
-5. You can use a slash command `/faucet your_EVM_wallet_address_here` to request tokens. 
+5. Anda bisa menggunakan perintah garis miring `/faucet your_EVM_wallet_address_here` untuk meminta token. 
   ![Faucet-1](/img/developers/Faucet-1.png)
 
-6. In case of a successful request, you will see the confirmation and link to the blockscout explorer shortly.
+6. Jika permintaan berhasil, Anda akan segera melihat konfirmasi dan tautan ke penjelajah blockscout.
   ![Faucet-2](/img/developers/Faucet-2.png)
 
-7. You can request tokens once every 24 hours.
+7. Anda dapat meminta token setiap 24 jam sekali.
