@@ -1,35 +1,35 @@
 ---
-title: Remix IDE - testing and deployment
+title: Remix IDE - pengujian dan penerapan
 sidebar_position: 6
-description: Testing and Deploying Smart Contracts using Remix IDE
+description: Menguji dan Menerapkan Kontrak Cerdas menggunakan Remix IDE
 keywords:
   - subspace network
   - remix ide
 ---
 
-### Remix IDE guide
+### Panduan IDE Remix
 ---
-Remix is a great tool that allows you to easily write, test and deploy smart contracts on any EVM-compatible  blockchain. Moreover, integration with MetaMask allows the utilization of any RPC, that’s why we’ve just set up a reference to Subspace core EVM in our MetaMask wallet!
+Remix adalah alat hebat yang memungkinkan Anda menulis, menguji, dan menggunakan smart contract dengan mudah pada blockchain yang kompatibel dengan EVM. Selain itu, integrasi dengan MetaMask memungkinkan pemanfaatan RPC apa pun, itulah sebabnya kami baru saja menyiapkan referensi ke Subspace core EVM di dompet MetaMask kami!
 
-Remix has [amazing documentation](https://remix-ide.readthedocs.io/en/latest/), but this guide will cover everything required to get you started.
+Remix memiliki [amazing documentation](https://remix-ide.readthedocs.io/en/latest/), tetapi panduan ini akan membahas semua yang diperlukan untuk membantu Anda memulai.
 
-1. Using the browser of your choice navigate to **[Remix website.](https://remix.ethereum.org)**
-You will see a file explorer and interface for creating new workspaces, integrations with GitHub, Gist, IPFS, HTTPS, preloaded templates, and plugins.
-Let’s create a new workspace by clicking on the + sign beside WORKSPACES.
+1. Dengan menggunakan peramban pilihan Anda, buka **[Situs web Remix.](https://remix.ethereum.org)**
+Anda akan melihat penjelajah file dan antarmuka untuk membuat ruang kerja baru, integrasi dengan GitHub, Gist, IPFS, HTTPS, templat yang sudah dimuat sebelumnya, dan plugin.
+Mari buat ruang kerja baru dengan mengklik tanda + di samping WORKSPACES.
 
  ![Remix-1](/img/developers/Remix-1.png)
 
-2. You can enter any name and use the ERC20 template.
+2. Anda dapat memasukkan nama apa pun dan menggunakan templat ERC20.
 
  ![Remix-2](/img/developers/Remix-2.png)
 
-3. Right after you create your workspace, you will see a few folders created for you.
-Let’s click on contracts and have a look at `MyToken.sol`.
+3. Tepat setelah Anda membuat ruang kerja, Anda akan melihat beberapa folder yang dibuat untuk Anda.
+Mari kita klik pada kontrak dan lihatlah `MyToken.sol`.
 
  ![Remix-3](/img/developers/Remix-3.png)
 
-4. Here, you can change the name of your contract (in the example, to `Counter`), the name of the token (in this example, we're calling it `SubspaceTestToken`) and the token symbol (we're using `TSSCtest`).
-Let’s add a simple smart contract that has three functions - `setNumber()`, `increment()` and `decrement()`.
+4. Di sini, Anda dapat mengubah nama kontrak Anda (dalam contoh, menjadi `Counter`), nama token (dalam contoh ini, kita menyebutnya `SubspaceTestToken`) dan simbol token (kita menggunakan `TSSCtest`).
+Mari kita tambahkan smart contract sederhana yang memiliki tiga fungsi - `setNumber()`, `increment()`, dan `decrement()`.
 
  ```
   // SPDX-License-Identifier: MIT
@@ -58,23 +58,23 @@ Let’s add a simple smart contract that has three functions - `setNumber()`, `i
 
  ![Remix-4](/img/developers/Remix-4.png)
 
-5. Next, let’s compile a `Counter` contract. To compile, click on SOLIDITY COMPILER on the left and choose the compiler version that corresponds to the Solidity version of your contract. In our case, it’s version 0.8.9.
-Click on `Compile MyToken.sol` and check if it compiles correctly. If it does, you will see a green checkmark by the compiler.
+5. Selanjutnya, mari kita mengkompilasi kontrak `Counter`. Untuk mengkompilasi, klik SOLIDITY COMPILER di sebelah kiri dan pilih versi kompiler yang sesuai dengan versi Solidity dari kontrak Anda. Dalam kasus kami, ini adalah versi 0.8.9.
+Klik `Compile MyToken.sol` dan periksa apakah sudah terkompilasi dengan benar. Jika sudah, Anda akan melihat tanda centang hijau pada kompiler.
 
  ![Remix-5](/img/developers/Remix-5.png)
 
-6. Deploying a smart contract could be an expensive procedure, based on the gas costs associated with the transaction. That is why it’s recommended that you thoroughly test the smart contracts for correctness before proceeding with deployment.
-To test the contract, let’s open the tests folder and have a look at `MyToken.sol` created for us.      
-Let’s first try to run a test as is without making any changes.
+6. Menerapkan smart contract dapat menjadi sebuah prosedur yang mahal, berdasarkan biaya gas yang terkait dengan transaksi. Oleh karena itu, Anda disarankan untuk menguji kebenaran smart contract secara menyeluruh sebelum melanjutkan dengan penerapan.
+Untuk menguji kontrak, mari kita buka folder tests dan lihatlah `MyToken.sol` yang telah dibuat untuk kita.      
+Pertama-tama, mari kita coba untuk menjalankan pengujian apa adanya tanpa membuat perubahan apa pun.
 
  ![Remix-6](/img/developers/Remix-6.png)
 
-7. To run the tests, select SOLIDITY UNIT TESTING in the bar on the left and click Run.
+7. Untuk menjalankan pengujian, pilih PENGUJIAN UNIT SOLIDITAS pada bilah di sebelah kiri dan klik Run (Jalankan).
 
  ![Remix-7](/img/developers/Remix-7.png)
 
-8. As expected, the test failed because we manually changed the token name and symbol.
-This is Test Driven Development (TDD) in action! In order to make the test pass, replace the internals of `MyToken.sol` with the provided below code. In the test, we're adding a few assertions for the `increment()` and `decrement()` functions. In this example, we will set up an initial value of `number` to 2 and `increment` and then `decrement` it by 1. We would expect the number to increase to 3 and then decrease back to 2.
+8. Seperti yang diharapkan, pengujian gagal karena kami mengubah nama dan simbol token secara manual.
+Ini adalah Test Driven Development (TDD) yang sedang beraksi! Untuk membuat pengujian berhasil, ganti bagian internal `MyToken.sol` dengan kode di bawah ini. Dalam pengujian, kita menambahkan beberapa pernyataan untuk fungsi `increment()` dan `decrement()`. Pada contoh ini, kita akan mengatur nilai awal `number` menjadi 2 dan `increment` lalu `decrement` dengan 1. Kita akan mengharapkan angka tersebut bertambah menjadi 3 dan kemudian berkurang kembali menjadi 2.
 
  ```bash
   pragma solidity >=0.7.0 <0.9.0;
@@ -111,29 +111,29 @@ This is Test Driven Development (TDD) in action! In order to make the test pass,
 
  ![Remix-8](/img/developers/Remix-8.png)
 
-9. Great, all tests are now passing which means our smart contract `Counter` is indeed working as we expect.
-We’re all set to deploy it now!
+9. Hebat, semua tes sekarang sudah lulus yang berarti kontrak pintar `Counter` kami benar-benar berfungsi seperti yang kami harapkan.
+Kita sudah siap untuk menerapkannya sekarang!
 
  ![Remix-9](/img/developers/Remix-9.png)
 
-10. To deploy click on the DEPLOY AND RUN TRANSACTIONS tab on the left.
-Remix allows you to use one of the existing EVMs or inject your own provider through its integration with MetaMask.
-Since we already have a MetaMask Account set up, let’s use this option.
+10. Untuk menerapkan, klik pada tab DEPLOY AND RUN TRANSACTIONS di sebelah kiri.
+Remix memungkinkan Anda untuk menggunakan salah satu EVM yang sudah ada atau menyuntikkan penyedia Anda sendiri melalui integrasinya dengan MetaMask.
+Karena kita sudah memiliki Akun MetaMask yang sudah disiapkan, mari gunakan opsi ini.
 
  ![Remix-10](/img/developers/Remix-10.png)
 
-11. You will be prompted to confirm the password with MetaMask, just make sure that the network you’re connected to is Subspace EVM.
+11. Anda akan diminta untuk mengonfirmasi kata sandi dengan MetaMask, pastikan bahwa jaringan yang Anda sambungkan adalah Subspace EVM.
 
  ![Remix-11](/img/developers/Remix-11.png)
 
-12. Adjust the gas limit and deploy your smart contract on Subspace Core EVM.
-Now your transaction is recorded and you can interact with your smart contract at the bottom of the page - it's possible to call the functions `increment()` and `decrement()` as well as `setNumber()`
+12. Sesuaikan batas gas dan terapkan kontrak pintar Anda di Subspace Core EVM.
+Sekarang transaksi Anda dicatat dan Anda dapat berinteraksi dengan kontrak pintar Anda di bagian bawah halaman - Anda dapat memanggil fungsi `increment () ` dan `decrement () ` serta `setNumber () `
 
 :::caution
-Do not attempt to speed up a transaction (do not include a tip on top of the gas fees). To read more about this, please refer to [this section](quick_start.md#important-note-about-submitting-the-transaction).
+Jangan mencoba untuk mempercepat transaksi (jangan menyertakan tip di atas biaya bensin). Untuk membaca lebih lanjut mengenai hal ini, silakan lihat [this section](quick_start.md#important-note-about-submitting-the-transaction).
 :::
 
  ![Remix-12](/img/developers/Remix-12.png)
 
-Congratulations, you've just deployed your smart contract on Subspace Core EVM!
+Selamat, Anda baru saja menggunakan kontrak pintar Anda di Subspace Core EVM!
 
