@@ -52,11 +52,10 @@ Most modern desktop processors starting with Broadwell on the Intel side and Ryz
 Please make sure to:
 - Use our latest stable release, as shown on our [Github releases](https://github.com/subspace/space-acres/releases)
 - Verify your farmer is present and on the highest block on our [telemetry server](https://telemetry.subspace.network/)
-- Verify your balance using the [Polkadot explorer](https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Frpc-0.gemini-3g.subspace.network%2Fws#/explorer)
-
+- Verify your balance using the [Polkadot explorer](https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Frpc-0.gemini-3h.subspace.network%2Fws#/explorer)
 
 :::note
-Make sure to select the correct testnet in the dropdown and tabs, e.g. gemini-3g
+Make sure to select the correct testnet in the dropdown and tabs, e.g. gemini-3h
 :::
 
 
@@ -122,4 +121,3 @@ The node somehow ended up being on a fork, try wiping and starting from scratch.
 ### Still Facing Trouble? Take a look at our forums below
 
 <iframe src="https://forum.subspace.network/search?expanded=false&q=tags%3Afaq%20order%3Alatest" width="100%" height="600px" frameborder="0" scrolling="auto"></iframe>
-

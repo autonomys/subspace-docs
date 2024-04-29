@@ -9,7 +9,7 @@ keywords:
 
 ### Subspace Block Explorer
 
-**[Block explorer link](https://explorer.subspace.network/#/gemini-3g)**
+**[Block explorer link](https://explorer.subspace.network/gemini-3h/nova)**
 
 This early version provides a clear and user-friendly visualization of Subspace-specific statistics that cater to the needs of our farmers and developers.
 
