@@ -131,7 +131,7 @@ module.exports = {
 solidity: "0.8.19",
 networks: {
     subspace: {
-    url: "https://nova.gemini-3g.subspace.network/ws",
+    url: "https://nova-0.gemini-3h.subspace.network/ws",
     accounts: ["private_key_to_your_account"]
     }
 }
