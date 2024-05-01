@@ -30,14 +30,14 @@ import styles from '@site/src/pages/index.module.css';
 <div className={`${styles.buttons} ${styles.flexContainer}`}>
   <Link
     className="button button--secondary"
-    to="https://github.com/subspace/subspace/releases/download/gemini-3h-2024-apr-26-2/subspace-node-ubuntu-x86_64-skylake-gemini-3h-2024-apr-26-2"
+    to="https://github.com/subspace/subspace/releases/download/gemini-3h-2024-may-01/subspace-node-ubuntu-x86_64-skylake-gemini-3h-2024-may-01"
     style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', textAlign: 'center', padding: '10px' }}>
     <span style={{ fontSize: '20px' }}>Node Executable</span>
     <span style={{ fontSize: '14px' }}>(Skylake+ CPU)</span>
   </Link>
   <Link
     className="button button--secondary"
-    to="https://github.com/subspace/subspace/releases/download/gemini-3h-2024-apr-26-2/subspace-farmer-ubuntu-x86_64-skylake-gemini-3h-2024-apr-26-2"
+    to="https://github.com/subspace/subspace/releases/download/gemini-3h-2024-may-01/subspace-farmer-ubuntu-x86_64-skylake-gemini-3h-2024-may-01"
     style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', textAlign: 'center', padding: '10px' }}>
     <span style={{ fontSize: '20px' }}>Farmer Executable</span>
     <span style={{ fontSize: '14px' }}>(Skylake+ CPU)</span>
@@ -47,14 +47,14 @@ import styles from '@site/src/pages/index.module.css';
 <div className={`${styles.buttons} ${styles.flexContainer}`}>
   <Link
     className="button button--secondary"
-    to="https://github.com/subspace/subspace/releases/download/gemini-3h-2024-apr-26-2/subspace-node-ubuntu-x86_64-v2-gemini-3h-2024-apr-26-2"
+    to="https://github.com/subspace/subspace/releases/download/gemini-3h-2024-may-01/subspace-node-ubuntu-x86_64-v2-gemini-3h-2024-may-01"
     style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', textAlign: 'center', padding: '10px' }}>
     <span style={{ fontSize: '20px' }}>Node Executable</span>
     <span style={{ fontSize: '14px' }}>(Legacy CPU)</span>
   </Link>
   <Link
     className="button button--secondary"
-    to="https://github.com/subspace/subspace/releases/download/gemini-3h-2024-apr-26-2/subspace-farmer-ubuntu-x86_64-v2-gemini-3h-2024-apr-26-2"
+    to="https://github.com/subspace/subspace/releases/download/gemini-3h-2024-may-01/subspace-farmer-ubuntu-x86_64-v2-gemini-3h-2024-may-01"
     style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', textAlign: 'center', padding: '10px' }}>
     <span style={{ fontSize: '20px' }}>Farmer Executable</span>
     <span style={{ fontSize: '14px' }}>(Legacy CPU)</span>
@@ -64,14 +64,14 @@ import styles from '@site/src/pages/index.module.css';
 <div className={`${styles.buttons} ${styles.flexContainer}`}>
   <Link
     className="button button--secondary"
-    to="https://github.com/subspace/subspace/releases/download/gemini-3h-2024-apr-26-2/subspace-node-ubuntu-aarch64-gemini-3h-2024-apr-26-2"
+    to="https://github.com/subspace/subspace/releases/download/gemini-3h-2024-may-01/subspace-node-ubuntu-aarch64-gemini-3h-2024-may-01"
     style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', textAlign: 'center', padding: '10px' }}>
     <span style={{ fontSize: '20px' }}>Node Executable</span>
     <span style={{ fontSize: '14px' }}>(Aarch64/Raspberry Pi)</span>
   </Link>
   <Link
     className="button button--secondary"
-    to="https://github.com/subspace/subspace/releases/download/gemini-3h-2024-apr-26-2/subspace-farmer-ubuntu-aarch64-gemini-3h-2024-apr-26-2"
+    to="https://github.com/subspace/subspace/releases/download/gemini-3h-2024-may-01/subspace-farmer-ubuntu-aarch64-gemini-3h-2024-may-01"
     style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', textAlign: 'center', padding: '10px' }}>
     <span style={{ fontSize: '20px' }}>Farmer Executable</span>
     <span style={{ fontSize: '14px' }}>(Aarch64/Raspberry Pi)</span>
@@ -83,14 +83,14 @@ import styles from '@site/src/pages/index.module.css';
 
 1. Open your favorite terminal, and change to the Downloads directory using `cd Downloads`
 2. Make the farmer & node executable
-- `chmod +x subspace-farmer-ubuntu-x86_64-skylake-gemini-3h-2024-apr-26-2`
-- `chmod +x subspace-node-ubuntu-x86_64-skylake-gemini-3h-2024-apr-26-2`
+- `chmod +x subspace-farmer-ubuntu-x86_64-skylake-gemini-3h-2024-may-01`
+- `chmod +x subspace-node-ubuntu-x86_64-skylake-gemini-3h-2024-may-01`
 3. We will then start the node using the following command
 
 ```bash
   # Replace `INSERT_YOUR_ID` with a nickname you choose
   # Copy all of the lines below, they are all part of the same command
-  ./subspace-node-ubuntu-x86_64-skylake-gemini-3h-2024-apr-26-2 \
+  ./subspace-node-ubuntu-x86_64-skylake-gemini-3h-2024-may-01 \
     run \
     --chain gemini-3h \
     --base-path NODE_DATA_PATH \
@@ -133,7 +133,7 @@ Using **run**, setting **--base-path** and specifying **--chain** became mandato
 # Replace `PATH_TO_FARM` with location where you want you store plot files
 # Replace `WALLET_ADDRESS` below with your account address from Polkadot.js wallet
 # Replace `PLOT_SIZE` with plot size in gigabytes or terabytes, for example 100G or 2T (but leave at least 60G of disk space for node and some for OS)
-./subspace-farmer-ubuntu-x86_64-skylake-gemini-3h-2024-apr-26-2 farm --reward-address WALLET_ADDRESS path=PATH_TO_FARM,size=PLOT_SIZE
+./subspace-farmer-ubuntu-x86_64-skylake-gemini-3h-2024-may-01 farm --reward-address WALLET_ADDRESS path=PATH_TO_FARM,size=PLOT_SIZE
 ```
 
 2. You should see something similar in the terminal:
