@@ -1,6 +1,6 @@
 ---
 title: Grafana Dashboard
-sidebar_position: 2
+sidebar_position: 3
 description: How to configure the Grafana dashboard for a Subspace Network node
 keywords:
     - node
