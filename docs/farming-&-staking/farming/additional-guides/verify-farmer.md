@@ -15,7 +15,7 @@ You can track your farmer through the [Astral Block Explorer.](https://explorer.
 
 ## Eligibility for the Verified Farmer Role
 
-**If you have earned a block or vote reward**, you can now link your Discord account to your farmer wallet through the Astral application to obtain this role. Here’s how to do it:
+**If you have earned a block or vote reward**, you can now link your Discord account to your farmer wallet through the [Astral](https://explorer.subspace.network/gemini-3h/consensus#/gemini-3h/consensus) to obtain this role. Here’s how to do it:
 
 1. Select **Connect Wallet** in the top right corner of the [Astral Block Explorer.](https://explorer.subspace.network/gemini-3h/consensus#/gemini-3h/consensus)
 ![Connect Wallet](/img/doc-imgs/verify-farmer/connect-wallet.png)
@@ -24,7 +24,7 @@ You can track your farmer through the [Astral Block Explorer.](https://explorer.
 2. Sign into your wallet through Subwallet or Polkadot.
 ![Select Wallet](/img/doc-imgs/verify-farmer/select-wallet.png)
 
-3. Find the new "Connect Discord" section within the panel.
+3. Find the new **Get your Farmer role on Discord** section within the panel.
 ![Wallet Panel](/img/doc-imgs/verify-farmer/wallet-panel.png)
 <br/><br/>
 
@@ -32,7 +32,7 @@ You can track your farmer through the [Astral Block Explorer.](https://explorer.
 ![Verify Wallet](/img/doc-imgs/verify-farmer/verify-wallet.png)
 ![Successful Verify](/img/doc-imgs/verify-farmer/successful-verify.png)
 <br/><br/>
-5. Select **Join our Discord Server** and **Connect your Discord Account!**.
+5. Select **Join our Discord Server** and **Connect your Discord Account**!
 ![Connect Discord](/img/doc-imgs/verify-farmer/connect-discord.png)
 
 6. After these steps, you should now see that you're a Farmer on Discord and have received the **Verified Farmer** role in Discord.
