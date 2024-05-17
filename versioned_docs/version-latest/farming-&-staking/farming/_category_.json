@@ -3,6 +3,6 @@
     "position": 3,
     "link": {
       "type": "generated-index",
-      "description": "All farming related documentation for the Subspace Network."
+      "description": "To earn block and vote rewards and build a TSSC balance on our [incentivized testnet](https://forum.subspace.network/t/incentivized-testnet-launch-announcement/1713) you will need to run a farmer which connects to a node. The easiest way to acheive this is by using Space Acres while the Advanced CLI is a little trickier to setup but gives you most control over configuration. We recommend you get started with Space Acres while you learn the ropes and make a more informed decision later."
     }
 }
