@@ -36,6 +36,18 @@ We added the `--record-encoding-concurrency` option to override the default beha
 If you prefer to use the previous behavior, or if your RAM usage becomes too high, you can set `--record-encoding-concurrency` to `1`. You may also experiment with setting it to `2`, `3`, etc., which may yield better results depending on your specific CPU/RAM configuration.
 
 
+### Create Missing Farms
+
+A farmer has the option to specify whether the system should automatically create missing farms upon startup. If you provide a path to a plot that isn't found, the system will generate a new one. However, this may not be desirable if a drive fails to mount properly. 
+By default, this option is set to `true`, but you can override it by adding `--create false`. Setting this flag to `false` after establishing your plots can prevent unintentional file writes to the wrong drive.
+
+
+### Record Chunks Reading Mode
+
+Upon startup, each farm will benchmark the performance of every plot to identify the most efficient proving method, yielding either `ConcurrentChunks` or `WholeSector` results. If you already know the optimal method for your setup, you can specify it as an argument for each farm to save time benchmarking. 
+For example, you can include record-chunks-mode= after defining the path and size, assigning the desired value, e.g., `path=/mnt/subspace1,size=100G,record-chunks-mode=ConcurrentChunks`.  If you do not provide this parameter, the system will benchmark each disk on startup to identify the most efficient method.
+
+
 ### Benchmarking Your Farmer
 Benchmarking helps you test the plotting speed of your farmer against different versions of the Subspace Network.
 
