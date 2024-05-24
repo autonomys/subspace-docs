@@ -1,0 +1,147 @@
+---
+title: Farming Cluster
+sidebar_position: 4
+description: How to run a Subspace Network Farmer using the farming cluster
+keywords:
+    - Farmer
+    - Farming
+    - CLI
+    - Cluster
+    - Docker
+---
+
+
+## Farming Cluster
+
+The farming cluster is designed for larger-scale farmers, addressing various challenges associated with scaling up. Essentially, the cluster consists of four distinct components:
+
+- **Controller**
+- **Cache**
+- **Farmer**
+- **Plotter**
+
+### Benefits
+
+1. **Bandwidth Efficiency**: Centralized storage of the piece cache conserves bandwidth.
+2. **Remote Compute Capability**: Multiple PCs can contribute their CPU power for plotting (and eventually GPUs), without needing to store the plots locally.
+3. **Redundancy**: Running multiple computers for each process enhances redundancy.
+4. **Additional Space**: By moving the piece sync cache to a central location frees up roughly 1% of the SSD for larger plots.
+
+### Core Messaging Technology: NATS.io
+
+At the core of this process is a third-party software called [NATS.io](https://nats.io/), which is used for communication between farmer processes. The simplest way to install NATS.io is via Docker. 
+
+To start NATS, create a configuration file with the following content:
+
+```
+max_payload = 2MB
+```
+
+Save this as **`nats.config`** and start the NATS server with Docker:
+
+```
+docker run \
+    --name nats \
+    --restart unless-stopped \
+    --publish 4222:4222 \
+    --volume ./nats.config:/nats.config:ro \
+    nats -c /nats.config
+```
+
+### Component Configuration
+
+Each of the four components requires a few additional parameters. All need the **`cluster`** specification, a URL to the NATS server, and the specific component being executed.
+
+### Controller
+
+The controller should be the first component to run.  It connects to the node, so the **`node-rpc-url`** must be included.
+
+```
+subspace-farmer cluster --nats-server nats://<NATS_IP>:4222 \
+    controller \
+        --base-path /path/to/controller-dir \
+        --node-rpc-url ws://<NODE_IP>:<NODE_PORT>
+```
+
+Replace **`<NATS_IP>`** with your NATS server IP address, and **`<NODE_IP>:<NODE_PORT>`** with your node’s IP address and port. Specify the working directory with **`--base-path`**.
+
+The controller logs farm connections, disconnections, and piece cache sync progress. Optional connection-related options include **`--in-connections`**, **`--out-connections`**, **`--pending-in-connections`**, and **`--pending-out-connections`**.
+
+### Cache
+
+Next, run the cache component. Although you can run multiple cache processes to distribute the load, only one is required.
+
+```
+subspace-farmer cluster --nats-server nats://<NATS_IP>:4222 \
+    cache \
+        path=/path/to/cache,size=SIZE
+```
+
+Replace **`<NATS_IP>`** with your NATS server IP address. Provide the cache file path with **`path=`**, and specify the cache size. While an SSD is recommended, a hard disk can also be used.  200 GB is a good size to use for cache based on the current state of Gemini 3h.
+
+### Farmer
+
+Run the farmer component on each computer that will farm plots.
+
+```
+subspace-farmer cluster --nats-server nats://<NATS_IP>:4222 \
+    farmer \
+        --reward-address <REWARD_ADDRESS> \
+        path=/path/to/farm,size=SIZE
+```
+
+Replace **`<NATS_IP>`** with your NATS server IP address and provide your reward address, farm paths, and sizes. Optional parameters include **`--sector-encoding-concurrency`**, **`--farming-thread-pool-size`**, **`--disable-farm-locking`**, and **`--create`**.
+
+### Plotter
+
+Finally, run the plotter component. At least one plotter is needed for plotting and replotting farms. It can be on the same computer as the farmer or on a separate machine.
+
+```
+subspace-farmer cluster --nats-server nats://<NATS_IP>:4222 \
+    plotter
+```
+
+Replace **`<NATS_IP>`** with your NATS server IP address.  Optional parameters include many farmer options related to concurrency and cores/threads.
+
+### Running multiple components at the same time
+
+It is possible to execute multiple components from one command line by separating them with **`--`**
+
+```
+subspace-farmer cluster --nats-server nats://<NATS_IP>:4222 \
+    cache \
+        path=/path/to/cache,size=SIZE
+    --
+    plotter
+```
+
+### Remote Compute Possibilities
+
+This setup allows for extensive remote compute capabilities. For instance, if a computer is suitable for farming but not for plotting, you can run the farmer on that computer and the plotter on one or more remote machines. This enables continuous plotting and replotting across multiple farms, ensuring plotters are utilized efficiently until all sectors are plotted and replotted.
+
+### Advanced Options / Redundancy
+
+It is possible to setup clustering with nats server, but that setup is beyond the scope of this document. If you have more than one nats server, you can specify multiple ones.
+
+```
+subspace-farmer cluster --nats-server nats://<NATS_IP#1>:4222 --nats-server nats://<NATS_IP#2>:4222\
+```
+
+You can run multiple controller components, but each one needs to have it’s distinct cache group.
+
+```
+subspace-farmer cluster --nats-server nats://<NATS_IP>:4222 \
+    controller \
+        --cache-group group1 \
+        --base-path /path/to/controller-dir \
+        --node-rpc-url ws://<NODE_IP>:<NODE_PORT>
+```
+
+You need to specify a cache group on the cache component that matches the one specified on the controller component.
+
+```
+subspace-farmer cluster --nats-server nats://<NATS_IP>:4222 \
+    cache \
+        --cache-group group1 \
+        path=/path/to/cache,size=SIZE
+```
