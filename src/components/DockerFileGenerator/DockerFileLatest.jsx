@@ -97,7 +97,6 @@ function DockerFileGeneratorLatest() {
 	// Only generate the output if there are no validation errors
         if (Object.keys(validationErrors).length === 0) {
             const template = `\
-version: "3.7"
 services:
   node:
     image: ghcr.io/subspace/node:${formData.snapshot}${formData.arch === "aarch64" ? "-aarch64" : ""}
