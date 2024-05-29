@@ -1,4 +1,3 @@
-version: "3.7"
 services:
   node:
     # Replace `snapshot-DATE` with the latest release (like `snapshot-2022-apr-29`)
