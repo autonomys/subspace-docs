@@ -303,10 +303,6 @@ const config = {
             label: 'GitHub',
             position: 'right',
           },
-          {
-            type: 'search',
-            position: 'right',
-          }
         ],
       },
       footer: {
@@ -388,18 +384,18 @@ const config = {
         theme: lightCodeTheme,
         darkTheme: darkCodeTheme,
         additionalLanguages: ['toml', 'powershell', 'shell-session', 'ini'],
-      },
-      algolia: {
+      }
+      // algolia: {
             // The application ID provided by Algolia
-            appId: 'Y894NAOZLC',
+            // appId: 'Y894NAOZLC',
 
             // Public API key: it is safe to commit it
-            apiKey: '29b168f70cdba82eaa79195e98f7286c',
+            // apiKey: '29b168f70cdba82eaa79195e98f7286c',
 
-            indexName: 'subspace',
+            // indexName: 'subspace',
 
             // Optional: see doc section below
-            contextualSearch: false,
+            // contextualSearch: false,
 
             // Optional: Specify domains where the navigation should occur through window.location instead on history.push. Useful when our Algolia config crawls multiple documentation sites and we want to navigate with window.location.href to them.
             //externalUrlRegex: 'external\\.com|domain\\.com',
@@ -411,11 +407,11 @@ const config = {
             //},
 
             // Optional: Algolia search parameters
-            searchParameters: {},
+            // searchParameters: {},
 
             // Optional: path for search page that enabled by default (`false` to disable it)
-            searchPagePath: false,
-      }
+            // searchPagePath: false,
+      // }
     }),
 };
 
