@@ -184,7 +184,12 @@ const config = {
       }),
     ],
   ],
-
+  scripts: [{
+    src: "https://cdn.metered.ca/docuscout/1.0/docuscout.umd.js"
+  }],
+  stylesheets: [{
+    href: "https://cdn.metered.ca/docuscout/1.0/style.css"
+  }],
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
