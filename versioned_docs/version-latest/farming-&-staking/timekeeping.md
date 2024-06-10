@@ -24,7 +24,7 @@ Having a good number of timekeepers distributed geographically is our goal to fo
 There is no explicit economic incentive to running a timekeeper, however, independent timekeeping contributes to stable block production, which benefits every participant of the network.
 :::
 
-You can read more about timekeeping in the [Proof-of-Time section of The Subnomicon](https://subnomicon.subspace.network/docs/consensus/pot/#timekeeping).
+You can read more about timekeeping in the [Proof-of-Time section of The Academy](https://academy.autonomys.net/subspace-protocol/consensus/proof-of-time#timekeeping).
 
 
 ## Hardware Requirements
