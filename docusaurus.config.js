@@ -267,8 +267,8 @@ const config = {
             position: 'left',
             items: [
               {
-                label: 'Subspace Subnomicon',
-                href: 'https://subnomicon.subspace.network',
+                label: 'Autonomys Academy',
+                href: 'https://academy.autonomys.net/',
               },
               {
                 label: 'Subspace Hitchikers Guide',
@@ -378,9 +378,9 @@ const config = {
         copyright: `Copyright © ${new Date().getFullYear()} Subspace Labs, Inc.`,
       },
       announcementBar: {
-        id: 'subnomicon',
+        id: 'academy',
         content:
-          '<br /><h4>Learn more about the Subspace Network by visiting our <a target="_blank" href="https://subnomicon.subspace.network">Subnomicon</a></h4>',
+          '<br /><h4>Learn more about the Autonomys Network by visiting our <a target="_blank" href="https://academy.autonomys.net/">Academy</a></h4>',
         backgroundColor: '#ac9dc7',
         textColor: '#292929',
         isCloseable: false,
