@@ -2,7 +2,6 @@ import React, { useEffect } from "react"
 export default function() {
 
     useEffect(() => {
-        console.log("Search loaded");
         docuscout({
             container: document.getElementById("docuscout-search-bar"),
             environment: window,
