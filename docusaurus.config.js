@@ -194,7 +194,7 @@ const config = {
       "data-website-id": "591e207f-fb7d-4966-9bb0-9eaee7844460",
       "data-project-name": "Subspace Network",
       "data-project-color": "#1B1B1D",
-      "data-project-logo": "https://ibb.co/DfQBTGH",
+      "data-project-logo": "https://i.postimg.cc/NGJ4jgKx/download.png",
       "data-button-text-color": "#89CFF0",
       "data-modal-disclaimer": "This is a custom LLM for Subspace.network with access to all documentation (docs.subspace.network/). Since this is AI technology please use your best judgment.",
       async: true
