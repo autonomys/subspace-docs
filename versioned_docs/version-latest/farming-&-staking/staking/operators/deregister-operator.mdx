@@ -40,7 +40,7 @@ Only account who registered an operator can deregister it. Make sure to use the 
 
 #### Operator deregistration using **Subspace Staking interface** (recommended)
 
-1. Proceed to the [Subspace Staking portal](https://staking.subspace.tools) and connect your wallet.
+1. Proceed to the [Subspace Staking portal](https://explorer.subspace.network/gemini-3h/staking) and connect your wallet.
 
 ![NStaking-1](/img/doc-imgs/operators-staking/NStaking-1.png)
 
@@ -52,46 +52,45 @@ Only account who registered an operator can deregister it. Make sure to use the 
 
 ![NStaking-3](/img/doc-imgs/operators-staking/NStaking-3.png)
 
-4. Click on `Manage your stake`.
-
-![NStaking-9](/img/doc-imgs/operators-staking/NStaking-9.png)
-
-5. Click on `Action` button next to an operator you would like to deregister and select `deregister`. 
+4. Click on `Manage My Operator.
 
 ![NStaking-10](/img/doc-imgs/operators-staking/NStaking-10.png)
 
+5. Click on `Actions` button next to an operator you would like to deregister and select `Deregister`. 
+
+![NStaking-11](/img/doc-imgs/operators-staking/NStaking-11.png)
+
 6. Approve the request in the pop-up window. 
 
-![NStaking-8](/img/doc-imgs/operators-staking/NStaking-7.png)
+![NStaking-9](/img/doc-imgs/operators-staking/NStaking-9.png)
 
 7. Congratulations, your operator was deregistered.
 
 :::info
-It can take up to 10 minutes for the operator to be deregistered and disappeared from the page. 
-You can check if the operator was deregistered successfully on the [Subspace Subscan portal](https://subspace.subscan.io/extrinsic).
+It can take up to 10 minutes for the operator to be deregistered, but the funds will stay locked for 14_400 blocks, or 24 hours.
 :::
 
-#### Operator deregistration using **PolkadotJS**
-Alternatively, you can use the **PolkadotJS** portal to deregister operator. 
-
-1. Proceed to [PolkadotJS](https://polkadot.js.org/apps/#/explorer)
-2. Make sure to select the correct network at the top-left corner. 
-3. Select the account you want to use in `using the selected account`.
-4. Select `domains` under `submit the following extrinsic` and choose `deregisterOperator(operatorId)` in the dropdown.
-
-![Staking-14](/img/doc-imgs/operators-staking/Staking-14.png)
-
-5. Your tokens and tokens of operator `Nominators` will be released after the `lockingPeriod`.
-6. To check the locking period you can go to `Developer` -> `Chain state` -> `Constants`.
-7. Select `domains` under `selected contant query` and choose `stakeWithdrawalLockingPeriod`. 
-8. Click on `+` to run the query. 
+### Unlocking Funds
 
 :::info
-The current locking period is set to 14_400 blocks, or 24 hours. 
+Once 14_400 blocks have passed after deregistering your operator your funds can now be unlocked. 
 :::
 
+1.  Follow steps 1 to 4 in [steps](#operator-deregistration) to connect your wallet and manage your operator.  It should now show Deregistered, funds ready to unlock.
 
-### Operator Stake Withdrawal
+![NStaking-12](/img/doc-imgs/operators-staking/NStaking-12.png)
 
-**Operator** stake withdrawal works similarly to **Nominator** stake withdrawal. Refer to [this section](../staking.md#stake-withdrawal-using-polkadotjs) to withdraw your stake. 
+2.  Click on `Actions` button next to an operator you would like to unlock funds and select `Unlock Operator`.  
 
+![NStaking-13](/img/doc-imgs/operators-staking/NStaking-13.png)
+
+6. Approve the request in the pop-up window. 
+
+![NStaking-9](/img/doc-imgs/operators-staking/NStaking-9.png)
+
+7. Congratulations, your operator funds should be unlocked.
+
+:::info
+There won't be a visual indication that your funds have been unlocked on this screen.  The Total Stake field will still show the original staked amounts. 
+You should be able to verify the funds are unlocked by clicking the icon in the upper right hand side of the screen next to your wallet address and seeing the correct balance.
+:::

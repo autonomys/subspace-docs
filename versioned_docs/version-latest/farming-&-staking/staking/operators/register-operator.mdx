@@ -40,7 +40,7 @@ To check the list of available domains:
 ![Staking-3](/img/doc-imgs/operators-staking/Staking-3.png)
 :::tip
 In the example above the number 3 corresponds to the domainId. 
-The example is not Stake Wars specific, the operator is responsible for finding out the correct domain ID they want to operate on. **Stake Wars are using the domain with ID 1**.
+The example is not Stake Wars specific, the operator is responsible for finding out the correct domain ID they want to operate on. **Stake Wars are using the domains with ID's 0 (Nova) and 1 (Auto-ID)**.
 :::
 
 ### Create operator key
@@ -48,7 +48,7 @@ The example is not Stake Wars specific, the operator is responsible for finding 
 An operator needs a key pair to participate in bundle production.
 
 To create a new operator key, run the following command:
-`subspace-node domain key create --base-path /tmp/node --domain-id 0`
+`subspace-node domain key create --base-path NODE_DATA_PATH --domain-id 0`
 
 Make sure to specify the base **--base-path** for the key generation, and running an operator node and make sure to replace **--domain-id value** with the domain ID you would like to be an operator on.
 
@@ -72,7 +72,7 @@ Example:
 Start a node as operator on `gemini-3h` chain:
 
 :::info
-You need to **wipe** and sync your node from genesis block, since you need to sync both consensus and domain chains.
+You need to **wipe** and sync your node from genesis block without using snap sync, since you need to sync both consensus and domain chains.
 You do not need to wipe any existing plots. 
 :::
 
@@ -81,7 +81,7 @@ Ensure you replace `your_domain_id` with your domain identifier in the command a
 :::
 
 :::tip
-You can ignore setting up `your_operator_id` while you're syncing your node. Make sure to set it after syncing and registration.
+You can ignore setting up `your_operator_id` while you're syncing your node as you won't have an operator id until you have registered your operator. Make sure to set it after syncing and registration.
 :::
 
 <Tabs groupId="OS">
@@ -93,6 +93,8 @@ You can ignore setting up `your_operator_id` while you're syncing your node. Mak
 --chain gemini-3h \`
 --name your_node_name \`
 --base-path NODE_DATA_PATH \`
+--blocks-pruning archive \`
+--state-pruning archive \`
 -- \`
 --domain-id your_domain_id \`
 --operator-id your_operator_id \`
@@ -111,6 +113,8 @@ You can ignore setting up `your_operator_id` while you're syncing your node. Mak
 --chain gemini-3h \\
 --name your_node_name \\
 --base-path NODE_DATA_PATH \\
+--blocks-pruning archive \\
+--state-pruning archive \\
 -- \\
 --domain-id your_domain_id \\
 --operator-id your_operator_id \\
@@ -129,6 +133,8 @@ You can ignore setting up `your_operator_id` while you're syncing your node. Mak
 --chain gemini-3h \\
 --name your_node_name \\
 --base-path NODE_DATA_PATH \\
+--blocks-pruning archive \\
+--state-pruning archive \\
 -- \\
 --domain-id your_domain_id \\
 --operator-id your_operator_id \\
@@ -171,6 +177,8 @@ You can ignore setting up `your_operator_id` while you're syncing your node. Mak
       "--dsn-listen-on", "/ip4/0.0.0.0/tcp/30433",
       # Replace INSERT_YOUR_ID with your node ID (will be shown in telemetry)
       "--name", "INSERT_YOUR_ID",
+      "--blocks-pruning", "archive",
+      "--state-pruning". "archive"
       "--",
       # Replace INSERT_YOUR_DOMAIN_ID with domain ID you want to be operator on
       "--domain-id", "INSERT_YOUR_DOMAIN_ID",
@@ -205,17 +213,8 @@ It's crucial to fully sync your node before registering as an operator. Please f
 :::
 
 
-<details>
-<summary>
-Prefer a video? Expand for our installation video using PolkadotJS interface.
-</summary>
-<div>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/w2U3CUJfI2c?si=mb-BRykmlrc49PPf" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen></iframe>
-</div>
-</details>
-
 #### Register an operator using Subspace Staking interface (recommended)
-1. Proceed to the [Subspace Staking portal](https://staking.subspace.tools) and connect your wallet.
+1. Proceed to the [Subspace Staking portal](https://explorer.subspace.network/gemini-3h/staking) and connect your wallet.
 
 ![NStaking-1](/img/doc-imgs/operators-staking/NStaking-1.png)
 
@@ -227,70 +226,43 @@ Prefer a video? Expand for our installation video using PolkadotJS interface.
 
 ![NStaking-3](/img/doc-imgs/operators-staking/NStaking-3.png)
 
-4. Select the account you'd like to use form the dropdown menu. You will see both available and locked (staked) token balances for each account. 
+4. Select the account you'd like to use form the dropdown menu. You can click the button in the upper left corner to see available and locked (staked) token balances for the selected account. 
 
 ![NStaking-4](/img/doc-imgs/operators-staking/NStaking-4.png)
-5. Proceed to the `Stake as a pool operator` tab.
 
 ![NStaking-5](/img/doc-imgs/operators-staking/NStaking-5.png)
-6. Select the `domainId` you would like to be registered on. Enter the `Minimum Operator Stake`, `Amount to Stake`, `Nomination Tax` and `Signing key` and then click `Next`.
+
+5. Proceed to the `Register Operator` tab.
 
 ![NStaking-6](/img/doc-imgs/operators-staking/NStaking-6.png)
 
-:::info
-Make sure to use the signing key generated on the previous **[Create operator key](#create-operator-key)** step.
-:::
-7. Approve the request in the pop-up window. 
+6. Select the `domainId` you would like to be registered on.  For Stake Wars, Nova is Domain 0 and Auto-ID should be Domain 1 once it is available.
 
-![NStaking-8](/img/doc-imgs/operators-staking/NStaking-7.png)
-8. Congratulations, you're now registered as an **operator**! 
+![NStaking-7](/img/doc-imgs/operators-staking/NStaking-7.png)
+
+7. An important security change from Stake Wars one is that you are now required to have a Proof of signing key ownership signature.  This is derived from your seed phrase when creating the operator key.  
+You can either select the file that contains your seed in the subfolder of **NODE_DATA_PATH** under `/domains/domainID/keystore` and then click the choose file and point to that file or you can choose the Proof with seed and manually enter the seed phrase.
+Once you click the Generate proof button it will automatically populate the `Signing key` and `Prof of signing key ownership signature` fields.  Enter the `Minimum Operator Stake`, `Amount to Stake`, `Nomination Tax` and then click `Next`.
 
 ![NStaking-8](/img/doc-imgs/operators-staking/NStaking-8.png)
 
 :::info
-It can take up to 10 minutes for the operator to be registered and appear on the page. 
-You can check if the operator was created successfully by following the [steps](#checking-your-operatorid).
+Make sure to either locate the signing key file generated on the previous **[Create operator key](#create-operator-key)** step or get use the key phrase that was displayed when the key was created and is also in that key file.
+:::
+
+7. Approve the request in the pop-up window. 
+
+![NStaking-9](/img/doc-imgs/operators-staking/NStaking-9.png)
+
+8. Congratulations, you're now registered as an **operator**!  You can click on the Manage My Operator tab to see your operator and get the Operator Id.
+
+![NStaking-10](/img/doc-imgs/operators-staking/NStaking-10.png)
+
+:::info
+It can take up to 10 minutes for the operator to be registered and appear on the page.  It may take a day before your Stake amount is displayed under Total Stake in the grid.  Once you have your Operator Id you can restart your operator node and include the `--operator-id **OPERATOR_ID**` as a parameter. 
 :::
 
 :::tip
 You can view some additional actions by clicking on `action` next to your operator. 
-You can increase your stake, withdraw some stake and de-register your operator from there. 
+You can increase your stake (Nominate), withdraw some stake and de-register your operator from there. 
 :::
-
-If you prefer to use a native PolkadotJS, or faced any issues in one of the steps above, you can try using [PolkadotJS interface guide](tips-operator#register-an-operator-using-polkadotjs-interface-alternative-way) to register an operator on the domain. 
-
-### Checking your operatorId
-
-There are two ways to check your operatorId: 
-
-1. You can use PolkadotJS **[Network Explorer](https://polkadot.js.org/apps/#/explorer)**.
-
-![Staking-7](/img/doc-imgs/operators-staking/Staking-7.png)
-2. Browse the **recent events** and you should see **domains.OperatorRegistered** event.
-
-![Staking-8](/img/doc-imgs/operators-staking/Staking-8.png)
-3. Click on the dropdown arrow to view the **domainId** and **operatorId**.
-
----
-
-Alternatively, you can use [Subscan](https://subspace.subscan.io/) which is a little easier to navigate for this job. 
-1. Navigate to **[Subspace Subscan](https://subspace.subscan.io/)** portal.
-2. Click on `Blockchain` -> `Extrinsics`.
-
-![Staking-9](/img/doc-imgs/operators-staking/Staking-9.png)
-
-3. Scroll to the bottom of the page to view all recent events, search for `register_operator` event.
-
-![Staking-10](/img/doc-imgs/operators-staking/Staking-10.png)
-
-4. Click on `Extrinsic ID` for the desired event.
-
-5. Scroll to `Parameters` and ensure that `signing_key` corresponds to your signing key.
-
-![Staking-11](/img/doc-imgs/operators-staking/Staking-11.png)
-
-6. Scroll to `Events` and click on dropdown arrow for `domains(OperatorRegistered)`.
-
-![Staking-12](/img/doc-imgs/operators-staking/Staking-12.png)
-
-7. Inspect and remember your `domain_id`. 
