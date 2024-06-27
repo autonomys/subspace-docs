@@ -40,7 +40,7 @@ To check the list of available domains:
 ![Staking-3](/img/doc-imgs/operators-staking/Staking-3.png)
 :::tip
 In the example above the number 3 corresponds to the domainId. 
-The example is not Stake Wars specific, the operator is responsible for finding out the correct domain ID they want to operate on. **Stake Wars are using the domains with ID's 0 (Nova) and 1 (Auto-ID)**.
+The example is not Stake Wars specific, the operator is responsible for finding out the correct domain ID they want to operate on. **Stake Wars are using the domains with IDs 0 (Nova) and 1 (AutoID)**.
 :::
 
 ### Create operator key
@@ -98,9 +98,6 @@ You can ignore setting up `your_operator_id` while you're syncing your node as y
 -- \`
 --domain-id your_domain_id \`
 --operator-id your_operator_id \`
---bootstrap-nodes /dns/bootstrap-0.nova.gemini-3h.subspace.network/tcp/30334/p2p/12D3KooWBm1PHFHAP9mA6LNd72uFimyPoo6ixjdfgajzizXDYND2 \`
---bootstrap-nodes /dns/bootstrap-1.nova.gemini-3h.subspace.network/tcp/30334/p2p/12D3KooWD3Q8JpAPoXR67ZQ1H1nXfPqCgPHCvWVcGxNKbfFmuPnu \`
---bootstrap-nodes /dns/bootstrap-2.nova.gemini-3h.subspace.network/tcp/30334/p2p/12D3KooWEYs5yikat5NanzN7c2Sb4ngxJoCro9vXMULM2ZYVWW9H \`
 --listen-on /ip4/0.0.0.0/tcp/40333`}
 </CodeBlock>
 
@@ -118,9 +115,6 @@ You can ignore setting up `your_operator_id` while you're syncing your node as y
 -- \\
 --domain-id your_domain_id \\
 --operator-id your_operator_id \\
---bootstrap-nodes /dns/bootstrap-0.nova.gemini-3h.subspace.network/tcp/30334/p2p/12D3KooWBm1PHFHAP9mA6LNd72uFimyPoo6ixjdfgajzizXDYND2 \\
---bootstrap-nodes /dns/bootstrap-1.nova.gemini-3h.subspace.network/tcp/30334/p2p/12D3KooWD3Q8JpAPoXR67ZQ1H1nXfPqCgPHCvWVcGxNKbfFmuPnu \\
---bootstrap-nodes /dns/bootstrap-2.nova.gemini-3h.subspace.network/tcp/30334/p2p/12D3KooWEYs5yikat5NanzN7c2Sb4ngxJoCro9vXMULM2ZYVWW9H \\
 --listen-on /ip4/0.0.0.0/tcp/40333`}
 </CodeBlock>
 
@@ -138,9 +132,6 @@ You can ignore setting up `your_operator_id` while you're syncing your node as y
 -- \\
 --domain-id your_domain_id \\
 --operator-id your_operator_id \\
---bootstrap-nodes /dns/bootstrap-0.nova.gemini-3h.subspace.network/tcp/30334/p2p/12D3KooWBm1PHFHAP9mA6LNd72uFimyPoo6ixjdfgajzizXDYND2 \\
---bootstrap-nodes /dns/bootstrap-1.nova.gemini-3h.subspace.network/tcp/30334/p2p/12D3KooWD3Q8JpAPoXR67ZQ1H1nXfPqCgPHCvWVcGxNKbfFmuPnu \\
---bootstrap-nodes /dns/bootstrap-2.nova.gemini-3h.subspace.network/tcp/30334/p2p/12D3KooWEYs5yikat5NanzN7c2Sb4ngxJoCro9vXMULM2ZYVWW9H \\
 --listen-on /ip4/0.0.0.0/tcp/40333`}
 </CodeBlock>
 
@@ -184,10 +175,7 @@ You can ignore setting up `your_operator_id` while you're syncing your node as y
       "--domain-id", "INSERT_YOUR_DOMAIN_ID",
       # Replace INSERT_YOUR_OPERATOR_ID with your operator ID
       "--operator-id", "INSERT_YOUR_OPERATOR_ID",
-      "--listen-on", "/ip4/0.0.0.0/tcp/40333",
-      "--bootstrap-nodes", "/dns/bootstrap-0.nova.gemini-3h.subspace.network/tcp/30334/p2p/12D3KooWBm1PHFHAP9mA6LNd72uFimyPoo6ixjdfgajzizXDYND2",
-      "--bootstrap-nodes", "/dns/bootstrap-1.nova.gemini-3h.subspace.network/tcp/30334/p2p/12D3KooWD3Q8JpAPoXR67ZQ1H1nXfPqCgPHCvWVcGxNKbfFmuPnu",
-      "--bootstrap-nodes", "/dns/bootstrap-2.nova.gemini-3h.subspace.network/tcp/30334/p2p/12D3KooWEYs5yikat5NanzN7c2Sb4ngxJoCro9vXMULM2ZYVWW9H"
+      "--listen-on", "/ip4/0.0.0.0/tcp/40333"
     ]
     healthcheck:
       timeout: 5s
@@ -213,8 +201,8 @@ It's crucial to fully sync your node before registering as an operator. Please f
 :::
 
 
-#### Register an operator using Subspace Staking interface (recommended)
-1. Proceed to the [Subspace Staking portal](https://explorer.subspace.network/gemini-3h/staking) and connect your wallet.
+#### Register an operator using Autonomys Staking interface (recommended)
+1. Proceed to the [Autonomys Staking portal](https://explorer.subspace.network/gemini-3h/staking) and connect your wallet.
 
 ![NStaking-1](/img/doc-imgs/operators-staking/NStaking-1.png)
 
@@ -247,7 +235,7 @@ Once you click the Generate proof button it will automatically populate the `Sig
 ![NStaking-8](/img/doc-imgs/operators-staking/NStaking-8.png)
 
 :::info
-Make sure to either locate the signing key file generated on the previous **[Create operator key](#create-operator-key)** step or get use the key phrase that was displayed when the key was created and is also in that key file.
+Make sure to either locate the signing key file generated on the previous **[Create operator key](#create-operator-key)** step or use the key phrase that was displayed when the key was created and is also in that key file.
 :::
 
 7. Approve the request in the pop-up window. 

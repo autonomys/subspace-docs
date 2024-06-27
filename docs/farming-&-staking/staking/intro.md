@@ -47,7 +47,7 @@ Subspace introduces the Decoupled Execution Framework (DecEx) to tackle the stat
 - Prefer single-threaded performance over higher cores count. A comparison of single-threaded performance can be found [here](https://www.cpubenchmark.net/singleThread.html).
 
 **Storage**:
-- An NVMe SSD of 1 TB. In general, the latency is more important than the throughput.
+- An NVMe SSD of 300 GB. In general, the latency is more important than the throughput.
 
 **Memory**:
 - 16 GB.
