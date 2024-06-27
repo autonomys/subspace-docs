@@ -232,6 +232,10 @@ It's crucial to fully sync your node before registering as an operator. Please f
 You can either select the file that contains your seed in the subfolder of **NODE_DATA_PATH** under `/domains/domainID/keystore` and then click the choose file and point to that file or you can choose the Proof with seed and manually enter the seed phrase.
 Once you click the Generate proof button it will automatically populate the `Signing key` and `Proof of signing key ownership signature` fields.  Enter the `Amount to Stake`, `Nominator Tax`, `Minimum Nominator Stake` and then click `Next`.
 
+:::info
+Make sure to specify a Minimum Nominator Stake of at least 1 tSSC.
+:::
+
 ![NStaking-8](/img/doc-imgs/operators-staking/NStaking-8.png)
 
 :::info
@@ -247,7 +251,7 @@ Make sure to either locate the signing key file generated on the previous **[Cre
 ![NStaking-10](/img/doc-imgs/operators-staking/NStaking-10.png)
 
 :::info
-It can take up to 10 minutes for the operator to be registered and appear on the page.  It may take a day before your Stake amount is displayed under Total Stake in the grid.  Once you have your Operator Id you can restart your operator node and include the `--operator-id **OPERATOR_ID**` as a parameter. 
+It can take up to 10 minutes for the operator to be registered and appear on the page.  It may take a day before your Stake amount is displayed under Total Stake in the table.  Once you have your Operator Id you can restart your operator node and include the `--operator-id **OPERATOR_ID**` as a parameter. 
 :::
 
 :::tip
