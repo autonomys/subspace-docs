@@ -41,31 +41,26 @@ Subspace introduces the Decoupled Execution Framework (DecEx) to tackle the stat
 ### Operator hardware requirements
 
 :::note
-The hardware requirements have not been benchmarked, and these are our best estimates. We would appreciate your feedback if you feel that the requirements listed here are too high or too low. 
-:::
-
-:::tip
-Our suggested specs are not necessarily applicable to Stake Wars. We encourage all interested participants to join Stake Wars, even if your hardware does not meet the listed requirements. 
+The hardware requirements have been reduced from the first Stake Wars in order to encourage as much participation as possible.  Most likely these will be higher in mainnet. 
 :::
 
 **CPU**: 
 - x86-64 compatible;
 - Intel Ice Lake, or newer (Xeon or Core series); AMD Zen3, or newer (EPYC or Ryzen);
 - 4 physical cores @ 3.4GHz;
-- Simultaneous multithreading disabled (Hyper-Threading on Intel, SMT on AMD);
 - Prefer single-threaded performance over higher cores count. A comparison of single-threaded performance can be found [here](https://www.cpubenchmark.net/singleThread.html).
 
 **Storage**:
-- An NVMe SSD of 1 TB. In general, the latency is more important than the throughput.
+- An NVMe SSD of 300 GB. In general, the latency is more important than the throughput.
 
 **Memory**:
-- 32 GB DDR4 ECC.
+- 16 GB.
 
 **System**:
 - Linux Kernel 5.16 or newer.
 
 **Network**:
-- The minimum symmetric networking speed is set to 500 Mbit/s.
+- The minimum symmetric networking speed is set to 50 Mbit/s.
 
 ### Folder structure
 
