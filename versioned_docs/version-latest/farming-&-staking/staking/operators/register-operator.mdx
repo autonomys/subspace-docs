@@ -20,27 +20,13 @@ import styles from '@site/src/pages/index.module.css';
 Currently, the domain chain does not support syncing from other operator nodes; it needs to be deterministically derived from the consensus chain block by block.
 :::
 
-### Check the list of the available domains:
-In order to participate in block production, operator needs to register on a specific domain. 
+### Choosing the right domain
 
-:::note
-Any account with the **minimum operator stake** can become an operator. 
-:::
+An operator needs to register on a specific domain and create a key pair to participate in bundle production.  Stake Wars is using domains with IDs 0 (Nova) and 1 (AutoID).
+It is possible to register an operator for each domain, but each operator will require running a node.
 
-To check the list of available domains: 
-1. Proceed to [PolkadotJS](https://polkadot.js.org/apps/#/explorer)
-2. Make sure to select the correct network at the top-left corner.
-3. Go to Developer -> Chain state
-![Staking-1](/img/doc-imgs/operators-staking/Staking-1.png)
-4. Select `domains` under `selected state query` and choose `domainRegistry`
-5. Exclude `option`
-6. Click on `+` to query the chain state.
-![Staking-2](/img/doc-imgs/operators-staking/Staking-2.png)
-7. Review the list of available domains
-![Staking-3](/img/doc-imgs/operators-staking/Staking-3.png)
 :::tip
-In the example above the number 3 corresponds to the domainId. 
-The example is not Stake Wars specific, the operator is responsible for finding out the correct domain ID they want to operate on. **Stake Wars are using the domains with IDs 0 (Nova) and 1 (AutoID)**.
+Any account with the **minimum operator stake** can become an operator. 
 :::
 
 ### Create operator key
@@ -48,9 +34,13 @@ The example is not Stake Wars specific, the operator is responsible for finding 
 An operator needs a key pair to participate in bundle production.
 
 To create a new operator key, run the following command:
-`subspace-node domain key create --base-path NODE_DATA_PATH --domain-id 0`
+`subspace-node domain key create --base-path NODE_DATA_PATH --domain-id DOMAIN`
 
-Make sure to specify the base **--base-path** for the key generation, and running an operator node and make sure to replace **--domain-id value** with the domain ID you would like to be an operator on.
+Make sure to specify the base **--base-path** for the key generation, and running an operator node and make sure to replace the value in **--domain-id** with the domain ID you would like to be an operator on.
+
+:::tip
+The operator is responsible for finding out the correct domain ID they want to operate on.
+:::
 
 **You have successfully generated an operator key, congratulations!**
 

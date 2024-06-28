@@ -41,7 +41,7 @@ Subspace introduces the Decoupled Execution Framework (DecEx) to tackle the stat
 ### Operator hardware requirements
 
 :::note
-The hardware requirements have not been benchmarked, and these are our best estimates. We would appreciate your feedback if you feel that the requirements listed here are too high or too low. 
+The hardware requirements have been reduced from the first Stake Wars in order to encourage as much participation as possible.  Most likely these will be higher in mainnet. 
 :::
 
 **CPU**: 
