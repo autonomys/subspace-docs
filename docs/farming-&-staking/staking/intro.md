@@ -40,6 +40,10 @@ Subspace introduces the Decoupled Execution Framework (DecEx) to tackle the stat
 
 ### Operator hardware requirements
 
+:::note
+The hardware requirements have not been benchmarked, and these are our best estimates. We would appreciate your feedback if you feel that the requirements listed here are too high or too low. 
+:::
+
 **CPU**: 
 - x86-64 compatible;
 - Intel Ice Lake, or newer (Xeon or Core series); AMD Zen3, or newer (EPYC or Ryzen);
