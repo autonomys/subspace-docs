@@ -39,7 +39,7 @@ Three important factors to pay attention to are `*Nominator Tax`, `Min. Stake`, 
 
 ![N-nominators-7](/img/doc-imgs/operators-staking/N-Nominators-2.png)
 
-7. Choose the token amount you want to nominate the operator with.  It is also possible to nominate multiple operators. Click on **Submit** and approve the transaction in a pop-up window. 
+7. Choose the token amount you want to nominate to the operator. It is also possible to nominate multiple operators. Click on **Submit** and approve the transaction in a pop-up window. 
 
 ![N-nominators-9](/img/doc-imgs/operators-staking/N-Nominators-3.png)
 
