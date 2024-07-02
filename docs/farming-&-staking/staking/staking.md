@@ -35,7 +35,7 @@ Three important factors to pay attention to are `*Nominator Tax`, `Min. Stake`, 
 
 ![N-nominators-5](/img/doc-imgs/operators-staking/N-Nominators-1.png)
 
-6. Once you picked the operator to nominate, click on **Actions** -> **Nominate**.
+6. Once you have picked the operator to nominate, click on **Actions** -> **Nominate**.
 
 ![N-nominators-7](/img/doc-imgs/operators-staking/N-Nominators-2.png)
 
