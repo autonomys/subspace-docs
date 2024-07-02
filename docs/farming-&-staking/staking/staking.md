@@ -54,7 +54,7 @@ Three important factors to pay attention to are `Nominator Tax`, `Min. Stake`, a
 ![N-nominators-11](/img/doc-imgs/operators-staking/N-Nominators-5.png)
 
 
-### Check if your **nomination** worked successfully. 
+### Check if your **nomination** worked successfully
 
 1. Navigate to **[Subspace Subscan](https://subspace.subscan.io/)** portal.
 2. Click on `Blockchain` -> `Extrinsics`.
