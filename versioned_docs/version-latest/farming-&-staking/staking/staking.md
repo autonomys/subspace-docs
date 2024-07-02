@@ -104,7 +104,7 @@ Any **operator** or **nominator** can initiate withdrawal. They can withdraw the
 
 ![NStaking-5](/img/doc-imgs/operators-staking/NStaking-5.png)
 
-6. Once you picked the operator to withdraw your stake from, click on **Actions** -> **Withdraw**.
+6. Once you have picked the operator to withdraw your stake from, click on **Actions** -> **Withdraw**.
 
 ![N-nominators-6](/img/doc-imgs/operators-staking/N-Nominators-6.png)
 
