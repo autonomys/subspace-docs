@@ -18,6 +18,7 @@ You can track your farmer through the [Astral Block Explorer.](https://explorer.
 **If you have earned a block or vote reward**, you can now link your Discord account to your farmer wallet through the [Astral](https://explorer.subspace.network/gemini-3h/consensus#/gemini-3h/consensus) to obtain this role. Here’s how to do it:
 
 1. Select **Connect Wallet** in the top right corner of the [Astral Block Explorer.](https://explorer.subspace.network/gemini-3h/consensus#/gemini-3h/consensus)
+    
     ![Connect Wallet](/img/doc-imgs/verify-farmer/connect-wallet.png)
 
 
