@@ -10,7 +10,7 @@ keywords:
 ### Select an operator to nominate using Autonomys Staking interface
 
 :::note
-Three important factors to pay attention to are `minimumNominatorStake`, `nominationTax`, and `status`.
+Three important factors to pay attention to are `*Nominator Tax`, `Min. Stake`, and `Status`.
 :::
 
 1. Proceed to the staking tab on [Astral](https://explorer.subspace.network/gemini-3h/staking) and connect your wallet.
@@ -31,7 +31,7 @@ Three important factors to pay attention to are `minimumNominatorStake`, `nomina
 
 ![NStaking-5](/img/doc-imgs/operators-staking/NStaking-5.png)
 
-5. Make sure you are on the **Operators** tab to view the list of available **operators**. Scroll the page down, pay close attention to the **Nominator Tax**, **Min Nominator Stake**, and **Nominators**, as these three parameters help you choose an operator to nominate. 
+5. Make sure you are on the **Operators** tab to view the list of available **operators**. Scroll the page down, pay close attention to the **Nominator Tax**, **Min. Stake**, and **Status**, as these three parameters help you choose an operator to nominate. 
 
 ![N-nominators-5](/img/doc-imgs/operators-staking/N-Nominators-1.png)
 
@@ -106,11 +106,11 @@ Any **operator** or **nominator** can initiate withdrawal. They can withdraw the
 
 6. Once you picked the operator to withdraw your stake from, click on **Actions** -> **Withdraw**.
 
-![NStaking-6](/img/doc-imgs/operators-staking/NStaking-6.png)
+![N-nominators-6](/img/doc-imgs/operators-staking/N-Nominators-6.png)
 
 7. You will get a pop-up requesting how much you want to withdraw.  Use the slider to determine what percentage you want to withdraw or you can click the max button to withdraw your entire stake.
 
-![NStaking-7](/img/doc-imgs/operators-staking/NStaking-7.png)
+![N-nominators-7](/img/doc-imgs/operators-staking/N-Nominators-7.png)
 
 
 Once the withdrawal is submitted, it's finalized after the **domain epoch** is completed. All the withdrawn funds are unlocked after the **locking period** is complete. The current **locking period** is set to 28,800 blocks, or about 48 hours. The locking period is necessary to ensure that the domain block executing the withdrawal is confirmed and not challenged by a fraud proof and to increase the economic stability of domains.
@@ -119,7 +119,7 @@ After the **locking period**, the withdrawn amount can be unlocked in the user's
 
 8. Using the same operator you used to withdraw your stake from, click on **Actions** -> **Unlock Funds**.
 
-![NStaking-8](/img/doc-imgs/operators-staking/NStaking-8.png)
+![N-nominators-8](/img/doc-imgs/operators-staking/N-Nominators-8.png)
 
 6. Submit the transaction, your funds should be unclocked and available once the epoch is complete (up to 10 minutes).
 
