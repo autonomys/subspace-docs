@@ -57,49 +57,6 @@ Stake of your **Nominators** won't be released, but will be moved to the new dom
 
 :::
 
----
-### Register an operator using PolkadotJS interface (alternative way)
-
-Alternatively, you can use **PolkadotJS** to register an operator on the domain. 
-To register an operator on the domain: 
-1. Proceed to [PolkadotJS](https://polkadot.js.org/apps/#/explorer)
-2. Make sure to select the correct network at the top-left corner. 
-3. Navigate to Developer -> Extrinsics. 
-4. Select the account you want to use in `using the selected account`.
-5. Select `domains` under `submit the following extrinsic` and choose `registerOperator(domainID, amount, config)` in the dropdown.
-6. Enter the `domainId` to be registered on. 
-7. Enter the desired staking amount in the `amount` field.
-8. Put your public signing key at the `signingKey` field. 
-
-
-:::note
-In the example below, 1 TSSC is selected for staking. 18 zeros are added because of the `u128` type, so make sure to put 1000000000000000000 instead. 
-:::
-
-
-![Staking-5](/img/doc-imgs/operators-staking/Staking-5.png)
-
-:::info
-Make sure to use the signing key generated on the previous **[Create operator key](#create-operator-key)** step 
-:::
-
-8. Enter `minimumNominatorStake` - in the example, it's set to `1 TSSC`.
-9. Enter `nominatorTax` - in the example, it's set to `5%`.
-10. Sign and submit the transaction to register an operator.
-
-![Staking-6](/img/doc-imgs/operators-staking/Staking-6.png)
-
-:::info
-Make sure to select **Submit Transaction** since the transaction needs to be signed.
-:::
-
-Once registered, the operator has to wait until the domain epoch is complete to start operating for the **domain**, participate in **bundle production**, and **receive rewards**.
-
-Once the domain epoch is finished, the operator can produce bundles from the new epoch.
-
-Any **operator** can add more stake by using the same functionality.
-
-
 ## Useful commands
 ### Running both validator (farmer) and operator nodes at the same time
 
@@ -119,10 +76,7 @@ To run both operator and validator at the same time, provide requrired flags for
 -- \`
 --domain-id your_domain_id \`
 --operator-id your_operator_id \`
---listen-on /ip4/0.0.0.0/tcp/40333 \`
---bootstrap-nodes /dns/bootstrap-0.nova.gemini-3h.subspace.network/tcp/30334/p2p/12D3KooWBm1PHFHAP9mA6LNd72uFimyPoo6ixjdfgajzizXDYND2 \`
---bootstrap-nodes /dns/bootstrap-1.nova.gemini-3h.subspace.network/tcp/30334/p2p/12D3KooWD3Q8JpAPoXR67ZQ1H1nXfPqCgPHCvWVcGxNKbfFmuPnu \`
---bootstrap-nodes /dns/bootstrap-2.nova.gemini-3h.subspace.network/tcp/30334/p2p/12D3KooWEYs5yikat5NanzN7c2Sb4ngxJoCro9vXMULM2ZYVWW9H `}
+--listen-on /ip4/0.0.0.0/tcp/40333`}
 </CodeBlock>
 
 </TabItem>
@@ -138,10 +92,7 @@ To run both operator and validator at the same time, provide requrired flags for
 -- \\
 --domain-id your_domain_id \\
 --operator-id your_operator_id \\
---listen-on /ip4/0.0.0.0/tcp/40333 \\
---bootstrap-nodes /dns/bootstrap-0.nova.gemini-3h.subspace.network/tcp/30334/p2p/12D3KooWBm1PHFHAP9mA6LNd72uFimyPoo6ixjdfgajzizXDYND2 \\
---bootstrap-nodes /dns/bootstrap-1.nova.gemini-3h.subspace.network/tcp/30334/p2p/12D3KooWD3Q8JpAPoXR67ZQ1H1nXfPqCgPHCvWVcGxNKbfFmuPnu \\
---bootstrap-nodes /dns/bootstrap-2.nova.gemini-3h.subspace.network/tcp/30334/p2p/12D3KooWEYs5yikat5NanzN7c2Sb4ngxJoCro9vXMULM2ZYVWW9H `}
+--listen-on /ip4/0.0.0.0/tcp/40333`}
 </CodeBlock>
 
 </TabItem>
@@ -156,10 +107,7 @@ To run both operator and validator at the same time, provide requrired flags for
 -- \\
 --domain-id your_domain_id \\
 --operator-id your_operator_id \\
---listen-on /ip4/0.0.0.0/tcp/40333 \\
---bootstrap-nodes /dns/bootstrap-0.nova.gemini-3h.subspace.network/tcp/30334/p2p/12D3KooWBm1PHFHAP9mA6LNd72uFimyPoo6ixjdfgajzizXDYND2 \\
---bootstrap-nodes /dns/bootstrap-1.nova.gemini-3h.subspace.network/tcp/30334/p2p/12D3KooWD3Q8JpAPoXR67ZQ1H1nXfPqCgPHCvWVcGxNKbfFmuPnu \\
---bootstrap-nodes /dns/bootstrap-2.nova.gemini-3h.subspace.network/tcp/30334/p2p/12D3KooWEYs5yikat5NanzN7c2Sb4ngxJoCro9vXMULM2ZYVWW9H `}
+--listen-on /ip4/0.0.0.0/tcp/40333`}
 </CodeBlock>
 </TabItem>
 
@@ -168,12 +116,10 @@ To run both operator and validator at the same time, provide requrired flags for
 <CodeBlock>
 {`services:
   node:
-    # Replace snapshot-DATE with the latest release (like snapshot-2022-apr-29)
+    # Replace snapshot-DATE with the latest release (like snapshot-2024-jun-18)
     # For running on Aarch64 add -aarch64 after DATE
     image: ghcr.io/subspace/node:snapshot-DATE
     volumes:
-    # Replace path/to/keystore with your actual path to keystore. 
-      - /path/to/keystore:/keystore:ro
 # Instead of specifying volume (which will store data in /var/lib/docker), you can
 # alternatively specify path to the directory where files will be stored, just make
 # sure everyone is allowed to write there
@@ -203,9 +149,6 @@ To run both operator and validator at the same time, provide requrired flags for
       # Replace INSERT_YOUR_OPERATOR_ID with your operator ID
       "--operator-id", "INSERT_YOUR_OPERATOR_ID",
       "--listen-on", "/ip4/0.0.0.0/tcp/40333",
-      "--bootstrap-nodes", "/dns/bootstrap-0.nova.gemini-3h.subspace.network/tcp/30334/p2p/12D3KooWBm1PHFHAP9mA6LNd72uFimyPoo6ixjdfgajzizXDYND2",
-      "--bootstrap-nodes", "/dns/bootstrap-1.nova.gemini-3h.subspace.network/tcp/30334/p2p/12D3KooWD3Q8JpAPoXR67ZQ1H1nXfPqCgPHCvWVcGxNKbfFmuPnu",
-      "--bootstrap-nodes", "/dns/bootstrap-2.nova.gemini-3h.subspace.network/tcp/30334/p2p/12D3KooWEYs5yikat5NanzN7c2Sb4ngxJoCro9vXMULM2ZYVWW9H",
 # Replace INSERT_YOUR_ID with your node ID (will be shown in telemetry)
     ]
     healthcheck:
@@ -217,7 +160,7 @@ To run both operator and validator at the same time, provide requrired flags for
     depends_on:
       node:
         condition: service_healthy
-    # Replace snapshot-DATE with latest release (like snapshot-2022-apr-29)
+    # Replace snapshot-DATE with latest release (like snapshot-2024-jun-18)
     # For running on Aarch64 add -aarch64 after DATE
     image: ghcr.io/subspace/farmer:snapshot-DATE
     volumes:
