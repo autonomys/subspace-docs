@@ -49,7 +49,7 @@ Three important factors to pay attention to are `*Nominator Tax`, `Min. Stake`, 
 
 ![N-nominators-10](/img/doc-imgs/operators-staking/N-Nominators-4.png)
 
-9. You can also scroll down on the wallet panel and look at the Lasst extrinsics section. Congratulations, you successfully became a **nominator**.
+9. You can also scroll down on the wallet panel and look at the last extrinsics section. Congratulations, you successfully became a **nominator**.
 
 ![N-nominators-11](/img/doc-imgs/operators-staking/N-Nominators-5.png)
 
