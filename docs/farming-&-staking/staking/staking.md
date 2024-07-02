@@ -43,7 +43,7 @@ Three important factors to pay attention to are `*Nominator Tax`, `Min. Stake`, 
 
 ![N-nominators-9](/img/doc-imgs/operators-staking/N-Nominators-3.png)
 
-8. Wait for the transaction to go through. It takes 100 blocks (1 epoch duration) to complete the nomination.  You may need to refresh the page but if you click the button on the right top of the screen to open the wallet, you should see a lower balance.
+8. Wait for the transaction to go through. It takes 100 blocks (1 epoch duration) to complete the nomination. You may need to refresh the page but if you click the button on the right top of the screen to open the wallet, you should see a lower balance.
 
 ![NStaking-4](/img/doc-imgs/operators-staking/NStaking-4.png)
 
