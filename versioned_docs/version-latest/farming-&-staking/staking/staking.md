@@ -108,7 +108,7 @@ Any **operator** or **nominator** can initiate withdrawal. They can withdraw the
 
 ![N-nominators-6](/img/doc-imgs/operators-staking/N-Nominators-6.png)
 
-7. You will get a pop-up requesting how much you want to withdraw.  Use the slider to determine what percentage you want to withdraw or you can click the max button to withdraw your entire stake.
+7. You will get a pop-up requesting how much you want to withdraw. Use the slider to determine what percentage you want to withdraw or you can click the max button to withdraw your entire stake.
 
 ![N-nominators-7](/img/doc-imgs/operators-staking/N-Nominators-7.png)
 
