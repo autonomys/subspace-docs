@@ -10,7 +10,7 @@ keywords:
 ### Select an operator to nominate using Autonomys Staking interface
 
 :::note
-Three important factors to pay attention to are `*Nominator Tax`, `Min. Stake`, and `Status`.
+Three important factors to pay attention to are `Nominator Tax`, `Min. Stake`, and `Status`.
 :::
 
 1. Proceed to the staking tab on [Astral](https://explorer.subspace.network/gemini-3h/staking) and connect your wallet.
