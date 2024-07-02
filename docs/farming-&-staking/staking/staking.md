@@ -25,7 +25,7 @@ Three important factors to pay attention to are `*Nominator Tax`, `Min. Stake`, 
 
 ![NStaking-3](/img/doc-imgs/operators-staking/NStaking-3.png)
 
-4. Select the account you'd like to use form the dropdown menu. You can click the button in the upper left corner to see available token balances for the selected account. 
+4. Select the account you'd like to use from the dropdown menu. You can click the button in the upper left corner to see available token balances for the selected account. 
 
 ![NStaking-4](/img/doc-imgs/operators-staking/NStaking-4.png)
 
