@@ -113,7 +113,7 @@ Any **operator** or **nominator** can initiate withdrawal. They can withdraw the
 ![N-nominators-7](/img/doc-imgs/operators-staking/N-Nominators-7.png)
 
 
-Once the withdrawal is submitted, it's finalized after the **domain epoch** is completed. All the withdrawn funds are unlocked after the **locking period** is complete. The current **locking period** is set to 28,800 blocks, or about 48 hours. The locking period is necessary to ensure that the domain block executing the withdrawal is confirmed and not challenged by a fraud proof and to increase the economic stability of domains.
+Once the withdrawal is submitted, it's finalized after the **domain epoch** is completed. All the withdrawn funds are unlocked after the **locking period** is complete. The current **locking period** is set to 14,400 blocks, or about 24 hours. The locking period is necessary to ensure that the domain block executing the withdrawal is confirmed and not challenged by a fraud proof and to increase the economic stability of domains.
 
 After the **locking period**, the withdrawn amount can be unlocked in the user's account.
 
