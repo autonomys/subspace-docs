@@ -21,7 +21,7 @@ Three important factors to pay attention to are `Nominator Tax`, `Min. Stake`, a
 
 ![NStaking-2](/img/doc-imgs/operators-staking/NStaking-2.png)
 
-3. Enter your password to give an access to your wallet.
+3. Enter your password to give access to your wallet.
 
 ![NStaking-3](/img/doc-imgs/operators-staking/NStaking-3.png)
 
