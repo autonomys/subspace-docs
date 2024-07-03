@@ -7,105 +7,55 @@ keywords:
 - Staking
 ---
 
-### Select an operator to nominate 
+### Select an operator to nominate using Autonomys Staking interface
 
 :::note
-Three important factors to pay attention to are `minimumNominatorStake`, `nominationTax`, and `status`.
+Three important factors to pay attention to are `Nominator Tax`, `Min. Stake`, and `Status`.
 :::
 
+1. Proceed to the staking tab on [Astral](https://explorer.subspace.network/gemini-3h/staking) and connect your wallet.
 
-1. Visit [**Subspace Staking Interface**](https://staking.subspace.tools). 
-  ![N-nominators-1](/img/doc-imgs/operators-staking/N-Nominators-1.png)
-2. Click on **Operators** to view the list of available **operators**.
-  ![N-nominators-4](/img/doc-imgs/operators-staking/N-Nominators-4.png)
-3. Scroll the page down, pay close attention to the **Nominator Tax**, **Min Nominator Stake**, and **Nominators Count**, as these three parameters help you choose an operator to nominate. 
-  ![N-nominators-5](/img/doc-imgs/operators-staking/N-Nominators-5.png)
+![NStaking-1](/img/doc-imgs/operators-staking/NStaking-1.png)
 
----
-**Alternativaly**, you can use **PolkadotJS** interface to view the list of available operators.
+2. Select the wallet you would like to connect. Both **Subwallet** and **PolkadotJS** wallets are supported.
 
-1. Visit PolkadotJS **[Network Explorer](https://polkadot.js.org/apps/#/explorer)**.
-2. Go to `Developer` -> `Chain state`.
+![NStaking-2](/img/doc-imgs/operators-staking/NStaking-2.png)
 
- ![Staking-16](/img/doc-imgs/operators-staking/Staking-16.png)
-3. Select `domains` under `selected state query` and choose `operators`, exclude `option` and click on `+` to run the query.
-4. Browse the list of available operators, make sure the status is `Registered` and that `minimumNominatorStake` is lower than your staking amount. 
+3. Enter your password to give access to your wallet.
 
- ![Staking-17](/img/doc-imgs/operators-staking/Staking-17.png)
+![NStaking-3](/img/doc-imgs/operators-staking/NStaking-3.png)
 
-:::note
-Number 17 on the screenshot above corresponds to `operatorId`.
-:::
+4. Select the account you'd like to use from the dropdown menu. You can click the button in the upper left corner to see available token balances for the selected account. 
 
-### Operator Nomination using [Subspace Staking Interface](https://staking.subspace.tools/)
+![NStaking-4](/img/doc-imgs/operators-staking/NStaking-4.png)
 
-Any account can nominate any existing **operator** with at least a minimum nominator stake set by the **operator**. 
+![NStaking-5](/img/doc-imgs/operators-staking/NStaking-5.png)
 
-:::info
-The only staking mechanism available to non-operators is nominating an operator.
-:::
+5. Make sure you are on the **Operators** tab to view the list of available **operators**. Scroll the page down, pay close attention to the **Nominator Tax**, **Min. Stake**, and **Status**, as these three parameters help you choose an operator to nominate. 
 
-1. Visit [**Subspace Staking Interface**](https://staking.subspace.tools). 
-  ![N-nominators-1](/img/doc-imgs/operators-staking/N-Nominators-1.png)
-2. Connect your PolkadotJS or Subwallet wallet. 
-![N-nominators-2](/img/doc-imgs/operators-staking/N-Nominators-2.png)
-3. As soon as you connect your wallet, you will see your **available** and **locked(stakes**) wallet balance. 
-![N-nominators-3](/img/doc-imgs/operators-staking/N-Nominators-3.png)
-4. Click on **Operators** to view the list of available **Operators**.
-  ![N-nominators-4](/img/doc-imgs/operators-staking/N-Nominators-4.png)
-5. Scroll the page down, pay close attention to the **Nominator Tax**, **Min Nominator Stake**, and **Nominators Count**, as these three parameters help you choose an operator to nominate. 
-  ![N-nominators-5](/img/doc-imgs/operators-staking/N-Nominators-5.png)
-6. You can toggle the view between the table and a pallet. 
-  ![N-nominators-6](/img/doc-imgs/operators-staking/N-Nominators-6.png)
-7. Once you picked the operator to nominate, click on **Action** -> **AddFunds**.
-  ![N-nominators-7](/img/doc-imgs/operators-staking/N-Nominators-7.png)
-8. Choose the token amount you want to nominate the operator with.  It is also possible to nominate multiple operators. Click on **Submit** and approve the transaction in a pop-up window. 
-  ![N-nominators-9](/img/doc-imgs/operators-staking/N-Nominators-9.png)
-9. Wait for the transaction to go through. It takes 100 blocks (1 epoch duration) to complete the nomination.
-![N-nominators-10](/img/doc-imgs/operators-staking/N-Nominators-10.png)
-10. You will see the previously **available** become **locked** amount. Congratulations, you succesfully became a **nominator**.
-![N-nominators-11](/img/doc-imgs/operators-staking/N-Nominators-11.png)
+![N-nominators-5](/img/doc-imgs/operators-staking/N-Nominators-1.png)
 
-### Operator Nomination using [Polkadot.js](https://polkadot.js.org/)
+6. Once you have picked the operator to nominate, click on **Actions** -> **Nominate**.
 
-Any account can nominate any existing **operator** with at least a minimum nominator stake set by the **operator**. 
+![N-nominators-7](/img/doc-imgs/operators-staking/N-Nominators-2.png)
 
-:::info
-The only staking mechanism available to non-operators is nominating an operator.
-:::
+7. Choose the token amount you want to nominate to the operator. It is also possible to nominate multiple operators. Click on **Submit** and approve the transaction in a pop-up window. 
 
-1. Make sure to select the correct network at the top-left corner. 
-2. Select the account you want to use in `using the selected account`.
-3. Select `domains` under `submit the following extrinsic` and choose `nominateOperator(operatorId, amount)` in the dropdown.
-4. Set an `operatorId` - in the example, it's set to **17**. 
-:::note
-In the example below, 1 TSSC is selected for staking. 18 zeros are added because of the `u128` type, so make sure to put 1000000000000000000 instead. 
-:::
+![N-nominators-9](/img/doc-imgs/operators-staking/N-Nominators-3.png)
 
-5. Enter the desired amount in the `amount` field for staking.
-![Staking-18](/img/doc-imgs/operators-staking/Staking-18.png)
-6. Submit the signed transaction. 
+8. Wait for the transaction to go through. It takes 100 blocks (1 epoch duration) to complete the nomination. You may need to refresh the page but if you click the button on the right top of the screen to open the wallet, you should see a lower balance.
 
-Once **nomination** is finalized when the **domain epoch** is complete, the **nominator** will start receiving rewards.
+![NStaking-4](/img/doc-imgs/operators-staking/NStaking-4.png)
 
-Any **nominator** can add more stake by using the same functionality.
+![N-nominators-10](/img/doc-imgs/operators-staking/N-Nominators-4.png)
+
+9. You can also scroll down on the wallet panel and look at the last extrinsics section. Congratulations, you successfully became a **nominator**.
+
+![N-nominators-11](/img/doc-imgs/operators-staking/N-Nominators-5.png)
 
 
-### Check if your **nomination** worked succesfully. 
+### Check if your **nomination** worked successfully
 
-There are two ways to check your **nomination**: 
-
-1. You can use PolkadotJS **[Network Explorer](https://polkadot.js.org/apps/#/explorer)**.
-
- ![Staking-7](/img/doc-imgs/operators-staking/Staking-7.png)
-2. Browse the **recent events** and you should see **domains.OperatorNominated** event.
-
- ![Staking-19](/img/doc-imgs/operators-staking/Staking-19.png)
-3. Click on the dropdown arrow to view the **domainId** and **operatorId**.
-
----
-
-Alternatively, you can use [Subscan](https://subspace.subscan.io/) which is a little easier to navigate for this job. 
 1. Navigate to **[Subspace Subscan](https://subspace.subscan.io/)** portal.
 2. Click on `Blockchain` -> `Extrinsics`.
 
@@ -127,57 +77,52 @@ Alternatively, you can use [Subscan](https://subspace.subscan.io/) which is a li
 
 7. Inspect and ensure that `nominatorId` matches your `id`. 
 
-### Stake withdrawal using [Polkadot.js](https://polkadot.js.org/)
+### Stake withdrawal using Autonomys Staking interface
 
 Any **operator** or **nominator** can initiate withdrawal. They can withdraw the total staked amount or a portion of their stake.
 
+:::note
 - If an operator is initiating a withdrawal, then their remaining balance should be at least the minimum operator stake, otherwise the request is rejected.
 - If a nominator is initiating a withdrawal, and the remaining balance is less than the operator-defined minimum nominator stake, then the total nominator stake is unlocked otherwise, only the requested amount is unlocked.
-
-1. Proceed to [PolkadotJS](https://polkadot.js.org/apps/#/explorer).
-2. Navigate to Developer -> Extrinsics. 
-3. Select the account you want to use in `using the selected account`.
-4. Select `domains` under `submit the following extrinsic` and choose `withdrawStake(operatorId, withdraw)` 5n the dropdown.
-6. Choose an operator by selecting an `operatorId` - in the example, it's set to `17`.
-7. Choose the withdrawal amount in the `withdraw` field - you can specify to withdraw `all` or `some` staking amount. 
-
-:::note
-Example of withdrawal of 1 TSSC stake amount from nominating an operator `17`.
 :::
 
-![Staking-23](/img/doc-imgs/operators-staking/Staking-23.png)
+1. Proceed to the staking tab on [Astral](https://explorer.subspace.network/gemini-3h/staking) and connect your wallet.
+
+![NStaking-1](/img/doc-imgs/operators-staking/NStaking-1.png)
+
+2. Select the wallet you would like to connect. Both **Subwallet** and **PolkadotJS** wallets are supported.
+
+![NStaking-2](/img/doc-imgs/operators-staking/NStaking-2.png)
+
+3. Enter your password to give an access to your wallet.
+
+![NStaking-3](/img/doc-imgs/operators-staking/NStaking-3.png)
+
+4. Select the account you'd like to use form the dropdown menu. You can click the button in the upper left corner to see available token balances for the selected account. 
+
+![NStaking-4](/img/doc-imgs/operators-staking/NStaking-4.png)
+
+![NStaking-5](/img/doc-imgs/operators-staking/NStaking-5.png)
+
+6. Once you picked the operator to withdraw your stake from, click on **Actions** -> **Withdraw**.
+
+![N-nominators-6](/img/doc-imgs/operators-staking/N-Nominators-6.png)
+
+7. You will get a pop-up requesting how much you want to withdraw.  Use the slider to determine what percentage you want to withdraw or you can click the max button to withdraw your entire stake.
+
+![N-nominators-7](/img/doc-imgs/operators-staking/N-Nominators-7.png)
 
 
-Once the withdrawal is submitted, it's finalized after the **domain epoch** is completed. All the withdrawn funds are unlocked after the **locking period** is complete. The current **locking period** is set to 28,800 blocks, or about 48 hours. The locking period is necessary to ensure that the domain block executing the withdrawal is confirmed and not challenged by a fraud proof and to increase the economic stability of domains.
+Once the withdrawal is submitted, it's finalized after the **domain epoch** is completed. All the withdrawn funds are unlocked after the **locking period** is complete. The current **locking period** is set to 14,400 blocks, or about 24 hours. The locking period is necessary to ensure that the domain block executing the withdrawal is confirmed and not challenged by a fraud proof and to increase the economic stability of domains.
 
-After the **locking period**, the withdrawn amount can be unlocked in the user's account with the `unlock_funds` extrinsic.
+After the **locking period**, the withdrawn amount can be unlocked in the user's account.
 
-1. Proceed to [PolkadotJS](https://polkadot.js.org/apps/#/explorer).
-2. Navigate to Developer -> Extrinsics. 
-3. Select the account you want to use in `using the selected account`.
-4. Select `domains` under `submit the following extrinsic` and choose `unlockFinds(operatorId)` in the dropdown.
-5. Provide the `operatorID` you were staking with. 
+8. Using the same operator you used to withdraw your stake from, click on **Actions** -> **Unlock Funds**.
+
+![N-nominators-8](/img/doc-imgs/operators-staking/N-Nominators-8.png)
+
 6. Submit the transaction, your funds should be unclocked and available once the epoch is complete (up to 10 minutes).
 
-![Staking-29](/img/doc-imgs/operators-staking/Staking-29.png)
-
-### Calculating your nominator balance
-
-1. Proceed to PolkadotJS **[Network Explorer](https://polkadot.js.org/apps/#/explorer)**.
-2. Go to `Developer` -> `Chain state`.
-3. Select `domains` under `selected state query` and `nominators(u64, AccoundId32)`.
-4. Provide the `operatorId` and select your `account` from the dropdown. 
-5. Run the query, remember the `shares` number. 
-  ![Staking-25](/img/doc-imgs/operators-staking/Staking-25.png)
-6. On the same screen, choose `domainStakingSummary(u32)`.
-7. Provide the `domainId`. 
-8. Run the query, remember the `currentTotalStake` number.
-  ![Staking-26](/img/doc-imgs/operators-staking/Staking-26.png)
-9. Without leaving the page, select `operators(u64)`.
-10. Provide `operatorId` that you nominated previously. 
-11. Run the query, remember the `currentTotalStake` number. 
-  ![Staking-27](/img/doc-imgs/operators-staking/Staking-27.png)
-
-To calculate your nominator **balance**:
-1. Calculate **share price** by dividing **currentTotalStake** from the domain by operator **currentTotalStake**.
-2. Multiply **share price** and your nominator **shares** number. 
+:::note
+You can also withdraw your stake using the Nominators tab.  Your nomination(s) will be the only ones with an action buttin on the last collumn of the grid, ut with so many nominators it can be difficult to find yours.
+:::

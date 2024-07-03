@@ -74,6 +74,10 @@ Ensure you replace `your_domain_id` with your domain identifier in the command a
 You can ignore setting up `your_operator_id` while you're syncing your node as you won't have an operator id until you have registered your operator. Make sure to set it after syncing and registration.
 :::
 
+:::note
+While it is possible to use `archive` for `blocks-pruning` and `state-pruning`, it is recommended to use `archive-canonical`. Using `archive` will keep the state of all blocks and will use additional disk space.
+:::
+
 <Tabs groupId="OS">
 
 <TabItem value="windows" label="🖼️ Windows" default>
@@ -83,8 +87,8 @@ You can ignore setting up `your_operator_id` while you're syncing your node as y
 --chain gemini-3h \`
 --name your_node_name \`
 --base-path NODE_DATA_PATH \`
---blocks-pruning archive \`
---state-pruning archive \`
+--blocks-pruning archive-canonical \`
+--state-pruning archive-canonical \`
 -- \`
 --domain-id your_domain_id \`
 --operator-id your_operator_id \`
@@ -100,8 +104,8 @@ You can ignore setting up `your_operator_id` while you're syncing your node as y
 --chain gemini-3h \\
 --name your_node_name \\
 --base-path NODE_DATA_PATH \\
---blocks-pruning archive \\
---state-pruning archive \\
+--blocks-pruning archive-canonical \\
+--state-pruning archive-canonical \\
 -- \\
 --domain-id your_domain_id \\
 --operator-id your_operator_id \\
@@ -117,8 +121,8 @@ You can ignore setting up `your_operator_id` while you're syncing your node as y
 --chain gemini-3h \\
 --name your_node_name \\
 --base-path NODE_DATA_PATH \\
---blocks-pruning archive \\
---state-pruning archive \\
+--blocks-pruning archive-canonical \\
+--state-pruning archive-canonical \\
 -- \\
 --domain-id your_domain_id \\
 --operator-id your_operator_id \\
@@ -132,12 +136,10 @@ You can ignore setting up `your_operator_id` while you're syncing your node as y
 <CodeBlock>
 {`services:
   node:
-    # Replace snapshot-DATE with the latest release (like snapshot-2022-apr-29)
+    # Replace snapshot-DATE with the latest release (like snapshot-2024-jun-18)
     # For running on Aarch64 add -aarch64 after DATE
     image: ghcr.io/subspace/node:snapshot-DATE
     volumes:
-    # Replace path/to/keystore with your actual path to keystore. 
-      - /path/to/keystore:/keystore:ro
 # Instead of specifying volume (which will store data in /var/lib/docker), you can
 # alternatively specify path to the directory where files will be stored, just make
 # sure everyone is allowed to write there
@@ -158,8 +160,8 @@ You can ignore setting up `your_operator_id` while you're syncing your node as y
       "--dsn-listen-on", "/ip4/0.0.0.0/tcp/30433",
       # Replace INSERT_YOUR_ID with your node ID (will be shown in telemetry)
       "--name", "INSERT_YOUR_ID",
-      "--blocks-pruning", "archive",
-      "--state-pruning". "archive"
+      "--blocks-pruning", "archive-canonical",
+      "--state-pruning". "archive-canonical"
       "--",
       # Replace INSERT_YOUR_DOMAIN_ID with domain ID you want to be operator on
       "--domain-id", "INSERT_YOUR_DOMAIN_ID",
