@@ -124,5 +124,5 @@ After the **locking period**, the withdrawn amount can be unlocked in the user's
 6. Submit the transaction, your funds should be unclocked and available once the epoch is complete (up to 10 minutes).
 
 :::note
-You can also withdraw your stake using the Nominators tab.  Your nomination(s) will be the only ones with an action buttin on the last collumn of the grid, ut with so many nominators it can be difficult to find yours.
+You can also withdraw your stake using the Nominators tab. Your nomination(s) will be the only ones with an action button on the last column of the table, but with so many nominators it can be difficult to find yours.
 :::
