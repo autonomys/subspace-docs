@@ -74,7 +74,7 @@ const config = {
           },
           {
             to: "/docs/category/advanced-cli",
-            from: ["/docs/protocol/cli/", "/docs/protocol/substrate-cli/", "/docs/category/advanced-cli", "/docs/category/advanced-cli-recommended"]
+            from: ["/docs/protocol/cli/", "/docs/protocol/substrate-cli/", "/docs/category/advanced-cli-recommended"]
           },
           {
             to: "/docs/farming-&-staking/timekeeping",
@@ -111,7 +111,7 @@ const config = {
           },
           {
             to: "/docs/pre-release/category/advanced-cli",
-            from: ["/docs/pre-release/protocol/cli/", "/docs/pre-release/protocol/substrate-cli/", "/docs/pre-release/category/advanced-cli", "/docs/pre-release/category/advanced-cli-recommended"]
+            from: ["/docs/pre-release/protocol/cli/", "/docs/pre-release/protocol/substrate-cli/", "/docs/pre-release/category/advanced-cli-recommended"]
           },
           {
             to: "/docs/pre-release/farming-&-staking/timekeeping",
