@@ -46,13 +46,13 @@ If you would like to Import an **Existing** Wallet, then select `Import an accou
 
     ![step-6](/img/doc-imgs/subwallet/Subwallet-4.png)
 
-## Connect wallet to Subspace Gemini 3g and find wallet public address
+## Connect wallet to Subspace Gemini 3h and find wallet public address
 
 1. Open SubWallet, click on *Manage tokens*.
 
     ![wallet-1](/img/doc-imgs/subwallet/Subwallet-5.png)
 
-2. In a search bar, start typing the name of the network, e.g. Subspace Gemini 3g.
+2. In a search bar, start typing the name of the network, e.g. Subspace Gemini 3h.
 
     ![wallet-2](/img/doc-imgs/subwallet/Subwallet-6.png)
 
