@@ -74,7 +74,7 @@ const config = {
           },
           {
             to: "/docs/category/advanced-cli",
-            from: ["/docs/protocol/cli/", "/docs/protocol/substrate-cli/", "/docs/category/advanced-cli", "/docs/category/advanced-cli-recommended"]
+            from: ["/docs/protocol/cli/", "/docs/protocol/substrate-cli/", "/docs/category/advanced-cli-recommended"]
           },
           {
             to: "/docs/farming-&-staking/timekeeping",
@@ -86,7 +86,7 @@ const config = {
           },
           {
             to: "/docs/category/space-acres-recommended",
-            from: ["/docs/protocol/pulsar/", "/docs/category/pulsar-recommended", "/docs/category/pulsar"]
+            from: ["/docs/protocol/pulsar/", "/docs/category/pulsar-recommended", "/docs/category/pulsar", "/docs/category/space-acres"]
           },
           {
             to: "/docs/farming-&-staking/farming/advanced-cli/cli-install",
@@ -111,7 +111,7 @@ const config = {
           },
           {
             to: "/docs/pre-release/category/advanced-cli",
-            from: ["/docs/pre-release/protocol/cli/", "/docs/pre-release/protocol/substrate-cli/", "/docs/pre-release/category/advanced-cli", "/docs/pre-release/category/advanced-cli-recommended"]
+            from: ["/docs/pre-release/protocol/cli/", "/docs/pre-release/protocol/substrate-cli/", "/docs/pre-release/category/advanced-cli-recommended"]
           },
           {
             to: "/docs/pre-release/farming-&-staking/timekeeping",
@@ -139,7 +139,7 @@ const config = {
           },
           {
             to: "/docs/pre-release/category/space-acres-recommended",
-            from: ["/docs/pre-release/protocol/pulsar/", "/docs/pre-release/category/pulsar-recommended", "/docs/pre-release/category/pulsar"]
+            from: ["/docs/pre-release/protocol/pulsar/", "/docs/pre-release/category/pulsar-recommended", "/docs/pre-release/category/pulsar", "/docs/pre-release/category/space-acres"]
           },
         ],
       },
