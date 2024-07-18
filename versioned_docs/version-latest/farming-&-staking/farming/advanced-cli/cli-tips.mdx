@@ -34,7 +34,7 @@ As of the June 11, 2024 version, a new option called Snap Sync is available for 
 
 Snap Sync works by jumping to near the end of the chain, allowing you to sync to the current block more quickly. Once the initial jump is complete, it behaves like a full sync. In fact, if you haven't synced for more than a few days, it might be quicker to remove the node database and use Snap Sync to quickly sync to the most current block.
 
-There are cases where you might not want to use Snap Sync. To perform a full sync, use `--sync full`. This is useful if you want to run an RPC node for public use or indexing. In that case, you would need to run an archival node, not just a pruned node. An archival node requires a full sync.
+There are cases where you might not want to use Snap Sync. To perform a full sync you can either omit the sync parameter, or use `--sync full`. This is useful if you want to run an RPC node for public use or indexing. In that case, you would need to run an archival node, not just a pruned node. An archival node requires a full sync.
 
 
 ### Plotting concurrency
