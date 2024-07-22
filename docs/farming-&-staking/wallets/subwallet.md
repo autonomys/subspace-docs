@@ -14,7 +14,7 @@ keywords:
 
 SubWallet is a 3rd party Substrate/EVM wallet created by the [Subwallet Team](https://subwallet.app).
 
-*This guide will be following the browser extension pathway. There is also a mobile application available for [Android](https://play.google.com/store/apps/details?id=app.subwallet.mobile&pli=1) and [IOS](https://testflight.apple.com/join/ZW3pUbWj).*
+*This guide will be following the browser extension pathway. There is also a mobile application available for [Android](https://play.google.com/store/apps/details?id=app.subwallet.mobile) and [IOS](https://testflight.apple.com/join/ZW3pUbWj).*
 
 :::
 
