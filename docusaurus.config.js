@@ -186,7 +186,7 @@ const config = {
   ],
   scripts: [
     {
-      src: "https://cdn.metered.ca/docuscout/1.0/docuscout.umd.js",
+      src: '/js/docuscout.umd.js',
       async: true
     },
     {
