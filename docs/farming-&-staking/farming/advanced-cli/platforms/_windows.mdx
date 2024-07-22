@@ -12,14 +12,14 @@ If you face an error where the node outputs nothing and no error code is given i
 <div className={`${styles.buttons} ${styles.flexContainer}`}>
   <Link
     className="button button--secondary"
-    to="https://github.com/subspace/subspace/releases/download/gemini-3h-2024-jul-16/subspace-node-windows-x86_64-skylake-gemini-3h-2024-jul-16.exe"
+    to="https://github.com/subspace/subspace/releases/download/gemini-3h-2024-jul-22/subspace-node-windows-x86_64-skylake-gemini-3h-2024-jul-22.exe"
     style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', textAlign: 'center', padding: '10px' }}>
     <span style={{ fontSize: '20px' }}>Node Executable</span>
     <span style={{ fontSize: '14px' }}>(Skylake+ CPU)</span>
   </Link>
   <Link
     className="button button--secondary"
-    to="https://github.com/subspace/subspace/releases/download/gemini-3h-2024-jul-16/subspace-farmer-windows-x86_64-skylake-gemini-3h-2024-jul-16.exe"
+    to="https://github.com/subspace/subspace/releases/download/gemini-3h-2024-jul-22/subspace-farmer-windows-x86_64-skylake-gemini-3h-2024-jul-22.exe"
     style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', textAlign: 'center', padding: '10px' }}>
     <span style={{ fontSize: '20px' }}>Farmer Executable</span>
     <span style={{ fontSize: '14px' }}>(Skylake+ CPU)</span>
@@ -29,14 +29,14 @@ If you face an error where the node outputs nothing and no error code is given i
 <div className={`${styles.buttons} ${styles.flexContainer}`}>
   <Link
     className="button button--secondary"
-    to="https://github.com/subspace/subspace/releases/download/gemini-3h-2024-jul-16/subspace-node-windows-x86_64-v2-gemini-3h-2024-jul-16.exe"
+    to="https://github.com/subspace/subspace/releases/download/gemini-3h-2024-jul-22/subspace-node-windows-x86_64-v2-gemini-3h-2024-jul-22.exe"
     style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', textAlign: 'center', padding: '10px' }}>
     <span style={{ fontSize: '20px' }}>Node Executable</span>
     <span style={{ fontSize: '14px' }}>(Legacy CPU)</span>
   </Link>
   <Link
     className="button button--secondary"
-    to="https://github.com/subspace/subspace/releases/download/gemini-3h-2024-jul-16/subspace-farmer-windows-x86_64-v2-gemini-3h-2024-jul-16.exe"
+    to="https://github.com/subspace/subspace/releases/download/gemini-3h-2024-jul-22/subspace-farmer-windows-x86_64-v2-gemini-3h-2024-jul-22.exe"
     style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', textAlign: 'center', padding: '10px' }}>
     <span style={{ fontSize: '20px' }}>Farmer Executable</span>
     <span style={{ fontSize: '14px' }}>(Legacy CPU)</span>
@@ -59,7 +59,7 @@ This is because the application is trying to access the internet. This is expect
 ```powershell
 # Replace `INSERT_YOUR_ID` with a nickname you choose
 # Copy all of the lines below, they are all part of the same command
-.\subspace-node-windows-x86_64-skylake-gemini-3h-2024-jul-16.exe `
+.\subspace-node-windows-x86_64-skylake-gemini-3h-2024-jul-22.exe `
   run `
   --chain gemini-3h `
   --base-path NODE_DATA_PATH `
@@ -106,7 +106,7 @@ As of the Jun 11, 2024 version a new option is available for fast syncing called
   # Replace `PATH_TO_FARM` with location where you want you store plot files
   # Replace `WALLET_ADDRESS` below with your account address from Polkadot.js wallet
   # Replace `PLOT_SIZE` with plot size in gigabytes or terabytes, for example 100G or 2T (but leave at least 60G of disk space for node and some for OS)
-  .\subspace-farmer-windows-x86_64-skylake-gemini-3h-2024-jul-16.exe farm --reward-address WALLET_ADDRESS path=PATH_TO_FARM,size=PLOT_SIZE
+  .\subspace-farmer-windows-x86_64-skylake-gemini-3h-2024-jul-22.exe farm --reward-address WALLET_ADDRESS path=PATH_TO_FARM,size=PLOT_SIZE
 ```
 
 2. You should see something similar in the terminal:
