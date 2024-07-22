@@ -156,7 +156,7 @@ const config = {
           showLastUpdateAuthor: true,
           showLastUpdateTime: true,
           editCurrentVersion: true,
-          editLocalizedFiles: true,
+          editLocalizedFiles: false,
           editUrl: 'https://github.com/subspace/subspace-docs/edit/main/',
           sidebarPath: require.resolve('./sidebars.js'),
 
