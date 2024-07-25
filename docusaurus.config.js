@@ -157,7 +157,7 @@ const config = {
           showLastUpdateTime: true,
           editCurrentVersion: true,
           editLocalizedFiles: false,
-          editUrl: 'https://github.com/subspace/subspace-docs/edit/main/',
+          editUrl: 'https://github.com/autonomys/subspace-docs/edit/main/',
           sidebarPath: require.resolve('./sidebars.js'),
 
           //Versioning Preferences
@@ -317,7 +317,7 @@ const config = {
             ],
           },
           {
-            href: 'https://github.com/subspace',
+            href: 'https://github.com/autonomys',
             label: 'GitHub',
             position: 'right',
           },
@@ -335,7 +335,7 @@ const config = {
               },
               {
                 label: 'Space Acres Desktop GUI',
-                href: 'https://github.com/subspace/space-acres'
+                href: 'https://github.com/autonomys/space-acres'
               },
               {
                 label: 'Astral Subspace Explorer',
@@ -348,7 +348,7 @@ const config = {
             items: [
               {
                 label: 'GitHub',
-                href: 'https://github.com/subspace',
+                href: 'https://github.com/autonomys',
               },
               {
                 label: 'Discord',
