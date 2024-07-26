@@ -281,7 +281,7 @@ const config = {
             items: [
               {
                 label: 'Autonomys Academy',
-                href: 'https://academy.autonomys.net/',
+                href: 'https://academy.autonomys.xyz',
               },
               {
                 label: 'Subspace Hitchikers Guide',
