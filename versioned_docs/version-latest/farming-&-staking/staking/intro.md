@@ -11,7 +11,7 @@ keywords:
 ---
 
 :::note 
-This guide is focused on how to setup an operator, if you would like to learn more about the function of operators read the [Autonomys Academy](https://academy.autonomys.net/subspace-protocol/decoupled-execution) to get a better understanding.
+This guide is focused on how to setup an operator, if you would like to learn more about the function of operators read the [Autonomys Academy](https://academy.autonomys.xyz/subspace-protocol/decoupled-execution) to get a better understanding.
 :::
 
 ## Operators are a key part in solving the farmer's dilemma
@@ -92,5 +92,5 @@ The nomination pools in Subspace are "lazy": any fees earned by the operator are
 Stake epoch is a designated period in domain blocks within a blockchain system that marks each stake allocation re-adjustment period. Occurring every `StakeEpochDuration` blocks (at the moment, it's set to every 100 blocks or ~10 minutes), an epoch transition triggers specific actions such as finalizing operator domain switches, deregistering operators, unlocking operators and their associated funds, and recalculating stake distribution for the Verifiable Random Function (VRF) election. These transitions are designed to adjust the stake distribution dynamically, finalize various staking-related operations, process rewards, and manage deposits and withdrawals. The uniform duration across all domains helps maintain consistency in the network, while the specific starting point for each domain's epoch transition may vary based on when it is registered, helping to amortize the load of these transitions.
 
 :::note
-Read [Autonomys Academy](https://academy.autonomys.net/subspace-protocol/decoupled-execution) to get a full picture behind decoupled execution!
+Read [Autonomys Academy](https://academy.autonomys.xyz/subspace-protocol/decoupled-execution) to get a full picture behind decoupled execution!
 :::

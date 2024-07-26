@@ -281,11 +281,11 @@ const config = {
             items: [
               {
                 label: 'Autonomys Academy',
-                href: 'https://academy.autonomys.net/',
+                href: 'https://academy.autonomys.xyz',
               },
               {
                 label: 'Subspace Hitchikers Guide',
-                href: 'https://blog.subspace.network/guidetosubspace/home',
+                href: 'https://blog.subspace.network/subspaceresearch/home',
               },
               {
                 label: 'Subspace Original Whitepaper',
@@ -393,7 +393,7 @@ const config = {
       announcementBar: {
         id: 'academy',
         content:
-          '<br /><h4>Learn more about the Autonomys Network by visiting our <a target="_blank" href="https://academy.autonomys.net/">Academy</a></h4>',
+          '<br /><h4>Learn more about the Autonomys Network by visiting our <a target="_blank" href="https://academy.autonomys.xyz/">Academy</a></h4>',
         backgroundColor: '#ac9dc7',
         textColor: '#292929',
         isCloseable: false,
