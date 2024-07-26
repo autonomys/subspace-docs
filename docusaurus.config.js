@@ -285,7 +285,7 @@ const config = {
               },
               {
                 label: 'Subspace Hitchikers Guide',
-                href: 'https://blog.subspace.network/guidetosubspace/home',
+                href: 'https://blog.subspace.network/subspaceresearch/home',
               },
               {
                 label: 'Subspace Original Whitepaper',
