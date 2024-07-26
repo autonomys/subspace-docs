@@ -62,4 +62,4 @@ The Subspace Network hosts an **EVM (Ethereum Virtual Machine)**, that allows yo
 ### Utilize the Core Protocol
 The Subspace Network aims to provide an amazing developer experience to anyone who wishes to build on top of the protocol. As such we have started working on a variety of tools to assist and promote development on our network. 
 
-#### - [Core Protocol Development](https://github.com/subspace/subspace/blob/main/docs/development.md)
+#### - [Core Protocol Development](https://github.com/autonomys/subspace/blob/main/docs/development.md)

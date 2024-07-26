@@ -99,7 +99,7 @@ function DockerFileGeneratorPreRelease() {
             const template = `\
 services:
   node:
-    image: ghcr.io/subspace/node:${formData.snapshot}${formData.arch === "aarch64" ? "-aarch64" : ""}
+    image: ghcr.io/autonomys/node:${formData.snapshot}${formData.arch === "aarch64" ? "-aarch64" : ""}
     volumes:
       - ${formData.nodeData ? formData.nodeData : "node-data"}:/var/subspace:rw
     ports:
@@ -128,7 +128,7 @@ services:
     depends_on:
       node:
         condition: service_healthy
-    image: ghcr.io/subspace/farmer:${formData.snapshot}${formData.arch === "aarch64" ? "-aarch64" : ""}
+    image: ghcr.io/autonomys/farmer:${formData.snapshot}${formData.arch === "aarch64" ? "-aarch64" : ""}
     volumes:
       - ${formData.farmerData ? formData.farmerData : "farmer-data"}:/var/subspace:rw
     ports:
