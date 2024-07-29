@@ -157,7 +157,7 @@ const config = {
           showLastUpdateTime: true,
           editCurrentVersion: true,
           editLocalizedFiles: false,
-          editUrl: 'https://github.com/subspace/subspace-docs/edit/main/',
+          editUrl: 'https://github.com/autonomys/subspace-docs/edit/main/',
           sidebarPath: require.resolve('./sidebars.js'),
 
           //Versioning Preferences
@@ -281,11 +281,11 @@ const config = {
             items: [
               {
                 label: 'Autonomys Academy',
-                href: 'https://academy.autonomys.net/',
+                href: 'https://academy.autonomys.xyz',
               },
               {
                 label: 'Subspace Hitchikers Guide',
-                href: 'https://blog.subspace.network/guidetosubspace/home',
+                href: 'https://blog.subspace.network/subspaceresearch/home',
               },
               {
                 label: 'Subspace Original Whitepaper',
@@ -317,7 +317,7 @@ const config = {
             ],
           },
           {
-            href: 'https://github.com/subspace',
+            href: 'https://github.com/autonomys',
             label: 'GitHub',
             position: 'right',
           },
@@ -335,7 +335,7 @@ const config = {
               },
               {
                 label: 'Space Acres Desktop GUI',
-                href: 'https://github.com/subspace/space-acres'
+                href: 'https://github.com/autonomys/space-acres'
               },
               {
                 label: 'Astral Subspace Explorer',
@@ -348,7 +348,7 @@ const config = {
             items: [
               {
                 label: 'GitHub',
-                href: 'https://github.com/subspace',
+                href: 'https://github.com/autonomys',
               },
               {
                 label: 'Discord',
@@ -393,7 +393,7 @@ const config = {
       announcementBar: {
         id: 'academy',
         content:
-          '<br /><h4>Learn more about the Autonomys Network by visiting our <a target="_blank" href="https://academy.autonomys.net/">Academy</a></h4>',
+          '<br /><h4>Learn more about the Autonomys Network by visiting our <a target="_blank" href="https://academy.autonomys.xyz/">Academy</a></h4>',
         backgroundColor: '#ac9dc7',
         textColor: '#292929',
         isCloseable: false,
