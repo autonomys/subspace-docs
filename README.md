@@ -59,4 +59,4 @@ If you would like to contribute check out the following materials, and feel free
 - [Contributing Guide](CONTRIBUTING.md)
 - [Development Guide](DEVELOPMENT.md)
 
-Thank you to all our [Contributors](https://github.com/subspace/subspace-docs/graphs/contributors)!
+Thank you to all our [Contributors](https://github.com/autonomys/subspace-docs/graphs/contributors)!
