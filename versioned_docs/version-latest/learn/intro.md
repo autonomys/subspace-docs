@@ -36,7 +36,7 @@ Choose one of the following methods to **start farming** on the Network (from ea
 
 Farmers can nominate **operators** and back them with their tokens, increasing their stake and chance of being elected as slot leaders. Generally speaking, any SSC token holder can stake their tokens by **nominating** a domain operator without having to become an operator or farmer themselves. **Nominators** earn **staking** rewards, proportional to their **staking amount** and pay the operator a pre-agreed **tax** on them.
 
-#### - [Start Nominating](/docs/farming-&-staking/staking/staking)
+#### - [Start Nominating](/docs/farming-&-staking/staking/)
 
 ### **Become an operator**
 
@@ -62,4 +62,4 @@ The Subspace Network hosts an **EVM (Ethereum Virtual Machine)**, that allows yo
 ### Utilize the Core Protocol
 The Subspace Network aims to provide an amazing developer experience to anyone who wishes to build on top of the protocol. As such we have started working on a variety of tools to assist and promote development on our network. 
 
-#### - [Core Protocol Development](https://github.com/subspace/subspace/blob/main/docs/development)
+#### - [Core Protocol Development](https://github.com/autonomys/subspace/blob/main/docs/development.md)
