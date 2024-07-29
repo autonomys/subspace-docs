@@ -36,7 +36,7 @@ Choose one of the following methods to **start farming** on the Network (from ea
 
 Farmers can nominate **operators** and back them with their tokens, increasing their stake and chance of being elected as slot leaders. Generally speaking, any SSC token holder can stake their tokens by **nominating** a domain operator without having to become an operator or farmer themselves. **Nominators** earn **staking** rewards, proportional to their **staking amount** and pay the operator a pre-agreed **tax** on them.
 
-#### - [Start Nominating](/docs/farming-&-staking/staking/intro.md)
+#### - [Start Nominating](/docs/farming-&-staking/staking/staking.md)
 
 ### **Become an operator**
 
