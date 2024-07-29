@@ -29,26 +29,26 @@ The Subspace Network is an ambitious layer zero protocol which is the first scal
 
 Choose one of the following methods to **start farming** on the Network (from easy to more complex):
 
-#### - [Start Farming with Space Acres](/docs/farming-&-staking/farming/space-acres/space-acres-install.mdx)
-#### - [Start Farming with Advanced CLI](/docs/farming-&-staking/farming/advanced-cli/cli-install.mdx)
+#### - [Start Farming with Space Acres](/docs/farming-&-staking/farming/space-acres/space-acres-install)
+#### - [Start Farming with Advanced CLI](/docs/farming-&-staking/farming/advanced-cli/cli-install)
 
 ### **Become a nominator**
 
 Farmers can nominate **operators** and back them with their tokens, increasing their stake and chance of being elected as slot leaders. Generally speaking, any SSC token holder can stake their tokens by **nominating** a domain operator without having to become an operator or farmer themselves. **Nominators** earn **staking** rewards, proportional to their **staking amount** and pay the operator a pre-agreed **tax** on them.
 
-#### - [Start Nominating](/docs/farming-&-staking/staking/staking.md)
+#### - [Start Nominating](/docs/farming-&-staking/staking/staking)
 
 ### **Become an operator**
 
 **Operators** are responsible for validating and executing transactions, producing execution receipts, applying state transitions and earn rewards for their work.
 
-#### - [Start an Opeator node](/docs/farming-&-staking/staking/operators/register-operator.mdx)
+#### - [Start an Opeator node](/docs/farming-&-staking/staking/operators/register-operator)
 
 ### **Become a timekeeper**
 
 **Timekeepers** on the Subspace Network are responsible for running the **Proof-of-Time chain** and maintaining the randomness beacon for the **consensus chain**.
 
-#### - [Start timekeeping](/docs/farming-&-staking/timekeeping.md)
+#### - [Start timekeeping](/docs/farming-&-staking/timekeeping)
 
 ## 📖 Develop on The Subspace Network
 ---
@@ -57,9 +57,9 @@ Farmers can nominate **operators** and back them with their tokens, increasing t
 
 The Subspace Network hosts an **EVM (Ethereum Virtual Machine)**, that allows you to deploy your **smart contracts.** 
 
-#### - [EVM Development](/docs/develop/nova/intro.md)
+#### - [EVM Development](/docs/develop/nova/intro)
 
 ### Utilize the Core Protocol
 The Subspace Network aims to provide an amazing developer experience to anyone who wishes to build on top of the protocol. As such we have started working on a variety of tools to assist and promote development on our network. 
 
-#### - [Core Protocol Development](https://github.com/autonomys/subspace/blob/main/docs/development.md)
+#### - [Core Protocol Development](https://github.com/subspace/subspace/blob/main/docs/development)
