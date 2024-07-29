@@ -29,8 +29,8 @@ The Subspace Network is an ambitious layer zero protocol which is the first scal
 
 Choose one of the following methods to **start farming** on the Network (from easy to more complex):
 
-#### - [Start Farming with Space Acres](../farming-&-staking/farming/space-acres/space-acres-install)
-#### - [Start Farming with Advanced CLI](../farming-&-staking/farming/advanced-cli/cli-install)
+#### - [Start Farming with Space Acres](/docs/farming-&-staking/farming/space-acres/space-acres-install.mdx)
+#### - [Start Farming with Advanced CLI](/docs/farming-&-staking/farming/advanced-cli/cli-install.mdx)
 
 ### **Become a nominator**
 
