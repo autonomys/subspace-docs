@@ -37,6 +37,10 @@ As Nakamoto envisioned a more equitable and decentralized future, Subspace Labs 
 
 <TranslationLeaderboard />
 
+:::note
+Please note that contributions made on the last day of the month may not be counted in the leaderboard!
+:::
+
 ## Translation How-To Guide
 
 This guide will walk you through how to provide translations for this documentation. By contributing, you help in realizing our mission and vision, ensuring the inclusivity and accessibility of our content to non-English speakers around the world.
