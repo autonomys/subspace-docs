@@ -86,7 +86,7 @@ const config = {
           },
           {
             to: "/docs/category/space-acres-recommended",
-            from: ["/docs/protocol/pulsar/", "/docs/category/pulsar-recommended", "/docs/category/pulsar", "/docs/category/space-acres"]
+            from: ["/docs/protocol/pulsar/", "/docs/category/pulsar-recommended", "/docs/category/pulsar", "/docs/category/space-acres", "/docs/farming-&-staking/farming/pulsar"]
           },
           {
             to: "/docs/farming-&-staking/farming/advanced-cli/cli-install",
@@ -139,7 +139,7 @@ const config = {
           },
           {
             to: "/docs/pre-release/category/space-acres-recommended",
-            from: ["/docs/pre-release/protocol/pulsar/", "/docs/pre-release/category/pulsar-recommended", "/docs/pre-release/category/pulsar", "/docs/pre-release/category/space-acres"]
+            from: ["/docs/pre-release/protocol/pulsar/", "/docs/pre-release/category/pulsar-recommended", "/docs/pre-release/category/pulsar", "/docs/pre-release/category/space-acres", "/docs/pre-release/farming-&-staking/farming/pulsar"]
           },
         ],
       },
