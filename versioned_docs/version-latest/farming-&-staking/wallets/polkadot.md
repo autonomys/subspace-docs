@@ -1,7 +1,7 @@
 ---
 title: Polkadot.js
 sidebar_position: 2
-description: How to configure the Polkadot Substrate wallet for the Subspace Network
+description: How to configure the Polkadot Substrate wallet for the Autonomys Network
 keywords:
     - Farmer
     - Farming
@@ -55,7 +55,7 @@ MAKE SURE YOU STORE THIS SECURELY, AND NEVER SHARE IT
 
 ## Importing an Existing Seed
 
-Some users may be provided an existing mnemonic seed phrase that may have been provided by Subspace-Desktop, if this is the case you will want to follow this portion of the guide.
+Some users may be provided an existing mnemonic seed phrase that may have been provided by Autonomys-Desktop, if this is the case you will want to follow this portion of the guide.
 
 1. Install the Extension (See [step 1](#create-a-new-wallet) of the previous section)
 
@@ -81,19 +81,19 @@ If you face any trouble or would like to learn about other features for Polkadot
 
     ![trouble-1](/img/doc-imgs/polkadot/trouble-1.png)
 
-- You can see your Subspace Testnet public address via the `...` menu and setting the `Allow Use on Any Chain` dropdown to `Subspace Testnet`, once you exit you will see the public address now starts with `st`
+- You can see your Autonomys Testnet public address via the `...` menu and setting the `Allow Use on Any Chain` dropdown to `Autonomys Testnet`, once you exit you will see the public address now starts with `st`
 
     ![trouble-2](/img/doc-imgs/polkadot/trouble-2.png)
 
     ![trouble-10](/img/doc-imgs/polkadot/trouble-10.png)
 
-### I Dont see `Subspace Testnet` or any Subspace Networks as an option in chain settings
+### I Dont see `Autonomys Testnet` or any Autonomys Networks as an option in chain settings
 
 - As seen below, sometimes when you first install or update the Substrate wallet you will need to update the wallet metadata.
 
     ![trouble-3](/img/doc-imgs/polkadot/trouble-3.png)
 
-1. Go to the Subspace/Polkadot Explorer here: [Polkadot/Substrate Portal](https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Ftest-rpc.subspace.network#/explorer)
+1. Go to the Autonomys/Polkadot Explorer here: [Polkadot/Substrate Portal](https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Ftest-rpc.subspace.network#/explorer)
 
 2. You will be prompted to allow the extension to connect, click `Yes, allow this application access`
 
@@ -115,7 +115,7 @@ If you face any trouble or would like to learn about other features for Polkadot
 
     ![trouble-8](/img/doc-imgs/polkadot/trouble-8.png)
 
-7. You will now see `Subspace Testnet` as an option on the `Allow use on any chain` dropdown. 
+7. You will now see `Autonomys Testnet` as an option on the `Allow use on any chain` dropdown. 
 
     ![trouble-9](/img/doc-imgs/polkadot/trouble-9.png)
 

@@ -17,9 +17,9 @@ import TabItem from '@theme/TabItem';
 import Link from '@docusaurus/Link';
 import styles from '@site/src/pages/index.module.css';
 
-Venturing into the digital world and engaging in a crypto project can be thrilling, but following top security practices is essential. Here is a general guide to security and safety, including basic measures for securing servers and home PCs. Your adherence to these practices contributes to the stability of the Subspace network and, of course, the safety of the community's cryptoassets. 
+Venturing into the digital world and engaging in a crypto project can be thrilling, but following top security practices is essential. Here is a general guide to security and safety, including basic measures for securing servers and home PCs. Your adherence to these practices contributes to the stability of the Autonomys network and, of course, the safety of the community's cryptoassets. 
 
-Enjoy Subspace journey with peace of mind!
+Enjoy Autonomys journey with peace of mind!
 
 
 ## Wallet Security
@@ -58,7 +58,7 @@ The most popular hardware wallets are [Ledger](https://www.ledger.com/) and [Tre
 ## Community Security
 
 :::note Keep in mind
-Subspace team members will never initiate direct messages with you.
+Autonomys team members will never initiate direct messages with you.
 :::
 
 Should you receive an unsolicited message, it's best to ignore it, block the sender, and promptly report the incident to our ["scam report" channel](https://discord.com/channels/864285291518361610/982023010405990400).
@@ -246,7 +246,7 @@ As a security measure, it is worth mentioning the practice of allocating separat
 - If the /home partition is separate, migrating to a new server or upgrading the operating system may require additional steps to ensure the proper migration of user data and configurations
 - Having separate partitions can increase the risk of data loss if one partition fails or becomes corrupted
 
-The partitioning recommendations for farming in Subspace will be covered in the "Partitioning and mounting file system" section of the left tab menu.
+The partitioning recommendations for farming in Autonomys will be covered in the "Partitioning and mounting file system" section of the left tab menu.
 
 ## Upgrading ...
 

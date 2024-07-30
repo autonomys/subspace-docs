@@ -4,7 +4,7 @@ import CodeBlock from '@theme/CodeBlock'
 import styles from './SystemdServiceFileGenerator.module.css';
 
 
-// This component is a Systemd Service File Generator for Subspace Docs.
+// This component is a Systemd Service File Generator for Autonomys Docs.
 function AdvancedSystemdServiceFileGenerator() {
     // Initial state for form data
     const [formData, setFormData] = useState({

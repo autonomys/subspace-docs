@@ -1,7 +1,7 @@
 ---
 title: Timekeeping
 sidebar_position: 5
-description: Farming on the Subspace Network
+description: Farming on the Autonomys Network
 keywords:
   - Timekeeper
   - Timekeeping

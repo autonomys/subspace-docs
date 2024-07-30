@@ -56,7 +56,7 @@ Three important factors to pay attention to are `Nominator Tax`, `Min. Stake`, a
 
 ### Check if your **nomination** worked successfully
 
-1. Navigate to **[Subspace Subscan](https://subspace.subscan.io/)** portal.
+1. Navigate to **[Autonomys Subscan](https://subspace.subscan.io/)** portal.
 2. Click on `Blockchain` -> `Extrinsics`.
 
   ![Staking-9](/img/doc-imgs/operators-staking/Staking-9.png)
@@ -94,7 +94,7 @@ Any **operator** or **nominator** can initiate withdrawal. They can withdraw the
 
 ![NStaking-2](/img/doc-imgs/operators-staking/NStaking-2.png)
 
-3. Enter your password to give an access to your wallet.
+3. Enter your password to give access to your wallet.
 
 ![NStaking-3](/img/doc-imgs/operators-staking/NStaking-3.png)
 
@@ -104,11 +104,11 @@ Any **operator** or **nominator** can initiate withdrawal. They can withdraw the
 
 ![NStaking-5](/img/doc-imgs/operators-staking/NStaking-5.png)
 
-6. Once you picked the operator to withdraw your stake from, click on **Actions** -> **Withdraw**.
+6. Once you have picked the operator to withdraw your stake from, click on **Actions** -> **Withdraw**.
 
 ![N-nominators-6](/img/doc-imgs/operators-staking/N-Nominators-6.png)
 
-7. You will get a pop-up requesting how much you want to withdraw.  Use the slider to determine what percentage you want to withdraw or you can click the max button to withdraw your entire stake.
+7. You will get a pop-up requesting how much you want to withdraw. Use the slider to determine what percentage you want to withdraw or you can click the max button to withdraw your entire stake.
 
 ![N-nominators-7](/img/doc-imgs/operators-staking/N-Nominators-7.png)
 
@@ -124,5 +124,5 @@ After the **locking period**, the withdrawn amount can be unlocked in the user's
 6. Submit the transaction, your funds should be unclocked and available once the epoch is complete (up to 10 minutes).
 
 :::note
-You can also withdraw your stake using the Nominators tab.  Your nomination(s) will be the only ones with an action buttin on the last collumn of the grid, ut with so many nominators it can be difficult to find yours.
+You can also withdraw your stake using the Nominators tab. Your nomination(s) will be the only ones with an action button on the last column of the table, but with so many nominators it can be difficult to find yours.
 :::

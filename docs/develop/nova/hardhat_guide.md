@@ -9,7 +9,7 @@ keywords:
 
 ### Hardhat testing and deployment
 ---
-Hardhat is an excellent tool that facilitates building on the Ethereum Virtual Machine. It helps developers manage and automate the recurring tasks that are inherent to the process of building smart contracts and dApps, and it allows them to easily introduce more functionality around this workflow. This includes compiling and testing at the very core. Flexible deployment options also allow you to point to the Subspace EVM domain RPC to deploy your contracts and dApps.
+Hardhat is an excellent tool that facilitates building on the Ethereum Virtual Machine. It helps developers manage and automate the recurring tasks that are inherent to the process of building smart contracts and dApps, and it allows them to easily introduce more functionality around this workflow. This includes compiling and testing at the very core. Flexible deployment options also allow you to point to the Autonomys EVM domain RPC to deploy your contracts and dApps.
 
 Official documentation for Hardhat is available [on their website](https://hardhat.org/docs), but this guide will cover everything required to get you started.
 
@@ -39,7 +39,7 @@ Select "Create a JavaScript Project" from the list of the available options. Sel
 
 ![Hardhat-3](/img/developers/Hardhat-3.png)
 
-4. When in `Lock.sol`, you can change the name of your contract (in the example, to `Counter`), the name of the token (in this example, we're calling it `SubspaceTestToken`) and the token symbol (we're using `TSSCtest`).
+4. When in `Lock.sol`, you can change the name of your contract (in the example, to `Counter`), the name of the token (in this example, we're calling it `AutonomysTestToken`) and the token symbol (we're using `TSSCtest`).
 
 Let’s add a simple smart contract that has three functions - `setNumber()`, `increment()` and `decrement()`.
 
@@ -50,7 +50,7 @@ pragma solidity ^0.8.9;
 import '@openzeppelin/contracts/token/ERC20/ERC20.sol';
 
 contract Counter is ERC20 {
-    constructor() ERC20("SubspaceTestToken", "TSSCtest") {}
+    constructor() ERC20("AutonomysTestToken", "TSSCtest") {}
 
     uint256 public number;
 
@@ -162,7 +162,7 @@ process.exitCode = 1;
 });
 ```
 
-10. You're all set to deploy your smart contract on Subspace Network!
+10. You're all set to deploy your smart contract on Autonomys Network!
 In order to deploy, run `npx hardhat run scripts/deploy.js --network subspace`. 
 
 This command will deploy your smart contract on the network we've just specified in `hardhat.config.js` file. 
@@ -171,4 +171,4 @@ In case of success deployment, you should see `Contract deployed to: transaction
 
 ![Hardhat-6](/img/developers/Hardhat-6.png)
 
-11. **Congratulations**, you've successfully deployed your smart contract on the Subspace EVM domain! 
+11. **Congratulations**, you've successfully deployed your smart contract on the Autonomys EVM domain!

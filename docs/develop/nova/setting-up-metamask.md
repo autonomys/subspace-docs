@@ -7,11 +7,11 @@ keywords:
   - subspace network
 ---
 
-### Adding Subspace RPC using MetaMask
+### Adding Autonomys RPC using MetaMask
 ---
 You can use any EVM-compatible wallet, this guide will be using [**MetaMask**](https://metamask.io/) wallet.
 
-First, let’s set up a MetaMask wallet and then go over connecting it to the Subspace Development Network.
+First, let’s set up a MetaMask wallet and then go over connecting it to the Autonomys Development Network.
 
 1. Go to the [MetaMask Website](https://metamask.io/) and download an extension for your browser.
    Select your preferred language in the top-right corner. 
@@ -51,7 +51,7 @@ First, let’s set up a MetaMask wallet and then go over connecting it to the Su
 
   ![MetaMask-7](/img/developers/MetaMask-7.png)
 
-8. Now that your wallet is created, let’s connect to the Subspace Core EVM. Click on the Ethereum Mainnet logo and select Add Network.
+8. Now that your wallet is created, let’s connect to the Autonomys Core EVM. Click on the Ethereum Mainnet logo and select Add Network.
 
   ![MetaMask-8](/img/developers/MetaMask-8.png)
 
@@ -59,13 +59,13 @@ First, let’s set up a MetaMask wallet and then go over connecting it to the Su
 
   ![MetaMask-9](/img/developers/MetaMask-9.png)
 
-10. To connect to Subspace RPC specify the values below
+10. To connect to Autonomys RPC specify the values below
 
   ```
-  Network Name: Subspace EVM
+  Network Name: Autonomys EVM
   New RPC URL: https://nova-0.gemini-3h.subspace.network/ws
   Chain ID: 490000
   Currency Symbol: TSSC
   ```
 
-You're all set, **you have successfully configured your MetaMask wallet** and connected it to **Subspace Core EVM**. To deploy your smart contract, you first need to get a small amount of **TSSC**  tokens into your wallet. Please make sure to refer to the [faucet section](./faucet.md) of the guide to learn more about getting test tokens. 
+You're all set, **you have successfully configured your MetaMask wallet** and connected it to **Autonomys Core EVM**. To deploy your smart contract, you first need to get a small amount of **TSSC**  tokens into your wallet. Please make sure to refer to the [faucet section](./faucet.md) of the guide to learn more about getting test tokens. 

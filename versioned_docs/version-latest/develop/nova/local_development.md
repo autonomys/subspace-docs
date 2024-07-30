@@ -1,10 +1,10 @@
 ---
 title: Local development
 sidebar_position: 9
-description: Guide on local development Subspace Node and Farmer
+description: Guide on local development Autonomys Node and Farmer
 keywords:
   - local development
-  - subspace network
+  - autonomys network
 ---
 
 
@@ -15,7 +15,7 @@ keywords:
 
 To establish a full local network, you need to run a local node, a Core-EVM domain, and a farmer.
 
-First, visit the **[Subspace releases](https://github.com/autonomys/subspace/releases)** page and download the most up-to-date stable versions of the node and farmer.
+First, visit the **[Autonomys releases](https://github.com/autonomys/subspace/releases)** page and download the most up-to-date stable versions of the node and farmer.
 
 :::tip
 For each release, there are two versions:

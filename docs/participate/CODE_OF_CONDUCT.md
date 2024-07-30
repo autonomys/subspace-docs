@@ -1,11 +1,11 @@
 ---
 title: Code of Conduct
 sidebar_position: 4
-description: Code of Conduct for the Subspace Labs Documentation
+description: Code of Conduct for the Autonomys Labs Documentation
 keywords:
     - Awesome
     - Community
-    - Subspace
+    - Autonomys
     - Contributor
     - Code of Conduct
 ---

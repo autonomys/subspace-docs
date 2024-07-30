@@ -9,7 +9,7 @@ keywords:
 
 ### Remix IDE guide
 ---
-Remix is a great tool that allows you to easily write, test and deploy smart contracts on any EVM-compatible  blockchain. Moreover, integration with MetaMask allows the utilization of any RPC, that’s why we’ve just set up a reference to Subspace core EVM in our MetaMask wallet!
+Remix is a great tool that allows you to easily write, test and deploy smart contracts on any EVM-compatible  blockchain. Moreover, integration with MetaMask allows the utilization of any RPC, that’s why we’ve just set up a reference to Autonomys core EVM in our MetaMask wallet!
 
 Remix has [amazing documentation](https://remix-ide.readthedocs.io/en/latest/), but this guide will cover everything required to get you started.
 
@@ -38,7 +38,7 @@ Let’s add a simple smart contract that has three functions - `setNumber()`, `i
  import '@openzeppelin/contracts/token/ERC20/ERC20.sol';
 
  contract Counter is ERC20 {
-     constructor() ERC20("SubspaceTestToken", "TSSCtest") {}
+     constructor() ERC20("AutonomysTestToken", "TSSCtest") {}
 
      uint256 public number;
 
@@ -84,7 +84,7 @@ This is Test Driven Development (TDD) in action! In order to make the test pass,
   contract CounterTest is Counter {
 
      function testTokenInitialValues() public {
-         Assert.equal(name(), "SubspaceTestToken", "token name did not match");
+         Assert.equal(name(), "AutonomysTestToken", "token name did not match");
          Assert.equal(symbol(), "TSSCtest", "token symbol did not match");
          Assert.equal(decimals(), 18, "token decimals did not match");
          Assert.equal(totalSupply(), 0, "token supply should be zero");
@@ -122,11 +122,11 @@ Since we already have a MetaMask Account set up, let’s use this option.
 
  ![Remix-10](/img/developers/Remix-10.png)
 
-11. You will be prompted to confirm the password with MetaMask, just make sure that the network you’re connected to is Subspace EVM.
+11. You will be prompted to confirm the password with MetaMask, just make sure that the network you’re connected to is Autonomys EVM.
 
  ![Remix-11](/img/developers/Remix-11.png)
 
-12. Adjust the gas limit and deploy your smart contract on Subspace Core EVM.
+12. Adjust the gas limit and deploy your smart contract on Autonomys Core EVM.
 Now your transaction is recorded and you can interact with your smart contract at the bottom of the page - it's possible to call the functions `increment()` and `decrement()` as well as `setNumber()`
 
 :::caution
@@ -135,5 +135,4 @@ Do not attempt to speed up a transaction (do not include a tip on top of the gas
 
  ![Remix-12](/img/developers/Remix-12.png)
 
-Congratulations, you've just deployed your smart contract on Subspace Core EVM!
-
+Congratulations, you've just deployed your smart contract on Autonomys Core EVM!

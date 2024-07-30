@@ -3,7 +3,7 @@ title: Community Built Tools
 sidebar_position: 2
 description: Community built and maintained tools
 keywords:
-    - Subspace Network
+    - Autonomys Network
     - Community built tools
 ---
 
@@ -11,7 +11,7 @@ keywords:
 
 [Wolfrage76](https://github.com/wolfrage76)'s **list of third-party tools**. 
 - Link to the [website](https://subspace.ifhya.com/).
-- Contact **Wolfrage** in the Subspace Discord to add your tool.
+- Contact **Wolfrage** in the Autonomys Discord to add your tool.
 
 <iframe src="https://subspace.ifhya.com/" width="100%" height="650px" frameborder="0" scrolling="auto"></iframe>
 

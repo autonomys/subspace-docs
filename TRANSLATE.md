@@ -5,7 +5,7 @@ This guide will show you how to provide translations for this documentation.
 ## Prerequisites
 
 - Crowdin Account: They are free, and will be a necessity if you would like to contribute to our translations, you can create an account [here](https://accounts.crowdin.com/register)
-- Join the Subspace Network project on Crowdin.
+- Join the Autonomys Network project on Crowdin.
     - [Documentation Project Portal](https://crowdin.com/project/subspace-docs)
     - [Website Project Portal](https://crowdin.com/project/subspace-website)
 
@@ -18,7 +18,7 @@ This guide will show you how to provide translations for this documentation.
 
 ## How-To
 
-Below you will find the walkthrough of how to provide translations for the Subspace Network through the Crowdin translation portal. 
+Below you will find the walkthrough of how to provide translations for the Autonomys Network through the Crowdin translation portal. 
 
 1. Visit the respective translation portal for which website you would like to help translate (See above)
 
