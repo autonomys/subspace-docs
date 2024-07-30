@@ -1,4 +1,4 @@
-<img src="./static/img/subspace-network.svg" align="center" />
+<img src="./static/img/autonomys-network.png" align="center" />
 <div style="text-align: center;">
     <a title="Crowdin" target="_blank" href="https://crowdin.com/project/subspace-docs"><img src="https://badges.crowdin.net/subspace-docs/localized.svg"></a>
 </div>

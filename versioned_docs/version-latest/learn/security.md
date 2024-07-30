@@ -163,7 +163,7 @@ Managing connections can be much simpler and more enjoyable by creating aliases!
 Create a file named "config" in the `~/.ssh` directory (where the keys are), simply add your server or other users for the same server to it, like in example below. Feel free to add as many as you want.
 
 ```console
-Host Farm                    # Any word can be used here as an alias (for ex. "subspace" or "Farm")
+Host Farm                    # Any word can be used here as an alias (for ex. "autonomys" or "Farm")
 HostName 123.123.123.123     # Use you server's IP
 Port 12345                                 # your custom port
 User username			            # User for login (for a rescue system this must be root, change it later)

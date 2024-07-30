@@ -55,7 +55,7 @@ MAKE SURE YOU STORE THIS SECURELY, AND NEVER SHARE IT
 
 ## Importing an Existing Seed
 
-Some users may be provided an existing mnemonic seed phrase that may have been provided by Autonomys-Desktop, if this is the case you will want to follow this portion of the guide.
+Some users may be provided an existing mnemonic seed phrase that may have been provided by Subspace-Desktop, if this is the case you will want to follow this portion of the guide.
 
 1. Install the Extension (See [step 1](#create-a-new-wallet) of the previous section)
 
