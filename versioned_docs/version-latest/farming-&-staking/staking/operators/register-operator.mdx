@@ -116,6 +116,7 @@ While it is possible to use `archive` for `blocks-pruning` and `state-pruning`, 
 --base-path NODE_DATA_PATH \`
 --blocks-pruning archive-canonical \`
 --state-pruning archive-canonical \`
+--sync full \`
 -- \`
 --domain-id your_domain_id \`
 --operator-id your_operator_id \`
@@ -133,6 +134,7 @@ While it is possible to use `archive` for `blocks-pruning` and `state-pruning`, 
 --base-path NODE_DATA_PATH \\
 --blocks-pruning archive-canonical \\
 --state-pruning archive-canonical \\
+--sync full \\
 -- \\
 --domain-id your_domain_id \\
 --operator-id your_operator_id \\
@@ -150,6 +152,7 @@ While it is possible to use `archive` for `blocks-pruning` and `state-pruning`, 
 --base-path NODE_DATA_PATH \\
 --blocks-pruning archive-canonical \\
 --state-pruning archive-canonical \\
+--sync full \\
 -- \\
 --domain-id your_domain_id \\
 --operator-id your_operator_id \\
@@ -188,7 +191,8 @@ While it is possible to use `archive` for `blocks-pruning` and `state-pruning`, 
       # Replace INSERT_YOUR_ID with your node ID (will be shown in telemetry)
       "--name", "INSERT_YOUR_ID",
       "--blocks-pruning", "archive-canonical",
-      "--state-pruning". "archive-canonical"
+      "--state-pruning", "archive-canonical", 
+      "--sync", "full", 
       "--",
       # Replace INSERT_YOUR_DOMAIN_ID with domain ID you want to be operator on
       "--domain-id", "INSERT_YOUR_DOMAIN_ID",
