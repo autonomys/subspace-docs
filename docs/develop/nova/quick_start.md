@@ -3,7 +3,7 @@ title: Quick start
 sidebar_position: 2
 description: Quick start one-pager
 keywords:
-  - subspace network
+  - autononys network
   - quickstart
 ---
 

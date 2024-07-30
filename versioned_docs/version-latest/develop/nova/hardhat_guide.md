@@ -3,7 +3,7 @@ title: Hardhat
 sidebar_position: 8
 description: Testing and Deploying Smart Contracts using HardHat
 keywords:
-  - subspace network
+  - autononys network
   - hardhat
 ---
 

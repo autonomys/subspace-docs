@@ -4,7 +4,7 @@ sidebar_position: 3
 description: Guide on setting up
 keywords:
   - metamask
-  - subspace network
+  - autononys network
 ---
 
 ### What tools are available for developers?

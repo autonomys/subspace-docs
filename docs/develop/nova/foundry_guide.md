@@ -3,7 +3,7 @@ title: Foundry - testing and deployment
 sidebar_position: 7
 description: Testing and Deploying Smart Contracts using Foundry
 keywords:
-  - subspace network
+  - autononys network
   - book getfoundry
   - foundry
 ---
