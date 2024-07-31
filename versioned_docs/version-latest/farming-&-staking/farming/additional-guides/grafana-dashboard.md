@@ -1,7 +1,7 @@
 ---
 title: Grafana Dashboard
 sidebar_position: 3
-description: How to configure the Grafana dashboard for a Autonomys Network node
+description: How to configure the Grafana dashboard for an Autonomys Network node
 keywords:
     - node
     - farmer

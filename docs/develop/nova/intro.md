@@ -45,6 +45,6 @@ When archiving the history of Autonomys Network, we replace Merkle roots with KZ
 ## Is it difficult to build applications on Autonomys Network?
 ---
 
-Our primary objective is to maintain a minimum barrier to entry for both our farmers and developers. The installation of a Autonomys Network node can be accomplished in less than 15 minutes and is compatible with an extensive array of computer systems given the highly accessible minimum requirements for the hardware.
+Our primary objective is to maintain a minimum barrier to entry for both our farmers and developers. The installation of an Autonomys Network node can be accomplished in less than 15 minutes and is compatible with an extensive array of computer systems given the highly accessible minimum requirements for the hardware.
 
 When it comes to development on the Autonomys Network, we offer a range of flexible options. At present, you can make use of our multiple Ethereum Virtual Machine (EVM) domains for a familiar experience. Soon, we will also provide the functionality for you to build your own local custom virtual machine if that's your preference. We take pride in the unlimited possibilities we provide - there are no boundaries!

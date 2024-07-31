@@ -3,7 +3,7 @@ title: Remix IDE - testing and deployment
 sidebar_position: 6
 description: Testing and Deploying Smart Contracts using Remix IDE
 keywords:
-  - autononys network
+  - autonomys network
   - remix ide
 ---
 

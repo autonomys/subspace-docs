@@ -3,7 +3,7 @@ title: Hardhat
 sidebar_position: 8
 description: Testing and Deploying Smart Contracts using HardHat
 keywords:
-  - autononys network
+  - autonomys network
   - hardhat
 ---
 
@@ -162,7 +162,7 @@ process.exitCode = 1;
 });
 ```
 
-10. You're all set to deploy your smart contract on Autonomys Network!
+10. You're all set to deploy your smart contract on the Autonomys Network!
 In order to deploy, run `npx hardhat run scripts/deploy.js --network subspace`. 
 
 This command will deploy your smart contract on the network we've just specified in `hardhat.config.js` file. 

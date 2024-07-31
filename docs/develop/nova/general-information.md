@@ -4,7 +4,7 @@ sidebar_position: 3
 description: Guide on setting up
 keywords:
   - metamask
-  - autononys network
+  - autonomys network
 ---
 
 ### What tools are available for developers?
@@ -15,7 +15,7 @@ First, Solidity is the primary programming language for writing smart contracts.
 
 Integrated Development Environments (IDEs) such as the [Remix IDE](https://remix.ethereum.org/) are often used to aid in writing smart contracts. Remix IDE is a browser-based IDE that enables you to write, deploy, and interact with Solidity smart contracts. It features a built-in static analysis tool that checks your code for common errors.
 
-For local development and testing, you have multiple options. You can spin up your own version of a Autonomys Developer Node and farmer to deploy contracts, develop applications, and run tests. Alternatively, you can use Ethereum development tools like [Hardhat](https://hardhat.org/hardhat-network/docs/overview) or [Anvil](https://book.getfoundry.sh/anvil/), which are fully compatible with Autonomys due to their EVM compatibility.
+For local development and testing, you have multiple options. You can spin up your own version of an Autonomys Developer Node and farmer to deploy contracts, develop applications, and run tests. Alternatively, you can use Ethereum development tools like [Hardhat](https://hardhat.org/hardhat-network/docs/overview) or [Anvil](https://book.getfoundry.sh/anvil/), which are fully compatible with Autonomys due to their EVM compatibility.
 
 For deploying and interacting with smart contracts, a JavaScript provider like the one injected by the [MetaMask](https://metamask.io/) browser extension is used. This provider enables JavaScript applications to communicate with the Autonomys network or any Ethereum-compatible network. It's compatible with both [ethers.js](https://docs.ethers.org/v5/), [web3.js](https://web3js.readthedocs.io/en/v1.10.0/) and [Web3.py](https://web3py.readthedocs.io/en/stable/), allowing developers to use either library for their blockchain operations.
 

@@ -64,7 +64,7 @@ The hardware requirements have been reduced from the first Stake Wars in order t
 
 ### Folder structure
 
-Starting with Gemini 3h, **Autonomys Node** will create the following directory structure:
+Starting with Gemini 3h, the **Autonomys Node** will create the following directory structure:
 
 - subspace-node/db
 - subspace-node/domains/0/keystore

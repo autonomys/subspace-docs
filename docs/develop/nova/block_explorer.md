@@ -4,7 +4,7 @@ sidebar_position: 10
 description: Autonomys hosted block explorer
 keywords:
   - block explorer
-  - autononys network
+  - autonomys network
 ---
 
 ### Autonomys Block Explorer

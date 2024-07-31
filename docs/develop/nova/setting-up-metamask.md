@@ -4,7 +4,7 @@ sidebar_position: 4
 description: Guide on setting up MetaMask for development purposes
 keywords:
   - metamask
-  - autononys network
+  - autonomys network
 ---
 
 ### Adding Autonomys RPC using MetaMask

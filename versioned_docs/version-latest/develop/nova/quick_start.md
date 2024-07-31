@@ -3,7 +3,7 @@ title: Quick start
 sidebar_position: 2
 description: Quick start one-pager
 keywords:
-  - autononys network
+  - autonomys network
   - quickstart
 ---
 

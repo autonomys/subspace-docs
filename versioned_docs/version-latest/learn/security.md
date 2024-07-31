@@ -19,7 +19,7 @@ import styles from '@site/src/pages/index.module.css';
 
 Venturing into the digital world and engaging in a crypto project can be thrilling, but following top security practices is essential. Here is a general guide to security and safety, including basic measures for securing servers and home PCs. Your adherence to these practices contributes to the stability of the Autonomys network and, of course, the safety of the community's cryptoassets. 
 
-Enjoy Autonomys journey with peace of mind!
+Enjoy your Autonomys journey with peace of mind!
 
 
 ## Wallet Security
