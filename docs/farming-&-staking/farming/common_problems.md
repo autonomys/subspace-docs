@@ -15,7 +15,7 @@ import Link from '@docusaurus/Link';
 import styles from '@site/src/pages/index.module.css';
 
 
-While Subspace strives to release bug-free software, users may encounter certain errors. Some of these can be safely ignored, while others require attention.
+While Autonomys strives to release bug-free software, users may encounter certain errors. Some of these can be safely ignored, while others require attention.
 
 
 # Common problems and ways to resolve them

@@ -48,7 +48,7 @@ export default function Home(): JSX.Element {
       title={`${siteConfig.title}`}
       description={translate(
         {id: 'homepage.layoutDescription'},
-        {message: 'Official Documentation for Subspace Labs'})}>
+        {message: 'Official Documentation for Autonomys Labs'})}>
       <HomepageHeader />
       <main>
         <HomepageFeatures />

@@ -2,7 +2,7 @@
 id: contribute  
 title: Contribute!
 sidebar_position: 2
-description: How to contribute to the Subspace Docs
+description: How to contribute to the Autonomys Docs
 keywords:
     - Docs
     - Contribute
@@ -15,7 +15,7 @@ keywords:
 
 ### You Rock!
 
-First off, thank you for considering contributing to the Subspace Network. It's through the amazing collaboration of people like yourself that truly makes the open source community amazing. ❤️
+First off, thank you for considering contributing to the Autonomys Network. It's through the amazing collaboration of people like yourself that truly makes the open source community amazing. ❤️
 
 ### Help us, Help you, Help us!
 
@@ -43,7 +43,7 @@ Please refer to our [Code of Conduct](CODE_OF_CONDUCT.md).
 Please follow this pathway for *minor* contributions such as spelling errors, typos, rewording, etc. 
 > If you are adding entirely new pages, features, etc, then please refer to the `Advanced` portion of this section.
 
-1. Go to [Subspace Documentation](https://docs.subspace.network), and find the page that you would like to change.
+1. Go to the [Autonomys Documentation](https://docs.subspace.network), and find the page that you would like to change.
 2. Scroll to the bottom and click `Edit this page`.
 3. This will open up GitHub, and direct you to the raw page on GitHub.
 4. In the top right click the `pencil` emoji to edit the page.

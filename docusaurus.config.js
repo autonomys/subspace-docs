@@ -196,7 +196,7 @@ const config = {
       "data-project-color": "#1B1B1D",
       "data-project-logo": "https://i.postimg.cc/NGJ4jgKx/download.png",
       "data-button-text-color": "#89CFF0",
-      "data-modal-disclaimer": "This is a custom LLM for Subspace.network with access to all documentation (docs.subspace.network/). Since this is AI technology please use your best judgment.",
+      "data-modal-disclaimer": "This is a custom LLM for Autonomys with access to all documentation. Since this is AI technology please use your best judgment.",
       async: true
     }
   ],
@@ -210,11 +210,11 @@ const config = {
         defaultMode: 'dark'
       },
       navbar: {
-        title: 'Subspace',
+        title: 'Autonomys',
         logo: {
-          alt: 'Subspace Labs Logo',
-          src: 'img/logo-black.svg',
-          srcDark: 'img/logo-white.svg',
+          alt: 'Autonomys Logo',
+          src: 'img/logo-black.png',
+          srcDark: 'img/logo-white.png',
         },
         items: [
           {
@@ -231,7 +231,7 @@ const config = {
                 href: '/docs/category/operators-and-nominators'
               },
               {
-                label: 'Develop on Subspace',
+                label: 'Develop on Autonomys',
                 href: '/docs/category/develop',
               }
             ],
@@ -261,12 +261,12 @@ const config = {
             position: 'left',
             items: [
               {
-                label: 'Subspace Telemetry',
+                label: 'Telemetry',
                 href: 'https://telemetry.subspace.network',
               },
               {
-                label: 'Subspace Explorer',
-                href: 'https://subspace.subscan.io/',
+                label: 'Autonomys Explorer',
+                href: 'https://explorer.subspace.network/',
               },
               {
                 label: 'PolkadotJS Portal',
@@ -284,11 +284,11 @@ const config = {
                 href: 'https://academy.autonomys.xyz',
               },
               {
-                label: 'Subspace Hitchikers Guide',
+                label: 'The Hitchhiker’s Guide to Subspace',
                 href: 'https://blog.subspace.network/subspaceresearch/home',
               },
               {
-                label: 'Subspace Original Whitepaper',
+                label: 'Subspace Protocol Whitepaper',
                 href: 'https://subspace.network/news/subspace-network-whitepaper',
               },
               {
@@ -327,18 +327,18 @@ const config = {
         style: 'dark',
         links: [
           {
-            title: 'Subspace Network',
+            title: 'Autonomys Network',
             items: [
               {
                 label: 'Official Website',
-                href: 'https://subspace.network'
+                href: 'https://www.autonomys.xyz/'
               },
               {
                 label: 'Space Acres Desktop GUI',
                 href: 'https://github.com/autonomys/space-acres'
               },
               {
-                label: 'Astral Subspace Explorer',
+                label: 'Astral Autonomys Explorer',
                 href: 'https://explorer.subspace.network/#/gemini-3h/consensus'
               }
             ],
@@ -373,7 +373,7 @@ const config = {
               },
               {
                 label: 'Twitter',
-                href: 'https://twitter.com/NetworkSubspace',
+                href: 'https://x.com/AutonomysNet',
               },
               {
                 label: 'Medium',
@@ -383,12 +383,12 @@ const config = {
           },
         ],
         logo: {
-          alt: 'Subspace Labs Banner Logo',
-          src: 'img/banner-black.svg',
-          srcDark: 'img/banner-white.svg',
+          alt: 'Autonomys Labs Banner Logo',
+          src: 'img/banner-black.png',
+          srcDark: 'img/banner-white.png',
           href: 'https://subspace.network',
         },
-        copyright: `Copyright © ${new Date().getFullYear()} Subspace Labs, Inc.`,
+        copyright: `Copyright © ${new Date().getFullYear()} Autonomys Labs, Inc.`,
       },
       announcementBar: {
         id: 'academy',

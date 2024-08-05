@@ -1,7 +1,7 @@
 ---
 title: Ports & Network Information
 sidebar_position: 2
-description: Comprehensive guide on port forwarding and network information for Subspace Network products.
+description: Comprehensive guide on port forwarding and network information for Autonomys Network products.
 slug: networking
 keywords:
     - Farmer
@@ -9,23 +9,23 @@ keywords:
     - CLI
     - Binaries
     - Port Forwarding
-    - Subspace Desktop
+    - Autonomys Desktop
     - Ports
     - Networking
     - Network
 ---
 
 :::caution
-If you are using Linux and enabled `ufw` (firewall) ensure that your firewall allows traffic on the necessary ports: `sudo ufw allow 30333,30433 comment 'Subspace Node'` for the node and `sudo ufw allow 30533 comment 'Subspace Farmer'` for the farmer. Adjust the port numbers if you have changed them from the defaults in your startup parameters. Also, if you are connecting remote farmers to a node and your firewall rules do not permit devices in your LAN to communicate freely, you will need to add a rule to your node server's firewall (assuming your LAN IP range is 192.168.1.0/24 in this example):  `sudo ufw allow from 192.168.1.0/24 to any port 9944 proto tcp comment 'Remote Farmers RPC'`.
+If you are using Linux and enabled `ufw` (firewall) ensure that your firewall allows traffic on the necessary ports: `sudo ufw allow 30333,30433 comment 'Autonomys Node'` for the node and `sudo ufw allow 30533 comment 'Autonomys Farmer'` for the farmer. Adjust the port numbers if you have changed them from the defaults in your startup parameters. Also, if you are connecting remote farmers to a node and your firewall rules do not permit devices in your LAN to communicate freely, you will need to add a rule to your node server's firewall (assuming your LAN IP range is 192.168.1.0/24 in this example):  `sudo ufw allow from 192.168.1.0/24 to any port 9944 proto tcp comment 'Remote Farmers RPC'`.
 :::
 
-Configuring the right network settings is crucial for the effective operation of blockchain nodes. This guide provides detailed information about the necessary ports, network configurations, and steps for port forwarding for Subspace Network products, ensuring smooth communication and optimal performance.
+Configuring the right network settings is crucial for the effective operation of blockchain nodes. This guide provides detailed information about the necessary ports, network configurations, and steps for port forwarding for Autonomys Network products, ensuring smooth communication and optimal performance.
 
 ## Understanding Port Forwarding
 
 Forwarding ports on your router will open up a specific lane on your router to allow external traffic to flow in or out. This process is usually automatic for common applications, but for specific needs like ours, it must be done manually. For a foundational understanding of port forwarding, you can read this guide: [Port Forwarding Overview](https://www.geeksforgeeks.org/port-forwarding-on-router-and-why-do-we-need-it/).
 
-## Required Ports for Subspace Network
+## Required Ports for Autonomys Network
 
 For optimal performance of our blockchain node, specific ports need to be configured to handle incoming connections. These ports facilitate various critical functions within our blockchain network
 
@@ -33,10 +33,10 @@ Below is a table summarizing the necessary port configurations for uninterrupted
 
 | Port  | Protocol            | Exposure                                                | Short Description           | Used By                                                                                                                                                              | Purpose                                              |
 |-------|---------------------|---------------------------------------------------------|----------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------|
-| 30333 | TCP     | Always public                                           | Substrate networking P2P   | <ul><li>[Space Acres](../../../category/space-acres-recommended/)</li><li>[Advanced CLI Node (Consensus)](../../../category/advanced-cli)</li></ul> | Connecting to the rest of the network for exchanging blocks, transactions, PoT gossip, etc. |
-| 30433 | TCP      | Always public                                           | Subspace networking P2P    | <ul><li>[Space Acres](../../../category/space-acres-recommended/)</li><li>[Advanced CLI Node (Consensus)](../../../category/advanced-cli)</li></ul> | Connecting to the rest of the network and retrieving archival history.            |
-| 30533 | TCP     | Always public                                           | Subspace networking P2P    | <ul><li>[Advanced CLI Node (Consensus)](../../../category/advanced-cli)</li></ul>                                                                        | Connecting to the rest of the network and retrieving archival history, not required for Space Acres because the node and the farmer share the Subspace networking stack there. |
-| 40333 | TCP          | Always public                                           | Subspace networking P2P    | <ul><li>[Advanced CLI Node (Domain)](../../../category/operators-and-nominators)</li></ul>                                                                           | Connecting to the rest of the domain network for transaction gossipping.      |
+| 30333 | TCP      | Always public                                           | Substrate networking P2P   | <ul><li>[Space Acres](../../../category/space-acres-recommended/)</li><li>[Advanced CLI Node (Consensus)](../../../category/advanced-cli)</li></ul> | Connecting to the rest of the network for exchanging blocks, transactions, PoT gossip, etc. |
+| 30433 | TCP      | Always public                                           | Autonomys networking P2P    | <ul><li>[Space Acres](../../../category/space-acres-recommended/)</li><li>[Advanced CLI Node (Consensus)](../../../category/advanced-cli)</li></ul> | Connecting to the rest of the network and retrieving archival history.            |
+| 30533 | TCP     | Always public                                           | Autonomys networking P2P    | <ul><li>[Advanced CLI Node (Consensus)](../../../category/advanced-cli)</li></ul>                                                                        | Connecting to the rest of the network and retrieving archival history, not required for Space Acres because the node and the farmer share the Autonomys networking stack there. |
+| 40333 | TCP          | Always public                                           | Autonomys networking P2P    | <ul><li>[Advanced CLI Node (Domain)](../../../category/operators-and-nominators)</li></ul>                                                                           | Connecting to the rest of the domain network for transaction gossipping.      |
 | 9944  | TCP (HTTP/WebSocket)| Public: <ul><li>RPC server</li></ul> Private: <ul><li>Internal node-to-farmer connections</li></ul> | Consensus RPC port         | <ul><li>[Advanced CLI Node (Consensus)](../../../category/advanced-cli)</li></ul>                                                                        | RPC server: Exposes various details about the blockchain (real-time and historical events, storage, transactions, etc) as well as submitting transactions to the network (balance transfers, staking, etc). <br /><br /> Farmer connections: The farmer connects in unsafe mode and receives notifications about slot challenges for block/vote production, archival history extension events, querying of various chain details. Nodes that process farmer connections should never be exposed publicly as public exposure of unsafe APIs can be used to not only prevent farmer from working, but even block node sync completely. |
 | 9945  | TCP (HTTP/WebSocket)| Public: <ul><li>RPC server</li></ul>                     | Domain RPC port            | <ul><li>[Advanced CLI Node (Domain)](../../../category/operators-and-nominators)</li></ul>                                                                           | RPC server: Expose various details about blockchain (real-time and historical events, storage, transactions, etc.) as well as submitting transactions to the network (balance transfers, interacting with smart contracts, etc). |
 
@@ -74,4 +74,4 @@ The process varies based on your router. Generally, navigate to Advanced Setting
 - **With Firewall:** Ensure TCP ports are open in your firewall settings.
 - **Direct Connection:** No further action if directly connected to the internet.
 
-Proper configuration of these ports ensures reliable and secure communication within the Subspace Network.
+Proper configuration of these ports ensures reliable and secure communication within the Autonomys Network.

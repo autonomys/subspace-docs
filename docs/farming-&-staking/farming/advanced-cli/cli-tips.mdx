@@ -1,7 +1,7 @@
 ---
 title: Tips & Tricks
 sidebar_position: 3
-description: How to run a Subspace Network Farmer with the Substrate CLI
+description: How to run an Autonomys Network Farmer with the Substrate CLI
 keywords:
     - Farmer
     - Farming
@@ -13,19 +13,19 @@ keywords:
 
 ## Additional Tips
 
-Welcome to the Additional Tips section! Whether you're a seasoned farmer or just starting out with the Subspace Network, these tips and tricks are designed to enhance your experience and efficiency. Here, we delve into practical advice and lesser-known techniques to help you fine-tune your farming setup and navigate common challenges with ease. From configuring your environment to managing background processes, these insights are tailored to ensure your Farmer operates smoothly and effectively. Let's dive in and explore how you can get the most out of your Subspace Network Farmer.
+Welcome to the Additional Tips section! Whether you're a seasoned farmer or just starting out with the Autonomys Network, these tips and tricks are designed to enhance your experience and efficiency. Here, we delve into practical advice and lesser-known techniques to help you fine-tune your farming setup and navigate common challenges with ease. From configuring your environment to managing background processes, these insights are tailored to ensure your Farmer operates smoothly and effectively. Let's dive in and explore how you can get the most out of your Autonomys Network Farmer.
 
 ### Telemetry & Block Explorer
 
-Explore the Subspace Network in depth with our variety of telemetry tools and block explorers. Whether you're monitoring network activity or exploring blockchain data, these resources provide comprehensive insights into the network's performance and transactions.
+Explore the Autonomys Network in depth with our variety of telemetry tools and block explorers. Whether you're monitoring network activity or exploring blockchain data, these resources provide comprehensive insights into the network's performance and transactions.
 
-- **[Telemetry Server](https://telemetry.subspace.network/)**: Get real-time insights into network activity and performance metrics. Ideal for monitoring the overall health and status of the Subspace Network.
+- **[Telemetry Server](https://telemetry.subspace.network/)**: Get real-time insights into network activity and performance metrics. Ideal for monitoring the overall health and status of the Autonomys Network.
 
-- **[Official Block Explorer](https://explorer.subspace.network/)**: Our primary tool for viewing blocks, transactions, and network activity on the Subspace Network. This explorer offers an intuitive interface and detailed information.
+- **[Official Block Explorer](https://explorer.subspace.network/)**: Our primary tool for viewing blocks, transactions, and network activity on the Autonomys Network. This explorer offers an intuitive interface and detailed information.
 
 - **[Subscan Block Explorer](https://subspace.subscan.io/)**: An alternative block explorer providing detailed views of blocks, transactions, and network events. Subscan is known for its user-friendly interface and additional data analytics features.
 
-- **[Polkadot.js Block Explorer](https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Frpc-0.gemini-3h.subspace.network%2Fws#/explorer)**: For users familiar with the Polkadot ecosystem, this explorer offers a seamless experience for exploring the Subspace Network using the Polkadot.js interface.
+- **[Polkadot.js Block Explorer](https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Frpc-0.gemini-3h.subspace.network%2Fws#/explorer)**: For users familiar with the Polkadot ecosystem, this explorer offers a seamless experience for exploring the Autonomys Network using the Polkadot.js interface.
 
 
 
@@ -56,7 +56,7 @@ Upon startup, each farm will [benchmark](#benchmarking-your-farmer) the performa
 For example, you can include record-chunks-mode= after defining the path and size, assigning the desired value, e.g., `path=/mnt/subspace1,size=100G,record-chunks-mode=ConcurrentChunks`. If you do not provide this parameter, the system will benchmark each disk on startup to identify the most efficient method.
 
 ### Benchmarking Your Farmer
-Benchmarking helps you test the plotting speed of your farmer against different versions of the Subspace Network.
+Benchmarking helps you test the plotting speed of your farmer against different versions of the Autonomys Network.
 
 ```
 ./subspace-farmer benchmark audit /path/to/your/plot
@@ -64,7 +64,7 @@ Benchmarking helps you test the plotting speed of your farmer against different 
 
 Replace /path/to/your/plot with the actual path to your plot. This will provide you with metrics and insights regarding plotting performance.
 
-At the moment, Subspace Node supports `rayon` implementation mechanism, that opens files as many times as there are farming threads and, for each thread, uses a dedicated file handle.
+At the moment, Autonomys Node supports `rayon` implementation mechanism, that opens files as many times as there are farming threads and, for each thread, uses a dedicated file handle.
 
 To interpret the results: typically, you assess throughput to determine the maximum auditable size across any number of disks. Both CPU and disk performance influence this metric.
 
@@ -104,7 +104,7 @@ Similarly, you can customize the replotting CPU cores using `--replotting-cpu-co
 Note that setting `--plotting-cpu-cores` requires `--replotting-cpu-cores` to be configured with the same number of CPU core groups. If the `--replotting-cpu-cores` setting is omitted, the node will default to using the same thread pool as for plotting.
 
 
-### Switching to a new snapshot from older/different versions of Subspace
+### Switching to a new snapshot from older/different versions of Autonomys
 
 :::info
 Unless specifically mentioned by the Development team you should **NOT** have to wipe your configuration on new releases.
@@ -132,7 +132,7 @@ In case of Docker setup run `docker compose down -v` (and manually delete custom
 
 Now follow the installation guide.
 
-If you are having issues with running a node or farmer for Subspace, feel free to join our Discord or even better you can take a look at our forums and review existing questions or post a new one if needed!
+If you are having issues with running a node or farmer for Autonomys, feel free to join our Discord or even better you can take a look at our forums and review existing questions or post a new one if needed!
 
 - [Forum](https://forum.subspace.network)
 - [Discord](https://discord.gg/subspace-network)
