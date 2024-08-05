@@ -1,7 +1,7 @@
 ---
 title: SubWallet (Recommended)
 sidebar_position: 1
-description: How to configure the SubWallet Substrate wallet for the Autonomys Network
+description: How to configure the SubWallet Substrate wallet for the Subspace Network
 keywords:
     - Farmer
     - Farming
@@ -46,7 +46,7 @@ If you would like to Import an **Existing** Wallet, then select `Import an accou
 
     ![step-6](/img/doc-imgs/subwallet/Subwallet-4.png)
 
-## Connect wallet to Autonomys Gemini 3h and find wallet public address
+## Connect wallet to Subspace Gemini 3h and find wallet public address
 
 1. Open SubWallet, click on *Manage tokens*.
 
@@ -66,10 +66,10 @@ To get your wallet public address, click on the tSSC token.
     ![wallet-4](/img/doc-imgs/subwallet/Subwallet-8.png)
 
 
-## Connect to Autonomys via RPC
+## Connect to Subspace via RPC
 
-Sometimes you won't see the network you would like to connect to in a list of available networks. In this case you can connect to Autonomys Network manually via RPC.
-This also can be helpful for in-development networks such as the Autonomys Network as we have regularly changing RPC endpoints and versions of testnets, and soon various domains. Below you will find a simple guide on how to add these new networks. Additionally we will try and keep an updated list of active RPC endpoints below for development.
+Sometimes you won't see the network you would like to connect to in a list of available networks. In this case you can connect to Subspace Network manually via RPC.
+This also can be helpful for in-development networks such as the Subspace Network as we have regularly changing RPC endpoints and versions of testnets, and soon various domains. Below you will find a simple guide on how to add these new networks. Additionally we will try and keep an updated list of active RPC endpoints below for development.
 
 :::info RPC Endpoints
 **Gemini 3d Endpoint:** `wss://rpc.gemini-3d.subspace.network/ws`<br />
@@ -94,8 +94,8 @@ This also can be helpful for in-development networks such as the Autonomys Netwo
 - Symbol
 - Block explorer
 - Crowdloan URL
-The only option that is required is the Provider URL. You can add an explorer if you would like but it is not required. The current Autonomys Explorer is available [here](https://explorer.subspace.network).
-You can refer to the *RPC Endpoints* above for available provider URLs for the Autonomys Network.
+The only option that is required is the Provider URL. You can add an explorer if you would like but it is not required. The current Subspace Explorer is available [here](https://explorer.subspace.network).
+You can refer to the *RPC Endpoints* above for available provider URLs for the Subspace Network.
     
 5. Fill in the provider URL, once you click out of this box it will check the URL and add the rest of the information, then click Save. 
 - *In this example we will be using `wss://rpc-1.gemini-3g.subspace.network/ws`*
