@@ -284,11 +284,11 @@ const config = {
                 href: 'https://academy.autonomys.xyz',
               },
               {
-                label: 'Autonomys Hitchikers Guide',
+                label: 'The Hitchhiker’s Guide to Subspace',
                 href: 'https://blog.subspace.network/subspaceresearch/home',
               },
               {
-                label: 'Autonomys Original Whitepaper',
+                label: 'Subspace Protocol Whitepaper',
                 href: 'https://subspace.network/news/subspace-network-whitepaper',
               },
               {
