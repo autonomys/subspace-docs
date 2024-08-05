@@ -1,6 +1,6 @@
 ---
 title: Community Built Tools
-sidebar_position: 2
+sidebar_position: 1
 description: Community built and maintained tools
 keywords:
     - Autonomys Network
