@@ -193,10 +193,10 @@ const config = {
       src: "https://widget.kapa.ai/kapa-widget.bundle.js",
       "data-website-id": "591e207f-fb7d-4966-9bb0-9eaee7844460",
       "data-project-name": "Subspace Network",
-      "data-project-color": "#1B1B1D",
-      "data-project-logo": "https://i.postimg.cc/NGJ4jgKx/download.png",
-      "data-button-text-color": "#89CFF0",
-      "data-modal-disclaimer": "This is a custom LLM for Autonomys with access to all documentation. Since this is AI technology please use your best judgment.",
+      "data-project-color": "#f2f2f5",
+      "data-project-logo": "https://i.postimg.cc/BQjSkRPy/Autonomys-small-light.png",
+      "data-button-text-color": "#576eb2",
+      "data-modal-disclaimer": "This is a custom LLM for Autonomys Network with access to all documentation (docs.autonpmys.xyz/). Since this is AI technology please use your best judgment.",
       async: true
     }
   ],

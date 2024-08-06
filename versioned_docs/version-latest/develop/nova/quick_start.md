@@ -39,7 +39,7 @@ Please avoid attempting to accelerate a transaction by including a tip alongside
 
 ---
 
-### Have any questions? Feel free to post them on [our forum](https://forum.subspace.network/) or in our [Developer-chat on Discord](https://discord.gg/EAw6B48r).
+### Have any questions? Feel free to post them on [our forum](https://forum.autonomys.xyz/) or in our [Developer-chat on Discord](https://discord.gg/EAw6B48r).
 ---
 
 In order to get access to the role-gated developer chat:

@@ -68,7 +68,7 @@ At the moment, Autonomys Node supports `rayon` implementation mechanism, that op
 
 To interpret the results: typically, you assess throughput to determine the maximum auditable size across any number of disks. Both CPU and disk performance influence this metric.
 
-To read more about audit benchmarking, [read this forum post](https://forum.subspace.network/t/audit-benchmark-result-explanation-please/2149).
+To read more about audit benchmarking, [read this forum post](https://forum.autonomys.xyz/t/audit-benchmark-result-explanation-please/2149).
 
 There is a second command available, which helps you determine how much time your farmer has after auditing to provide proof.
 
@@ -83,7 +83,7 @@ If an environment does not have enough time for the proving step, a message such
 
 `Proving for solution skipped due to farming time limit slot=6723846 sector_index=46`
 
-To read more about prove benchmarking, [read this forum post](https://forum.subspace.network/t/audit-benchmark-result-explanation-please/2150).
+To read more about prove benchmarking, [read this forum post](https://forum.autonomys.xyz/t/audit-benchmark-result-explanation-please/2150).
 
 ### Scrubbing Your Farmer
 In certain situations, especially when the farmer terminates unexpectedly or encounters an error, it might fail to restart correctly. The scrub command assists in resolving such issues by cleaning or resetting the specified plot.
@@ -134,7 +134,7 @@ Now follow the installation guide.
 
 If you are having issues with running a node or farmer for Autonomys, feel free to join our Discord or even better you can take a look at our forums and review existing questions or post a new one if needed!
 
-- [Forum](https://forum.subspace.network)
+- [Forum](https://forum.autonomys.xyz)
 - [Discord](https://autonomys.xyz/discord)
 
 ### Help
@@ -236,7 +236,7 @@ When a thread pool is created, it is assigned to a set of CPU cores and will onl
 On Linux and Windows, the farmer will detect NUMA systems and create a number of thread pools that correspond to the number of NUMA nodes. This means the default behavior will change for large CPUs and consume more memory as a result, but that can be changed to the previous behavior with CLI options if desired.
 To use NUMA, you need to enable it via the BIOS of your motherboard for the farmer to know it exists. This option is present in motherboards for **Threadripper/Epyc processors** but might exist in others too. If you don’t enable it, both OS and farmer will think you have a single UMA processor and will not be able to apply optimizations.
 
-To read more about NUMA support and the benefits it provides for large CPUs read [this forum post](https://forum.subspace.network/t/numa-support-is-coming/2299?u=nazar-pc).
+To read more about NUMA support and the benefits it provides for large CPUs read [this forum post](https://forum.autonomys.xyz/t/numa-support-is-coming/2299?u=nazar-pc).
 
 
 #### Changing number of open files limit (Linux)
