@@ -28,7 +28,7 @@ function getLocalizedConfigValue(/** @type {string} */ key) {
 const config = {
   title: getLocalizedConfigValue('title'),
   tagline: getLocalizedConfigValue('tagline'),
-  url: 'https://docs.subspace.network',
+  url: 'https://docs.autonomys.xyz',
   baseUrl: '/',
   onBrokenLinks: 'warn',
   onBrokenMarkdownLinks: 'warn',
