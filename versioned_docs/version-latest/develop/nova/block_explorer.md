@@ -1,17 +1,17 @@
 ---
-title: Subspace block explorer
+title: Autonomys block explorer
 sidebar_position: 10
-description: Subspace hosted block explorer
+description: Autonomys hosted block explorer
 keywords:
   - block explorer
-  - subspace network
+  - autonomys network
 ---
 
-### Subspace Block Explorer
+### Autonomys Block Explorer
 
 **[Block explorer link](https://explorer.subspace.network/gemini-3h/nova)**
 
-This early version provides a clear and user-friendly visualization of Subspace-specific statistics that cater to the needs of our farmers and developers.
+This early version provides a clear and user-friendly visualization of Autonomys-specific statistics that cater to the needs of our farmers and developers.
 
 On the top of the page, you can easily toggle between **all available networks** and **EVM**. 
 

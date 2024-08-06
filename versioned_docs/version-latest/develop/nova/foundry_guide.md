@@ -3,7 +3,7 @@ title: Foundry - testing and deployment
 sidebar_position: 7
 description: Testing and Deploying Smart Contracts using Foundry
 keywords:
-  - subspace network
+  - autonomys network
   - book getfoundry
   - foundry
 ---
@@ -170,4 +170,4 @@ keywords:
     Do not attempt to speed up a transaction (do not include a tip on top of the gas fees). To read more about this, please refer to [this section](quick_start.md#important-note-about-submitting-the-transaction).
     :::
 
-8. **Congratulations**, you've successfully deployed your smart contract on Subspace EVM! 
+8. **Congratulations**, you've successfully deployed your smart contract on Autonomys EVM! 

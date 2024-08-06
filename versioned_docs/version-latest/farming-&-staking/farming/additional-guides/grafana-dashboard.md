@@ -1,7 +1,7 @@
 ---
 title: Grafana Dashboard
 sidebar_position: 3
-description: How to configure the Grafana dashboard for a Subspace Network node
+description: How to configure the Grafana dashboard for an Autonomys Network node
 keywords:
     - node
     - farmer
@@ -28,7 +28,7 @@ for a node:
 `--prometheus-listen-on 127.0.0.1:9080`
 
 for a farmer:
-`--metrics-endpoints 127.0.0.1:9081`
+`--prometheus-listen-on 127.0.0.1:9081`
 
 To apply the changes, it's necessary to restart your node and farmer. You should then have the capability to reach the metrics at `http://localhost:9080` and `http://localhost:9081`.
 

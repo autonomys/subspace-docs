@@ -2,7 +2,7 @@
 id: contribute  
 title: Contribute!
 sidebar_position: 2
-description: How to contribute to the Subspace Docs
+description: How to contribute to the Autonomys Docs
 keywords:
     - Docs
     - Contribute
@@ -15,7 +15,7 @@ keywords:
 
 ### You Rock!
 
-First off, thank you for considering contributing to the Subspace Network. It's through the amazing collaboration of people like yourself that truly makes the open source community amazing. ❤️
+First off, thank you for considering contributing to the Autonomys Network. It's through the amazing collaboration of people like yourself that truly makes the open source community amazing. ❤️
 
 ### Help us, Help you, Help us!
 
@@ -26,11 +26,11 @@ Following these guidelines shows that you respect the time of the developers who
 
 We are a fully open source project, meaning we are open to all kinds of contributions from our community. Here are a few examples of contributions that we are open to:
 
-- **Added Content:** Writing a nice guide? Submit it on the [forum guides](https://forum.subspace.network/c/guides-and-faqs/13). 
-- **Bug Reports & Fixes:** Find a bug or error? Let us know where it's hiding. Report it at the [support forum](https://forum.subspace.network/c/support/5).
+- **Added Content:** Writing a nice guide? Submit it on the [forum guides](https://forum.autonomys.xyz/c/guides-and-faqs/13). 
+- **Bug Reports & Fixes:** Find a bug or error? Let us know where it's hiding. Report it at the [support forum](https://forum.autonomys.xyz/c/support/5).
 - **Feature Requests & Implementations:** Looking for a new feature? Share your ideas so we can improve.
 
-*If you have something that is not listed, try to be as descriptive as possible and feel free to submit the [pull request](https://github.com/subspace/subspace-docs/pulls).*
+*If you have something that is not listed, try to be as descriptive as possible and feel free to submit the [pull request](https://github.com/autonomys/subspace-docs/pulls).*
 
 # Ground Rules
 
@@ -43,7 +43,7 @@ Please refer to our [Code of Conduct](CODE_OF_CONDUCT.md).
 Please follow this pathway for *minor* contributions such as spelling errors, typos, rewording, etc. 
 > If you are adding entirely new pages, features, etc, then please refer to the `Advanced` portion of this section.
 
-1. Go to [Subspace Documentation](https://docs.subspace.network), and find the page that you would like to change.
+1. Go to [Autonomys Documentation](https://docs.autonomys.xyz), and find the page that you would like to change.
 2. Scroll to the bottom and click `Edit this page`.
 3. This will open up GitHub, and direct you to the raw page on GitHub.
 4. In the top right click the `pencil` emoji to edit the page.
@@ -112,4 +112,4 @@ This documentation is for the community, so any feature requests are welcome.
 
 # Community
 
-You can chat with the core team on Discord https://discord.gg/subspace-network.
+You can chat with the core team on Discord https://autonomys.xyz/discord.

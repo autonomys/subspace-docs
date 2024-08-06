@@ -1,4 +1,4 @@
-<img src="./static/img/subspace-network.svg" align="center" />
+<img src="./static/img/autonomys-network.png" align="center" />
 <div style="text-align: center;">
     <a title="Crowdin" target="_blank" href="https://crowdin.com/project/subspace-docs"><img src="https://badges.crowdin.net/subspace-docs/localized.svg"></a>
 </div>
@@ -53,10 +53,10 @@ If you are using GitHub pages for hosting, this command is a convenient way to b
 
 ### Contributing
 
-If you would like to contribute check out the following materials, and feel free to ask questions in our [Discord](https://discord.gg/subspace-network)
+If you would like to contribute check out the following materials, and feel free to ask questions in our [Discord](https://autonomys.xyz/discord)
 
 - [Code of Conduct](CODE_OF_CONDUCT.md)
 - [Contributing Guide](CONTRIBUTING.md)
 - [Development Guide](DEVELOPMENT.md)
 
-Thank you to all our [Contributors](https://github.com/subspace/subspace-docs/graphs/contributors)!
+Thank you to all our [Contributors](https://github.com/autonomys/subspace-docs/graphs/contributors)!

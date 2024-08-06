@@ -1,7 +1,7 @@
 ---
 title: Prerequisites
 sidebar_position: 1
-description: Prerequisites for a Subspace Farmer
+description: Prerequisites for Autonomys Farmer
 keywords:
     - Farmer
     - Farming
@@ -36,7 +36,7 @@ This may impact your network usage so please check your network connection if yo
 
 :::note
 
-The Subspace Network is based on Proof of Archival Storage, as such your storage contribution will directly correlate to your block and vote rewards. In other words, the more space you contribute, the faster and more frequently you will earn rewards. While you can farm with as little as 100 GB, it is strongly recommended that you allocate as much space as possible to maximize reward potential. For insights on how this choice impacts our network's consensus mechanism and your potential rewards, see [this guide](https://academy.autonomys.net/subspace-protocol/consensus).
+The Autonomys Network is based on Proof of Archival Storage, as such your storage contribution will directly correlate to your block and vote rewards. In other words, the more space you contribute, the faster and more frequently you will earn rewards. While you can farm with as little as 100 GB, it is strongly recommended that you allocate as much space as possible to maximize reward potential. For insights on how this choice impacts our network's consensus mechanism and your potential rewards, see [this guide](https://academy.autonomys.xyz/subspace-protocol/consensus).
 
 :::
 
@@ -66,18 +66,27 @@ For comprehensive details on network configurations, port management, firewall s
 
 **The node will require 100 GiB of good quality SSD**. Doesn't have to be anything amazing, but something mid-range from a reputable manufacturer with decent endurance is recommended.
 
-**The farmer side can work with pretty much any SSD whatsoever that is not fake and not outright broken**, dedicating high quality high endurance SSD is pointless unless you already have it for reasons unrelated to Subspace. Software writes to disk in near-perfect for SSD way, effectively doing write leveling if SSD is solely dedicated to farming.
+**The farmer side can work with pretty much any SSD whatsoever that is not fake and not outright broken**, dedicating high quality high endurance SSD is pointless unless you already have it for reasons unrelated to Autonomys. Software writes to disk in near-perfect for SSD way, effectively doing write leveling if SSD is solely dedicated to farming.
 
 **RAID of any kind is pointless and can only harm performance and/or rewards.** RAID0 will most likely make things slower rather than faster (application benefits from knowing underlying hardware topology). RAID1 or any other redundancy level is 100% pointless too since farms are stateless and can be removed if a disk breaks without losing data on other disks, it'll just make thing slower and reduce the effective capacity that can be used for farming, *reducing farming rewards for literally no benefit in exchange*.
 
-### File System
+### Linux File System Recommendations
 
-You can use any file system with default settings, we advise against their use for Subspace but in the case of CoW file systems like **ZFS** or **BTRFS** you need to disable **CoW** for the farmer directory, or adjust the **recordsize**.
+- **ext4**:  The recommended formatting command for drives dedicated solely to subspace is `sudo mkfs.ext4 -m 0 -T largefile4 /path/to/dev`, as it maximizes usable space and the plot resizing functionality operates flawlessly. Previously recommended striping and chunk size parameters have not demonstrated any appreciable benefit or harm.
 
-In order to disable **CoW** on **BTRFS**, run the command `chattr +C /your_farmer_directory/`.
+- **XFS**:  No longer recommended as attempting to resize the plot (larger or smaller) with the drive nearly full (98%+) will render the plot unfarmable unless sufficient extra space can be freed up by means other than trying to shrink the plot (try deleting piece_cache.bin if this happens to you).  Full XFS disk utilization can only be achieved during the plot's initial creation, and will still yield less usable space than the ext4 recommendation above.
 
-In case of **ZFS**, you can try adjusting the **recordsize** by running `zfs set recordsize=128K tank/dataset`, or creating a separate **dataset** for the farmer with adjusted **recordsize** parameters.
+- **CoW Filesystems**: Avoid using Copy-on-Write (CoW) file systems (like ReFS, BTRFS, ZFS, bcachefs, HAMMER) with Subspace. If using BTRFS, disable CoW using `sudo chattr +C path/to/data/dir` before starting Subspace. This applies only to newly created files. Alternatively, use a non-CoW filesystem like ext4 as recommended above.
 
+- **RAID**:  Avoid redundancy setups (RAID1/5/6, RAIDZ) for filesystems with plots. The subspace farmer uses checksums for data integrity and can often recover corrupted blocks. Use `scrub` for maintenance.  RAID0 accomplishes little more than to put more of your plots at risk in case of a drive failure.
+
+- **SWAP**: A swap file is necessary only if your system has a low amount of RAM.
+
+:::caution System Adjustments
+- **File Descriptor Limit**: Linux has a hard limit of 100k file descriptors. Exceeding this may cause errors. Substrate has a default limit of 10k. Check and adjust the limit at `/proc/sys/fs/file-max`. Refer to this [tutorial](https://www.tutorialspoint.com/increase-number-of-maximum-open-files-in-linux) for changing the limit.
+
+- **Dependencies**: If you encounter an error related to `libgomp.so.1`, install the `libgomp1` library with `sudo apt-get install libgomp1`.
+:::
 
 ### Dependencies
 

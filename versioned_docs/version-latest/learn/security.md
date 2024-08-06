@@ -17,9 +17,9 @@ import TabItem from '@theme/TabItem';
 import Link from '@docusaurus/Link';
 import styles from '@site/src/pages/index.module.css';
 
-Venturing into the digital world and engaging in a crypto project can be thrilling, but following top security practices is essential. Here is a general guide to security and safety, including basic measures for securing servers and home PCs. Your adherence to these practices contributes to the stability of the Subspace network and, of course, the safety of the community's cryptoassets. 
+Venturing into the digital world and engaging in a crypto project can be thrilling, but following top security practices is essential. Here is a general guide to security and safety, including basic measures for securing servers and home PCs. Your adherence to these practices contributes to the stability of the Autonomys network and, of course, the safety of the community's cryptoassets. 
 
-Enjoy Subspace journey with peace of mind!
+Enjoy your Autonomys journey with peace of mind!
 
 
 ## Wallet Security
@@ -58,7 +58,7 @@ The most popular hardware wallets are [Ledger](https://www.ledger.com/) and [Tre
 ## Community Security
 
 :::note Keep in mind
-Subspace team members will never initiate direct messages with you.
+Autonomys team members will never initiate direct messages with you.
 :::
 
 Should you receive an unsolicited message, it's best to ignore it, block the sender, and promptly report the incident to our ["scam report" channel](https://discord.com/channels/864285291518361610/982023010405990400).
@@ -163,7 +163,7 @@ Managing connections can be much simpler and more enjoyable by creating aliases!
 Create a file named "config" in the `~/.ssh` directory (where the keys are), simply add your server or other users for the same server to it, like in example below. Feel free to add as many as you want.
 
 ```console
-Host Farm                    # Any word can be used here as an alias (for ex. "subspace" or "Farm")
+Host Farm                    # Any word can be used here as an alias (for ex. "autonomys" or "Farm")
 HostName 123.123.123.123     # Use you server's IP
 Port 12345                                 # your custom port
 User username			            # User for login (for a rescue system this must be root, change it later)
@@ -246,7 +246,7 @@ As a security measure, it is worth mentioning the practice of allocating separat
 - If the /home partition is separate, migrating to a new server or upgrading the operating system may require additional steps to ensure the proper migration of user data and configurations
 - Having separate partitions can increase the risk of data loss if one partition fails or becomes corrupted
 
-The partitioning recommendations for farming in Subspace will be covered in the "Partitioning and mounting file system" section of the left tab menu.
+The partitioning recommendations for farming in Autonomys will be covered in the "Partitioning and mounting file system" section of the left tab menu.
 
 ## Upgrading ...
 

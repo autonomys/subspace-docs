@@ -1,10 +1,10 @@
 ---
 title: Local development
 sidebar_position: 9
-description: Guide on local development Subspace Node and Farmer
+description: Guide on local development Autonomys Node and Farmer
 keywords:
   - local development
-  - subspace network
+  - autonomys network
 ---
 
 
@@ -15,7 +15,7 @@ keywords:
 
 To establish a full local network, you need to run a local node, a Core-EVM domain, and a farmer.
 
-First, visit the **[Subspace releases](https://github.com/subspace/subspace/releases)** page and download the most up-to-date stable versions of the node and farmer.
+First, visit the **[Autonomys releases](https://github.com/autonomys/subspace/releases)** page and download the most up-to-date stable versions of the node and farmer.
 
 :::tip
 For each release, there are two versions:
@@ -23,7 +23,7 @@ For each release, there are two versions:
 1. skylake: for newer processors from around 2015 and onwards
 2. x86-64-v2: for older processors from around 2009 and some older VMs
 
-Older processors/VMs are no longer supported by official releases, but they can still be [compiled manually](https://github.com/subspace/subspace/blob/main/docs/development.md) if desired.
+Older processors/VMs are no longer supported by official releases, but they can still be [compiled manually](https://github.com/autonomys/subspace/blob/main/docs/development.md) if desired.
 :::
 
 After downloading both files that suit your system, start a node using your preferred terminal. If you want to start an EVM domain on your local machine, you need to specify:

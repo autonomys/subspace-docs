@@ -1,20 +1,20 @@
 ---
-title: Subspace faucet
+title: Autonomys faucet
 sidebar_position: 5
-description: Guide on utilizing Subspace faucets for getting test tokens
+description: Guide on utilizing Autonomys faucets for getting test tokens
 keywords:
   - faucet
-  - subspace network
+  - autonomys network
 ---
 
 ### How to get some test tokens
 
-**The Faucet** is available on our [**Discord server**](https://discord.gg/subspace-network).
+**The Faucet** is available on our [**Discord server**](https://autonomys.xyz/discord).
 
 
 In order to get access to the role-gated developer chat and faucet channel:
-1. Join our [Discord](https://discord.gg/subspace-network)
-2. Click on Subspace Network at the top left corner and choose **Linked Roles**.
+1. Join our [Discord](https://autonomys.xyz/discord)
+2. Click on Autonomys Network at the top left corner and choose **Linked Roles**.
 
    ![Discord-1](/img/developers/Discord-1.png)
 

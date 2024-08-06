@@ -28,7 +28,7 @@ function getLocalizedConfigValue(/** @type {string} */ key) {
 const config = {
   title: getLocalizedConfigValue('title'),
   tagline: getLocalizedConfigValue('tagline'),
-  url: 'https://docs.subspace.network',
+  url: 'https://docs.autonomys.xyz',
   baseUrl: '/',
   onBrokenLinks: 'warn',
   onBrokenMarkdownLinks: 'warn',
@@ -86,7 +86,7 @@ const config = {
           },
           {
             to: "/docs/category/space-acres-recommended",
-            from: ["/docs/protocol/pulsar/", "/docs/category/pulsar-recommended", "/docs/category/pulsar", "/docs/category/space-acres"]
+            from: ["/docs/protocol/pulsar/", "/docs/category/pulsar-recommended", "/docs/category/pulsar", "/docs/category/space-acres", "/docs/farming-&-staking/farming/pulsar"]
           },
           {
             to: "/docs/farming-&-staking/farming/advanced-cli/cli-install",
@@ -139,7 +139,7 @@ const config = {
           },
           {
             to: "/docs/pre-release/category/space-acres-recommended",
-            from: ["/docs/pre-release/protocol/pulsar/", "/docs/pre-release/category/pulsar-recommended", "/docs/pre-release/category/pulsar", "/docs/pre-release/category/space-acres"]
+            from: ["/docs/pre-release/protocol/pulsar/", "/docs/pre-release/category/pulsar-recommended", "/docs/pre-release/category/pulsar", "/docs/pre-release/category/space-acres", "/docs/pre-release/farming-&-staking/farming/pulsar"]
           },
         ],
       },
@@ -157,7 +157,7 @@ const config = {
           showLastUpdateTime: true,
           editCurrentVersion: true,
           editLocalizedFiles: false,
-          editUrl: 'https://github.com/subspace/subspace-docs/edit/main/',
+          editUrl: 'https://github.com/autonomys/subspace-docs/edit/main/',
           sidebarPath: require.resolve('./sidebars.js'),
 
           //Versioning Preferences
@@ -193,10 +193,10 @@ const config = {
       src: "https://widget.kapa.ai/kapa-widget.bundle.js",
       "data-website-id": "591e207f-fb7d-4966-9bb0-9eaee7844460",
       "data-project-name": "Subspace Network",
-      "data-project-color": "#1B1B1D",
-      "data-project-logo": "https://i.postimg.cc/NGJ4jgKx/download.png",
-      "data-button-text-color": "#89CFF0",
-      "data-modal-disclaimer": "This is a custom LLM for Subspace.network with access to all documentation (docs.subspace.network/). Since this is AI technology please use your best judgment.",
+      "data-project-color": "#f2f2f5",
+      "data-project-logo": "https://i.postimg.cc/BQjSkRPy/Autonomys-small-light.png",
+      "data-button-text-color": "#576eb2",
+      "data-modal-disclaimer": "This is a custom LLM for Autonomys Network with access to all documentation (docs.autonpmys.xyz/). Since this is AI technology please use your best judgment.",
       async: true
     }
   ],
@@ -210,11 +210,11 @@ const config = {
         defaultMode: 'dark'
       },
       navbar: {
-        title: 'Subspace',
+        title: 'Autonomys',
         logo: {
-          alt: 'Subspace Labs Logo',
-          src: 'img/logo-black.svg',
-          srcDark: 'img/logo-white.svg',
+          alt: 'Autonomys Logo',
+          src: 'img/logo-black.png',
+          srcDark: 'img/logo-white.png',
         },
         items: [
           {
@@ -231,7 +231,7 @@ const config = {
                 href: '/docs/category/operators-and-nominators'
               },
               {
-                label: 'Develop on Subspace',
+                label: 'Develop on Autonomys',
                 href: '/docs/category/develop',
               }
             ],
@@ -261,12 +261,12 @@ const config = {
             position: 'left',
             items: [
               {
-                label: 'Subspace Telemetry',
+                label: 'Telemetry',
                 href: 'https://telemetry.subspace.network',
               },
               {
-                label: 'Subspace Explorer',
-                href: 'https://subspace.subscan.io/',
+                label: 'Autonomys Explorer',
+                href: 'https://explorer.subspace.network/',
               },
               {
                 label: 'PolkadotJS Portal',
@@ -281,14 +281,14 @@ const config = {
             items: [
               {
                 label: 'Autonomys Academy',
-                href: 'https://academy.autonomys.net/',
+                href: 'https://academy.autonomys.xyz',
               },
               {
-                label: 'Subspace Hitchikers Guide',
-                href: 'https://blog.subspace.network/guidetosubspace/home',
+                label: 'The Hitchhiker’s Guide to Subspace',
+                href: 'https://blog.subspace.network/subspaceresearch/home',
               },
               {
-                label: 'Subspace Original Whitepaper',
+                label: 'Subspace Protocol Whitepaper',
                 href: 'https://subspace.network/news/subspace-network-whitepaper',
               },
               {
@@ -311,13 +311,13 @@ const config = {
                 value: '<hr style="margin: 0.3rem 0;">',
               },
               {
-                href: 'https://docs.subspace.network/docs/participate/translate',
+                href: 'https://docs.autonomys.xyz/docs/participate/translate',
                 label: '🌏 Help Translate',
               },
             ],
           },
           {
-            href: 'https://github.com/subspace',
+            href: 'https://github.com/autonomys',
             label: 'GitHub',
             position: 'right',
           },
@@ -327,18 +327,18 @@ const config = {
         style: 'dark',
         links: [
           {
-            title: 'Subspace Network',
+            title: 'Autonomys Network',
             items: [
               {
                 label: 'Official Website',
-                href: 'https://subspace.network'
+                href: 'https://www.autonomys.xyz/'
               },
               {
                 label: 'Space Acres Desktop GUI',
-                href: 'https://github.com/subspace/space-acres'
+                href: 'https://github.com/autonomys/space-acres'
               },
               {
-                label: 'Astral Subspace Explorer',
+                label: 'Astral Autonomys Explorer',
                 href: 'https://explorer.subspace.network/#/gemini-3h/consensus'
               }
             ],
@@ -348,11 +348,11 @@ const config = {
             items: [
               {
                 label: 'GitHub',
-                href: 'https://github.com/subspace',
+                href: 'https://github.com/autonomys',
               },
               {
                 label: 'Discord',
-                href: 'https://discord.gg/subspace-network',
+                href: 'https://autonomys.xyz/discord',
               },
               {
                 label: 'Telegram',
@@ -373,7 +373,7 @@ const config = {
               },
               {
                 label: 'Twitter',
-                href: 'https://twitter.com/NetworkSubspace',
+                href: 'https://x.com/AutonomysNet',
               },
               {
                 label: 'Medium',
@@ -383,17 +383,17 @@ const config = {
           },
         ],
         logo: {
-          alt: 'Subspace Labs Banner Logo',
-          src: 'img/banner-black.svg',
-          srcDark: 'img/banner-white.svg',
+          alt: 'Autonomys Labs Banner Logo',
+          src: 'img/banner-black.png',
+          srcDark: 'img/banner-white.png',
           href: 'https://subspace.network',
         },
-        copyright: `Copyright © ${new Date().getFullYear()} Subspace Labs, Inc.`,
+        copyright: `Copyright © ${new Date().getFullYear()} Autonomys Labs, Inc.`,
       },
       announcementBar: {
         id: 'academy',
         content:
-          '<br /><h4>Learn more about the Autonomys Network by visiting our <a target="_blank" href="https://academy.autonomys.net/">Academy</a></h4>',
+          '<br /><h4>Learn more about the Autonomys Network by visiting our <a target="_blank" href="https://academy.autonomys.xyz/">Academy</a></h4>',
         backgroundColor: '#ac9dc7',
         textColor: '#292929',
         isCloseable: false,

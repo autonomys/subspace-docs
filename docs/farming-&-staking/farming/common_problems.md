@@ -15,7 +15,7 @@ import Link from '@docusaurus/Link';
 import styles from '@site/src/pages/index.module.css';
 
 
-While Subspace strives to release bug-free software, users may encounter certain errors. Some of these can be safely ignored, while others require attention.
+While Autonomys strives to release bug-free software, users may encounter certain errors. Some of these can be safely ignored, while others require attention.
 
 
 # Common problems and ways to resolve them
@@ -50,7 +50,7 @@ Most modern desktop processors starting with Broadwell on the Intel side and Ryz
 
 
 Please make sure to:
-- Use our latest stable release, as shown on our [Github releases](https://github.com/subspace/space-acres/releases)
+- Use our latest stable release, as shown on our [Github releases](https://github.com/autonomys/space-acres/releases)
 - Verify your farmer is present and on the highest block on our [telemetry server](https://telemetry.subspace.network/)
 - Verify your balance using the [Polkadot explorer](https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Frpc-0.gemini-3h.subspace.network%2Fws#/explorer)
 
@@ -120,5 +120,5 @@ The node somehow ended up being on a fork, try wiping and starting from scratch.
 
 ### Still Facing Trouble? Take a look at our forums below
 
-<iframe src="https://forum.subspace.network/search?expanded=false&q=tags%3Afaq%20order%3Alatest" width="100%" height="600px" frameborder="0" scrolling="auto"></iframe>
+<iframe src="https://forum.autonomys.xyz/search?expanded=false&q=tags%3Afaq%20order%3Alatest" width="100%" height="600px" frameborder="0" scrolling="auto"></iframe>
 

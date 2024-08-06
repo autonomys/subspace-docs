@@ -3,7 +3,7 @@ import CodeBlock from '@theme/CodeBlock'
 
 import styles from './DockerFileGenerator.module.css';
 
-// This component is a Docker Compose File Generator for Subspace Docs.
+// This component is a Docker Compose File Generator for Autonomys Docs.
 function DockerFileGeneratorPreRelease() {
     // Initial state for form data
     const [formData, setFormData] = useState({
@@ -47,7 +47,7 @@ function DockerFileGeneratorPreRelease() {
     useEffect(() => {
 	let isMounted = true;
 
-	// Fetch latest releases from the Subspace GitHub repository
+	// Fetch latest releases from the Autonomys GitHub repository
         fetch('https://api.github.com/repos/subspace/subspace/releases')
             .then(res => {
                 if (!res.ok) {
@@ -99,7 +99,7 @@ function DockerFileGeneratorPreRelease() {
             const template = `\
 services:
   node:
-    image: ghcr.io/subspace/node:${formData.snapshot}${formData.arch === "aarch64" ? "-aarch64" : ""}
+    image: ghcr.io/autonomys/node:${formData.snapshot}${formData.arch === "aarch64" ? "-aarch64" : ""}
     volumes:
       - ${formData.nodeData ? formData.nodeData : "node-data"}:/var/subspace:rw
     ports:
@@ -128,7 +128,7 @@ services:
     depends_on:
       node:
         condition: service_healthy
-    image: ghcr.io/subspace/farmer:${formData.snapshot}${formData.arch === "aarch64" ? "-aarch64" : ""}
+    image: ghcr.io/autonomys/farmer:${formData.snapshot}${formData.arch === "aarch64" ? "-aarch64" : ""}
     volumes:
       - ${formData.farmerData ? formData.farmerData : "farmer-data"}:/var/subspace:rw
     ports:
