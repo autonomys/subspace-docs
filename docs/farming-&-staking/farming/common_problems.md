@@ -120,5 +120,5 @@ The node somehow ended up being on a fork, try wiping and starting from scratch.
 
 ### Still Facing Trouble? Take a look at our forums below
 
-<iframe src="https://forum.subspace.network/search?expanded=false&q=tags%3Afaq%20order%3Alatest" width="100%" height="600px" frameborder="0" scrolling="auto"></iframe>
+<iframe src="https://forum.autonomys.xyz/search?expanded=false&q=tags%3Afaq%20order%3Alatest" width="100%" height="600px" frameborder="0" scrolling="auto"></iframe>
 
