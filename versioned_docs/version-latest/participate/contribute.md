@@ -26,8 +26,8 @@ Following these guidelines shows that you respect the time of the developers who
 
 We are a fully open source project, meaning we are open to all kinds of contributions from our community. Here are a few examples of contributions that we are open to:
 
-- **Added Content:** Writing a nice guide? Submit it on the [forum guides](https://forum.subspace.network/c/guides-and-faqs/13). 
-- **Bug Reports & Fixes:** Find a bug or error? Let us know where it's hiding. Report it at the [support forum](https://forum.subspace.network/c/support/5).
+- **Added Content:** Writing a nice guide? Submit it on the [forum guides](https://forum.autonomys.xyz/c/guides-and-faqs/13). 
+- **Bug Reports & Fixes:** Find a bug or error? Let us know where it's hiding. Report it at the [support forum](https://forum.autonomys.xyz/c/support/5).
 - **Feature Requests & Implementations:** Looking for a new feature? Share your ideas so we can improve.
 
 *If you have something that is not listed, try to be as descriptive as possible and feel free to submit the [pull request](https://github.com/autonomys/subspace-docs/pulls).*
