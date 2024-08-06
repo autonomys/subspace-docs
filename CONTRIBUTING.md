@@ -97,4 +97,4 @@ This documentation is for the community, so any feature requests are welcome.
 
 # Community
 
-You can chat with the core team on Discord https://discord.gg/subspace-network.
+You can chat with the core team on Discord https://autonomys.xyz/discord.

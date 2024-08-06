@@ -53,7 +53,7 @@ If you are using GitHub pages for hosting, this command is a convenient way to b
 
 ### Contributing
 
-If you would like to contribute check out the following materials, and feel free to ask questions in our [Discord](https://discord.gg/subspace-network)
+If you would like to contribute check out the following materials, and feel free to ask questions in our [Discord](https://autonomys.xyz/discord)
 
 - [Code of Conduct](CODE_OF_CONDUCT.md)
 - [Contributing Guide](CONTRIBUTING.md)
