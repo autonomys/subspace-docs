@@ -311,7 +311,7 @@ const config = {
                 value: '<hr style="margin: 0.3rem 0;">',
               },
               {
-                href: 'https://docs.subspace.network/docs/participate/translate',
+                href: 'https://docs.autonomys.xyz/docs/participate/translate',
                 label: '🌏 Help Translate',
               },
             ],
