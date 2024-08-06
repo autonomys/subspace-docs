@@ -352,7 +352,7 @@ const config = {
               },
               {
                 label: 'Discord',
-                href: 'https://discord.gg/subspace-network',
+                href: 'https://autonomys.xyz/discord',
               },
               {
                 label: 'Telegram',

@@ -9,11 +9,11 @@ keywords:
 
 ### How to get some test tokens
 
-**The Faucet** is available on our [**Discord server**](https://discord.gg/subspace-network).
+**The Faucet** is available on our [**Discord server**](https://autonomys.xyz/discord).
 
 
 In order to get access to the role-gated developer chat and faucet channel:
-1. Join our [Discord](https://discord.gg/subspace-network)
+1. Join our [Discord](https://autonomys.xyz/discord)
 2. Click on Autonomys Network at the top left corner and choose **Linked Roles**.
 
    ![Discord-1](/img/developers/Discord-1.png)
