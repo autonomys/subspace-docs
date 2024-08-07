@@ -11,7 +11,7 @@ keywords:
 
 # Developer Guide
 ---
-Autonomys is a secure, scalable, decentralized blockchain that resolves the **[blockchain trilemma](https://vitalik.ca/general/2017/12/31/sharding_faq.html#this-sounds-like-theres-some-kind-of-scalability-trilemma-at-play-what-is-this-trilemma-and-can-we-break-through-it)** without making compromises. This guide will cover some of the main aspects of Autonomys, if you’re willing to learn more about the technology behind Autonomys it’s better to refer to the [Whitepaper - _Full-Length_](https://assets.website-files.com/61526a2af87a54e565b0ae92/617759c00edd0e3bd279aa29_Autonomys_%20A%20solution%20to%20the%20farmer%27s%20dilemma.pdf) or [Whitepaper - _Summarized_](https://subspace.network/news/subspace-network-whitepaper)
+Autonomys is a secure, scalable, decentralized blockchain that resolves the **[blockchain trilemma](https://vitalik.ca/general/2017/12/31/sharding_faq.html#this-sounds-like-theres-some-kind-of-scalability-trilemma-at-play-what-is-this-trilemma-and-can-we-break-through-it)** without making compromises. This guide will cover some of the main aspects of Autonomys, if you’re willing to learn more about the technology behind Autonomys it’s better to refer to the [Whitepaper - _Full-Length_](https://assets.website-files.com/61526a2af87a54e565b0ae92/617759c00edd0e3bd279aa29_Subspace_%20A%20solution%20to%20the%20farmer%27s%20dilemma.pdf) or [Whitepaper - _Summarized_](https://subspace.network/news/subspace-network-whitepaper)
 
 ## What makes the Subspace protocol different?
 ---

@@ -19,7 +19,7 @@ The Autonomys Network is an ambitious layer zero protocol which is the first sca
 - [Rewards & Fees on the Autonomys Network](https://academy.autonomys.xyz/subspace-protocol/rewards-and-fees)
 - [Autonomys Forum - Knowledge-Sharing Platform](https://forum.autonomys.xyz)
 - [Whitepaper - *Summarized*](https://subspace.network/news/subspace-network-whitepaper)
-- [Whitepaper - *Full Length*](https://assets.website-files.com/61526a2af87a54e565b0ae92/617759c00edd0e3bd279aa29_Autonomys_%20A%20solution%20to%20the%20farmer%27s%20dilemma.pdf)
+- [Whitepaper - *Full Length*](https://assets.website-files.com/61526a2af87a54e565b0ae92/617759c00edd0e3bd279aa29_Subspace_%20A%20solution%20to%20the%20farmer%27s%20dilemma.pdf)
 
 ## 🤝 Participate on the Autonomys Network
 ---
