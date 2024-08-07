@@ -196,7 +196,7 @@ const config = {
       "data-project-color": "#f2f2f5",
       "data-project-logo": "https://i.postimg.cc/BQjSkRPy/Autonomys-small-light.png",
       "data-button-text-color": "#576eb2",
-      "data-modal-disclaimer": "This is a custom LLM for Autonomys Network with access to all documentation (docs.autonpmys.xyz/). Since this is AI technology please use your best judgment.",
+      "data-modal-disclaimer": "This is a custom LLM for Autonomys Network with access to all documentation (docs.autonomys.xyz/). Since this is AI technology please use your best judgment.",
       async: true
     }
   ],
