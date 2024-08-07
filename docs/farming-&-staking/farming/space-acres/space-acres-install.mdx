@@ -10,6 +10,11 @@ keywords:
 ---
 
 import DownloadButtons from './platforms/_download.mdx'
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+import Link from '@docusaurus/Link';
+import styles from '@site/src/pages/index.module.css';
 
 ## Dependencies
 
@@ -18,11 +23,68 @@ On Windows: download the [Microsoft Visual C++ Redistributable](https://learn.mi
 On Linux: follow [these instructions](https://learn.microsoft.com/en-us/cpp/linux/download-install-and-setup-the-linux-development-workload?view=msvc-170#linux-setup-ubuntu-on-wsl).
 :::
 
-## Step 1: Download the Space Acres Installer
+:::note
+Please note that a wallet with a Substrate address is required to run the software.<br />
+To learn how to create a Substrate wallet, please visit our pages on [SubWallet (recommended)](docs/farming-&-staking/wallets/subwallet.md) or [Polkadot.js](docs/farming-&-staking/wallets/polkadot.md).
+:::
 
-<DownloadButtons />
+<Tabs groupId="Space_Acres_Installation">
 
-## Step 2: Install Space Acres
+<TabItem value="linux" label="Linux">
+<br />
+
+# Step 1: Download the Space Acres Installer
+
+<div className={`${styles.buttons} ${styles.flexContainer}`}>
+    <Link
+        className="button button--secondary"
+        to="https://github.com/autonomys/space-acres/releases/download/0.1.33/space-acres_0.1.33-1_amd64.deb"
+        style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', textAlign: 'center', padding: '10px' }}>
+        <span style={{ fontSize: '20px' }}>Linux Installer</span>
+        <span style={{ fontSize: '14px' }}>(.DEB)</span>
+        </Link>
+        <Link
+        className="button button--secondary"
+        to="https://github.com/autonomys/space-acres/releases/download/0.1.33/space-acres-0.1.33-x86_64.AppImage"
+        style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', textAlign: 'center', padding: '10px' }}>
+        <span style={{ fontSize: '20px' }}>Linux Portable App</span>
+        <span style={{ fontSize: '14px' }}>(AppImage)</span>
+    </Link>
+</div>
+
+# Step 2: Install Space Acres
+
+1. Open the downloaded Space Acres App Image.
+
+    ![](/img/doc-imgs/space-acres/linux-space-acres-setup-1.png) 
+
+2. Mark the AppImage as "Executable as Program".
+
+    ![](/img/doc-imgs/space-acres/linux-space-acres-setup-2.png) 
+
+3. Run the AppImage and happy farming!
+
+</TabItem>
+
+
+<TabItem value="windows" label="Windows">
+
+<br />
+
+# Step 1: Download the Space Acres Installer
+
+<div className={`${styles.buttons} ${styles.flexContainer}`}>
+  <Link
+        className="button button--secondary"
+        to="https://github.com/autonomys/space-acres/releases/download/0.1.33/space-acres-0.1.33-x86_64.msi"
+        style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', textAlign: 'center', padding: '10px' }}>
+        <span style={{ fontSize: '20px' }}>Windows Installer</span>
+        <span style={{ fontSize: '14px' }}>(.MSI)</span>
+  </Link>
+</div>
+
+
+# Step 2: Install Space Acres
 
 1. Open the downloaded Space Acres installer to launch the Setup Wizard. This wizard will guide you through the installation process.
     
@@ -44,9 +106,37 @@ On Linux: follow [these instructions](https://learn.microsoft.com/en-us/cpp/linu
 
     ![space-acres-install-5](/img/doc-imgs/space-acres/space-acres-install-5.png)
 
+</TabItem>
+
+<TabItem value="macos" label="🍎macOS">
+
+<br />
+
+# Step 1: Download the Space Acres Installer
+<div className={`${styles.buttons} ${styles.flexContainer}`}>
+    <Link
+        className="button button--secondary"
+        to="https://github.com/autonomys/space-acres/releases/download/0.1.33/space-acres-0.1.33.dmg"
+        style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', textAlign: 'center', padding: '10px' }}>
+        <span style={{ fontSize: '20px' }}>macOS Installer</span>
+        <span style={{ fontSize: '14px' }}>(.dmg)</span>
+    </Link>
+</div>
+
+# Step 2: Install Space Acres
+
+1. Open the downloaded Space Acres installer. Drag Space Acres into your Applications folder.
+    
+    ![](/img/doc-imgs/space-acres/mac-space-acres-setup-1.png) 
+
+2. Double-click the Space Acres application to open!
+
+</TabItem>
+</Tabs>
+
 ## Step 3: Initalize Space Acres
 
-1. The welcome screen provides an overview of the necessary prerequisites for running Space Acres effectively. Make sure you meet all listed requirements before proceeding. For a comprehensive list of prerequisites and explanations, refer to our [prerequisites guide.](../prerequisites.mdx)  
+1. The welcome screen provides an overview of the necessary prerequisites for running Space Acres effectively. Make sure you meet all listed requirements before proceeding. For a comprehensive list of prerequisites and explanations, refer to our [prerequisites guide](docs/farming-&-staking/farming/prerequisites.mdx).
 
     ![space-acres-setup-1](/img/doc-imgs/space-acres/space-acres-setup-1.png)
 
@@ -66,7 +156,7 @@ On Linux: follow [these instructions](https://learn.microsoft.com/en-us/cpp/linu
     - Autonomys DSN P2P Port
     - Enable Faster Networking
 
-    For more information on networking and its implications, refer to our [networking guide.](../additional-guides/network-info.md)
+    For more information on networking and its implications, refer to our [networking guide](docs/farming-&-staking/farming/additional-guides/network-info.md).
 
     ![space-acres-setup-3](/img/doc-imgs/space-acres/space-acres-setup-3.png)
 
