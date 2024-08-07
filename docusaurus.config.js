@@ -192,7 +192,7 @@ const config = {
     {
       src: "https://widget.kapa.ai/kapa-widget.bundle.js",
       "data-website-id": "591e207f-fb7d-4966-9bb0-9eaee7844460",
-      "data-project-name": "Subspace Network",
+      "data-project-name": "Autonomys Network",
       "data-project-color": "#f2f2f5",
       "data-project-logo": "https://i.postimg.cc/BQjSkRPy/Autonomys-small-light.png",
       "data-button-text-color": "#576eb2",
