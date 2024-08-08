@@ -1,0 +1,33 @@
+import Link from '@docusaurus/Link';
+import styles from '@site/src/pages/index.module.css';
+
+## Step 1: Download the Space Acres Installer
+
+<div className={`${styles.buttons} ${styles.flexContainer}`}>
+    <Link
+        className="button button--secondary"
+        to="https://github.com/autonomys/space-acres/releases/download/0.1.33/space-acres_0.1.33-1_amd64.deb"
+        style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', textAlign: 'center', padding: '10px' }}>
+        <span style={{ fontSize: '20px' }}>Linux Installer</span>
+        <span style={{ fontSize: '14px' }}>(.DEB)</span>
+        </Link>
+    <Link
+        className="button button--secondary"
+        to="https://github.com/autonomys/space-acres/releases/download/0.1.33/space-acres-0.1.33-x86_64.AppImage"
+        style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', textAlign: 'center', padding: '10px' }}>
+        <span style={{ fontSize: '20px' }}>Linux Portable App</span>
+        <span style={{ fontSize: '14px' }}>(AppImage)</span>
+    </Link>
+</div>
+
+## Step 2: Install Space Acres
+
+1. Open the downloaded Space Acres App Image.
+
+    ![](/img/doc-imgs/space-acres/linux-space-acres-setup-1.png) 
+
+2. Mark the AppImage as "Executable as Program".
+
+    ![](/img/doc-imgs/space-acres/linux-space-acres-setup-2.png)
+
+3. Run the AppImage and happy farming!
