@@ -1,16 +1,24 @@
 import Link from '@docusaurus/Link';
 import styles from '@site/src/pages/index.module.css';
 
-## Step 1: Download the Space Acres Installer
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+### Download the Space Acres Installer or the Portable App
+
+Currently, there are two ways to get Space Acres on Linux:
+
+- by installing `.deb` package on Ubuntu (recommended)
+- by running `.AppImage` bundle directly on any modern Linux distribution (including Ubuntu if you want to)
 
 <div className={`${styles.buttons} ${styles.flexContainer}`}>
     <Link
         className="button button--secondary"
         to="https://github.com/autonomys/space-acres/releases/download/0.1.33/space-acres_0.1.33-1_amd64.deb"
         style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', textAlign: 'center', padding: '10px' }}>
-        <span style={{ fontSize: '20px' }}>Linux Installer</span>
-        <span style={{ fontSize: '14px' }}>(.DEB)</span>
-        </Link>
+        <span style={{ fontSize: '20px' }}>Ubuntu Installer</span>
+        <span style={{ fontSize: '14px' }}>(.deb)</span>
+    </Link>
     <Link
         className="button button--secondary"
         to="https://github.com/autonomys/space-acres/releases/download/0.1.33/space-acres-0.1.33-x86_64.AppImage"
@@ -20,7 +28,28 @@ import styles from '@site/src/pages/index.module.css';
     </Link>
 </div>
 
-## Step 2: Install Space Acres
+### Install Space Acres
+
+<Tabs groupId="linux_SA_installation">
+
+<TabItem value="deb" label="Ubuntu Installer(recommended)" default>
+
+1. To install the app, open terminal and run following commands to switch to downloads directory and install an app:
+
+```
+cd Downloads
+sudo apt install ./space-acres*.deb
+```
+
+Replace `Downloads` with correct name of downloads directory if you have non-English Ubuntu installation or if you downloaded file into a custom location. In case you have multiple versions of Space Acres downloaded, you might want to replace `space-acres*.deb` with a full name of the file you've downloaded.
+
+or go to `Downloads` directory and double-click the application to start the installation process. 
+
+2. Launch the application upon successfull installation. 
+
+</TabItem>
+
+<TabItem value="appImage" label="AppImage">
 
 1. Open the downloaded Space Acres App Image.
 
@@ -30,4 +59,9 @@ import styles from '@site/src/pages/index.module.css';
 
     ![](/img/doc-imgs/space-acres/linux-space-acres-setup-2.png)
 
-3. Run the AppImage and happy farming!
+3. Double-click the AppImage to run the application!
+
+</TabItem>
+
+</Tabs>
+

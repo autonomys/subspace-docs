@@ -20,89 +20,126 @@ import WindowsPage from './platforms/_windows.mdx';
 import MacOSPage from './platforms/_macos.mdx';
 import LinuxPage from './platforms/_linux.mdx';
 
-## Dependencies
+## Before You Begin
 
-:::caution C++ Redistributable
-On Windows: download the [Microsoft Visual C++ Redistributable](https://learn.microsoft.com/en-us/cpp/windows/latest-supported-vc-redist?view=msvc-170).<br />
-On Linux: follow [these instructions](https://learn.microsoft.com/en-us/cpp/linux/download-install-and-setup-the-linux-development-workload?view=msvc-170#linux-setup-ubuntu-on-wsl).
-:::
+Make sure you have:
+
+1. A computer with a reliable internet connection.
+2. Enough free disk space (we'll help you determine how much later).
+3. Administrator access to your computer.
+
+What to expect: 
+
+- Sync might take from a few hours to up to a day.
+- The initial syncing and plotting process requires substantial computational resources, so you may notice that your computer runs slower for day-to-day tasks until syncing and plotting are complete.
+
 
 :::note
 Please note that a wallet with a Substrate address is required to run the software.<br />
-To learn how to create a Substrate wallet, please visit our pages on [SubWallet (recommended)](versioned_docs/version-latest/farming-&-staking/wallets/subwallet.md) or [Polkadot.js](versioned_docs/version-latest/farming-&-staking/wallets/polkadot.md).
+To learn how to create a Substrate wallet, please visit our pages on [SubWallet (recommended)](/docs/farming-&-staking/wallets/subwallet.md) or [{polkadot.js} extension](/docs/farming-&-staking/wallets/polkadot.md).
 :::
+
+
+## Step 1: Download and Install Space Acres
 
 <Tabs groupId="Space_Acres_Installation">
 
-<TabItem value="linux" label="Linux" default>
+<TabItem value="linux" label="🐧 Linux" default>
 <LinuxPage/>
 </TabItem>
 
-<TabItem value="windows" label="Windows">
+<TabItem value="windows" label="🖼️ Windows">
 <WindowsPage/>
 </TabItem>
 
-<TabItem value="macos" label="🍎macOS">
+<TabItem value="macos" label="🍎 macOS">
 <MacOSPage/>
 </TabItem>
 
 </Tabs>
 
-### Step 3: Initalize Space Acres
+## Step 2: Set Up Space Acres
 
-1. The welcome screen provides an overview of the necessary prerequisites for running Space Acres effectively. Make sure you meet all listed requirements before proceeding. For a comprehensive list of prerequisites and explanations, refer to our [prerequisites guide](versioned_docs/version-latest/farming-&-staking/farming/prerequisites.mdx). 
+Now comes the exciting part – setting up your farm! Here's what you'll see on the first screen:
 
-    ![space-acres-setup-1](/img/doc-imgs/space-acres/space-acres-setup-1.png)
+1. **Subspace(Autonomys) Network Rewards Address**:
+    - This is where your farming rewards will be sent.
+    - It starts with **st** for **Subwallet** and with **5** for {Polkadot.js} extenstion.
+    - If you don't have one, click **Create wallet** to create a wallet.
 
-2. Configure your node and farmer settings by providing the following:
-    - Node path 
-    - Rewards address
-    - Farm path
-    - Farm size
-    - *(Optional) Add additional farms by selecting `Add farm`*
+2. **Choose the folder for node**:
+    - This is where Space Acres will store important data.
+    - Pick a location with plenty of free space; is might be as simple as **/Downloads**.
 
-    Click Start after the configuration is complete.
+3. **Choose the folder for farming and size of the farm**:
+    - This is where your **plots** (farming data) will be stored.
+    - The size determines your probability of getting a reward on the Network. In most cases, larger plots (or larger farm size) will gain you more rewards.
+    - If you prefer to have a few farms (e.g. you have some space space on different SSD drives), you can click on **Add farm** to pledge some additional storage space.
 
-    ![space-acres-setup-2](/img/doc-imgs/space-acres/space-acres-setup-2.png)
+4. **Advanced configuration (optional)**:
 
-3. (Optional) If you want to configure advanced settings, toggle the `Advanced configuration` section. This will allow you to set the following:
-    - Substrate Node P2P Port
-    - Autonomys DSN P2P Port
-    - Enable Faster Networking
+:::tip
+Don't worry about this unless you're an experienced user.
+:::
 
-    For more information on networking and its implications, refer to our [networking guide](versioned_docs/version-latest/farming-&-staking/farming/additional-guides/network-info.md).
+For a comprehensive list of prerequisites and explanations, refer to our [prerequisites guide](/docs/farming-&-staking/farming/prerequisites.mdx). 
 
-    ![space-acres-setup-3](/img/doc-imgs/space-acres/space-acres-setup-3.png)
+![space-acres-setup-1](/img/doc-imgs/space-acres/space-acres-setup-1.png)
 
-4. The application will then proceed to load, creating the consensus node and connecting to the network.
+:::info
+Your screen may look slightly different depending on your operating system, but the basic information required will be the same.
+:::
 
-    ![space-acres-setup-4](/img/doc-imgs/space-acres/space-acres-setup-4.png)
+## Step 3: Start Farming
 
-5. Finally, you will see the main interface of Space Acres, where your consensus node is running and your farmer is progressing along. Initial syncing & plotting may take some time to complete. Below are examples of the various stages you can expect. 
+1. After entering your information, click "Start".
+2. Space Acres will now set up your node and connect to the Autonomys Network.
+3. You'll see progress bars as it syncs data and creates your farm plots.
 
-    a. Cache Syncing
+![space-acres-setup-2](/img/doc-imgs/space-acres/space-acres-setup-2.png)
 
-    ![space-acres-setup-5](/img/doc-imgs/space-acres/space-acres-setup-5.png) 
+4. Once everything is ready, you'll see the main Space Acres dashboard where you can monitor your farming activity.
 
-    b. Initial Plotting
+![space-acres-setup-3](/img/doc-imgs/space-acres/space-acres-setup-3.png)
 
-    ![space-acres-setup-6](/img/doc-imgs/space-acres/space-acres-setup-6.png)
+5. Initial syncing and plotting can take from a few hours to days, depending on your hardware, network speed and reliability and specified farm size. 
+Below are examples of the various stages you can expect.
 
-    c. Plotting Complete, now farming.
+a. Cache Syncing
 
-    ![space-acres-setup-6](/img/doc-imgs/space-acres/space-acres-setup-7.png)
+![space-acres-setup-5](/img/doc-imgs/space-acres/space-acres-setup-5.png) 
 
-6. With Space Acres configured, your farming operation will commence seamlessly. Keep an eye on the application to track the progress of your farm and the accumulation of rewards. For your convenience, we've provided a table detailing the color codes associated with different sector statuses. This will enhance your insight into the activities and conditions of your plot.
+b. Initial Plotting
 
-    | Status            | Color Preview | Description                          |
-    |-------------------|---------------|--------------------------------------|
-    | Default           | ![#727272](https://via.placeholder.com/15/727272/000000?text=+) #727272 | Default state of a farm sector       |
-    | Plotted           | ![#9fc4ff](https://via.placeholder.com/15/9fc4ff/000000?text=+) #9fc4ff | Sector is plotted                    |
-    | About to Expire   | ![#ffd678](https://via.placeholder.com/15/ffd678/000000?text=+) #ffd678 | Sector is nearing expiration         |
-    | Expired           | ![#ff877c](https://via.placeholder.com/15/ff877c/000000?text=+) #ff877c | Sector has expired                   |
-    | Downloading       | ![#499249](https://via.placeholder.com/15/499249/000000?text=+) #499249 | Sector is in the process of downloading (animated) |
-    | Encoding          | ![#ff5365](https://via.placeholder.com/15/ff5365/000000?text=+) #ff5365 | Sector is encoding data (animated)   |
-    | Writing           | ![#9fc4ff](https://via.placeholder.com/15/9fc4ff/000000?text=+) #9fc4ff | Sector is writing data (animated)    |
+![space-acres-setup-6](/img/doc-imgs/space-acres/space-acres-setup-6.png)
+
+c. Plotting Complete, now farming.
+
+![space-acres-setup-6](/img/doc-imgs/space-acres/space-acres-setup-7.png)
+
+
+6. Once syncing and plotting are complete, you’ll notice a drop in CPU and RAM usage, and the dashboard will display your earned rewards and the estimated time until the next reward.
+
+![space-acres-setup-7](/img/doc-imgs/space-acres/space-acres-setup-7.png)
+
+You can toggle the dashboard to view brief statistics or display all plotted sectors along with their status. The colour codes of sectors are explained below. By hovering over the icons on the right, you can check the number of missed challenges, your average auditing and proving performance, and other useful stats.
+
+**Happy farming!** 
+
+## Understanding Your Farm
+
+Your farm is made up of **sectors** that change color based on their status.
+For your convenience, we've provided a table detailing the color codes associated with different sector statuses. This will enhance your insight into the activities and conditions of your plot.
+
+| Status            | Color Preview | Description                          |
+|-------------------|---------------|--------------------------------------|
+| Default           | ![#727272](https://via.placeholder.com/15/727272/000000?text=+) #727272 | Default state of a farm sector       |
+| Plotted           | ![#9fc4ff](https://via.placeholder.com/15/9fc4ff/000000?text=+) #9fc4ff | Sector is plotted                    |
+| About to Expire   | ![#ffd678](https://via.placeholder.com/15/ffd678/000000?text=+) #ffd678 | Sector is nearing expiration         |
+| Expired           | ![#ff877c](https://via.placeholder.com/15/ff877c/000000?text=+) #ff877c | Sector has expired                   |
+| Downloading       | ![#499249](https://via.placeholder.com/15/499249/000000?text=+) #499249 | Sector is in the process of downloading (animated) |
+| Encoding          | ![#ff5365](https://via.placeholder.com/15/ff5365/000000?text=+) #ff5365 | Sector is encoding data (animated)   |
+| Writing           | ![#9fc4ff](https://via.placeholder.com/15/9fc4ff/000000?text=+) #9fc4ff | Sector is writing data (animated)    |
 
 
 
