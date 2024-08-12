@@ -9,36 +9,7 @@ In our documentation we implement [docusaurus'](https://docusaurus.io/docs/versi
 The best way to think about our documentation is as follows
 
 - **Docs/**: The "source" documentation, this is where we will create new pages, and update for latest changes on our products. When the site is built this directory will be served as the "pre-release" version
-- **Versioned_Docs/**: The versioned documentation, this is where you will find the latest stable release named "versioned-latest". When the site is built this directory will be served as the "latest" verison
 - **i18n/**: The localized documentation, this is where the localized files will be stored. Note: These files are part of the .gitignore so they will only be downloaded on build time. More on how this process works in the [localization](###Localization) section below.  
-
-### Cutting a new Version
-
-When cutting a new version in docusaurus it pulls the files from the `/docs` folder and supplies them into the `/versioned_docs` folder. As we have a flattened version structure we only have two types of docs, `pre-release` and `latest` as such, we have built a custom command to cut new verions on our documentation. 
-
-to cut a new version you will need to run a command from the project directory. Before cutting the version ensure all changes have been made to the core `docs` folder as described above.
-
-```
-yarn run version-update
-```
-
-This script is designed to manage the "latest" version of a Docusaurus project, performing several key actions:
-
-1. **Deleting Specific Files and Folders**: 
-   - Deletes the `versioned_docs/version-latest` folder.
-   - Deletes the `versions.json` file.
-   - Deletes the `versioned_sidebars/version-latest-sidebars.json` file.
-
-2. **Modifying Configuration File**: 
-   - Modifies the `docusaurus.config.js` file by commenting out the sections related to the "latest" version.
-
-3. **Running Docusaurus Command**: 
-   - Executes an internal Docusaurus command to create a new version of the documentation.
-
-4. **Reverting Configuration Changes**: 
-   - After the new version is created, the script uncomments the previously commented sections in the `docusaurus.config.js` file, reverting it back to it's original state.
-
-Overall, this script facilitates the handling of the latest version in the Docusaurus documentation system, streamlining the process of deletion, creation, and modification as required. It ensures that the documentation maintains a consistent and controlled structure across different versions.
 
 ### Localization
 
