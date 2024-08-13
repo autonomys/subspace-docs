@@ -70,6 +70,6 @@ Space Acres has a lot of techncical and Autonomys-related slang that **will not 
 
     ![sa-translate-12](/img/doc-imgs/space-acres-translate/sa-translate-12.png)
 
-13. Submit your changed by clicking 
+13. Submit your changed by clicking on **Create Pull Request**.
 
     ![sa-translate-13](/img/doc-imgs/space-acres-translate/sa-translate-13.png)
