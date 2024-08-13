@@ -115,7 +115,7 @@ const config = {
         blog: {
           showReadingTime: true,
         },
-        googleAnalytics: {
+        gtag: {
           trackingID: 'G-06691C376E',
           anonymizeIP: false,
         },
