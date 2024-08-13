@@ -47,13 +47,6 @@ const config = {
     locales: ["ar", "en", "fr", "de", "id", "it", "ja", "uk", "zh", "pl", "ru", "es", "tr"],
   },
   plugins: [
-    [
-      '@docusaurus/plugin-google-gtag',
-      {
-        trackingID: 'G-25NWNJB9MR',
-        anonymizeIP: false, 
-      }
-    ],
     // Legacy Link Redirects
     [
       '@docusaurus/plugin-client-redirects',
@@ -121,6 +114,10 @@ const config = {
         },
         blog: {
           showReadingTime: true,
+        },
+        gtag: {
+          trackingID: 'G-06691C376E',
+          anonymizeIP: false,
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
