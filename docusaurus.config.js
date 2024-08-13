@@ -117,7 +117,7 @@ const config = {
         },
         googleAnalytics: {
           trackingID: 'G-06691C376E',
-          anonymizeIP: true,
+          anonymizeIP: false,
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
