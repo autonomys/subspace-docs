@@ -3,11 +3,11 @@ title: Autonomys block explorer
 sidebar_position: 10
 description: Autonomys hosted block explorer
 keywords:
-  - block explorer
+  - block explorer Nova EVM domain
   - autonomys network
 ---
 
-### Autonomys Block Explorer
+### Autonomys Nova Block Explorer
 
 **[Block explorer link](https://explorer.subspace.network/gemini-3h/nova)**
 
