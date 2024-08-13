@@ -96,50 +96,9 @@ const config = {
             to: "/docs/farming-&-staking/staking/operators/register-operator",
             from: "/docs/farming-&-staking/staking/operators"
           },
-          //Pre-Release Links
-          {
-            to: "/docs/pre-release/participate/contribute",
-            from: "/docs/pre-release/community/contribute/",
-          },
-          {
-            to: "/docs/pre-release/category/develop-on-nova-evm",
-            from: "/docs/pre-release/category/developer-documentation/",
-          },
-          {
-            to: "/docs/pre-release/category/operators-and-nominators",
-            from: "/docs/pre-release/operators_and_staking/intro"
-          },
-          {
-            to: "/docs/pre-release/category/advanced-cli",
-            from: ["/docs/pre-release/protocol/cli/", "/docs/pre-release/protocol/substrate-cli/", "/docs/pre-release/category/advanced-cli-recommended"]
-          },
-          {
-            to: "/docs/pre-release/farming-&-staking/timekeeping",
-            from: "/docs/pre-release/protocol/timekeeping"
-          },
-          {
-            to: "/docs/pre-release/category/farming",
-            from: ["/docs/pre-release/category/get-started-with-farming", "/protocol/pre-release/farm/farming"]
-          },
-          {
-            to: "/docs/pre-release/farming-&-staking/farming/advanced-cli/cli-install",
-            from: "/docs/Farming%20&%20Staking/Pre-Release/Farming/Advanced-Cli/cli-install"
-          },
-          {
-            to: "/docs/pre-release/farming-&-staking/staking/operators/register-operator",
-            from: "/docs/farming-&-staking/pre-release/staking/operators"
-          },
           {
             to: "/docs/farming-&-staking/farming/additional-guides/networking",
             from:["/docs/farming-&-staking/additional-guides/networking",  "/docs/farming-&-staking/farming/additional-guides/port-forwarding"]
-          },
-          {
-            to: "/docs/pre-release/farming-&-staking/farming/additional-guides/networking",
-            from:["/docs/pre-release/farming-&-staking/additional-guides/networking",  "/docs/pre-release/farming-&-staking/farming/additional-guides/port-forwarding"]
-          },
-          {
-            to: "/docs/pre-release/category/space-acres-recommended",
-            from: ["/docs/pre-release/protocol/pulsar/", "/docs/pre-release/category/pulsar-recommended", "/docs/pre-release/category/pulsar", "/docs/pre-release/category/space-acres", "/docs/pre-release/farming-&-staking/farming/pulsar"]
           },
         ],
       },
@@ -159,17 +118,6 @@ const config = {
           editLocalizedFiles: false,
           editUrl: 'https://github.com/autonomys/subspace-docs/edit/main/',
           sidebarPath: require.resolve('./sidebars.js'),
-
-          //Versioning Preferences
-          lastVersion: "latest",
-          versions: {
-            current: {
-              label: 'Pre-Release',
-              path: 'pre-release',
-              banner: 'unreleased',
-              badge: true, 
-            },
-          },
         },
         blog: {
           showReadingTime: true,
@@ -296,11 +244,6 @@ const config = {
                 href: 'https://subspace.network/learn',
               }
             ]
-          },
-          {
-            type: 'docsVersionDropdown',
-            position: 'right',
-            dropdownActiveClassDisabled: false,
           },
           {
             type: 'localeDropdown',

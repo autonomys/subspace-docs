@@ -39,13 +39,8 @@ locales.forEach((locale) => {
   // Remove now-empty sub-i18n folder
   fs.rmSync(`i18n/${locale}/i18n`, { recursive: true });
 
-  // Move the version-latest folder to the same level as the current folder
-  moveContents(`${basePath}/versioned_docs/version-latest`, `${basePath}/version-latest`);
-
   // Move other contents
   moveContents(`${basePath}/current/docs`, `${basePath}/current`);
   fs.rmSync(`${basePath}/current/docs`, { recursive: true }); // Remove empty /docs folder
 
-  moveContents(`${basePath}/versioned_docs`, basePath);
-  fs.rmSync(`${basePath}/versioned_docs`, { recursive: true }); // Remove empty /versioned_docs folder
 });
