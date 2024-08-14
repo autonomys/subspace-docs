@@ -73,3 +73,5 @@ Space Acres has a lot of technical and Autonomys-related slang that **will not b
 13. Submit your changed by clicking on **Create pull request**.
 
     ![sa-translate-13](/img/doc-imgs/space-acres-translate/sa-translate-13.png)
+
+    Your translation submission is now complete and next steps are for the team to review before providing feedback and/or merging the pull request. Thanks for your help in bringing Space Acres to an even wider audience!
