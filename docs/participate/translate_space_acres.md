@@ -32,13 +32,17 @@ Space Acres has a lot of technical and Autonomys-related slang that **will not b
     ![sa-translate-2](/img/doc-imgs/space-acres-translate/sa-translate-2.png)
 
     
-5. Provide the name of the file: it should start with the two letters representing a country code from the list of [IBAN Alpha-2 codes](https://www.iban.com/country-codes) list followed by `/messages.ftl`. 
+5. Provide the name of the file: it should start with the 2-character language code, plus the 2-character code of the region (optional) followed by `/messages.ftl`. You can use [IETF languages tag page](https://en.wikipedia.org/wiki/IETF_language_tag) to find out the language code. 
 
     ![sa-translate-3](/img/doc-imgs/space-acres-translate/sa-translate-3.png)
 
-    For example, if you're planning to translate the Space Acres UI into the **Russian language**, you would put `ru/messages/ftl`. You will notice that as soon as you put the forward slash `/` after the 2-character language code, it will turn **blue**, meaning that your translation file will be created in a folder which is correct and expected.
+    For example, if you're planning to translate the Space Acres UI into the **Russian language**, you would put `ru/messages.ftl` (or alternatively if you want to specify the region: `ru-RU/messages.ftl`). You will notice that as soon as you put the forward slash `/` after the 2-character language code, it will turn **blue**, meaning that your translation file will be created in a folder which is correct and expected.
 
     ![sa-translate-4](/img/doc-imgs/space-acres-translate/sa-translate-4.png)
+
+    Some other language-region pair examples:
+    - uk-UA
+    - en-GB
 
 6. Copy the content of the [English Space Acres UI](https://github.com/autonomys/space-acres/blob/main/res/translations/en/messages.ftl) into the **Edit window**.
 
