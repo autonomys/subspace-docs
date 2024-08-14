@@ -1,6 +1,6 @@
 ---
 title: Code of Conduct
-sidebar_position: 4
+sidebar_position: 5
 description: Code of Conduct for the Autonomys Labs Documentation
 keywords:
     - Awesome
