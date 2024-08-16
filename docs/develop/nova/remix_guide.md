@@ -133,6 +133,10 @@ Now your transaction is recorded and you can interact with your smart contract a
 Do not attempt to speed up a transaction (do not include a tip on top of the gas fees). To read more about this, please refer to [this section](quick_start.md#important-note-about-submitting-the-transaction).
 :::
 
- ![Remix-12](/img/developers/Remix-12.png)
+:::caution
+In some cases when deploying the script, you may experience **"No manual gas limit set"** or **"Gas estimation failed"** issues. Please refer to [this section](/docs/develop/nova/quick_start.md#gas-estimation-issue) for the solution. 
+:::
+
+![Remix-12](/img/developers/Remix-12.png)
 
 Congratulations, you've just deployed your smart contract on Autonomys Core EVM!
