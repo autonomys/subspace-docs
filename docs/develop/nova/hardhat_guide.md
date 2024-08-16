@@ -171,4 +171,8 @@ In case of success deployment, you should see `Contract deployed to: transaction
 
 ![Hardhat-6](/img/developers/Hardhat-6.png)
 
+:::caution
+In some cases when deploying the script, you may experience **"No manual gas limit set"** or **"Gas estimation failed"** issues. Please refer to [this section](/docs/develop/nova/quick_start.md#gas-estimation-issue) for the solution. 
+:::
+
 11. **Congratulations**, you've successfully deployed your smart contract on the Autonomys EVM domain!
