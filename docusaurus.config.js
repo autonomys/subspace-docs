@@ -59,7 +59,7 @@ const config = {
           },
           {
             to: '/docs/category/develop-on-nova-evm',
-            from: ['/docs/category/developer-documentation/','/docs/developers/intro/']
+            from: ['/docs/category/developer-documentation/','/docs/developers/intro/', '/docs/pre-release/category/develop-on-nova-evm/']
           },
           {
             to: "/docs/category/operators-and-nominators",
