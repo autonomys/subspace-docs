@@ -44,7 +44,7 @@ const config = {
   // to replace "en" with "zh-Hans".
   i18n: {
     defaultLocale,
-    locales: ["en"],
+    locales: ["ar", "en", "fr", "de", "id", "it", "ja", "uk", "zh", "pl", "ru", "es", "tr"],
   },
   plugins: [
     // Legacy Link Redirects
