@@ -154,8 +154,7 @@ const config = {
       colorMode:{
         defaultMode: 'dark'
       },
-      image: 'img/logo-white.png',
-      metadata: [{name: 'twitter:card', content: 'summary_large_image'}],
+      image: 'img/banner-black-social-preview.png',
       navbar: {
         title: 'Autonomys',
         logo: {
