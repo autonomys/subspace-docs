@@ -3,6 +3,7 @@ import styles from '@site/src/pages/index.module.css';
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
+import CodeBlock from '@theme/CodeBlock';
 
 ### Download the Space Acres Installer or the Portable App
 
@@ -35,10 +36,11 @@ Currently, there are two ways to get Space Acres on Linux:
 <TabItem value="deb" label="Ubuntu Installer (recommended)" default>
 
 1. To install the app, open terminal and run following commands to switch to downloads directory and install an app.
-    ```
-    cd Downloads
-    sudo apt install ./space-acres*.deb
-    ```
+    
+    <CodeBlock language="shell-session">
+    {`cd Downloads
+    sudo apt install ./space-acres*.deb`}
+    </CodeBlock>
 
     ![](/img/doc-imgs/space-acres/linux_images/deb-1.png)
 
