@@ -154,7 +154,6 @@ const config = {
       colorMode:{
         defaultMode: 'dark'
       },
-      image: 'img/autonomys-network-social-preview.png',
       navbar: {
         title: 'Autonomys',
         logo: {
