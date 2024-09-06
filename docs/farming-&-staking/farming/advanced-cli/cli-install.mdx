@@ -19,15 +19,11 @@ import SourcePage from './platforms/_source.mdx';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-:::tip 
-[Releases](https://github.com/autonomys/subspace/releases) section on our GitHub is the best place to get fresh releases of binaries and check out the source code.
-:::
-
-:::caution Multiple Versions
-
-There are multiple versions of our releases available below. 
- **Skylake:** For Intel Skylake onwards and AMD Ryzen CPUs. Typically those PCs manufactured after 2015.
- **Legacy (x86-64-v2):** For Intel Broadwell, Haswell and older CPUs, as well as AMD's equivalents. Designed for the CPU  architecture generally found in systems produced between 2009 and 2015. Also supports VM environments that do not expose the Skylake onwards instructions.
+:::tip Multiple Versions Available
+We offer several versions of our releases to accommodate different CPU architectures:
+- **Skylake:** Optimized for Intel Skylake and newer CPUs, as well as AMD Ryzen processors. Ideal for PCs manufactured from 2015 onward.
+- **Legacy (x86-64-v2):** Designed for Intel Broadwell, Haswell, and older CPUs, along with their AMD counterparts. Suitable for systems built between 2009 and 2015 and for virtual environments that do not support Skylake instructions.
+For the latest binaries and source code, please visit the **Releases** section on our [GitHub](https://github.com/autonomys/subspace/releases).
 :::
 
 
@@ -42,21 +38,17 @@ We will download two files for your respective operating system.
 1. `Subspace-Node` - This is the executable that actually makes the connection with the Autonomys Network
 2. `Subspace-Farmer` - This is the executable that will actually farm for rewards on your allocated storage plots.
 
-:::note
-Starting with the February 19th release, we've **enhanced plotting performance** by increasing internal concurrency. This enhancement leads to improved CPU utilization and increased RAM usage. If you prefer to revert your farmer to its previous behavior, you can use the flag `--record-encoding-concurrency 1`.
-:::
-
 <Tabs groupId="OS">
 
 <TabItem value="windows" label="🖼️ Windows" default>
 <WindowsPage />
 </TabItem>
 
-<TabItem value="macos" label="🍎macOS" default>
+<TabItem value="macos" label="🍎 macOS" default>
 <MacOSPage />
 </TabItem>
 
-<TabItem value="linux" label="🐧Ubuntu">
+<TabItem value="linux" label="🐧 Ubuntu">
 <LinuxPage />
 </TabItem>
 
@@ -74,12 +66,12 @@ Starting with the February 19th release, we've **enhanced plotting performance**
 </Tabs>
 
 :::note Feedback!
-Your insights on our releases elevate our progress. Fill out this [form](https://subspace.typeform.com/to/tRe4Z0uI), your voice will be heard and addressed.
+Your insights on our releases elevate our progress. Fill out this [form](https://autonomys.typeform.com/to/tRe4Z0uI), your voice will be heard and addressed.
 :::
 
 :::note Learn More About Syncing, Plotting & Farming
-If you would like to learn more about how the syncing, plotting and farming processes works on the Autonomys Network, please refer to our Autonomys Academy links below. <br />
-- [Synchronization](https://academy.autonomys.xyz/subspace-protocol/network-architecture/networking-protocols#synchronization) <br />
-- [Plotting](https://academy.autonomys.xyz/subspace-protocol/consensus/proof-of-archival-storage/plotting) <br />
-- [Farming](https://academy.autonomys.xyz/subspace-protocol/consensus/proof-of-archival-storage/farming) <br />
+To learn more about the syncing, plotting, and farming processes on the Autonomys Network, please refer to the links below from our Autonomys Academy:
+- [Synchronization](https://academy.autonomys.xyz/subspace-protocol/network-architecture/networking-protocols#synchronization)
+- [Plotting](https://academy.autonomys.xyz/subspace-protocol/consensus/proof-of-archival-storage/plotting)
+- [Farming](https://academy.autonomys.xyz/subspace-protocol/consensus/proof-of-archival-storage/farming)
 :::
