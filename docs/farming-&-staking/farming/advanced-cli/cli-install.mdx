@@ -9,11 +9,11 @@ keywords:
     - Binaries
     - Docker
 ---
-import DockerPage from './platforms/_docker.mdx';
-import SystemDPage from './platforms/_systemd.mdx';
+import LinuxPage from './platforms/_linux.mdx';
 import WindowsPage from './platforms/_windows.mdx';
 import MacOSPage from './platforms/_macos.mdx';
-import LinuxPage from './platforms/_linux.mdx';
+import SystemDPage from './platforms/_systemd.mdx';
+import DockerPage from './platforms/_docker.mdx';
 import SourcePage from './platforms/_source.mdx';
 
 import Tabs from '@theme/Tabs';
@@ -28,42 +28,42 @@ We offer several versions of our releases to accommodate different CPU architect
 For the latest binaries and source code, please visit the **Releases** section on our [GitHub](https://github.com/autonomys/subspace/releases).
 :::
 
-## Get Started with Advanced CLI Installation
+## Advanced CLI Installation Guide
 
-:::note
-Please note that a wallet with a Substrate address is required to run the software.<br />
-To learn how to create a Substrate wallet, please visit our pages on [SubWallet (recommended)](docs/farming-&-staking/wallets/subwallet.md) or [Polkadot.js](docs/farming-&-staking/wallets/polkadot.md).
+:::note Substrate Address Needed
+To use this software, you'll need a Substrate wallet address. For help with creating a Substrate wallet, check out our guides for [SubWallet](https://docs.autonomys.xyz/docs/farming-&-staking/farming/advanced-cli/docs/farming-&-staking/wallets/subwallet.md) (recommended) or [Polkadot.js](https://docs.autonomys.xyz/docs/farming-&-staking/farming/advanced-cli/docs/farming-&-staking/wallets/polkadot.md).
 :::
 
-We will download two files for your respective operating system.
-1. `Subspace-Node` - This is the executable that actually makes the connection with the Autonomys Network
-2. `Subspace-Farmer` - This is the executable that will actually farm for rewards on your allocated storage plots.
+We’ll provide the files you need for your operating system:
+- **subspace-node**: The node implementation for the Subspace protocol.
+- **subspace-farmer**: Manages plotting, replotting, and farming rewards.
 
 <Tabs groupId="OS">
 
-<TabItem value="windows" label="🖼️ Windows" default>
-<WindowsPage />
-</TabItem>
-
-<TabItem value="macos" label="🍎 macOS" default>
-<MacOSPage />
-</TabItem>
-
-<TabItem value="linux" label="🐧 Ubuntu">
+<TabItem value="linux" label="🐧 Ubuntu" default>
 <LinuxPage />
 </TabItem>
 
-<TabItem value="docker" label="🐋 Docker" default>
-<DockerPage />
+<TabItem value="windows" label="🖼️ Windows">
+<WindowsPage />
 </TabItem>
 
-<TabItem value="systemd_service" label="🤖 Service (Linux)">
+<TabItem value="macos" label="🍎 macOS">
+<MacOSPage />
+</TabItem>
+
+<TabItem value="systemd_service" label="🤖 Linux Service (SystemD)">
 <SystemDPage />
 </TabItem>
 
-<TabItem value="source" label="⚙️ Build from Source" >
+<TabItem value="docker" label="🐳 Docker">
+<DockerPage />
+</TabItem>
+
+<TabItem value="source" label="🛠️ Build from Source">
 <SourcePage />
 </TabItem>
+
 </Tabs>
 
 :::note Learn More About Syncing, Plotting & Farming
