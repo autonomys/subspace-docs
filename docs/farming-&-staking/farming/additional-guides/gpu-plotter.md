@@ -10,7 +10,7 @@ keywords:
 
 The first test builds of the **GPU Plotter** are now available!!!
 
-![GPU Plotter](https://github.com/autonomys/subspace/actions/runs/10835197512)
+[GPU Plotter](https://github.com/autonomys/subspace/actions/runs/10835197512)
 
 While eventually the GPU plotter will support most NVIDIA and AMD video cards and work on Windows, Mac and Linux systems, but for now we are limited to NVIDIA cards on Linux systems.
 
@@ -26,9 +26,9 @@ By default it will use all of your GPU's but you can override this with the `--c
 
 Currently any NVIDIA RTX 2xxx card will work.  
 
-Eventually these AMD video cards will be supported: ![AMD Cards](https://rocm.docs.amd.com/projects/install-on-linux/en/latest/reference/system-requirements.html).  Most likely there will be additional cards supported.  
+Eventually these AMD video cards will be supported: [AMD Cards](https://rocm.docs.amd.com/projects/install-on-linux/en/latest/reference/system-requirements.html).  Most likely there will be additional cards supported.  
 
-There are a few pro cards that are similar to consumer variants like PRO W7800 W6800 V620, at least ![on Windows](https://discord.com/channels/864285291518361610/1062507270539321485/1281966867476381798) following are listed as supported (but not on Linux for some reason):
+There are a few pro cards that are similar to consumer variants like PRO W7800 W6800 V620, at least [on Windows](https://rocm.docs.amd.com/projects/install-on-windows/en/docs-6.2.0/reference/system-requirements.html) following are listed as supported (but not on Linux for some reason):
 7800 XT
 7700 XT
 7600 (but not 7600 XT)
