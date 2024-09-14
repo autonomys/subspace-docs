@@ -1,5 +1,5 @@
 ---
-title: Experimental GPU Plotter
+title: GPU Plotter Trial Release
 sidebar_position: 4
 description: Tips on GPU Plotter
 keywords:
@@ -10,14 +10,30 @@ keywords:
 
 The first test builds of the **GPU Plotter** are now available!!!
 
-[Download GPU Plotter](https://github.com/autonomys/subspace/actions/runs/10850781628)
+[Download GPU Plotter for Linux](https://github.com/autonomys/subspace/actions/runs/10850781628)
+[Download GPU Plotter for Windows](https://github.com/autonomys/subspace/actions/runs/10849228997)
 
 ## Overview
-The GPU Plotter will eventually support most NVIDIA and AMD video cards. For now, only NVIDIA cards are supported.
 
-The download package includes both the node and farmer Advanced CLI executables, but you only need the farmer for plotting. It works for both standalone farming/plotting and farming clusters. Support for Space Acres will be added in the future.
+Autonomys requires a portion of your disk(s) to be reserved for plots on your solid-state drive (SSD). Once created, these plots are farmed using your CPU. This farming process is not CPU-intensive, and most 
+modern consumer CPUs can farm a large amount of disk space. However, the initial creation of these plots (and replotting) is much more CPU-intensive, often making the CPU the biggest bottleneck in creating new plots.
 
-You will need to install either the NVIDIA 550 or 560 drivers if you are using Linux.
+With the release of the GPU plotter, you can now use your GPU to create plots, either in addition to or instead of using the CPU. While many newer CPUs can plot a sector in less than 2 minutes, a high-end video card 
+can do it in just 6 seconds. Using a GPU is not required, but it is more energy-efficient and significantly faster than using a CPU alone.
+
+:::note
+CPU plotting uses a v1 plot format. Any plots created with the application version available on or after July 5th use the v1 format. Earlier versions use the v0 format, which is only supported by CPU plotting.
+:::
+
+## Requirements
+
+The GPU Plotter will eventually support most NVIDIA and AMD video cards. Currently, only NVIDIA cards are supported.
+
+The download package includes both the node and farmer Advanced CLI executables, but you only need the farmer for plotting. You can continue to use an official release version for your node. It works for both standalone 
+farming/plotting and farming clusters. Support for Space Acres will be added in the future.
+
+For Linux users, you will need to install either the NVIDIA 550 or 560 drivers. Any recent driver for Windows should work. If you get a message that contains this warning: **"the provided PTX was compiled with an unsupported toolchain."**, 
+then you need to update your drivers.
 
 :::note
 By default, the plotter uses all available GPUs. You can override this behavior using the `--cuda-gpus` parameter.
