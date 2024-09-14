@@ -10,8 +10,12 @@ keywords:
 
 The first test builds of the **GPU Plotter** are now available!!!
 
-[Download GPU Plotter for Linux](https://github.com/autonomys/subspace/actions/runs/10850781628)
-[Download GPU Plotter for Windows](https://github.com/autonomys/subspace/actions/runs/10849228997)
+- [Download GPU Plotter for Linux](https://github.com/autonomys/subspace/actions/runs/10850781628)
+- [Download GPU Plotter for Windows](https://github.com/autonomys/subspace/actions/runs/10849228997)
+
+:::note
+Be aware that you must be logged into Github in order to download from these links.
+:::
 
 ## Overview
 
@@ -35,7 +39,7 @@ farming/plotting and farming clusters. Support for Space Acres will be added in 
 For Linux users, you will need to install either the NVIDIA 550 or 560 drivers. Any recent driver for Windows should work. If you get a message that contains this warning: **"the provided PTX was compiled with an unsupported toolchain."**, 
 then you need to update your drivers.
 
-:::note
+:::tip
 By default, the plotter uses all available GPUs. You can override this behavior using the `--cuda-gpus` parameter.
 :::
 
@@ -68,6 +72,12 @@ No RX 5xxx series cards are currently listed for support.
 ## CPU and GPU Usage
 
 By default, the plotter utilizes both the CPU and GPU. If you wish to disable CPU usage, you can do so with the following parameter: `--cpu-sector-encoding-concurrency 0`
+
+## Farming Cluster
+
+When using a farming cluster please be aware that that when using GPU's - and especially multiple GPU's - you may exceed the bandwidth of your network connection. A fast GPU will exceed the bandwidth that a 1G 
+connection would provide. That doesn't mean it will fail to work, it just means that your video card will be idle while it waits for the data to transfer. Mny people with fast or multiple GPU's are using 2.5G 
+or 10G connections.
 
 ## Support
 
