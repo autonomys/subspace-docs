@@ -12,7 +12,7 @@ The first test builds of the **GPU Plotter** are now available!!!
 
 :::info Download Links
 You must be signed in to GitHub to access and download from these links.
-- [GPU Plotter for Linux](https://github.com/autonomys/subspace/actions/runs/10865024848)
+- [GPU Plotter for Linux](https://github.com/autonomys/subspace/actions/runs/10865214408)
 - [GPU Plotter for Windows](https://github.com/autonomys/subspace/actions/runs/10849228997)
 
 :::
