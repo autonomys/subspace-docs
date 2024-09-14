@@ -10,11 +10,11 @@ keywords:
 
 The first test builds of the **GPU Plotter** are now available!!!
 
+:::info Download Links
+You must be signed in to GitHub to access and download from these links.
 - [Download GPU Plotter for Linux](https://github.com/autonomys/subspace/actions/runs/10850781628)
 - [Download GPU Plotter for Windows](https://github.com/autonomys/subspace/actions/runs/10849228997)
 
-:::note
-Be aware that you must be logged into Github in order to download from these links.
 :::
 
 ## Overview
@@ -25,21 +25,30 @@ modern consumer CPUs can farm a large amount of disk space. However, the initial
 With the release of the GPU plotter, you can now use your GPU to create plots, either in addition to or instead of using the CPU. While many newer CPUs can plot a sector in less than 2 minutes, a high-end video card 
 can do it in just 6 seconds. Using a GPU is not required, but it is more energy-efficient and significantly faster than using a CPU alone.
 
-:::note
-CPU plotting uses a v1 plot format. Any plots created with the application version available on or after July 5th use the v1 format. Earlier versions use the v0 format, which is only supported by CPU plotting.
+:::note Plot Format Compatibility
+GPU plotting uses the newer **v1 plot format**, applied to any plots created with versions released on or after **July 5th**.
+Older Subspace versions generated plots in the **v0 format**, which works only with CPU plotting.
 :::
 
 ## Requirements
 
-The GPU Plotter will eventually support most NVIDIA and AMD video cards. Currently, only NVIDIA cards are supported.
+:::important Driver Requirement
+The GPU plotter requires NVIDIA drivers version **550** or newer.
+:::
 
-The download package includes both the node and farmer Advanced CLI executables, but you only need the farmer for plotting. You can continue to use an official release version for your node. It works for both standalone 
-farming/plotting and farming clusters. Support for Space Acres will be added in the future.
+The GPU Plotter currently supports **NVIDIA RTX 20 series** and newer consumer cards.
+Support for additional AMD cards will be added in the future.
 
-For Linux users, you will need to install either the NVIDIA 550 or 560 drivers. Any recent driver for Windows should work. If you get a message that contains this warning: **"the provided PTX was compiled with an unsupported toolchain."**, 
-then you need to update your drivers.
+The download package contains both the node and farmer Advanced CLI executables, but you only need the farmer for plotting. You can continue using an official release for your node. This setup supports both standalone farming/plotting and farming cluster. Support for Space Acres will be added in the future.
 
-:::tip
+If you encounter the following error message you need to update to supported drivers:
+```
+Failed to encode sector: Records encoder error:
+cudaGetLastError()@C:\actions-runner\_work\subspace\subspace\shared\subspace-proof-of-space-gpu\src\subspace_api.cu:191 failed:
+"the provided PTX was compiled with an unsupported toolchain."
+```
+
+:::tip GPU Selection Override
 By default, the plotter uses all available GPUs. You can override this behavior using the `--cuda-gpus` parameter.
 :::
 
@@ -65,18 +74,28 @@ The following professional and consumer cards may be supported (especially [on W
 - 6750 XT, 6700 XT, 6700
 - 6650 XT, 6600 XT, 6600
 
-:::note
-No RX 5xxx series cards are currently listed for support.
+:::info Unsupported GPUs
+RX 5xxx series cards are not supported at this time.
 :::
 
 ## CPU and GPU Usage
 
-By default, the plotter utilizes both the CPU and GPU. If you wish to disable CPU usage, you can do so with the following parameter: `--cpu-sector-encoding-concurrency 0`
+By default, the plotter takes advantage of both the **CPU** and **GPU**. However, if you're aiming to maximize GPU performance, you may want to disable CPU plotting, as GPU plotting still requires some CPU resources for managing tasks. To disable CPU usage, use the following parameter:
+
+```bash
+--cpu-sector-encoding-concurrency 0
+```
+
+Alternatively, if you prefer to disable **GPU** plotting and rely solely on **CPU**, you can turn off CUDA support by setting the value to an empty string:
+
+```bash
+--cuda-gpus ""
+```
 
 ## Farming Cluster
 
 When using a farming cluster please be aware that that when using GPU's - and especially multiple GPU's - you may exceed the bandwidth of your network connection. A fast GPU will exceed the bandwidth that a 1G 
-connection would provide. That doesn't mean it will fail to work, it just means that your video card will be idle while it waits for the data to transfer. Mny people with fast or multiple GPU's are using 2.5G 
+connection would provide. That doesn't mean it will fail to work, it just means that your video card will be idle while it waits for the data to transfer. Many people with fast or multiple GPU's are using 2.5G 
 or 10G connections.
 
 ## Support
