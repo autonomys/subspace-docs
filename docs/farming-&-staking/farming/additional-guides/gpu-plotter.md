@@ -27,7 +27,7 @@ can do it in just 6 seconds. Using a GPU is not required, but it is more energy-
 
 :::note Plot Format Compatibility
 GPU plotting uses the newer **v1 plot format**, applied to any plots created with versions released on or after **July 5th**.
-Older Subspace versions generated plots in the **v0 format**, which works only with CPU plotting.
+Older software versions generated plots in the **v0 format**, which works only with CPU plotting.
 :::
 
 ## Requirements
