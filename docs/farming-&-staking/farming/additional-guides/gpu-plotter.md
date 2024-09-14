@@ -67,7 +67,7 @@ No RX 5xxx series cards are currently listed for support.
 
 ## CPU and GPU Usage
 
-The plotter utilizes both the CPU and GPU. If you wish to disable CPU usage, you can do so with the following parameter: `--cpu-sector-encoding-concurrency 0`
+By default, the plotter utilizes both the CPU and GPU. If you wish to disable CPU usage, you can do so with the following parameter: `--cpu-sector-encoding-concurrency 0`
 
 ## Support
 
