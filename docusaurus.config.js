@@ -229,10 +229,6 @@ const config = {
                 href: 'https://academy.autonomys.xyz',
               },
               {
-                label: 'The Hitchhiker’s Guide to Subspace',
-                href: 'https://blog.subspace.network/subspaceresearch/home',
-              },
-              {
                 label: 'Subspace Protocol Whitepaper',
                 href: 'https://subspace.network/news/subspace-network-whitepaper',
               },
