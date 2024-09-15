@@ -326,7 +326,7 @@ const config = {
           alt: 'Autonomys Labs Banner Logo',
           src: 'img/banner-black.png',
           srcDark: 'img/banner-white.png',
-          href: 'https://subspace.network',
+          href: 'https://autonomys.xyz',
         },
         copyright: `Copyright © ${new Date().getFullYear()} Autonomys Labs, Inc.`,
       },
