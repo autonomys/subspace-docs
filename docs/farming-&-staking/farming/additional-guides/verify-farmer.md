@@ -15,9 +15,9 @@ You can track your farmer through the [Astral Block Explorer.](https://astral.au
 
 ## Eligibility for the Verified Farmer Role
 
-**If you have earned a block or vote reward**, you can now link your Discord account to your farmer wallet through the [Astral](astral.autonomys.xyz) to obtain this role. Here’s how to do it:
+**If you have earned a block or vote reward**, you can now link your Discord account to your farmer wallet through the [Astral](https://astral.autonomys.xyz) to obtain this role. Here’s how to do it:
 
-1. Select **Connect Wallet** in the top right corner of the [Astral Block Explorer.](https://eastral.autonomys.xyz)
+1. Select **Connect Wallet** in the top right corner of the [Astral Block Explorer.](https://astral.autonomys.xyz)
     
     ![Connect Wallet](/img/doc-imgs/verify-farmer/connect-wallet.png)
 
