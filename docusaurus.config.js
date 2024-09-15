@@ -211,7 +211,7 @@ const config = {
               },
               {
                 label: 'Autonomys Explorer',
-                href: 'https://explorer.subspace.network/',
+                href: 'https://astral.autonomys.xyz',
               },
               {
                 label: 'PolkadotJS Portal',
@@ -271,7 +271,7 @@ const config = {
             items: [
               {
                 label: 'Official Website',
-                href: 'https://www.autonomys.xyz/'
+                href: 'https://www.autonomys.xyz'
               },
               {
                 label: 'Space Acres Desktop GUI',
@@ -279,7 +279,7 @@ const config = {
               },
               {
                 label: 'Astral Autonomys Explorer',
-                href: 'https://explorer.subspace.network/#/gemini-3h/consensus'
+                href: 'https://astral.autonomys.xyz'
               }
             ],
           },

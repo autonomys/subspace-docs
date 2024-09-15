@@ -13,7 +13,7 @@ keywords:
 Three important factors to pay attention to are `Nominator Tax`, `Min. Stake`, and `Status`.
 :::
 
-1. Proceed to the staking tab on [Astral](https://explorer.subspace.network/gemini-3h/staking) and connect your wallet.
+1. Proceed to the staking tab on [Astral](https://astral.autonomys.xyz) and connect your wallet.
 
 ![NStaking-1](/img/doc-imgs/operators-staking/NStaking-1.png)
 
@@ -86,7 +86,7 @@ Any **operator** or **nominator** can initiate withdrawal. They can withdraw the
 - If a nominator is initiating a withdrawal, and the remaining balance is less than the operator-defined minimum nominator stake, then the total nominator stake is unlocked otherwise, only the requested amount is unlocked.
 :::
 
-1. Proceed to the staking tab on [Astral](https://explorer.subspace.network/gemini-3h/staking) and connect your wallet.
+1. Proceed to the staking tab on [Astral](https://astral.autonomys.xyz) and connect your wallet.
 
 ![NStaking-1](/img/doc-imgs/operators-staking/NStaking-1.png)
 
