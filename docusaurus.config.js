@@ -305,11 +305,11 @@ const config = {
             items: [
               {
                 label: 'YouTube',
-                href: 'https://www.youtube.com/channel/UCojYRCZOtVTJHJXivOYJzeQ',
+                href: 'https://www.youtube.com/@AutonomysNetwork',
               },
               {
                 label: 'LinkedIn',
-                href: 'https://www.linkedin.com/company/subspace-blockchain',
+                href: 'https://www.linkedin.com/company/autonomys',
               },
               {
                 label: 'Twitter',

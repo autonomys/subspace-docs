@@ -10,7 +10,7 @@ keywords:
     - Executable
 ---
 
-We are thrilled to announce the **Verified Farmer** role on our [Discord server](https://discord.com/invite/subspace-network)!
+We are thrilled to announce the **Verified Farmer** role on our [Discord server](https://autonomys.xyz/discord)!
 You can track your farmer through the [Astral Block Explorer.](https://astral.autonomys.xyz)
 
 ## Eligibility for the Verified Farmer Role
