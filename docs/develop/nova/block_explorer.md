@@ -9,7 +9,7 @@ keywords:
 
 ### Autonomys Nova Block Explorer
 
-**[Block explorer link](https://explorer.subspace.network/gemini-3h/nova)**
+**[Block explorer link](https://nova.subspace.network)**
 
 This early version provides a clear and user-friendly visualization of Autonomys-specific statistics that cater to the needs of our farmers and developers.
 

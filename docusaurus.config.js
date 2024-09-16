@@ -211,7 +211,7 @@ const config = {
               },
               {
                 label: 'Autonomys Explorer',
-                href: 'https://explorer.subspace.network/',
+                href: 'https://astral.autonomys.xyz',
               },
               {
                 label: 'PolkadotJS Portal',
@@ -227,10 +227,6 @@ const config = {
               {
                 label: 'Autonomys Academy',
                 href: 'https://academy.autonomys.xyz',
-              },
-              {
-                label: 'The Hitchhiker’s Guide to Subspace',
-                href: 'https://blog.subspace.network/subspaceresearch/home',
               },
               {
                 label: 'Subspace Protocol Whitepaper',
@@ -271,7 +267,7 @@ const config = {
             items: [
               {
                 label: 'Official Website',
-                href: 'https://www.autonomys.xyz/'
+                href: 'https://www.autonomys.xyz'
               },
               {
                 label: 'Space Acres Desktop GUI',
@@ -279,7 +275,7 @@ const config = {
               },
               {
                 label: 'Astral Autonomys Explorer',
-                href: 'https://explorer.subspace.network/#/gemini-3h/consensus'
+                href: 'https://astral.autonomys.xyz'
               }
             ],
           },
@@ -305,11 +301,11 @@ const config = {
             items: [
               {
                 label: 'YouTube',
-                href: 'https://www.youtube.com/channel/UCojYRCZOtVTJHJXivOYJzeQ',
+                href: 'https://www.youtube.com/@AutonomysNetwork',
               },
               {
                 label: 'LinkedIn',
-                href: 'https://www.linkedin.com/company/subspace-blockchain',
+                href: 'https://www.linkedin.com/company/autonomys',
               },
               {
                 label: 'Twitter',
@@ -326,7 +322,7 @@ const config = {
           alt: 'Autonomys Labs Banner Logo',
           src: 'img/banner-black.png',
           srcDark: 'img/banner-white.png',
-          href: 'https://subspace.network',
+          href: 'https://autonomys.xyz',
         },
         copyright: `Copyright © ${new Date().getFullYear()} Autonomys Labs, Inc.`,
       },

@@ -94,7 +94,7 @@ This also can be helpful for in-development networks such as the Subspace Networ
 - Symbol
 - Block explorer
 - Crowdloan URL
-The only option that is required is the Provider URL. You can add an explorer if you would like but it is not required. The current Subspace Explorer is available [here](https://explorer.subspace.network).
+The only option that is required is the Provider URL. You can add an explorer if you would like but it is not required. The current Subspace Explorer is available [here](https://astral.autonomys.xyz).
 You can refer to the *RPC Endpoints* above for available provider URLs for the Subspace Network.
     
 5. Fill in the provider URL, once you click out of this box it will check the URL and add the rest of the information, then click Save. 
