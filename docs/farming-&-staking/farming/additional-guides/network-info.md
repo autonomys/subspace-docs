@@ -1,5 +1,5 @@
 ---
-title: Ports & Network Information
+title: Port Forwarding
 sidebar_position: 2
 description: Comprehensive guide on port forwarding and network information for Autonomys Network products.
 slug: networking

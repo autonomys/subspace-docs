@@ -1,6 +1,6 @@
 ---
 title: Verified Farmer Discord Role
-sidebar_position: 1
+sidebar_position: 4
 description: How to verify your Autonomys Network farmer
 keywords:
     - Farmer

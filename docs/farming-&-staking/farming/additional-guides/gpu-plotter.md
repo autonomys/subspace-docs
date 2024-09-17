@@ -1,6 +1,6 @@
 ---
 title: GPU Plotter
-sidebar_position: 4
+sidebar_position: 1
 description: Tips on GPU Plotter
 keywords:
     - Plotter
