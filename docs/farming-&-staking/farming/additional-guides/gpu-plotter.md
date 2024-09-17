@@ -23,11 +23,11 @@ GPU plotting is not required, but it is much more energy efficient and significa
 GPU plotting employs the new **v1 plot format**, which is applicable to any plots created with versions released on or after **July 5th**. In contrast, older software versions generated plots in the **v0 format**, which is only compatible with CPU plotting.
 :::
 
-### Supported and Planned Platforms
-| Platform          | Status                |    Linux    |   Windows   |
-|-------------------|-----------------------|:-----------:|:-----------:|
-| Subspace          | ✅ Available           |     ✅      |     ✅      |
-| Space Acres       | 🛠️ In Development     |     ⏳      |     ⏳      |
+### Supported Platforms
+| Platform          |    Linux    |   Windows   |
+|-------------------|:-----------:|:-----------:|
+| Subspace          |     ✅      |     ✅      |
+| Space Acres       |     ✅      |     ✅      |
 
 ## Supported Video Cards
 
@@ -48,8 +48,8 @@ RTX 20 series cards and newer running NVIDIA driver version **550** or later.
 **Models Potentially Supported:**
 | Series            | Models                                      |
 |-------------------|---------------------------------------------|
-| RX 6000 Series    | 6650 XT, 6600 XT, 6600                     |
 | RX 6700 Series    | 6750 XT, 6700 XT, 6700                     |
+| RX 6000 Series    | 6650 XT, 6600 XT, 6600                     |
 
 For more details, please consult the [AMD ROCm Requirements](https://rocm.docs.amd.com/projects/install-on-linux/en/latest/reference/system-requirements.html) for compatibility.
 
