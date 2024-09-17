@@ -13,7 +13,7 @@ Remix is a great tool that allows you to easily write, test and deploy smart con
 
 Remix has [amazing documentation](https://remix-ide.readthedocs.io/en/latest/), but this guide will cover everything required to get you started.
 
-1. Using the browser of your choice navigate to **[Remix website.](https://remix.ethereum.org)**
+1. Using the browser of your choice navigate to **[Remix website](https://remix.ethereum.org)**.
 You will see a file explorer and interface for creating new workspaces, integrations with GitHub, Gist, IPFS, HTTPS, preloaded templates, and plugins.
 Let’s create a new workspace by clicking on the + sign beside WORKSPACES.
 
