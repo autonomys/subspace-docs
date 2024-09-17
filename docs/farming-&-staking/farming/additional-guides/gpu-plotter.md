@@ -66,7 +66,7 @@ Stay tuned for updates on compatibility for Intel Arc GPUs.
 
 Here are some common parameters to use with the GPU plotter:
 
-- Defines how many sectors the farmer will encode concurrently (default behavior is off when a compatible GPU is detected):
+- Defines how many sectors the CPU plotter will encode concurrently (default behavior is off when a compatible GPU is detected):
   ```bash
   --cpu-sector-encoding-concurrency <sectors>
 
