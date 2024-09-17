@@ -1,5 +1,5 @@
 ---
-title: Astral Block Explorer
+title: Nova Block Explorer
 sidebar_position: 10
 description: Autonomys hosted block explorer
 keywords:
