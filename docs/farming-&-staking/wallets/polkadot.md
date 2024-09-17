@@ -1,7 +1,7 @@
 ---
 title: Polkadot.js
 sidebar_position: 2
-description: How to configure the Polkadot Substrate wallet for the Autonomys Network
+description: How to configure the Polkadot Substrate wallet for the Subspace Network
 keywords:
     - Farmer
     - Farming
