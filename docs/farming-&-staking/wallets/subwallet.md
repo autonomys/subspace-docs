@@ -1,7 +1,7 @@
 ---
 title: SubWallet (Recommended)
 sidebar_position: 1
-description: How to configure the SubWallet Substrate wallet for the Autonomys Network
+description: How to configure the SubWallet Substrate wallet for the Subspace Network
 keywords:
     - Farmer
     - Farming
