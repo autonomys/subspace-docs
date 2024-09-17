@@ -210,7 +210,7 @@ const config = {
                 href: 'https://telemetry.subspace.network',
               },
               {
-                label: 'Autonomys Explorer',
+                label: 'Astral Block Explorer',
                 href: 'https://astral.autonomys.xyz',
               },
               {
@@ -274,7 +274,7 @@ const config = {
                 href: 'https://github.com/autonomys/space-acres'
               },
               {
-                label: 'Astral Autonomys Explorer',
+                label: 'Astral Block Explorer',
                 href: 'https://astral.autonomys.xyz'
               }
             ],

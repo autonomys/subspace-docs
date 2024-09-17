@@ -1,15 +1,15 @@
 ---
-title: Autonomys block explorer
+title: Astral Block Explorer
 sidebar_position: 10
 description: Autonomys hosted block explorer
 keywords:
-  - block explorer Nova EVM domain
-  - autonomys network
+  - EVM Domain Nova
+  - Autonomys Network
 ---
 
-### Autonomys Nova Block Explorer
+### EVM Domain Nova Block Explorer
 
-**[Block explorer link](https://nova.subspace.network)**
+**[Nova Block Explorer](https://nova.subspace.network)**
 
 This early version provides a clear and user-friendly visualization of Autonomys-specific statistics that cater to the needs of our farmers and developers.
 

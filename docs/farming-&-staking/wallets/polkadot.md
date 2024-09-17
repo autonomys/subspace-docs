@@ -1,7 +1,7 @@
 ---
 title: Polkadot.js
 sidebar_position: 2
-description: How to configure the Polkadot Substrate wallet for the Subspace Network
+description: How to configure the Polkadot Substrate wallet for the Autonomys Network
 keywords:
     - Farmer
     - Farming
@@ -74,7 +74,7 @@ Some users may be provided an existing mnemonic seed phrase that may have been p
 
 ## Troubleshooting
 
-If you face any trouble or would like to learn about other features for Polkadot.js, please see the [Official Polkadot.js Documentation.](https://polkadot.js.org/) We have included some basic FAQ's below.
+If you face any trouble or would like to learn about other features for Polkadot.js, please see the [Official Polkadot.js Documentation](https://polkadot.js.org/). We have included some basic FAQ's below.
 
 ### How can I find my Public Address?
 - You can see your default substrate public address right below your Wallet name inside the extension
