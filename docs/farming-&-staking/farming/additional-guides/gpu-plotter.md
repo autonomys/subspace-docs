@@ -25,7 +25,7 @@ GPU plotting employs the new **v1 plot format**, which is applicable to any plot
 ### Supported Platforms and Graphics Card Compatibility
 | Platform          | 🐧 Linux | 🪟 Windows | [Nvidia](#nvidia) | [AMD](#amd) | [Intel](#intel) |
 |-------------------|:-------:|:---------:|:---------:|:-----------:|:------------:|
-| [Subspace](https://github.com/autonomys/subspace/releases)          |   ✅    |    ✅     |    ✅     |     🔜      |      🔜      |
+| [Advanced CLI](https://github.com/autonomys/subspace/releases)          |   ✅    |    ✅     |    ✅     |     🔜      |      🔜      |
 | [Space Acres](https://github.com/autonomys/space-acres/releases)       |   ✅    |    ✅     |    ✅     |     🔜      |      🔜      |
 
 
