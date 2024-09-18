@@ -64,7 +64,8 @@ GPU plotting employs the new **v1 plot format**, which is applicable to any plot
 |-------------------|---------------------|
 | RX 5000 series    | RX 5500, RX 5600    |
 
-<span style="font-size: smaller;">For more details, please consult the <a href="https://rocm.docs.amd.com/projects/install-on-linux/en/latest/reference/system-requirements.html">AMD ROCm Requirements</a> for compatibility.</span>
+
+*For more details, please consult the [AMD ROCm Requirements](https://rocm.docs.amd.com/projects/install-on-linux/en/latest/reference/system-requirements.html) for compatibility.*
 
 ### Intel
 
