@@ -56,7 +56,7 @@ To handle increased network demands and maintain optimal performance, we recomme
 
 #### Reference Hardware Details
 
-Our benchmarking tests were conducted using the Intel Core i7-6700 CPU. This hardware configuration has been verified to handle blocks that are 100% full of transactions without performance issues.
+Our benchmarking tests were conducted using the Intel Core i7-6700 CPU. We have calibrated the transaction weights so that a full block cannot contain more transactions than this CPU can execute within the 2-second block execution time limit. This ensures that nodes running on hardware equivalent to or better than the Intel Core i7-6700 can process blocks at full capacity without performance issues.
 
 While farmers with hardware below the referenced hardware **may operate successfully under most conditions**, they **might experience difficulties during peak network activity**. If blocks become consistently full of transactions, nodes with lower specifications may struggle to keep up, **potentially affecting farming performance and rewards**.
 
