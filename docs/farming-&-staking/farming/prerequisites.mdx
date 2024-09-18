@@ -16,7 +16,7 @@ keywords:
     - Service
 ---
 
-### System Requirements
+### Minimum Hardware Requirements
 
 :::danger Farming can be Network Intensive.
 
@@ -40,6 +40,27 @@ The Autonomys Network is based on Proof of Archival Storage, as such your storag
 
 :::
 
+Nodes meeting these **minimum requirements** should be able to farm and sync with the network under typical conditions. However, **performance may degrade if the network experiences heavy load, such as blocks filled with a high number of transactions**.
+
+### Recommended Requirements
+
+To handle increased network demands and maintain optimal performance, we recommend the following hardware specifications:
+
+|Hardware|Specs|
+|-|-|
+|CPU|Intel Core i7-6700 or equivalent|
+|CPU|4 Core+|
+|RAM|16GB+|
+|Storage (node)|256GB (SSD)|
+|Network|Reliable broadband internet connection with low latency|
+
+#### Reference Hardware Details
+
+Our benchmarking tests were conducted using the Intel Core i7-6700 CPU. We have calibrated the transaction weights so that a full block cannot contain more transactions than this CPU can execute within the 2-second block execution time limit. This ensures that nodes running on hardware equivalent to or better than the Intel Core i7-6700 can process blocks at full capacity without performance issues.
+
+While farmers with hardware below the referenced hardware **may operate successfully under most conditions**, they **might experience difficulties during peak network activity**. If blocks become consistently full of transactions, nodes with lower specifications may struggle to keep up, **potentially affecting farming performance and rewards**.
+
+For detailed CPU information and benchmarking results, please refer to our [GitHub repository](https://gist.github.com/DaMandal0rian/21a01da49ee820c3e59bce7f8c2d0166).
 
 ### Security Considerations
 
