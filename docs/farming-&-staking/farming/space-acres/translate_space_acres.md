@@ -1,6 +1,6 @@
 ---
 title: Space Acres UI Translation Guide
-sidebar_position: 4
+sidebar_position: 2
 description: Translation Guide for the Space Acres UI
 keywords:
     - Space Acres UI translation
@@ -9,6 +9,21 @@ keywords:
     - Translate
     - Localization
 ---
+
+## Supported Languages
+Space Acres UI is already localized in several languages, making it easier for users across the globe to participate in farming on the Autonomys Network. Our goal is to ensure that as many people as possible can access and use the platform in their native language.
+
+Currently, the Space Acres UI supports the following languages:
+
+- English
+- German
+- Spanish
+- French
+- Serbian
+- Russian
+- Chinese (Simplified)
+
+We are continuously working to expand this list. For the most up-to-date list of supported languages, please refer to the translations section of the [Space Acres repository](https://github.com/autonomys/space-acres/tree/main/res/translations). If you would like to contribute a translation to a language that is not yet supported, please follow the guidelines below. 
 
 
 ## Translation Guide
