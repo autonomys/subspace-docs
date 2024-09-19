@@ -18,7 +18,7 @@ Although GPU plotting is not mandatory, it provides enhanced energy efficiency a
 
 
 :::note Plot Format Compatibility
-GPU plotting employs the new v1 plot format, which is applicable to any plots created with versions released on or after uly 5th. In contrast, older software versions generated plots in the v0 format, which is only compatible with CPU plotting.
+GPU plotting employs the new v1 plot format, which is applicable to any plots created with versions released on or after July 5th. In contrast, older software versions generated plots in the v0 format, which is only compatible with CPU plotting.
 :::
 
 
@@ -38,8 +38,8 @@ GPU plotting employs the new v1 plot format, which is applicable to any plots cr
 |-------------------|------------------------------------------------------------------------|
 | Hopper            | H Series (H100, H200, H300)                                            |
 | Ada Lovelace      | RTX 40 Series                                                          |
-| Ampere            | RTX 30 Series <br> A Series (A100, A40, A30, A10, A6000, A5000, A4000) |
-| Turing            | RTX 20 Series <br> Quadro RTX Series (RTX 8000, RTX 6000)              |
+| Ampere            | RTX 30 Series <br /> A Series (A100, A40, A30, A10, A6000, A5000, A4000) |
+| Turing            | RTX 20 Series <br /> Quadro RTX Series (RTX 8000, RTX 6000)              |
 | Volta             | PRO Series (Tesla V100, Quadro GV100, Titan V)                         |
 
 *Nvidia [drivers](https://developer.nvidia.com/cuda-downloads) version 550 or later are required. Installing the CUDA Toolkit is not required.*
