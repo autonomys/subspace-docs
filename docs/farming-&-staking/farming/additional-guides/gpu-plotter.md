@@ -38,8 +38,8 @@ GPU plotting employs the new v1 plot format, which is applicable to any plots cr
 |-------------------|------------------------------------------------------------------------|
 | Hopper            | H Series (H100, H200, H300)                                            |
 | Ada Lovelace      | RTX 40 Series                                                          |
-| Ampere            | RTX 30 Series A Series (A100, A40, A30, A10, A6000, A5000, A4000) |
-| Turing            | RTX 20 Series Quadro RTX Series (RTX 8000, RTX 6000)              |
+| Ampere            | RTX 30 Series &#10; A Series (A100, A40, A30, A10, A6000, A5000, A4000) |
+| Turing            | RTX 20 Series &#10; Quadro RTX Series (RTX 8000, RTX 6000)              |
 | Volta             | PRO Series (Tesla V100, Quadro GV100, Titan V)                         |
 
 *Nvidia [drivers](https://developer.nvidia.com/cuda-downloads) version 550 or later are required. Installing the CUDA Toolkit is not required.*
