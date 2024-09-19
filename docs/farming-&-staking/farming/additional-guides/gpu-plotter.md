@@ -18,7 +18,7 @@ Although GPU plotting is not mandatory, it provides enhanced energy efficiency a
 
 
 :::note Plot Format Compatibility
-GPU plotting employs the new **v1 plot format**, which is applicable to any plots created with versions released on or after **July 5th**. In contrast, older software versions generated plots in the **v0 format**, which is only compatible with CPU plotting.
+GPU plotting employs the new v1 plot format, which is applicable to any plots created with versions released on or after July 5th. In contrast, older software versions generated plots in the v0 format, which is only compatible with CPU plotting.
 :::
 
 
@@ -31,45 +31,48 @@ GPU plotting employs the new **v1 plot format**, which is applicable to any plot
 
 ## Supported Video Cards
 
-### Nvidia
+### **Nvidia**
 **Supported:**
 
-| Series            | Models                                      |
-|-------------------|---------------------------------------------|
-| RTX 40 Series     | RTX 4060, RTX 4060 Ti, RTX 4070, RTX 4070 Ti, RTX 4080, RTX 4090 |
-| RTX 30 Series     | RTX 3060, RTX 3060 Ti, RTX 3070, RTX 3070 Ti, RTX 3080, RTX 3080 Ti, RTX 3090, RTX 3090 Ti |
-| RTX 20 Series     | RTX 2060, RTX 2060 Super, RTX 2070, RTX 2070 Super, RTX 2080, RTX 2080 Super, RTX 2080 Ti |
-| Drivers           | Nvidia drivers version **550** or later    |
+| Architecture      | Models                                                                 |
+|-------------------|------------------------------------------------------------------------|
+| Hopper            | H Series (H100, H200, H300)                                            |
+| Ada Lovelace      | RTX 40 Series                                                          |
+| Ampere            | RTX 30 Series &#10; A Series (A100, A40, A30, A10, A6000, A5000, A4000) |
+| Turing            | RTX 20 Series &#10; Quadro RTX Series (RTX 8000, RTX 6000)              |
+| Volta             | PRO Series (Tesla V100, Quadro GV100, Titan V)                         |
 
-### AMD
+*Nvidia [drivers](https://developer.nvidia.com/cuda-downloads) version 550 or later are required. Installing the CUDA Toolkit is not required.*
+
+### **AMD**
 
 **Supported:**
 
-| Series            | Models                                      |
-|-------------------|---------------------------------------------|
-| PRO               | W7800, W6800, V620                          |
-| RX 7000 Series    | 7800 XT, 7700 XT, 7600 (but not 7600 XT)  |
-| RX 6000 Series    | 6950 XT, 6900 XT, 6800 XT, 6800           |
+| Series            | Models                                                                 |
+|-------------------|------------------------------------------------------------------------|
+| PRO               | W7800, W6800, V620                                                     |
+| RX 7000 Series    | 7800 XT, 7700 XT, 7600 (but not 7600 XT)                               |
+| RX 6000 Series    | 6950 XT, 6900 XT, 6800 XT, 6800                                        |
 
 **Potential Support:**
 
-| Series            | Models                                      |
-|-------------------|---------------------------------------------|
-| RX 6700 Series    | 6750 XT, 6700 XT, 6700                     |
-| RX 6000 Series    | 6650 XT, 6600 XT, 6600                     |
+| Series            | Models                                                                 |
+|-------------------|------------------------------------------------------------------------|
+| RX 6700 Series    | 6750 XT, 6700 XT, 6700                                                 |
+| RX 6000 Series    | 6650 XT, 6600 XT, 6600                                                 |
 
 **Unsupported:**
 
-| Series            | Models              |
-|-------------------|---------------------|
-| RX 5000 series    | RX 5500, RX 5600    |
+| Series            | Models                                                                 |
+|-------------------|------------------------------------------------------------------------|
+| RX 5000 series    | RX 5500, RX 5600                                                       |
 
 
 *For more details, please consult the [AMD ROCm Requirements](https://rocm.docs.amd.com/projects/install-on-linux/en/latest/reference/system-requirements.html) for compatibility.*
 
-### Intel
+### **Intel**
 
-Intel Arc GPUs are expected to be supported in the future, but specific models have not been released yet.
+Intel Arc GPUs are expected to be supported in the future, but specific compatibility details have not been announced yet.
 
 
 ## Common Plotting Parameters
@@ -97,6 +100,6 @@ Below are some essential parameters for configuring the GPU plotter:
 When utilizing Farming Cluster, particularly with multiple or fast GPUs, you might encounter limitations due to your network's bandwidth. High performance GPUs can easily surpass the capacity of a 1G connection. While this won't cause the process to fail, it may result in your GPU idling as it waits for data to transfer. To optimize performance in such scenarios, consider upgrading to networking solutions of 2.5G, 10G, or higher.
 
 
-### Known Issues
+## Known Issues
 
-- Plotting may occasionally halt unexpectedly, which necessitates a restart of the farmer.
+- Occasionally, plotting may stop unexpectedly, requiring a restart of the farmer. We are aware of this issue and a fix is in progress.
