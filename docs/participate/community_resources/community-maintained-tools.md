@@ -7,19 +7,25 @@ keywords:
     - Community built tools
 ---
 
-### Community-maintained list of useful, third-party tools
+## Community Curated Collection of Useful Third Party Tools
 
-[Wolfrage76](https://github.com/wolfrage76)'s **list of third-party tools**. 
-- Link to the [website](https://subspace.ifhya.com/).
-- Contact **Wolfrage** in the Autonomys Discord to add your tool.
+These sites feature a collection of tools created and maintained by our community members.
 
-<iframe src="https://subspace.ifhya.com/" width="100%" height="650px" frameborder="0" scrolling="auto"></iframe>
+#### Wolfrage76's Third-Party Tools
+- **Description**: A comprehensive list of third-party tools for the Autonomys Network.
+- **Website**: https://subspace.ifhya.com
+- **Contact**: Reach out to **Wolfrage** in the Autonomys Discord to add your tool.
 
-### Plotting speed measurement tool
+#### vexr's Community Tools Hub
+- **Description**: A collection of community developed tools aimed at enhancing your experience with the Autonomys Network
+- **Website**: https://atc.farm
+- **Contact**: Reach out to **vexr** in the Autonomys Discord to add your tool.
 
-[Hakehardware](https://github.com/hakehardware)'s **Plot Report** that allows you to measure your plotting speed and adds it to a table for comparison with other hardware plotting speeds. 
-- Link to [GitHub](https://github.com/hakehardware/plotreport).
-- Link to the [website](https://plotreport.hakedev.com/).
-- Link to the [YouTube channel](https://www.youtube.com/channel/UCakvG7QQp4oL0Rtpiei1yKg).
+## Plotting Speed Measurement Tools
 
-<iframe src="https://plotreport.hakedev.com/" width="100%" height="400px" frameborder="0" scrolling="auto"></iframe>
+#### hakehardware's Plot Report
+- **Description**: A tool that measures your plotting speed and allows you to compare it with other hardware plotting speeds.
+- **Website**: https://plotreport.hakedev.com
+- **Contact**: Reach out to **hakehardware** in the Autonomys Discord for support with this tool.
+- **GitHub**: [View on GitHub](https://github.com/hakehardware/plotreport)
+- **YouTube Channel**: [Watch here](https://www.youtube.com/channel/UCakvG7QQp4oL0Rtpiei1yKg)
