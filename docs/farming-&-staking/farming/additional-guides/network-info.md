@@ -49,13 +49,13 @@ Additionally, implementing port forwarding enhances your ability to connect with
 | 30333  | TCP | Node (Consensus) | Facilitate block, transaction, and PoT gossip exchange. |
 | 40333  | TCP | Node (Domain) | Facilitate transaction gossip within the domain network. |
 
+### RPC Server (Public)
+
 :::caution Exposing RPC Ports
 For security reasons, these RPC ports should never be exposed unless you intend to operate a public RPC server, and they should never be exposed on a system that is running a farmer or an operator.
 
 RPC ports facilitate communication between the node and the farmer. If both the node and farmer are on the same local network, no port forwarding is required, as they communicate internally.
 :::
-
-### RPC Server (Public)
 
 | Port | Protocol | Component| Purpose |
 |--|--|--|--|
