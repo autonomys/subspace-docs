@@ -56,7 +56,7 @@ RPC ports facilitate communication between the node and the farmer. If both the 
 | Port | Protocol | Component| Purpose |
 |--|--|--|--|
 | 9944   | TCP | Node (Consensus RPC) | Exposes real-time and historical blockchain data, enables transaction submissions through HTTP and WebSocket, and is used for slot challenges. |
-| 9945   | TCP | Node (Domain RPC) | Exposes real-time and historical blockchain data, Enables transaction submissions through HTTP and WebSocket, and includes smart contracts. |
+| 9945   | TCP | Node (Domain RPC) | Exposes real-time and historical blockchain data, enables transaction submissions through HTTP and WebSocket, and includes smart contracts. |
 
 ## Steps to Forward Ports
 
@@ -113,6 +113,3 @@ Autonomys provides these links for reference only and does not guarantee the acc
 - [General Port Forwarding Guide](https://www.noip.com/support/knowledgebase/general-port-forwarding-guide/)
 - [Default Router Username & Passwords List](https://routerslogin.com/all/default-router-list)
 - [Verify Port Forwarding](https://www.whatismyip.com/port-scanner/)
-
-
-Following these steps will help ensure that your firewall does not block essential traffic to the Autonomys Network, enabling effective peer connections and communication.
