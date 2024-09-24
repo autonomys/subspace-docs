@@ -69,7 +69,7 @@ Since the port forwarding process varies by router, follow these general steps:
    Open your router’s settings by entering the router's IP address into a web browser. You may need the default login credentials, often printed on the router or provided by your ISP.
 
 3. **Set Up Port Forwarding:**
-   In the router's configuration interface, navigate to `Advanced Settings` or `Port Forwarding` and enter the following details:
+   In the router's configuration interface, navigate to **Advanced Settings** or **Port Forwarding** and enter the following details:
    - The internal IP address of your computer
    - Consult the tables above for the ports and protocols that need to be forwarded (30333, 30433, 30533, etc.).
 
@@ -84,11 +84,9 @@ Since the port forwarding process varies by router, follow these general steps:
 | No Firewall | No additional configuration is necessary if a firewall is not in use. |
 | Direct Internet Connection | If you are connected directly to the internet without a router, no port forwarding is required. |
 
-Proper configuration of these ports ensures secure and reliable communication with the Autonomys network.
-
 ## Linux Firewall Configuration
 
-If you are using Linux with `ufw` (Uncomplicated Firewall) enabled, you will need to allow traffic on the necessary ports to ensure your node and farmer can communicate properly. Use the following commands to update your firewall settings:
+If you are using Linux with UFW (Uncomplicated Firewall) enabled, you will need to allow traffic on the necessary ports to ensure your node and farmer can communicate properly. Use the following commands to update your firewall settings:
 
 - Allow node traffic on ports 30333 and 30433:
   ```bash
@@ -98,7 +96,7 @@ If you are using Linux with `ufw` (Uncomplicated Firewall) enabled, you will nee
   ```bash
   sudo ufw allow 30533 comment 'Autonomys Farmer'
   ```
-- If you are connecting remote farmers within your local network (LAN), allow RPC connections by running this command (assuming your LAN IP range is `192.168.1.0/24`):
+- If you are connecting remote farmers within your local network (LAN), allow RPC connections by running this command (assuming your LAN IP range is 192.168.1.0/24):
   ```bash
   sudo ufw allow from 192.168.1.0/24 to any port 9944 proto tcp comment 'Autonomys Remote Farmer RPC'
   ```
