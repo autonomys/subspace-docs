@@ -23,10 +23,6 @@ By opening specific ports on your router, you allow external traffic to reach yo
 
 ## Required Ports for Autonomys Network
 
-To ensure seamless communication within the P2P protocol, specific network ports must remain open to facilitate data transmission. These ports support essential blockchain operations, including block synchronization, transaction propagation, and Remote Procedure Call (RPC) interactions.
-
-Additionally, implementing port forwarding enhances your ability to connect with a greater number of peers, improving overall network performance and reliability.
-
 ### Space Acres
 
 | Port | Protocol | Component| Purpose |
@@ -59,8 +55,8 @@ RPC ports facilitate communication between the node and the farmer. If both the 
 
 | Port | Protocol | Component| Purpose |
 |--|--|--|--|
-| 9944   | TCP | Node (Consensus RPC) | - Exposes real-time and historical blockchain data. <br> - Enables transaction submissions through HTTP and WebSocket. <br> - Used for slot challenges. |
-| 9945   | TCP | Node (Domain RPC) | - Exposes real-time and historical blockchain data. <br> - Enables transaction submissions through HTTP and WebSocket. <br> - Includes smart contracts.
+| 9944   | TCP | Node (Consensus RPC) | Exposes real-time and historical blockchain data, enables transaction submissions through HTTP and WebSocket, and is used for slot challenges. |
+| 9945   | TCP | Node (Domain RPC) | Exposes real-time and historical blockchain data, Enables transaction submissions through HTTP and WebSocket, and includes smart contracts.
 
 ## Steps to Forward Ports
 
