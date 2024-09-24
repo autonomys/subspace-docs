@@ -56,7 +56,7 @@ RPC ports facilitate communication between the node and the farmer. If both the 
 | Port | Protocol | Component| Purpose |
 |--|--|--|--|
 | 9944   | TCP | Node (Consensus RPC) | Exposes real-time and historical blockchain data, enables transaction submissions through HTTP and WebSocket, and is used for slot challenges. |
-| 9945   | TCP | Node (Domain RPC) | Exposes real-time and historical blockchain data, Enables transaction submissions through HTTP and WebSocket, and includes smart contracts.
+| 9945   | TCP | Node (Domain RPC) | Exposes real-time and historical blockchain data, Enables transaction submissions through HTTP and WebSocket, and includes smart contracts. |
 
 ## Steps to Forward Ports
 
