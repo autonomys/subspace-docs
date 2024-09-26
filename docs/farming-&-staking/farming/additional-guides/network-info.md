@@ -28,14 +28,14 @@ By opening specific ports on your router, you allow external traffic to reach yo
 | Port | Protocol | Component| Purpose |
 |--|--|--|--|
 | 30333  | TCP | Node (Consensus) | Facilitate block, transaction, and PoT gossip exchange. |
-| 30433  | TCP | Farmer | Retrieve archival history from the blockchain. |
+| 30433  | TCP | Node (DSN) | Retrieve archival history from the blockchain. |
 
 ### Advanced CLI (Farmer)
 
 | Port | Protocol | Component| Purpose |
 |--|--|--|--|
 | 30333  | TCP | Node (Consensus) | Facilitate block, transaction, and PoT gossip exchange. |
-| 30433  | TCP | Farmer | Retrieve archival history from the blockchain. |
+| 30433  | TCP | Node (DSN) | Retrieve archival history from the blockchain. |
 | 30533  | TCP | Farmer | Synchronize with node peers to access archival history. |
 
 ### Advanced CLI (Domain Operator)
