@@ -121,4 +121,4 @@ The tests will automatically detect the local node and farmer, executing against
 
 ## Next Steps
 
-With the Auto SDK set up locally, you're ready to start building and testing your blockchain applications. Explore the additional pages for the code examples and function overview.
+With the Auto SDK set up locally, you're ready to start building and testing your blockchain applications. Explore the additional pages for the code examples and functions overview.
