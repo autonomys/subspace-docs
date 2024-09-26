@@ -29,8 +29,8 @@ We pride ourselves on offering unlimited possibilities—there are no boundaries
 - **Simplified Interactions**: Abstracts the complexity of blockchain operations with high-level functions.
 - **Flexibility**: Suitable for building decentralized applications (dApps) and services with ease.
 
-### Getting Started with AutoSDK
-To start using AutoSDK, refer to our [Setup Instructions](/docs/develop/auto_sdk/intro.md) to clone the repository, install dependencies, and run tests. The SDK is designed to be developer-friendly, ensuring you can get up and running quickly.
+### Getting Started with Auto SDK
+To start using Auto SDK, refer to our [Setup Instructions](/docs/develop/auto_sdk/intro.md) to clone the repository, install dependencies, and run tests. The SDK is designed to be developer-friendly, ensuring you can get up and running quickly.
 
 ## [Nova - EVM Compatible Domain](/docs/develop/nova/quick_start)
 
