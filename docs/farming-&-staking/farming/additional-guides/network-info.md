@@ -1,49 +1,57 @@
+
 ---
 title: Port Forwarding
 sidebar_position: 2
 description: Comprehensive guide on port forwarding and network information for Autonomys Network products.
 slug: networking
 keywords:
+    - Domain
     - Farmer
     - Farming
+    - Firewall Rules
+    - Networking
     - Node
-    - Domain
-    - RPC
+    - Network
     - Port Forwarding
     - Ports
-    - Networking
-    - Network
+    - Router Settings
+    - RPC
 ---
 
 ## Overview
 
-This guide explains how to configure network settings and set up port forwarding for Autonomys Network. Correct port forwarding is essential to ensure proper communication between your node, farmer, and the Autonomys Network. 
+This guide explains how to configure network settings and set up port forwarding for Autonomys Network. Correct port forwarding is essential to ensure proper communication between your node, farmer, and the Autonomys Network.
 
-By opening specific ports on your router, you allow external traffic to reach your node, which is necessary for blockchain synchronization, data exchange, and remote procedure calls (RPC).
+By opening specific ports on your router, you allow external traffic to reach your node, which is necessary for blockchain synchronization, data exchange, and remote procedure calls (RPC). 
 
-## Required Ports for Autonomys Network
+Additionally, you may need to adjust your system's firewall settings to allow traffic through the specified ports. Firewalls typically block unsolicited incoming connections, so it's important to ensure that the required ports are open. These adjustments will enable effective communication with the Autonomy Network.
+
+## Ports to Forward & Firewall Access
+
+**Legend:** The ↪️ column indicates whether the port should be forwarded on the router, while the 🛡️ column specifies if inbound firewall access should be allowed through the operating system.
 
 ### Space Acres
-
-| Port | Protocol | Component| Purpose |
-|--|--|--|--|
-| 30333  | TCP | Node (Consensus) | Facilitate block, transaction, and PoT gossip exchange. |
-| 30433  | TCP | Node (DSN) | Retrieve archival history from the blockchain. |
+| Port  | Protocol | ↪️ | 🛡️ | Component | Purpose  |
+|--|-- |--|--|--|--|
+| 30333 | TCP | ☑️ | ☑️ | Node (Consensus) | Facilitate block, transaction, and PoT gossip exchange. |
+| 30433 | TCP | ☑️ | ☑️ | Node (DSN) | Retrieve archival history from the blockchain. |
 
 ### Advanced CLI (Farmer)
-
-| Port | Protocol | Component| Purpose |
-|--|--|--|--|
-| 30333  | TCP | Node (Consensus) | Facilitate block, transaction, and PoT gossip exchange. |
-| 30433  | TCP | Node (DSN) | Retrieve archival history from the blockchain. |
-| 30533  | TCP | Farmer | Synchronize with node peers to access archival history. |
+| Port  | Protocol | ↪️ | 🛡️ | Component | Purpose  |
+|--|--|--|--|--|--|
+| 30333  | TCP | ☑️ | ☑️ | Node (Consensus) | Facilitate block, transaction, and PoT gossip exchange. |
+| 30433  | TCP | ☑️ | ☑️ | Node (DSN) | Retrieve archival history from the blockchain. |
+| 30533  | TCP | ☑️ | ☑️ | Farmer | Synchronize with node peers to access archival history. |
+| 9944   | TCP | ❌ | ☑️ | Node (Consensus RPC) | Exposes real-time and historical blockchain data, enables transaction submissions through HTTP and WebSocket, and is used for slot challenges. |
 
 ### Advanced CLI (Domain Operator)
 
-| Port | Protocol | Component| Purpose |
-|--|--|--|--|
-| 30333  | TCP | Node (Consensus) | Facilitate block, transaction, and PoT gossip exchange. |
-| 40333  | TCP | Node (Domain) | Facilitate transaction gossip within the domain network. |
+| Port  | Protocol | ↪️ | 🛡️ | Component | Purpose  |
+|--|--|--|--|--|--|
+| 30333  | TCP | ☑️ | ☑️ | Node (Consensus) | Facilitate block, transaction, and PoT gossip exchange. |
+| 30433  | TCP | ☑️ | ☑️ | Node (DSN) | Retrieve archival history from the blockchain. |
+| 40333  | TCP | ☑️ | ☑️ | Node (Domain) | Facilitate transaction gossip within the domain network. |
+
 
 ### RPC Server (Public)
 
@@ -53,10 +61,10 @@ For security reasons, these RPC ports should never be exposed unless you intend 
 RPC ports facilitate communication between the node and the farmer. If both the node and farmer are on the same local network, no port forwarding is required, as they communicate internally.
 :::
 
-| Port | Protocol | Component| Purpose |
-|--|--|--|--|
-| 9944   | TCP | Node (Consensus RPC) | Exposes real-time and historical blockchain data, enables transaction submissions through HTTP and WebSocket, and is used for slot challenges. |
-| 9945   | TCP | Node (Domain RPC) | Exposes real-time and historical blockchain data, enables transaction submissions through HTTP and WebSocket, and includes smart contracts. |
+| Port  | Protocol | ↪️ | 🛡️ | Component | Purpose  |
+|--|--|--|--|--|--|
+| 9944   | TCP | ☑️ | ☑️ | Node (Consensus RPC) | Exposes real-time and historical blockchain data, enables transaction submissions through HTTP and WebSocket, and is used for slot challenges. |
+| 9945   | TCP | ☑️ | ☑️ | Node (Domain RPC) | Exposes real-time and historical blockchain data, enables transaction submissions through HTTP and WebSocket, and includes smart contracts. |
 
 ## Steps to Forward Ports
 
@@ -75,16 +83,10 @@ Since the port forwarding process varies by router, follow these general steps:
 
    Once entered, apply the changes and reboot your router if necessary.
 
-### Network Configuration Scenarios
+## Firewall Configuration
 
-| Scenario | Required Action |
-|--|--|
-| Using a Router | Ensure that the necessary ports are properly forwarded to the machine running your services. |
-| Firewall | Configure your firewall settings to ensure the required ports are open for incoming and outgoing traffic. |
-| No Firewall | No additional configuration is necessary if a firewall is not in use. |
-| Direct Internet Connection | If you are connected directly to the internet without a router, no port forwarding is required. |
-
-## Linux Firewall Configuration
+<details open>
+<summary>Linux (Uncomplicated Firewall)</summary>
 
 If you are using Linux with UFW (Uncomplicated Firewall) enabled, you will need to allow traffic on the necessary ports to ensure your node and farmer can communicate properly. Use the following commands to update your firewall settings:
 
@@ -100,6 +102,17 @@ If you are using Linux with UFW (Uncomplicated Firewall) enabled, you will need 
   ```bash
   sudo ufw allow from 192.168.1.0/24 to any port 9944 proto tcp comment 'Autonomys Remote Farmer RPC'
   ```
+
+</details>
+
+### Network Configuration Scenarios
+
+| Scenario | Required Action |
+|--|--|
+| Using a Router | Ensure that the necessary ports are properly forwarded to the machine running your services. |
+| Firewall | Configure your firewall settings to ensure the required ports are open for incoming and outgoing traffic. |
+| No Firewall | No additional configuration is necessary if a firewall is not in use. |
+| Direct Internet Connection | If you are connected directly to the internet without a router, no port forwarding is required. |
 
 ## Additional Resources and Verification
 
