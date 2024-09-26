@@ -16,8 +16,6 @@ Autonomys is a secure, scalable, and decentralized blockchain that resolves the 
 
 Absolutely not! Our primary objective is to minimize barriers to entry for both farmers and developers.
 
-
-
 We pride ourselves on offering unlimited possibilities—there are no boundaries!
 
 ## Development Options
