@@ -30,7 +30,7 @@ GPU plotting employs the new v1 plot format, which is applicable to any plots cr
 
 ⚠️ *Limited AMD Support for just Linux is available in recent test builds. See Discord [farmer-chat](https://discord.com/channels/864285291518361610/1062507270539321485) channel for details.*
 
-## Supported Video Cards
+## Supported GPUs
 
 ### **Nvidia**
 **Supported:**
@@ -43,15 +43,15 @@ GPU plotting employs the new v1 plot format, which is applicable to any plots cr
 
 ### **AMD**
 
+:::caution AMD ROCm Support
+*There are many challenges to overcome regarding AMD ROCm support. There is much more information on this topic on the [forum](https://forum.autonomys.xyz/t/rocm-gpu-support-amd/4440)*
+:::
+
 **Supported on Test Builds for Linux Only:**
 
 | Series            | Models                                                                 |
 |-------------------|------------------------------------------------------------------------|
 | RX 7900 Series    | 7900 XT, 7900 XTX, 7900 GRE                                            |
-
-:::caution
-*There are many challenges to overcome regarding AMD ROCm support. There is much more information on this topic on the [forum](https://forum.autonomys.xyz/t/rocm-gpu-support-amd/4440)*
-:::
 
 *For more details, please consult the [AMD ROCm Requirements](https://rocm.docs.amd.com/projects/install-on-linux/en/latest/reference/system-requirements.html) for compatibility.*
 
@@ -84,6 +84,8 @@ Below are some essential parameters for configuring the GPU plotter:
   ```
 
 - Disable GPU Plotting:
+
+  ### Example:
   ```bash
   --cuda-gpus ""
   ```
