@@ -30,7 +30,15 @@ Additionally, you may need to adjust your system's firewall settings to allow tr
 ## Ports to Forward & Firewall Access
 
 :::info Multiple Node Configuration
+
 Ensure each node on the same network runs on unique ports. Adjust the ports mentioned in this guide if using multiple nodes or if default ports have been changed.
+
+:::
+
+:::caution Exposing RPC Ports
+
+For security reasons, RPC ports 9944 and 9945 should never be exposed unless you intend to operate a public RPC server, and they should never be exposed on a system that is running a farmer or an operator.
+
 :::
 
 <Tabs>
@@ -71,15 +79,7 @@ Ensure each node on the same network runs on unique ports. Adjust the ports ment
 
 <TabItem value="rpc-server" label="RPC Server (Public)">
 
-**Legend:** The ↪️ column indicates whether the port should be forwarded on the router, while the 🛡️ column specifies if inbound firewall access should be allowed through the operating system.
-
 ### RPC Server (Public)
-
-:::caution Exposing RPC Ports
-For security reasons, these RPC ports should never be exposed unless you intend to operate a public RPC server, and they should never be exposed on a system that is running a farmer or an operator.
-
-RPC ports facilitate communication between the node and the farmer. If both the node and farmer are on the same local network, no port forwarding is required, as they communicate internally.
-:::
 
 | Port  | Protocol | ↪️ | 🛡️ | Component | Purpose  |
 |--|--|--|--|--|--|
@@ -89,6 +89,8 @@ RPC ports facilitate communication between the node and the farmer. If both the 
 </TabItem>
 
 </Tabs>
+
+**Legend:** The ↪️ column indicates whether the port should be forwarded on the router, while the 🛡️ column specifies if inbound firewall access should be allowed through the operating system.
 
 ## Steps to Forward Ports
 
@@ -141,7 +143,9 @@ If you are using Linux with UFW (Uncomplicated Firewall) enabled, you will need 
 ## Additional Resources and Verification
 
 :::caution External Links
+
 Autonomys provides these links for reference only and does not guarantee the accuracy, completeness, or reliability of the information contained within them. Users are advised to verify the details independently and use these resources at their own discretion.
+
 :::
 
 - [How to Forward Ports on Your Router](https://www.lifewire.com/how-to-port-forward-4163829)
