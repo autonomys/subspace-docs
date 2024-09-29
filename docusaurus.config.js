@@ -89,10 +89,6 @@ const config = {
             to: "/docs/farming-&-staking/staking/operators/register-operator",
             from: "/docs/farming-&-staking/staking/operators"
           },
-          {
-            to: "/docs/farming-&-staking/farming/additional-guides/networking",
-            from:["/docs/farming-&-staking/additional-guides/networking",  "/docs/farming-&-staking/farming/additional-guides/port-forwarding"]
-          },
         ],
       },
     ],
