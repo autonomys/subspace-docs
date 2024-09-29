@@ -16,6 +16,9 @@ keywords:
     - RPC
 ---
 
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
 ## Overview
 
 This guide explains how to configure network settings and set up port forwarding for Autonomys Network. Correct port forwarding is essential to ensure proper communication between your node, farmer, and the Autonomys Network.
@@ -30,13 +33,19 @@ Additionally, you may need to adjust your system's firewall settings to allow tr
 Ensure each node on the same network runs on unique ports. Adjust the ports mentioned in this guide if using multiple nodes or if default ports have been changed.
 :::
 
-**Legend:** The ↪️ column indicates whether the port should be forwarded on the router, while the 🛡️ column specifies if inbound firewall access should be allowed through the operating system.
+<Tabs>
+
+<TabItem value="space-acres" label="Space Acres" default>
 
 ### Space Acres
 | Port  | Protocol | ↪️ | 🛡️ | Component | Purpose  |
 |--|-- |--|--|--|--|
 | 30333 | TCP | ☑️ | ☑️ | Node (Consensus) | Facilitate block, transaction, and PoT gossip exchange. |
 | 30433 | TCP | ☑️ | ☑️ | Node (DSN) | Retrieve and serve pieces of data and metadata related to archival history from the P2P network. |
+
+</TabItem>
+
+<TabItem value="advanced-cli-farmer" label="Advanced CLI (Farmer)">
 
 ### Advanced CLI (Farmer)
 | Port  | Protocol | ↪️ | 🛡️ | Component | Purpose  |
@@ -46,6 +55,10 @@ Ensure each node on the same network runs on unique ports. Adjust the ports ment
 | 30533  | TCP | ☑️ | ☑️ | Farmer | Retrieve blockchain archival history. |
 | 9944   | TCP | ❌ | ☑️ | Node (Consensus RPC) | Required for farmer operation. |
 
+</TabItem>
+
+<TabItem value="advanced-cli-domain" label="Advanced CLI (Domain Operator)">
+
 ### Advanced CLI (Domain Operator)
 
 | Port  | Protocol | ↪️ | 🛡️ | Component | Purpose  |
@@ -54,7 +67,11 @@ Ensure each node on the same network runs on unique ports. Adjust the ports ment
 | 30334  | TCP | ☑️ | ☑️ | Node (Domain) | Essential for a domain node to maintain strong connectivity with the P2P network. |
 | 30433  | TCP | ☑️ | ☑️ | Node (DSN) | Retrieve and serve pieces of data and metadata related to archival history from the P2P network. |
 
+</TabItem>
 
+<TabItem value="rpc-server" label="RPC Server (Public)">
+
+**Legend:** The ↪️ column indicates whether the port should be forwarded on the router, while the 🛡️ column specifies if inbound firewall access should be allowed through the operating system.
 
 ### RPC Server (Public)
 
@@ -67,7 +84,11 @@ RPC ports facilitate communication between the node and the farmer. If both the 
 | Port  | Protocol | ↪️ | 🛡️ | Component | Purpose  |
 |--|--|--|--|--|--|
 | 9944   | TCP | ☑️ | ☑️ | Node (Consensus RPC) | Enables transaction submissions via HTTP and WebSocket, supports slot challenges, and provides access to real-time and historical blockchain data for querying events, transactions, block contents, and chain state. |
-| 9945   | TCP | ☑️ | ☑️ | Node (Domain RPC) | Enables sending transactions, including deploying and calling smart contracts. | |
+| 9945   | TCP | ☑️ | ☑️ | Node (Domain RPC) | Enables sending transactions, including deploying and calling smart contracts. |
+
+</TabItem>
+
+</Tabs>
 
 ## Steps to Forward Ports
 
