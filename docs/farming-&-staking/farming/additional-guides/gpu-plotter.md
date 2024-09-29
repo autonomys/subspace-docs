@@ -25,48 +25,33 @@ GPU plotting employs the new v1 plot format, which is applicable to any plots cr
 ### Supported Platforms and Graphics Card Compatibility
 | Platform          | 🐧 Linux | 🪟 Windows | [Nvidia](#nvidia) | [AMD](#amd) | [Intel](#intel) |
 |-------------------|:-------:|:---------:|:---------:|:-----------:|:------------:|
-| [Advanced CLI](https://github.com/autonomys/subspace/releases)          |   ✅    |    ✅     |    ✅     |     🔜      |      🔜      |
+| [Advanced CLI](https://github.com/autonomys/subspace/releases)          |   ✅    |    ✅     |    ✅     |     ⚠️      |      🔜      |
 | [Space Acres](https://github.com/autonomys/space-acres/releases)       |   ✅    |    ✅     |    ✅     |     🔜      |      🔜      |
 
+*Limited AMD Support for just Linux is available in recent test builds. See Discord [farmer-chat](https://discord.com/channels/864285291518361610/1062507270539321485) channel for details.*
 
 ## Supported Video Cards
 
 ### **Nvidia**
 **Supported:**
 
-| Architecture      | Models                                                                 |
-|-------------------|------------------------------------------------------------------------|
-| Hopper            | H Series (H100, H200, H300)                                            |
-| Ada Lovelace      | RTX 40 Series                                                          |
-| Ampere            | RTX 30 Series &#10; A Series (A100, A40, A30, A10, A6000, A5000, A4000) |
-| Turing            | RTX 20 Series &#10; Quadro RTX Series (RTX 8000, RTX 6000)              |
-| Volta             | PRO Series (Tesla V100, Quadro GV100, Titan V)                         |
+| Series              |
+|---------------------|
+| RTX 20xx and Newer  |
 
 *Nvidia [drivers](https://developer.nvidia.com/cuda-downloads) version 550 or later are required. Installing the CUDA Toolkit is not required.*
 
 ### **AMD**
 
-**Supported:**
+**Supported on Test Builds for Linux Only:**
 
 | Series            | Models                                                                 |
 |-------------------|------------------------------------------------------------------------|
-| PRO               | W7800, W6800, V620                                                     |
-| RX 7000 Series    | 7800 XT, 7700 XT, 7600 (but not 7600 XT)                               |
-| RX 6000 Series    | 6950 XT, 6900 XT, 6800 XT, 6800                                        |
+| RX 7900 Series    | 7900 XT, 7900 XTX, 7900 GRE                                            |
 
-**Potential Support:**
-
-| Series            | Models                                                                 |
-|-------------------|------------------------------------------------------------------------|
-| RX 6700 Series    | 6750 XT, 6700 XT, 6700                                                 |
-| RX 6000 Series    | 6650 XT, 6600 XT, 6600                                                 |
-
-**Unsupported:**
-
-| Series            | Models                                                                 |
-|-------------------|------------------------------------------------------------------------|
-| RX 5000 series    | RX 5500, RX 5600                                                       |
-
+:::caution
+*There are many challenges to overcome regarding AMD ROCm support. There is much more information on this topic on the [forum](https://forum.autonomys.xyz/t/rocm-gpu-support-amd/4440)*
+:::
 
 *For more details, please consult the [AMD ROCm Requirements](https://rocm.docs.amd.com/projects/install-on-linux/en/latest/reference/system-requirements.html) for compatibility.*
 
@@ -77,23 +62,31 @@ Intel Arc GPUs are expected to be supported in the future, but specific compatib
 
 ## Common Plotting Parameters
 
+:::note
+Most NVIDIA GPU users do not need to change any of these parameters. The default options will automatically find and use any supported GPU's and CPU plotting will be automatically disabled.
+:::
+
 Below are some essential parameters for configuring the GPU plotter:
 
-- Set the number of sectors that the CPU plotter will encode simultaneously (the default setting is to use all supported GPUs when a compatible GPU is detected):
-  ```bash
+- When a compatible GPU is detected, CPU plotting is automatically disabled by default, but can be re-enabled if needed by specifying number of concurrently encoded sectors:
   --cpu-sector-encoding-concurrency <sectors>
 
   # Example:
+  ```bash
   --cpu-sector-encoding-concurrency 2
   ```
 - Specify particular GPUs for plotting rather than using all available GPUs (the default configuration employs all compatible GPUs):
-  ```bash
   --cuda-gpus <gpu_ids>
 
   # Example:
+  ```bash
   --cuda-gpus 0,1,3
   ```
 
+- Disable GPU Plotting:
+  ```bash
+  --cuda-gpus ""
+  ```
 
 ## Farming Cluster
   
