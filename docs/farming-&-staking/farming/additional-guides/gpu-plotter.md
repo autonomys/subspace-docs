@@ -22,18 +22,18 @@ GPU plotting employs the new v1 plot format, which is applicable to any plots cr
 :::
 
 
-### Supported Platforms and Graphics Card Compatibility
+### Platform Compatibility
+
 | Platform          | 🐧 Linux | 🪟 Windows | [Nvidia](#nvidia) | [AMD](#amd) | [Intel](#intel) |
 |-------------------|:-------:|:---------:|:---------:|:-----------:|:------------:|
-| [Advanced CLI](https://github.com/autonomys/subspace/releases)          |   ✅    |    ✅     |    ✅     |     ⚠️      |      🔜      |
+| [Advanced CLI](https://github.com/autonomys/subspace/releases)          |   ✅    |    ✅     |    ✅     |     🛠️      |      🔜      |
 | [Space Acres](https://github.com/autonomys/space-acres/releases)       |   ✅    |    ✅     |    ✅     |     🔜      |      🔜      |
 
-⚠️ *Limited AMD Support for just Linux is available in recent test builds. See Discord [farmer-chat](https://discord.com/channels/864285291518361610/1062507270539321485) channel for details.*
+🛠️ *Limited AMD Support for just Linux is available in recent test builds. See Discord [#farmer-chat](https://discord.com/channels/864285291518361610/1062507270539321485) channel for details.*
 
 ## Supported GPUs
 
 ### **Nvidia**
-**Supported:**
 
 | Series              |
 |---------------------|
@@ -47,12 +47,11 @@ GPU plotting employs the new v1 plot format, which is applicable to any plots cr
 *There are many challenges to overcome regarding AMD ROCm support. There is much more information on this topic on the [forum](https://forum.autonomys.xyz/t/rocm-gpu-support-amd/4440)*
 :::
 
-**Supported on Test Builds for Linux Only:**
-
 | Series            | Models                                                                 |
 |-------------------|------------------------------------------------------------------------|
 | RX 7900 Series    | 7900 XT, 7900 XTX, 7900 GRE                                            |
 
+Supported on Test Builds for Linux Only
 *For more details, please consult the [AMD ROCm Requirements](https://rocm.docs.amd.com/projects/install-on-linux/en/latest/reference/system-requirements.html) for compatibility.*
 
 ### **Intel**
@@ -66,26 +65,23 @@ Intel Arc GPUs are expected to be supported in the future, but specific compatib
 Most NVIDIA GPU users do not need to change any of these parameters. The default options will automatically find and use any supported GPU's and CPU plotting will be automatically disabled.
 :::
 
-Below are some essential parameters for configuring the GPU plotter:
+Below are some essential parameter examples for configuring the GPU plotter:
 
 - When a compatible GPU is detected, CPU plotting is automatically disabled by default, but can be re-enabled if needed by specifying number of concurrently encoded sectors:
   `--cpu-sector-encoding-concurrency <sectors>`
 
-  ### Example:
   ```bash
   --cpu-sector-encoding-concurrency 2
   ```
 - Specify particular GPUs for plotting rather than using all available GPUs (the default configuration employs all compatible GPUs):
   `--cuda-gpus <gpu_ids>`
 
-  ### Example:
   ```bash
   --cuda-gpus 0,1,3
   ```
 
 - Disable GPU Plotting:
 
-  ### Example:
   ```bash
   --cuda-gpus ""
   ```
