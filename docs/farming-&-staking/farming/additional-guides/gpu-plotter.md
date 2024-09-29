@@ -52,6 +52,7 @@ GPU plotting employs the new v1 plot format, which is applicable to any plots cr
 | RX 7900 Series    | 7900 XT, 7900 XTX, 7900 GRE                                            |
 
 Supported on Test Builds for Linux Only
+
 *For more details, please consult the [AMD ROCm Requirements](https://rocm.docs.amd.com/projects/install-on-linux/en/latest/reference/system-requirements.html) for compatibility.*
 
 ### **Intel**
