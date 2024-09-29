@@ -28,7 +28,7 @@ GPU plotting employs the new v1 plot format, which is applicable to any plots cr
 | [Advanced CLI](https://github.com/autonomys/subspace/releases)          |   ✅    |    ✅     |    ✅     |     ⚠️      |      🔜      |
 | [Space Acres](https://github.com/autonomys/space-acres/releases)       |   ✅    |    ✅     |    ✅     |     🔜      |      🔜      |
 
-*Limited AMD Support for just Linux is available in recent test builds. See Discord [farmer-chat](https://discord.com/channels/864285291518361610/1062507270539321485) channel for details.*
+⚠️ *Limited AMD Support for just Linux is available in recent test builds. See Discord [farmer-chat](https://discord.com/channels/864285291518361610/1062507270539321485) channel for details.*
 
 ## Supported Video Cards
 
@@ -71,14 +71,14 @@ Below are some essential parameters for configuring the GPU plotter:
 - When a compatible GPU is detected, CPU plotting is automatically disabled by default, but can be re-enabled if needed by specifying number of concurrently encoded sectors:
   `--cpu-sector-encoding-concurrency <sectors>`
 
-  # Example:
+  ### Example:
   ```bash
   --cpu-sector-encoding-concurrency 2
   ```
 - Specify particular GPUs for plotting rather than using all available GPUs (the default configuration employs all compatible GPUs):
   `--cuda-gpus <gpu_ids>`
 
-  # Example:
+  ### Example:
   ```bash
   --cuda-gpus 0,1,3
   ```
