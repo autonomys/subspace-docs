@@ -69,14 +69,14 @@ Most NVIDIA GPU users do not need to change any of these parameters. The default
 Below are some essential parameters for configuring the GPU plotter:
 
 - When a compatible GPU is detected, CPU plotting is automatically disabled by default, but can be re-enabled if needed by specifying number of concurrently encoded sectors:
-  --cpu-sector-encoding-concurrency <sectors>
+  `--cpu-sector-encoding-concurrency <sectors>`
 
   # Example:
   ```bash
   --cpu-sector-encoding-concurrency 2
   ```
 - Specify particular GPUs for plotting rather than using all available GPUs (the default configuration employs all compatible GPUs):
-  --cuda-gpus <gpu_ids>
+  `--cuda-gpus <gpu_ids>`
 
   # Example:
   ```bash
