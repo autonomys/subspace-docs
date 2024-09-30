@@ -116,16 +116,15 @@ Since the port forwarding process varies by router, follow these general steps:
 
 If you are using Linux with UFW (Uncomplicated Firewall) enabled, you will need to allow traffic on the necessary ports to ensure your node and farmer can communicate properly. Use the following commands to update your firewall settings:
 
-- Allow node traffic on ports 30333 and 30433:
-```bash
+```bash title="Allow node traffic on ports 30333 and 30433:"
 sudo ufw allow 30333,30433 comment 'Autonomys Node'
 ```
-- Allow farmer traffic on port 30533:
-```bash
+
+```bash title="Allow farmer traffic on port 30533:"
 sudo ufw allow 30533 comment 'Autonomys Farmer'
 ```
-- If you are connecting remote farmers within your local network (LAN), allow RPC connections by running this command (assuming your LAN IP range is 192.168.1.0/24):
-```bash
+
+```bash title="If you are connecting remote farmers within your local network (LAN), allow RPC connections by running this command (assuming your LAN IP range is 192.168.1.0/24):"
 sudo ufw allow from 192.168.1.0/24 to any port 9944 proto tcp comment 'Autonomys Node RPC'
 ```
 
