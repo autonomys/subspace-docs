@@ -90,3 +90,49 @@ import { generateAddress, getBalance, stake, transfer, getInfo } from '@autonomy
 :::note
 All functions that return a `SubmittableExtrinsic` can be signed and submitted to the blockchain. Functions returning `Promise<T>` should be awaited to retrieve the desired data.
 :::
+
+
+### Usage Example
+
+**Task**: To get the wallet balance on a consensus chain
+
+1. Get the RPC endpoint information for the consensus chain, which is available [here](/docs/develop/intro.md#rpc-endpoints).
+
+2. Determine which methods are required in order to get the information. 
+
+3. Create a `.js` or `.ts` file and execure the code. 
+
+    ```typescript
+    /// required to get the API for the balance function
+    const { createConnection } = require('./packages/auto-utils')
+    /// required to query the RPC in order to get the balance
+    const { balance } = require('./packages/auto-consensus')
+
+    async function getApiInstance() {
+        /// make sure to use the correct, up-to-date endpoint
+        const endpoint = 'wss://rpc-0.gemini-3h.subspace.network/ws'
+        const api = await createConnection(endpoint)
+        return api
+    }
+
+    async function getWalletBalance() {
+        try {
+            // Initialize the API instance using activate
+            const api = await getApiInstance()
+
+            /// Call the balance function with the API and wallet address. Replace the wallet address with your wallet. 
+            const walletBalance = await balance(api, 'st7woZs4wA6F9ssvdg3DzZi6v3s9MB7DXE3LS1fzTQA16nJSP')
+
+            console.log('Wallet Balance:', walletBalance)
+
+            /// Disconnect when done
+            await api.disconnect()
+        } catch (error) {
+            console.error('Error fetching wallet balance:', error)
+        }
+    }
+
+    getWalletBalance()
+
+    ```
+4. Save the file and execute the file by running `node ./test-function.js`

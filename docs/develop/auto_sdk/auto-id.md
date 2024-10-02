@@ -14,7 +14,7 @@ keywords:
 
 ## Available Functions
 
-### AutoID Functions
+### Auto ID Functions
 
 - `addDaysToCurrentDate(days: number): Date`: Returns a new Date object representing the current date plus a specified number of days.
 - `authenticateAutoIdUser(api: ApiPromise, autoId: string, challenge: BufferSource, signature: BufferSource): Promise<boolean>`: Authenticates an AutoID user by verifying a signature over a challenge.

@@ -46,3 +46,19 @@ To start using Auto SDK, refer to our [Setup Instructions](/docs/develop/auto_sd
 
 ### Getting Started with Nova
 To start using Nova, refer to our [Guides and Manuals](/docs/develop/nova/quick_start.md).
+
+
+## RPC endpoints
+
+**List of Currently Active RPCs endpoints**
+
+#### Consensus
+- wss://rpc-0.gemini-3h.subspace.network/ws
+- wss://rpc-1.gemini-3h.subspace.network/ws
+
+#### Nova
+- wss://nova-0.gemini-3h.subspace.network/ws 
+- wss://nova-1.gemini-3h.subspace.network/ws
+
+#### Auto ID
+- wss://autoid-0.gemini-3h.subspace.network/ws
