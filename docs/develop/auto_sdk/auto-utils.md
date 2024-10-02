@@ -107,7 +107,7 @@ keywords:
 
 ---
 
-**Usage Examples:**
+### Usage Examples
 
 - **Signing and Sending a Transaction:**
 
@@ -161,7 +161,10 @@ keywords:
   ```
 
 ---
+:::note
+All asynchronous functions that return a `Promise<T>` should be awaited to retrieve the desired data. Functions interacting with the blockchain may require an active connection (`api`) to a node.
+:::
 
-**Note:** All asynchronous functions that return a `Promise<T>` should be awaited to retrieve the desired data. Functions interacting with the blockchain may require an active connection (`api`) to a node.
-
-**Important:** Ensure that you handle any errors that may occur during asynchronous operations, especially when dealing with transactions or network requests. Always validate user input and be cautious with private keys and sensitive data.
+:::important
+Ensure that you handle any errors that may occur during asynchronous operations, especially when dealing with transactions or network requests. Always validate user input and be cautious with private keys and sensitive data.
+:::

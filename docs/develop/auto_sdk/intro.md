@@ -42,24 +42,27 @@ The repository is organized as follows:
 - `packages/auto-id`: Identity management functions.
 
 ### Setup Instructions
-1. Clone the Repository
-Open your terminal and run:
+1. **Clone the Repository**. 
+
+Open your terminal and run
 
 ```bash
 git clone https://github.com/autonomys/auto-sdk.git
 ```
 
-2. Navigate to the Project Directory
+2. **Navigate to the Project Directory**.
 
 ```bash
 cd auto-sdk
 ```
-3. Set Yarn to Use the Berry Version
+
+3. **Set Yarn to Use the Berry Version**.
 
 ```bash
 yarn set version berry
 ```
-4. Install Dependencies
+
+4. **Install Dependencies**.
 
 ```bash
 yarn install
@@ -80,36 +83,38 @@ To execute tests for all packages:
 yarn run test
 ```
 
-### Localhost Testing 
-You can test the SDK packages against a local Autonomys node using the provided scripts instead of a public testnet (**Gemini 3h**).
+## Localhost Testing 
+    You can test the SDK packages against a local Autonomys node using the provided scripts instead of a public testnet (**Gemini 3h**).
 
-**Steps**:
-1. Verify OS and Architecture Settings
-Edit the **scripts/download.sh** file and ensure that lines 3-7 match your current operating system and architecture:
+### Steps
+1. **Verify OS and Architecture Settings**. 
 
-```bash
-# Change the following variables as needed
-# OS to download
-OS="macos" # Options: macos | ubuntu | windows
-# Architecture to download
-ARCHITECTURE="aarch64" # Options: aarch64 | x86_64-skylake | x86_64-v2
-```
+    Edit the **scripts/download.sh** file and ensure that lines 3-7 match your current operating system and architecture:
 
-2. Run the Development Script
-Execute the following command to start the local node and farmer:
+    ```bash
+    # Change the following variables as needed
+    # OS to download
+    OS="macos" # Options: macos | ubuntu | windows
+    # Architecture to download
+    ARCHITECTURE="aarch64" # Options: aarch64 | x86_64-skylake | x86_64-v2
+    ```
 
-```bash
-node scripts/run-dev.js
-```
+2. **Run the Development Script**.
 
-This script will:
+    Execute the following command to start the local node and farmer:
 
-1. Download the latest version of the node and farmer compatible with your OS and architecture (scripts/download.sh).
-2. Start the Node and create/insert the keystore (scripts/run-node.sh).
-3. Start the Farmer (scripts/run-farmer.sh).
-4. Register the Node as an operator, wait for synchronization, and then terminate the node and farmer (handled within scripts/run-dev.js).
-5. Restart the Node as an operator (scripts/run-operator.sh).
-6. Restart the Farmer (scripts/run-farmer.sh).
+    ```bash
+    node scripts/run-dev.js
+    ```
+
+    This script will:
+
+    1. Download the latest version of the node and farmer compatible with your OS and architecture (scripts/download.sh).
+    2. Start the Node and create/insert the keystore (scripts/run-node.sh).
+    3. Start the Farmer (scripts/run-farmer.sh).
+    4. Register the Node as an operator, wait for synchronization, and then terminate the node and farmer (handled within scripts/run-dev.js).
+    5. Restart the Node as an operator (scripts/run-operator.sh).
+    6. Restart the Farmer (scripts/run-farmer.sh).
 
 **Run Tests Against the Local Node**
 
