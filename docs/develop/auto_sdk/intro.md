@@ -10,10 +10,10 @@ keywords:
 ---
 
 ## Introduction to the Auto SDK
-Welcome to the Auto SDK documentation! The Auto SDK is a comprehensive toolkit designed to simplify the development of applications and integrations with the Autonomys Network. It provides a set of modular packages that enable developers to interact seamlessly with the consensus chains and active domains (Auto ID, Nova)
+Welcome to the Auto SDK documentation! The Auto SDK is a comprehensive toolkit designed to simplify the development of applications and integrations with the Autonomys Network. It provides a set of modular packages that enable developers to interact seamlessly with the consensus chain and active domains (Auto ID, Nova)
 
 ### What is the Auto SDK?
-The Auto SDK is a collection of JavaScript/TypeScript packages that abstract the complexity of blockchain interactions. It includes utilities for consensus mechanisms, identity management, and general-purpose functions that are essential for building decentralized applications (dApps) and services on the Autonomys Network.
+The Auto SDK is a collection of JavaScript/TypeScript packages that abstract away the complexity of blockchain interactions. It includes utilities for consensus interactions, identity management, and general-purpose functions that are essential for building decentralized applications (dApps) and services on the Autonomys Network.
 
 ### Key Features:
 - **Modular Architecture**: Use only the packages you need.
@@ -37,9 +37,9 @@ This guide will help you set up the Auto SDK locally and run it against a curren
 ### Repository Structure
 The repository is organized as follows:
 
-- packages/auto-utils: Utility functions for the SDK.
-- packages/auto-consensus: Consensus-related functions.
-- packages/auto-id: Identity management functions.
+- `packages/auto-utils`: Utility functions for the SDK.
+- `packages/auto-consensus`: Consensus-related functions.
+- `packages/auto-id`: Identity management functions.
 
 ### Setup Instructions
 1. Clone the Repository

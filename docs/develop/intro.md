@@ -16,7 +16,7 @@ Autonomys is a secure, scalable, and decentralized blockchain that resolves the 
 
 Absolutely not! Our primary objective is to minimize barriers to entry for both farmers and developers.
 
-We pride ourselves on offering unlimited possibilities—there are no boundaries!
+We pride ourselves on enabling unlimited possibilities - there are no boundaries!
 
 ## Development Options
 
@@ -25,7 +25,7 @@ We pride ourselves on offering unlimited possibilities—there are no boundaries
 ## [Auto SDK](/docs/develop/auto_sdk/intro)
 
 ### Key Features:
-- **Modular Packages**: The SDK is organized into packages like auto-utils, auto-consensus, and auto-id, allowing you to use only what you need.
+- **Modular Packages**: The SDK is organized into packages like auto-utils, auto-consensus, and auto-id. This partitions functionality intuitively and allows you to import only what you need.
 - **Simplified Interactions**: Abstracts the complexity of blockchain operations with high-level functions.
 - **Flexibility**: Suitable for building decentralized applications (dApps) and services with ease.
 
@@ -36,7 +36,7 @@ To start using Auto SDK, refer to our [Setup Instructions](/docs/develop/auto_sd
 
 ### Key Features:
 - **Solidity Smart Contracts**: Write and deploy smart contracts using Solidity, just as you would on Ethereum.
-- **Tool Compatibility**: Any tool available for Ethereum development—like Remix, Truffle, or Hardhat—is compatible with Autonomys.
+- **Tool Compatibility**: Any tool available for Ethereum development - like Remix, Truffle, or Hardhat - is compatible with Nova.
 - **Seamless Transition**: Developers familiar with Ethereum can transition to Autonomys without a steep learning curve.
 
 ### Why Use Nova?
