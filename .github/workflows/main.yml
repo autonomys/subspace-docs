@@ -37,7 +37,7 @@ jobs:
 
       # Install dependencies
       - name: Install dependencies
-        run: yarn install
+        run: yarn install --frozen-lockfile
 
       # Build Translation Leaderboard
       - name: Build leaderboard
