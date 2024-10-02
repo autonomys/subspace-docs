@@ -98,41 +98,66 @@ All functions that return a `SubmittableExtrinsic` can be signed and submitted t
 
 1. Get the RPC endpoint information for the consensus chain, which is available [here](/docs/develop/intro.md#rpc-endpoints).
 
-2. Determine which methods are required in order to get the information. 
+    - For this example, we'll use 'wss://rpc-0.gemini-3h.subspace.network/ws' as the endpoint.
 
-3. Create a `.js` or `.ts` file and execure the code. 
+2. Determine which methods are needed to accomplish the task. 
+
+    - `createConnection` from `@autonomys/auto-utils` to establish a connection to the node.
+    - `balance` from `@autonomys/auto-consensus` to retrieve the wallet balance.
+
+3. Create a `.js` or `.ts` file and include the following code. 
 
     ```typescript
-    /// required to get the API for the balance function
-    const { createConnection } = require('./packages/auto-utils')
-    /// required to query the RPC in order to get the balance
-    const { balance } = require('./packages/auto-consensus')
+    // Required to get the API for the balance function
+    const { createConnection } = require('@autonomys/auto-utils');
+    // Required to query the RPC in order to get the balance
+    const { balance } = require('@autonomys/auto-consensus');
 
     async function getApiInstance() {
-        /// make sure to use the correct, up-to-date endpoint
-        const endpoint = 'wss://rpc-0.gemini-3h.subspace.network/ws'
-        const api = await createConnection(endpoint)
-        return api
+        // Use the correct, up-to-date endpoint
+        const endpoint = 'wss://rpc-0.gemini-3h.subspace.network/ws';
+        const api = await createConnection(endpoint);
+        return api;
     }
 
     async function getWalletBalance() {
         try {
-            // Initialize the API instance using activate
-            const api = await getApiInstance()
+            // Initialize the API instance
+            const api = await getApiInstance();
 
-            /// Call the balance function with the API and wallet address. Replace the wallet address with your wallet. 
-            const walletBalance = await balance(api, 'st7woZs4wA6F9ssvdg3DzZi6v3s9MB7DXE3LS1fzTQA16nJSP')
+            // Replace with your wallet address
+            const walletAddress = 'st7woZs4wA6F9ssvdg3DzZi6v3s9MB7DXE3LS1fzTQA16nJSP';
 
-            console.log('Wallet Balance:', walletBalance)
+            // Call the balance function with the API and wallet address
+            const walletBalance = await balance(api, walletAddress);
 
-            /// Disconnect when done
-            await api.disconnect()
+            console.log('Wallet Balance:', walletBalance);
+
+            // Disconnect when done
+            await api.disconnect();
         } catch (error) {
-            console.error('Error fetching wallet balance:', error)
+            console.error('Error fetching wallet balance:', error);
         }
     }
 
-    getWalletBalance()
+    getWalletBalance();
 
     ```
-4. Save the file and execute the file by running `node ./test-function.js`
+
+    :::note
+    Replace 'st7woZs4wA6F9ssvdg3DzZi6v3s9MB7DXE3LS1fzTQA16nJSP' with your actual wallet address.
+
+    The createConnection function initializes the API instance connected to the specified endpoint.
+    :::
+
+4. Save the file and run it using the following command `node ./test-function.js`. You should see the wallet balance printed in the console.
+
+**Additional Tips**:
+
+**Async/Await**:
+
+- Both createConnection and balance are **asynchronous functions** returning **promises**. Using `await` ensures that the code waits for these operations to complete before proceeding.
+
+- **API Disconnection**: It's good practice to disconnect from the API when you're done to free up resources.
+
+- **Logging**: The script logs the wallet balance to the console. You can modify this to format the output or handle it as needed for your application.
