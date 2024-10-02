@@ -152,11 +152,9 @@ All functions that return a `SubmittableExtrinsic` can be signed and submitted t
 
 4. Save the file and run it using the following command `node ./test-function.js`. You should see the wallet balance printed in the console.
 
-**Additional Tips**:
+#### Additional Tips**:
 
-**Async/Await**:
-
-- Both createConnection and balance are **asynchronous functions** returning **promises**. Using `await` ensures that the code waits for these operations to complete before proceeding.
+- **Async/Await**: Both createConnection and balance are **asynchronous functions** returning **promises**. Using `await` ensures that the code waits for these operations to complete before proceeding.
 
 - **API Disconnection**: It's good practice to disconnect from the API when you're done to free up resources.
 
