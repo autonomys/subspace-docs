@@ -85,6 +85,33 @@ keywords:
 import { generateAddress, getBalance, stake, transfer, getInfo } from '@autonomys/auto-consensus'
 ```
 
+### Overview of Api Object
+
+When working with the SDK functions like those in `auto-consensus`, the `api: Api` parameter is a crucial component. It's an instance of the Polkadot.js API, specifically `ApiPromise`, which serves as the gateway to interact with the blockchain node.
+
+**Core Components**:
+- **api.rpc**: Contains methods to perform remote procedure calls to the node. These include calls for querying system information, submitting extrinsics, and accessing chain data.
+
+- **api.query**: Provides access to the blockchain's runtime storage. You can query on-chain storage items, such as balances, staking information, and module-specific data.
+
+- **api.tx**: Allows you to create and submit extrinsics (transactions) to the blockchain. It includes methods for constructing and signing transactions for various pallets/modules.
+
+- **api.consts**: Exposes the runtime constants defined in the blockchain's metadata. This includes information like existential deposit, block time, or any constants set by runtime modules.
+
+- **api.types**: Contains the type definitions used by the chain, which are crucial for encoding and decoding data correctly.
+
+- **api.events**: Provides access to the events emitted by the blockchain, which can be subscribed to for real-time updates.
+
+This code examples might be helpful to understrand `api: API object`: 
+
+```typescript
+// Getting the current chain header (block height)
+const endpoint = 'wss://rpc-0.gemini-3h.subspace.network/ws'
+const api = await createConnection(endpoint)
+const blockNumber = await api.rpc.chain.getHeader()
+console.log('Block Number:', blockNumber.number.toNumber())
+```
+
 ---
 
 :::note
@@ -152,10 +179,10 @@ All functions that return a `SubmittableExtrinsic` can be signed and submitted t
 
 4. Save the file and run it using the following command `node ./test-function.js`. You should see the wallet balance printed in the console.
 
-#### Additional Tips**:
+**Additional Tips**:
 
-- **Async/Await**: Both createConnection and balance are **asynchronous functions** returning **promises**. Using `await` ensures that the code waits for these operations to complete before proceeding.
+    - **Async/Await**: Both createConnection and balance are **asynchronous functions** returning **promises**. Using `await` ensures that the code waits for these operations to complete before proceeding.
 
-- **API Disconnection**: It's good practice to disconnect from the API when you're done to free up resources.
+    - **API Disconnection**: It's good practice to disconnect from the API when you're done to free up resources.
 
-- **Logging**: The script logs the wallet balance to the console. You can modify this to format the output or handle it as needed for your application.
+    - **Logging**: The script logs the wallet balance to the console. You can modify this to format the output or handle it as needed for your application.
