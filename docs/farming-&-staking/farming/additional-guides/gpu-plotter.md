@@ -63,7 +63,7 @@ Intel Arc GPUs are expected to be supported in the future, but specific compatib
 ## Common Plotting Parameters
 
 :::note
-Most NVIDIA GPU users do not need to change any of these parameters. The default options will automatically find and use any supported GPU's and CPU plotting will be automatically disabled.
+Most NVIDIA GPU users do not need to change any of these parameters. The default options will automatically find and use any supported GPU, and CPU plotting will be automatically disabled.
 :::
 
 Below are some essential parameter examples for configuring the GPU plotter:
