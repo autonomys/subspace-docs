@@ -94,7 +94,7 @@ Resizing a plot when the drive is nearly full (98% or more) will render the plot
 </TabItem>
 
 <TabItem value="cow" label="❌ CoW">
-Copy-on-Write file systems are not recommended due to increased latency and reduced write speeds associated with managing data copies.
+Copy-on-Write file systems (ReFS, BTRFS, ZFS, bcachefs, HAMMER) are not recommended due to increased latency and reduced write speeds associated with managing unnecessary data copies.
 ```bash title="Disable CoW on BTRFS:"
 sudo chattr +C /path/to/farm
 ```
