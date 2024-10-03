@@ -62,12 +62,12 @@ const config = {
             from: ['/docs/category/developer-documentation/','/docs/developers/intro/', '/docs/pre-release/category/develop-on-nova-evm/']
           },
           {
-            to: "/docs/category/operators-and-nominators",
-            from: "/docs/operators_and_staking/intro"
+            to: "/docs/farming-&-staking/staking/intro",
+            from: ["/docs/operators_and_staking/intro", "/docs/category/operators-and-nominators"]
           },
           {
-            to: "/docs/category/advanced-cli",
-            from: ["/docs/protocol/cli/", "/docs/protocol/substrate-cli/", "/docs/category/advanced-cli-recommended"]
+            to: "/docs/farming-&-staking/farming/advanced-cli/cli-install",
+            from: ["/docs/protocol/cli/", "/docs/protocol/substrate-cli/", "/docs/category/advanced-cli-recommended", "/docs/category/advanced-cli"]
           },
           {
             to: "/docs/farming-&-staking/timekeeping",
@@ -78,8 +78,8 @@ const config = {
             from: ["/docs/category/get-started-with-farming", "/protocol/farm/farming"]
           },
           {
-            to: "/docs/category/space-acres-recommended",
-            from: ["/docs/protocol/pulsar/", "/docs/category/pulsar-recommended", "/docs/category/pulsar", "/docs/category/space-acres", "/docs/farming-&-staking/farming/pulsar"]
+            to: "/docs/farming-&-staking/farming/space-acres/install",
+            from: ["/docs/protocol/pulsar/", "/docs/category/pulsar-recommended", "/docs/category/pulsar", "/docs/category/space-acres", "/docs/farming-&-staking/farming/pulsar", "/docs/category/space-acres-recommended"]
           },
           {
             to: "/docs/farming-&-staking/farming/advanced-cli/cli-install",
@@ -173,7 +173,7 @@ const config = {
               },
               {
                 label: 'Operators & Nominators',
-                href: '/docs/category/operators-and-nominators'
+                href: '/docs/farming-&-staking/staking/intro'
               },
               {
                 label: 'Develop on Autonomys',
