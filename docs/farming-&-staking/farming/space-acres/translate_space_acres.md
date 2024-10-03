@@ -1,7 +1,7 @@
 ---
-title: Space Acres UI Translation Guide
+title: Translation Guide
 sidebar_position: 2
-description: Translation Guide for the Space Acres UI
+description: Translation Guide for Space Acres
 keywords:
     - Space Acres UI translation
     - Community

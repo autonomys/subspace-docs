@@ -1,5 +1,5 @@
 ---
-title: Introduction to Staking and Operators
+title: Getting Started
 sidebar_position: 1
 description: Introduction to Staking and Operators
 keywords:

@@ -1,6 +1,6 @@
 ---
 title: Timekeeping
-sidebar_position: 5
+sidebar_position: 3
 description: Farming on the Autonomys Network
 keywords:
   - Timekeeper

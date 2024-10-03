@@ -1,8 +1,6 @@
 {
     "label": "Farming & Staking",
+    "collapsed": false,
     "position": 2,
-    "link": {
-      "type": "doc",
-      "id": "farming-&-staking/index"
-    }
+    "link": null
 }
