@@ -89,6 +89,10 @@ const config = {
             to: "/docs/farming-&-staking/staking/operators/register-operator",
             from: "/docs/farming-&-staking/staking/operators"
           },
+          {
+            to: "/docs/farming-&-staking/farming/intro/",
+            from: "/docs/farming-&-staking/farming/prerequisites/",
+          },
         ],
       },
     ],

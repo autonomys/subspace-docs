@@ -118,12 +118,7 @@ For detailed information, visit our [Safety and Security](../../learn/security) 
 
 :::
 
-
-To establish a secure farming environment, ensure your system is regularly updated, configure [port forwarding](additional-guides/port-config.mdx#ports-to-forward--firewall-access) and [configure your firewall](additional-guides/port-config.mdx#firewall-configuration), and adhere to established network safety protocols. For in depth security practices, please consult our [Safety and Security](../../learn/security) guide.
-
 Ensure your system is regularly updated, configure [port forwarding](additional-guides/port-config.mdx#ports-to-forward--firewall-access), set up your [firewall](additional-guides/port-config.mdx#firewall-configuration), and follow best practices for network safety. For comprehensive security guidelines, please refer to our [Safety and Security](../../learn/security) guide.
-
-
 
 ## Wallet
 
@@ -142,4 +137,18 @@ Before you begin, make sure you have a wallet to receive rewards. We recommend u
 
 For detailed information on network configurations, including port forwarding requirements and firewall settings, please refer to our [Port Forwarding & Firewall](../../farming-&-staking/farming/additional-guides/port-config.mdx) guide.
 
+:::
+
+## Dependencies
+
+:::caution  Windows No Output Bug
+If you face an error where the node outputs nothing and no error code is given it is likely you just need to install the latest Visual C++ Redistributable package [here](https://learn.microsoft.com/en-us/cpp/windows/latest-supported-vc-redist?view=msvc-170)
+:::
+
+:::caution Linux `libcomp.so.1` error.
+If you encounter an error related to `libgomp.so.1`, install the `libgomp1` library with `sudo apt-get install libgomp1`.
+:::
+
+:::caution Linux File Descriptor Limit
+Linux has a hard limit of 100k file descriptors. Exceeding this may cause errors. Refer to our guide [here](./advanced-cli/cli-tips.mdx#changing-number-of-open-files-limit-linux)
 :::
