@@ -40,8 +40,8 @@ GPU plotting employs the new v1 plot format, which is applicable to any plots cr
 ### **Nvidia**
 
 | Series              | Supported |
-|---------------------|-----------|
-| RTX 20xx and Newer  |    ✅     |
+|---|:---:|
+| RTX 20xx and Newer  | ✅ |
 
 *Nvidia [drivers](https://developer.nvidia.com/cuda-downloads) version 550 or later are required. Installing the CUDA Toolkit is not required.*
 
@@ -52,10 +52,10 @@ GPU plotting employs the new v1 plot format, which is applicable to any plots cr
 :::
 
 | Series            | Models                                            | Supported |
-|-------------------|---------------------------------------------------|-----------|
-| RX 7900 Series    | 7900 XT, 7900 XTX, 7900 GRE                       |     ✅     |
-| RX 6000 Series    | 6600, 6800                                        |     ✅     |
-| RX 5000 Series    | 5600, 5700                                        |     ❌     |
+|---|---|:---:|
+| RX 7900 Series    | 7900 XT, 7900 XTX, 7900 GRE                       | ✅ |
+| RX 6000 Series    | 6600, 6800                                        | ✅ |
+| RX 5000 Series    | 5600, 5700                                        | ❌ |
 
 Supported on Test Builds for Linux Only
 
