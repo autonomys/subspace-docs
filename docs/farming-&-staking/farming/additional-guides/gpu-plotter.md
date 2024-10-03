@@ -39,9 +39,9 @@ GPU plotting employs the new v1 plot format, which is applicable to any plots cr
 
 ### **Nvidia**
 
-| Series              |
-|---------------------|
-| RTX 20xx and Newer  |
+| Series              | Supported |
+|---------------------|-----------|
+| RTX 20xx and Newer  |    ✅     |
 
 *Nvidia [drivers](https://developer.nvidia.com/cuda-downloads) version 550 or later are required. Installing the CUDA Toolkit is not required.*
 
@@ -51,17 +51,20 @@ GPU plotting employs the new v1 plot format, which is applicable to any plots cr
 *There are many challenges to overcome regarding AMD ROCm support. There is much more information on this topic on the [forum](https://forum.autonomys.xyz/t/rocm-gpu-support-amd/4440)*
 :::
 
-| Series            | Models                                                                 |
-|-------------------|------------------------------------------------------------------------|
-| RX 7900 Series    | 7900 XT, 7900 XTX, 7900 GRE                                            |
+| Series            | Models                                            | Supported |
+|-------------------|---------------------------------------------------|-----------|
+| RX 7900 Series    | 7900 XT, 7900 XTX, 7900 GRE                       |     ✅     |
+| RX 6000 Series    | 6600, 6800                                        |     ✅     |
+| RX 5000 Series    | 5600, 5700                                        |     ❌     |
 
 Supported on Test Builds for Linux Only
+
 
 *For more details, please consult the [AMD ROCm Requirements](https://rocm.docs.amd.com/projects/install-on-linux/en/latest/reference/system-requirements.html) for compatibility.*
 
 ### **Intel**
 
-Intel Arc GPUs are expected to be supported in the future, but specific compatibility details have not been announced yet.
+Intel Arc GPUs may be supported in the future, but specific compatibility details have not been announced yet.
 
 
 ## Common Plotting Parameters
