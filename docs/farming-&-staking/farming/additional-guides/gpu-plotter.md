@@ -8,6 +8,10 @@ keywords:
     - GPU
 ---
 
+:::tip
+Most NVIDIA GPU users do not need to change any parameters. The default options will automatically find and use any supported GPU, and CPU plotting will be automatically disabled.
+:::
+
 ## Overview
 
 Autonomys utilizes your drive storage, specifically SSD or NVMe drives, to store plots. After the plotting process is finished, these plots are then farmed using your CPU. Farming is not particularly demanding on the CPU, enabling most modern processors to manage a substantial farm size. However, the plot creation process is highly resource intensive, which makes CPU plotting the main bottleneck.
@@ -61,10 +65,6 @@ Intel Arc GPUs are expected to be supported in the future, but specific compatib
 
 
 ## Common Plotting Parameters
-
-:::note
-Most NVIDIA GPU users do not need to change any of these parameters. The default options will automatically find and use any supported GPU, and CPU plotting will be automatically disabled.
-:::
 
 Below are some essential parameter examples for configuring the GPU plotter:
 
