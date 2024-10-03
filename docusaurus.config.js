@@ -332,7 +332,7 @@ const config = {
           '<br /><h4>Learn more about the Autonomys Network by visiting our <a target="_blank" href="https://academy.autonomys.xyz/">Academy</a></h4>',
         backgroundColor: '#ac9dc7',
         textColor: '#292929',
-        isCloseable: false,
+        isCloseable: true,
       },
       prism: {
         theme: lightCodeTheme,
