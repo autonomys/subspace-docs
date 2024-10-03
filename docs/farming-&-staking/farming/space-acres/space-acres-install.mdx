@@ -1,24 +1,25 @@
 ---
-title: Install
-sidebar_position: 2
-description: How to run an Autonomys Network Farmer with Space Acres GUI Application
+
+title: Install  
+sidebar_position: 2  
+description: How to run an Autonomys Network Farmer with Space Acres GUI Application  
 keywords:
-    - Farmer
-    - Farming
-    - GUI
-    - Executable
+- Farmer
+- Farming
+- GUI
+- Executable
+
 ---
 
-import DownloadButtons from './platforms/_download.mdx'
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
+import DownloadButtons from './platforms/_download.mdx'  
+import Tabs from '@theme/Tabs';  
+import TabItem from '@theme/TabItem';  
+import Link from '@docusaurus/Link';  
+import styles from '@site/src/pages/index.module.css';  
 
-import Link from '@docusaurus/Link';
-import styles from '@site/src/pages/index.module.css';
-
-import WindowsPage from './platforms/_windows.mdx';
-import MacOSPage from './platforms/_macos.mdx';
-import LinuxPage from './platforms/_linux.mdx';
+import WindowsPage from './platforms/_windows.mdx';  
+import MacOSPage from './platforms/_macos.mdx';  
+import LinuxPage from './platforms/_linux.mdx';  
 
 ## Before You Begin
 
@@ -33,54 +34,69 @@ What to expect:
 - Sync might take from a few hours to up to a day.
 - The initial syncing and plotting process requires substantial computational resources, so you may notice that your computer runs slower for day-to-day tasks until syncing and plotting are complete.
 
-
 :::note
 Please note that a wallet with a Substrate address is required to run the software.<br />
 To learn how to create a Substrate wallet, please visit our pages on [SubWallet (recommended)](/docs/farming-&-staking/wallets/subwallet.md) or [**`{polkadot.js}`** extension](/docs/farming-&-staking/wallets/polkadot.md).
 :::
 
 
+### Installation Videos
+
+For those who prefer a visual guide, we have prepared installation videos to assist you. The videos will help you to set up Space Acres. Please select your operating system below to watch the corresponding installation video. If you prefer detailed text instructions, please proceed to [Step 1](#step-1-download-and-install-space-acres).
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/Gsjfxhnw-1w" title="SubWallet Setup" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/qEqq7244rEM" title="Space Acres Installation" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+---
+
 ## Step 1: Download and Install Space Acres
 
 <Tabs groupId="OS">
 
 <TabItem value="linux" label="🐧 Linux" default>
+
 <LinuxPage/>
+
 </TabItem>
 
 <TabItem value="windows" label="🖼️ Windows">
+
 <WindowsPage/>
+
 </TabItem>
 
 <TabItem value="macos" label="🍎 macOS">
+
 <MacOSPage/>
+
 </TabItem>
 
 </Tabs>
 
 ## Step 2: Set Up Space Acres
 
-Now comes the exciting part – setting up your farm! Here's what you'll see on the first screen:
+Now comes the exciting part—setting up your farm! Here's what you'll see on the first screen:
 
-1. **Subspace(Autonomys) Network Rewards Address**:
-    - This is where your farming rewards will be sent.
-    - It starts with **st** for **Subwallet** and with **5** for `{Polkadot.js}` extenstion.
-    - If you don't have one, click **Create wallet** to create a wallet.
+1. **Subspace (Autonomys) Network Rewards Address**:
+   - This is where your farming rewards will be sent.
+   - It starts with **st** for **SubWallet** and with **5** for `{Polkadot.js}` extension.
+   - If you don't have one, click **Create wallet** to create a wallet.
 
 2. **Choose the folder for node**:
-    - This is where Space Acres will store important data.
-    - Pick a location with plenty of free space; is might be as simple as **/Downloads**.
+   - This is where Space Acres will store important data.
+   - Pick a location with plenty of free space; it might be as simple as **/Downloads**.
 
 3. **Choose the folder for farming and size of the farm**:
-    - This is where your **plots** (farming data) will be stored.
-    - The size determines your probability of getting a reward on the Network. In most cases, larger plots (or larger farm size) will gain you more rewards.
-    - If you prefer to have a few farms (e.g. you have some space space on different SSD drives), you can click on **Add farm** to pledge some additional storage space.
+   - This is where your **plots** (farming data) will be stored.
+   - The size determines your probability of getting a reward on the Network. In most cases, larger plots (or larger farm size) will gain you more rewards.
+   - If you prefer to have a few farms (e.g., you have some spare space on different SSD drives), you can click on **Add farm** to pledge some additional storage space.
 
 4. **Advanced configuration (optional)**:
 
-:::tip
-Don't worry about this unless you're an experienced user.
-:::
+   :::tip
+   Don't worry about this unless you're an experienced user.
+   :::
 
 For a comprehensive list of prerequisites and explanations, refer to our [Getting Started Guide](/docs/farming-&-staking/farming/intro.mdx). 
 
@@ -92,7 +108,7 @@ Your screen may look slightly different depending on your operating system, but 
 
 ## Step 3: Start Farming
 
-1. After entering your information, click "Start".
+1. After entering your information, click **Start**.
 2. Space Acres will now set up your node and connect to the Autonomys Network.
 3. You'll see progress bars as it syncs data and creates your farm plots.
 
@@ -102,59 +118,53 @@ Your screen may look slightly different depending on your operating system, but 
 
 ![space-acres-setup-3](/img/doc-imgs/space-acres/space-acres-setup-3.png)
 
-5. Initial syncing and plotting can take from a few hours to days, depending on your hardware, network speed and reliability and specified farm size. 
-Below are examples of the various stages you can expect.
+5. Initial syncing and plotting can take from a few hours to days, depending on your hardware, network speed, and specified farm size. Below are examples of the various stages you can expect.
 
-a. Cache Syncing
+   a. **Cache Syncing**
 
-![space-acres-setup-5](/img/doc-imgs/space-acres/space-acres-setup-5.png) 
+   ![space-acres-setup-5](/img/doc-imgs/space-acres/space-acres-setup-5.png) 
 
-b. Initial Plotting
+   b. **Initial Plotting**
 
-![space-acres-setup-6](/img/doc-imgs/space-acres/space-acres-setup-6.png)
+   ![space-acres-setup-6](/img/doc-imgs/space-acres/space-acres-setup-6.png)
 
-c. Plotting Complete, now farming.
+   c. **Plotting Complete, Now Farming**
 
-![space-acres-setup-6](/img/doc-imgs/space-acres/space-acres-setup-7.png)
-
+   ![space-acres-setup-7](/img/doc-imgs/space-acres/space-acres-setup-7.png)
 
 6. Once syncing and plotting are complete, you’ll notice a drop in CPU and RAM usage, and the dashboard will display your earned rewards and the estimated time until the next reward.
 
 ![space-acres-setup-7](/img/doc-imgs/space-acres/space-acres-setup-7.png)
 
-You can toggle the dashboard to view brief statistics or display all plotted sectors along with their status. The colour codes of sectors are explained below. By hovering over the icons on the right, you can check the number of missed challenges, your average auditing and proving performance, and other useful stats.
+You can toggle the dashboard to view brief statistics or display all plotted sectors along with their status. The color codes of sectors are explained below. By hovering over the icons on the right, you can check the number of missed challenges, your average auditing and proving performance, and other useful stats.
 
 **Happy farming!** 
 
 ## Understanding Your Farm
 
-Your farm is made up of **sectors** that change color based on their status.
-For your convenience, we've provided a table detailing the color codes associated with different sector statuses. This will enhance your insight into the activities and conditions of your plot.
+Your farm is made up of **sectors** that change color based on their status. For your convenience, we've provided a table detailing the color codes associated with different sector statuses. This will enhance your insight into the activities and conditions of your plot.
 
-| Status            | Color Preview | Description                          |
-|-------------------|---------------|--------------------------------------|
-| Default           | ![#727272](https://dummyimage.com/15/727272/000000&text=+) #727272 | Default state of a farm sector       |
-| Plotted           | ![#9fc4ff](https://dummyimage.com/15/9fc4ff/000000&text=+) #9fc4ff | Sector is plotted                    |
-| About to Expire   | ![#ffd678](https://dummyimage.com/15/ffd678/000000&text=+) #ffd678 | Sector is nearing expiration         |
-| Expired           | ![#ff877c](https://dummyimage.com/15/ff877c/000000&text=+) #ff877c | Sector has expired                   |
-| Downloading       | ![#499249](https://dummyimage.com/15/499249/000000&text=+) #499249 | Sector is in the process of downloading (animated) |
-| Encoding          | ![#ff5365](https://dummyimage.com/15/ff5365/000000&text=+) #ff5365 | Sector is encoding data (animated)   |
-| Writing           | ![#9fc4ff](https://dummyimage.com/15/9fc4ff/000000&text=+) #9fc4ff | Sector is writing data (animated)    |
-
-
+| Status            | Color Preview | Description                                                  |
+|-------------------|---------------|--------------------------------------------------------------|
+| Default           | ![#727272](https://dummyimage.com/15/727272/000000&text=+) #727272 | Default state of a farm sector                               |
+| Plotted           | ![#9fc4ff](https://dummyimage.com/15/9fc4ff/000000&text=+) #9fc4ff | Sector is plotted                                            |
+| About to Expire   | ![#ffd678](https://dummyimage.com/15/ffd678/000000&text=+) #ffd678 | Sector is nearing expiration                                 |
+| Expired           | ![#ff877c](https://dummyimage.com/15/ff877c/000000&text=+) #ff877c | Sector has expired                                           |
+| Downloading       | ![#499249](https://dummyimage.com/15/499249/000000&text=+) #499249 | Sector is in the process of downloading (animated)           |
+| Encoding          | ![#ff5365](https://dummyimage.com/15/ff5365/000000&text=+) #ff5365 | Sector is encoding data (animated)                           |
+| Writing           | ![#9fc4ff](https://dummyimage.com/15/9fc4ff/000000&text=+) #9fc4ff | Sector is writing data (animated)                            |
 
 :::note Learn More About Syncing, Plotting & Farming
 To learn more about the syncing, plotting, and farming processes on the Autonomys Network, please refer to the links below from our Autonomys Academy:
 - [Synchronization](https://academy.autonomys.xyz/subspace-protocol/network-architecture/networking-protocols#synchronization)
 - [Plotting](https://academy.autonomys.xyz/subspace-protocol/consensus/proof-of-archival-storage/plotting)
 - [Farming](https://academy.autonomys.xyz/subspace-protocol/consensus/proof-of-archival-storage/farming)
-
 :::
-
 
 ## Troubleshooting
 
 If you are facing any issues with the application, you can:
-- Search the [Support Forum](https://forum.autonomys.xyz/c/support/5) to see if your issue may have been solved. If it's a new one, feel free to create a new post! 
-- Use dedicated channels [#farmer-support](https://discord.com/channels/864285291518361610/1062498655787028500) and [#farmer-chat](https://discord.com/channels/864285291518361610/1062507270539321485) on our [Discord](https://autonomys.xyz/discord) for peer-to-peer support.
+
+- Search the [Support Forum](https://forum.autonomys.xyz/c/support/5) to see if your issue has been addressed. If it's a new one, feel free to create a new post!
+- Use the dedicated channels [#farmer-support](https://discord.com/channels/864285291518361610/1062498655787028500) and [#farmer-chat](https://discord.com/channels/864285291518361610/1062507270539321485) on our [Discord](https://autonomys.xyz/discord) for peer-to-peer support.
 - Raise an issue on our [GitHub](https://github.com/autonomys/space-acres/issues).
