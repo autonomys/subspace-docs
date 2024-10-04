@@ -5,10 +5,17 @@ import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Layout from '@theme/Layout';
 import HomepageFeatures from '@site/src/components/HomepageFeatures';
 import Translate, {translate}  from '@docusaurus/Translate';
+import  { Redirect } from 'react-router-dom';
 
 import styles from './index.module.css';
 
+// Used as a temporary redirect until a new landing page is designed.
+export default function Home() {
+  return <Redirect to='/docs/learn/intro' />;
+}
 
+// Original landing page
+/*
 function HomepageHeader() {
   const {siteConfig} = useDocusaurusContext();
   return (
@@ -56,3 +63,4 @@ export default function Home(): JSX.Element {
     </Layout>
   );
 }
+*/
