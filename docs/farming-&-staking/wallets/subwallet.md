@@ -1,6 +1,5 @@
 ---
-title: SubWallet
-label: "✨ SubWallet"
+title: ✨ SubWallet
 sidebar_position: 1
 description: How to configure the SubWallet Substrate wallet for the Subspace Network
 keywords:

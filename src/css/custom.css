@@ -211,3 +211,10 @@ html[data-theme='dark'] .docusaurus-highlight-code-line {
   margin-bottom: 20px;
 }
 
+.sidebar-recommendation-label {
+  margin-top: 20px;  /* Space between the last sidebar item and the label */
+  font-size: 0.8rem;
+  font-style: italic;
+  text-align: left;
+  padding-left: 20px;
+}
