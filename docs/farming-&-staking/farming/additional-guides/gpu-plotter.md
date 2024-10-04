@@ -39,8 +39,9 @@ GPU plotting employs the new v1 plot format, which is applicable to any plots cr
 
 ### **Nvidia**
 
-| Series              | Supported |
+| Series/Model        | Supported |
 |---|:---:|
+| GTX 1660 Super      | ✅ |
 | RTX 20xx and Newer  | ✅ |
 
 *Nvidia [drivers](https://developer.nvidia.com/cuda-downloads) version 550 or later are required. Installing the CUDA Toolkit is not required.*
