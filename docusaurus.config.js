@@ -79,15 +79,11 @@ const config = {
           },
           {
             to: "/docs/farming-&-staking/farming/space-acres/install",
-            from: ["/docs/protocol/pulsar/", "/docs/category/pulsar-recommended", "/docs/category/pulsar", "/docs/category/space-acres", "/docs/farming-&-staking/farming/pulsar", "/docs/category/space-acres-recommended"]
+            from: ["/docs/protocol/pulsar/", "/docs/category/pulsar-recommended", "/docs/category/pulsar", "/docs/category/space-acres", "/docs/farming-&-staking/farming/pulsar", "/docs/category/space-acres-recommended", "/docs/farming-&-staking/farming/space-acres/space-acres-install", "/docs/farming-&amp;-staking/farming/space-acres/space-acres-install"]
           },
           {
             to: "/docs/farming-&-staking/staking/operators/register-operator",
             from: "/docs/farming-&-staking/staking/operators"
-          },
-          {
-            to: "/docs/farming-&-staking/farming/space-acres/install",
-            from: ["/docs/farming-&-staking/farming/space-acres/space-acres-install", "/docs/farming-&amp;-staking/farming/space-acres/space-acres-install"]
           },
           {
             to: "/docs/farming-&-staking/farming/intro/",
