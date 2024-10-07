@@ -87,7 +87,7 @@ const config = {
           },
           {
             to: "/docs/farming-&-staking/farming/space-acres/install",
-            from: ["/docs/farming-&-staking/farming/space-acres/space-acres-install", "/docs/farming-&amp;-staking/farming/space-acres/install"]
+            from: ["/docs/farming-&-staking/farming/space-acres/space-acres-install", "/docs/farming-&amp;-staking/farming/space-acres/space-acres-install"]
           },
           {
             to: "/docs/farming-&-staking/farming/intro/",
