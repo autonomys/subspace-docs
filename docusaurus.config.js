@@ -86,6 +86,10 @@ const config = {
             from: "/docs/farming-&-staking/staking/operators"
           },
           {
+            to: "/docs/farming-&-staking/farming/space-acres/install",
+            from: "/docs/farming-&-staking/farming/space-acres/space-acres-install"
+          },
+          {
             to: "/docs/farming-&-staking/farming/intro/",
             from: "/docs/farming-&-staking/farming/prerequisites/",
           },
