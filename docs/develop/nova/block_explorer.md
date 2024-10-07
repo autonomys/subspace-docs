@@ -1,5 +1,6 @@
 ---
 title: Nova Block Explorer
+slug: /nova-block-explorer
 sidebar_position: 10
 description: Autonomys hosted block explorer
 keywords:

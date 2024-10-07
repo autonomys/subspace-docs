@@ -1,5 +1,6 @@
 ---
 title: Autonomys faucet
+slug: /nova-faucet
 sidebar_position: 5
 description: Guide on utilizing Autonomys faucets for getting test tokens
 keywords:

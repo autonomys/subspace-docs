@@ -1,5 +1,6 @@
 ---
 title: Translation Guide
+slug: /space-acres-translate
 sidebar_position: 2
 description: Translation Guide for Space Acres
 keywords:

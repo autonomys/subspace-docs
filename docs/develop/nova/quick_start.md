@@ -1,5 +1,6 @@
 ---
 title: Quick start
+slug: /nova-quick-start
 sidebar_position: 2
 description: Quick start one-pager
 keywords:

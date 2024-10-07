@@ -1,5 +1,6 @@
 ---
 title: Safety and Security
+slug: /security
 sidebar_position: 2
 description: General security measures. Cyberattacks and fraud protection. Server protection.
 keywords:

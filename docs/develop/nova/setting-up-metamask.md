@@ -1,5 +1,6 @@
 ---
 title: Setting up MetaMask
+slug: /nova-metamask
 sidebar_position: 4
 description: Guide on setting up MetaMask for development purposes
 keywords:

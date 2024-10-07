@@ -1,5 +1,6 @@
 ---
 title: Auto XDM
+slug: /auto-xdm
 sidebar_position: 4
 description: Functions to utilize Auto XDM (Cross-Domain Messaging)
 keywords:

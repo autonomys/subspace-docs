@@ -1,5 +1,6 @@
 ---
 title: Community Built Tools
+slug: /community-maintained-tools
 sidebar_position: 1
 description: Community built and maintained tools
 keywords:

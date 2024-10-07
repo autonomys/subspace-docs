@@ -1,5 +1,6 @@
 ---
 title: Timekeeping
+slug: /timekeeping
 sidebar_position: 3
 description: Farming on the Autonomys Network
 keywords:

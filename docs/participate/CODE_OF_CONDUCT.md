@@ -1,5 +1,6 @@
 ---
 title: Code of Conduct
+slug: /code-of-conduct
 sidebar_position: 5
 description: Code of Conduct for the Autonomys Labs Documentation
 keywords:

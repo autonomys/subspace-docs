@@ -1,5 +1,6 @@
 ---
 title: Grafana Dashboard
+slug: /grafana-dashboard
 sidebar_position: 3
 description: How to configure the Grafana dashboard for an Autonomys Network node
 keywords:

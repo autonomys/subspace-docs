@@ -1,5 +1,6 @@
 ---
 title: Common problems
+slug: /farming-common-problems
 sidebar_position: 4
 description: Common problems and ways to resolve them
 keywords:

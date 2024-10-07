@@ -1,5 +1,6 @@
 ---
 title: Foundry - testing and deployment
+slug: /nova-foundry
 sidebar_position: 7
 description: Testing and Deploying Smart Contracts using Foundry
 keywords:

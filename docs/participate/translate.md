@@ -1,5 +1,6 @@
 ---
 title: Docs Translation Guide
+slug: /translate
 sidebar_position: 3
 description: Translation Guide for the Autonomys Docs
 keywords:

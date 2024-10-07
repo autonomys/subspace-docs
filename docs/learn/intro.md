@@ -1,5 +1,6 @@
 ---
 title: Getting Started
+slug: /getting-started
 sidebar_position: 1
 description: A Getting Started guide for the Autonomys Network
 keywords:

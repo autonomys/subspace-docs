@@ -1,6 +1,7 @@
 ---
 
 title: Auto Consensus  
+slug: /auto-consensus
 sidebar_position: 2  
 description: Functions to interact with consensus chain  
 keywords:

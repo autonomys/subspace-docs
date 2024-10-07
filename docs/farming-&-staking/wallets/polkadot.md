@@ -1,5 +1,6 @@
 ---
 title: Polkadot.js
+slug: /polkadot
 sidebar_position: 2
 description: How to configure the Polkadot Substrate wallet for the Subspace Network
 keywords:

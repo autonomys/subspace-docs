@@ -1,5 +1,6 @@
 ---
 title: Local development
+slug: /nova-local-development
 sidebar_position: 9
 description: Guide on local development Autonomys Node and Farmer
 keywords:

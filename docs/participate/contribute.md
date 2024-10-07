@@ -1,6 +1,7 @@
 ---
 id: contribute  
 title: Contribute!
+slug: /contribute
 sidebar_position: 2
 description: How to contribute to the Autonomys Docs
 keywords:

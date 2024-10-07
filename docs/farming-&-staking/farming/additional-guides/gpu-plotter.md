@@ -1,5 +1,6 @@
 ---
 title: GPU Plotter
+slug: /gpu-plotter
 sidebar_position: 1
 description: Tips on GPU Plotter
 keywords:

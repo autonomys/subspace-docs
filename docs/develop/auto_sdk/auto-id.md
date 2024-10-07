@@ -1,6 +1,7 @@
 ---
 
 title: Auto ID  
+slug: /auto-id
 sidebar_position: 3  
 description: Functions to build on Auto ID domain  
 keywords:

@@ -1,6 +1,7 @@
 ---
 id: awesome
 title: Awesome Autonomys
+slug: /awesome-autonomys
 sidebar_position: 1
 description: Awesome Community List for Autonomys Labs and Network
 keywords:

@@ -1,5 +1,6 @@
 ---
 title: Auto Utils
+slug: /auto-utils
 sidebar_position: 5
 description: Start Building using Auto SDK
 keywords:

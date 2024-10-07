@@ -1,5 +1,6 @@
 ---
 title: Remix IDE - testing and deployment
+slug: /nova-remix
 sidebar_position: 6
 description: Testing and Deploying Smart Contracts using Remix IDE
 keywords:

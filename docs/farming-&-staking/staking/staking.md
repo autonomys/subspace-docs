@@ -1,5 +1,6 @@
 ---
 title: Staking guide
+slug: /staking-guide
 sidebar_position: 2
 description: Staking guide
 keywords:

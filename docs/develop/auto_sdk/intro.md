@@ -1,5 +1,6 @@
 ---
 title: Auto SDK
+slug: /auto-sdk-intro
 sidebar_position: 1
 description: Start Building using Auto SDK
 keywords:

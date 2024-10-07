@@ -1,5 +1,6 @@
 ---
 title: General information on dev tools and Autonomys EVM
+slug: /nova-general-information
 sidebar_position: 3
 description: Guide on setting up
 keywords:

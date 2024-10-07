@@ -1,5 +1,6 @@
 ---
 title: Hardhat
+slug: /nova-hardhat
 sidebar_position: 8
 description: Testing and Deploying Smart Contracts using HardHat
 keywords:
