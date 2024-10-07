@@ -58,7 +58,7 @@ const config = {
             from: '/docs/community/contribute/',
           },
           {
-            to: '/docs/category/develop-on-nova-evm',
+            to: '/docs/develop/intro',
             from: ['/docs/category/developer-documentation/','/docs/developers/intro/', '/docs/pre-release/category/develop-on-nova-evm/']
           },
           {
@@ -67,7 +67,7 @@ const config = {
           },
           {
             to: "/docs/farming-&-staking/farming/advanced-cli/cli-install",
-            from: ["/docs/protocol/cli/", "/docs/protocol/substrate-cli/", "/docs/category/advanced-cli-recommended", "/docs/category/advanced-cli"]
+            from: ["/docs/protocol/cli/", "/docs/protocol/substrate-cli/", "/docs/Farming%20&%20Staking/Farming/Advanced-Cli/cli-install", "/docs/category/advanced-cli-recommended", "/docs/category/advanced-cli"]
           },
           {
             to: "/docs/farming-&-staking/timekeeping",
@@ -80,10 +80,6 @@ const config = {
           {
             to: "/docs/farming-&-staking/farming/space-acres/install",
             from: ["/docs/protocol/pulsar/", "/docs/category/pulsar-recommended", "/docs/category/pulsar", "/docs/category/space-acres", "/docs/farming-&-staking/farming/pulsar", "/docs/category/space-acres-recommended"]
-          },
-          {
-            to: "/docs/farming-&-staking/farming/advanced-cli/cli-install",
-            from: "/docs/Farming%20&%20Staking/Farming/Advanced-Cli/cli-install"
           },
           {
             to: "/docs/farming-&-staking/staking/operators/register-operator",
