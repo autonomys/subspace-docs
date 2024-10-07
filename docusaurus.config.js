@@ -54,179 +54,179 @@ const config = {
         redirects: [
           //Latest Links
           {
-            to: '/getting-started', 
+            to: '/docs/getting-started', 
             from: '/docs/learn/intro'
           },
           {
-            to: '/security', 
+            to: '/docs/security', 
             from: '/docs/learn/security'
           },
           {
-            to: '/academy', 
+            to: '/docs/academy', 
             from: '/docs/learn/academy'
           },
           {
-            to: '/subwallet', 
+            to: '/docs/subwallet', 
             from: '/docs/farming-&-staking/wallets/subwallet'
           },
           {
-            to: '/polkadot', 
+            to: '/docs/polkadot', 
             from: '/docs/farming-&-staking/wallets/polkadot'
           },
           {
-            to: '/start-farming',
+            to: '/docs/start-farming',
             from: ['/docs/farming-&-staking/farming/prerequisites/', '/docs/farming-&-staking/farming/intro/'],
           },
           {
-            to: '/space-acres-install',
+            to: '/docs/space-acres-install',
             from: ['/docs/farming-&-staking/farming/space-acres/install', '/docs/protocol/pulsar/', '/docs/category/pulsar-recommended', '/docs/category/pulsar', '/docs/category/space-acres', '/docs/farming-&-staking/farming/pulsar', '/docs/category/space-acres-recommended', '/docs/farming-&-staking/farming/space-acres/space-acres-install', '/docs/farming-&amp;-staking/farming/space-acres/space-acres-install', '/docs/farming-&amp;-staking/farming/space-acres/install']
           },
           {
-            to: '/space-acres-translate',
+            to: '/docs/space-acres-translate',
             from: '/docs/farming-&-staking/farming/space-acres/translate_space_acres',
           },
           {
-            to: '/cli-install',
+            to: '/docs/cli-install',
             from: ['/docs/farming-&-staking/farming/advanced-cli/cli-install', '/docs/farming-&amp;-staking/farming/advanced-cli/cli-install', '/docs/protocol/cli/', '/docs/protocol/substrate-cli/', '/docs/Farming%20&%20Staking/Farming/Advanced-Cli/cli-install', '/docs/category/advanced-cli-recommended', '/docs/category/advanced-cli']
           },
           {
-            to: '/cli-cluster', 
+            to: '/docs/cli-cluster', 
             from: '/docs/farming-&-staking/farming/advanced-cli/cli-farming-cluster'
           },
           {
-            to: '/cli-tips', 
+            to: '/docs/cli-tips', 
             from: '/docs/farming-&-staking/farming/advanced-cli/cli-tips'
           },
           {
-            to: '/cli-troubleshooting', 
+            to: '/docs/cli-troubleshooting', 
             from: '/docs/farming-&-staking/farming/advanced-cli/cli-troubleshooting'
           },
           {
-            to: '/farming-common-problems', 
+            to: '/docs/farming-common-problems', 
             from: '/docs/farming-&-staking/farming/common_problems'
           },
           {
-            to: '/gpu-plotter', 
+            to: '/docs/gpu-plotter', 
             from: '/docs/farming-&-staking/farming/additional-guides/gpu-plotter'
           },
           {
-            to: '/port-config', 
+            to: '/docs/port-config', 
             from: '/docs/farming-&-staking/farming/additional-guides/port-config'
           },
           {
-            to: '/grafana-dashboard', 
+            to: '/docs/grafana-dashboard', 
             from: '/docs/farming-&-staking/farming/additional-guides/grafana-dashboard'
           },
           {
-            to: '/verify-farmer', 
+            to: '/docs/verify-farmer', 
             from: '/docs/farming-&-staking/farming/additional-guides/verify-farmer'
           },
           {
-            to: '/staking-intro',
+            to: '/docs/staking-intro',
             from: ['/docs/farming-&-staking/staking/intro', '/docs/operators_and_staking/intro', '/docs/category/operators-and-nominators']
           },
           {
-            to: '/register-operator',
+            to: '/docs/register-operator',
             from: ['/docs/farming-&-staking/staking/operators/register-operator', '/docs/farming-&-staking/staking/operators']
           },
           {
-            to: '/deregister-operator', 
+            to: '/docs/deregister-operator', 
             from: '/docs/farming-&-staking/staking/operators/deregister-operator'
           },
           {
-            to: '/tips-operator', 
+            to: '/docs/tips-operator', 
             from: '/docs/farming-&-staking/staking/operators/tips-operator'
           },
           {
-            to: '/staking-guide', 
+            to: '/docs/staking-guide', 
             from: '/docs/farming-&-staking/staking/'
           },
           {
-            to: '/timekeeping',
+            to: '/docs/timekeeping',
             from: ['/docs/farming-&-staking/timekeeping', '/docs/protocol/timekeeping']
           },
           {
-            to: '/develop-intro',
+            to: '/docs/develop-intro',
             from: ['/docs/develop/intro', '/docs/category/developer-documentation/','/docs/developers/intro/', '/docs/pre-release/category/develop-on-nova-evm/']
           },
           {
-            to: '/auto-sdk-intro', 
+            to: '/docs/auto-sdk-intro', 
             from: '/docs/develop/auto_sdk/intro'
           },
           {
-            to: '/auto-consensus', 
+            to: '/docs/auto-consensus', 
             from: '/docs/develop/auto_sdk/auto-consensus'
           },
           {
-            to: '/auto-id', 
+            to: '/docs/auto-id', 
             from: '/docs/develop/auto_sdk/auto-id'
           },
           {
-            to: '/auto-xdm', 
+            to: '/docs/auto-xdm', 
             from: '/docs/develop/auto_sdk/auto-xdm'
           },
           {
-            to: '/auto-utils', 
+            to: '/docs/auto-utils', 
             from: '/docs/develop/auto_sdk/auto-utils'
           },
           {
-            to: '/nova-quick-start', 
+            to: '/docs/nova-quick-start', 
             from: '/docs/develop/nova/quick_start'
           },
           {
-            to: '/nova-general-information', 
+            to: '/docs/nova-general-information', 
             from: '/docs/develop/nova/general-information'
           },
           {
-            to: '/nova-metamask', 
+            to: '/docs/nova-metamask', 
             from: '/docs/develop/nova/setting-up-metamask'
           },
           {
-            to: '/nova-faucet', 
+            to: '/docs/nova-faucet', 
             from: '/docs/develop/nova/faucet'
           },
           {
-            to: '/nova-remix', 
+            to: '/docs/nova-remix', 
             from: '/docs/develop/nova/remix_guide'
           },
           {
-            to: '/nova-foundry', 
+            to: '/docs/nova-foundry', 
             from: '/docs/develop/nova/foundry_guide'
           },
           {
-            to: '/nova-hardhat', 
+            to: '/docs/nova-hardhat', 
             from: '/docs/develop/nova/hardhat_guide'
           },
           {
-            to: '/nova-local-development', 
+            to: '/docs/nova-local-development', 
             from: '/docs/develop/nova/local_development'
           },
           {
-            to: '/nova-block-explorer', 
+            to: '/docs/nova-block-explorer', 
             from: '/docs/develop/nova/block_explorer'
           },
           {
-            to: '/community-maintained-tools', 
+            to: '/docs/community-maintained-tools', 
             from: '/docs/participate/community_resources/community-maintained-tools'
           },
           {
-            to: '/awesome-autonomys', 
+            to: '/docs/awesome-autonomys', 
             from: '/docs/participate/'
           },
           {
-            to: '/awesome-autonomys', 
+            to: '/docs/awesome-autonomys', 
             from: '/docs/participate/'
           },
           {
-            to: '/contribute',
+            to: '/docs/contribute',
             from: ['/docs/participate/contribute', '/docs/community/contribute/'],
           },
           {
-            to: '/translate', 
+            to: '/docs/translate', 
             from: '/docs/participate/translate'
           },
           {
-            to: '/code-of-conduct', 
+            to: '/docs/code-of-conduct', 
             from: '/docs/participate/CODE_OF_CONDUCT'
           },
           {
