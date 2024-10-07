@@ -1,8 +1,5 @@
 {
     "label": "Wallets",
-    "position": 2,
-    "link": {
-      "type": "generated-index",
-      "description": "Choose Which Substrate Wallet you would like to use."
-    }
+    "position": 1,
+    "link": null
 }

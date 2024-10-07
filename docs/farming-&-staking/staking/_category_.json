@@ -1,8 +1,5 @@
 {
-    "label": "Operators and Nominators",
-    "position": 5,
-    "link": {
-      "type": "generated-index",
-      "description": "Autonomys domain sub-protocols"
-    }
+    "label": "Operators & Nominators",
+    "position": 2,
+    "link": null
 }

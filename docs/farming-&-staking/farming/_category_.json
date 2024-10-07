@@ -1,8 +1,8 @@
 {
     "label": "Farming",
-    "position": 3,
+    "position": 2,
     "link": {
       "type": "generated-index",
-      "description": "To earn block and vote rewards and build a TSSC balance on our incentivized testnet you will need to run a farmer which connects to a node. The easiest way to acheive this is by using Space Acres while the Advanced CLI is a little trickier to setup but gives you most control over configuration. We recommend you get started with Space Acres while you learn the ropes and make a more informed decision later."
+      "description": "To earn block and vote rewards, you need to run a farmer that connects to a node. The simplest way to do this is by using Space Acres, while the Advanced CLI is a bit more complex to set up but offers greater control over configuration. We recommend starting with Space Acres."
     }
 }

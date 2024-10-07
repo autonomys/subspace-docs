@@ -1,8 +1,5 @@
 {
-    "label": "Space Acres (Recommended)",
+    "label": "✨ Space Acres",
     "position": 2,
-    "link": {
-      "type": "generated-index",
-      "description": "Autonomys GUI Application Space Acres"
-    }
+    "link": null
 }

@@ -29,7 +29,7 @@ The Autonomys Network is an ambitious layer zero protocol which is the first sca
 
 Choose one of the following methods to **start farming** on the Network (from easy to more complex):
 
-#### - [Start Farming with Space Acres](/docs/farming-&-staking/farming/space-acres/space-acres-install)
+#### - [Start Farming with Space Acres](/docs/farming-&-staking/farming/space-acres/install)
 #### - [Start Farming with Advanced CLI](/docs/farming-&-staking/farming/advanced-cli/cli-install)
 
 ### **Become a nominator**
