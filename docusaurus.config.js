@@ -62,32 +62,32 @@ const config = {
             from: ['/docs/category/developer-documentation/','/docs/developers/intro/', '/docs/pre-release/category/develop-on-nova-evm/']
           },
           {
-            to: "/docs/farming-&-staking/staking/intro",
-            from: ["/docs/operators_and_staking/intro", "/docs/category/operators-and-nominators"]
+            to: '/docs/farming-&-staking/staking/intro',
+            from: ['/docs/operators_and_staking/intro', '/docs/category/operators-and-nominators']
           },
           {
-            to: "/docs/farming-&-staking/farming/advanced-cli/cli-install",
-            from: ["/docs/farming-&amp;-staking/farming/advanced-cli/cli-install", "/docs/protocol/cli/", "/docs/protocol/substrate-cli/", "/docs/Farming%20&%20Staking/Farming/Advanced-Cli/cli-install", "/docs/category/advanced-cli-recommended", "/docs/category/advanced-cli"]
+            to: '/docs/farming-&-staking/farming/advanced-cli/cli-install',
+            from: ['/docs/farming-&amp;-staking/farming/advanced-cli/cli-install', '/docs/protocol/cli/', '/docs/protocol/substrate-cli/', '/docs/Farming%20&%20Staking/Farming/Advanced-Cli/cli-install', '/docs/category/advanced-cli-recommended', '/docs/category/advanced-cli']
           },
           {
-            to: "/docs/farming-&-staking/timekeeping",
-            from: "/docs/protocol/timekeeping"
+            to: '/docs/farming-&-staking/timekeeping',
+            from: '/docs/protocol/timekeeping'
           },
           {
-            to: "/docs/category/farming",
-            from: ["/docs/category/get-started-with-farming", "/protocol/farm/farming"]
+            to: '/docs/category/farming',
+            from: ['/docs/category/get-started-with-farming', '/protocol/farm/farming']
           },
           {
-            to: "/docs/farming-&-staking/farming/space-acres/install",
-            from: ["/docs/protocol/pulsar/", "/docs/category/pulsar-recommended", "/docs/category/pulsar", "/docs/category/space-acres", "/docs/farming-&-staking/farming/pulsar", "/docs/category/space-acres-recommended", "/docs/farming-&-staking/farming/space-acres/space-acres-install", "/docs/farming-&amp;-staking/farming/space-acres/space-acres-install"]
+            to: '/docs/farming-&-staking/farming/space-acres/install',
+            from: ['/docs/protocol/pulsar/', '/docs/category/pulsar-recommended', '/docs/category/pulsar', '/docs/category/space-acres', '/docs/farming-&-staking/farming/pulsar', '/docs/category/space-acres-recommended', '/docs/farming-&-staking/farming/space-acres/space-acres-install', '/docs/farming-&amp;-staking/farming/space-acres/space-acres-install', '/docs/farming-&amp;-staking/farming/space-acres/install']
           },
           {
-            to: "/docs/farming-&-staking/staking/operators/register-operator",
-            from: "/docs/farming-&-staking/staking/operators"
+            to: '/docs/farming-&-staking/staking/operators/register-operator',
+            from: '/docs/farming-&-staking/staking/operators'
           },
           {
-            to: "/docs/farming-&-staking/farming/intro/",
-            from: "/docs/farming-&-staking/farming/prerequisites/",
+            to: '/docs/farming-&-staking/farming/intro/',
+            from: '/docs/farming-&-staking/farming/prerequisites/',
           },
         ],
       },
