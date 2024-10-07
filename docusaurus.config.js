@@ -67,7 +67,7 @@ const config = {
           },
           {
             to: "/docs/farming-&-staking/farming/advanced-cli/cli-install",
-            from: ["docs/farming-&amp;-staking/farming/advanced-cli/cli-install", "/docs/protocol/cli/", "/docs/protocol/substrate-cli/", "/docs/Farming%20&%20Staking/Farming/Advanced-Cli/cli-install", "/docs/category/advanced-cli-recommended", "/docs/category/advanced-cli"]
+            from: ["/docs/farming-&amp;-staking/farming/advanced-cli/cli-install", "/docs/protocol/cli/", "/docs/protocol/substrate-cli/", "/docs/Farming%20&%20Staking/Farming/Advanced-Cli/cli-install", "/docs/category/advanced-cli-recommended", "/docs/category/advanced-cli"]
           },
           {
             to: "/docs/farming-&-staking/timekeeping",
