@@ -233,9 +233,6 @@ const config = {
             to: '/docs/category/farming',
             from: ['/docs/category/get-started-with-farming', '/protocol/farm/farming']
           },
-         
-          
-          
         ],
       },
     ],
