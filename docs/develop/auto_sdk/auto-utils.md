@@ -1,7 +1,8 @@
 ---
-title: Auto Utils
+title: Utils
 sidebar_position: 5
 description: Start Building using Auto SDK
+slug: /develop/auto-sdk/utils
 keywords:
     - Developers Documentation
     - DevDocs

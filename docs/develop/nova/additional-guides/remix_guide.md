@@ -1,7 +1,8 @@
 ---
-title: Remix IDE - testing and deployment
-sidebar_position: 6
+title: Remix IDE
+sidebar_position: 4
 description: Testing and Deploying Smart Contracts using Remix IDE
+slug: /develop/nova/guides/remix
 keywords:
   - autonomys network
   - remix ide
@@ -130,11 +131,11 @@ Since we already have a MetaMask Account set up, let’s use this option.
 Now your transaction is recorded and you can interact with your smart contract at the bottom of the page - it's possible to call the functions `increment()` and `decrement()` as well as `setNumber()`
 
 :::caution
-Do not attempt to speed up a transaction (do not include a tip on top of the gas fees). To read more about this, please refer to [this section](quick_start.md#important-note-about-submitting-the-transaction).
+Do not attempt to speed up a transaction (do not include a tip on top of the gas fees). To read more about this, please refer to [this section](/develop/nova/introduction#important-note-about-submitting-a-transaction).
 :::
 
 :::caution
-In some cases when deploying the script, you may experience **"No manual gas limit set"** or **"Gas estimation failed"** issues. Please refer to [this section](/docs/develop/nova/quick_start.md#gas-estimation-issue) for the solution. 
+In some cases when deploying the script, you may experience **"No manual gas limit set"** or **"Gas estimation failed"** issues. Please refer to [this section](/develop/nova/introduction#gas-estimation-issue) for the solution. 
 :::
 
 ![Remix-12](/img/developers/Remix-12.png)

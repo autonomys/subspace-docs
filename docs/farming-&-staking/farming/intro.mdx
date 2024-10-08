@@ -2,6 +2,7 @@
 title: Getting Started
 sidebar_position: 1
 description: Farming Getting Started Guide
+slug: /farming/intro
 keywords:
     - Prerequisites
     - Farming
@@ -24,7 +25,7 @@ import TabItem from '@theme/TabItem';
 
 :::tip Installation Videos
 
-For those who prefer a visual guide, we have prepared installation videos to assist you. The videos will help you to set up the Space Acres farming application in under 10 minutes. Please follow [the installation videos](/docs/farming-&-staking/farming/space-acres/install#installation-videos) to use SubWallet to create a compatible Substrate account and refer to the detailed guide on downloading and configuring Autonomys' farming application, Space Acres.
+For those who prefer a visual guide, we have prepared installation videos to assist you. The videos will help you to set up the Space Acres farming application in under 10 minutes. Please follow [the installation videos](/farming/space-acres/install#installation-videos) to use SubWallet to create a compatible Substrate account and refer to the detailed guide on downloading and configuring Autonomys' farming application, Space Acres.
 :::
 
 ## Operating System
@@ -41,8 +42,8 @@ For those who prefer a visual guide, we have prepared installation videos to ass
 
 | Hardware | CPU | RAM | Node Storage | Farm Storage |
 | --- | --- | :-: | :-: | :-: |
-| Minimum [¹](#min-hardware) | 4 Cores+ | 8GB | 100GB [²](#min-node-storage) | 100GB |
-| Recommended | Intel Core i7-6700 or equivalent | 16GB+ | 256GB | ♾️ [³](#farm-storage) |
+| Minimum [¹](https://docs.autonomys.xyz/farming/intro#min-hardware) | 4 Cores+ | 8GB | 100GB [²](https://docs.autonomys.xyz/farming/intro#min-node-storage) | 100GB |
+| Recommended | Intel Core i7-6700 or equivalent | 16GB+ | 256GB | ♾️ [³](https://docs.autonomys.xyz/farming/intro#farm-storage) |
 
 <small>¹ Nodes that meet minimum requirements should be able to farm and sync with the network under normal conditions. However, performance may decline during periods of heavy network load, such as when blocks are filled with numerous transactions.</small>
 <br />
@@ -83,7 +84,7 @@ SSD storage is required. High end models are not necessary and a mid range SSD f
 
 :::caution File Descriptor Limit
 
-Linux systems may have a default file descriptor limit, which can vary based on distribuition. Exceeding this limit could cause errors. For detailed information, visit our [Tips & Tricks](./advanced-cli/cli-tips.mdx#changing-number-of-open-files-limit-linux) guide.
+Linux systems may have a default file descriptor limit, which can vary based on distribuition. Exceeding this limit could cause errors. For detailed information, visit our [Tips & Tricks](/farming/advanced-cli/tips#changing-number-of-open-files-limit-linux) guide.
 
 :::
 
@@ -121,17 +122,17 @@ Only necessary if your system has limited RAM.
 
 :::info Safety and Security Guide
 
-For detailed information, visit our [Safety and Security](../../learn/security) guide.
+For detailed information, visit our [Safety and Security](/learn/security) guide.
 
 :::
 
-Ensure your system is regularly updated, configure [port forwarding](additional-guides/port-config.mdx#ports-to-forward--firewall-access), set up your [firewall](additional-guides/port-config.mdx#firewall-configuration), and follow best practices for network safety. For comprehensive security guidelines, please refer to our [Safety and Security](../../learn/security) guide.
+Ensure your system is regularly updated, configure [port forwarding](/farming/guides/port-config#ports-to-forward--firewall-access), set up your [firewall](/farming/guides/port-config#firewall-configuration), and follow best practices for network safety. For comprehensive security guidelines, please refer to our [Safety and Security](/learn/security) guide.
 
 ## Wallet
 
 :::info Wallets Guide
 
-For detailed information, visit our [Wallets](../../category/wallets) guide.
+For detailed information, visit our [SubWallet](/wallets/subwallet) or [Polkadot.JS](/wallets/polkadot) guide.
 
 
 :::
@@ -142,7 +143,7 @@ Before you begin, make sure you have a wallet to receive rewards. We recommend u
 
 :::info Port Forwarding & Firewall Guide
 
-For detailed information on network configurations, including port forwarding requirements and firewall settings, please refer to our [Port Forwarding & Firewall](../../farming-&-staking/farming/additional-guides/port-config.mdx) guide.
+For detailed information on network configurations, including port forwarding requirements and firewall settings, please refer to our [Port Forwarding & Firewall](/farming/guides/port-config) guide.
 
 :::
 
@@ -154,8 +155,4 @@ If you face an error where the node outputs nothing and no error code is given i
 
 :::caution Linux `libcomp.so.1` error.
 If you encounter an error related to `libgomp.so.1`, install the `libgomp1` library with `sudo apt-get install libgomp1`.
-:::
-
-:::caution Linux File Descriptor Limit
-Linux has a hard limit of 100k file descriptors. Exceeding this may cause errors. Refer to our guide [here](./advanced-cli/cli-tips.mdx#changing-number-of-open-files-limit-linux)
 :::

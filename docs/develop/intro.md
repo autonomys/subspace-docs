@@ -1,5 +1,5 @@
 ---
-title: Getting Started for Developers
+title: Getting Started
 sidebar_position: 1
 description: A Getting Started guide for the Autonomys Network
 keywords:
@@ -22,7 +22,7 @@ We pride ourselves on enabling unlimited possibilities - there are no boundaries
 
 **Developers** can choose to utilize **Auto SDK** - a comprehensive toolkit designed to simplify development on the Autonomys Network, or **Nova** - Autonomys's EVM-compatible domain, allowing you to utilize all the familiar functionalities available on networks like Ethereum. Soon, you'll also be able to build your own local custom virtual machines.
 
-## [Auto SDK](/docs/develop/auto_sdk/intro)
+## [Auto SDK](/develop/auto-sdk/intro)
 
 ### Key Features:
 - **Modular Packages**: The SDK is organized into packages like auto-utils, auto-consensus, and auto-id. This partitions functionality intuitively and allows you to import only what you need.
@@ -30,9 +30,9 @@ We pride ourselves on enabling unlimited possibilities - there are no boundaries
 - **Flexibility**: Suitable for building decentralized applications (dApps) and services with ease.
 
 ### Getting Started with Auto SDK
-To start using Auto SDK, refer to our [Setup Instructions](/docs/develop/auto_sdk/intro.md) to clone the repository, install dependencies, and run tests. The SDK is designed to be developer-friendly, ensuring you can get up and running quickly.
+To start using Auto SDK, refer to our [Setup Instructions](/develop/auto-sdk/intro) to clone the repository, install dependencies, and run tests. The SDK is designed to be developer-friendly, ensuring you can get up and running quickly.
 
-## [Nova - EVM Compatible Domain](/docs/develop/nova/quick_start)
+## [Nova - EVM Compatible Domain](/develop/nova/introduction)
 
 ### Key Features:
 - **Solidity Smart Contracts**: Write and deploy smart contracts using Solidity, just as you would on Ethereum.
@@ -45,7 +45,7 @@ To start using Auto SDK, refer to our [Setup Instructions](/docs/develop/auto_sd
 - **Interoperability**: Create applications that can interact seamlessly with other EVM-compatible networks.
 
 ### Getting Started with Nova
-To start using Nova, refer to our [Guides and Manuals](/docs/develop/nova/quick_start.md).
+To start using Nova, refer to our [Guides and Manuals](/develop/nova/introduction).
 
 
 ## RPC endpoints

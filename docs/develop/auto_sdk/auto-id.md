@@ -2,7 +2,8 @@
 
 title: Auto ID  
 sidebar_position: 3  
-description: Functions to build on Auto ID domain  
+description: Functions to build on Auto ID domain
+slug: /develop/auto-sdk/auto-id
 keywords:
 - Developers Documentation
 - DevDocs

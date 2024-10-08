@@ -11,7 +11,7 @@ import styles from './index.module.css';
 
 // Used as a temporary redirect until a new landing page is designed.
 export default function Home() {
-  return <Redirect to='/docs/learn/intro' />;
+  return <Redirect to='/learn/intro' />;
 }
 
 // Original landing page
@@ -31,7 +31,7 @@ function HomepageHeader() {
               farmingLink: (
                 <Link
                   className="button button--secondary button--lg"
-                  to="/docs/learn/intro">
+                  to="/learn/intro">
                     <Translate
                       id="homepage.startFarming.linkLabel"
                       description="The label for the link button">

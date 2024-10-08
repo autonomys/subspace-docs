@@ -1,7 +1,8 @@
 ---
-title: Foundry - testing and deployment
-sidebar_position: 7
+title: Foundry
+sidebar_position: 1
 description: Testing and Deploying Smart Contracts using Foundry
+slug: /develop/nova/guides/foundry
 keywords:
   - autonomys network
   - book getfoundry
@@ -167,11 +168,11 @@ keywords:
     ```
     
     :::caution
-    Do not attempt to speed up a transaction (do not include a tip on top of the gas fees). To read more about this, please refer to [this section](quick_start.md#important-note-about-submitting-the-transaction).
+    Do not attempt to speed up a transaction (do not include a tip on top of the gas fees). To read more about this, please refer to [this section](/develop/nova/introduction#important-note-about-submitting-a-transaction).
     :::
 
     :::caution
-    In some cases when deploying the script, you may experience **"No manual gas limit set"** or **"Gas estimation failed"** issues. Please refer to [this section](/docs/develop/nova/quick_start.md#gas-estimation-issue) for the solution. 
+    In some cases when deploying the script, you may experience **"No manual gas limit set"** or **"Gas estimation failed"** issues. Please refer to [this section](/develop/nova/introduction#gas-estimation-issue) for the solution. 
     :::
 
 8. **Congratulations**, you've successfully deployed your smart contract on Autonomys EVM! 

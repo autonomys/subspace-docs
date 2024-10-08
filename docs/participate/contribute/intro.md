@@ -1,8 +1,8 @@
 ---
-id: contribute  
-title: Contribute!
-sidebar_position: 2
+title: Getting started
+sidebar_position: 1
 description: How to contribute to the Autonomys Docs
+slug: /participate/contribute/intro
 keywords:
     - Docs
     - Contribute
@@ -34,7 +34,7 @@ We are a fully open source project, meaning we are open to all kinds of contribu
 
 # Ground Rules
 
-Please refer to our [Code of Conduct](CODE_OF_CONDUCT.md).
+Please refer to our [Code of Conduct](/participate/contribute/code-of-conduct).
 
 # Your First Contribution
 
