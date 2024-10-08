@@ -2,6 +2,7 @@
 title: Translation Guide
 sidebar_position: 2
 description: Translation Guide for Space Acres
+slug: /farming/space-acres/translation
 keywords:
     - Space Acres UI translation
     - Community

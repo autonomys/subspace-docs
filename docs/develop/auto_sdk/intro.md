@@ -1,7 +1,8 @@
 ---
-title: Auto SDK
+title: Introduction
 sidebar_position: 1
 description: Start Building using Auto SDK
+slug: /develop/auto-sdk/intro
 keywords:
     - Developers Documentation
     - DevDocs

@@ -1,7 +1,8 @@
 ---
-title: Auto XDM
+title: XDM
 sidebar_position: 4
 description: Functions to utilize Auto XDM (Cross-Domain Messaging)
+slug: /develop/auto-sdk/xdm
 keywords:
     - Developers Documentation
     - DevDocs

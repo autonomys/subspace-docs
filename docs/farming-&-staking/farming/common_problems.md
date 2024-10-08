@@ -2,6 +2,7 @@
 title: Common problems
 sidebar_position: 4
 description: Common problems and ways to resolve them
+slug: /farming/common-problems
 keywords:
 - Error
 - Problem

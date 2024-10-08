@@ -2,6 +2,7 @@
 title: GPU Plotter
 sidebar_position: 1
 description: Tips on GPU Plotter
+slug: /farming/guides/gpu-plotter
 keywords:
     - Plotter
     - Farming

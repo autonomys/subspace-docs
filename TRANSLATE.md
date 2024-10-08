@@ -14,7 +14,7 @@ This guide will show you how to provide translations for this documentation.
 
 - Our goal with providing translations on our docs is to crowd source a great multi-language environment. Due to this, if you see what you would like to translate has already been added, please do not add a second translation. Rather it would be more beneficial to peer review the existing translation, and provide any feedback, edits, or improvements.
 
-- Ensure you follow our [Contributing](contribute) Standards, and our [Code of Conduct](CODE_OF_CONDUCT).
+- Ensure you follow our [Contributing](contribute) Standards, and our [Code of Conduct](/participate/contribute/code-of-conduct).
 
 ## How-To
 

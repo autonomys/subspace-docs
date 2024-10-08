@@ -1,7 +1,8 @@
 ---
-title: Docs Translation Guide
+title: Docs Translation
 sidebar_position: 3
 description: Translation Guide for the Autonomys Docs
+slug: /participate/contribute/translate
 keywords:
     - Awesome
     - Community
@@ -51,7 +52,7 @@ This guide will walk you through how to provide translations for this documentat
 ### Guidelines
 
 - Our goal is to crowdsource a multi-language environment. If a translation already exists, please review it instead of adding a second one.
-- Ensure you follow our [Contributing](contribute) Standards, and our [Code of Conduct](CODE_OF_CONDUCT).
+- Ensure you follow our [Contributing](/participate/contribute/translate) Standards, and our [Code of Conduct](/participate/contribute/code-of-conduct).
 
 ### How-To
 

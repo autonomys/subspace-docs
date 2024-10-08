@@ -2,6 +2,7 @@
 title: Polkadot.js
 sidebar_position: 2
 description: How to configure the Polkadot Substrate wallet for the Subspace Network
+slug: /wallets/polkadot
 keywords:
     - Farmer
     - Farming

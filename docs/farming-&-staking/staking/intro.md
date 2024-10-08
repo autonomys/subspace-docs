@@ -2,6 +2,7 @@
 title: Getting Started
 sidebar_position: 1
 description: Introduction to Staking and Operators
+slug: /domains/intro
 keywords:
     - Staking
     - Operator

@@ -29,26 +29,26 @@ The Autonomys Network is an ambitious layer zero protocol which is the first sca
 
 Choose one of the following methods to **start farming** on the Network (from easy to more complex):
 
-#### - [Start Farming with Space Acres](/docs/farming-&-staking/farming/space-acres/install)
-#### - [Start Farming with Advanced CLI](/docs/farming-&-staking/farming/advanced-cli/cli-install)
+#### - [Start Farming with Space Acres](/farming/space-acres/install)
+#### - [Start Farming with Advanced CLI](/farming/advanced-cli/install)
 
 ### **Become a nominator**
 
 Farmers can nominate **operators** and back them with their tokens, increasing their stake and chance of being elected as slot leaders. Generally speaking, any SSC token holder can stake their tokens by **nominating** a domain operator without having to become an operator or farmer themselves. **Nominators** earn **staking** rewards, proportional to their **staking amount** and pay the operator a pre-agreed **tax** on them.
 
-#### - [Start Nominating](/docs/farming-&-staking/staking/)
+#### - [Start Nominating](/domains/nominator)
 
 ### **Become an operator**
 
 **Operators** are responsible for validating and executing transactions, producing execution receipts, applying state transitions and earn rewards for their work.
 
-#### - [Start an Opeator node](/docs/farming-&-staking/staking/operators/register-operator)
+#### - [Start an Opeator node](/domains/operator/register)
 
 ### **Become a timekeeper**
 
 **Timekeepers** on the Autonomys Network are responsible for running the **Proof-of-Time chain** and maintaining the randomness beacon for the **consensus chain**.
 
-#### - [Start timekeeping](/docs/farming-&-staking/timekeeping)
+#### - [Start timekeeping](/farming/timekeeper)
 
 ## 📖 Develop on The Autonomys Network
 ---
@@ -57,7 +57,7 @@ Farmers can nominate **operators** and back them with their tokens, increasing t
 
 The Autonomys Network hosts an **EVM (Ethereum Virtual Machine)**, that allows you to deploy your **smart contracts.** 
 
-#### - [EVM Development](/docs/develop/nova/intro)
+#### - [EVM Development](/develop/nova-evm/introduction)
 
 ### Utilize the Core Protocol
 The Autonomys Network aims to provide an amazing developer experience to anyone who wishes to build on top of the protocol. As such we have started working on a variety of tools to assist and promote development on our network. 

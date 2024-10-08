@@ -21,7 +21,7 @@ We are a fully Open Source project, meaning we are open to all kinds of contribu
 
 # Ground Rules
 
-Please refer to our [Code of Conduct](CODE_OF_CONDUCT.md)
+Please refer to our [Code of Conduct](/participate/contribute/code-of-conduct)
 
 # Your First Contribution
 

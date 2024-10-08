@@ -2,6 +2,7 @@
 title: Staking guide
 sidebar_position: 2
 description: Staking guide
+slug: /domains/nominator
 keywords:
 - Staking guide
 - Staking
