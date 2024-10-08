@@ -2,7 +2,7 @@
 title: General Information
 sidebar_position: 2
 description: Guide on setting up
-slug: /develop/nova-evm/general
+slug: /develop/nova/general
 keywords:
   - metamask
   - autonomys network
@@ -29,7 +29,7 @@ A smart contract is a digital agreement coded into a blockchain network, designe
 ### Differences with Ethereum
 ---
 Autonomys Token (ATC) (TSSC for Subspace Credit during the testnet) is the sole method of payment for gas within the Autonomys EVM runtime.
-There will be a bridge to convert farmed tokens into EVM-compatible tokens to cover the gas fees, however, at the moment the only viable option to get some TSSC on your wallet is through the Autonomys [faucet](/develop/nova-evm/resources/autonomys-faucet)
+There will be a bridge to convert farmed tokens into EVM-compatible tokens to cover the gas fees, however, at the moment the only viable option to get some TSSC on your wallet is through the Autonomys [faucet](/develop/nova/faucet)
 
 ### What is Solidity? 
 ---

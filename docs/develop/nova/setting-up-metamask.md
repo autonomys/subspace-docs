@@ -2,7 +2,7 @@
 title: Setting up MetaMask
 sidebar_position: 3
 description: Guide on setting up MetaMask for development purposes
-slug: /develop/nova-evm/metamask
+slug: /develop/nova/metamask
 keywords:
   - metamask
   - autonomys network
@@ -69,4 +69,4 @@ First, let’s set up a MetaMask wallet and then go over connecting it to the Au
   Currency Symbol: TSSC
   ```
 
-You're all set, **you have successfully configured your MetaMask wallet** and connected it to **Autonomys Core EVM**. To deploy your smart contract, you first need to get a small amount of **TSSC**  tokens into your wallet. Please make sure to refer to the [faucet section](/develop/nova-evm/resources/autonomys-faucet) of the guide to learn more about getting test tokens. 
+You're all set, **you have successfully configured your MetaMask wallet** and connected it to **Autonomys Core EVM**. To deploy your smart contract, you first need to get a small amount of **TSSC**  tokens into your wallet. Please make sure to refer to the [faucet section](/develop/nova/faucet) of the guide to learn more about getting test tokens. 

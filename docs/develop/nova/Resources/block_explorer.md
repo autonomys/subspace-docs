@@ -2,7 +2,7 @@
 title: Nova Block Explorer
 sidebar_position: 2
 description: Autonomys hosted block explorer
-slug: /develop/nova-evm/resources/nova-block-explorer
+slug: /develop/nova/block-explorer
 keywords:
   - EVM Domain Nova
   - Autonomys Network

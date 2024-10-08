@@ -124,7 +124,7 @@ All functions that return a `SubmittableExtrinsic` can be signed and submitted t
 
 **Task**: To get the wallet balance on a consensus chain
 
-1. Get the RPC endpoint information for the consensus chain, which is available [here](/develop/intro.md#rpc-endpoints).
+1. Get the RPC endpoint information for the consensus chain, which is available [here](/develop/intro#rpc-endpoints).
 
     - For this example, we'll use 'wss://rpc-0.gemini-3h.subspace.network/ws' as the endpoint.
 

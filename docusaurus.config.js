@@ -76,18 +76,18 @@ const config = {
           { to: '/farming/guides/gpu-plotter', from: ['/docs/farming-&-staking/farming/additional-guides/gpu-plotter'] },
           { to: '/farming/guides/port-config', from: ['/docs/farming-&-staking/farming/additional-guides/port-config'] },
           { to: '/farming/guides/grafana-dashboard', from: ['/docs/farming-&-staking/farming/additional-guides/grafana-dashboard'] },
-          { to: '/farming/guides/farmer-role', from: ['/docs/farming-&-staking/farming/additional-guides/verify-farmer'] },
+          { to: '/farming/guides/verified-farmer', from: ['/docs/farming-&-staking/farming/additional-guides/verify-farmer'] },
 
           { to: '/domains/intro', from: ['/docs/operators_and_staking/intro', '/docs/category/operators-and-nominators', '/docs/farming-&-staking/staking/intro'] },
           { to: '/domains/operator/register', from: ['/docs/farming-&-staking/staking/operators', '/docs/farming-&-staking/staking/operators/register-operator'] },
           { to: '/domains/operator/deregister', from: ['/docs/farming-&-staking/staking/operators/deregister-operator'] },
           { to: '/domains/operator/tips', from: ['/docs/farming-&-staking/staking/operators/tips-operator'] },
-          { to: '/domains/nominator', from: ['/docs/farming-&-staking/staking/'] },
+          { to: '/domains/staking', from: ['/docs/farming-&-staking/staking/'] },
 
           { to: '/farming/timekeeper', from: ['/docs/protocol/timekeeping', '/docs/farming-&-staking/timekeeping'] },
 
           // Develop
-          { to: '/develop/intro', from: ['/docs/category/developer-documentation/', '/docs/developers/intro/', '/docs/pre-release/category/develop-on-nova-evm/', '/docs/category/develop', '/docs/develop/intro'] },
+          { to: '/develop/intro', from: ['/docs/category/developer-documentation/', '/docs/developers/intro/', '/docs/category/develop', '/docs/develop/intro'] },
 
           { to: '/develop/auto-sdk', from: ['/docs/category/develop-using-auto-sdk'] },
           { to: '/develop/auto-sdk/intro', from: ['/docs/develop/auto_sdk/intro'] },
@@ -96,16 +96,16 @@ const config = {
           { to: '/develop/auto-sdk/xdm', from: ['/docs/develop/auto_sdk/auto-xdm'] },
           { to: '/develop/auto-sdk/utils', from: ['/docs/develop/auto_sdk/auto-utils'] },
 
-          { to: '/develop/nova-evm', from: ['/docs/category/develop-on-nova-evm'] },
-          { to: '/develop/nova-evm/introduction', from: ['/docs/develop/nova/quick_start'] },
-          { to: '/develop/nova-evm/general', from: ['/docs/develop/nova/general-information'] },
-          { to: '/develop/nova-evm/metamask', from: ['/docs/develop/nova/setting-up-metamask'] },
-          { to: '/develop/nova-evm/guides/foundry', from: ['/docs/develop/nova/foundry_guide'] },
-          { to: '/develop/nova-evm/guides/hardhat', from: ['/docs/develop/nova/hardhat_guide'] },
-          { to: '/develop/nova-evm/guides/local-development', from: ['/docs/develop/nova/local_development'] },
-          { to: '/develop/nova-evm/guides/remix', from: ['/docs/develop/nova/remix_guide'] },
-          { to: '/develop/nova-evm/resources/autonomys-faucet', from: ['/docs/develop/nova/faucet'] },
-          { to: '/develop/nova-evm/resources/nova-block-explorer', from: ['/docs/develop/nova/block_explorer'] },
+          { to: '/develop/nova', from: ['/docs/category/develop-on-nova-evm'] },
+          { to: '/develop/nova/introduction', from: ['/docs/develop/nova/quick_start'] },
+          { to: '/develop/nova/general', from: ['/docs/develop/nova/general-information'] },
+          { to: '/develop/nova/metamask', from: ['/docs/develop/nova/setting-up-metamask'] },
+          { to: '/develop/nova/guides/foundry', from: ['/docs/develop/nova/foundry_guide'] },
+          { to: '/develop/nova/guides/hardhat', from: ['/docs/develop/nova/hardhat_guide'] },
+          { to: '/develop/nova/guides/local-development', from: ['/docs/develop/nova/local_development'] },
+          { to: '/develop/nova/guides/remix', from: ['/docs/develop/nova/remix_guide'] },
+          { to: '/develop/nova/faucet', from: ['/docs/develop/nova/faucet'] },
+          { to: '/develop/nova/block-explorer', from: ['/docs/develop/nova/block_explorer'] },
 
           // Participate
           { to: '/participate/contribute/intro', from: ['/docs/community/contribute/', '/docs/category/participate'] },

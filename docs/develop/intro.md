@@ -32,7 +32,7 @@ We pride ourselves on enabling unlimited possibilities - there are no boundaries
 ### Getting Started with Auto SDK
 To start using Auto SDK, refer to our [Setup Instructions](/develop/auto-sdk/intro) to clone the repository, install dependencies, and run tests. The SDK is designed to be developer-friendly, ensuring you can get up and running quickly.
 
-## [Nova - EVM Compatible Domain](/develop/nova-evm/introduction)
+## [Nova - EVM Compatible Domain](/develop/nova/introduction)
 
 ### Key Features:
 - **Solidity Smart Contracts**: Write and deploy smart contracts using Solidity, just as you would on Ethereum.
@@ -45,7 +45,7 @@ To start using Auto SDK, refer to our [Setup Instructions](/develop/auto-sdk/int
 - **Interoperability**: Create applications that can interact seamlessly with other EVM-compatible networks.
 
 ### Getting Started with Nova
-To start using Nova, refer to our [Guides and Manuals](/develop/nova-evm/introduction).
+To start using Nova, refer to our [Guides and Manuals](/develop/nova/introduction).
 
 
 ## RPC endpoints

@@ -36,7 +36,7 @@ Choose one of the following methods to **start farming** on the Network (from ea
 
 Farmers can nominate **operators** and back them with their tokens, increasing their stake and chance of being elected as slot leaders. Generally speaking, any SSC token holder can stake their tokens by **nominating** a domain operator without having to become an operator or farmer themselves. **Nominators** earn **staking** rewards, proportional to their **staking amount** and pay the operator a pre-agreed **tax** on them.
 
-#### - [Start Nominating](/domains/nominator)
+#### - [Start Staking](/domains/staking)
 
 ### **Become an operator**
 
@@ -57,7 +57,7 @@ Farmers can nominate **operators** and back them with their tokens, increasing t
 
 The Autonomys Network hosts an **EVM (Ethereum Virtual Machine)**, that allows you to deploy your **smart contracts.** 
 
-#### - [EVM Development](/develop/nova-evm/introduction)
+#### - [EVM Development](/develop/nova/introduction)
 
 ### Utilize the Core Protocol
 The Autonomys Network aims to provide an amazing developer experience to anyone who wishes to build on top of the protocol. As such we have started working on a variety of tools to assist and promote development on our network. 
