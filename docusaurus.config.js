@@ -254,10 +254,6 @@ const config = {
               {
                 label: 'Subspace Protocol Whitepaper',
                 href: 'https://subspace.network/news/subspace-network-whitepaper',
-              },
-              {
-                label: 'Additional Videos',
-                href: 'https://subspace.network/learn',
               }
             ]
           },
