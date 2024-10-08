@@ -177,6 +177,11 @@ const config = {
       colorMode:{
         defaultMode: 'dark'
       },
+      docs: {
+        sidebar: {
+          autoCollapseCategories: true,
+        },
+      },
       navbar: {
         title: 'Autonomys',
         logo: {
