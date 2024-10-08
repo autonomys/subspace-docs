@@ -67,7 +67,7 @@ const config = {
           { to: '/category/farming', from: ['/docs/category/get-started-with-farming', '/protocol/farm/farming', '/docs/category/farming'] },
           { to: '/farming/intro', from: ['/docs/farming-&-staking/farming/prerequisites/', '/docs/farming-&-staking/farming/intro/'] },
           { to: '/farming/space-acres/install', from: ['/docs/protocol/pulsar/', '/docs/category/pulsar-recommended', '/docs/category/pulsar', '/docs/category/space-acres', '/docs/farming-&-staking/farming/pulsar', '/docs/category/space-acres-recommended', '/docs/farming-&-staking/farming/space-acres/space-acres-install', '/docs/farming-&amp;-staking/farming/space-acres/space-acres-install', '/docs/farming-&amp;-staking/farming/space-acres/install', '/docs/farming-&-staking/farming/space-acres/install'] },
-          { to: '/farming/space-acres/translation', from: ['/docs/farming-&-staking/farming/space-acres/translate_space_acres'] },
+          { to: '/farming/space-acres/translate', from: ['/docs/farming-&-staking/farming/space-acres/translate_space_acres'] },
           { to: '/farming/advanced-cli/install', from: ['/docs/farming-&amp;-staking/farming/advanced-cli/cli-install', '/docs/protocol/cli/', '/docs/protocol/substrate-cli/', '/docs/Farming%20&%20Staking/Farming/Advanced-Cli/cli-install', '/docs/category/advanced-cli-recommended', '/docs/category/advanced-cli', '/docs/farming-&-staking/farming/advanced-cli/cli-install'] },
           { to: '/farming/advanced-cli/cluster', from: ['/docs/farming-&-staking/farming/advanced-cli/cli-farming-cluster'] },
           { to: '/farming/advanced-cli/tips', from: ['/docs/farming-&-staking/farming/advanced-cli/cli-tips'] },
@@ -78,11 +78,11 @@ const config = {
           { to: '/farming/guides/grafana-dashboard', from: ['/docs/farming-&-staking/farming/additional-guides/grafana-dashboard'] },
           { to: '/farming/guides/verified-farmer', from: ['/docs/farming-&-staking/farming/additional-guides/verify-farmer'] },
 
-          { to: '/domains/intro', from: ['/docs/operators_and_staking/intro', '/docs/category/operators-and-nominators', '/docs/farming-&-staking/staking/intro'] },
-          { to: '/domains/operator/register', from: ['/docs/farming-&-staking/staking/operators', '/docs/farming-&-staking/staking/operators/register-operator'] },
-          { to: '/domains/operator/deregister', from: ['/docs/farming-&-staking/staking/operators/deregister-operator'] },
-          { to: '/domains/operator/tips', from: ['/docs/farming-&-staking/staking/operators/tips-operator'] },
-          { to: '/domains/staking', from: ['/docs/farming-&-staking/staking/'] },
+          { to: '/staking/intro', from: ['/docs/operators_and_staking/intro', '/docs/category/operators-and-nominators', '/docs/farming-&-staking/staking/intro'] },
+          { to: '/staking/operator/register', from: ['/docs/farming-&-staking/staking/operators', '/docs/farming-&-staking/staking/operators/register-operator'] },
+          { to: '/staking/operator/deregister', from: ['/docs/farming-&-staking/staking/operators/deregister-operator'] },
+          { to: '/staking/operator/tips', from: ['/docs/farming-&-staking/staking/operators/tips-operator'] },
+          { to: '/staking/stake', from: ['/docs/farming-&-staking/staking/'] },
 
           { to: '/farming/timekeeper', from: ['/docs/protocol/timekeeping', '/docs/farming-&-staking/timekeeping'] },
 
@@ -196,7 +196,7 @@ const config = {
               },
               {
                 label: 'Operators & Nominators',
-                href: '/domains/intro'
+                href: '/staking/intro'
               },
               {
                 label: 'Develop on Autonomys',

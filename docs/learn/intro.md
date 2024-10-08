@@ -36,13 +36,13 @@ Choose one of the following methods to **start farming** on the Network (from ea
 
 Farmers can nominate **operators** and back them with their tokens, increasing their stake and chance of being elected as slot leaders. Generally speaking, any SSC token holder can stake their tokens by **nominating** a domain operator without having to become an operator or farmer themselves. **Nominators** earn **staking** rewards, proportional to their **staking amount** and pay the operator a pre-agreed **tax** on them.
 
-#### - [Start Staking](/domains/staking)
+#### - [Start Staking](/staking/stake)
 
 ### **Become an operator**
 
 **Operators** are responsible for validating and executing transactions, producing execution receipts, applying state transitions and earn rewards for their work.
 
-#### - [Start an Opeator node](/domains/operator/register)
+#### - [Start an Opeator node](/staking/operator/register)
 
 ### **Become a timekeeper**
 
@@ -52,6 +52,13 @@ Farmers can nominate **operators** and back them with their tokens, increasing t
 
 ## 📖 Develop on The Autonomys Network
 ---
+
+### Utilize the Auto SDK
+
+Interact with storage, consensus and domains via the Auto SDK to build powerfull applications with ease.  
+
+#### - [Auto SDK](/develop/auto-sdk/intro)
+
 
 ### Utilize the EVM Domain
 

@@ -2,7 +2,7 @@
 title: Staking guide
 sidebar_position: 2
 description: Staking guide
-slug: /domains/staking
+slug: /staking/stake
 keywords:
 - Staking guide
 - Staking
