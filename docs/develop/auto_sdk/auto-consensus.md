@@ -1,9 +1,9 @@
----
+--- 
 
 title: Consensus  
 sidebar_position: 2  
-description: Functions to interact with consensus chain
-slug: /develop/auto-sdk/consensus
+description: Functions to interact with the consensus chain  
+slug: /develop/auto-sdk/consensus  
 keywords:
 - Developers Documentation
 - DevDocs
@@ -13,177 +13,452 @@ keywords:
 
 ---
 
+## Auto-Consensus Package Documentation
+
+### Introduction
+
+The `@autonomys/auto-consensus` package provides functions for interacting with the Consensus Layer of the Autonomys Network. It allows developers to perform actions such as account management, balance inquiries, transfers, staking operations, and more. This package works hand-in-hand with `@autonomys/auto-utils` to simplify blockchain interactions.
+
+### Installation
+
+Install the package via npm or yarn:
+
+```bash
+# Using npm
+npm install @autonomys/auto-consensus
+
+# Using yarn
+yarn add @autonomys/auto-consensus
+```
+
+### Importing the Package
+
+Before using the functions provided by the `auto-consensus` package, you need to import them into your project:
+
+```typescript
+// Import specific functions
+import { balance, transfer, account } from '@autonomys/auto-consensus';
+
+// Or import everything
+import * as consensus from '@autonomys/auto-consensus';
+```
+
+### Overview of the `api` Object
+
+Many functions in the `auto-consensus` package require an `api` object as a parameter. This `api` object is an instance of `ApiPromise` from the Polkadot.js API library, which serves as the gateway to interact with the blockchain node.
+
+**Core Components of `api`**:
+
+- **api.rpc**: Methods to perform remote procedure calls to the node.
+- **api.query**: Access to the blockchain's runtime storage.
+- **api.tx**: Create and submit extrinsics (transactions) to the blockchain.
+- **api.consts**: Runtime constants defined in the blockchain's metadata.
+- **api.events**: Access to events emitted by the blockchain.
+- **api.types**: Type definitions used by the chain.
+
+**Example**:
+
+```typescript
+import { createConnection } from '@autonomys/auto-utils';
+
+async function getApiInstance() {
+  const endpoint = 'wss://rpc-0.gemini-3h.subspace.network/ws';
+  const api = await createConnection(endpoint);
+  return api;
+}
+```
+
+---
+
 ## Available Functions
 
 ### Account Management
 
-- `account(api: Api, address: string): Promise<AccountData>`: Retrieves account information including nonce and balance data.
-- `balance(api: Api, address: string): Promise<BalanceData>`: Retrieves the balance data of a given address.
+- **`account(api, address): Promise<AccountData>`**: Retrieves account's nonce and balance data.
+- **`balance(api, address): Promise<BalanceData>`**: Retrieves an account's balance details.
 
 ### Balances
 
-- `totalIssuance(networkId?: string): Promise<BigInt>`: Retrieves the total token issuance in the network.
+- **`totalIssuance(networkId?): Promise<BigInt>`**: Gets total token issuance in the network.
 
 ### Blockchain Information
 
-- `block(api: Api): Promise<RawBlock>`: Retrieves the latest block data.
-- `blockHash(api: Api): Promise<string>`: Retrieves the hash of the latest block.
-- `blockNumber(api: Api): Promise<number>`: Retrieves the current block number.
-- `getInfo(): Promise<Info>`: Retrieves general blockchain information.
-- `networkTimestamp(api: Api): Promise<Codec>`: Retrieves the current network timestamp.
+- **`block(api): Promise<RawBlock>`**: Retrieves the latest block data.
+- **`blockHash(api): Promise<string>`**: Retrieves the latest block hash.
+- **`blockNumber(api): Promise<number>`**: Retrieves the current block number.
+- **`networkTimestamp(api): Promise<bigint>`**: Retrieves the network timestamp.
 
 ### Consensus Information
 
-- `blockchainSize(api: Api): Promise<bigint>`: Calculates the total size of the blockchain.
-- `maxPiecesInSector(api: Api): bigint`: Retrieves the maximum number of pieces allowed in a sector.
-- `segmentCommitment(api: Api): Promise<[StorageKey, Codec][]>`: Retrieves the segment commitments.
-- `shouldAdjustSolutionRange(api: Api): Promise<boolean>`: Determines whether the solution range should be adjusted.
-- `slotProbability(api: Api): [number, number]`: Retrieves the slot probability constants.
-- `solutionRangeToSectors(solutionRange: bigint, slotProbability: [bigint, bigint], piecesInSector: bigint): bigint`: Calculates the number of sectors based on the solution range, slot probability, and pieces in a sector.
-- `solutionRanges(api: Api): Promise<{ current: bigint | null; next: bigint | null; votingCurrent: bigint | null; votingNext: bigint | null }>`: Retrieves the current and next solution ranges.
-- `spacePledge(api: Api): Promise<bigint>`: Calculates the total space pledged by farmers.
+- **`blockchainSize(api): Promise<bigint>`**: Calculates the blockchain's total size.
+- **`spacePledge(api): Promise<bigint>`**: Calculates total space pledged by farmers.
 
 ### Domains
 
-- `domainStakingSummary(api: Api): Promise<DomainStakingSummary[]>`: Retrieves staking summaries for domains.
-- `domains(api: Api): Promise<DomainRegistry[]>`: Retrieves a list of domain registries.
-- `latestConfirmedDomainBlock(api: Api): Promise<ConfirmedDomainBlock[]>`: Retrieves the latest confirmed blocks for each domain.
-
-### Miscellaneous
-
-- `blockchainSize(api: Api): Promise<bigint>`: Calculates the total size of the blockchain.
-- `spacePledge(api: Api): Promise<bigint>`: Calculates the total space pledged in the network.
+- **`domainStakingSummary(api): Promise<DomainStakingSummary[]>`**: Retrieves domain staking summaries.
+- **`domains(api): Promise<DomainRegistry[]>`**: Retrieves domain registries.
+- **`latestConfirmedDomainBlock(api): Promise<ConfirmedDomainBlock[]>`**: Retrieves latest confirmed blocks per domain.
 
 ### Operators and Staking
 
-- `deposits(api: Api, operatorId: StringNumberOrBigInt, account?: string): Promise<Deposit[]>`: Retrieves deposit information for an operator and optional account.
-- `deregisterOperator(params: StakingParams): SubmittableExtrinsic`: Creates a transaction to deregister an operator.
-- `nominateOperator(params: NominateOperatorParams): SubmittableExtrinsic`: Creates a transaction to nominate an operator and stake an amount.
-- `operator(api: Api, operatorId: StringNumberOrBigInt): Promise<OperatorDetails>`: Retrieves detailed information about a specific operator.
-- `operators(api: Api): Promise<Operator[]>`: Retrieves a list of all operators.
-- `registerOperator(params: RegisterOperatorParams): SubmittableExtrinsic`: Creates a transaction to register a new operator.
-- `unlockFunds(params: StakingParams): SubmittableExtrinsic`: Creates a transaction to unlock funds after operator deregistration.
-- `unlockNominator(params: StakingParams): SubmittableExtrinsic`: Creates a transaction to unlock a nominator's funds.
-- `withdrawStake(params: WithdrawStakeParams): SubmittableExtrinsic`: Creates a transaction to withdraw staked shares from an operator.
-- `withdrawals(api: Api, operatorId: StringNumberOrBigInt, account?: string): Promise<Withdrawal[]>`: Retrieves withdrawal information for an operator and optional account.
+- **`nominateOperator(params): SubmittableExtrinsic`**: Creates a transaction to nominate an operator.
+- **`operator(api, operatorId): Promise<OperatorDetails>`**: Retrieves details of a specific operator.
+- **`registerOperator(params): SubmittableExtrinsic`**: Creates a transaction to register a new operator.
 
 ### Transfers
 
-- `transfer(api: ApiPromise, receiver: string, amount: Amount, allowDeath?: boolean): SubmittableExtrinsic`: Creates a transaction to transfer an amount to a receiver. Uses `transferKeepAlive` if `allowDeath` is false, otherwise uses `transferAllowDeath`.
-- `transferAll(api: ApiPromise, receiver: string, keepAlive?: boolean): SubmittableExtrinsic`: Creates a transaction to transfer all tokens to a receiver. If `keepAlive` is true, keeps the sender's account alive.
+- **`transfer(api, receiver, amount, allowDeath?): SubmittableExtrinsic`**: Creates a transaction to transfer funds.
+- **`transferAll(api, receiver, keepAlive?): SubmittableExtrinsic`**: Creates a transaction to transfer all tokens.
 
 ### Utility Functions
 
-- `query<T>(api: Api, methodPath: string, params?: any[]): Promise<T>`: Queries the blockchain state for a specified method with optional parameters.
-- `remark(api: ApiPromise, remark: string, withEvent?: boolean): SubmittableExtrinsic`: Creates a remark transaction with or without an event.
-- `rpc<T>(api: Api, methodPath: string, params?: any[]): Promise<T>`: Performs an RPC call to a specified method with optional parameters.
+- **`query<T>(api, methodPath, params?): Promise<T>`**: Queries blockchain state for a method.
+- **`remark(api, remark, withEvent?): SubmittableExtrinsic`**: Creates a remark transaction.
+- **`rpc<T>(api, methodPath, params?): Promise<T>`**: Performs an RPC call.
 
 ---
 
-### Import Example
+*Note:* All asynchronous functions return a `Promise` and should be used with `await` for proper execution flow.
+
+---
+
+## Usage Examples
+
+Below are examples demonstrating how to use the functions provided by `@autonomys/auto-consensus`.
+
+### 1. Account Management
+
+#### Retrieve Account Information
+
+Get detailed account information, including the nonce and balance data.
 
 ```typescript
-import { generateAddress, getBalance, stake, transfer, getInfo } from '@autonomys/auto-consensus'
+import { account } from '@autonomys/auto-consensus';
+import { activate } from '@autonomys/auto-utils';
+
+(async () => {
+  const api = await activate({ networkId: 'gemini-3h' });
+  const accountData = await account(api, 'your_address');
+
+  console.log(`Nonce: ${accountData.nonce}`);
+  console.log(`Free Balance: ${accountData.data.free}`);
+  console.log(`Reserved Balance: ${accountData.data.reserved}`);
+
+  await api.disconnect();
+})();
 ```
 
-### Overview of Api Object
-
-When working with the SDK functions like those in `auto-consensus`, the `api: Api` parameter is a crucial component. It's an instance of the Polkadot.js API, specifically `ApiPromise`, which serves as the gateway to interact with the blockchain node.
-
-**Core Components**:
-- **api.rpc**: Contains methods to perform remote procedure calls to the node. These include calls for querying system information, submitting extrinsics, and accessing chain data.
-
-- **api.query**: Provides access to the blockchain's runtime storage. You can query on-chain storage items, such as balances, staking information, and module-specific data.
-
-- **api.tx**: Allows you to create and submit extrinsics (transactions) to the blockchain. It includes methods for constructing and signing transactions for various pallets/modules.
-
-- **api.consts**: Exposes the runtime constants defined in the blockchain's metadata. This includes information like existential deposit, block time, or any constants set by runtime modules.
-
-- **api.types**: Contains the type definitions used by the chain, which are crucial for encoding and decoding data correctly.
-
-- **api.events**: Provides access to the events emitted by the blockchain, which can be subscribed to for real-time updates.
-
-This code examples might be helpful to understrand `api: API object`: 
+#### Activate a Wallet and Check Balance
 
 ```typescript
-// Getting the current chain header (block height)
-const endpoint = 'wss://rpc-0.gemini-3h.subspace.network/ws'
-const api = await createConnection(endpoint)
-const blockNumber = await api.rpc.chain.getHeader()
-console.log('Block Number:', blockNumber.number.toNumber())
+import { activateWallet } from '@autonomys/auto-utils';
+import { balance } from '@autonomys/auto-consensus';
+
+(async () => {
+  // Activate a wallet using a mnemonic phrase
+  const { api, accounts } = await activateWallet({
+    mnemonic: 'your mnemonic phrase here', // Replace with your mnemonic
+    networkId: 'gemini-3h', // Optional: specify the network ID
+  });
+
+  const account = accounts[0];
+  console.log(`Connected with account address: ${account.address}`);
+
+  // Check the account balance
+  const accountBalance = await balance(api, account.address);
+  console.log(`Account balance: ${accountBalance.free}`);
+
+  // Disconnect when done
+  await api.disconnect();
+})();
+```
+
+### 2. Balance Operations
+
+#### Retrieve Account Balance
+
+Get the free balance of an account.
+
+```typescript
+import { balance } from '@autonomys/auto-consensus';
+import { activate } from '@autonomys/auto-utils';
+
+(async () => {
+  const api = await activate({ networkId: 'gemini-3h' });
+  const accountBalance = await balance(api, 'your_address');
+
+  console.log(`Free Balance: ${accountBalance.free}`);
+
+  await api.disconnect();
+})();
+```
+
+#### Get Total Issuance
+
+Retrieve the total token issuance in the network.
+
+```typescript
+import { totalIssuance } from '@autonomys/auto-consensus';
+
+(async () => {
+  const total = await totalIssuance('gemini-3h');
+
+  console.log(`Total Issuance: ${total.toString()}`);
+})();
+```
+
+### 3. Transfers
+
+#### Transfer Funds Between Accounts
+
+```typescript
+import { activateWallet } from '@autonomys/auto-utils';
+import { transfer } from '@autonomys/auto-consensus';
+
+(async () => {
+  // Activate sender's wallet
+  const senderWallet = await activateWallet({
+    mnemonic: 'sender mnemonic phrase', // Replace with sender's mnemonic
+  });
+  const sender = senderWallet.accounts[0];
+
+  // Activate receiver's wallet
+  const receiverWallet = await activateWallet({
+    mnemonic: 'receiver mnemonic phrase', // Replace with receiver's mnemonic
+  });
+  const receiver = receiverWallet.accounts[0];
+
+  // Transfer 1 ATC from sender to receiver
+  const amount = 1; // Amount in ATC
+  const transferTx = await transfer(senderWallet.api, receiver.address, amount);
+
+  // Sign and send the transaction
+  await transferTx.signAndSend(sender, ({ status, txHash, events }) => {
+    if (status.isInBlock) {
+      console.log(`Transaction included at blockHash ${status.asInBlock}`);
+      console.log(`Transaction hash: ${txHash}`);
+    } else if (status.isFinalized) {
+      console.log(`Transaction finalized at blockHash ${status.asFinalized}`);
+    }
+  });
+
+  // Disconnect when done
+  await senderWallet.api.disconnect();
+  await receiverWallet.api.disconnect();
+})();
+```
+
+#### Transfer Tokens
+
+Transfer tokens from one account to another.
+
+```typescript
+import { transfer } from '@autonomys/auto-consensus';
+import { activateWallet, signAndSendTx, disconnect } from '@autonomys/auto-utils';
+
+(async () => {
+  const { api, accounts } = await activateWallet({
+    networkId: 'gemini-3h',
+    mnemonic: 'your_mnemonic',
+  });
+
+  const sender = accounts[0];
+  const recipientAddress = 'recipient_address';
+  const amount = '1000000000000'; // Amount in smallest units (e.g., wei)
+
+  const tx = await transfer(api, recipientAddress, amount);
+
+  // Sign and send the transaction
+  await signAndSendTx(sender, tx);
+
+  console.log(`Transferred ${amount} tokens to ${recipientAddress}`);
+
+  await disconnect(api);
+})();
+```
+
+### 4. Staking Operations
+
+#### Register an Operator
+
+Register a new operator for staking.
+
+```typescript
+import { registerOperator } from '@autonomys/auto-consensus';
+import { activateWallet, signAndSendTx } from '@autonomys
+
+/auto-utils';
+
+(async () => {
+  const { api } = await activateWallet({
+    networkId: 'gemini-3h',
+    mnemonic: 'sender_mnemonic',
+  });
+
+  // Sender's account (who will register the operator)
+  const { accounts: senderAccounts } = await activateWallet({
+    networkId: 'gemini-3h',
+    mnemonic: 'sender_mnemonic',
+  });
+  const sender = senderAccounts[0];
+
+  // Operator's account
+  const { accounts: operatorAccounts } = await activateWallet({
+    networkId: 'gemini-3h',
+    mnemonic: 'operator_mnemonic',
+  });
+  const operatorAccount = operatorAccounts[0];
+
+  const tx = await registerOperator({
+    api,
+    senderAddress: sender.address,
+    Operator: operatorAccount,
+    domainId: '0', // Domain ID where the operator will be registered
+    amountToStake: '1000000000000000000', // Amount in smallest units
+    minimumNominatorStake: '10000000000000000',
+    nominationTax: '5', // Percentage as a string (e.g., '5' for 5%)
+  });
+
+  // Sign and send the transaction
+  await signAndSendTx(sender, tx);
+
+  console.log('Operator registered successfully');
+})();
+```
+
+#### Nominate an Operator
+
+Nominate an existing operator by staking tokens.
+
+```typescript
+import { nominateOperator } from '@autonomys/auto-consensus';
+import { activateWallet, signAndSendTx } from '@autonomys/auto-utils';
+
+(async () => {
+  const { api, accounts } = await activateWallet({
+    networkId: 'gemini-3h',
+    mnemonic: 'nominator_mnemonic',
+  });
+  const nominator = accounts[0];
+
+  const operatorId = '1'; // The ID of the operator to nominate
+  const amountToStake = '5000000000000000000'; // Amount in smallest units
+
+  const tx = await nominateOperator({
+    api,
+    operatorId,
+    amountToStake,
+  });
+
+  // Sign and send the transaction
+  await signAndSendTx(nominator, tx);
+
+  console.log(`Nominated operator ${operatorId} with ${amountToStake} stake`);
+})();
+```
+
+### 5. Blockchain Information
+
+#### Get Block and Network Information
+
+Retrieve the current block number, block hash, and network timestamp.
+
+```typescript
+import { blockNumber, blockHash, networkTimestamp } from '@autonomys/auto-consensus';
+import { activate } from '@autonomys/auto-utils';
+
+(async () => {
+  const api = await activate({ networkId: 'gemini-3h' });
+
+  const currentBlockNumber = await blockNumber(api);
+  const currentBlockHash = await blockHash(api);
+  const currentTimestamp = await networkTimestamp(api);
+
+  console.log(`Current Block Number: ${currentBlockNumber}`);
+  console.log(`Current Block Hash: ${currentBlockHash}`);
+  console.log(`Network Timestamp: ${currentTimestamp}`);
+
+  await api.disconnect();
+})();
+```
+
+### 6. Domain Interactions
+
+#### Retrieve Domains Information
+
+Get the list of domains registered on the network.
+
+```typescript
+import { domains } from '@autonomys/auto-consensus';
+import { activate } from '@autonomys/auto-utils';
+
+(async () => {
+  const api = await activate({ networkId: 'gemini-3h' });
+  const domainList = await domains(api);
+
+  domainList.forEach((domain) => {
+    console.log(`Domain ID: ${domain.id}`);
+    console.log(`Owner Address: ${domain.owner}`);
+    console.log(`Creation Block: ${domain.creationBlock}`);
+    // ...other domain properties
+  });
+
+  await api.disconnect();
+})();
+```
+
+#### Get Domain Staking Summary
+
+Retrieve staking summaries for all domains.
+
+```typescript
+import { domainStakingSummary } from '@autonomys/auto-consensus';
+import { activate } from '@autonomys/auto-utils';
+
+(async () => {
+  const api = await activate({ networkId: 'gemini-3h' });
+  const stakingSummaries = await domainStakingSummary(api);
+
+  stakingSummaries.forEach((summary) => {
+    console.log(`Domain ID: ${summary.domainId}`);
+    console.log(`Total Stake: ${summary.totalStake}`);
+    // ...other summary properties
+  });
+
+  await api.disconnect();
+})();
+```
+
+#### Get Latest Confirmed Domain Blocks
+
+Fetch the latest confirmed blocks for each domain.
+
+```typescript
+import { latestConfirmedDomainBlock } from '@autonomys/auto-consensus';
+import { activate } from '@autonomys/auto-utils';
+
+(async () => {
+  const api = await activate({ networkId: 'gemini-3h' });
+  const confirmedBlocks = await latestConfirmedDomainBlock(api);
+
+  confirmedBlocks.forEach((blockInfo) => {
+    console.log(`Domain ID: ${blockInfo.id}`);
+    console.log(`Block Number: ${blockInfo.number}`);
+    console.log(`Block Hash: ${blockInfo.hash}`);
+    // ...other block properties
+  });
+
+  await api.disconnect();
+})();
 ```
 
 ---
 
-:::note
-All functions that return a `SubmittableExtrinsic` can be signed and submitted to the blockchain. Functions returning `Promise<T>` should be awaited to retrieve the desired data.
-:::
+## Notes
 
+- **Asynchronous Functions**: Many functions return promises and should be used with `await` to ensure proper execution flow.
 
-### Usage Example
+- **API Disconnection**: Always disconnect the API instance after your operations are complete to free up resources.
 
-**Task**: To get the wallet balance on a consensus chain
+- **Error Handling**: Wrap your asynchronous calls in `try...catch` blocks to handle potential errors gracefully.
 
-1. Get the RPC endpoint information for the consensus chain, which is available [here](/develop/intro#rpc-endpoints).
-
-    - For this example, we'll use 'wss://rpc-0.gemini-3h.subspace.network/ws' as the endpoint.
-
-2. Determine which methods are needed to accomplish the task. 
-
-    - `createConnection` from `@autonomys/auto-utils` to establish a connection to the node.
-    - `balance` from `@autonomys/auto-consensus` to retrieve the wallet balance.
-
-3. Create a `.js` or `.ts` file and include the following code. 
-
-    ```typescript
-    // Required to get the API for the balance function
-    const { createConnection } = require('@autonomys/auto-utils');
-    // Required to query the RPC in order to get the balance
-    const { balance } = require('@autonomys/auto-consensus');
-
-    async function getApiInstance() {
-        // Use the correct, up-to-date endpoint
-        const endpoint = 'wss://rpc-0.gemini-3h.subspace.network/ws';
-        const api = await createConnection(endpoint);
-        return api;
-    }
-
-    async function getWalletBalance() {
-        try {
-            // Initialize the API instance
-            const api = await getApiInstance();
-
-            // Replace with your wallet address
-            const walletAddress = 'st7woZs4wA6F9ssvdg3DzZi6v3s9MB7DXE3LS1fzTQA16nJSP';
-
-            // Call the balance function with the API and wallet address
-            const walletBalance = await balance(api, walletAddress);
-
-            console.log('Wallet Balance:', walletBalance);
-
-            // Disconnect when done
-            await api.disconnect();
-        } catch (error) {
-            console.error('Error fetching wallet balance:', error);
-        }
-    }
-
-    getWalletBalance();
-
-    ```
-
-    :::note
-    Replace 'st7woZs4wA6F9ssvdg3DzZi6v3s9MB7DXE3LS1fzTQA16nJSP' with your actual wallet address.
-
-    The createConnection function initializes the API instance connected to the specified endpoint.
-    :::
-
-4. Save the file and run it using the following command `node ./test-function.js`. You should see the wallet balance printed in the console.
-
-**Additional Tips**:
-
-    - **Async/Await**: Both createConnection and balance are **asynchronous functions** returning **promises**. Using `await` ensures that the code waits for these operations to complete before proceeding.
-
-    - **API Disconnection**: It's good practice to disconnect from the API when you're done to free up resources.
-
-    - **Logging**: The script logs the wallet balance to the console. You can modify this to format the output or handle it as needed for your application.

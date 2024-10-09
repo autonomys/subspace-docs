@@ -11,86 +11,110 @@ keywords:
 ---
 
 ## Introduction to the Auto SDK
-Welcome to the Auto SDK documentation! The Auto SDK is a comprehensive toolkit designed to simplify the development of applications and integrations with the Autonomys Network. It provides a set of modular packages that enable developers to interact seamlessly with the consensus chain and active domains (Auto ID, Nova)
+
+Welcome to the Auto SDK documentation! The Autonomys Auto SDK is a powerful toolkit designed to empower developers to seamlessly integrate with the Autonomys Network. It enables interaction through familiar programming languages like TypeScript, without needing to delve into the complexities of blockchain or smart contracts. The SDK provides simple APIs for issuing and verifying Auto IDs, interacting with the consensus layer, handling data uploads, and managing payments using Auto Coin.
 
 ### What is the Auto SDK?
-The Auto SDK is a collection of JavaScript/TypeScript packages that abstract away the complexity of blockchain interactions. It includes utilities for consensus interactions, identity management, and general-purpose functions that are essential for building decentralized applications (dApps) and services on the Autonomys Network.
+
+The Auto SDK is a collection of JavaScript/TypeScript packages that abstract away the complexity of blockchain interactions. It includes utilities for consensus interactions, identity management, data storage, and general-purpose functions that are essential for building decentralized applications (dApps) and services on the Autonomys Network.
 
 ### Key Features:
+
 - **Modular Architecture**: Use only the packages you need.
 - **Ease of Use**: Simplifies blockchain operations with high-level functions.
 - **Flexibility**: Suitable for both beginners and experienced blockchain developers.
 - **Community-Driven and Open-source**.
 
 ### Why Use the Auto SDK?
+
 - **Simplify Development**: Focus on your application's logic rather than blockchain intricacies.
 - **Accelerate Time-to-Market**: Reduce development time with ready-to-use functions.
 - **Ensure Compatibility**: Stay up-to-date with the latest Autonomys blockchain protocols.
 - **Enhance Security**: Utilize well-tested code for critical operations like identity management.
 
-### Getting Started
-This guide will help you set up the Auto SDK locally and run it against a current public testnet (Gemini 3h), or a local instance of Autonomys node for testing purposes.
+## Packages
 
-### Prerequisites
-- **Node.js**: Make sure you have Node.js installed.
-- **Yarn 4**: The project uses Yarn Berry (Yarn 4) as the package manager.
+This monorepo contains multiple packages, each serving a specific purpose. All packages are published to npm under the `@autonomys` scope:
 
-### Repository Structure
-The repository is organized as follows:
+- **@autonomys/auto-utils**: Core utility functions for interacting with the Autonomys Network.
+- **@autonomys/auto-consensus**: Functions for interacting with the Consensus Layer.
+- **@autonomys/auto-drive**: Tools for preparing and managing data for on-chain storage.
+- **@autonomys/auto-id**: Functions for generating, renewing, and revoking Decentralized Identities (Auto IDs).
 
-- `packages/auto-utils`: Utility functions for the SDK.
-- `packages/auto-consensus`: Consensus-related functions.
-- `packages/auto-id`: Identity management functions.
+## Installation
+
+### Requirements
+
+- **Node.js** (version 14 or higher)
+- **Yarn** or **npm**
+
+### Installing the Packages
+
+Install the packages you need via npm or yarn. For example, to install `@autonomys/auto-utils` and `@autonomys/auto-consensus`:
+
+#### Using npm
+
+```bash
+npm install @autonomys/auto-utils @autonomys/auto-consensus
+```
+
+#### Using yarn
+
+```bash
+yarn add @autonomys/auto-utils @autonomys/auto-consensus
+```
+
+## Cloning the Repository and Building Locally (Optional)
+
+If you wish to contribute to the SDK or run the SDK packages locally, you can clone the repository and build the packages from source.
 
 ### Setup Instructions
-1. **Clone the Repository**. 
 
-Open your terminal and run
+1. **Clone the Repository**
 
-```bash
-git clone https://github.com/autonomys/auto-sdk.git
-```
+   Open your terminal and run:
 
-2. **Navigate to the Project Directory**.
+   ```bash
+   git clone https://github.com/autonomys/auto-sdk.git
+   ```
 
-```bash
-cd auto-sdk
-```
+2. **Navigate to the Project Directory**
 
-3. **Set Yarn to Use the Berry Version**.
+   ```bash
+   cd auto-sdk
+   ```
 
-```bash
-yarn set version berry
-```
+3. **Install Dependencies**
 
-4. **Install Dependencies**.
+   ```bash
+   yarn install
+   ```
 
-```bash
-yarn install
-``` 
+4. **Build All Packages**
 
-### Build and Test
+   To compile all packages, run:
 
-**Build All Packages**: to compile all packages, run:
+   ```bash
+   yarn run build
+   ```
 
-```bash
-yarn run build
-```
+5. **Run Tests**
 
-**Run Tests** 
-To execute tests for all packages:
+   To execute tests for all packages:
 
-```bash
-yarn run test
-```
+   ```bash
+   yarn run test
+   ```
 
-## Localhost Testing 
-    You can test the SDK packages against a local Autonomys node using the provided scripts instead of a public testnet (**Gemini 3h**).
+## Localhost Testing
+
+You can test the SDK packages against a local Autonomys node using the provided scripts instead of a public testnet (**Gemini 3h**).
 
 ### Steps
-1. **Verify OS and Architecture Settings**. 
 
-    Edit the **scripts/download.sh** file and ensure that lines 3-7 match your current operating system and architecture:
+1. **Verify OS and Architecture Settings**
+
+    Edit the `scripts/download.sh` file and ensure that lines 3-7 match your current operating system and architecture:
 
     ```bash
     # Change the following variables as needed
@@ -100,7 +124,7 @@ yarn run test
     ARCHITECTURE="aarch64" # Options: aarch64 | x86_64-skylake | x86_64-v2
     ```
 
-2. **Run the Development Script**.
+2. **Run the Development Script**
 
     Execute the following command to start the local node and farmer:
 
@@ -110,12 +134,12 @@ yarn run test
 
     This script will:
 
-    1. Download the latest version of the node and farmer compatible with your OS and architecture (scripts/download.sh).
-    2. Start the Node and create/insert the keystore (scripts/run-node.sh).
-    3. Start the Farmer (scripts/run-farmer.sh).
-    4. Register the Node as an operator, wait for synchronization, and then terminate the node and farmer (handled within scripts/run-dev.js).
-    5. Restart the Node as an operator (scripts/run-operator.sh).
-    6. Restart the Farmer (scripts/run-farmer.sh).
+    1. Download the latest version of the node and farmer compatible with your OS and architecture (`scripts/download.sh`).
+    2. Start the Node and create/insert the keystore (`scripts/run-node.sh`).
+    3. Start the Farmer (`scripts/run-farmer.sh`).
+    4. Register the Node as an operator, wait for synchronization, and then terminate the node and farmer (handled within `scripts/run-dev.js`).
+    5. Restart the Node as an operator (`scripts/run-operator.sh`).
+    6. Restart the Farmer (`scripts/run-farmer.sh`).
 
 **Run Tests Against the Local Node**
 
@@ -127,4 +151,4 @@ The tests will automatically detect the local node and farmer, executing against
 
 ## Next Steps
 
-With the Auto SDK set up locally, you're ready to start building and testing your blockchain applications. Explore the additional pages for the code examples and functions overview.
+With the Auto SDK set up locally, you're ready to start building and testing your blockchain applications. Explore the additional pages for code examples and a functions overview.
