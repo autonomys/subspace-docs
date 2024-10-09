@@ -1,4 +1,4 @@
----
+--- 
 
 title: Consensus  
 sidebar_position: 2  
@@ -81,17 +81,6 @@ async function getApiInstance() {
 
 - **`totalIssuance(networkId?): Promise<BigInt>`**: Gets total token issuance in the network.
 
-### Transfers
-
-- **`transfer(api, receiver, amount, allowDeath?): SubmittableExtrinsic`**: Creates a transaction to transfer funds.
-- **`transferAll(api, receiver, keepAlive?): SubmittableExtrinsic`**: Creates a transaction to transfer all tokens.
-
-### Operators and Staking
-
-- **`registerOperator(params): SubmittableExtrinsic`**: Creates a transaction to register a new operator.
-- **`nominateOperator(params): SubmittableExtrinsic`**: Creates a transaction to nominate an operator.
-- **`operator(api, operatorId): Promise<OperatorDetails>`**: Retrieves details of a specific operator.
-
 ### Blockchain Information
 
 - **`block(api): Promise<RawBlock>`**: Retrieves the latest block data.
@@ -106,15 +95,26 @@ async function getApiInstance() {
 
 ### Domains
 
-- **`domains(api): Promise<DomainRegistry[]>`**: Retrieves domain registries.
 - **`domainStakingSummary(api): Promise<DomainStakingSummary[]>`**: Retrieves domain staking summaries.
+- **`domains(api): Promise<DomainRegistry[]>`**: Retrieves domain registries.
 - **`latestConfirmedDomainBlock(api): Promise<ConfirmedDomainBlock[]>`**: Retrieves latest confirmed blocks per domain.
+
+### Operators and Staking
+
+- **`nominateOperator(params): SubmittableExtrinsic`**: Creates a transaction to nominate an operator.
+- **`operator(api, operatorId): Promise<OperatorDetails>`**: Retrieves details of a specific operator.
+- **`registerOperator(params): SubmittableExtrinsic`**: Creates a transaction to register a new operator.
+
+### Transfers
+
+- **`transfer(api, receiver, amount, allowDeath?): SubmittableExtrinsic`**: Creates a transaction to transfer funds.
+- **`transferAll(api, receiver, keepAlive?): SubmittableExtrinsic`**: Creates a transaction to transfer all tokens.
 
 ### Utility Functions
 
 - **`query<T>(api, methodPath, params?): Promise<T>`**: Queries blockchain state for a method.
-- **`rpc<T>(api, methodPath, params?): Promise<T>`**: Performs an RPC call.
 - **`remark(api, remark, withEvent?): SubmittableExtrinsic`**: Creates a remark transaction.
+- **`rpc<T>(api, methodPath, params?): Promise<T>`**: Performs an RPC call.
 
 ---
 
@@ -285,7 +285,9 @@ Register a new operator for staking.
 
 ```typescript
 import { registerOperator } from '@autonomys/auto-consensus';
-import { activateWallet, signAndSendTx } from '@autonomys/auto-utils';
+import { activateWallet, signAndSendTx } from '@autonomys
+
+/auto-utils';
 
 (async () => {
   const { api } = await activateWallet({
@@ -460,4 +462,3 @@ import { activate } from '@autonomys/auto-utils';
 
 - **Error Handling**: Wrap your asynchronous calls in `try...catch` blocks to handle potential errors gracefully.
 
----
