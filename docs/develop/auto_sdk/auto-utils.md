@@ -1,171 +1,368 @@
 ---
 title: Utils
 sidebar_position: 5
-description: Start Building using Auto SDK
+description: Utility functions for the Auto SDK
 slug: /develop/auto-sdk/utils
 keywords:
-    - Developers Documentation
-    - DevDocs
-    - SDK
-    - Auto SDK
-    - Auto Utils
+- Developers Documentation
+- DevDocs
+- SDK
+- Auto SDK
+- Auto Utils
 ---
 
+## Auto-Utils Package Documentation
 
-### Available functions
+### Introduction
+
+The `@autonomys/auto-utils` package provides core utility functions for interacting with the Autonomys Network. It offers functionalities for:
+
+- **Wallet Management**: Initialize and manage wallets using mnemonics or URIs.
+- **Network Configuration**: Access and manage network and domain settings.
+- **Data Storage**: Save and read data to and from local storage or the file system.
+- **Cryptographic Operations**: Perform hashing and data manipulation using cryptographic functions.
+- **API Activation**: Activate and manage connections to the Autonomys Network APIs.
+- **Address Utilities**: Convert and decode addresses to and from standardized formats.
+
+This package serves as the foundational layer for building applications within the Autonomys ecosystem.
+
+### Installation
+
+Install the package via npm or yarn:
+
+```bash
+# Using npm
+npm install @autonomys/auto-utils
+
+# Using yarn
+yarn add @autonomys/auto-utils
+```
+
+### Importing the Package
+
+Before using the functions provided by the `auto-utils` package, you need to import them into your project:
+
+```typescript
+// Import specific functions
+import { activateWallet, activate, blake2b_256 } from '@autonomys/auto-utils';
+
+// Or import everything
+import * as utils from '@autonomys/auto-utils';
+```
+
+---
+
+## Available Functions
 
 ### Account Utilities
 
-- `createAccountIdType(api: ApiPromise, address: string): Uint8Array`  
-  Creates a typed `AccountId` object from an address and returns it as a `Uint8Array`. This is useful for low-level interactions where the account ID needs to be in a specific binary format.
+- **`createAccountIdType(api, address): Uint8Array`**: Creates an `AccountId` object from an address.
 
 ### Event Utilities
 
-- `Type` (Enum)  
-  Enum representing event types:
-  - `system`: `'system'`
-
-- `eventName(type: Type, event: string): string`  
-  Constructs a full event name by combining the event type and event name, e.g., `system.ExtrinsicSuccess`.
-
-- `eventsGroup: { system: { [key: string]: string } }`  
-  An object grouping system events by name, such as `failure`, `newAccount`, and `success`.
-
-- `expectSuccessfulTxEvent: string[]`  
-  An array containing the default success event names, typically used to validate transaction success.
+- **`Type`**: Enum for event types (e.g., `system`).
+- **`eventName(type, event): string`**: Combines type and event to a full event name.
+- **`eventsGroup`**: Groups system events by name.
+- **`expectSuccessfulTxEvent`**: Default success event names array.
 
 ### Transaction Utilities
 
-- `signAndSendTx<TError>(sender: AddressOrPair | KeyringPair, tx: SubmittableExtrinsic<'promise', ISubmittableResult>, options?: Partial<SignerOptions>, eventsExpected?: Events, log?: boolean, mapErrorCodeToEnum?: (errorCode: string) => TError | undefined): Promise<TransactionSignedAndSend & { receipt: SubmittableResult; identifier?: string | null }>`  
-  Signs and sends a transaction, waits for its inclusion in a block, and validates that expected events have occurred. It returns an object containing the transaction hash, block hash, events, receipt, and any identifier if applicable.
-
-  - **Parameters:**
-    - `sender`: The account or keyring pair sending the transaction.
-    - `tx`: The transaction to be sent.
-    - `options`: Optional signer options.
-    - `eventsExpected`: An array of expected event names to validate against.
-    - `log`: If `true`, logs transaction progress and events.
-    - `mapErrorCodeToEnum`: Optional function to map error codes to custom error enums.
-
-  - **Returns:** A promise that resolves to an object containing transaction details and receipt.
+- **`signAndSendTx(sender, tx, options?, eventsExpected?, log?, mapErrorCodeToEnum?): Promise<TransactionSignedAndSend>`**: Signs, sends, and validates a transaction.
 
 ### Signing Utilities
 
-- `signMessage(signer: Signer, address: string, data: string): Promise<{ signature: string }>`  
-  Signs a message using the provided signer and address. Returns an object containing the signature.
-
-  - **Parameters:**
-    - `signer`: The signer object capable of signing raw messages.
-    - `address`: The address of the account used for signing.
-    - `data`: The message or data to be signed.
-
-- `signingKey(publicKey: Uint8Array): string`  
-  Converts a public key `Uint8Array` into a hexadecimal string representation.
-
-- `signatureVerify`:  
-  Re-exported from `@polkadot/util-crypto`. A function used to verify signatures against messages and public keys.
+- **`signMessage(signer, address, data): Promise<{ signature: string }>`**: Signs a message with a signer and address.
+- **`signingKey(publicKey): string`**: Converts a public key to a hex string.
+- **`signatureVerify`**: Verifies signatures (re-exported from `@polkadot/util-crypto`).
 
 ### Event Validation
 
-- `validateEvents(events: EventRecord[], eventsExpected?: Events, tx: string, block: string, log?: boolean): EventsValidated`  
-  Validates that the expected events are present in the list of events from a transaction.
-
-  - **Parameters:**
-    - `events`: The array of `EventRecord` objects emitted by the transaction.
-    - `eventsExpected`: An array of expected event names to validate against.
-    - `tx`: The transaction hash as a string.
-    - `block`: The block hash as a string.
-    - `log`: If `true`, logs detailed information about event validation.
-
-  - **Returns:** An object containing arrays of expected events and found events.
+- **`validateEvents(events, eventsExpected?, tx, block, log?): EventsValidated`**: Checks if expected events are in transaction events.
 
 ### Utility Functions
 
-- `isAddress(address: string): boolean`  
-  Checks if the provided string is a valid Substrate address.
+- **`isAddress(address): boolean`**: Validates a Substrate address.
+- **`isHex(value): boolean`**: Validates a hexadecimal string.
 
-- `isHex(value: string): boolean`  
-  Checks if the provided string is a valid hexadecimal value.
+### Wallet Management
 
-### Types and Interfaces
+- **`activate(options?): Promise<ApiPromise>`**: Connects to the Autonomys Network.
+- **`activateWallet(options): Promise<{ api, accounts }>`**: Activates a wallet using mnemonic or URI.
+- **`mockWallets(options, api?): Promise<Wallet[]>`**: Creates mock wallets for testing.
+- **`getMockWallet(name, wallets): Wallet`**: Retrieves a mock wallet by name.
 
-- **Type Enums:**
+### Network Management
 
-  - `Type`: Enum for event types, currently includes:
-    - `system`: Represents system events.
+- **`networks`**: Array of available networks.
+- **`getNetworkDetails(options): NetworkDetails`**: Gets details of a network.
+- **`getNetworkDomainDetails(options): DomainDetails`**: Gets details of a domain.
 
-- **Custom Types:**
+### Cryptographic Functions
 
-  - `AddressOrPair`: Represents an address string or a keyring pair.
+- **`blake2b_256(data): string`**: Hashes data with BLAKE2b-256.
+- **`stringToUint8Array(string): Uint8Array`**: Converts a string to `Uint8Array`.
+- **`concatenateUint8Arrays(...arrays): Uint8Array`**: Concatenates multiple `Uint8Array`s.
 
-  - `Events`: An array of event names (`string[]`) or nested arrays for grouping.
+### Data Storage
 
-  - `EventsValidated`: An object with two properties:
-    - `expected`: Events that were expected but not found.
-    - `found`: Events that were found during validation.
+- **`save(key, value): void`**: Saves data locally.
+- **`read(key): any`**: Reads data from local storage.
 
-  - `TransactionSignedAndSend`: An object containing transaction details like `success`, `txHash`, `blockHash`, and `events`.
+### Address Utilities
+
+- **`address(input): string`**: Standardizes an address format.
+- **`decode(input): Uint8Array`**: Decodes an address to bytes.
+
+---
+
+*Note:* All asynchronous functions return a `Promise` and should be used with `await` for proper execution flow.
 
 ---
 
-### Usage Examples
+## Usage Examples
 
-- **Signing and Sending a Transaction:**
+Below are examples demonstrating how to use the functions provided by `@autonomys/auto-utils`.
 
-  ```typescript
-  import { signAndSendTx } from '.packages/auto-utils';
+### 1. Wallet Management
 
-  const sender = keyringPair; // Your keyring pair or address
-  const tx = api.tx.balances.transfer(receiverAddress, amount);
-  const result = await signAndSendTx(sender, tx);
+#### **Activate a Wallet**
 
-  if (result.success) {
-    console.log('Transaction successful:', result.txHash);
-  } else {
-    console.error('Transaction failed');
-  }
-  ```
+Activate a wallet using a mnemonic phrase:
 
-- **Signing a Message:**
+```typescript
+import { activateWallet } from '@autonomys/auto-utils';
 
-  ```typescript
-  import { signMessage } from '.packages/auto-utils';
+(async () => {
+  const mnemonic = 'your mnemonic phrase here';
 
-  const signature = await signMessage(signer, address, 'Message to sign');
-  console.log('Signature:', signature);
-  ```
+  const { api, accounts } = await activateWallet({
+    mnemonic,
+    networkId: 'gemini-3h', // Optional: specify the network ID
+  });
 
-- **Validating Events:**
+  const account = accounts[0];
+  console.log(`Connected with account address: ${account.address}`);
 
-  ```typescript
-  import { validateEvents } from '.packages/auto-utils';
+  // Perform actions with the account...
 
-  const eventsValidated = validateEvents(events, ['system.ExtrinsicSuccess'], txHash, blockHash);
+  // Disconnect when done
+  await api.disconnect();
+})();
+```
 
-  if (eventsValidated.expected.length === 0) {
-    console.log('All expected events were found.');
-  } else {
-    console.warn('Some expected events were not found:', eventsValidated.expected);
-  }
-  ```
+#### **Activate a Wallet Using URI**
 
-- **Checking an Address and Hex Value:**
+Activate a wallet using a URI:
 
-  ```typescript
-  import { isAddress, isHex } from '.packages/auto-utils';
+```typescript
+import { activateWallet } from '@autonomys/auto-utils';
 
-  const addressValid = isAddress('5F3sa2TJAWMqDhXG6jhV4N8ko9p2Y3j5N5eZ5c9pWAFaFfLZ');
-  console.log('Address is valid:', addressValid);
+(async () => {
+  const { api, accounts } = await activateWallet({
+    uri: '//Alice',
+    networkId: 'localhost', // Connect to a local network
+  });
 
-  const hexValid = isHex('0x123abc');
-  console.log('Hex value is valid:', hexValid);
-  ```
+  const account = accounts[0];
+  console.log(`Connected with account address: ${account.address}`);
+
+  // Disconnect when done
+  await api.disconnect();
+})();
+```
+
+#### **Create Mock Wallets for Testing**
+
+Create mock wallets for testing purposes:
+
+```typescript
+import { activate, mockWallets, getMockWallet } from '@autonomys/auto-utils';
+
+(async () => {
+  const api = await activate({ networkId: 'gemini-3h' });
+
+  const wallets = await mockWallets({}, api);
+  const aliceWallet = getMockWallet('Alice', wallets);
+  const bobWallet = getMockWallet('Bob', wallets);
+
+  console.log(`Alice's address: ${aliceWallet.accounts[0].address}`);
+  console.log(`Bob's address: ${bobWallet.accounts[0].address}`);
+
+  // Disconnect when done
+  await api.disconnect();
+})();
+```
+
+### 2. Network Management
+
+#### **Get Available Networks**
+
+List all available networks:
+
+```typescript
+import { networks } from '@autonomys/auto-utils';
+
+networks.forEach((network) => {
+  console.log(`Network ID: ${network.id}, Name: ${network.name}`);
+});
+```
+
+#### **Get Network Details**
+
+Retrieve details of a specific network:
+
+```typescript
+import { getNetworkDetails } from '@autonomys/auto-utils';
+
+const network = getNetworkDetails({ networkId: 'gemini-3h' });
+console.log(`Network Name: ${network.name}`);
+console.log(`RPC URLs: ${network.rpcUrls.join(', ')}`);
+```
+
+#### **Get Domain Details**
+
+Retrieve details of a specific domain within a network:
+
+```typescript
+import { getNetworkDomainDetails } from '@autonomys/auto-utils';
+
+const domain = getNetworkDomainDetails({ domainId: '1', networkId: 'gemini-3h' });
+console.log(`Domain Name: ${domain.name}`);
+console.log(`RPC URLs: ${domain.rpcUrls.join(', ')}`);
+```
+
+### 3. Cryptographic Functions
+
+#### **Hash Data Using BLAKE2b-256**
+
+Hash a string using BLAKE2b-256:
+
+```typescript
+import { blake2b_256, stringToUint8Array } from '@autonomys/auto-utils';
+
+const data = 'Hello, Autonomys!';
+const dataBytes = stringToUint8Array(data);
+const hash = blake2b_256(dataBytes);
+
+console.log(`Hash: ${hash}`); // Outputs the hash of the input string
+```
+
+#### **Convert String to Uint8Array**
+
+Convert a string to a `Uint8Array`:
+
+```typescript
+import { stringToUint8Array } from '@autonomys/auto-utils';
+
+const text = 'Sample text';
+const byteArray = stringToUint8Array(text);
+
+console.log(byteArray); // Outputs Uint8Array representation of the string
+```
+
+#### **Concatenate Uint8Arrays**
+
+Concatenate two `Uint8Array` instances:
+
+```typescript
+import { stringToUint8Array, concatenateUint8Arrays } from '@autonomys/auto-utils';
+
+const array1 = stringToUint8Array('First part ');
+const array2 = stringToUint8Array('Second part');
+
+const concatenated = concatenateUint8Arrays(array1, array2);
+console.log(`Concatenated Result: ${new TextDecoder().decode(concatenated)}`);
+// Outputs: "First part Second part"
+```
+
+### 4. API Activation
+
+#### **Activate the Network API**
+
+Connect to the Autonomys Network:
+
+```typescript
+import { activate } from '@autonomys/auto-utils';
+
+(async () => {
+  const api = await activate({ networkId: 'gemini-3h' });
+
+  console.log('API connected');
+
+  // Perform API calls...
+
+  // Disconnect when done
+  await api.disconnect();
+})();
+```
+
+#### **Activate a Domain API**
+
+Connect to a specific domain within the network:
+
+```typescript
+import { activateDomain } from '@autonomys/auto-utils';
+
+(async () => {
+  const api = await activateDomain({ domainId: '1', networkId: 'gemini-3h' });
+
+  console.log('Domain API connected');
+
+  // Perform domain-specific API calls...
+
+  // Disconnect when done
+  await api.disconnect();
+})();
+```
+
+### 5. Data Storage
+
+#### **Save and Read Data**
+
+Save data to local storage or the file system and read it back:
+
+```typescript
+import { save, read } from '@autonomys/auto-utils';
+
+const key = 'myData';
+const value = { message: 'Hello, Autonomys!' };
+
+// Save data
+save(key, value);
+
+// Read data
+const retrievedValue = read(key);
+console.log(retrievedValue); // Outputs: { message: 'Hello, Autonomys!' }
+```
+
+### 6. Address Utilities
+
+#### **Convert Address Formats**
+
+Convert an address to a standardized format and decode it:
+
+```typescript
+import { address, decode } from '@autonomys/auto-utils';
+
+const originalAddress = '5GmS1wtCfR4tK5SSgnZbVT4kYw5W8NmxmijcsxCQE6oLW6A8';
+const standardizedAddress = address(originalAddress);
+const decodedAddress = decode(originalAddress);
+
+console.log(`Standardized Address: ${standardizedAddress}`);
+console.log('Decoded Address:', decodedAddress);
+```
 
 ---
-:::note
-All asynchronous functions that return a `Promise<T>` should be awaited to retrieve the desired data. Functions interacting with the blockchain may require an active connection (`api`) to a node.
-:::
 
-:::important
-Ensure that you handle any errors that may occur during asynchronous operations, especially when dealing with transactions or network requests. Always validate user input and be cautious with private keys and sensitive data.
-:::
+*Note:* All asynchronous functions return a `Promise` and should be used with `await` for proper execution flow.
+
+---
+
+## Notes
+
+- **Asynchronous Functions**: Use `await` with all promises for proper execution flow.
+- **API Disconnection**: Always disconnect the API instance after operations to free up resources.
+- **Error Handling**: Wrap asynchronous calls in `try...catch` blocks to handle potential errors gracefully.
+- **Security Considerations**:
+  - **Private Keys**: Handle private keys securely. Do not expose them in code or logs.
+  - **Data Persistence**: Be cautious when saving sensitive data using `save` and `read`.
