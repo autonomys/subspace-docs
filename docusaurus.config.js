@@ -56,7 +56,7 @@ const config = {
           // Redirecting to the new root URL (/) as the previous root (/docs) is no longer in use.
 
           // Learn
-          { to: '/learn/intro', from: ['/docs/learn/intro'] },
+          { to: '/learn/intro', from: ['/category/learn,', '/docs/learn/intro'] },
           { to: '/learn/security', from: ['/docs/learn/security'] },
           { to: '/learn/academy', from: ['/docs/learn/academy'] },
 
@@ -176,6 +176,11 @@ const config = {
     ({
       colorMode:{
         defaultMode: 'dark'
+      },
+      docs: {
+        sidebar: {
+          autoCollapseCategories: true,
+        },
       },
       navbar: {
         title: 'Autonomys',
