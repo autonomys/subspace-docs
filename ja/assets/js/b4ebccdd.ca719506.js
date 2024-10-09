@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkportal=self.webpackChunkportal||[]).push([[7498],{2334:e=>{e.exports=JSON.parse('{"categoryGeneratedIndex":{"title":"Learn","description":"Learn about the Autonomys Network","slug":"/category/learn","permalink":"/ja/category/learn","sidebar":"tutorialSidebar","navigation":{"next":{"title":"Getting Started","permalink":"/ja/learn/intro"}}}}')}}]);
