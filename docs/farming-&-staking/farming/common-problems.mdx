@@ -16,9 +16,9 @@ import TabItem from '@theme/TabItem';
 import Link from '@docusaurus/Link';
 import styles from '@site/src/pages/index.module.css';
 
-While the aim is to deliver software free of bugs, users may encounter certain errors. Some of these can be safely ignored, while others require attention. If you're still experiencing issues, check out our [forums](https://forum.autonomys.xyz/search?expanded=false&q=tags) or visit our [Discord](https://discord.com/channels/864285291518361610/864285291518361613) server for assistance.
+While the aim is to deliver software free of bugs, users may encounter certain errors. Some of these can be safely ignored, while others require attention. If you're still experiencing issues, check out our [forums](https://forum.autonomys.xyz/search?expanded=false&q=tags) or visit our [Discord](https://discord.com/channels/864285291518361610/1062507270539321485) server for assistance.
 
-## Component
+## Program Issues
 
 These errors and warnings are tied to specific components. In this section, we will highlight known issues, offer any available remediation steps to address them, and specify their severity levels. 🟢 🟠 🔴
 
@@ -93,37 +93,34 @@ The drive where you are storing your plot is out of space. Reduce the plot size 
 
 These unexpected behaviors are not linked to specific components. In this section, we will outline common issues and provide any available remediation steps to address them.
 
-:::caution[Handling No Output and Missing Error Codes]
+<details>
 
-If you encounter a situation where the node produces no output and does not display any error code, it is likely that you simply need to install the latest version of the Visual C++ Redistributable package, which can be found [here](https://learn.microsoft.com/en-us/cpp/windows/latest-supported-vc-redist).
+<summary>
+<small>No Output and Missing Error Codes</small>
+</summary>
 
-:::
+If you encounter a situation in Windows where the node produces no output and does not display any error code, it is likely that you simply need to install the latest version of the [Visual C++ Redistributable package](https://learn.microsoft.com/en-us/cpp/windows/latest-supported-vc-redist).
 
-:::tip[Farmer is stuck on plotting and has not made any progress for several hours.]
+</details>
+
+<details>
+
+<summary>
+<small>Farmer is stuck on plotting and has not made any progress for several hours.</small>
+</summary>
 
 Try restarting your node or farmer. We've observed that when creating larger plots, the process may sometimes seem stalled, but it typically resumes automatically after a while.
 
-:::
+</details>
 
-:::tip[Rewards have not been earned after several days of farming.]
+<details>
+
+<summary>
+<small>Rewards have not been earned after several days of farming.</small>
+</summary>
 
 - Ensure you are using the latest release of either [Space Acres](https://github.com/autonomys/space-acres/releases) or the [Advanced CLI](https://github.com/autonomys/subspace/releases).
 - Confirm that your farmer is active and on the highest block by checking our [telemetry](https://telemetry.subspace.network) server.
 - Check your balance using [Astral Bock Explorer](https://astral.autonomys.xyz) or the [Polkadot Explorer](https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Frpc-0.gemini-3h.subspace.network%2Fws#/explorer)
 
-:::
-
-
-:::tip[Still experiencing issues?]
-
-<details>
-
-<summary>
-<small>If you're still experiencing issues, check out our forums or visit our Discord server for assistance.</small>
-</summary>
-
-<iframe src="https://forum.autonomys.xyz/search?expanded=false&q=tags%3Afaq%20order%3Alatest" width="100%" height="600px" frameborder="0" scrolling="auto"></iframe>
-
 </details>
-
-:::
