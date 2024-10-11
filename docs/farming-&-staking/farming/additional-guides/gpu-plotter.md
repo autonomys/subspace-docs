@@ -104,7 +104,7 @@ sudo usermod -a -G render $LOGNAME
 
 Now you’ll need to log out of your user profile and log back in or simply reboot for group changes to take effect and you’re ready to go.
 
-*Prepare your OS (Windows)*
+#### Prepare your OS (Windows)
 
 In order to install necessary libraries go to [https://www.amd.com/en/developer/resources/rocm-hub/hip-sdk.html](https://www.amd.com/en/developer/resources/rocm-hub/hip-sdk.html) and download ROCm version 6.1.2 for your Windows version.
 
