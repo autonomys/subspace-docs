@@ -55,7 +55,7 @@ See Discord [#farmer-chat](https://discord.com/channels/864285291518361610/10625
 :::
 
 | Series/Model        | Ubuntu |Windows |
-|---|---|:---:|
+|---|:---:|:---:|
 | RX 7900 XTX   | ✅ | ❔ |
 | RX 7600 XT    | ✅ | ❔ |
 | RX 7600       | ✅ | ❔ |
@@ -70,7 +70,7 @@ See Discord [#farmer-chat](https://discord.com/channels/864285291518361610/10625
 You must be using the latest test build for AMD support.
 :::
 
-###Regular CLI###
+### Regular CLI
 
 On Ubuntu and Windows `subspace-farmer-rocm-*` executable can be used for ROCm support with corresponding CLI options being similar to CUDA and prefixed with `--rocm`.
 As you might expect all detected GPUs will be used by default and CPU plotting is automatically disabled in such case.
@@ -110,7 +110,7 @@ In order to install necessary libraries go to [https://www.amd.com/en/developer/
 
 In the installer just the HIP RTC Runtime should be enough under “HIP Runtime Compiler → HIP RTC Runtime 6.1.0”, everything else can be unchecked.
 
-###Docker (container)###
+### Docker (container)
 
 Container image now ships with a second executable `/subspace-farmer-rocm` (see explanation above as to why second binary is needed).
 
