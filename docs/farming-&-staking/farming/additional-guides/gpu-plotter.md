@@ -75,7 +75,7 @@ You must be using the latest test build for AMD support.
 On Ubuntu and Windows `subspace-farmer-rocm-*` executable can be used for ROCm support with corresponding CLI options being similar to CUDA and prefixed with `--rocm`.
 As you might expect all detected GPUs will be used by default and CPU plotting is automatically disabled in such case.
 
-*Prepare your OS (Ubuntu)*
+#### Prepare your OS (Ubuntu)
 
 In order to install necessary libraries go to Ubuntu native installation — [ROCm installation (Linux)](https://rocm.docs.amd.com/projects/install-on-linux/en/docs-6.2.2/install/native-install/ubuntu.html) and follow these steps for your Ubuntu version:
 
