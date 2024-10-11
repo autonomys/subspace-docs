@@ -31,10 +31,11 @@ GPU plotting employs the new v1 plot format, which is applicable to any plots cr
 
 | Platform          | 🐧 Linux | 🪟 Windows | [Nvidia](#nvidia) | [AMD](#amd) | [Intel](#intel) |
 |-------------------|:-------:|:---------:|:---------:|:-----------:|:------------:|
-| [Advanced CLI](https://github.com/autonomys/subspace/releases)          |   ✅    |    ✅     |    ✅     |     🛠️      |      🔜      |
-| [Space Acres](https://github.com/autonomys/space-acres/releases)       |   ✅    |    ✅     |    ✅     |     🔜      |      🔜      |
+| [Advanced CLI](https://github.com/autonomys/subspace/releases)          |   ✅    |    ✅     |    ✅     |     ✅      |      🔮      |
+| [Space Acres](https://github.com/autonomys/space-acres/releases)       |   ✅    |    ✅     |    ✅     |     🔜      |      🔮      |
 
-🛠️ *Limited AMD Support for just Linux is available in recent test builds. See Discord [#farmer-chat](https://discord.com/channels/864285291518361610/1062507270539321485) channel for details.*
+🛠️ *Limited AMD Support is available in recent test builds. The most recent test builds are linked on the [forum](https://forum.autonomys.xyz/t/rocm-gpu-support-amd/4440) 
+See Discord [#farmer-chat](https://discord.com/channels/864285291518361610/1062507270539321485) channel for limited support.*
 
 ## Supported GPUs
 
@@ -53,21 +54,105 @@ GPU plotting employs the new v1 plot format, which is applicable to any plots cr
 *There are many challenges to overcome regarding AMD ROCm support. There is much more information on this topic on the [forum](https://forum.autonomys.xyz/t/rocm-gpu-support-amd/4440)*
 :::
 
-| Series            | Models                                            | Supported |
-|---|---|:---:|
-| RX 7900 Series    | 7900 XT, 7900 XTX, 7900 GRE                       | ✅ |
-| RX 6000 Series    | 6600, 6800                                        | ✅ |
-| RX 5000 Series    | 5600, 5700                                        | ❌ |
+| Series/Model        | Ubuntu |Windows |
+|---|:---:|:---:|
+| RX 7900 XTX   | ✅ | ❔ |
+| RX 7600 XT    | ✅ | ❔ |
+| RX 7600       | ✅ | ❔ |
+| RX 6800       | ✅ | ❔ |
+| RX 6600       | ✅ | ❔ |
+| RX 5700 XT    | ❌ | ❔ |
+| RX 5700       | ❌ | ❔ |
+| RX 5600       | ❌ | ❔ |
+| AMD BC-250    | ❌ | ❔ |
 
-Supported on Test Builds for Linux Only
+:::tip
+You must be using the latest test build for AMD support.
+:::
 
+### Advanced CLI
 
-*For more details, please consult the [AMD ROCm Requirements](https://rocm.docs.amd.com/projects/install-on-linux/en/latest/reference/system-requirements.html) for compatibility.*
+For AMD GPU users, follow these steps to enable ROCm support:
+
+#### Ubuntu
+
+1.  In order to install necessary libraries go to Ubuntu native installation — [ROCm installation (Linux)](https://rocm.docs.amd.com/projects/install-on-linux/en/docs-6.2.2/install/native-install/ubuntu.html) and follow these steps for your Ubuntu version:
+
+    - Package signing key
+    - Register ROCm packages
+
+    You don’t need a custom driver or full ROCm toolchain to use already compiled application, so skip all other steps.
+
+2.  Next install a single package with ROCm runtime:
+
+    ```text
+    sudo apt-get install --no-install-recommends hip-runtime-amd
+    ```
+    And register the library so that farmer and other apps can find it:
+
+    ```text
+    echo "/opt/rocm/lib" | sudo tee /etc/ld.so.conf.d/rocm.conf > /dev/null
+    sudo ldconfig
+    ```
+
+3.  Then, to allow the user to access GPU for compute purposes, you need to add your user to render group (please never run farmer as root with sudo :pray: ):
+
+    ```text
+    sudo usermod -a -G render $LOGNAME
+    ```
+
+4.  Now you’ll need to log out of your user profile and log back in or simply reboot for group changes to take effect and you’re ready to go.
+
+#### Windows
+
+In order to install necessary libraries go to [https://www.amd.com/en/developer/resources/rocm-hub/hip-sdk.html](https://www.amd.com/en/developer/resources/rocm-hub/hip-sdk.html) and download ROCm version 6.1.2 for your Windows version.
+
+In the installer just the HIP RTC Runtime should be enough under “HIP Runtime Compiler → HIP RTC Runtime 6.1.0”, everything else can be unchecked.
+
+#### Docker
+
+Container image now ships with a second executable `/subspace-farmer-rocm` (see explanation above as to why second binary is needed).
+
+Here is how it can be used with Docker Compose, you can use this as an inspiration for other use cases:
+
+```text
+services:
+  famer:
+    image: ghcr.io/autonomys/farmer:TAG
+    # Beginning of ROCm-specific options
+    devices:
+      - /dev/kfd:/dev/kfd
+      # This will make all GPUs accessible, you can also limit this
+      # to individual devices like `/dev/dri/renderD128`
+      - /dev/dri:/dev/dri
+    security_opt:
+      - seccomp:unconfined
+    # `root` user can be replaced with ID of the user on the host system
+    # that is in `render` group, needed to access `/dev/kfd` device
+    user: root
+    entrypoint: /subspace-farmer-rocm
+    # End of ROCm-specific options
+    ...the rest of typical options you'd normally use
+```
+
+:::note
+- Cross-compilation no longer requires separate Dockerfiles (which is why they are removed), both native and cross-compilation is supported with a single file
+- Container image is now built as multi-platform, meaning no -aarch64 suffix and no awkwardness related to that
+- Aarch64 farmer container image is now compiled with CUDA support (while regular executable isn't)
+:::
 
 ### **Intel**
 
-Intel Arc GPUs may be supported in the future, but specific compatibility details have not been announced yet.
+Intel Arc GPUs *may* be supported in the future, but specific compatibility details have not been announced yet.
 
+### Note:
+- **Never run the farmer as root** using `sudo` for security reasons.
+- **All detected GPUs will be used by default**, but you can re-enable CPU plotting if needed with:
+  ```bash
+  --cpu-sector-encoding-concurrency <sectors>
+
+On Ubuntu and Windows `subspace-farmer-rocm-*` executable can be used for ROCm support with corresponding CLI options being similar to CUDA and prefixed with `--rocm`.
+As you might expect all detected GPUs will be used by default and CPU plotting is automatically disabled in such case.
 
 ## Common Plotting Parameters
 
@@ -88,8 +173,16 @@ Below are some essential parameter examples for configuring the GPU plotter:
 
 - Disable GPU Plotting:
 
+*Linux*
+
   ```bash
   --cuda-gpus ""
+  ```
+
+*Windows*
+
+  ```bash
+  --cuda-gpus 99
   ```
 
 ## Farming Cluster
@@ -99,4 +192,4 @@ When utilizing Farming Cluster, particularly with multiple or fast GPUs, you mig
 
 ## Known Issues
 
-- Occasionally, plotting may stop unexpectedly, requiring a restart of the farmer. We are aware of this issue and a fix is in progress.
+- Many times you will not use all of the compute power of your GPU. While this will be addressed in the future, a workaround when running a farming cluster is to run multiple instances of the plotter on the same machine.
