@@ -70,7 +70,44 @@ See Discord [#farmer-chat](https://discord.com/channels/864285291518361610/10625
 You must be using the latest test build for AMD support.
 :::
 
+
 ### Regular CLI
+
+#### Using the AMD ROCm GPU Plotter (Linux & Windows)
+
+For AMD GPU users, follow these steps to enable ROCm support:
+
+1. **Install Necessary Libraries (Ubuntu)**:
+   - Visit the [ROCm installation page](https://www.amd.com/en/developer/resources/rocm-hub/hip-sdk.html) for your Ubuntu version.
+   - Register the ROCm packages and install the required runtime:
+     ```bash
+     sudo apt-get install --no-install-recommends hip-runtime-amd
+     ```
+   - Register the library for farmer and other applications:
+     ```bash
+     echo "/opt/rocm/lib" | sudo tee /etc/ld.so.conf.d/rocm.conf > /dev/null
+     sudo ldconfig
+     ```
+
+2. **Enable GPU Access**:
+   - Add your user to the `render` group to allow GPU usage:
+     ```bash
+     sudo usermod -a -G render $LOGNAME
+     ```
+   - Log out and back in, or restart your computer for the changes to take effect.
+
+3. **Windows Users**:
+   - Download ROCm 6.1.2 from the [ROCm Hub](https://www.amd.com/en/developer/resources/rocm-hub/hip-sdk.html).
+   - Select only the "HIP RTC Runtime" during installation—no other components are required.
+
+4. **Running the Plotter**:
+   - On both Ubuntu and Windows, use the `subspace-farmer-rocm-*` executable with the `--rocm` option for ROCm support. The CLI options are similar to CUDA.
+
+#### Note:
+- **Never run the farmer as root** using `sudo` for security reasons.
+- **All detected GPUs will be used by default**, but you can re-enable CPU plotting if needed with:
+  ```bash
+  --cpu-sector-encoding-concurrency <sectors>
 
 On Ubuntu and Windows `subspace-farmer-rocm-*` executable can be used for ROCm support with corresponding CLI options being similar to CUDA and prefixed with `--rocm`.
 As you might expect all detected GPUs will be used by default and CPU plotting is automatically disabled in such case.
