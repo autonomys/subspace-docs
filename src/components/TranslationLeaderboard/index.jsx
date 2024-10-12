@@ -25,14 +25,25 @@ const TranslationsLeaderboard = () => {
         const fileToLoad = currentSelection === 'allTime' ? 'leaderboard.json' : 'leaderboard-monthly.json';
         loadData(fileToLoad);
     }, [currentSelection]);
-    
+
+    // Function to format the word count according to the locale, 
+    // using the locale from siteConfig if available, or falling back to the browser's default locale.
+    const formatWords = (wordsCount) => {
+        const numericCount = Number(wordsCount);
+        const locale = siteConfig.locale || navigator.language;
+        return numericCount.toLocaleString(locale);
+    };
+
+    // Filter users with Translated Words > 0
+    const filteredLeaderboardData = leaderboardData.filter(user => Number(user["Translated (Words)"]) > 0);
+
     return (
         <div className="leaderboard-container">
             <div className="leaderboard-buttons">
                 <button onClick={() => setCurrentSelection('allTime')}>All Time</button>
                 <button onClick={() => setCurrentSelection('monthly')}>Monthly</button>
             </div>
-            {leaderboardData.map((user, index) => (
+            {filteredLeaderboardData.map((user, index) => (
                 <div key={index} className="user-card">
                     <div className="avatar-container">
                         <span className="ranking">
@@ -44,7 +55,9 @@ const TranslationsLeaderboard = () => {
                             <span className="languages">{user.Languages || 'N/A'}</span>
                         </div>
                     </div>
-                    <span className="translated-words">{user["Translated (Words)"]} words</span>
+                    <span className="translated-words">
+                        {formatWords(user["Translated (Words)"])} words
+                    </span>
                 </div>
             ))}
         </div>
