@@ -226,12 +226,12 @@ Increasing the values of the farmer parameters may enhance plotting speed by acc
 
 Plotting performance has been improved with increased internal concurrency. During plotting, table generation involves both parallel and sequential phases. By generating multiple tables at once, we overlap sequential tasks with parallel ones, improving CPU utilization. Although generating tables for all records demands significant RAM, processing fewer records at a time helps balance CPU and RAM usage.
 
-The `--record-encoding-concurrency` option allows you to fine-tune this balance. By default, it allocates one record for every two cores, up to eight in parallel. If RAM usage becomes too high or you prefer the previous method, you can adjust this setting.
+The `--cpu-record-encoding-concurrency` option allows you to fine-tune this balance. By default, it allocates one record for every two cores, up to eight in parallel. If RAM usage becomes too high or you prefer the previous method, you can adjust this setting.
 
 Example usage:
 
 ```bash
---record-encoding-concurrency 4
+--cpu-record-encoding-concurrency 4
 ```
 
 You can experiment to optimize performance based on your system's CPU and RAM.
@@ -254,19 +254,19 @@ Ensure you replace `/path/to/plot` with the actual path to your plot. Use this c
 <details>
 <summary><small>Specify CPU Cores</small></summary>
 
-This option allows you to override any custom logic that subspace-farmer uses for CPU core allocation. You can specify the plotting CPU cores by adding `--plotting-cpu-cores`, followed by the desired core parameters. Cores should be listed as comma-separated values, using whitespace to separate different thread pools or encoding instances. 
+This option allows you to override any custom logic that subspace-farmer uses for CPU core allocation. You can specify the plotting CPU cores by adding `--cpu-plotting-cores`, followed by the desired core parameters. Cores should be listed as comma-separated values, using whitespace to separate different thread pools or encoding instances. 
 
 For example, the command:
 
 ```bash
---plotting-cpu-cores 0,1 2,3
+--cpu-plotting-cores 0,1 2,3
 ```
 
 will result in two sectors being encoded simultaneously, with each sector using a pair of CPU cores.
 
-You can similarly customize the replotting CPU cores with the `--replotting-cpu-cores` option, using arguments that follow the same format as `--plotting-cpu-cores`.
+You can similarly customize the replotting CPU cores with the `--cpu-replotting-cores` option, using arguments that follow the same format as `--cpu-plotting-cores`.
 
-It is important to note that if you set `--plotting-cpu-cores`, you must configure `--replotting-cpu-cores` with the same number of CPU core groups. If you omit the `--replotting-cpu-cores` setting, the node will default to using the same thread pool as for plotting.
+It is important to note that if you set `--cpu-plotting-cores`, you must configure `--cpu-replotting-cores` with the same number of CPU core groups. If you omit the `--cpu-replotting-cores` setting, the node will default to using the same thread pool as for plotting.
 
 </details>
 
