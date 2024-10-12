@@ -32,7 +32,7 @@ GPU plotting employs the new v1 plot format, which is applicable to any plots cr
 
 ### Platform Compatibility
 
-| Platform | 🐧 Linux | 🪟 Windows | [Nvidia]/farming/guides/gpu-plotter?brand=nvidia#supported-gpus) | [AMD](/farming/guides/gpu-plotter?brand=amd#supported-gpus) | [Intel](/farming/guides/gpu-plotter?brand=intel#supported-gpus) |
+| Platform | 🐧 Linux | 🪟 Windows | [Nvidia](/farming/guides/gpu-plotter?brand=nvidia#supported-gpus) | [AMD](/farming/guides/gpu-plotter?brand=amd#supported-gpus) | [Intel](/farming/guides/gpu-plotter?brand=intel#supported-gpus) |
 |---|:-:|:-:|:-:|:-:|:-:|
 | [Advanced CLI](https://github.com/autonomys/subspace/releases) | ✅ | ✅ |✅ | ✅ | 🔮 |
 | [Space Acres](https://github.com/autonomys/space-acres/releases) | ✅ | ✅ | ✅ | 🔜 | 🔮 |
