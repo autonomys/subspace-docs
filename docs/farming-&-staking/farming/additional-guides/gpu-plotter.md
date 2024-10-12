@@ -189,7 +189,7 @@ Intel Arc GPUs *may* be supported in the future, but specific compatibility deta
 ## Common Plotting Parameters
 
 <details>
-<summary>CPU Sector Encoding Concurrency</summary>
+<summary>Enable CPU Plotting</summary>
 
 When a compatible GPU is detected, CPU plotting is automatically disabled by default, but can be re-enabled if needed by specifying number of concurrently encoded sectors: `--cpu-sector-encoding-concurrency <sectors>`
 
@@ -209,17 +209,6 @@ When a compatible GPU is detected, CPU plotting is automatically disabled by def
   ```powershell title="Windows"
   --cuda-gpus 99
   ```
-
-</details>
-
-<details>
-<summary>Enable CPU Plotting</summary>
-
-By default, only detected GPUs will be used. However, you can re-enable CPU plotting if needed by using:
-
-```bash
---cpu-sector-encoding-concurrency <sectors>
-```
 
 </details>
 
