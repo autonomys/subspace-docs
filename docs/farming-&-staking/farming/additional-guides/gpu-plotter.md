@@ -43,7 +43,7 @@ See Discord [#farmer-chat](https://discord.com/channels/864285291518361610/10625
 
 | Series/Model        | Supported |
 |---|:---:|
-| GTX 1660 Super      | ✅ |
+| GTX 16 Series       | ✅ |
 | RTX 20xx and Newer  | ✅ |
 
 *Nvidia [drivers](https://developer.nvidia.com/cuda-downloads) version 550 or later are required. Installing the CUDA Toolkit is not required.*
