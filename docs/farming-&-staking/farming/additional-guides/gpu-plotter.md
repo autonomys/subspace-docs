@@ -12,12 +12,6 @@ keywords:
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-:::tip
-Most NVIDIA GPU users do not need to change any parameters. The default options will automatically find and use any supported GPU, and CPU plotting will be automatically disabled.
-:::
-
-## Overview
-
 Autonomys utilizes your drive storage, specifically SSD or NVMe drives, to store plots. After the plotting process is finished, these plots are then farmed using your CPU. Farming is not particularly demanding on the CPU, enabling most modern processors to manage a substantial farm size. However, the plot creation process is highly resource intensive, which makes CPU plotting the main bottleneck.
 
 Utilizing GPU plotting allows you to harness the power of compatible GPUs for plot generation and replotting, either in conjunction with or as a substitute for CPU processing. While many modern CPUs can complete the plotting of a sector in less than two minutes, a single high performance GPU can accomplish the same task in under five seconds, greatly improving efficiency and speed.
@@ -25,12 +19,14 @@ Utilizing GPU plotting allows you to harness the power of compatible GPUs for pl
 Although GPU plotting is not mandatory, it provides enhanced energy efficiency and speed compared to relying solely on a CPU.
 
 
-:::note Plot Format Compatibility
+:::info Plot Format Compatibility
+
 GPU plotting employs the new v1 plot format, which is applicable to any plots created with versions released on or after July 5th. In contrast, older software versions generated plots in the v0 format, which is only compatible with CPU plotting.
+
 :::
 
 
-### Platform Compatibility
+## Platform Compatibility
 
 | Platform | 🐧 Linux | 🪟 Windows | [Nvidia](/farming/guides/gpu-plotter?brand=nvidia#supported-gpus) | [AMD](/farming/guides/gpu-plotter?brand=amd#supported-gpus) | [Intel](/farming/guides/gpu-plotter?brand=intel#supported-gpus) |
 |---|:-:|:-:|:-:|:-:|:-:|
@@ -42,7 +38,7 @@ GPU plotting employs the new v1 plot format, which is applicable to any plots cr
 <small>See Discord [#farmer-chat](https://discord.com/channels/864285291518361610/1062507270539321485) channel for limited support.</small>
 
 
-### Supported GPUs
+## Supported GPUs
 
 <Tabs queryString="brand">
 
