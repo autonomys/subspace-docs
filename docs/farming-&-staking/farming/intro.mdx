@@ -84,7 +84,7 @@ SSD storage is required. High end models are not necessary and a mid range SSD f
 
 :::caution File Descriptor Limit
 
-Linux systems may have a default file descriptor limit, which can vary based on distribuition. Exceeding this limit could cause errors. For detailed information, visit our [Tips & Tricks](/farming/advanced-cli/tips#changing-number-of-open-files-limit-linux) guide.
+Linux systems may have a default file descriptor limit, which can vary based on distribuition. Exceeding this limit could cause errors. For detailed information, visit our [Tips & Tricks](/farming/advanced-cli/tips#open-files-limit) guide.
 
 :::
 
@@ -149,8 +149,10 @@ For detailed information on network configurations, including port forwarding re
 
 ## Dependencies
 
-:::caution No Output and Missing Error Codes
+:::caution  Windows No Output Bug
+If you face an error where the node outputs nothing and no error code is given it is likely you just need to install the latest Visual C++ Redistributable package [here](https://learn.microsoft.com/en-us/cpp/windows/latest-supported-vc-redist?view=msvc-170)
+:::
 
-If you encounter a situation in Windows where the node produces no output and does not display any error code, it is likely that you simply need to install the latest version of the [Visual C++ Redistributable package](https://learn.microsoft.com/en-us/cpp/windows/latest-supported-vc-redist).
-
+:::caution Linux `libcomp.so.1` error.
+If you encounter an error related to `libgomp.so.1`, install the `libgomp1` library with `sudo apt-get install libgomp1`.
 :::
