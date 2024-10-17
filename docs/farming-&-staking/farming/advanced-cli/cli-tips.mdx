@@ -108,6 +108,8 @@ The default parameters are configured with common consumer modem and router capa
 <details>
 <summary><small>Snap Sync</small></summary>
 
+Snap Sync works by jumping to near the end of the chain, allowing you to sync with the current block more quickly. Once the initial jump is complete, it functions like a full sync. In fact, if you haven't synced for more than a few days, it might be faster to remove the node database and let Snap Sync quickly sync to the most recent block.
+
 A full sync is required for situations where you need an archival node, such as running an operator or when running an RPC node for public use or indexing. Archival nodes store the entire blockchain, unlike pruned nodes that only store recent data. To perform a full sync and disable Snap Sync, use the following command:
 
 ```bash
