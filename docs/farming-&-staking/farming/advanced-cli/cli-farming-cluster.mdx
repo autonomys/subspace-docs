@@ -91,7 +91,7 @@ subspace-farmer cluster --nats-server nats://<NATS_IP>:4222 \
         path=/path/to/farm,size=SIZE
 ```
 
-Replace **`<NATS_IP>`** with your NATS server IP address and provide your reward address, farm paths, and sizes. Optional parameters include **`--sector-encoding-concurrency`**, **`--farming-thread-pool-size`**, **`--disable-farm-locking`**, and **`--create`**.
+Replace **`<NATS_IP>`** with your NATS server IP address and provide your reward address, farm paths, and sizes. Optional parameters include **`--cpu-sector-encoding-concurrency`** or **`--cuda-sector-downloading-concurrency`**, **`--farming-thread-pool-size`**, **`--disable-farm-locking`**, and **`--create`**.
 
 ### Plotter
 
