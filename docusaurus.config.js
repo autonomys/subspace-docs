@@ -235,7 +235,7 @@ const config = {
             items: [
               {
                 label: 'Telemetry',
-                href: 'https://telemetry.subspace.network',
+                href: 'https://telemetry.subspace.foundation',
               },
               {
                 label: 'Astral Block Explorer',
