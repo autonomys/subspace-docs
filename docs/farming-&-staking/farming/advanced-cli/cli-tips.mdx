@@ -37,8 +37,6 @@ Explore the Autonomys Network in detail with our telemetry tool and various bloc
     </p>
 </div>
 
----
-
 <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '1rem' }}>
     <div style={{ flexBasis: '25%', flexShrink: 0, display: 'flex', justifyContent: 'center' }}>
         <Button label="✨ Astral Block Explorer" link="https://astral.autonomys.xyz"/>
@@ -84,13 +82,13 @@ A complete list of parameters and their functions can be obtained using the `--h
 <details>
 <summary><small>DSN Syncing</small></summary>
 
-:::caution[Adjusting DSN Sync Parameters]
+:::caution Adjusting DSN Sync Parameters
 
 It may be tempting to modify certain parameters that appear to be related to DSN syncing, but caution is advised. Some options may not improve syncing performance and should be left at their default settings.
 
 :::
 
-:::tip[Understanding the DSN]
+:::tip Understanding the DSN
 
 The DSN can be a complex topic. To gain a better understanding of our Decentralized Storage Network, please refer to this [guide](https://academy.autonomys.xyz/subspace-protocol/network-architecture/distributed-storage-network) from our Academy.
 
@@ -378,29 +376,29 @@ For services, use the following commands to enable the Rust backtrace:
 
 1. Edit the service file for the node or farmer:
 
-   ```bash
-   sudo systemctl edit subspace-node
-   ```
+```bash
+sudo systemctl edit subspace-node
+```
 
-   or 
+or 
 
-   ```bash
-   sudo systemctl edit subspace-farmer
-   ```
+```bash
+sudo systemctl edit subspace-farmer
+```
 
 2. Add the `[Service]` section and include the line `Environment=RUST_BACKTRACE=1` between the warning comments.
 
 3. Reload the systemd manager configuration:
 
-   ```bash
-   sudo systemctl daemon-reload
-   ```
+```bash
+sudo systemctl daemon-reload
+```
 
 4. Restart the services:
 
-   ```bash
-   sudo systemctl restart subspace-{node,farmer}
-   ```
+```bash
+sudo systemctl restart subspace-{node,farmer}
+```
 
 </TabItem>
 
@@ -411,7 +409,6 @@ Enabling `RUST_BACKTRACE` provides additional diagnostic information that can as
 </details>
 
 ## Operating System Changes
-
 
 <details id="open-files-limit">
 <summary><small>Changing the Open Files Limit on Linux</small></summary>
@@ -432,16 +429,16 @@ For a permanent adjustment, you have two options:
 
 1. Modify the kernel parameter `fs.file-max` using the `sysctl` command:
 
-   ```bash
-   sysctl -w fs.file-max=500000
-   ```
+```bash
+sysctl -w fs.file-max=500000
+```
 
 2. Set limits for individual users by editing the `/etc/security/limits.conf` file. You can specify hard and soft limits for the number of open files. For instance:
 
-   ```bash
-   username soft nofile 10000
-   username hard nofile 30000
-   ```
+```bash
+username soft nofile 10000
+username hard nofile 30000
+```
 
 By applying these changes, you can effectively manage the open files limit to optimize your system’s performance.
 
