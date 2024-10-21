@@ -11,435 +11,240 @@ keywords:
     - Docker
 ---
 
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
-import Link from '@docusaurus/Link';
-import MDXComponents from '@theme-original/MDXComponents';
-import Button from '@site/src/components/Button';
 
-Whether you are an experienced farmer or new to the Autonomys Network, this section offers valuable insights to improve your experience and efficiency. We explore practical advice and hidden techniques that will help you optimize your farming setup and tackle common challenges effortlessly.
+## Additional Tips
 
-These tips are specifically designed to ensure your farm runs smoothly and effectively. Let’s get started!
+Welcome to the Additional Tips section! Whether you're a seasoned farmer or just starting out with the Autonomys Network, these tips and tricks are designed to enhance your experience and efficiency. Here, we delve into practical advice and lesser-known techniques to help you fine-tune your farming setup and navigate common challenges with ease. From configuring your environment to managing background processes, these insights are tailored to ensure your Farmer operates smoothly and effectively. Let's dive in and explore how you can get the most out of your Autonomys Network Farmer.
 
-## Telemetry & Explorers
+### Telemetry & Astral Block Explorer
 
-Explore the Autonomys Network in detail with our telemetry tool and various block explorers. Whether you're monitoring network activity or analyzing blockchain data, these resources provide valuable insights into the network's performance and transactions.
+Explore the Autonomys Network in depth with our variety of telemetry tools and block explorers. Whether you're monitoring network activity or exploring blockchain data, these resources provide comprehensive insights into the network's performance and transactions.
 
-<details>
-<summary><small>Monitor the Autonomys Network using telemetry and block explorers.</small></summary>
+- **[Telemetry Server](https://telemetry.subspace.foundation)**: Get real-time insights into network activity and performance metrics. Ideal for monitoring the overall health and status of the Autonomys Network.
 
-<div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '1rem' }}>
-    <div style={{ flexBasis: '25%', flexShrink: 0, display: 'flex', justifyContent: 'center' }}>
-        <Button label="Telemetry Server" link="https://telemetry.subspace.network"/>
-    </div>
-    <p style={{ flexBasis: '75%', margin: '0' }}>
-        Get real-time insights into network activity and performance metrics. Ideal for monitoring the overall health and status of the Autonomys Network.
-    </p>
-</div>
+- **[Astral Block Explorer](https://astral.autonomys.xyz)**: Our primary tool for viewing blocks, transactions, and network activity on the Autonomys Network. This explorer offers an intuitive interface and detailed information.
 
-<div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '1rem' }}>
-    <div style={{ flexBasis: '25%', flexShrink: 0, display: 'flex', justifyContent: 'center' }}>
-        <Button label="✨ Astral Block Explorer" link="https://astral.autonomys.xyz"/>
-    </div>
-    <p style={{ flexBasis: '75%', margin: '0' }}>
-        Our primary tool for viewing blocks, transactions, and network activity on the Autonomys Network. This explorer offers an intuitive interface and detailed information.
-    </p>
-</div>
+- **[Subscan Block Explorer](https://subspace.subscan.io)**: An alternative block explorer providing detailed views of blocks, transactions, and network events. Subscan is known for its user-friendly interface and additional data analytics features.
 
-<div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '1rem' }}>
-    <div style={{ flexBasis: '25%', flexShrink: 0, display: 'flex', justifyContent: 'center' }}>
-        <Button label="Subscan Block Explorer" link="https://subspace.subscan.io" variant="secondary"/>
-    </div>
-    <p style={{ flexBasis: '75%', margin: '0' }}>
-        An alternative block explorer providing detailed views of blocks, transactions, and network events. Subscan is known for its user-friendly interface and additional data analytics features.
-    </p>
-</div>
+- **[Polkadot.js Block Explorer](https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Frpc-0.gemini-3h.subspace.network%2Fws#/explorer)**: For users familiar with the Polkadot ecosystem, this explorer offers a seamless experience for exploring the Autonomys Network using the Polkadot.js interface.
 
-<div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
-    <div style={{ flexBasis: '25%', flexShrink: 0, display: 'flex', justifyContent: 'center' }}>
-        <Button label="polkadot{.js}" link="https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Frpc-0.gemini-3h.subspace.network%2Fws#/explorer" variant="secondary"/>
-    </div>
-    <p style={{ flexBasis: '75%', margin: '0' }}>
-        For users familiar with the Polkadot ecosystem, this explorer offers a seamless experience for exploring the Autonomys Network using the Polkadot.js interface.
-    </p>
-</div>
 
-</details>
 
-## Useful Parameters
+### Snap Sync
 
-:::tip Available Parameters
+Snap Sync works by jumping to near the end of the chain, allowing you to sync to the current block more quickly. Once the initial jump is complete, it behaves like a full sync. In fact, if you haven't synced for more than a few days, it might be quicker to remove the node database and let Snap Sync quickly sync to the most current block.
 
-A complete list of parameters and their functions can be obtained using the `--help` option with both `subspace-node` and `subspace-farmer`.
+There are cases where you might not want to use Snap Sync. To perform a full sync you can either omit the sync parameter, or use `--sync full`. This is useful if you want to run an RPC node for public use, become an operator or indexing. In that case, you would need to run an archival node, not just a pruned node. An archival node requires a full sync.
 
+
+### Plotting concurrency (CPU only)
+
+During plotting, there are both parallel and sequential parts of the table generation. By generating several tables simultaneously, we can overlap the sequential parts with parallel parts, thus improving CPU utilization. While generating tables for all records requires significant RAM, producing tables for only a few records at a time offers an optimal balance between CPU and RAM usage.
+We added the `--cpu-record-encoding-concurrency` option to override the default behavior, which allocates one record for every two cores but does not exceed eight in parallel. According to our internal testing with P-cores, E-cores, and combinations of P+E cores, this setting appears to achieve peak performance.
+If you prefer to use the previous behavior, or if your RAM usage becomes too high, you can set `--cpu-record-encoding-concurrency` to `1`. You may also experiment with setting it to `2`, `3`, etc., which may yield better results depending on your specific CPU/RAM configuration.
+
+### Create Missing Farms
+
+A farmer has the option to specify whether the system should automatically create missing farms upon startup. If you provide a path to a plot that isn't found, the system will generate a new one. However, this may not be desirable if a drive fails to mount properly. 
+By default, this option is set to `true`, but you can override it by adding `--create false`. Setting this flag to `false` after establishing your plots can prevent unintentional file writes to the wrong drive.
+
+### Record Chunks Reading Mode
+
+Upon startup, each farm will [benchmark](#benchmarking-your-farmer) the performance of every plot to identify the most efficient proving method, yielding either `ConcurrentChunks` or `WholeSector` results. If you already know the optimal method for your setup, you can specify it as an argument for each farm to save time benchmarking. 
+For example, you can include record-chunks-mode= after defining the path and size, assigning the desired value, e.g., `path=/mnt/subspace1,size=100G,record-chunks-mode=ConcurrentChunks`. If you do not provide this parameter, the system will benchmark each disk on startup to identify the most efficient method.
+
+### Benchmarking Your Farmer
+Benchmarking helps you test the plotting speed of your farmer against different versions of the Autonomys Network.
+
+```
+./subspace-farmer benchmark audit /path/to/your/plot
+```
+
+Replace /path/to/your/plot with the actual path to your plot. This will provide you with metrics and insights regarding plotting performance.
+
+At the moment, Autonomys Node supports `rayon` implementation mechanism, that opens files as many times as there are farming threads and, for each thread, uses a dedicated file handle.
+
+To interpret the results: typically, you assess throughput to determine the maximum auditable size across any number of disks. Both CPU and disk performance influence this metric.
+
+To read more about audit benchmarking, [read this forum post](https://forum.autonomys.xyz/t/audit-benchmark-result-explanation-please/2149).
+
+There is a second command available, which helps you determine how much time your farmer has after auditing to provide proof.
+
+```
+./subspace-farmer benchmark prove /path/to/your/plot
+```
+
+Each farmer has ~4 seconds to audit and prove, so depending on how fast auditing is, the remaining time will be used for proving.
+Proving performance doesn’t depend on the plot size.
+
+If an environment does not have enough time for the proving step, a message such as this is logged by the farmer:
+
+`Proving for solution skipped due to farming time limit slot=6723846 sector_index=46`
+
+To read more about prove benchmarking, [read this forum post](https://forum.autonomys.xyz/t/audit-benchmark-result-explanation-please/2150).
+
+### Scrubbing Your Farmer
+In certain situations, especially when the farmer terminates unexpectedly or encounters an error, it might fail to restart correctly. The scrub command assists in resolving such issues by cleaning or resetting the specified plot.
+
+```
+./subspace-farmer scrub /path/to/your/plot
+```
+
+Ensure to replace /path/to/your/plot with your actual plot path. Use this command cautiously as it modifies the plot state to recover from errors.
+
+### Specify Exact CPU Cores for Plotting/Replotting (CPU only)
+This option will override any custom logic that the **subspace farmer** might otherwise use.
+You can specify the plotting CPU cores by adding `--cpu-plotting-cores`, followed by the desired cores parameters. Cores should be listed as comma-separated values, with whitespace used to separate different thread pools or encoding instances.
+For example, `--cpu-plotting-cores 0,1 2,3` will result in two sectors being encoded simultaneously, each using a pair of CPU cores.
+
+Similarly, you can customize the replotting CPU cores using `--cpu-replotting-cores`, followed by arguments similar to those used in the `--cpu-plotting-cores` example above.
+
+Note that setting `--cpu-plotting-cores` requires `--cpu-replotting-cores` to be configured with the same number of CPU core groups. If the `--cpu-replotting-cores` setting is omitted, the node will default to using the same thread pool as for plotting.
+
+
+### Switching to a new snapshot from older/different versions of Autonomys
+
+:::info
+Unless specifically mentioned by the Development team you should **NOT** have to wipe your configuration on new releases.
 :::
 
-<Tabs queryString="component">
+In general you should be able to download the latest release, and re-start the Node & Farmer with the same commands as you started to prior version with no errors.
 
+There are some cases where version updates will cause issue with your Node & Farmer and you may have to wipe your node, typically when errors occur. If you have any issues you can always check our [Forums](https://forum.autonomys.xyz) and hop in our [Discord](https://autonomys.xyz/discord) Server to ask for help.
 
-<TabItem value="node" label="Node" default>
+### Wipe
 
-<details>
-<summary><small>DSN Syncing</small></summary>
+If you were running a node previously, and want to switch to a new network, please perform these steps and then follow the guide again:
+```bash
+# Replace `FARMER_FILE_NAME` with the name of the farmer file you downloaded from releases
+./FARMER_FILE_NAME wipe PATH_TO_FARM
+# Replace `NODE_FILE_NAME` with the name of the node file you downloaded from releases
+./NODE_FILE_NAME wipe NODE_DATA_PATH
+```
 
-:::caution Adjusting DSN Sync Parameters
+Now follow the installation guide from the beginning.
 
-It may be tempting to modify certain parameters that appear to be related to DSN syncing, but caution is advised. Some options may not improve syncing performance and should be left at their default settings.
+### Docker Wipe
 
-:::
+In case of Docker setup run `docker compose down -v` (and manually delete custom directories if you have specified them).
 
-:::tip Understanding the DSN
+Now follow the installation guide.
 
-The DSN can be a complex topic. To gain a better understanding of our Decentralized Storage Network, please refer to this [guide](https://academy.autonomys.xyz/subspace-protocol/network-architecture/distributed-storage-network) from our Academy.
+If you are having issues with running a node or farmer for Autonomys, feel free to join our Discord or even better you can take a look at our forums and review existing questions or post a new one if needed!
 
-:::
+- [Forum](https://forum.autonomys.xyz)
+- [Discord](https://autonomys.xyz/discord)
+
+### Help
+
+There are extra commands and parameters you can use on farmer or node, use the `--help` after any other command to display additional options.
 
 ```bash
---dsn-out-connections <value>
---dsn-pending-out-connections <value>
+# Replace `FARMER_FILE_NAME` with the name of the node file you downloaded from releases
+./FARMER_FILE_NAME farm --help
 ```
-
-</details>
-
-<details>
-<summary><small>Snap Sync</small></summary>
-
-Snap Sync works by jumping to near the end of the chain, allowing you to sync with the current block more quickly. Once the initial jump is complete, it functions like a full sync. In fact, if you haven't synced for more than a few days, it might be faster to remove the node database and let Snap Sync quickly sync to the most recent block.
-
-A full sync is required for situations where you need an archival node, such as running an operator or when running an RPC node for public use or indexing. Archival nodes store the entire blockchain, unlike pruned nodes that only store recent data. To perform a full sync and disable Snap Sync, use the following command:
-
-```bash
---sync full
-```
-
-</details>
-
-<details>
-<summary><small>Wipe</small></summary>
-
-If you switch to a new network, you will need to wipe your existing data to be compatible with the new network.
-
-To wipe your node, use the following command, replacing `subspace-node` with the name of the node file you downloaded from [releases](https://github.com/autonomys/subspace/releases):
-
-```bash
-./subspace-node wipe /path/to/node
-```
-
-</details>
-
-</TabItem>
-
-
-<TabItem value="farmer" label="Farmer">
-
-<details>
-<summary><small>Benchmarking</small></summary>
-
-Benchmarking helps you test the plotting speed of your farmer. To perform a benchmark audit, use the following command:
-
-```bash
-./subspace-farmer benchmark audit /path/to/plot
-```
-
-Replace `/path/to/plot` with the actual path to your plot. This command will provide metrics and insights regarding your plotting performance.
-
-To interpret the results, assess throughput to determine the maximum auditable size across any number of disks, as both CPU and disk performance influence this metric.
-
-<p><small>***To read more about prove audit benchmarking, refer to this [forum post](https://forum.autonomys.xyz/t/2149).***</small></p>
-
-There is also a second command available to determine how much time your farmer has after auditing to provide proof:
-
-```bash
-./subspace-farmer benchmark prove /path/to/plot
-```
-
-Each farmer has approximately four seconds to audit and prove, so depending on the speed of auditing, the remaining time will be allocated for proving. Note that proving performance does not depend on plot size.
-
-If there isn’t enough time for the proving step, the farmer logs a message like this:
-
-```
-Proving for solution skipped due to farming time limit slot=<slot> sector_index=<index>
-```
-
-<p><small>***To read more about prove benchmarking, refer to this [forum post](https://forum.autonomys.xyz/t/2150).***</small></p>
-
-</details>
-
-<details>
-<summary><small>Create Missing Farms</small></summary>
-
-A farmer can choose whether the system should automatically create missing farms at startup. If you specify a path to a plot that doesn't exist, the system will generate a new one. However, this may lead to issues if a drive fails to mount correctly. By default, this option is enabled, but you can disable it using the following flag:
-
-```bash
---create false
-```
-
-Setting this option to false after your plots are initially created helps prevent accidental file writes to an incorrect drive.
-
-</details>
-
-<details>
-<summary><small>Record Chunks Mode</small></summary>
-
-Upon startup, each farm benchmarks the performance of every plot to identify the most efficient proving method, yielding either `ConcurrentChunks` or `WholeSector` results. If you already know the optimal method for your setup, you can specify it as an argument for each farm to save time during benchmarking.
-
-For example, you can set `record-chunks-mode` after defining the path and size, assigning the desired value:
-
-```bash
-path=/mnt/plots/drive1,size=4TB,record-chunks-mode=ConcurrentChunks
-```
-
-If you do not provide this parameter, the system will benchmark each disk at startup to determine the most efficient method.
-
-</details>
-
-<details>
-<summary><small>DSN Syncing</small></summary>
-
-:::caution[Adjusting DSN Sync Parameters]
-
-It may be tempting to modify certain parameters that appear to be related to DSN syncing, but caution is advised. Some options may not improve syncing performance and should be left at their default settings.
-
-:::
-
-:::tip[Understanding the DSN]
-
-The DSN can be a complex topic. To gain a better understanding of our Decentralized Storage Network, please refer to this [guide](https://academy.autonomys.xyz/subspace-protocol/network-architecture/distributed-storage-network) from our Academy.
-
-:::
-
-The default parameters are configured with common consumer modem and router capabilities in mind. Adjusting certain parameters can enhance DSN sync performance by increasing parallelism. However, if you choose to significantly increase these values, ensure that your modem or router can handle the additional traffic.
-
-Increasing the values of the farmer parameters may enhance plotting speed by accelerating piece cache download speeds.
-
-```bash
---out-connections <value>
---pending-out-connections <value>
-```
-
-</details>
-
-<details>
-<summary><small>Record Encoding Concurrency</small></summary>
-
-Plotting performance has been improved with increased internal concurrency. During plotting, table generation involves both parallel and sequential phases. By generating multiple tables at once, we overlap sequential tasks with parallel ones, improving CPU utilization. Although generating tables for all records demands significant RAM, processing fewer records at a time helps balance CPU and RAM usage.
-
-The `--cpu-record-encoding-concurrency` option allows you to fine-tune this balance. By default, it allocates one record for every two cores, up to eight in parallel. If RAM usage becomes too high or you prefer the previous method, you can adjust this setting.
-
-Example usage:
-
-```bash
---cpu-record-encoding-concurrency 4
-```
-
-You can experiment to optimize performance based on your system's CPU and RAM.
-
-</details>
-
-<details>
-<summary><small>Scrub</small></summary>
-
-In certain situations, when the farmer terminates unexpectedly or encounters an error, it may fail to restart correctly. The scrub command helps resolve these issues by cleaning or resetting the specified plot.
-
-```bash
-./subspace-farmer scrub /path/to/plot
-```
-
-Ensure you replace `/path/to/plot` with the actual path to your plot. Use this command with caution, as it modifies the plot state to recover from errors.
-
-</details>
-
-<details>
-<summary><small>Specify CPU Cores</small></summary>
-
-This option allows you to override any custom logic that subspace-farmer uses for CPU core allocation. You can specify the plotting CPU cores by adding `--cpu-plotting-cores`, followed by the desired core parameters. Cores should be listed as comma-separated values, using whitespace to separate different thread pools or encoding instances. 
-
-For example, the command:
-
-```bash
---cpu-plotting-cores 0,1 2,3
-```
-
-will result in two sectors being encoded simultaneously, with each sector using a pair of CPU cores.
-
-You can similarly customize the replotting CPU cores with the `--cpu-replotting-cores` option, using arguments that follow the same format as `--cpu-plotting-cores`.
-
-It is important to note that if you set `--cpu-plotting-cores`, you must configure `--cpu-replotting-cores` with the same number of CPU core groups. If you omit the `--cpu-replotting-cores` setting, the node will default to using the same thread pool as for plotting.
-
-</details>
-
-<details>
-<summary><small>Utilizing Multiple Drives</small></summary>
-
-You can farm to multiple drives with a single instance of the farmer. This allows for greater storage capacity and increased rewards.
-
-This example specifies the paths and sizes of multiple plots across different drives:
-
-```bash
-./subspace-farmer farm --reward-address <wallet address> \
-    path=/mnt/plots/drive1,size=900GiB \
-    path=/mnt/plots/drive2,size=8T \
-    path=/mnt/plots/drive3,size=8T
-```
-
-</details>
-
-<details>
-<summary><small>Wipe</small></summary>
-
-If you switch to a new network, you will need to wipe your existing data to be compatible with the new network.
-
-To wipe your farm, use the following command, replacing `subspace-farmer` with the name of the farmer file you downloaded from [releases](https://github.com/autonomys/subspace/releases):
-
-```bash
-./subspace-farmer wipe /path/to/farm
-```
-
-</details>
-
-</TabItem>
-
-
-<TabItem value="docker" label="Docker">
-
-<details>
-<summary><small>Wipe</small></summary>
-
-If you switch to a new network, you will need to wipe your existing data to ensure compatibility with the new network.
-
-In the case of a Docker setup, run the following command to stop and remove the containers, along with the associated volumes:
-
-```bash
-docker compose down -v
-```
-
-Make sure to manually delete any custom directories if you specified them.
-
-</details>
-
-
-</TabItem>
-
-</Tabs>
 
 ---
+### Timekeepers
 
-## Advanced Error Logging
+Gemini-3g introduces Proof-of-Time and a new, optional role has been added to the node. Timekeepers help run PoT to ensure the security of the network. Timekeeping requires a high-performance core CPU but can be undertaken by any node runner. You can enable timekeeping with the following commands. 
+- `--timekeeper`: To enable timekeeping on the node
+- `--timekeeper-cpu-cores`: To specify which cores the Timekeeper will run on. 
 
-<details id="rust-backtrace">
-<summary><small>Enable Rust Backtrace</small></summary>
+Read more about [Timekeepers](/farming/timekeeper)
 
-When operating the Subspace Farmer and Node, you may come across an error message prompting you to enable a Rust backtrace for issue diagnosis:
+### Node & Farmer Commands Guide
 
-```bash
-Backtrace omitted. Run with RUST_BACKTRACE=1 environment variable to display it.
+Both the node and the farmer have a variety of flags and parameters. To see a full list, append the `--help` flag to either the node or the farmer command.
+
+### Common Command Examples
+
+:::note Farming Changes
+Please note that as of `Gemini-3g` farming no longer occurs while plotting. This is to ensure the plotting process occurs in the most efficient manner. You can change this by adding the `--farm-during-initial-plotting` flag to the farmer. 
+:::
+
+For both the node and the farmer, here are some frequently used commands:
+
+- Display farm information: `./FARMER_FILE_NAME info PATH_TO_FARM`
+- Scrub the farm for errors: `./FARMER_FILE_NAME scrub PATH_TO_FARM`
+- Erase all farmer-related data: `./FARMER_FILE_NAME wipe PATH_TO_FARM`
+- Erase all node-related data: `./NODE_FILE_NAME wipe NODE_DATA_PATH`
+
+### Utilizing Multiple Disks
+
+To maximize storage capabilities, you can engage multiple disks directly. This is often more efficient than relying on RAID configurations:
+
+Example:
+```shell-session
+./FARMER_FILE_NAME farm --reward-address WALLET_ADDRESS \
+    path=/media/ssd1,size=100GiB \
+    path=/media/ssd2,size=10T \
+    path=/media/ssd3,size=10T
 ```
 
-This message indicates that Rust, the programming language utilized by the Subspace Farmer and Node, has encountered a problem. By default, the backtrace is not shown. To activate the `RUST_BACKTRACE` environment variable and access detailed error information, use the following commands according to your operating system:
+### Optimizing DSN Syncing
 
-<Tabs groupId="OS">
+:::note
 
-<TabItem value="linux" label="🐧 Ubuntu" default>
+ The DSN can be a nuanced topic, to better understand our Decentralized Storage Network, please refer to [this guide](https://academy.autonomys.xyz/subspace-protocol/network-architecture/distributed-storage-network) from our Academy.
 
-To enable the Rust backtrace in the Ubuntu terminal, type the following command and then rerun the application:
+:::
 
-```bash
-export RUST_BACKTRACE=1
+:::warning Parameters to Use with Caution
+While it might be tempting to adjust certain parameters that seem related to DSN Syncing, it's advised to be cautious. Some options will not enhance syncing and are best left at their default values:
+
+```
+--out-peers
+--in-peers
+--dsn-target-connections
+--dsn-pending-in-connections
+--dsn-in-connections
+```
+:::
+
+#### Recommended Parameters
+
+The default parameters are set with the capabilities of common consumer modem/routers in mind. Adjusting certain parameters could enhance DSN sync performance by increasing parallelism. However, if you decide to increase them significantly, ensure that your modem/router is performant enough to handle the increased traffic.
+**Node:**
+```
+--dsn-out-connections
+--dsn-pending-out-connections
+```
+
+**Farmer:**
+Increasing the values of the farmer parameters could increase the plotting speed.
+```
+--out-connections
+--pending-out-connections
 ```
 
 
-</TabItem>
+### NUMA Support
 
-<TabItem value="windows" label="🪟 Windows">
+:::note
+NUMA support will benefit farmers with large, powerful CPUs and lots of RAM available. The required RAM amount depends on the processor and the number of threads.  
+:::
 
-To enable the Rust backtrace in PowerShell, enter the following command and then rerun the application:
+Previously plotting/replotting thread pools were created for each farm separately even though only a configured number of them can be used at a time (by default just one).
+With the introduction of NUMA support, the farmer application has a thread pool manager that will create a necessary number of thread pools that will be allocated to currently plotting/replotting farms. 
+When a thread pool is created, it is assigned to a set of CPU cores and will only be able to use those cores. Pinning doesn’t pin threads to cores 1:1, instead, the OS is free to move threads between cores, but only within CPU cores allocated for the thread pool. This will ensure plotting for a particular sector only happens on a particular CPU/NUMA node.
 
-```powershell
-$Env:RUST_BACKTRACE=1
-```
+#### Enabling NUMA on Windows/Linux machines
 
-</TabItem>
+On Linux and Windows, the farmer will detect NUMA systems and create a number of thread pools that correspond to the number of NUMA nodes. This means the default behavior will change for large CPUs and consume more memory as a result, but that can be changed to the previous behavior with CLI options if desired.
+To use NUMA, you need to enable it via the BIOS of your motherboard for the farmer to know it exists. This option is present in motherboards for **Threadripper/Epyc processors** but might exist in others too. If you don’t enable it, both OS and farmer will think you have a single UMA processor and will not be able to apply optimizations.
 
-<TabItem value="macos" label="🍎 macOS">
+To read more about NUMA support and the benefits it provides for large CPUs read [this forum post](https://forum.autonomys.xyz/t/numa-support-is-coming/2299?u=nazar-pc).
 
-To enable the Rust backtrace in the macOS terminal, type the following command and then rerun the application:
 
-```bash
-export RUST_BACKTRACE=1
-```
+#### Changing number of open files limit (Linux)
 
-</TabItem>
+Changing the number of open files limit on Linux is sometimes necessary for both system and application performance tuning. Applications that manage file sharing or distribution, including peer-to-peer systems, may require opening numerous connections to different peers simultaneously. A higher open files limit allows these applications to maintain more connections, improving data transfer rates and system efficiency.
 
-<TabItem value="systemd_service" label="🤖 Linux Service (SystemD)">
+This can also help to mitigate the `Too Many Open Files` error. 
 
-For services, use the following commands to enable the Rust backtrace:
+You can use the `ulimit` command to change the limit for open files temporarily. For example, setting `ulimit -n 2048` will set the limit to 2048. This change is reverted after logging out or a reboot.
 
-1. Edit the service file for the node or farmer:
-
-```bash
-sudo systemctl edit subspace-node
-```
-
-or 
-
-```bash
-sudo systemctl edit subspace-farmer
-```
-
-2. Add the `[Service]` section and include the line `Environment=RUST_BACKTRACE=1` between the warning comments.
-
-3. Reload the systemd manager configuration:
-
-```bash
-sudo systemctl daemon-reload
-```
-
-4. Restart the services:
-
-```bash
-sudo systemctl restart subspace-{node,farmer}
-```
-
-</TabItem>
-
-</Tabs>
-
-Enabling `RUST_BACKTRACE` provides additional diagnostic information that can assist in resolving any errors encountered during operation. This information can be shared with the development or support team for further analysis.
-
-</details>
-
-## Operating System Changes
-
-<details id="open-files-limit">
-<summary><small>Changing the Open Files Limit on Linux</small></summary>
-
-Adjusting the open files limit on Linux is sometimes necessary to optimize both system and application performance. Applications that manage file sharing or distribution, such as peer-to-peer systems, may need to open many connections to different peers simultaneously. Increasing the open files limit enables these applications to maintain more connections, thereby enhancing data transfer rates and overall system efficiency.
-
-This adjustment can also help prevent the `Too Many Open Files` error.
-
-To temporarily change the limit for open files, you can use the `ulimit` command. For example, to set the limit to 2048, you would run:
-
-```bash
-ulimit -n 2048
-```
-
-Keep in mind that this change will revert after logging out or rebooting.
-
-For a permanent adjustment, you have two options:
-
-1. Modify the kernel parameter `fs.file-max` using the `sysctl` command:
-
-```bash
-sysctl -w fs.file-max=500000
-```
-
-2. Set limits for individual users by editing the `/etc/security/limits.conf` file. You can specify hard and soft limits for the number of open files. For instance:
-
-```bash
-username soft nofile 10000
-username hard nofile 30000
-```
-
-By applying these changes, you can effectively manage the open files limit to optimize your system’s performance.
-
-</details>
+For a permanent change, you have two approaches:
+- To modify the kernel parameter `fs.file-max`. You can do this using the `sysctl` command `sysctl -w fs.file-max=500000`.
+- To set limits for individual users, you need to edit the `/etc/security/limits.conf` file. You can specify hard and soft limits for the number of open files `username soft nofile 10000` for the soft limit and `username hard nofile 30000` for the hard limit. 

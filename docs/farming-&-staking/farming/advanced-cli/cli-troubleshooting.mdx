@@ -1,0 +1,44 @@
+---
+title: Troubleshooting
+sidebar_position: 5
+description: How to run an Autonomys Network Farmer with the Substrate CLI
+slug: /farming/advanced-cli/troubleshooting
+keywords:
+    - Farmer
+    - Farming
+    - CLI
+    - Binaries
+    - Docker
+---
+
+## Troubleshooting
+
+If you are facing issues with your node/farmer you can try a few of the following things below, if you are unable to get your issue resolved please check our [Forum](https://forum.autonomys.xyz/c/support/5) to see if your issue may have been solved, if its a new one feel free to post it! You can also join our [Discord](https://autonomys.xyz/discord) and use one of the dedicated channels #farmer-support and #farmer-chat for additional Peer to Peer help.
+
+:::info
+We have included a few tutorials below that may help you in your support journey, this is not an all inclusive list and we welcome contributions
+:::
+
+
+### Enable Rust Backtrace 
+
+When running the Autonomys Network Farmer & Node, you might encounter an error message indicating the need for a Rust backtrace to diagnose issues:
+
+```text
+Backtrace omitted. Run with RUST_BACKTRACE=1 environment variable to display it.
+```
+
+This message suggests that Rust, the programming language used in the Autonomys Network Farmer & Node, has encountered a problem. By default, the backtrace is not displayed. To enable the `RUST_BACKTRACE` environment variable and view detailed error information, use the following commands based on your operating system:
+
+- **🖼️ Windows** (PowerShell): Enter `$Env:RUST_BACKTRACE=1` in PowerShell and rerun the application.
+- **🍎 macOS**: Type `export RUST_BACKTRACE=1` in the terminal and rerun the application.
+- **🐧 Ubuntu**: Enter `export RUST_BACKTRACE=1` in the terminal and rerun the application.
+- **⚙ Service (Linux)**: For services, use `sudo systemctl edit subspace-node` or `sudo systemctl edit subspace-farmer`, add `[Service]` and `Environment=RUST_BACKTRACE=1` between the warning comments, reload with `sudo systemctl daemon-reload`, and restart services using `sudo systemctl restart subspace-{node,farmer}`.
+
+By enabling `RUST_BACKTRACE`, you can obtain additional diagnostic information to help resolve any errors encountered during operation.
+
+### Common Problems
+
+Looking for solutions to other common issues? 
+
+Check out our Common Problems page. This resource covers a range of frequently encountered challenges, offering practical solutions to help you overcome them. Please note that while this page addresses many common issues, it is not an all-inclusive list. For issues not covered, you can visit our forums or Discord for additional support.
