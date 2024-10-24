@@ -41,6 +41,11 @@ This monorepo contains multiple packages, each serving a specific purpose. All p
 - **@autonomys/auto-drive**: Tools for preparing and managing data for on-chain storage.
 - **@autonomys/auto-id**: Functions for generating, renewing, and revoking Decentralized Identities (Auto IDs).
 
+## Video Guide: Installing Auto SDK and Retrieving Account Balance 
+For those who prefer a visual guide, we have created a short video demonstrating how to install the Auto SDK, along with a simple coding example that shows how to retrieve an account balance using the SDK. For step-by-step instructions, please refer to the [Requirements and Installation Guide below](#requirements).
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/B5J9fwE5-vI?si=Mt133r3I2QnCae0A" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
 ## Installation
 
 ### Requirements
