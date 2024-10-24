@@ -38,7 +38,7 @@ Ensure each node on the same network runs on unique ports. Adjust the ports ment
 
 :::caution Exposing RPC Ports
 
-For security reasons, RPC ports 9944 and 9945 should never be exposed unless you intend to operate a public RPC server, and they should never be exposed on a system that is running a farmer or an operator.
+For security reasons, RPC ports 9944 and 9945 should never be exposed to the internet via port forwarding unless you're operating a public RPC server. However, if the node and farmer are on different computers, these ports should be allowed through the firewall on the node.
 
 :::
 
@@ -103,6 +103,29 @@ Since the port forwarding process varies by router, follow these general steps:
    - Consult the tables above for the ports and protocols that need to be forwarded (30333, 30433, 30533, etc.).
 
    Once entered, apply the changes and reboot your router if necessary.
+
+## Manufacturer instructions
+Here are the links to port forwarding guides from five major consumer router manufacturers:
+
+**TP-Link**
+You can configure port forwarding through the "Forwarding" section on the router's web interface. You'll add a new rule under "Virtual Servers" and specify the device and ports you want to open.
+[TP-Link Port Forwarding guide](https://www.tp-link.com/us/support/faq/1379/)
+
+**Netgear**
+On Netgear routers, port forwarding is set up by navigating to the "Advanced Setup" section and selecting "Port Forwarding/Port Triggering."
+[Netgear Port Forwarding guide](https://kb.netgear.com/24290/How-do-I-add-a-custom-port-forwarding-service-on-my-NETGEAR-router)
+
+**Linksys**
+Log in to your router’s web interface and configure port forwarding under the "Apps and Gaming" section of the "Security" tab.
+[Linksys Port Forwarding Guide](https://support.linksys.com/kb/article/318-en/)
+
+**ASUS**
+On ASUS routers, port forwarding is set up via the "WAN" tab, where you’ll find the "Virtual Server/Port Forwarding" option.
+[ASUS Port Forwarding Guide](https://www.asus.com/support/faq/1037906/)
+
+**D-Link**
+For D-Link routers, port forwarding is done in the "Advanced" tab under "Port Forwarding." You’ll add a rule and enter the necessary details.
+[D-Link Port Forwarding Guide](https://www.dlink.com/uk/en/support/faq/routers/mydlink-routers/dir-810l/how-do-i-configure-port-forwarding-on-my-router)
 
 ## Firewall Configuration
 
