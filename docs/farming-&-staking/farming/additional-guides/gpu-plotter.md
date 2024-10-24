@@ -30,10 +30,10 @@ GPU plotting employs the new v1 plot format, which is applicable to any plots cr
 
 | Platform | 🐧 Linux | 🪟 Windows | [Nvidia](/farming/guides/gpu-plotter?brand=nvidia#supported-gpus) | [AMD](/farming/guides/gpu-plotter?brand=amd#supported-gpus) | [Intel](/farming/guides/gpu-plotter?brand=intel#supported-gpus) |
 |---|:-:|:-:|:-:|:-:|:-:|
-| [Advanced CLI](https://github.com/autonomys/subspace/releases) | ✅ | ✅ |✅ | ✅ | 🔮 |
+| [Advanced CLI](https://github.com/autonomys/subspace/releases) | ✅ | ✅ |✅ | 🛠️ | 🔮 |
 | [Space Acres](https://github.com/autonomys/space-acres/releases) | ✅ | ✅ | ✅ | 🔜 | 🔮 |
 
-<small>🛠️ Limited AMD Support is available in recent test builds. The most recent test builds are linked on the [forum](https://forum.autonomys.xyz/t/rocm-gpu-support-amd/4440)</small>
+🛠️ Limited AMD Support for **Linux only** is available in recent test builds. The most recent test builds are linked on the [forum](https://forum.autonomys.xyz/t/rocm-gpu-support-amd/4440)
 <br />
 <small>See Discord [#farmer-chat](https://discord.com/channels/864285291518361610/1062507270539321485) channel for limited support.</small>
 
@@ -72,15 +72,17 @@ You must be using the latest test build for AMD support.
 
 | Series/Model | Ubuntu |Windows |
 |---|:---:|:---:|
-| RX 7900 XTX | ✅ | ❔ |
-| RX 7600 XT | ✅ | ❔ |
-| RX 7600 | ✅ | ❔ |
-| RX 6800 | ✅ | ❔ |
-| RX 6600 | ✅ | ❔ |
-| RX 5700 XT | ❌ | ❔ |
-| RX 5700 | ❌ | ❔ |
-| RX 5600 | ❌ | ❔ |
-| AMD BC-250 | ❌ | ❔ |
+| RX 7900 XTX | ✅ | ❌ |
+| RX 7600 XT | ✅ | ❌ |
+| RX 7600 | ✅ | ❌ |
+| RX 6800 | ✅ | ❌ |
+| RX 6700 XT | ❔ | ❌ |
+| RX 6600 XT | ✅ | ❌ |
+| RX 6600 | ✅ | ❌ |
+| RX 5700 XT | ❌ | ❌ |
+| RX 5700 | ❌ | ❌ |
+| RX 5600 | ❌ | ❌ |
+| AMD BC-250 | ❌ | ❌ |
 
 
 <Tabs groupId="OS">
@@ -124,15 +126,7 @@ The `subspace-farmer-rocm-*` binaries provide ROCm support, with corresponding C
 
 <TabItem value="windows" label="🪟 Windows">
 
-:::tip[Using ROCm with Subspace Farmer]
-
-The `subspace-farmer-rocm-*` executables provide ROCm support, with corresponding CLI options similar to CUDA and prefixed with `--rocm`.
-
-:::
-
-In order to install necessary libraries go to [https://www.amd.com/en/developer/resources/rocm-hub/hip-sdk.html](https://www.amd.com/en/developer/resources/rocm-hub/hip-sdk.html) and download ROCm version 6.1.2 for your Windows version.
-
-In the installer just the HIP RTC Runtime should be enough under “HIP Runtime Compiler → HIP RTC Runtime 6.1.0”, everything else can be unchecked.
+AMD GPUs on Windows (including through WSL) are not currently supported. We hope to add support in the future.
 
 </TabItem>
 
@@ -186,8 +180,7 @@ Intel Arc GPUs *may* be supported in the future, but specific compatibility deta
 
 ## Common Plotting Parameters
 
-<details>
-<summary>Enable CPU Plotting</summary>
+**Enable CPU Plotting**
 
 When a compatible GPU is detected, CPU plotting is automatically disabled by default, but can be re-enabled if needed by specifying number of concurrently encoded sectors: `--cpu-sector-encoding-concurrency <sectors>`
 
@@ -195,10 +188,7 @@ When a compatible GPU is detected, CPU plotting is automatically disabled by def
   --cpu-sector-encoding-concurrency 2
   ```
 
-</details>
-
-<details>
-<summary>Disable GPU Plotting</summary>
+**Disable GPU Plotting**
 
   ```bash title="Linux"
   --cuda-gpus ""
@@ -208,10 +198,7 @@ When a compatible GPU is detected, CPU plotting is automatically disabled by def
   --cuda-gpus 99
   ```
 
-</details>
-
-<details>
-<summary>Specify spacific GPUs</summary>
+**Specify specific GPUs**
 
 Specify particular GPUs for plotting rather than using all available GPUs (the default configuration employs all compatible GPUs): `--cuda-gpus <gpu_ids>`
 
