@@ -206,8 +206,6 @@ Specify particular GPUs for plotting rather than using all available GPUs (the d
   --cuda-gpus 0,1,3
   ```
 
-</details>
-
 ## Farming Cluster
   
 When utilizing Farming Cluster, particularly with multiple or fast GPUs, you might encounter limitations due to your network's bandwidth. High performance GPUs can easily surpass the capacity of a 1G connection. While this won't cause the process to fail, it may result in your GPU idling as it waits for data to transfer. To optimize performance in such scenarios, consider upgrading to networking solutions of 2.5G, 10G, or higher.
