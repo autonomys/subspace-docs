@@ -157,7 +157,6 @@ To run both operator and validator at the same time, provide requrired flags for
 {`services:
   node:
     # Replace snapshot-DATE with the latest release (like snapshot-2024-jun-18)
-    # For running on Aarch64 add -aarch64 after DATE
     image: ghcr.io/autonomys/node:snapshot-DATE
     volumes:
 # Instead of specifying volume (which will store data in /var/lib/docker), you can
@@ -201,7 +200,6 @@ To run both operator and validator at the same time, provide requrired flags for
       node:
         condition: service_healthy
     # Replace snapshot-DATE with latest release (like snapshot-2024-jun-18)
-    # For running on Aarch64 add -aarch64 after DATE
     image: ghcr.io/autonomys/farmer:snapshot-DATE
     volumes:
 # Instead of specifying volume (which will store data in /var/lib/docker), you can
