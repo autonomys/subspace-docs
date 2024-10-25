@@ -119,11 +119,11 @@ In the installer just the HIP RTC Runtime should be enough under “HIP Runtime 
 </TabItem>
 <TabItem value="docker" label="🐳 Docker">
 
-:::note Simplified Cross-Compilation 
-- Cross-compilation no longer requires separate Dockerfiles (which is why they are removed), both native and cross-compilation is supported with a single file
-- Container image is now built as multi-platform, meaning no -aarch64 suffix and no awkwardness related to that
-- Aarch64 farmer container image is now compiled with CUDA support (while regular executable isn't)
-:::
+*Cross-compilation no longer requires separate Dockerfiles (which is why they are removed), both native and cross-compilation is supported with a single file*
+
+*Container image is now built as multi-platform, meaning no -aarch64 suffix and no awkwardness related to that*
+
+*Aarch64 farmer container image is now compiled with CUDA support (while regular executable isn't)*
 
 Container image now ships with a second executable `/subspace-farmer-rocm` (see explanation above as to why second binary is needed).
 Here is how it can be used with Docker Compose, you can use this as an inspiration for other use cases:
