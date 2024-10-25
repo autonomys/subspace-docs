@@ -37,3 +37,49 @@ GPU plotting employs the new v1 plot format, which is applicable to any plots cr
 
   See Discord [farmer-chat](https://discord.com/channels/864285291518361610/1062507270539321485) channel for limited support.
 </div>
+
+## Supported GPUs
+
+<Tabs queryString="brand">
+
+<TabItem value="nvidia" label="Nvidia" queryString="nvidia" default>
+
+| Series/Model | Supported |
+|---|:--:|
+| RTX 20xx and Newer | ✅ |
+| GTX 16 Series | ✅ |
+
+
+<div className="small-print">
+  *Nvidia [drivers](https://developer.nvidia.com/cuda-downloads) version 550 or later are required. Installing the CUDA Toolkit is not required.*
+</div>
+
+</TabItem>
+
+<TabItem value="amd" label="AMD">
+
+:::caution AMD ROCm Support
+*There are many challenges to overcome regarding AMD ROCm support. There is much more information on this topic on the [forum](https://forum.autonomys.xyz/t/rocm-gpu-support-amd/4440).*
+:::
+
+:::tip Latest Test Build
+You must be using the latest test build for AMD support.
+:::
+
+| Series/Model | Ubuntu |Windows |
+|---|:---:|:---:|
+| RX 7900 XTX | ✅ | ❌ |
+| RX 7600 XT | ✅ | ❌ |
+| RX 7600 | ✅ | ❌ |
+| RX 6800 | ✅ | ❌ |
+| RX 6700 XT | ❔ | ❌ |
+| RX 6600 XT | ✅ | ❌ |
+| RX 6600 | ✅ | ❌ |
+| RX 5700 XT | ❌ | ❌ |
+| RX 5700 | ❌ | ❌ |
+| RX 5600 | ❌ | ❌ |
+| AMD BC-250 | ❌ | ❌ |
+
+</TabItem>
+
+</Tabs>
