@@ -218,3 +218,8 @@ html[data-theme='dark'] .docusaurus-highlight-code-line {
   text-align: left;
   padding-left: 20px;
 }
+
+.small-print {
+  font-size: 0.85em;
+  color: #666;
+}

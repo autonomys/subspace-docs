@@ -20,31 +20,28 @@ Although GPU plotting is not mandatory, it provides enhanced energy efficiency a
 
 
 :::info Plot Format Compatibility
-
 GPU plotting employs the new v1 plot format, which is applicable to any plots created with versions released on or after July 5th. In contrast, older software versions generated plots in the v0 format, which is only compatible with CPU plotting.
-
 :::
 
 
 ## Platform Compatibility
 
-| Platform | 🐧 Linux | 🪟 Windows | [Nvidia](/farming/guides/gpu-plotter?brand=nvidia#supported-gpus) | [AMD](/farming/guides/gpu-plotter?brand=amd#supported-gpus) | [Intel](/farming/guides/gpu-plotter?brand=intel#supported-gpus) |
+| Platform | 🐧 Linux | 🪟 Windows | Nvidia | AMD | Intel |
 |---|:-:|:-:|:-:|:-:|:-:|
 | [Advanced CLI](https://github.com/autonomys/subspace/releases) | ✅ | ✅ |✅ | 🛠️ | 🔮 |
 | [Space Acres](https://github.com/autonomys/space-acres/releases) | ✅ | ✅ | ✅ | 🔜 | 🔮 |
 
-🛠️ Limited AMD Support for **Linux only** is available in recent test builds. The most recent test builds are linked on the [forum](https://forum.autonomys.xyz/t/rocm-gpu-support-amd/4440)
-<br />
-<small>See Discord [#farmer-chat](https://discord.com/channels/864285291518361610/1062507270539321485) channel for limited support.</small>
+<div className="small-print">
+  🛠️ Limited AMD Support for **Linux only** is available in recent test builds. The most recent test builds are linked on the [forum](https://forum.autonomys.xyz/t/rocm-gpu-support-amd/4440)
 
+  See Discord [farmer-chat](https://discord.com/channels/864285291518361610/1062507270539321485) channel for limited support.
+</div>
 
 ## Supported GPUs
 
 <Tabs queryString="brand">
 
-
 <TabItem value="nvidia" label="Nvidia" queryString="nvidia" default>
-
 
 | Series/Model | Supported |
 |---|:--:|
@@ -52,23 +49,17 @@ GPU plotting employs the new v1 plot format, which is applicable to any plots cr
 | GTX 16 Series | ✅ |
 
 
-<small>*Nvidia [drivers](https://developer.nvidia.com/cuda-downloads) version 550 or later are required. Installing the CUDA Toolkit is not required.*</small>
+<div className="small-print">
+  *Nvidia [drivers](https://developer.nvidia.com/cuda-downloads) version 550 or later are required. Installing the CUDA Toolkit is not required.*
+</div>
 
 </TabItem>
 
-<TabItem value="amd" label="AMD" default>
-
-:::caution AMD ROCm Support
+<TabItem value="amd" label="AMD">
 
 *There are many challenges to overcome regarding AMD ROCm support. There is much more information on this topic on the [forum](https://forum.autonomys.xyz/t/rocm-gpu-support-amd/4440).*
 
-:::
-
-:::tip Latest Test Build
-
-You must be using the latest test build for AMD support.
-
-:::
+*You must be using the latest test build for AMD support.*
 
 | Series/Model | Ubuntu |Windows |
 |---|:---:|:---:|
@@ -84,29 +75,22 @@ You must be using the latest test build for AMD support.
 | RX 5600 | ❌ | ❌ |
 | AMD BC-250 | ❌ | ❌ |
 
-
 <Tabs groupId="OS">
 
 <TabItem value="linux" label="🐧 Ubuntu" default>
 
-:::tip[Using ROCm with Subspace Farmer]
-
 The `subspace-farmer-rocm-*` binaries provide ROCm support, with corresponding CLI options similar to CUDA and prefixed with `--rocm`.
 
-:::
-
 1.  In order to install necessary libraries go to Ubuntu native installation — [ROCm installation (Linux)](https://rocm.docs.amd.com/projects/install-on-linux/en/docs-6.2.2/install/native-install/ubuntu.html) and follow these steps for your Ubuntu version:
-
     - Package signing key
     - Register ROCm packages
-
-    You don’t need a custom driver or full ROCm toolchain to use already compiled application, so skip all other steps.
-
+    You don't need a custom driver or full ROCm toolchain to use already compiled application, so skip all other steps.
 2.  Next install a single package with ROCm runtime:
 
     ```text
     sudo apt-get install --no-install-recommends hip-runtime-amd
     ```
+
     And register the library so that farmer and other apps can find it:
 
     ```text
@@ -120,7 +104,7 @@ The `subspace-farmer-rocm-*` binaries provide ROCm support, with corresponding C
     sudo usermod -a -G render $LOGNAME
     ```
 
-4.  Now you’ll need to log out of your user profile and log back in or simply reboot for group changes to take effect and you’re ready to go.
+4.  Now you'll need to log out of your user profile and log back in or simply reboot for group changes to take effect and you're ready to go.
 
 </TabItem>
 
@@ -129,19 +113,15 @@ The `subspace-farmer-rocm-*` binaries provide ROCm support, with corresponding C
 AMD GPUs on Windows (including through WSL) are not currently supported. We hope to add support in the future.
 
 </TabItem>
-
 <TabItem value="docker" label="🐳 Docker">
 
-:::note[Simplified Cross-Compilation]
+*Cross-compilation no longer requires separate Dockerfiles (which is why they are removed), both native and cross-compilation is supported with a single file*
 
-- Cross-compilation no longer requires separate Dockerfiles (which is why they are removed), both native and cross-compilation is supported with a single file
-- Container image is now built as multi-platform, meaning no -aarch64 suffix and no awkwardness related to that
-- Aarch64 farmer container image is now compiled with CUDA support (while regular executable isn't)
+*Container image is now built as multi-platform, meaning no -aarch64 suffix and no awkwardness related to that*
 
-:::
+*Aarch64 farmer container image is now compiled with CUDA support (while regular executable isn't)*
 
 Container image now ships with a second executable `/subspace-farmer-rocm` (see explanation above as to why second binary is needed).
-
 Here is how it can be used with Docker Compose, you can use this as an inspiration for other use cases:
 
 ```text
@@ -163,14 +143,14 @@ services:
     # End of ROCm-specific options
     ...the rest of typical options you'd normally use
 ```
-</TabItem>
 
+</TabItem>
 
 </Tabs>
 
 </TabItem>
 
-<TabItem value="intel" label="Intel" default>
+<TabItem value="intel" label="Intel">
 
 Intel Arc GPUs *may* be supported in the future, but specific compatibility details have not been announced yet.
 
@@ -191,7 +171,7 @@ When a compatible GPU is detected, CPU plotting is automatically disabled by def
 **Disable GPU Plotting**
 
   ```bash title="Linux"
-  --cuda-gpus ""
+    --cuda-gpus ""
   ```
 
   ```powershell title="Windows"
@@ -207,10 +187,8 @@ Specify particular GPUs for plotting rather than using all available GPUs (the d
   ```
 
 ## Farming Cluster
-  
+
 When utilizing Farming Cluster, particularly with multiple or fast GPUs, you might encounter limitations due to your network's bandwidth. High performance GPUs can easily surpass the capacity of a 1G connection. While this won't cause the process to fail, it may result in your GPU idling as it waits for data to transfer. To optimize performance in such scenarios, consider upgrading to networking solutions of 2.5G, 10G, or higher.
 
-
 ## Known Issues
-
-- Many times you will not use all of the compute power of your GPU. While this will be addressed in the future, a workaround when running a farming cluster is to run multiple instances of the plotter on the same machine.
+Many times you will not use all of the compute power of your GPU. While this will be addressed in the future, a workaround when running a farming cluster is to run multiple instances of the plotter on the same machine.
