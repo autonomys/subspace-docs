@@ -99,7 +99,7 @@ Intel Arc GPUs *may* be supported in the future, but specific compatibility deta
 
 <TabItem value="linux" label="🐧 Ubuntu" default>
 
-:::tip[Using ROCm with Subspace Farmer]
+:::tip Using ROCm with Subspace Farmer
 
 The `subspace-farmer-rocm-*` binaries provide ROCm support, with corresponding CLI options similar to CUDA and prefixed with `--rocm`.
 
@@ -110,7 +110,7 @@ The `subspace-farmer-rocm-*` binaries provide ROCm support, with corresponding C
     - Package signing key
     - Register ROCm packages
 
-    You don’t need a custom driver or full ROCm toolchain to use already compiled application, so skip all other steps.
+    You don't need a custom driver or full ROCm toolchain to use already compiled application, so skip all other steps.
 
 2.  Next install a single package with ROCm runtime:
 
@@ -130,13 +130,13 @@ The `subspace-farmer-rocm-*` binaries provide ROCm support, with corresponding C
     sudo usermod -a -G render $LOGNAME
     ```
 
-4.  Now you’ll need to log out of your user profile and log back in or simply reboot for group changes to take effect and you’re ready to go.
+4.  Now you'll need to log out of your user profile and log back in or simply reboot for group changes to take effect and you're ready to go.
 
 </TabItem>
 
 <TabItem value="windows" label="🪟 Windows">
 
-:::tip[Using ROCm with Subspace Farmer]
+:::tip Using ROCm with Subspace Farmer
 
 The `subspace-farmer-rocm-*` executables provide ROCm support, with corresponding CLI options similar to CUDA and prefixed with `--rocm`.
 
@@ -150,7 +150,7 @@ In the installer just the HIP RTC Runtime should be enough under “HIP Runtime 
 
 <TabItem value="docker" label="🐳 Docker">
 
-:::note[Simplified Cross-Compilation]
+:::note Simplified Cross-Compilation
 
 - Cross-compilation no longer requires separate Dockerfiles (which is why they are removed), both native and cross-compilation is supported with a single file
 - Container image is now built as multi-platform, meaning no -aarch64 suffix and no awkwardness related to that
