@@ -12,7 +12,6 @@ keywords:
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-
 Autonomys utilizes your drive storage, specifically SSD or NVMe drives, to store plots. After the plotting process is finished, these plots are then farmed using your CPU. Farming is not particularly demanding on the CPU, enabling most modern processors to manage a substantial farm size. However, the plot creation process is highly resource intensive, which makes CPU plotting the main bottleneck.
 
 Utilizing GPU plotting allows you to harness the power of compatible GPUs for plot generation and replotting, either in conjunction with or as a substitute for CPU processing. While many modern CPUs can complete the plotting of a sector in less than two minutes, a single high performance GPU can accomplish the same task in under five seconds, greatly improving efficiency and speed.
@@ -21,22 +20,23 @@ Although GPU plotting is not mandatory, it provides enhanced energy efficiency a
 
 
 :::info Plot Format Compatibility
-
 GPU plotting employs the new v1 plot format, which is applicable to any plots created with versions released on or after July 5th. In contrast, older software versions generated plots in the v0 format, which is only compatible with CPU plotting.
-
 :::
 
 
 ## Platform Compatibility
 
-| Platform | 🐧 Linux | 🪟 Windows | [Nvidia](/farming/guides/gpu-plotter?brand=nvidia#supported-gpus) | [AMD](/farming/guides/gpu-plotter?brand=amd#supported-gpus) | [Intel](/farming/guides/gpu-plotter?brand=intel#supported-gpus) |
+| Platform | 🐧 Linux | 🪟 Windows | [Nvidia](#supported-gpus) | [AMD](#supported-gpus) | [Intel](#supported-gpus) |
 |---|:-:|:-:|:-:|:-:|:-:|
-| [Advanced CLI](https://github.com/autonomys/subspace/releases) | ✅ | ✅ |✅ | ✅ | 🔮 |
-| [Space Acres](https://github.com/autonomys/space-acres/releases) | ✅ | ✅ | ✅ | 🔜 | 🔮 |
+| Advanced CLI |   ✅   |    ✅    |            ✅             |           ✅            |            🔮            |
+| Space Acres  |   ✅   |    ✅    |            ✅             |           🔜            |            🔮            |
 
-<small> 🛠️ Limited AMD Support is available in recent test builds. The most recent test builds are linked on the [forum](https://forum.autonomys.xyz/t/rocm-gpu-support-amd/4440) </small>
-<br />
-<small> See Discord [#farmer-chat](https://discord.com/channels/864285291518361610/1062507270539321485) channel for limited support. </small>
+
+<div className="small-print">
+  🛠️ Limited AMD support is available in recent test builds. The most recent test builds are linked on the [forum](https://forum.autonomys.xyz/t/rocm-gpu-support-amd/4440).
+
+  See Discord [farmer-chat](https://discord.com/channels/864285291518361610/1062507270539321485) channel for limited support.
+</div>
 
 
 ## Supported GPUs
@@ -46,23 +46,18 @@ GPU plotting employs the new v1 plot format, which is applicable to any plots cr
 <TabItem value="nvidia" label="Nvidia" default>
 
 
-| Series/Model | Supported |
+| Series/Model       | Supported |
 |---|:--:|
-| RTX 20xx and Newer | ✅ |
-| GTX 16 Series | ✅ |
+| RTX 20xx and Newer |     ✅     |
+| GTX 16 Series      |     ✅     |
 
-
-<small> *Nvidia [drivers](https://developer.nvidia.com/cuda-downloads) version 550 or later are required. Installing the CUDA Toolkit is not required.* </small>
+<div className="small-print">
+  *Nvidia [drivers](https://developer.nvidia.com/cuda-downloads) version 550 or later are required. Installing the CUDA Toolkit is not required.* 
+</div>
 
 </TabItem>
 
 <TabItem value="amd" label="AMD">
-
-:::caution AMD ROCm Support
-
-*There are many challenges to overcome regarding AMD ROCm support. There is much more information on this topic on the [forum](https://forum.autonomys.xyz/t/rocm-gpu-support-amd/4440).*
-
-:::
 
 :::tip Latest Test Build
 
@@ -70,7 +65,7 @@ You must be using the latest test build for AMD support.
 
 :::
 
-| Series/Model | Ubuntu |Windows |
+| Series/Model | Ubuntu | Windows |
 |---|:---:|:---:|
 | RX 7900 XTX | ✅ | ❔ |
 | RX 7600 XT | ✅ | ❔ |
@@ -94,6 +89,12 @@ Intel Arc GPUs *may* be supported in the future, but specific compatibility deta
 
 ### AMD ROCm support
 
+:::caution AMD ROCm Support
+
+*There are many challenges to overcome regarding AMD ROCm support. There is much more information on this topic on the [forum](https://forum.autonomys.xyz/t/rocm-gpu-support-amd/4440).*
+
+:::
+
 <Tabs groupId="OS">
 
 <TabItem value="linux" label="🐧 Ubuntu" default>
@@ -106,28 +107,29 @@ The `subspace-farmer-rocm-*` binaries provide ROCm support, with corresponding C
 
 1.  In order to install necessary libraries go to Ubuntu native installation — [ROCm installation (Linux)](https://rocm.docs.amd.com/projects/install-on-linux/en/docs-6.2.2/install/native-install/ubuntu.html) and follow these steps for your Ubuntu version:
 
-    - Package signing key
-    - Register ROCm packages
+  - Package signing key
+  - Register ROCm packages
 
-    You don't need a custom driver or full ROCm toolchain to use already compiled application, so skip all other steps.
+You don't need a custom driver or full ROCm toolchain to use already compiled application, so skip all other steps.
 
 2.  Next install a single package with ROCm runtime:
 
-    ```text
-    sudo apt-get install --no-install-recommends hip-runtime-amd
-    ```
-    And register the library so that farmer and other apps can find it:
+  ```bash
+  sudo apt-get install --no-install-recommends hip-runtime-amd
+  ```
 
-    ```text
-    echo "/opt/rocm/lib" | sudo tee /etc/ld.so.conf.d/rocm.conf > /dev/null
-    sudo ldconfig
-    ```
+And register the library so that farmer and other apps can find it:
 
-3.  Then, to allow the user to access GPU for compute purposes, you need to add your user to render group (please never run farmer as root with sudo :pray: ):
+  ```bash
+  echo "/opt/rocm/lib" | sudo tee /etc/ld.so.conf.d/rocm.conf > /dev/null
+  sudo ldconfig
+  ```
 
-    ```text
-    sudo usermod -a -G render $LOGNAME
-    ```
+3.  Then, to allow the user to access GPU for compute purposes, you need to add your user to render group (please never run farmer as root with sudo :pray:):
+
+  ```bash
+  sudo usermod -a -G render $LOGNAME
+  ```
 
 4.  Now you'll need to log out of your user profile and log back in or simply reboot for group changes to take effect and you're ready to go.
 
