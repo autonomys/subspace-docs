@@ -15,8 +15,7 @@ function DockerFileGeneratorLatest() {
         nodeData: '',
         farmerData: '',
         rewardAddress: 'st6GBwATPqtBkK5y4uXbV52euszPpFPw7wmkF8FywEqJaf8uP',
-        plotSize: '100G',
-	    arch: 'x86_64',
+        plotSize: '100G'
     });
 
     // Predefine the actual network
@@ -99,7 +98,7 @@ function DockerFileGeneratorLatest() {
             const template = `\
 services:
   node:
-    image: ghcr.io/autonomys/node:${formData.snapshot}${formData.arch === "aarch64" ? "-aarch64" : ""}
+    image: ghcr.io/autonomys/node:${formData.snapshot}
     volumes:
       - ${formData.nodeData ? formData.nodeData : "node-data"}:/var/subspace:rw
     ports:
@@ -128,7 +127,7 @@ services:
     depends_on:
       node:
         condition: service_healthy
-    image: ghcr.io/autonomys/farmer:${formData.snapshot}${formData.arch === "aarch64" ? "-aarch64" : ""}
+    image: ghcr.io/autonomys/farmer:${formData.snapshot}
     volumes:
       - ${formData.farmerData ? formData.farmerData : "farmer-data"}:/var/subspace:rw
     ports:
@@ -252,25 +251,6 @@ ${formData.nodeData && formData.farmerData ? "" : "volumes:"}${formData.nodeData
 				onChange={handleChange}
                             >
 				{snapshots.map(snap => <option key={snap} value={snap}>{snap}</option>)}
-                            </select>
-			</div>
-			<div key="arch" className={styles['compose-generator-form__group']}>
-                            <label
-				htmlFor="arch"
-				className={`text--bold ${styles['compose-generator-form__label']} ${glowingLabels.includes('arch') ? styles['compose-generator-form__label--glow'] : ""}`}
-				onMouseEnter={() => startLabelGlow('arch')}
-				onAnimationEnd={() => endLabelGlow('arch')}
-			    >
-				Architecture:
-			    </label>
-                            <select
-				className={styles['compose-generator-form__input']}
-				name="arch"
-				value={formData.arch}
-				onChange={handleChange}
-                            >
-				<option value="x86_64">x86_64 (skylake+)</option>
-				<option value="aarch64">aarch64</option>
                             </select>
 			</div>
                     </div>
