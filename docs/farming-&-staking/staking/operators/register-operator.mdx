@@ -82,7 +82,7 @@ subspace-node [consensus-chain-args] -- [domain-args]
 ```
 
 Example:
-Start a node as operator on `gemini-3h` chain:
+Start a node as operator on `taurus` chain:
 
 
 :::note
@@ -112,7 +112,7 @@ While it is possible to use `archive` for `blocks-pruning` and `state-pruning`, 
 
 <CodeBlock>
 {`target/production/subspace-node run \`
---chain gemini-3h \`
+--chain taurus \`
 --name your_node_name \`
 --base-path NODE_DATA_PATH \`
 --blocks-pruning archive-canonical \`
@@ -130,7 +130,7 @@ While it is possible to use `archive` for `blocks-pruning` and `state-pruning`, 
 
 <CodeBlock>
 {`target/production/subspace-node run \\
---chain gemini-3h \\
+--chain taurus \\
 --name your_node_name \\
 --base-path NODE_DATA_PATH \\
 --blocks-pruning archive-canonical \\
@@ -148,7 +148,7 @@ While it is possible to use `archive` for `blocks-pruning` and `state-pruning`, 
 
 <CodeBlock>
 {`target/production/subspace-node run \\
---chain gemini-3h \\
+--chain taurus \\
 --name your_node_name \\
 --base-path NODE_DATA_PATH \\
 --blocks-pruning archive-canonical \\
@@ -184,7 +184,7 @@ While it is possible to use `archive` for `blocks-pruning` and `state-pruning`, 
     restart: unless-stopped
     command: [
       "run",
-      "--chain", "gemini-3h",
+      "--chain", "taurus",
       "--base-path", "/var/subspace",
       "--listen-on", "0.0.0.0:30333",
       "--dsn-listen-on", "/ip4/0.0.0.0/tcp/30433",

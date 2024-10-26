@@ -26,7 +26,7 @@ function AdvancedSystemdServiceFileGenerator() {
     });
 
     // Predefine the actual chain
-    const chain = 'gemini-3h';
+    const chain = 'taurus';
     
     // State for the generated output (docker compose content)
     const [nodeOutput, setNodeOutput] = useState('');

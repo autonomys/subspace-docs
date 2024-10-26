@@ -64,7 +64,7 @@ First, let’s set up a MetaMask wallet and then go over connecting it to the Au
 
   ```
   Network Name: Autonomys EVM
-  New RPC URL: https://nova-0.gemini-3h.subspace.network/ws
+  New RPC URL: wss://rpc.taurus.subspace.foundation/ws
   Chain ID: 490000
   Currency Symbol: TSSC
   ```

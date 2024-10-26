@@ -55,6 +55,7 @@ To start using Nova, refer to our [Guides and Manuals](/develop/nova/introductio
 #### Consensus
 - wss://rpc-0.gemini-3h.subspace.network/ws
 - wss://rpc-1.gemini-3h.subspace.network/ws
+- wss://rpc.taurus.subspace.foundation/ws
 
 #### Nova
 - wss://nova-0.gemini-3h.subspace.network/ws 
