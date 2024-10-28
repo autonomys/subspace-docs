@@ -100,7 +100,7 @@ The only required option is the Provider URL. Adding an explorer is optional. Yo
 You can refer to the *RPC Endpoints* above for available provider URLs for the Subspace Network.
     
 5. Fill in the provider URL, once you click out of this box it will check the URL and add the rest of the information, then click Save. 
-- *In this example we will be using `wss://rpc.taurus.subspace.foundation/ws`*
+- *In this example we will be using `https://nova-0.gemini-3h.subspace.network/ws`*
 
 ![rpc-step-4](/img/doc-imgs/subwallet/rpc-4.png)
 
