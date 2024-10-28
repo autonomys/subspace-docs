@@ -12,14 +12,14 @@ If you face an error where the node outputs nothing and no error code is given i
 <div className={`${styles.buttons} ${styles.flexContainer}`}>
   <Link
     className="button button--secondary"
-    to="https://github.com/autonomys/subspace/releases/download/gemini-3h-2024-oct-10/subspace-node-windows-x86_64-skylake-gemini-3h-2024-oct-10.exe"
+    to="https://github.com/autonomys/subspace/releases/download/taurus-2024-oct-24/subspace-node-windows-x86_64-skylake-taurus-2024-oct-24.exe"
     style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', textAlign: 'center', padding: '10px' }}>
     <span style={{ fontSize: '20px' }}>Node Executable</span>
     <span style={{ fontSize: '14px' }}>(Skylake+ CPU)</span>
   </Link>
   <Link
     className="button button--secondary"
-    to="https://github.com/autonomys/subspace/releases/download/gemini-3h-2024-oct-10/subspace-farmer-windows-x86_64-skylake-gemini-3h-2024-oct-10.exe"
+    to="https://github.com/autonomys/subspace/releases/download/taurus-2024-oct-24/subspace-farmer-windows-x86_64-skylake-taurus-2024-oct-24.exe"
     style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', textAlign: 'center', padding: '10px' }}>
     <span style={{ fontSize: '20px' }}>Farmer Executable</span>
     <span style={{ fontSize: '14px' }}>(Skylake+ CPU)</span>
@@ -29,14 +29,14 @@ If you face an error where the node outputs nothing and no error code is given i
 <div className={`${styles.buttons} ${styles.flexContainer}`}>
   <Link
     className="button button--secondary"
-    to="https://github.com/autonomys/subspace/releases/download/gemini-3h-2024-oct-10/subspace-node-windows-x86_64-v2-gemini-3h-2024-oct-10.exe"
+    to="https://github.com/autonomys/subspace/releases/download/taurus-2024-oct-24/subspace-node-windows-x86_64-v2-taurus-2024-oct-24.exe"
     style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', textAlign: 'center', padding: '10px' }}>
     <span style={{ fontSize: '20px' }}>Node Executable</span>
     <span style={{ fontSize: '14px' }}>(Legacy CPU)</span>
   </Link>
   <Link
     className="button button--secondary"
-    to="https://github.com/autonomys/subspace/releases/download/gemini-3h-2024-oct-10/subspace-farmer-windows-x86_64-v2-gemini-3h-2024-oct-10.exe"
+    to="https://github.com/autonomys/subspace/releases/download/taurus-2024-oct-24/subspace-farmer-windows-x86_64-v2-taurus-2024-oct-24.exe"
     style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', textAlign: 'center', padding: '10px' }}>
     <span style={{ fontSize: '20px' }}>Farmer Executable</span>
     <span style={{ fontSize: '14px' }}>(Legacy CPU)</span>
@@ -59,9 +59,9 @@ This is because the application is trying to access the internet. This is expect
 ```powershell
 # Replace `INSERT_YOUR_ID` with a nickname you choose
 # Copy all of the lines below, they are all part of the same command
-.\subspace-node-windows-x86_64-skylake-gemini-3h-2024-oct-10.exe `
+.\subspace-node-windows-x86_64-skylake-taurus-2024-oct-24.exe `
   run `
-  --chain gemini-3h `
+  --chain taurus `
   --base-path NODE_DATA_PATH `
   --farmer `
   --name "INSERT_YOUR_ID"
@@ -77,7 +77,7 @@ Using **run**, setting **--base-path** and specifying **--chain** is mandatory.
 2022-02-03 10:52:23 Subspace
 2022-02-03 10:52:23 ✌️  version 0.1.0-35cf6f5-x86_64-windows
 2022-02-03 10:52:23 ❤️  by Subspace Labs <https://subspace.network>, 2021-2022
-2022-02-03 10:52:23 📋 Chain specification: Subspace Gemini 1
+2022-02-03 10:52:23 📋 Chain specification: Subspace Autonomys Taurus Testnet
 2022-02-03 10:52:23 🏷  Node name: YOUR_FANCY_NAME
 2022-02-03 10:52:23 👤 Role: AUTHORITY
 2022-02-03 10:52:23 💾 Database: RocksDb at C:\Users\X\AppData\Local\subspace-node-windows-x86_64-snapshot-2022-jan-05.exe\data\chains\subspace_test\db\full
@@ -103,7 +103,7 @@ Using **run**, setting **--base-path** and specifying **--chain** is mandatory.
   # Replace `PATH_TO_FARM` with location where you want you store plot files
   # Replace `WALLET_ADDRESS` below with your account address from Polkadot.js wallet
   # Replace `PLOT_SIZE` with plot size in gigabytes or terabytes, for example 100G or 2T (but leave at least 60G of disk space for node and some for OS)
-  .\subspace-farmer-windows-x86_64-skylake-gemini-3h-2024-oct-10.exe farm --reward-address WALLET_ADDRESS path=PATH_TO_FARM,size=PLOT_SIZE
+  .\subspace-farmer-windows-x86_64-skylake-taurus-2024-oct-24.exe farm --reward-address WALLET_ADDRESS path=PATH_TO_FARM,size=PLOT_SIZE
 ```
 
 2. You should see something similar in the terminal:

@@ -77,7 +77,8 @@ This also can be helpful for in-development networks such as the Subspace Networ
 **Gemini 3e Endpoint:** `wss://rpc.gemini-3e.subspace.network/ws`<br />
 **Gemini 3f Endpoint:** `wss://rpc-1.gemini-3f.subspace.network/ws`<br />
 **Gemini 3g Endpoint:** `wss://rpc-1.gemini-3g.subspace.network/ws`<br />
-**Gemini 3h Endpoint:** `wss://rpc-1.gemini-3h.subspace.network/ws`
+**Gemini 3h Endpoint:** `wss://rpc-1.gemini-3h.subspace.network/ws`<br />
+**Taurus Testnet Endpoint:** `wss://rpc.taurus.subspace.foundation/ws`
 :::
 
 1. Open SubWallet, Select the 3 Line menu in the top left of the wallet.
@@ -99,7 +100,7 @@ The only required option is the Provider URL. Adding an explorer is optional. Yo
 You can refer to the *RPC Endpoints* above for available provider URLs for the Subspace Network.
     
 5. Fill in the provider URL, once you click out of this box it will check the URL and add the rest of the information, then click Save. 
-- *In this example we will be using `wss://rpc-1.gemini-3g.subspace.network/ws`*
+- *In this example we will be using `wss://rpc.taurus.subspace.foundation/ws`*
 
 ![rpc-step-4](/img/doc-imgs/subwallet/rpc-4.png)
 

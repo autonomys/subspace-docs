@@ -19,7 +19,7 @@ function DockerFileGeneratorLatest() {
     });
 
     // Predefine the actual network
-    const network = 'gemini-3h';
+    const network = 'taurus';
     
     // State for the generated output (docker compose content)
     const [output, setOutput] = useState('');
