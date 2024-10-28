@@ -57,9 +57,17 @@ To start using Nova, refer to our [Guides and Manuals](/develop/nova/introductio
 - wss://rpc-1.gemini-3h.subspace.network/ws
 - wss://rpc.taurus.subspace.foundation/ws
 
+:::tip Nova
+Currently, Nova is available exclusively on the gemini-3h network. It will soon be accessible on the taurus network.
+:::
+
 #### Nova
 - wss://nova-0.gemini-3h.subspace.network/ws 
 - wss://nova-1.gemini-3h.subspace.network/ws
+
+:::tip Auto ID
+Currently, Auto ID is available exclusively on the gemini-3h network. It will soon be accessible on the taurus network.
+:::
 
 #### Auto ID
 - wss://autoid-0.gemini-3h.subspace.network/ws
