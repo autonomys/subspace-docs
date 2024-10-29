@@ -55,21 +55,6 @@ const config = {
           // Redirect Links
           // Redirecting to the new root URL (/) as the previous root (/docs) is no longer in use.
 
-          // Localized homepage redirects
-          { to: 'learn/intro', from: ['/ar'] },
-          { to: '/learn/intro', from: ['/de'] },
-          { to: '/learn/intro', from: ['/fr'] },
-          { to: '/learn/intro', from: ['/id'] },
-          { to: '/learn/intro', from: ['/it'] },
-          { to: '/learn/intro', from: ['/ja'] },
-          { to: '/learn/intro', from: ['/uk'] },
-          { to: '/learn/intro', from: ['/zh'] },
-          { to: '/learn/intro', from: ['/pl'] },
-          { to: '/learn/intro', from: ['/pt'] },
-          { to: '/learn/intro', from: ['/ru'] },
-          { to: '/learn/intro', from: ['/es'] },
-          { to: '/learn/intro', from: ['/tr'] },
-
           // Learn
           { to: '/learn/intro', from: ['/category/learn', '/docs/learn/intro'] },
           { to: '/learn/security', from: ['/docs/learn/security'] },
