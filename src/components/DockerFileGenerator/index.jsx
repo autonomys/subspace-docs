@@ -4,7 +4,7 @@ import CodeBlock from '@theme/CodeBlock'
 import styles from './DockerFileGenerator.module.css';
 
 // This component is a Docker Compose File Generator for Autonomys Docs.
-function DockerFileGeneratorLatest() {
+function DockerFileGeneratorPreRelease() {
     // Initial state for form data
     const [formData, setFormData] = useState({
         nodePort: '30333',
@@ -14,8 +14,9 @@ function DockerFileGeneratorLatest() {
         snapshot: '',
         nodeData: '',
         farmerData: '',
-        rewardAddress: 'st6GBwATPqtBkK5y4uXbV52euszPpFPw7wmkF8FywEqJaf8uP',
-        plotSize: '100G'
+        rewardAddress: 'sub55p3aScFJeey32VWnqjYeHaGYE59Nvmt4DMWdTBfDtsq2p',
+        plotSize: '100G',
+	    arch: 'x86_64',
     });
 
     // Predefine the actual network
@@ -85,7 +86,7 @@ function DockerFileGeneratorLatest() {
     const generateOutput = ({ skipRewardAddressCheck = false } = {}) => {
         const validationErrors = validateInputs();
 
-	if (!skipRewardAddressCheck && formData.rewardAddress === 'st6GBwATPqtBkK5y4uXbV52euszPpFPw7wmkF8FywEqJaf8uP') {
+	if (!skipRewardAddressCheck && formData.rewardAddress === 'sub55p3aScFJeey32VWnqjYeHaGYE59Nvmt4DMWdTBfDtsq2p') {
             setErrors({
 		...validationErrors,
 		rewardAddress: 'Please enter your reward address'
@@ -169,10 +170,10 @@ ${formData.nodeData && formData.farmerData ? "" : "volumes:"}${formData.nodeData
         if (!/^\d+(G|T)?$/.test(formData.plotSize)) {
             errors.plotSize = 'Invalid Plot Size';
         }
-        if (!/^st[a-zA-Z0-9]{47}$/.test(formData.rewardAddress)) {
+        if (!/^(st|su)[A-Za-z0-9]{47}$/.test(formData.rewardAddress)) {
             errors.rewardAddress = 'Invalid Reward Address';
         }
-	if (!/^(\/([^/]*\/?)*)?$/.test(formData.nodeData)) {
+	    if (!/^(\/([^/]*\/?)*)?$/.test(formData.nodeData)) {
 	    errors.nodeData = 'Invalid Node Data';
         }
         if (!/^(\/([^/]*\/?)*)?$/.test(formData.farmerData)) {
@@ -267,4 +268,4 @@ ${formData.nodeData && formData.farmerData ? "" : "volumes:"}${formData.nodeData
     );
 }
 
-export default DockerFileGeneratorLatest;
+export default DockerFileGeneratorPreRelease;
