@@ -56,19 +56,19 @@ const config = {
           // Redirecting to the new root URL (/) as the previous root (/docs) is no longer in use.
 
           // Localized homepage redirects
-          { to: '/ar', from: ['/ar/learn/intro'] },
-          { to: '/de', from: ['/de/learn/intro'] },
-          { to: '/fr', from: ['/fr/learn/intro'] },
-          { to: '/id', from: ['/id/learn/intro'] },
-          { to: '/it', from: ['/it/learn/intro'] },
-          { to: '/ja', from: ['/ja/learn/intro'] },
-          { to: '/uk', from: ['/uk/learn/intro'] },
-          { to: '/zh', from: ['/zh/learn/intro'] },
-          { to: '/pl', from: ['/pl/learn/intro'] },
-          { to: '/pt', from: ['/pt/learn/intro'] },
-          { to: '/ru', from: ['/ru/learn/intro'] },
-          { to: '/vi', from: ['/es/learn/intro'] },
-          { to: '/es', from: ['/tr/learn/intro'] },
+          { to: '/ar/learn/intro', from: ['/ar'] },
+          { to: '/de/learn/intro', from: ['/de'] },
+          { to: '/fr/learn/intro', from: ['/fr'] },
+          { to: '/id/learn/intro', from: ['/id'] },
+          { to: '/it/learn/intro', from: ['/it'] },
+          { to: '/ja/learn/intro', from: ['/ja'] },
+          { to: '/uk/learn/intro', from: ['/uk'] },
+          { to: '/zh/learn/intro', from: ['/zh'] },
+          { to: '/pl/learn/intro', from: ['/pl'] },
+          { to: '/pt/learn/intro', from: ['/pt'] },
+          { to: '/ru/learn/intro', from: ['/ru'] },
+          { to: '/vi/learn/intro', from: ['/es'] },
+          { to: '/es/learn/intro', from: ['/tr'] },
 
           // Learn
           { to: '/learn/intro', from: ['/category/learn', '/docs/learn/intro'] },
