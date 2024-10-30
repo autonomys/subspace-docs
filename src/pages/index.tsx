@@ -1,3 +1,23 @@
+import React, { useEffect } from 'react';
+import { useHistory } from '@docusaurus/router';
+
+export default function Home() {
+  const history = useHistory();
+
+  useEffect(() => {
+    const lang = window.location.pathname.split('/')[1];
+    if (lang) {
+      history.push(`/${lang}/learn/intro`);
+    } else {
+      history.push('/learn/intro');
+    }
+  }, [history]);
+
+  return null;
+}
+
+// Original landing page
+/*
 import React from 'react';
 import clsx from 'clsx';
 import Link from '@docusaurus/Link';
@@ -9,13 +29,6 @@ import  { Redirect } from 'react-router-dom';
 
 import styles from './index.module.css';
 
-// Used as a temporary redirect until a new landing page is designed.
-export default function Home() {
-  return <Redirect to='/learn/intro' />;
-}
-
-// Original landing page
-/*
 function HomepageHeader() {
   const {siteConfig} = useDocusaurusContext();
   return (
