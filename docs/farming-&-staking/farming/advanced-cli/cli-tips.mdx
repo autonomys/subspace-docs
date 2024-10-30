@@ -11,6 +11,8 @@ keywords:
     - Docker
 ---
 
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
 
 ## Additional Tips
 
@@ -27,80 +29,6 @@ Explore the Autonomys Network in depth with our variety of telemetry tools and b
 - **[Subscan Block Explorer](https://subspace.subscan.io)**: An alternative block explorer providing detailed views of blocks, transactions, and network events. Subscan is known for its user-friendly interface and additional data analytics features.
 
 - **[Polkadot.js Block Explorer](https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Frpc.taurus.subspace.foundation%2Fws#/explorer)**: For users familiar with the Polkadot ecosystem, this explorer offers a seamless experience for exploring the Autonomys Network using the Polkadot.js interface.
-
-
-
-### Snap Sync
-
-Snap Sync works by jumping to near the end of the chain, allowing you to sync to the current block more quickly. Once the initial jump is complete, it behaves like a full sync. In fact, if you haven't synced for more than a few days, it might be quicker to remove the node database and let Snap Sync quickly sync to the most current block.
-
-There are cases where you might not want to use Snap Sync. To perform a full sync you can either omit the sync parameter, or use `--sync full`. This is useful if you want to run an RPC node for public use, become an operator or indexing. In that case, you would need to run an archival node, not just a pruned node. An archival node requires a full sync.
-
-
-### Plotting concurrency (CPU only)
-
-During plotting, there are both parallel and sequential parts of the table generation. By generating several tables simultaneously, we can overlap the sequential parts with parallel parts, thus improving CPU utilization. While generating tables for all records requires significant RAM, producing tables for only a few records at a time offers an optimal balance between CPU and RAM usage.
-We added the `--cpu-record-encoding-concurrency` option to override the default behavior, which allocates one record for every two cores but does not exceed eight in parallel. According to our internal testing with P-cores, E-cores, and combinations of P+E cores, this setting appears to achieve peak performance.
-If you prefer to use the previous behavior, or if your RAM usage becomes too high, you can set `--cpu-record-encoding-concurrency` to `1`. You may also experiment with setting it to `2`, `3`, etc., which may yield better results depending on your specific CPU/RAM configuration.
-
-### Create Missing Farms
-
-A farmer has the option to specify whether the system should automatically create missing farms upon startup. If you provide a path to a plot that isn't found, the system will generate a new one. However, this may not be desirable if a drive fails to mount properly. 
-By default, this option is set to `true`, but you can override it by adding `--create false`. Setting this flag to `false` after establishing your plots can prevent unintentional file writes to the wrong drive.
-
-### Record Chunks Reading Mode
-
-Upon startup, each farm will [benchmark](#benchmarking-your-farmer) the performance of every plot to identify the most efficient proving method, yielding either `ConcurrentChunks` or `WholeSector` results. If you already know the optimal method for your setup, you can specify it as an argument for each farm to save time benchmarking. 
-For example, you can include record-chunks-mode= after defining the path and size, assigning the desired value, e.g., `path=/mnt/subspace1,size=100G,record-chunks-mode=ConcurrentChunks`. If you do not provide this parameter, the system will benchmark each disk on startup to identify the most efficient method.
-
-### Benchmarking Your Farmer
-Benchmarking helps you test the plotting speed of your farmer against different versions of the Autonomys Network.
-
-```
-./subspace-farmer benchmark audit /path/to/your/plot
-```
-
-Replace /path/to/your/plot with the actual path to your plot. This will provide you with metrics and insights regarding plotting performance.
-
-At the moment, Autonomys Node supports `rayon` implementation mechanism, that opens files as many times as there are farming threads and, for each thread, uses a dedicated file handle.
-
-To interpret the results: typically, you assess throughput to determine the maximum auditable size across any number of disks. Both CPU and disk performance influence this metric.
-
-To read more about audit benchmarking, [read this forum post](https://forum.autonomys.xyz/t/audit-benchmark-result-explanation-please/2149).
-
-There is a second command available, which helps you determine how much time your farmer has after auditing to provide proof.
-
-```
-./subspace-farmer benchmark prove /path/to/your/plot
-```
-
-Each farmer has ~4 seconds to audit and prove, so depending on how fast auditing is, the remaining time will be used for proving.
-Proving performance doesn’t depend on the plot size.
-
-If an environment does not have enough time for the proving step, a message such as this is logged by the farmer:
-
-`Proving for solution skipped due to farming time limit slot=6723846 sector_index=46`
-
-To read more about prove benchmarking, [read this forum post](https://forum.autonomys.xyz/t/audit-benchmark-result-explanation-please/2150).
-
-### Scrubbing Your Farmer
-In certain situations, especially when the farmer terminates unexpectedly or encounters an error, it might fail to restart correctly. The scrub command assists in resolving such issues by cleaning or resetting the specified plot.
-
-```
-./subspace-farmer scrub /path/to/your/plot
-```
-
-Ensure to replace /path/to/your/plot with your actual plot path. Use this command cautiously as it modifies the plot state to recover from errors.
-
-### Specify Exact CPU Cores for Plotting/Replotting (CPU only)
-This option will override any custom logic that the **subspace farmer** might otherwise use.
-You can specify the plotting CPU cores by adding `--cpu-plotting-cores`, followed by the desired cores parameters. Cores should be listed as comma-separated values, with whitespace used to separate different thread pools or encoding instances.
-For example, `--cpu-plotting-cores 0,1 2,3` will result in two sectors being encoded simultaneously, each using a pair of CPU cores.
-
-Similarly, you can customize the replotting CPU cores using `--cpu-replotting-cores`, followed by arguments similar to those used in the `--cpu-plotting-cores` example above.
-
-Note that setting `--cpu-plotting-cores` requires `--cpu-replotting-cores` to be configured with the same number of CPU core groups. If the `--cpu-replotting-cores` setting is omitted, the node will default to using the same thread pool as for plotting.
-
 
 ### Switching to a new snapshot from older/different versions of Autonomys
 
@@ -124,52 +52,6 @@ If you were running a node previously, and want to switch to a new network, plea
 
 Now follow the installation guide from the beginning.
 
-### Docker Wipe
-
-In case of Docker setup run `docker compose down -v` (and manually delete custom directories if you have specified them).
-
-Now follow the installation guide.
-
-If you are having issues with running a node or farmer for Autonomys, feel free to join our Discord or even better you can take a look at our forums and review existing questions or post a new one if needed!
-
-- [Forum](https://forum.autonomys.xyz)
-- [Discord](https://autonomys.xyz/discord)
-
-### Help
-
-There are extra commands and parameters you can use on farmer or node, use the `--help` after any other command to display additional options.
-
-```bash
-# Replace `FARMER_FILE_NAME` with the name of the node file you downloaded from releases
-./FARMER_FILE_NAME farm --help
-```
-
----
-### Timekeepers
-
-Gemini-3g introduces Proof-of-Time and a new, optional role has been added to the node. Timekeepers help run PoT to ensure the security of the network. Timekeeping requires a high-performance core CPU but can be undertaken by any node runner. You can enable timekeeping with the following commands. 
-- `--timekeeper`: To enable timekeeping on the node
-- `--timekeeper-cpu-cores`: To specify which cores the Timekeeper will run on. 
-
-Read more about [Timekeepers](/farming/timekeeper)
-
-### Node & Farmer Commands Guide
-
-Both the node and the farmer have a variety of flags and parameters. To see a full list, append the `--help` flag to either the node or the farmer command.
-
-### Common Command Examples
-
-:::note Farming Changes
-Please note that as of `Gemini-3g` farming no longer occurs while plotting. This is to ensure the plotting process occurs in the most efficient manner. You can change this by adding the `--farm-during-initial-plotting` flag to the farmer. 
-:::
-
-For both the node and the farmer, here are some frequently used commands:
-
-- Display farm information: `./FARMER_FILE_NAME info PATH_TO_FARM`
-- Scrub the farm for errors: `./FARMER_FILE_NAME scrub PATH_TO_FARM`
-- Erase all farmer-related data: `./FARMER_FILE_NAME wipe PATH_TO_FARM`
-- Erase all node-related data: `./NODE_FILE_NAME wipe NODE_DATA_PATH`
-
 ### Utilizing Multiple Disks
 
 To maximize storage capabilities, you can engage multiple disks directly. This is often more efficient than relying on RAID configurations:
@@ -181,7 +63,6 @@ Example:
     path=/media/ssd2,size=10T \
     path=/media/ssd3,size=10T
 ```
-
 ### Optimizing DSN Syncing
 
 :::note
@@ -218,6 +99,135 @@ Increasing the values of the farmer parameters could increase the plotting speed
 --pending-out-connections
 ```
 
+
+### Help
+
+Both the node and the farmer have a variety of flags and parameters. To see a full list, append the `--help` flag to either the node or the farmer command.
+
+
+## Some Additional Tips for Node, Farmer and Docker
+
+<Tabs groupId="component">
+
+<TabItem value="farmer" label="Farmer">
+
+### Plotting concurrency (CPU only)
+
+During plotting, there are both parallel and sequential parts of the table generation. By generating several tables simultaneously, we can overlap the sequential parts with parallel parts, thus improving CPU utilization. While generating tables for all records requires significant RAM, producing tables for only a few records at a time offers an optimal balance between CPU and RAM usage.
+We added the `--cpu-record-encoding-concurrency` option to override the default behavior, which allocates one record for every two cores but does not exceed eight in parallel. According to our internal testing with P-cores, E-cores, and combinations of P+E cores, this setting appears to achieve peak performance.
+If you prefer to use the previous behavior, or if your RAM usage becomes too high, you can set `--cpu-record-encoding-concurrency` to `1`. You may also experiment with setting it to `2`, `3`, etc., which may yield better results depending on your specific CPU/RAM configuration.
+
+
+### Create Missing Farms
+
+A farmer has the option to specify whether the system should automatically create missing farms upon startup. If you provide a path to a plot that isn't found, the system will generate a new one. However, this may not be desirable if a drive fails to mount properly. 
+By default, this option is set to `true`, but you can override it by adding `--create false`. Setting this flag to `false` after establishing your plots can prevent unintentional file writes to the wrong drive.
+
+
+### Record Chunks Reading Mode
+
+Upon startup, each farm will [benchmark](#benchmarking-your-farmer) the performance of every plot to identify the most efficient proving method, yielding either `ConcurrentChunks` or `WholeSector` results. If you already know the optimal method for your setup, you can specify it as an argument for each farm to save time benchmarking. 
+For example, you can include record-chunks-mode= after defining the path and size, assigning the desired value, e.g., `path=/mnt/subspace1,size=100G,record-chunks-mode=ConcurrentChunks`. If you do not provide this parameter, the system will benchmark each disk on startup to identify the most efficient method.
+
+### Benchmarking Your Farmer
+Benchmarking helps you test the plotting speed of your farmer against different versions of the Autonomys Network.
+
+```
+./subspace-farmer benchmark audit /path/to/your/plot
+```
+
+Replace /path/to/your/plot with the actual path to your plot. This will provide you with metrics and insights regarding plotting performance.
+
+At the moment, Autonomys Node supports `rayon` implementation mechanism, that opens files as many times as there are farming threads and, for each thread, uses a dedicated file handle.
+
+To interpret the results: typically, you assess throughput to determine the maximum auditable size across any number of disks. Both CPU and disk performance influence this metric.
+
+To read more about audit benchmarking, [read this forum post](https://forum.autonomys.xyz/t/audit-benchmark-result-explanation-please/2149).
+
+There is a second command available, which helps you determine how much time your farmer has after auditing to provide proof.
+
+```
+./subspace-farmer benchmark prove /path/to/your/plot
+```
+
+Each farmer has ~4 seconds to audit and prove, so depending on how fast auditing is, the remaining time will be used for proving.
+Proving performance doesn't depend on the plot size.
+
+If an environment does not have enough time for the proving step, a message such as this is logged by the farmer:
+
+`Proving for solution skipped due to farming time limit slot=6723846 sector_index=46`
+
+To read more about prove benchmarking, [read this forum post](https://forum.autonomys.xyz/t/audit-benchmark-result-explanation-please/2150).
+
+### Scrubbing Your Farmer
+In certain situations, especially when the farmer terminates unexpectedly or encounters an error, it might fail to restart correctly. The scrub command assists in resolving such issues by cleaning or resetting the specified plot.
+
+```
+./subspace-farmer scrub /path/to/your/plot
+```
+
+Ensure to replace /path/to/your/plot with your actual plot path. Use this command cautiously as it modifies the plot state to recover from errors.
+
+
+### Specify Exact CPU Cores for Plotting/Replotting (CPU only)
+This option will override any custom logic that the **subspace farmer** might otherwise use.
+You can specify the plotting CPU cores by adding `--cpu-plotting-cores`, followed by the desired cores parameters. Cores should be listed as comma-separated values, with whitespace used to separate different thread pools or encoding instances.
+For example, `--cpu-plotting-cores 0,1 2,3` will result in two sectors being encoded simultaneously, each using a pair of CPU cores.
+
+Similarly, you can customize the replotting CPU cores using `--cpu-replotting-cores`, followed by arguments similar to those used in the `--cpu-plotting-cores` example above.
+
+Note that setting `--cpu-plotting-cores` requires `--cpu-replotting-cores` to be configured with the same number of CPU core groups. If the `--cpu-replotting-cores` setting is omitted, the node will default to using the same thread pool as for plotting.
+
+</TabItem>
+
+<TabItem value="node" label="Node">
+
+### Snap Sync
+
+Snap Sync works by jumping to near the end of the chain, allowing you to sync to the current block more quickly. Once the initial jump is complete, it behaves like a full sync. In fact, if you haven't synced for more than a few days, it might be quicker to remove the node database and let Snap Sync quickly sync to the most current block.
+
+There are cases where you might not want to use Snap Sync. To perform a full sync you can either omit the sync parameter, or use `--sync full`. This is useful if you want to run an RPC node for public use, become an operator or indexing. In that case, you would need to run an archival node, not just a pruned node. An archival node requires a full sync.
+
+</TabItem>
+
+<TabItem value="docker" label="Docker">
+
+### Docker Wipe
+
+In case of Docker setup run `docker compose down -v` (and manually delete custom directories if you have specified them).
+
+Now follow the installation guide.
+
+If you are having issues with running a node or farmer for Autonomys, feel free to join our Discord or even better you can take a look at our forums and review existing questions or post a new one if needed!
+
+- [Forum](https://forum.autonomys.xyz)
+- [Discord](https://autonomys.xyz/discord)
+
+</TabItem>
+</Tabs>
+
+--- 
+
+## Timekeepers
+
+Gemini-3g introduces Proof-of-Time and a new, optional role has been added to the node. Timekeepers help run PoT to ensure the security of the network. Timekeeping requires a high-performance core CPU but can be undertaken by any node runner. You can enable timekeeping with the following commands. 
+- `--timekeeper`: To enable timekeeping on the node
+- `--timekeeper-cpu-cores`: To specify which cores the Timekeeper will run on. 
+
+Read more about [Timekeepers](/farming/timekeeper)
+
+---
+
+### Common Command Examples
+
+For both the node and the farmer, here are some frequently used commands:
+
+- Display farm information: `./FARMER_FILE_NAME info PATH_TO_FARM`
+- Scrub the farm for errors: `./FARMER_FILE_NAME scrub PATH_TO_FARM`
+- Erase all farmer-related data: `./FARMER_FILE_NAME wipe PATH_TO_FARM`
+- Erase all node-related data: `./NODE_FILE_NAME wipe NODE_DATA_PATH`
+
+--- 
 
 ### NUMA Support
 
