@@ -18,12 +18,6 @@ Utilizing GPU plotting allows you to harness the power of compatible GPUs for pl
 
 Although GPU plotting is not mandatory, it provides enhanced energy efficiency and speed compared to relying solely on a CPU.
 
-
-:::info Plot Format Compatibility
-GPU plotting employs the new v1 plot format, which is applicable to any plots created with versions released on or after July 5th. In contrast, older software versions generated plots in the v0 format, which is only compatible with CPU plotting.
-:::
-
-
 ## Platform Compatibility
 
 | Platform | 🐧 Linux | 🪟 Windows | Nvidia | AMD | Intel |
@@ -189,6 +183,3 @@ Specify particular GPUs for plotting rather than using all available GPUs (the d
 ## Farming Cluster
 
 When utilizing Farming Cluster, particularly with multiple or fast GPUs, you might encounter limitations due to your network's bandwidth. High performance GPUs can easily surpass the capacity of a 1G connection. While this won't cause the process to fail, it may result in your GPU idling as it waits for data to transfer. To optimize performance in such scenarios, consider upgrading to networking solutions of 2.5G, 10G, or higher.
-
-## Known Issues
-Many times you will not use all of the compute power of your GPU. While this will be addressed in the future, a workaround when running a farming cluster is to run multiple instances of the plotter on the same machine.
