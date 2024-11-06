@@ -8,7 +8,7 @@ export default function DocSidebarWrapper(props) {
       <div className="sidebar-recommendation-label">
         ✨ Denotes recommended application <br />
         ♊ Denotes availability on Gemini-3h testnet <br />
-        ♉ Denotes availability on Taurus testnet
+        ♉ Denotes availability on Taurus testnet / Mainnet
       </div>
     </div>
   );
