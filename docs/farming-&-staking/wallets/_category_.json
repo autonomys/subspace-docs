@@ -4,6 +4,6 @@
     "link": {
         "type": "generated-index",
         "slug": "/wallets",
-        "description": "Guides on setting up SubWallet or {Polkadot.js} wallet"
+        "description": "Guides on setting up SubWallet or polkadot{.js} extension wallet"
       }
 }
