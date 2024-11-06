@@ -61,8 +61,10 @@ const config = {
           { to: '/learn/academy', from: ['/docs/learn/academy'] },
 
           // Farming & Staking
+          {to: '/wallets', from: ['/docs/category/wallets'] }, 
           { to: '/wallets/subwallet', from: ['/docs/farming-&-staking/wallets/subwallet'] },
           { to: '/wallets/polkadot', from: ['/docs/farming-&-staking/wallets/polkadot/'] },
+
 
           { to: '/category/farming', from: ['/docs/category/get-started-with-farming', '/protocol/farm/farming', '/docs/category/farming'] },
           { to: '/farming/intro', from: ['/docs/farming-&-staking/farming/prerequisites/', '/docs/farming-&-staking/farming/intro/'] },
