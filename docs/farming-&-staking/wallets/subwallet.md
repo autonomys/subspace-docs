@@ -78,7 +78,7 @@ This also can be helpful for in-development networks such as the Subspace Networ
 **Gemini 3f Endpoint:** `wss://rpc-1.gemini-3f.subspace.network/ws`<br />
 **Gemini 3g Endpoint:** `wss://rpc-1.gemini-3g.subspace.network/ws`<br />
 **Gemini 3h Endpoint:** `wss://rpc-1.gemini-3h.subspace.network/ws`<br />
-**Taurus Testnet Endpoint:** `wss://rpc.taurus.subspace.foundation/ws`
+**Taurus Testnet Endpoint:** `wss://rpc.taurus.subspace.foundation/ws`<br />
 **Mainnet Endpoint:** `wss://rpc.mainnet.subspace.foundation/ws`
 :::
 
