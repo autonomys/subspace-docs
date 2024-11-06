@@ -16,7 +16,7 @@ This guide is focused on how to setup an operator, if you would like to learn mo
 :::
 
 :::info
-Currently, Staking (becoming an Operator or Nominator) is available exclusively on the **Gemini-3h** network. It will soon be accessible on the new test network, **Taurus**.
+Currently, Staking (becoming an Operator or Nominator) is available exclusively on the **Gemini-3h** network. It will soon be accessible on the test network, **Taurus**.
 
 Staking availability on the mainnet is planned for **Phase 2 of the mainnet launch**. For further details, please refer to our [Phased Launch Roadmap](https://forum.autonomys.xyz/t/phased-launch-roadmap/4414) post on the forum.
 :::

@@ -235,7 +235,7 @@ const config = {
               },
               {
                 label: 'PolkadotJS Portal',
-                href: 'https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Frpc.taurus.subspace.foundation%2Fws#/explorer',
+                href: 'https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Frpc.mainnet.subspace.foundation%2Fws#/explorer',
               },
             ],
           },

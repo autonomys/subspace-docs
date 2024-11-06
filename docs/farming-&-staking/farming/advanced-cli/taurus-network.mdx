@@ -1,0 +1,61 @@
+---
+title: Taurus Network
+sidebar_position: 4
+description: How to run an Autonomys Testnet Network Farmer with the Substrate CLI
+slug: /farming/advanced-cli/taurus
+keywords:
+    - Farmer
+    - Farming
+    - CLI
+    - Binaries
+    - Docker
+---
+import LinuxPage from './taurus-platforms/_linux.mdx';
+import WindowsPage from './taurus-platforms/_windows.mdx';
+import MacOSPage from './taurus-platforms/_macos.mdx';
+import SystemDPage from './taurus-platforms/_systemd.mdx';
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+## Network Description
+
+Taurus is our permenant test network that started up in October of 2024. The purpose of this page is to highlight any differences between Taurus and our mainnet.
+
+## Chain Parameter
+
+Currently the only difference between taurus and mainnet is the chain specification (`--chain taurus` or `--chain mainnet`) and the client software. You can only run Advanced CLI, not Space Acres.
+
+## Advanced CLI Installation Guide
+
+:::tip Substrate Address Needed
+
+To use this software, you need a Substrate wallet address. For assistance in creating a Substrate wallet, refer to our guides for ✨ [SubWallet](/wallets/subwallet) or [Polkadot.js](/wallets/polkadot).
+
+If you have a previous wallet address that starts with `st`, you can still use it, or you can transform it to the new `su` prefix. You can convert your existing wallet address using the tool available at [ss58.org](https://ss58.org). Previously, our testnets used the prefix `2254`, while the Taurus testnet and Autonomys mainnet use the prefix `6094`.
+
+:::
+
+We’ll provide the files you need for your operating system:
+- **subspace-node**: The node implementation for the Subspace protocol.
+- **subspace-farmer**: Manages plotting, replotting, and farming rewards.
+
+<Tabs groupId="OS">
+
+<TabItem value="linux" label="🐧 Ubuntu" default>
+<LinuxPage />
+</TabItem>
+
+<TabItem value="windows" label="🖼️ Windows">
+<WindowsPage />
+</TabItem>
+
+<TabItem value="macos" label="🍎 macOS">
+<MacOSPage />
+</TabItem>
+
+<TabItem value="systemd_service" label="🤖 Linux Service (SystemD)">
+<SystemDPage />
+</TabItem>
+
+</Tabs>

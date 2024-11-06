@@ -20,7 +20,7 @@ function DockerFileGeneratorPreRelease() {
     });
 
     // Predefine the actual network
-    const network = 'taurus';
+    const network = 'mainnet';
     
     // State for the generated output (docker compose content)
     const [output, setOutput] = useState('');

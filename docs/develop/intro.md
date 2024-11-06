@@ -62,6 +62,7 @@ To start using Nova, refer to our [Guides and Manuals](/develop/nova/introductio
 - wss://rpc-0.gemini-3h.subspace.network/ws
 - wss://rpc-1.gemini-3h.subspace.network/ws
 - wss://rpc.taurus.subspace.foundation/ws
+- wss://rpc.mainnet.subspace.foundation/ws
 
 :::tip Nova
 Currently, Nova is available exclusively on the gemini-3h network. It will soon be accessible on the taurus network.
