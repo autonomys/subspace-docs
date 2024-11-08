@@ -1,5 +1,5 @@
 ---
-title: Polkadot.js
+title: polkadot{.js} extension
 sidebar_position: 2
 description: How to configure the Polkadot Substrate wallet for the Subspace Network
 slug: /wallets/polkadot
@@ -7,13 +7,13 @@ keywords:
     - Farmer
     - Farming
     - CLI
-    - SubWallet
+    - polkadot.js
     - Wallet
 ---
 
 :::note
 
-Polkadot.js is a Substrate/EVM wallet created by the creators of Substrate & Polkadota/Kusama the [Parity Team](https://www.parity.io/).
+polkadot.js extension is a Substrate/EVM wallet created by the creators of Substrate & Polkadot/Kusama the [Parity Team](https://www.parity.io/).
 
 :::
 

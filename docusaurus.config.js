@@ -44,7 +44,7 @@ const config = {
   // to replace "en" with "zh-Hans".
   i18n: {
     defaultLocale,
-    locales: ["ar", "de", "en", "fr", "id", "it", "ja", "uk", "zh", "pl", "pt", "ru", "vi", "es", "tr"],
+    locales: ["ar", "de", "en", "fr", "id", "it", "ja", "uk", "zh", "pl", "pt", "vi", "es", "tr"],
   },
   plugins: [
     // Legacy Link Redirects
@@ -61,8 +61,10 @@ const config = {
           { to: '/learn/academy', from: ['/docs/learn/academy'] },
 
           // Farming & Staking
+          {to: '/wallets', from: ['/docs/category/wallets'] }, 
           { to: '/wallets/subwallet', from: ['/docs/farming-&-staking/wallets/subwallet'] },
           { to: '/wallets/polkadot', from: ['/docs/farming-&-staking/wallets/polkadot/'] },
+
 
           { to: '/category/farming', from: ['/docs/category/get-started-with-farming', '/protocol/farm/farming', '/docs/category/farming'] },
           { to: '/farming/intro', from: ['/docs/farming-&-staking/farming/prerequisites/', '/docs/farming-&-staking/farming/intro/'] },
@@ -235,7 +237,7 @@ const config = {
               },
               {
                 label: 'PolkadotJS Portal',
-                href: 'https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Frpc.taurus.subspace.foundation%2Fws#/explorer',
+                href: 'https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Frpc.mainnet.subspace.foundation%2Fws#/explorer',
               },
             ],
           },

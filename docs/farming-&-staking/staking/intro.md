@@ -15,6 +15,12 @@ keywords:
 This guide is focused on how to setup an operator, if you would like to learn more about the function of operators read the [Autonomys Academy](https://academy.autonomys.xyz/subspace-protocol/decoupled-execution) to get a better understanding.
 :::
 
+:::info
+Currently, Staking (becoming an Operator or Nominator) is available exclusively on the **Gemini-3h** network. It will soon be accessible on the test network, **Taurus**.
+
+Staking availability on the mainnet is planned for **Phase 2 of the mainnet launch**. For further details, please refer to our [Phased Launch Roadmap](https://forum.autonomys.xyz/t/phased-launch-roadmap/4414) post on the forum.
+:::
+
 ## Operators are a key part in solving the farmer's dilemma
 
 Autonomys introduces the Decoupled Execution Framework (DecEx) to tackle the state-bloat issue by separating transaction ordering from execution. Farmers confirm and order transactions, while staked operator nodes execute them, allowing different hardware requirements for each role. This keeps farming accessible and lays the groundwork for scalable execution. Users submit transactions to operators who batch them into bundles. Farmers verify and order them, with operators executing the transactions in this order. The process forms a deterministic receipt chain, with an initial implementation using an optimistic fraud-proof validation scheme. 

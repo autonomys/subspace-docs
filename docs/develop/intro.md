@@ -34,6 +34,12 @@ To start using Auto SDK, refer to our [Setup Instructions](/develop/auto-sdk/int
 
 ## [Nova - EVM Compatible Domain](/develop/nova/introduction)
 
+:::info
+Currently, Nova is available exclusively on the **Gemini-3h** network. It will soon be accessible on the new test network, **Taurus**.
+
+Nova's availability on the mainnet is planned for **Phase 2 of the mainnet launch**. For further details, please refer to our [Phased Launch Roadmap](https://forum.autonomys.xyz/t/phased-launch-roadmap/4414) post on the forum.
+:::
+
 ### Key Features:
 - **Solidity Smart Contracts**: Write and deploy smart contracts using Solidity, just as you would on Ethereum.
 - **Tool Compatibility**: Any tool available for Ethereum development - like Remix, Truffle, or Hardhat - is compatible with Nova.
@@ -56,6 +62,7 @@ To start using Nova, refer to our [Guides and Manuals](/develop/nova/introductio
 - wss://rpc-0.gemini-3h.subspace.network/ws
 - wss://rpc-1.gemini-3h.subspace.network/ws
 - wss://rpc.taurus.subspace.foundation/ws
+- wss://rpc.mainnet.subspace.foundation/ws
 
 :::tip Nova
 Currently, Nova is available exclusively on the gemini-3h network. It will soon be accessible on the taurus network.

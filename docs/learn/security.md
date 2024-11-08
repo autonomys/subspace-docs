@@ -24,7 +24,7 @@ Enjoy your Autonomys journey with peace of mind!
 
 ## Wallet Security
 
-- Be sure to make the password long enough, combining both registers letters, numbers, and special characters. An 11-character password increases the bruteforce attack time to normally impossible limit. Take a look at [passwords brutforce time illustrating table](https://www.techrepublic.com/wp-content/uploads/2022/03/tr8423-Figure-A-How-an-8-character-password-could-be-cracked-in-just-a-few-minutes-770x404.jpg). However, even a complex password is not all, that is required for proper protection.
+- Ensure your password is sufficiently long, using a mix of uppercase and lowercase letters, numbers, and special characters. An 11-character password generally makes brute-force attacks nearly impossible. For reference, check this [table illustrating password brute-force times.](https://www.techrepublic.com/wp-content/uploads/2022/03/tr8423-Figure-A-How-an-8-character-password-could-be-cracked-in-just-a-few-minutes-770x404.jpg). However, even a strong password alone isn’t enough for complete protection.
 
 - Avoid using common or easily guessed combinations of words or letters, as well as parts of your online data or reusing any of your existing passwords.
 

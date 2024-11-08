@@ -134,7 +134,7 @@ import { activate } from '@autonomys/auto-utils';
 
 (async () => {
   // Activate the network API
-  const api = await activate({ networkId: 'taurus' });
+  const api = await activate({ networkId: 'mainnet' });
 
   // User's Auto ID
   const autoId = 'user-auto-id'; // Replace with the user's Auto ID
