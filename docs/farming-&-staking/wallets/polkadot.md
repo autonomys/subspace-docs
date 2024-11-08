@@ -94,7 +94,7 @@ If you face any trouble or would like to learn about other features for Polkadot
 
     ![trouble-3](/img/doc-imgs/polkadot/trouble-3.png)
 
-1. Go to the Subspace/Polkadot Explorer here: [Polkadot/Substrate Portal](https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Ftest-rpc.subspace.network#/explorer)
+1. Go to the Subspace/Polkadot Explorer here: [Polkadot/Substrate Portal](https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Frpc.mainnet.subspace.foundation%2Fws#/explorer)
 
 2. You will be prompted to allow the extension to connect, click `Yes, allow this application access`
 
