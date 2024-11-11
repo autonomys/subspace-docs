@@ -19,7 +19,7 @@ This setup enables powerful remote computing capabilities. For example, if a com
 
 ```mermaid
 flowchart
-NATS(NATS Server)
+NATS((NATS Server))
 NATS  <-->  Controller(Controller)
 NATS  <-->  Cache(Cache)
 NATS  <-->  Farmer(Farmer)
@@ -237,8 +237,8 @@ Check out the [NATS.io Cluster Guide](https://docs.nats.io/running-a-nats-servic
 
 ```mermaid
 flowchart
-    A[Components] <--> B[NATS 1]
-    A[Components] <--> C[NATS 2]
+    A[Components] <--> B((NATS Server 1))
+    A[Components] <--> C((NATS Server 2))
 ```
 
 <details>
