@@ -142,6 +142,11 @@ The current Archive History Size can be found in the top cards on [Astral Block 
         path=/path/to/cache,size=<size>
 ```
 
+Replace the following placeholders:
+
+- `<nats_ip>`: The IP address of your NATS server.
+- `/path/to/cache` and `<size>`: The path and size for storing the cache.
+
 <details>
 <summary>Common Paramaters</summary>
 
@@ -151,11 +156,6 @@ Refer to `./subspace-farmer cluster cache --help` for an explanation of addition
 --cache-group
 ```
 </details>
-
-Replace the following placeholders:
-
-- `<nats_ip>`: The IP address of your NATS server.
-- `/path/to/cache` and `<size>`: The path and size for storing the cache.
 
 </details>
 
@@ -169,6 +169,10 @@ Replace the following placeholders:
     plotter
 ```
 
+Replace the following placeholders:
+
+- `<nats_ip>`: The IP address of your NATS server.
+
 <details>
 <summary>Common Paramaters</summary>
 
@@ -178,11 +182,6 @@ Refer to `./subspace-farmer cluster plotter --help` for an explanation of each o
 --cuda-sector-downloading-concurrency
 ```
 </details>
-
-
-Replace the following placeholders:
-
-- `<nats_ip>`: The IP address of your NATS server.
 
 </details>
 
@@ -198,17 +197,6 @@ Replace the following placeholders:
         path=/path/to/farm,size=<size>
 ```
 
-<details>
-<summary>Common Paramaters</summary>
-
-Refer to `./subspace-farmer cluster farmer --help` for an explanation of each option and its default values.
-
-```shell
---cuda-sector-downloading-concurrency
---create
-```
-</details>
-
 Replace the following placeholders:
 
 - `<nats_ip>`: The IP address of your NATS server.
@@ -219,6 +207,17 @@ Replace the following placeholders:
     path=/path/to/farm1,size=<size> \
     path=/path/to/farm2,size=<size>
     ```
+
+<details>
+<summary>Common Paramaters</summary>
+
+Refer to `./subspace-farmer cluster farmer --help` for an explanation of each option and its default values.
+
+```shell
+--cuda-sector-downloading-concurrency
+--create
+```
+</details>
 
 </details>
 
