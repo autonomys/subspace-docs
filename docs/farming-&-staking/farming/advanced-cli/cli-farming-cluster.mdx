@@ -19,11 +19,11 @@ This setup enables powerful remote computing capabilities. For example, if a com
 
 ```mermaid
 flowchart
-A(NATS Server)
-A  <-->  B(Controller)
-A  <-->  C(Cache)
-A  <-->  D(Farmer)
-A  <-->  E(Plotter)
+NATS(NATS Server)
+NATS  <-->  Controller(Controller)
+NATS  <-->  Cache(Cache)
+NATS  <-->  Farmer(Farmer)
+NATS  <-->  Plotter(Plotter)
 ```
 
 ### Key Benefits
@@ -69,6 +69,7 @@ docker run \
 </details>
 
 ---
+
 
 ## Component Configuration
 
@@ -122,10 +123,16 @@ Refer to `./subspace-farmer cluster controller --help` for an explanation of eac
 
 </details>
 
----
-
 <details open>
 <summary>Cache</summary>
+
+:::caution Cache Size
+
+The Cache stores the blockchain's Archive History Size. For optimal performance, the cache must be large enough to hold this data locally. If the data isn't available in the cache, plotting will slow down as it has to be fetched from peers over the DSN. Currently, we recommend a minimum of 200GiB.
+
+The current Archive History Size can be found in the top cards on [Astral Block Explorer](https://astral.autonomys.xyz).
+
+:::
 
 ```bash
 ./subspace-farmer \
@@ -151,8 +158,6 @@ Replace the following placeholders:
 - `/path/to/cache` and `<size>`: The path and size for storing the cache.
 
 </details>
-
----
 
 <details open>
 <summary>Plotter</summary>
@@ -181,8 +186,6 @@ Replace the following placeholders:
 
 </details>
 
----
-
 <details open>
 <summary>Farmer</summary>
 
@@ -206,7 +209,6 @@ Refer to `./subspace-farmer cluster farmer --help` for an explanation of each op
 ```
 </details>
 
-
 Replace the following placeholders:
 
 - `<nats_ip>`: The IP address of your NATS server.
@@ -222,7 +224,9 @@ Replace the following placeholders:
 
 ---
 
+
 ## Advanced Topics
+
 
 ### NATS Cluster
 
@@ -252,17 +256,13 @@ flowchart
 
 </details>
 
-
 </details>
-
 
 
 ### Multiple Components
 
 <details open>
 <summary>This will demonstrate how to run multiple components in one Farming Cluster: (1) NATS Server, (2) Controllers, (2) Caches, (2) Plotters, and (3) Farmers.</summary>
-
-
 
 ```mermaid
 flowchart
