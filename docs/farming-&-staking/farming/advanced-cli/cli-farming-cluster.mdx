@@ -1,9 +1,10 @@
 ---
 title: Farming Cluster
 sidebar_position: 2
-description: How to run an Autonomys Network Farmer using the farming cluster
+description: How to setup and configure a Farming Cluster
 slug: /farming/advanced-cli/cluster
 keywords:
+    - Farming Cluster
     - Farmer
     - Farming
     - CLI
@@ -12,137 +13,372 @@ keywords:
 ---
 
 
-## Farming Cluster
+The Farming Cluster is designed for larger farmers, addressing the challenges of scaling effectively. It consists of four main components, all interconnected through a NATS Server.
 
-The farming cluster is designed for larger-scale farmers, addressing various challenges associated with scaling up. Essentially, the cluster consists of four distinct components:
+This setup enables powerful remote computing capabilities. For example, if a computer is ideal for farming but not for plotting, you can run the farming component on that machine while utilizing one or more remote machines for plotting. This ensures continuous plotting and replotting across multiple farms, optimizing the use of plotters until all sectors are fully plotted and replotted.
 
-- **Controller**
-- **Cache**
-- **Farmer**
-- **Plotter**
-
-### Benefits
-
-1. **Bandwidth Efficiency**: Centralized storage of the piece cache conserves bandwidth.
-2. **Remote Compute Capability**: Multiple PCs can contribute their CPU power for plotting (and eventually GPUs), without needing to store the plots locally.
-3. **Redundancy**: Running multiple computers for each process enhances redundancy.
-4. **Additional Space**: By moving the piece sync cache to a central location frees up roughly 1% of the SSD for larger plots.
-
-### Core Messaging Technology: NATS.io
-
-At the core of this process is a third-party software called [NATS.io](https://nats.io/), which is used for communication between farmer processes. The simplest way to install NATS.io is via Docker. 
-
-To start NATS, create a configuration file with the following content:
-
+```mermaid
+flowchart
+A(NATS Server)
+A  <-->  B(Controller)
+A  <-->  C(Cache)
+A  <-->  D(Farmer)
+A  <-->  E(Plotter)
 ```
+
+### Key Benefits
+
+- **Remote Compute Capability**  
+  Multiple PCs can contribute their CPU and GPU resources for plotting and replotting, without the need to store farm plots locally.
+
+- **Redundancy**  
+  Running multiple computers for each process increases redundancy and system resilience.
+
+- **Bandwidth Efficiency**  
+  Centralized storage of the piece cache helps conserve WAN bandwidth.
+  
+- **Additional Space**  
+  Relocating the piece sync cache to a central location frees up an additional 1% of plot capacity for farming, compared to the Standalone Farmer.
+
+
+## NATS
+
+At the core of Farming Cluster is a third-party software called [NATS](https://nats.io/), which is used for communication between the farming components.
+
+The simplest way to install and run NATS is via Docker. 
+
+<details open>
+<summary>Set Up and Configure NATS</summary>
+
+1. Create and save a `nats.config` configuration file with the following:
+
+```bash title="nats.conf"
 max_payload = 2MB
 ```
+2. Start NATS with Docker:
 
-Save this as **`nats.config`** and start the NATS server with Docker:
-
-```
+```bash
 docker run \
     --name nats \
     --restart unless-stopped \
     --publish 4222:4222 \
-    --volume ./nats.config:/nats.config:ro \
+    --volume /path/to/nats.config:/nats.config:ro \
     nats -c /nats.config
 ```
 
-### Component Configuration
+</details>
 
-Each of the four components requires a few additional parameters. All need the **`cluster`** specification, a URL to the NATS server, and the specific component being executed.
+---
 
-### Controller
+## Component Configuration
 
-The controller should be the first component to run.  It connects to the node, so the **`node-rpc-url`** must be included.
 
-```
-subspace-farmer cluster --nats-server nats://<NATS_IP>:4222 \
+Configuring Cluster Farming is similar to setting up the Standalone Farmer, but each component must be configured according to the cluster setup you want to create. Keep in mind that all components communicate with one another through the NATS server you configured earlier. Below are the essential parameters needed to establish a functional cluster.
+
+<details open>
+<summary>Controller</summary>
+
+The first component to start is the Controller. It connects to a single node, and you must specify the node's location on the network.
+
+:::caution Proper Port Forwarding
+
+For your cluster to be reachable, open and forward the default port `30533` to the Controller. If you've changed the port or are using multiple controllers, set it with `--listen-on /ip4/0.0.0.0/tcp/<port>`.
+
+Refer to our guide on [Port Forwarding](/farming/guides/port-config).
+
+:::
+
+```bash
+./subspace-farmer \
+    cluster \
+        --nats-server nats://<nats_ip>:4222 \
     controller \
         --base-path /path/to/controller-dir \
-        --node-rpc-url ws://<NODE_IP>:<NODE_PORT>
+        --node-rpc-url ws://<node_ip>:<rpc_port>
 ```
 
-Replace **`<NATS_IP>`** with your NATS server IP address, and **`<NODE_IP>:<NODE_PORT>`** with your node’s IP address and port. Specify the working directory with **`--base-path`**.
+Replace the following placeholders:
 
-The controller logs farm connections, disconnections, and piece cache sync progress. Optional connection-related options include **`--in-connections`**, **`--out-connections`**, **`--pending-in-connections`**, and **`--pending-out-connections`**.
+- `<nats_ip>`: The IP address of your NATS server.
+- `/path/to/controller-dir`: The path where the controller's peer network details will be saved.
+- `<node_ip>` and `<rpc_port>`: Your node's IP address and RPC port.
 
-### Cache
+<details>
+<summary>Common Paramaters</summary>
 
-Next, run the cache component. Although you can run multiple cache processes to distribute the load, only one is required.
+Refer to `./subspace-farmer cluster controller --help` for an explanation of each option and its default values.
 
+```shell
+--listen-on /ip4/0.0.0.0/tcp/<port>
+--listen-on /ip6/::1/tcp/<port>
+
+--cache-group
+--in-connections
+--out-connections
+--pending-in-connections
+--pending-out-connections
 ```
-subspace-farmer cluster --nats-server nats://<NATS_IP>:4222 \
+</details>
+
+</details>
+
+---
+
+<details open>
+<summary>Cache</summary>
+
+```bash
+./subspace-farmer \
+    cluster \
+        --nats-server nats://<nats_ip>:4222 \
     cache \
-        path=/path/to/cache,size=SIZE
+        path=/path/to/cache,size=<size>
 ```
 
-Replace **`<NATS_IP>`** with your NATS server IP address. Provide the cache file path with **`path=`**, and specify the cache size. While an SSD is recommended, a hard disk can also be used.  200 GB is a good size to use for cache based on the current state of Mainnet.
+<details>
+<summary>Common Paramaters</summary>
 
-### Farmer
+Refer to `./subspace-farmer cluster cache --help` for an explanation of additional paramaters and their default values.
 
-Run the farmer component on each computer that will farm plots.
-
+```shell
+--cache-group
 ```
-subspace-farmer cluster --nats-server nats://<NATS_IP>:4222 \
+</details>
+
+Replace the following placeholders:
+
+- `<nats_ip>`: The IP address of your NATS server.
+- `/path/to/cache` and `<size>`: The path and size for storing the cache.
+
+</details>
+
+---
+
+<details open>
+<summary>Plotter</summary>
+
+```bash
+./subspace-farmer \
+    cluster \
+        --nats-server nats://<nats_ip>:4222 \
+    plotter
+```
+
+<details>
+<summary>Common Paramaters</summary>
+
+Refer to `./subspace-farmer cluster plotter --help` for an explanation of each option and its default values.
+
+```shell
+--cuda-sector-downloading-concurrency
+```
+</details>
+
+
+Replace the following placeholders:
+
+- `<nats_ip>`: The IP address of your NATS server.
+
+</details>
+
+---
+
+<details open>
+<summary>Farmer</summary>
+
+```bash
+./subspace-farmer \
+    cluster \
+        --nats-server nats://<nats_ip>:4222 \
     farmer \
-        --reward-address <REWARD_ADDRESS> \
-        path=/path/to/farm,size=SIZE
+        --reward-address <reward_address> \
+        path=/path/to/farm,size=<size>
 ```
 
-Replace **`<NATS_IP>`** with your NATS server IP address and provide your reward address, farm paths, and sizes. Optional parameters include **`--cpu-sector-encoding-concurrency`** or **`--cuda-sector-downloading-concurrency`**, **`--farming-thread-pool-size`**, **`--disable-farm-locking`**, and **`--create`**.
+<details>
+<summary>Common Paramaters</summary>
 
-### Plotter
+Refer to `./subspace-farmer cluster farmer --help` for an explanation of each option and its default values.
 
-Finally, run the plotter component. At least one plotter is needed for plotting and replotting farms. It can be on the same computer as the farmer or on a separate machine.
-
+```shell
+--cuda-sector-downloading-concurrency
+--create
 ```
-subspace-farmer cluster --nats-server nats://<NATS_IP>:4222 \
-    plotter
+</details>
+
+
+Replace the following placeholders:
+
+- `<nats_ip>`: The IP address of your NATS server.
+- `<reward_address>`: The reward address where your winning rewards will be sent.
+- `/path/to/farm` and `<size>`: The path and size for storing your plots. You can add multiple plots to your farm:
+
+    ```
+    path=/path/to/farm1,size=<size> \
+    path=/path/to/farm2,size=<size>
+    ```
+
+</details>
+
+---
+
+## Advanced Topics
+
+### NATS Cluster
+
+<details open>
+<summary>Just like every other component in the Farming Cluster, it is possible to have redundent NATS servers. Doing so requires an extra step of configuring those NATS servers in their own cluster.</summary>
+
+Check out the [NATS.io Cluster Guide](https://docs.nats.io/running-a-nats-service/configuration/clustering) for further details.
+
+
+```mermaid
+flowchart
+    A[Components] <--> B[NATS 1]
+    A[Components] <--> C[NATS 2]
 ```
 
-Replace **`<NATS_IP>`** with your NATS server IP address.  Optional parameters include many farmer options related to concurrency and cores/threads.
+<details>
+<summary>Example</summary>
 
-### Running multiple components at the same time
-
-It is possible to execute multiple components from one command line by separating them with **`--`**
-
-```
-subspace-farmer cluster --nats-server nats://<NATS_IP>:4222 \
-    cache \
-        path=/path/to/cache,size=SIZE
-    --
-    plotter
-```
-
-### Remote Compute Possibilities
-
-This setup allows for extensive remote compute capabilities. For instance, if a computer is suitable for farming but not for plotting, you can run the farmer on that computer and the plotter on one or more remote machines. This enables continuous plotting and replotting across multiple farms, ensuring plotters are utilized efficiently until all sectors are plotted and replotted.
-
-### Advanced Options / Redundancy
-
-It is possible to setup clustering with nats server, but that setup is beyond the scope of this document. If you have more than one nats server, you can specify multiple ones.
-
-```
-subspace-farmer cluster --nats-server nats://<NATS_IP#1>:4222 --nats-server nats://<NATS_IP#2>:4222\
-```
-
-You can run multiple controller components, but each one needs to have it’s distinct cache group.
-
-```
-subspace-farmer cluster --nats-server nats://<NATS_IP>:4222 \
+```bash
+./subspace-farmer cluster \
     controller \
-        --cache-group group1 \
+        --nats-server=nats://<nats_ip_1>:4222 \
+        --nats-server=nats://<nats_ip_2>:4222 \
         --base-path /path/to/controller-dir \
-        --node-rpc-url ws://<NODE_IP>:<NODE_PORT>
+        --node-rpc-url ws://<node_ip>:<rpc_port>        
 ```
 
-You need to specify a cache group on the cache component that matches the one specified on the controller component.
+</details>
+
+
+</details>
+
+
+
+### Multiple Components
+
+<details open>
+<summary>This will demonstrate how to run multiple components in one Farming Cluster: (1) NATS Server, (2) Controllers, (2) Caches, (2) Plotters, and (3) Farmers.</summary>
+
+
+
+```mermaid
+flowchart
+NATS((NATS Server))
+Controller1(Controller 1)
+Controller2(Controller 2)
+Cache1(Cache 1)
+Cache2(Cache 2)
+Plotter1(Plotter 1)
+Plotter2(Plotter 2)
+Farmer1(Farmer 1)
+Farmer2(Farmer 2)
+Farmer3(Farmer 3)
+
+Controller1  <-->  NATS
+Controller2  <-->  NATS
+
+Cache1  <-->  NATS
+Cache2  <-->  NATS
+
+Plotter1  <-->  NATS
+Plotter2  <-->  NATS
+
+Farmer1 <-->  NATS
+Farmer2 <-->  NATS
+Farmer3 <-->  NATS
 
 ```
-subspace-farmer cluster --nats-server nats://<NATS_IP>:4222 \
+
+:::caution Multiple Cache Groups
+
+Each Controller and Cache Component must be assigned a unique cache group. This can be done by specifying an alphanumeric cache group name with `--cache-group <group_name>`.
+
+:::
+
+<details>
+<summary>Example</summary>
+
+```bash title="Controller #1"
+./subspace-farmer \
+    cluster \
+        --nats-server nats://<nats_ip>:4222 \
+    controller \
+        --base-path /path/to/controller-dir \
+        --cache-group <group_1>
+        --node-rpc-url ws://<node_ip>:<rpc_port>
+```
+
+```bash title="Controller #2"
+./subspace-farmer \
+    cluster \
+        --nats-server nats://<nats_ip>:4222 \
+    controller \
+        --base-path /path/to/controller-dir \
+        --cache-group <group_2>
+        --node-rpc-url ws://<node_ip>:<rpc_port>
+```
+
+```bash title="Cache #1"
+./subspace-farmer \
+    cluster \
+        --nats-server nats://<nats_ip>:4222 \
     cache \
-        --cache-group group1 \
-        path=/path/to/cache,size=SIZE
+        --cache-group <group_1> \
+        path=/path/to/cache,size=<size>
 ```
+
+```bash title="Cache #2"
+./subspace-farmer \
+    cluster \
+        --nats-server nats://<nats_ip>:4222 \
+    cache \
+        --cache-group <group_2> \
+        path=/path/to/cache,size=<size>
+```
+
+```bash title="Plotter #1"
+./subspace-farmer \
+    cluster \
+        --nats-server nats://<nats_ip>:4222 \
+    plotter
+```
+
+```bash title="Plotter #2"
+./subspace-farmer \
+    cluster \
+        --nats-server nats://<nats_ip>:4222 \
+    plotter
+```
+
+```bash title="Farmer #1"
+./subspace-farmer \
+    cluster \
+        --nats-server nats://<nats_ip>:4222 \
+    farmer \
+        --reward-address <reward_address> \
+        path=/path/to/farm,size=<size>
+```
+
+```bash title="Farmer #2"
+./subspace-farmer \
+    cluster \
+        --nats-server nats://<nats_ip>:4222 \
+    farmer \
+        --reward-address <reward_address> \
+        path=/path/to/farm,size=<size>
+```
+
+```bash title="Farmer #3"
+./subspace-farmer \
+    cluster \
+        --nats-server nats://<nats_ip>:4222 \
+    farmer \
+        --reward-address <reward_address> \
+        path=/path/to/farm,size=<size>
+```
+</details>
+
+</details>

@@ -46,6 +46,12 @@ const config = {
     defaultLocale,
     locales: ["ar", "de", "en", "fr", "id", "it", "ja", "uk", "zh", "pl", "pt", "vi", "es", "tr"],
   },
+  
+  markdown: {
+    mermaid: true,
+  },
+  themes: ['@docusaurus/theme-mermaid'],
+  
   plugins: [
     // Legacy Link Redirects
     [
