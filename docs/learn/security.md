@@ -46,7 +46,7 @@ However, it's crucial to do your own research and consult ratings before making 
 - Do not share your 12-word seed phrase or private keys.
 
 - A hardware wallet is by far the most secure way to store your private keys. Unlike online exchanges and wallets, hardware wallets store the keys offline and protect from potential malware or hacking attempts.
-The most popular hardware wallets are [Ledger](https://www.ledger.com/) and [Tresor](https://trezor.io/).
+The most popular hardware wallets are [Ledger](https://www.ledger.com/) and [Trezor](https://trezor.io/).
 
 - Back up your wallets by securely storing the backups offline or in an encrypted cloud storage. This guarantees that you can recover your funds in case of a device loss, damage, or theft. Many encrypted cloud storage services are available, such as Tresorit, pCloud, Sync.com, SpiderOak, and Mega (the order doesn't matter). However, always conduct your own research.
 
@@ -170,7 +170,7 @@ User username			            # User for login (for a rescue system this must be r
 ```
 *indentation isn't important, 4 spaces indentation is used for a better readability*
 
-Try to connect using simpliest syntax in terminal:  
+Try to connect using simplest syntax in terminal:  
 ```console
 ssh subspace
 ``` 
@@ -204,7 +204,7 @@ ssh -p 12345 user@localhost     # specify your port
 Now you can log in to your server on a non-standard port using an encrypted connection without entering any credentials!
 
 
-### Basic Recommendations for Configuring the SShd Configuration File
+### Basic Recommendations for Configuring the SSHD Configuration File
 
 As root, edit sshd_config:  
 ```consol
@@ -235,7 +235,7 @@ systemctl reload sshd
 - Reboot your system to ensure that everything is functioning as expected.
 
 
-Complete SSh manual: [SSH Academy](https://www.ssh.com/academy/ssh/sshd_config)
+Complete SSH manual: [SSH Academy](https://www.ssh.com/academy/ssh/sshd_config)
 
 ## A Word About Partitioning as a Security Measure.
 
