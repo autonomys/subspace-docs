@@ -214,10 +214,33 @@ Replace the following placeholders:
 Refer to `./subspace-farmer cluster farmer --help` for an explanation of each option and its default values.
 
 ```shell
---cuda-sector-downloading-concurrency
 --create
 ```
 </details>
+
+</details>
+
+### Grouping Components
+
+<details open>
+<summary>You can run Farming Cluster components individually or combine them to run simultaneously.</summary>
+
+```bash
+    cluster \
+        --nats-server nats://<nats_ip>:4222 \
+    controller \
+        --base-path /path/to/controller-dir \
+        --node-rpc-url ws://<node_ip>:<rpc_port>
+    --
+    cache \
+        path=/path/to/cache,size=<size>
+    --
+    plotter
+    --
+    farmer \
+        --reward-address <reward_address> \
+        path=/path/to/farm,size=<size>
+```
 
 </details>
 
