@@ -26,7 +26,7 @@ NATS  <-->  Farmer(Farmer)
 NATS  <-->  Plotter(Plotter)
 ```
 
-### Key Benefits
+## Key Benefits
 
 - **Remote Compute Capability**  
   Multiple PCs can contribute their CPU and GPU resources for plotting and replotting, without the need to store farm plots locally.
@@ -128,7 +128,7 @@ Refer to `./subspace-farmer cluster controller --help` for an explanation of eac
 
 :::caution Cache Size
 
-The Cache stores the blockchain's Archive History Size. For optimal performance, the cache must be large enough to hold this data locally. If the data isn't available in the cache, plotting will slow down as it has to be fetched from peers over the DSN. Currently, we recommend a minimum of 200GiB.
+The Cache stores the blockchain's Archive History. For optimal performance, the cache must be large enough to hold this data locally. If the data isn't available in the cache, plotting may slow down as it has to be fetched from peers over the DSN. Currently, we recommend a minimum of 200GiB.
 
 The current Archive History Size can be found in the top cards on [Astral Block Explorer](https://astral.autonomys.xyz).
 
