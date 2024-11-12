@@ -14,14 +14,14 @@ import styles from '@site/src/pages/index.module.css';
 <div className={`${styles.buttons} ${styles.flexContainer}`}>
   <Link
     className="button button--secondary"
-    to="https://github.com/autonomys/subspace/releases/download/mainnet-2024-nov-06/subspace-node-macos-aarch64-mainnet-2024-nov-06.zip"
+    to="https://github.com/autonomys/subspace/releases/download/mainnet-2024-nov-12/subspace-node-macos-aarch64-mainnet-2024-nov-12.zip"
     style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', textAlign: 'center', padding: '10px' }}>
     <span style={{ fontSize: '20px' }}>Node Executable</span>
     <span style={{ fontSize: '14px' }}>(Apple CPU)</span>
   </Link>
   <Link
     className="button button--secondary"
-    to="https://github.com/autonomys/subspace/releases/download/mainnet-2024-nov-06/subspace-farmer-macos-aarch64-mainnet-2024-nov-06.zip"
+    to="https://github.com/autonomys/subspace/releases/download/mainnet-2024-nov-12/subspace-farmer-macos-aarch64-mainnet-2024-nov-12.zip"
     style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', textAlign: 'center', padding: '10px' }}>
     <span style={{ fontSize: '20px' }}>Farmer Executable</span>
     <span style={{ fontSize: '14px' }}>(Apple CPU)</span>
@@ -39,14 +39,14 @@ After this, simply repeat the step you prompted for (step 4 or 6). This time, cl
 
 1. Open your favorite terminal, and change to the Downloads directory using `cd Downloads`
 2. Make the farmer & node executable:
-- `chmod +x subspace-farmer-macos-aarch64-mainnet-2024-nov-06`
-- `chmod +x subspace-node-macos-aarch64-mainnet-2024-nov-06`
+- `chmod +x subspace-farmer-macos-aarch64-mainnet-2024-nov-12`
+- `chmod +x subspace-node-macos-aarch64-mainnet-2024-nov-12`
 3. We will then start the node using the following command
 
 ```bash
 # Replace `INSERT_YOUR_ID` with a nickname you choose
 # Copy all of the lines below, they are all part of the same command
-./subspace-node-macos-aarch64-mainnet-2024-nov-06 \
+./subspace-node-macos-aarch64-mainnet-2024-nov-12 \
   run \
   --chain mainnet \
   --base-path NODE_DATA_PATH \
@@ -90,7 +90,7 @@ Using **run**, setting **--base-path** and specifying **--chain** is mandatory.
 # Replace `PATH_TO_FARM` with location where you want you store plot files
 # Replace `WALLET_ADDRESS` below with your account address from Polkadot.js wallet
 # Replace `PLOT_SIZE` with plot size in gigabytes or terabytes, for example 100G or 2T (but leave at least 60G of disk space for node and some for OS)
-./subspace-farmer-macos-aarch64-mainnet-2024-nov-06 farm --reward-address WALLET_ADDRESS path=PATH_TO_FARM,size=PLOT_SIZE
+./subspace-farmer-macos-aarch64-mainnet-2024-nov-12 farm --reward-address WALLET_ADDRESS path=PATH_TO_FARM,size=PLOT_SIZE
 ```
 
 2. You should see something similar in the terminal:
