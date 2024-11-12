@@ -173,7 +173,8 @@ const config = {
       },
       docs: {
         sidebar: {
-          autoCollapseCategories: true,
+          hideable: true,
+          autoCollapseCategories: false,
         },
       },
       navbar: {
