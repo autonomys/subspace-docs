@@ -17,6 +17,8 @@ The Farming Cluster is designed for larger farmers, addressing the challenges of
 
 This setup enables powerful remote computing capabilities. For example, if a computer is ideal for farming but not for plotting, you can run the farming component on that machine while utilizing one or more remote machines for plotting. This ensures continuous plotting and replotting across multiple farms, optimizing the use of plotters until all sectors are fully plotted and replotted.
 
+<div style={{ textAlign: 'center' }}>
+
 ```mermaid
 flowchart
 NATS((NATS Server))
@@ -25,6 +27,23 @@ NATS  <-->  Cache(Cache)
 NATS  <-->  Farmer(Farmer)
 NATS  <-->  Plotter(Plotter)
 ```
+</div>
+
+## Networking Considerations
+
+Farming Cluster employs a modular architecture for operating a farm, where each component can function independently and can be scaled by running multiple instances of a component for added scalability and redundancy. As such, it is essential to ensure sufficient LAN bandwidth to facilitate efficient communication of this data transfer across your network between these components.
+
+:::caution Networking Requirements
+
+A 1 Gbit network connection is likely insufficient for this traffic, especially when using GPU plotting resources or multiple plotters. In such cases, a 2.5 Gbit connection should be considered the minimum, with an upgrade to 10 Gbit or higher for larger clusters.
+
+:::
+
+:::info Bandwidth Optimization Suggestion
+
+You can reduce LAN bandwidth usage by running the NATS, Controller, Cache, and Plotter components on the same machine. This setup allows most data transfer to occur over the local loopback interface.
+
+:::
 
 ## Key Benefits
 
@@ -77,7 +96,7 @@ docker run \
 Configuring Cluster Farming is similar to setting up the Standalone Farmer, but each component must be configured according to the cluster setup you want to create. Keep in mind that all components communicate with one another through the NATS server you configured earlier. Below are the essential parameters needed to establish a functional cluster.
 
 <details open>
-<summary>Controller</summary>
+<summary>Controller (Manages node communication and orchestrates other components.)</summary>
 
 The first component to start is the Controller. It connects to a single node, and you must specify the node's location on the network.
 
@@ -124,7 +143,7 @@ Refer to `./subspace-farmer cluster controller --help` for an explanation of eac
 </details>
 
 <details open>
-<summary>Cache</summary>
+<summary>Cache (Downloads sector data from DSN peers and serves it to the plotter.)</summary>
 
 :::caution Cache Size
 
@@ -160,7 +179,7 @@ Refer to `./subspace-farmer cluster cache --help` for an explanation of addition
 </details>
 
 <details open>
-<summary>Plotter</summary>
+<summary>Plotter (Generates and uploads plotted sectors, downloading pieces from cache as needed)</summary>
 
 ```bash
 ./subspace-farmer \
@@ -186,7 +205,7 @@ Refer to `./subspace-farmer cluster plotter --help` for an explanation of each o
 </details>
 
 <details open>
-<summary>Farmer</summary>
+<summary>Farmer (Manages farms, audits, and retrieves plotted pieces. Requests sector plotting from the Plotter.)</summary>
 
 ```bash
 ./subspace-farmer \
@@ -257,12 +276,15 @@ Refer to `./subspace-farmer cluster farmer --help` for an explanation of each op
 
 Check out the [NATS.io Cluster Guide](https://docs.nats.io/running-a-nats-service/configuration/clustering) for further details.
 
+<div style={{ textAlign: 'center' }}>
 
 ```mermaid
 flowchart
     A[Farming Cluster Components] <--> B((NATS Server 1))
     A[Farming Cluster Components] <--> C((NATS Server 2))
 ```
+
+</div>
 
 <details>
 <summary>Example</summary>
@@ -285,6 +307,8 @@ flowchart
 
 <details open>
 <summary>This will demonstrate how to run multiple components in one Farming Cluster: (1) NATS Server, (2) Controllers, (2) Caches, (2) Plotters, and (3) Farmers.</summary>
+
+<div style={{ textAlign: 'center' }}>
 
 ```mermaid
 flowchart
@@ -313,6 +337,8 @@ Farmer2 <-->  NATS
 Farmer3 <-->  NATS
 
 ```
+
+</div>
 
 :::caution Multiple Cache Groups
 
