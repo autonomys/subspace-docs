@@ -42,7 +42,7 @@ Farmers can nominate **operators** and back them with their tokens, increasing t
 
 **Operators** are responsible for validating and executing transactions, producing execution receipts, applying state transitions and earn rewards for their work.
 
-#### - [Start an Opeator node](/staking/operator/register)
+#### - [Start an Operator node](/staking/operator/register)
 
 ### **Become a timekeeper**
 
@@ -55,7 +55,7 @@ Farmers can nominate **operators** and back them with their tokens, increasing t
 
 ### Utilize the Auto SDK
 
-Interact with storage, consensus and domains via the Auto SDK to build powerfull applications with ease.  
+Interact with storage, consensus and domains via the Auto SDK to build powerful applications with ease.  
 
 #### - [Auto SDK](/develop/auto-sdk/intro)
 
