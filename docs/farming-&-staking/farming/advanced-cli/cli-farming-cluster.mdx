@@ -104,6 +104,8 @@ The first component to start is the Controller. It connects to a single node, an
 
 For your cluster to be reachable, open and forward the default port `30533` to the Controller. If you've changed the port or are using multiple controllers, set it with `--listen-on /ip4/0.0.0.0/tcp/<port>`.
 
+If you have an IPv6 address but no public IPv4 address, setting the listen port to with `--listen-on /ip6/::1/tcp/<port>`. to accept IPv6 connections is highly recommended.
+
 Refer to our guide on [Port Forwarding](/farming/guides/port-config).
 
 :::
@@ -164,7 +166,12 @@ The current Archive History Size can be found in the top cards on [Astral Block 
 Replace the following placeholders:
 
 - `<nats_ip>`: The IP address of your NATS server.
-- `/path/to/cache` and `<size>`: The path and size for storing the cache.
+- `/path/to/cache` and `<size>`: The path and size for cache storage. Multiple caches are supported on a single Cache component:
+
+    ```
+    path=/path/to/cache1,size=<size> \
+    path=/path/to/cache2,size=<size>
+    ```
 
 <details>
 <summary>Common Paramaters</summary>
@@ -195,11 +202,8 @@ Replace the following placeholders:
 <details>
 <summary>Common Paramaters</summary>
 
-Refer to `./subspace-farmer cluster plotter --help` for an explanation of each option and its default values.
+Refer to `./subspace-farmer cluster plotter --help` for an explanation of paramaters and their default values.
 
-```shell
---cuda-sector-downloading-concurrency
-```
 </details>
 
 </details>
