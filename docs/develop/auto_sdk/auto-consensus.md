@@ -80,10 +80,12 @@ async function getApiInstance() {
 ### Balances
 
 - **`totalIssuance(networkId?): Promise<BigInt>`**: Gets total token issuance in the network.
+- **`batch(api, txs[]): SubmittableExtrinsic`**: Creates a batch transaction for multiple operations.
 
 ### Blockchain Information
 
 - **`block(api): Promise<RawBlock>`**: Retrieves the latest block data.
+- **`header(api): Promise<RawBlockHeader>`**: Retrieves the latest block header.
 - **`blockHash(api): Promise<string>`**: Retrieves the latest block hash.
 - **`blockNumber(api): Promise<number>`**: Retrieves the current block number.
 - **`networkTimestamp(api): Promise<bigint>`**: Retrieves the network timestamp.
@@ -91,7 +93,12 @@ async function getApiInstance() {
 ### Consensus Information
 
 - **`blockchainSize(api): Promise<bigint>`**: Calculates the blockchain's total size.
-- **`spacePledge(api): Promise<bigint>`**: Calculates total space pledged by farmers.
+- **`spacePledged(api): Promise<bigint>`**: Calculates total space pledged by farmers.
+- **`solutionRanges(api): Promise<SolutionRanges>`**: Retrieves current and next solution ranges.
+- **`shouldAdjustSolutionRange(api): Promise<boolean>`**: Checks if solution range needs adjustment.
+- **`segmentCommitment(api): Promise<[StorageKey<AnyTuple>, Codec][]>`**: Gets segment commitment entries.
+- **`slotProbability(api): [number, number]`**: Returns slot probability constants.
+- **`maxPiecesInSector(api): bigint`**: Returns maximum pieces in a sector.
 
 ### Domains
 
@@ -101,9 +108,16 @@ async function getApiInstance() {
 
 ### Operators and Staking
 
-- **`nominateOperator(params): SubmittableExtrinsic`**: Creates a transaction to nominate an operator.
+- **`operators(api): Promise<Operator[]>`**: Retrieves list of all operators.
 - **`operator(api, operatorId): Promise<OperatorDetails>`**: Retrieves details of a specific operator.
+- **`deposits(api, operatorId, account?): Promise<Deposit[]>`**: Retrieves deposits for an operator.
+- **`withdrawals(api, operatorId, account?): Promise<Withdrawal[]>`**: Retrieves withdrawals for an operator.
 - **`registerOperator(params): SubmittableExtrinsic`**: Creates a transaction to register a new operator.
+- **`nominateOperator(params): SubmittableExtrinsic`**: Creates a transaction to nominate an operator.
+- **`withdrawStake(params): SubmittableExtrinsic`**: Creates a transaction to withdraw staked tokens.
+- **`deregisterOperator(params): SubmittableExtrinsic`**: Creates a transaction to deregister an operator.
+- **`unlockFunds(params): SubmittableExtrinsic`**: Creates a transaction to unlock staked funds.
+- **`unlockNominator(params): SubmittableExtrinsic`**: Creates a transaction to unlock nominator funds.
 
 ### Transfers
 
@@ -461,4 +475,3 @@ import { activate } from '@autonomys/auto-utils';
 - **API Disconnection**: Always disconnect the API instance after your operations are complete to free up resources.
 
 - **Error Handling**: Wrap your asynchronous calls in `try...catch` blocks to handle potential errors gracefully.
-

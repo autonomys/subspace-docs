@@ -54,64 +54,82 @@ import * as utils from '@autonomys/auto-utils';
 
 ## Available Functions
 
-### Account Utilities
+### Account and Address Utilities
 
+- **`address(input): string`**: Standardizes an address format.
 - **`createAccountIdType(api, address): Uint8Array`**: Creates an `AccountId` object from an address.
+- **`decode(input): Uint8Array`**: Decodes an address to bytes.
 
-### Event Utilities
+### API and Connection Management
 
-- **`Type`**: Enum for event types (e.g., `system`).
+- **`activate(options?): Promise<ApiPromise>`**: Connects to the Autonomys Network.
+- **`activateDomain(params): Promise<ApiPromise>`**: Connects to a specific domain.
+- **`createConnection(endpoint, options?): Promise<ApiPromise>`**: Creates a new API connection.
+- **`disconnect(api): Promise<void>`**: Disconnects an API instance.
+
+### Cryptographic Functions
+
+- **`blake2b_256(data): string`**: Hashes data with BLAKE2b-256.
+- **`concatenateUint8Arrays(...arrays): Uint8Array`**: Concatenates multiple `Uint8Array`s.
+- **`stringToUint8Array(string): Uint8Array`**: Converts a string to `Uint8Array`.
+
+### Data Storage
+
+- **`read(key): Promise<any>`**: Reads data from storage.
+- **`readFromFileSystem(key): Promise<any>`**: Reads from file system.
+- **`readFromLocalStorage(key): Promise<any>`**: Reads from localStorage.
+- **`save(key, value): Promise<void>`**: Saves data to storage.
+- **`saveOnFileSystem(key, value): Promise<void>`**: Saves to file system.
+- **`saveOnLocalStorage(key, value): Promise<void>`**: Saves to localStorage.
+
+### Event Management
+
 - **`eventName(type, event): string`**: Combines type and event to a full event name.
 - **`eventsGroup`**: Groups system events by name.
 - **`expectSuccessfulTxEvent`**: Default success event names array.
+- **`Type`**: Enum for event types (e.g., `system`).
+- **`validateEvents(events, eventsExpected?, tx, block, log?): EventsValidated`**: Checks if expected events are in transaction events.
+
+### Network Management
+
+- **`getNetworkDetails(options): NetworkDetails`**: Gets details of a network.
+- **`getNetworkDomainDetails(options): DomainDetails`**: Gets details of a domain.
+- **`getNetworkDomainRpcUrls(options): string[]`**: Gets RPC URLs for a domain.
+- **`getNetworkRpcUrls(options): string[]`**: Gets RPC URLs for a network.
+- **`networks`**: Array of available networks.
+
+### Signing Utilities
+
+- **`signMessage(signer, address, data): Promise<{ signature: string }>`**: Signs a message with a signer and address.
+- **`signatureVerify`**: Verifies signatures (re-exported from `@polkadot/util-crypto`).
+- **`signingKey(publicKey): string`**: Converts a public key to a hex string.
+
+### String Utilities
+
+- **`capitalizeFirstLetter(string): string`**: Capitalizes first letter.
+- **`fixLengthEntryId(blockHeight, indexInBlock?): string`**: Creates fixed-length IDs.
+- **`isAddress(address): boolean`**: Validates a Substrate address.
+- **`isHex(value): boolean`**: Validates a hexadecimal string.
+- **`shortString(value, initialLength?, endLength?): string`**: Truncates strings.
+- **`stringify(value): string`**: Stringifies values, handling BigInt.
+
+### Token and Value Formatting
+
+- **`formatSpacePledged(value, decimals?): string`**: Formats space amount with units.
+- **`formatTokenAmount(amount, decimals?): bigint`**: Formats token amount with decimals.
+- **`parseTokenAmount(amount, decimals?): number`**: Parses token amount with decimals.
 
 ### Transaction Utilities
 
 - **`signAndSendTx(sender, tx, options?, eventsExpected?, log?, mapErrorCodeToEnum?): Promise<TransactionSignedAndSend>`**: Signs, sends, and validates a transaction.
 
-### Signing Utilities
-
-- **`signMessage(signer, address, data): Promise<{ signature: string }>`**: Signs a message with a signer and address.
-- **`signingKey(publicKey): string`**: Converts a public key to a hex string.
-- **`signatureVerify`**: Verifies signatures (re-exported from `@polkadot/util-crypto`).
-
-### Event Validation
-
-- **`validateEvents(events, eventsExpected?, tx, block, log?): EventsValidated`**: Checks if expected events are in transaction events.
-
-### Utility Functions
-
-- **`isAddress(address): boolean`**: Validates a Substrate address.
-- **`isHex(value): boolean`**: Validates a hexadecimal string.
-
 ### Wallet Management
 
-- **`activate(options?): Promise<ApiPromise>`**: Connects to the Autonomys Network.
 - **`activateWallet(options): Promise<{ api, accounts }>`**: Activates a wallet using mnemonic or URI.
-- **`mockWallets(options, api?): Promise<Wallet[]>`**: Creates mock wallets for testing.
+- **`generateWallet(): GeneratedWallet`**: Generates a new wallet with mnemonic.
 - **`getMockWallet(name, wallets): Wallet`**: Retrieves a mock wallet by name.
-
-### Network Management
-
-- **`networks`**: Array of available networks.
-- **`getNetworkDetails(options): NetworkDetails`**: Gets details of a network.
-- **`getNetworkDomainDetails(options): DomainDetails`**: Gets details of a domain.
-
-### Cryptographic Functions
-
-- **`blake2b_256(data): string`**: Hashes data with BLAKE2b-256.
-- **`stringToUint8Array(string): Uint8Array`**: Converts a string to `Uint8Array`.
-- **`concatenateUint8Arrays(...arrays): Uint8Array`**: Concatenates multiple `Uint8Array`s.
-
-### Data Storage
-
-- **`save(key, value): void`**: Saves data locally.
-- **`read(key): any`**: Reads data from local storage.
-
-### Address Utilities
-
-- **`address(input): string`**: Standardizes an address format.
-- **`decode(input): Uint8Array`**: Decodes an address to bytes.
+- **`mockWallets(options, api?): Promise<Wallet[]>`**: Creates mock wallets for testing.
+- **`setupWallet(params): Wallet`**: Sets up a wallet from mnemonic or URI.
 
 ---
 
@@ -364,5 +382,5 @@ console.log('Decoded Address:', decodedAddress);
 - **API Disconnection**: Always disconnect the API instance after operations to free up resources.
 - **Error Handling**: Wrap asynchronous calls in `try...catch` blocks to handle potential errors gracefully.
 - **Security Considerations**:
-  - **Private Keys**: Handle private keys securely. Do not expose them in code or logs.
-  - **Data Persistence**: Be cautious when saving sensitive data using `save` and `read`.
+- **Private Keys**: Handle private keys securely. Do not expose them in code or logs.
+- **Data Persistence**: Be cautious when saving sensitive data using `save` and `read`.

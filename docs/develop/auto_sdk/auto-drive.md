@@ -74,6 +74,13 @@ import * as drive from '@autonomys/auto-drive';
 - **`createMetadataNode(metadata): any`**: Creates a metadata node for an IPLD DAG.
 - **`createMetadataIPLDDag(metadata): IPLDDag`**: Creates an IPLD DAG for metadata.
 
+### Upload and Download Operations
+
+- **`uploadFile(api, file, options): PromisedObservable<UploadFileStatus>`**: Uploads a file with optional encryption and compression.
+- **`uploadFileFromFilepath(api, filepath, options): PromisedObservable<UploadFileStatus>`**: Uploads a file from a filesystem path.
+- **`uploadFolderFromFolderPath(api, folderPath, options): PromisedObservable<UploadFolderStatus>`**: Uploads a folder from a filesystem path.
+- **`downloadObject(api, params): AsyncIterable<Buffer>`**: Downloads an object by its CID.
+
 ---
 
 *Note:* All asynchronous functions return a `Promise` and should be used with `await` for proper execution flow.
@@ -217,6 +224,115 @@ const cidString = cidToString(cid);
 console.log(`CID of the metadata DAG: ${cidString}`);
 ```
 
+### 8. Uploading a File from Filepath
+
+```typescript
+import { uploadFileFromFilepath, createAutoDriveApi } from '@autonomys/auto-drive';
+
+const api = createAutoDriveApi({ apiKey: 'your-api-key' });
+const filePath = 'path/to/your/file.txt';
+const options = {
+  password: 'your-encryption-password', // Optional
+  compression: true,
+};
+
+const uploadObservable = uploadFileFromFilepath(api, filePath, options)
+  .then(() => {
+    console.log('File uploaded successfully!');
+  })
+  .catch((error) => {
+    console.error('Error uploading file:', error);
+  });
+```
+
+### 9. Uploading a File with Custom Interface
+
+```typescript
+import { uploadFile, createAutoDriveApi } from '@autonomys/auto-drive';
+
+const api = createAutoDriveApi({ apiKey: 'your-api-key' });
+const buffer = Buffer.from(/* ... */);
+const genericFile = {
+  read: async function *() {
+    yield buffer;
+  },
+  name: "autonomys-whitepaper.pdf",
+  mimeType: "application/pdf",
+  size: 1234556,
+  path: "autonomys-whitepaper.pdf"
+};
+
+const options = {
+  password: 'your-encryption-password',
+  compression: true,
+};
+
+const uploadObservable = uploadFile(api, genericFile, options)
+  .then(() => {
+    console.log('File uploaded successfully!');
+  })
+  .catch((error) => {
+    console.error('Error uploading file:', error);
+  });
+```
+
+### 10. Uploading a Folder
+
+```typescript
+import { uploadFolderFromFolderPath, createAutoDriveApi } from '@autonomys/auto-drive';
+
+const api = createAutoDriveApi({ apiKey: 'your-api-key' });
+const folderPath = 'path/to/your/folder';
+
+const options = {
+  uploadChunkSize: 1024 * 1024,
+  password: 'your-encryption-password',
+};
+
+const uploadObservable = uploadFolderFromFolderPath(api, folderPath, options);
+```
+
+### 11. Tracking Upload Progress
+
+```typescript
+import { useState, useEffect } from 'react';
+import { uploadFile, createAutoDriveApi } from '@autonomys/auto-drive';
+
+const UploadComponent = () => {
+  const [progress, setProgress] = useState<number>(0);
+
+  useEffect(() => {
+    const uploadFile = async () => {
+      const api = createAutoDriveApi({ apiKey: 'your-api-key' });
+      const finalStatus = await uploadFile(api, genericFile, options).forEach((status) => {
+        setProgress(status.progress);
+      });
+    };
+    uploadFile();
+  }, []);
+
+  return <div>Upload Progress: {progress}%</div>;
+};
+```
+
+### 12. Downloading a File
+
+```typescript
+import { downloadObject, createAutoDriveApi } from '@autonomys/auto-drive';
+import fs from 'fs';
+
+const api = createAutoDriveApi({ apiKey: 'your-api-key' });
+
+try {
+  const stream = fs.createWriteStream('/path/to/file');
+  const asyncBuffer = await downloadObject(api, { cid: 'your-cid' });
+  for await (const buffer of asyncBuffer) {
+    stream.write(buffer);
+  }
+} catch (error) {
+  console.error('Error downloading file:', error);
+}
+```
 ---
 
 ## Notes
