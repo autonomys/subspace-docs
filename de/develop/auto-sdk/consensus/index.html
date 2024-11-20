@@ -13,7 +13,7 @@
 
 
 <script src="https://widget.kapa.ai/kapa-widget.bundle.js" data-website-id="591e207f-fb7d-4966-9bb0-9eaee7844460" data-project-name="Autonomys Network" data-project-color="#f2f2f5" data-project-logo="https://i.postimg.cc/BQjSkRPy/Autonomys-small-light.png" data-button-text-color="#576eb2" data-modal-disclaimer="This is a custom LLM for Autonomys Network with access to all documentation (docs.autonomys.xyz/). Since this is AI technology please use your best judgment." async></script><link rel="stylesheet" href="/de/assets/css/styles.1f0a26a0.css">
-<script src="/de/assets/js/runtime~main.dfb89027.js" defer="defer"></script>
+<script src="/de/assets/js/runtime~main.9dd9bae8.js" defer="defer"></script>
 <script src="/de/assets/js/main.1a1b2d01.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -49,10 +49,12 @@
 <h3 class="anchor anchorWithStickyNavbar_LWe7" id="balances">Balances<a href="#balances" class="hash-link" aria-label="Direct link to Balances" title="Direct link to Balances">​</a></h3>
 <ul>
 <li><strong><code>totalIssuance(networkId?): Promise&lt;BigInt&gt;</code></strong>: Gets total token issuance in the network.</li>
+<li><strong><code>batch(api, txs[]): SubmittableExtrinsic</code></strong>: Creates a batch transaction for multiple operations.</li>
 </ul>
 <h3 class="anchor anchorWithStickyNavbar_LWe7" id="blockchain-information">Blockchain Information<a href="#blockchain-information" class="hash-link" aria-label="Direct link to Blockchain Information" title="Direct link to Blockchain Information">​</a></h3>
 <ul>
 <li><strong><code>block(api): Promise&lt;RawBlock&gt;</code></strong>: Retrieves the latest block data.</li>
+<li><strong><code>header(api): Promise&lt;RawBlockHeader&gt;</code></strong>: Retrieves the latest block header.</li>
 <li><strong><code>blockHash(api): Promise&lt;string&gt;</code></strong>: Retrieves the latest block hash.</li>
 <li><strong><code>blockNumber(api): Promise&lt;number&gt;</code></strong>: Retrieves the current block number.</li>
 <li><strong><code>networkTimestamp(api): Promise&lt;bigint&gt;</code></strong>: Retrieves the network timestamp.</li>
@@ -60,7 +62,12 @@
 <h3 class="anchor anchorWithStickyNavbar_LWe7" id="consensus-information">Consensus Information<a href="#consensus-information" class="hash-link" aria-label="Direct link to Consensus Information" title="Direct link to Consensus Information">​</a></h3>
 <ul>
 <li><strong><code>blockchainSize(api): Promise&lt;bigint&gt;</code></strong>: Calculates the blockchain&#x27;s total size.</li>
-<li><strong><code>spacePledge(api): Promise&lt;bigint&gt;</code></strong>: Calculates total space pledged by farmers.</li>
+<li><strong><code>spacePledged(api): Promise&lt;bigint&gt;</code></strong>: Calculates total space pledged by farmers.</li>
+<li><strong><code>solutionRanges(api): Promise&lt;SolutionRanges&gt;</code></strong>: Retrieves current and next solution ranges.</li>
+<li><strong><code>shouldAdjustSolutionRange(api): Promise&lt;boolean&gt;</code></strong>: Checks if solution range needs adjustment.</li>
+<li><strong><code>segmentCommitment(api): Promise&lt;[StorageKey&lt;AnyTuple&gt;, Codec][]&gt;</code></strong>: Gets segment commitment entries.</li>
+<li><strong><code>slotProbability(api): [number, number]</code></strong>: Returns slot probability constants.</li>
+<li><strong><code>maxPiecesInSector(api): bigint</code></strong>: Returns maximum pieces in a sector.</li>
 </ul>
 <h3 class="anchor anchorWithStickyNavbar_LWe7" id="domains">Domains<a href="#domains" class="hash-link" aria-label="Direct link to Domains" title="Direct link to Domains">​</a></h3>
 <ul>
@@ -70,9 +77,16 @@
 </ul>
 <h3 class="anchor anchorWithStickyNavbar_LWe7" id="operators-and-staking">Operators and Staking<a href="#operators-and-staking" class="hash-link" aria-label="Direct link to Operators and Staking" title="Direct link to Operators and Staking">​</a></h3>
 <ul>
-<li><strong><code>nominateOperator(params): SubmittableExtrinsic</code></strong>: Creates a transaction to nominate an operator.</li>
+<li><strong><code>operators(api): Promise&lt;Operator[]&gt;</code></strong>: Retrieves list of all operators.</li>
 <li><strong><code>operator(api, operatorId): Promise&lt;OperatorDetails&gt;</code></strong>: Retrieves details of a specific operator.</li>
+<li><strong><code>deposits(api, operatorId, account?): Promise&lt;Deposit[]&gt;</code></strong>: Retrieves deposits for an operator.</li>
+<li><strong><code>withdrawals(api, operatorId, account?): Promise&lt;Withdrawal[]&gt;</code></strong>: Retrieves withdrawals for an operator.</li>
 <li><strong><code>registerOperator(params): SubmittableExtrinsic</code></strong>: Creates a transaction to register a new operator.</li>
+<li><strong><code>nominateOperator(params): SubmittableExtrinsic</code></strong>: Creates a transaction to nominate an operator.</li>
+<li><strong><code>withdrawStake(params): SubmittableExtrinsic</code></strong>: Creates a transaction to withdraw staked tokens.</li>
+<li><strong><code>deregisterOperator(params): SubmittableExtrinsic</code></strong>: Creates a transaction to deregister an operator.</li>
+<li><strong><code>unlockFunds(params): SubmittableExtrinsic</code></strong>: Creates a transaction to unlock staked funds.</li>
+<li><strong><code>unlockNominator(params): SubmittableExtrinsic</code></strong>: Creates a transaction to unlock nominator funds.</li>
 </ul>
 <h3 class="anchor anchorWithStickyNavbar_LWe7" id="transfers">Transfers<a href="#transfers" class="hash-link" aria-label="Direct link to Transfers" title="Direct link to Transfers">​</a></h3>
 <ul>
