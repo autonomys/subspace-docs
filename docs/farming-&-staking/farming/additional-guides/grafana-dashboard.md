@@ -31,7 +31,7 @@ for a node:
 for a farmer:
 `--prometheus-listen-on 127.0.0.1:9081`
 
-To apply the changes, it's necessary to restart your node and farmer. You should then have the capability to reach the metrics at `http://localhost:9080` and `http://localhost:9081`.
+To apply the changes, it's necessary to restart your node and farmer. You should then have the capability to reach the metrics at `http://localhost:9080/metrics` and `http://localhost:9081/metrics`.
 
 ## Configure Prometheus targets
 
