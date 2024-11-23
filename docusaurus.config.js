@@ -258,8 +258,8 @@ const config = {
                 href: 'https://academy.autonomys.xyz',
               },
               {
-                label: 'Subspace Protocol Whitepaper',
-                href: 'https://subspace.network/news/subspace-network-whitepaper',
+                label: 'Whitepaper',
+                href: 'https://cdn.prod.website-files.com/66d7181179fbc331d39e9df0/6734a4bf4a74c3c5c6b01d34_autonomys_whitepaper.pdf',
               }
             ]
           },
