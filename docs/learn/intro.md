@@ -14,12 +14,11 @@ The Autonomys Network is an ambitious layer zero protocol which is the first sca
 
 ## ❓ Learn About the Autonomys Network 
 ---
-- [What is the Autonomys Network](https://subspace.network/technology)
-- [Frequently Asked Questions](https://subspace.network/faq)
+- [What is Autonomys Network](https://www.autonomys.xyz/project)
 - [Rewards & Fees on the Autonomys Network](https://academy.autonomys.xyz/subspace-protocol/rewards-and-fees)
 - [Autonomys Forum - Knowledge-Sharing Platform](https://forum.autonomys.xyz)
-- [Whitepaper - *Summarized*](https://subspace.network/news/subspace-network-whitepaper)
-- [Whitepaper - *Full Length*](https://assets.website-files.com/61526a2af87a54e565b0ae92/617759c00edd0e3bd279aa29_Subspace_%20A%20solution%20to%20the%20farmer%27s%20dilemma.pdf)
+- [Whitepaper](https://cdn.prod.website-files.com/66d7181179fbc331d39e9df0/6734a4bf4a74c3c5c6b01d34_autonomys_whitepaper.pdf)
+- [Litepaper](https://autonomys-public-assets.s3.us-east-1.amazonaws.com/autonomys-lightpaper.pdf)
 
 ## 🤝 Participate on the Autonomys Network
 ---
