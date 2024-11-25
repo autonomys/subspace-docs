@@ -35,36 +35,52 @@ If you would like to Import an **Existing** Wallet, then select `Import an accou
 
 ![step-3](/img/doc-imgs/subwallet/Subwallet-1.png)
 
-4. Enter and confirm the password for your account. Make sure to use a strong password. 
+4. Carefully read and accept the Terms of Use.
 
-    ![step-4](/img/doc-imgs/subwallet/Subwallet-2.png)
+![step-4](/img/doc-imgs/subwallet/Subwallet-2.png)
 
-5. Write down your seed phrase in a secure place. You will need it if you ever forget a password, or decide to transfer the account to another PC. 
+5. Enter and confirm the password for your account. Make sure to use a strong password. 
 
-    ![step-5](/img/doc-imgs/subwallet/Subwallet-3.png)
+![step-5](/img/doc-imgs/subwallet/Subwallet-3.png)
 
-6. Congratulations you have fully created your Substrate wallet with SubWallet.
+6. Review the information on how to keep your seed phrase secure. Click on each tip to confirm that you have read and understood it. 
 
-    ![step-6](/img/doc-imgs/subwallet/Subwallet-4.png)
+![step-6](/img/doc-imgs/subwallet/Subwallet-4.png)
 
-## Connect wallet to Subspace Gemini 3h and find wallet public address
+7. Enter a name for your account.
 
-1. Open SubWallet, click on *Manage tokens*.
+![step-7](/img/doc-imgs/subwallet/Subwallet-5.png)
 
-    ![wallet-1](/img/doc-imgs/subwallet/Subwallet-5.png)
+8. Write down your seed phrase in a secure place. You will need it if you ever forget a password, or decide to transfer the account to another PC. 
 
-2. In a search bar, start typing the name of the network, e.g. Subspace Gemini 3h.
+![step-8](/img/doc-imgs/subwallet/Subwallet-6.png)
 
-    ![wallet-2](/img/doc-imgs/subwallet/Subwallet-6.png)
+9. Congratulations you have fully created your wallet with SubWallet.
 
-3. Go back to the first screen and you will see tSSC token with your balance.
-To get your wallet public address, click on the tSSC token.
+![step-9](/img/doc-imgs/subwallet/Subwallet-7.png)
 
-   ![wallet-3](/img/doc-imgs/subwallet/Subwallet-7.png)
+## Connect wallet to Autonomys Mainnet and find wallet public address
 
-4. And then click on *Copy* sign to copy the public address. 
+1. Open SubWallet, scroll all the way down and click on *Manage tokens*.
 
-    ![wallet-4](/img/doc-imgs/subwallet/Subwallet-8.png)
+![wallet-1](/img/doc-imgs/subwallet/Subwallet-8.png)
+
+2. You can deselect all automatically enabled tokens for your convenience.
+
+![wallet-2](/img/doc-imgs/subwallet/Subwallet-9.png)
+
+3. In a search bar, start typing the name of the network, e.g. Autonomys.
+You will see two networks - **Mainnet** and **Taurus** test network.
+
+![wallet-3](/img/doc-imgs/subwallet/Subwallet-10.png)
+
+4. Return to the first screen, where you will see the AI3 token along with your balance. To view your wallet's public address, click on its name.
+
+![wallet-4](/img/doc-imgs/subwallet/Subwallet-11.png)
+
+5. And then click on *Copy* sign to copy the public address. 
+
+![wallet-5](/img/doc-imgs/subwallet/Subwallet-12.png)
 
 
 ## Connect to Subspace via RPC
@@ -73,10 +89,6 @@ Sometimes you won't see the network you would like to connect to in a list of av
 This also can be helpful for in-development networks such as the Subspace Network as we have regularly changing RPC endpoints and versions of testnets, and soon various domains. Below you will find a simple guide on how to add these new networks. Additionally we will try and keep an updated list of active RPC endpoints below for development.
 
 :::info RPC Endpoints
-**Gemini 3d Endpoint:** `wss://rpc.gemini-3d.subspace.network/ws`<br />
-**Gemini 3e Endpoint:** `wss://rpc.gemini-3e.subspace.network/ws`<br />
-**Gemini 3f Endpoint:** `wss://rpc-1.gemini-3f.subspace.network/ws`<br />
-**Gemini 3g Endpoint:** `wss://rpc-1.gemini-3g.subspace.network/ws`<br />
 **Gemini 3h Endpoint:** `wss://rpc-1.gemini-3h.subspace.network/ws`<br />
 **Taurus Testnet Endpoint:** `wss://rpc.taurus.subspace.foundation/ws`<br />
 **Mainnet Endpoint:** `wss://rpc.mainnet.subspace.foundation/ws`
