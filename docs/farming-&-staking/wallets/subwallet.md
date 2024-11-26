@@ -51,11 +51,11 @@ If you would like to Import an **Existing** Wallet, then select `Import an accou
 
 ![step-7](/img/doc-imgs/subwallet/Subwallet-5.png)
 
-8. Write down your seed phrase in a secure place. You will need it if you ever forget a password, or decide to transfer the account to another PC. 
+8. Write down your seed phrase in a secure place. You will need it if you ever forget your password, or decide to transfer the account to another PC. 
 
 ![step-8](/img/doc-imgs/subwallet/Subwallet-6.png)
 
-9. Congratulations you have fully created your wallet with SubWallet.
+9. Congratulations you have successfully created your wallet with SubWallet.
 
 ![step-9](/img/doc-imgs/subwallet/Subwallet-7.png)
 
@@ -69,7 +69,7 @@ If you would like to Import an **Existing** Wallet, then select `Import an accou
 
 ![wallet-2](/img/doc-imgs/subwallet/Subwallet-9.png)
 
-3. In a search bar, start typing the name of the network, e.g. Autonomys.
+3. In the search bar, start typing the name of the network, e.g. Autonomys.
 You will see two networks - **Mainnet** and **Taurus** test network.
 
 ![wallet-3](/img/doc-imgs/subwallet/Subwallet-10.png)
@@ -78,7 +78,7 @@ You will see two networks - **Mainnet** and **Taurus** test network.
 
 ![wallet-4](/img/doc-imgs/subwallet/Subwallet-11.png)
 
-5. And then click on *Copy* sign to copy the public address. 
+5. And then click on the *Copy* icon to copy the public address. 
 
 ![wallet-5](/img/doc-imgs/subwallet/Subwallet-12.png)
 
