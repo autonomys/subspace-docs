@@ -1,7 +1,7 @@
 ---
 title: ✨ SubWallet
 sidebar_position: 1
-description: How to configure the SubWallet Substrate wallet for the Subspace Network
+description: How to configure the SubWallet Substrate wallet for the Autonomys Network
 slug: /wallets/subwallet
 keywords:
     - Farmer
@@ -83,10 +83,11 @@ You will see two networks - **Mainnet** and **Taurus** test network.
 ![wallet-5](/img/doc-imgs/subwallet/Subwallet-12.png)
 
 
-## Connect to Subspace via RPC
+## Connect to Autonomys Network via RPC
 
-Sometimes you won't see the network you would like to connect to in a list of available networks. In this case you can connect to Subspace Network manually via RPC.
-This also can be helpful for in-development networks such as the Subspace Network as we have regularly changing RPC endpoints and versions of testnets, and soon various domains. Below you will find a simple guide on how to add these new networks. Additionally we will try and keep an updated list of active RPC endpoints below for development.
+Sometimes you won't see the network you would like to connect to in a list of available networks. In this case you can connect to Autonomys Network manually via RPC.
+
+This also can be helpful for in-development networks such as the Autonomys Network Testnet. Below you will find a simple guide on how to add these new networks. Additionally we will try and keep an updated list of active RPC endpoints below for development.
 
 :::info RPC Endpoints
 **Gemini 3h Endpoint:** `wss://rpc-1.gemini-3h.subspace.network/ws`<br />
@@ -94,13 +95,16 @@ This also can be helpful for in-development networks such as the Subspace Networ
 **Mainnet Endpoint:** `wss://rpc.mainnet.subspace.foundation/ws`
 :::
 
-1. Open SubWallet, Select the 3 Line menu in the top left of the wallet.
+1. Open SubWallet, select the 3 line menu in the top left of the wallet.
+
     ![rpc-step-1](/img/doc-imgs/subwallet/rpc-1.png)
 
-2. Inside the settings menu you will see the option to Manage Networks, click this.
+2. Inside the settings menu you will see the option to Manage Networks.
+
     ![rpc-step-2](/img/doc-imgs/subwallet/rpc-2.png)
     
-3. Within the Manage Networks menu you will see a + in the top right corner, click this.
+3. Within the Manage Networks menu you will see a + in the top right corner.
+
     ![rpc-step-3](/img/doc-imgs/subwallet/rpc-3.png)
 
 4. This will open the Import Network menu, where you will see a few options
@@ -109,17 +113,19 @@ This also can be helpful for in-development networks such as the Subspace Networ
 - Symbol
 - Block explorer
 - Crowdloan URL
-The only required option is the Provider URL. Adding an explorer is optional. You can access the current [Astral Block Explorer](https://astral.autonomys.xyz).
-You can refer to the *RPC Endpoints* above for available provider URLs for the Subspace Network.
+
+The only required option is the Provider URL. Adding an explorer is optional. The default block explorer for the Autonomys Network is [Astral Block Explorer](https://astral.autonomys.xyz).
+
+You can refer to the *RPC Endpoints* above for available provider URLs for the Autonomy sNetwork.
     
 5. Fill in the provider URL, once you click out of this box it will check the URL and add the rest of the information, then click Save. 
-- *In this example we will be using `https://nova-0.gemini-3h.subspace.network/ws`*
+    - *In this example we will be using the Taurus Testnet RPC `wss://rpc.taurus.subspace.foundation/ws`*
 
-![rpc-step-4](/img/doc-imgs/subwallet/rpc-4.png)
+    ![rpc-step-4](/img/doc-imgs/subwallet/rpc-4.png)
 
 6. You will then be taken back to the network screen where you can then select your new network that was added.
 
-![rpc-step-5](/img/doc-imgs/subwallet/rpc-5.png)
+    ![rpc-step-5](/img/doc-imgs/subwallet/rpc-5.png)
 
 ## Troubleshooting
 
