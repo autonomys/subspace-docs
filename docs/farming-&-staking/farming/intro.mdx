@@ -110,8 +110,8 @@ Linux systems may have a default file descriptor limit, which can vary based on 
 
 <TabItem value="ext4" label="☑️ ext4" default>
 This file system maximizes usable space for the farmer.
-```bash title="Recommended Formatting Command for Drives Dedicated to Subspace Plots:"
-sudo mkfs.ext4 -m 0 -T largefile4 /dev/sdX
+```bash title="Recommended Formatting Command for Drives Dedicated to Subspace Farms:"
+sudo mkfs.ext4 -m 0 -T largefile4 -C 16384 -O bigalloc /dev/sdX
 ```
 </TabItem>
 
