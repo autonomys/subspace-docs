@@ -38,7 +38,7 @@ Autonomys introduces the Decoupled Execution Framework (DecEx) to tackle the sta
 
 - **Transaction Submission and Execution**: Operators are responsible for batching transactions into bundles and submitting them to the consensus chain, executing transactions included in the consensus block and maintaining the resulting chain state.
 - **Higher [Hardware Requirements](#operator-hardware-requirements)**: Operators require more substantial hardware capabilities, as they must execute complex transactions.
-- **Require Initial Investment:** Operators are required to stake a certain amount of SSC. If an operator acts maliciously, their stake is at risk of being **slashed**. Engaging in such malicious behavior carries significant penalties, providing crypto-economic security to execution.
+- **Require Initial Investment:** Operators are required to stake a certain amount of AI3. If an operator acts maliciously, their stake is at risk of being **slashed**. Engaging in such malicious behavior carries significant penalties, providing crypto-economic security to execution.
 - **Pre-Validation and Batching**: Operators pre-validate and batch transactions into bundles through a stake-weighted election process.
 - **Deterministic Execution**: The operators execute transactions in a specific, deterministic order, producing state commitments in the form of execution receipts.
 - **Secondary Network Role**: Monitors the Domain chain for malicious activity and submits fraud proofs to consensus chain.
