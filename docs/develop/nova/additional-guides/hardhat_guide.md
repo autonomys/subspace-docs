@@ -143,7 +143,7 @@ networks: {
 Be careful to not commit hardhat.config.js file as it contain your private key. You can use NPM tools like [dotenv](https://www.npmjs.com/package/dotenv) to securely store your private keys in the `.env` file.
 :::
 
-9. Open to `deploy.js` file and replace the content with the code. 
+9. Open `deploy.js` file and replace the content with the code. 
 
 ![Hardhat-5](/img/developers/Hardhat-5.png)
 
