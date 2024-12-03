@@ -120,8 +120,7 @@ const config = {
           { to: '/participate/contribute/code-of-conduct', from: ['/docs/participate/CODE_OF_CONDUCT'] },
           { to: '/participate/contribute/translate', from: ['/docs/participate/translate'] },
 
-          { to: '/participate/community/resources', from: ['/docs/participate/', '/docs/participate/contribute'] },
-          { to: '/participate/community/tools', from: ['/docs/participate/community_resources/community-maintained-tools'] },
+          { to: '/participate/community/contributions', from: ['/participate/community/tools', '/participate/community/resources', '/docs/participate/', '/docs/participate/contribute', '/docs/participate/community_resources/community-maintained-tools'] },
         ],
       },
     ],
