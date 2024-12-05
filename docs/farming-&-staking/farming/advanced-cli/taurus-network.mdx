@@ -1,7 +1,9 @@
 ---
-title: Taurus Network
+title: Install (Taurus Testnet)
 sidebar_position: 4
-description: How to run an Autonomys Testnet Network Farmer with the Substrate CLI
+toc_min_heading_level: 6
+toc_max_heading_level: 6
+description: How to Run an Autonomys Network Node and Farmer on MaiTaurus Testnet Using the Advanced CLI
 slug: /farming/advanced-cli/taurus
 keywords:
     - Farmer
@@ -10,7 +12,8 @@ keywords:
     - Binaries
     - Docker
 ---
-import LinuxPage from './taurus-platforms/_linux.mdx';
+
+import UbuntuPage from './taurus-platforms/_ubuntu.mdx';
 import WindowsPage from './taurus-platforms/_windows.mdx';
 import MacOSPage from './taurus-platforms/_macos.mdx';
 import SystemDPage from './taurus-platforms/_systemd.mdx';
@@ -18,32 +21,41 @@ import SystemDPage from './taurus-platforms/_systemd.mdx';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-## Network Description
+import Card from '@site/src/components/Card';
+import CardBody from '@site/src/components/Card/CardBody';
+import CardFooter from '@site/src/components/Card/CardFooter';
+import CardHeader from '@site/src/components/Card/CardHeader';
+import CardImage from '@site/src/components/Card/CardImage';
+import Column from '@site/src/components/Column';
+import Columns from '@site/src/components/Columns';
 
-Taurus is our permenant test network that started up in October of 2024. The purpose of this page is to highlight any differences between Taurus and our mainnet.
 
-## Chain Parameter
+<Card>
+    <CardBody
+    style={{ backgroundColor: '#d36666', color: 'black' }}
+    className="padding-vert--md"
+    textAlign="center"
+    >
+    <h2>Taurus Testnet Notice!</h2>
+    Taurus is our permanent test network launched in October 2024.
+    This guide aims to outline the key differences between Taurus and the Mainnet.
+    </CardBody>
 
-Currently the only difference between taurus and mainnet is the chain specification (`--chain taurus` or `--chain mainnet`) and the client software. You can only run Advanced CLI, not Space Acres.
+    <CardBody
+    style={{ backgroundColor: '#e98383', color: 'black' }}
+    className="padding-vert--md"
+    textAlign="center"
+    >
+    The main differences between Taurus and Mainnet, as outlined in the guides, are the chain specifications (`--chain taurus` versus `--chain mainnet`) and the client software used.
+    </CardBody>
 
-## Advanced CLI Installation Guide
-
-:::tip Substrate Address Needed
-
-To use this software, you need a Substrate wallet address. For assistance in creating a Substrate wallet, refer to our guides for ✨ [SubWallet](/wallets/subwallet) or [Polkadot.js](/wallets/polkadot).
-
-If you have a previous wallet address that starts with `st`, you can still use it, or you can transform it to the new `su` prefix. You can convert your existing wallet address using the tool available at [ss58.org](https://ss58.org). Previously, our testnets used the prefix `2254`, while the Taurus testnet and Autonomys mainnet use the prefix `6094`.
-
-:::
-
-We’ll provide the files you need for your operating system:
-- **subspace-node**: The node implementation for the Subspace protocol.
-- **subspace-farmer**: Manages plotting, replotting, and farming rewards.
+</Card>
+<br />
 
 <Tabs groupId="OS">
 
-<TabItem value="linux" label="🐧 Ubuntu" default>
-<LinuxPage />
+<TabItem value="ubuntu" label="🐧 Ubuntu" default>
+<UbuntuPage />
 </TabItem>
 
 <TabItem value="windows" label="🖼️ Windows">
@@ -55,3 +67,39 @@ We’ll provide the files you need for your operating system:
 </TabItem>
 
 </Tabs>
+
+### You Are Now Farming!
+<br /><br />
+
+<Card>
+    <CardBody
+    style={{ backgroundColor: '#54a260', color: 'black' }}
+    className="padding-vert--md"
+    textAlign="center"
+    transform="uppercase"
+    >
+    <h3>Learn More & Leave Feedback</h3>
+    To learn more about the syncing, plotting, and farming processes on the Autonomys Network, please refer to the links below from our Autonomys Academy.
+    <br />
+    We’re eager to hear from you and make things better!
+    </CardBody>
+    <CardFooter
+    style={{ backgroundColor: '#87d688', color: 'black' }}
+    className="text--center"
+    >
+    <div className="button-group button-group--block">
+    <a href="https://academy.autonomys.xyz/subspace-protocol/network-architecture/networking-protocols#synchronization" className="button button--secondary">🔄 Synchronization</a>
+    <a href="https://academy.autonomys.xyz/subspace-protocol/consensus/proof-of-archival-storage/plotting" className="button button--secondary">🌱 Plotting</a>
+    <a href="https://academy.autonomys.xyz/subspace-protocol/consensus/proof-of-archival-storage/farming" className="button button--secondary">🚜 Farming</a>
+    </div>
+    </CardFooter>
+    <CardFooter
+    style={{ backgroundColor: '#87d688', color: 'black' }}
+    className="text--center"
+    >
+    <div className="button-group button-group--block">
+    <a href="https://autonomys.typeform.com/to/tRe4Z0uI" className="button button--secondary">🗣️ Help us improve by sharing your feedback!</a>
+    </div>
+    </CardFooter>
+</Card>
+<br />

@@ -1,98 +1,139 @@
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
-import CodeBlock from '@theme/CodeBlock';
-import Link from '@docusaurus/Link';
 import styles from '@site/src/pages/index.module.css';
 
-## Step 1: Download the Advanced CLI Executables
+import Card from '@site/src/components/Card';
+import CardBody from '@site/src/components/Card/CardBody';
+import CardFooter from '@site/src/components/Card/CardFooter';
+import CardHeader from '@site/src/components/Card/CardHeader';
+import CardImage from '@site/src/components/Card/CardImage';
+import Column from '@site/src/components/Column';
+import Columns from '@site/src/components/Columns';
+
+<br />
+### Step 1: Download Executables {#download-binaries}
 ---
 
-<div className={`${styles.buttons} ${styles.flexContainer}`}>
-  <Link
-    className="button button--secondary"
-    to="https://github.com/autonomys/subspace/releases/download/taurus-2024-nov-05/subspace-node-ubuntu-x86_64-skylake-taurus-2024-nov-05"
-    style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', textAlign: 'center', padding: '10px' }}>
-    <span style={{ fontSize: '20px' }}>Node Executable</span>
-    <span style={{ fontSize: '14px' }}>(Skylake+ CPU)</span>
-  </Link>
-  <Link
-    className="button button--secondary"
-    to="https://github.com/autonomys/subspace/releases/download/taurus-2024-nov-05/subspace-farmer-ubuntu-x86_64-skylake-taurus-2024-nov-05"
-    style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', textAlign: 'center', padding: '10px' }}>
-    <span style={{ fontSize: '20px' }}>Farmer Executable</span>
-    <span style={{ fontSize: '14px' }}>(Skylake+ CPU)</span>
-  </Link>
-</div>
+<br />
+<Columns>
+  <Column>
+    <Card>
+      <CardBody
+      style={{ backgroundColor: '#2f4861', color: 'black' }}
+      className="padding-vert--md"
+      textAlign="center"
+      transform="uppercase"
+      >
+      <h3>Node Executables</h3>
+      </CardBody>
+      <CardFooter
+      style={{ backgroundColor: '#416384', color: 'black' }}
+      className="text--center"
+      >
+      <div className="button-group button-group--block">
+        <a href="https://github.com/autonomys/subspace/releases/download/mainnet-2024-nov-28/subspace-node-ubuntu-x86_64-skylake-mainnet-2024-nov-28" className="button button--secondary">Skylake+ ¹</a>
+        <a href="https://github.com/autonomys/subspace/releases/download/mainnet-2024-nov-28/subspace-node-ubuntu-x86_64-v2-mainnet-2024-nov-28" className="button button--secondary">Legacy ²</a>
+        <a href="https://github.com/autonomys/subspace/releases/download/mainnet-2024-nov-28/subspace-node-ubuntu-aarch64-mainnet-2024-nov-28" className="button button--secondary">AArch64 ³</a>
+      </div>
+      </CardFooter>
+    </Card>
+    <br />
+  </Column>
+  <Column>
+    <Card>
+      <CardBody
+      style={{ backgroundColor: '#644f2f', color: 'black' }}
+      className="padding-vert--md"
+      textAlign="center"
+      transform="uppercase"
+      >
+      <h3>Farmer Executables</h3>
+      </CardBody>
+      <CardFooter
+      style={{ backgroundColor: '#896c40', color: 'black' }}
+      className="text--center"
+      >
+      <div className="button-group button-group--block">
+        <a href="https://github.com/autonomys/subspace/releases/download/mainnet-2024-nov-28/subspace-farmer-ubuntu-x86_64-skylake-mainnet-2024-nov-28" className="button button--secondary">Skylake+ ¹</a>
+        <a href="https://github.com/autonomys/subspace/releases/download/mainnet-2024-nov-28/subspace-farmer-ubuntu-x86_64-v2-mainnet-2024-nov-28" className="button button--secondary">Legacy ²</a>
+        <a href="https://github.com/autonomys/subspace/releases/download/mainnet-2024-nov-28/subspace-farmer-ubuntu-aarch64-mainnet-2024-nov-28" className="button button--secondary">AArch64 ³</a>
+      </div>
+      </CardFooter>
+    </Card>
+  </Column>
+</Columns>
 
-<div className={`${styles.buttons} ${styles.flexContainer}`}>
-  <Link
-    className="button button--secondary"
-    to="https://github.com/autonomys/subspace/releases/download/taurus-2024-nov-05/subspace-node-ubuntu-x86_64-v2-taurus-2024-nov-05"
-    style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', textAlign: 'center', padding: '10px' }}>
-    <span style={{ fontSize: '20px' }}>Node Executable</span>
-    <span style={{ fontSize: '14px' }}>(Legacy CPU)</span>
-  </Link>
-  <Link
-    className="button button--secondary"
-    to="https://github.com/autonomys/subspace/releases/download/taurus-2024-nov-05/subspace-farmer-ubuntu-x86_64-v2-taurus-2024-nov-05"
-    style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', textAlign: 'center', padding: '10px' }}>
-    <span style={{ fontSize: '20px' }}>Farmer Executable</span>
-    <span style={{ fontSize: '14px' }}>(Legacy CPU)</span>
-  </Link>
-</div>
+<small>
+  <ol>
+    <li><strong>Skylake+</strong> Optimized for Intel Skylake and newer CPUs, including AMD Ryzen. Best for systems from 2015 onward.</li>
+    <li><strong>Legacy (x86-64-v2)</strong> Compatible with Intel Broadwell, Haswell, and older CPUs, as well as AMD equivalents. Ideal for systems from 2009 to 2015 or virtual environments lacking Skylake support.</li>
+    <li><strong>AArch64</strong> Built for AArch64 systems like the Raspberry Pi.</li>
+  </ol>
+</small>
 
-<div className={`${styles.buttons} ${styles.flexContainer}`}>
-  <Link
-    className="button button--secondary"
-    to="https://github.com/autonomys/subspace/releases/download/taurus-2024-nov-05/subspace-node-ubuntu-aarch64-taurus-2024-nov-05"
-    style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', textAlign: 'center', padding: '10px' }}>
-    <span style={{ fontSize: '20px' }}>Node Executable</span>
-    <span style={{ fontSize: '14px' }}>(Aarch64/Raspberry Pi)</span>
-  </Link>
-  <Link
-    className="button button--secondary"
-    to="https://github.com/autonomys/subspace/releases/download/taurus-2024-nov-05/subspace-farmer-ubuntu-aarch64-taurus-2024-nov-05"
-    style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', textAlign: 'center', padding: '10px' }}>
-    <span style={{ fontSize: '20px' }}>Farmer Executable</span>
-    <span style={{ fontSize: '14px' }}>(Aarch64/Raspberry Pi)</span>
-  </Link>
-</div>
-
-## Step 2: Start the Advanced CLI Node
+## Step 2: Prerequisites
 ---
 
-1. Open your terminal and navigate to the directory where you downloaded the binaries. For example, if you downloaded them to `~/Downloads`, use:
+:::tip Available Parameters
+
+A complete list of parameters and their functions can be obtained using the `--help` option with both `subspace-node` and `subspace-farmer`.
+
+:::
+
+:::info Substrate Address Needed
+
+To use this software, you need a Substrate wallet address. For assistance in creating a Substrate wallet, refer to our guides for ✨ [SubWallet](/wallets/subwallet) or [Polkadot.js](/wallets/polkadot).
+
+If you have a previous wallet address that starts with `st`, you can still use it, or you can transform it to the new `su` prefix. You can convert your existing wallet address using the tool available at [ss58.org](https://ss58.org). Previously, our testnets used the prefix `2254`, while the Taurus testnet and Autonomys mainnet use the prefix `6094`.
+
+:::
+
+:::info Farm Location Guidance
+
+To avoid running out of space on your operating system or node database drive, it's recommended to store your plots on a separate drive. 
+
+If you choose to use the same drive for plots and the node database, make sure to leave at least 60 GiB of free space for node database growth. This helps ensure that you have enough space for both system operations and node functionality.
+
+:::
+
+## Step 3: Start the Advanced CLI Node
+---
+
+1. Open your terminal and navigate to the directory where you downloaded the binaries.<br />For example, if you downloaded them to `~/Downloads`, use:
     ```bash
     cd ~/Downloads
     ```
 
-2. Make the `farmer` and `node` executable:
+2. Make the farmer and node binaries executable:
     ```bash
-    chmod +x subspace-farmer-ubuntu-x86_64-skylake-taurus-2024-nov-05
-    chmod +x subspace-node-ubuntu-x86_64-skylake-taurus-2024-nov-05
+    chmod +x subspace-farmer-ubuntu-x86_64-skylake-mainnet-2024-nov-28
+    chmod +x subspace-node-ubuntu-x86_64-skylake-mainnet-2024-nov-28
     ```
 
 3. Start the node using the command below. Replace `<NODE_DATA_PATH>` with the path where you want to store the node database and `<YOUR_NODE_NAME>` with a nickname of your choice. Ensure you copy the entire command:
 
-    ```bash
-    ./subspace-node-ubuntu-x86_64-skylake-taurus-2024-nov-05 \
+    :::tip Mandatory Paramaters
+
+    --base-path and --chain are mandatory.
+
+    :::
+
+    ```bash title="💡 Highlighted lines require parameter updates."
+    ./subspace-node-ubuntu-x86_64-skylake-mainnet-2024-nov-28 \
       run \
-      --chain taurus \
+      --chain mainnet \
+      # highlight-start
       --base-path "<NODE_DATA_PATH>" \
       --name "<YOUR_NODE_NAME>" \
+      # highlight-end
       --farmer
     ```
 
-  :::note
-  Using **run**, setting **--base-path** and specifying **--chain** is mandatory.
-  :::
+4. You should see similar output when starting your node:
 
-   You should see output similar to this in your terminal:
-    ```
+    ```text
     2024-09-04T06:42:56.744203Z  INFO subspace_node::commands::run: Subspace
     2024-09-04T06:42:56.744231Z  INFO subspace_node::commands::run: ✌️  version 0.1.0-5c484f36890
     2024-09-04T06:42:56.744235Z  INFO subspace_node::commands::run: ❤️  by Subspace Labs <https://subspace.network>
-    2024-09-04T06:42:56.744238Z  INFO subspace_node::commands::run: 📋 Chain specification: Autonomys Taurus Testnet
+    2024-09-04T06:42:56.744238Z  INFO subspace_node::commands::run: 📋 Chain specification: Autonomys Mainnet
     2024-09-04T06:42:56.744241Z  INFO subspace_node::commands::run: 🏷  Node name: cool-farmer-name
     2024-09-04T06:42:56.744243Z  INFO subspace_node::commands::run: 💾 Node path: /opt/autonomys
     2024-09-04T06:43:00.165801Z  INFO Consensus: subspace_networking::constructor: DSN instance configured. allow_non_global_addresses_in_dht=false peer_id=12D3KooWB>
@@ -108,7 +149,6 @@ import styles from '@site/src/pages/index.module.css';
     2024-09-04T06:43:00.176495Z  INFO Consensus: subspace_service: DSN listening on /ip4/192.168.0.101/tcp/30333/p2p/12D3KooWB6VSys21gqsCGxVKkjYXk8kpoyTCkp5ogcncmMFFsaN1
     2024-09-04T06:43:00.190399Z  INFO Consensus: subspace_service::task_spawner: 📦 Highest known block at #3131593
     2024-09-04T06:43:00.191139Z  INFO Consensus: sc_rpc_server: Running JSON-RPC server: addr=0.0.0.0:9944, allowed origins=["*"]
-    2024-09-04T06:43:00.192326Z  INFO subspace_metrics: Metrics server started. endpoints=[0.0.0.0:9091]
     2024-09-04T06:43:00.192353Z  INFO actix_server::builder: starting 2 workers
     2024-09-04T06:43:00.192448Z  INFO actix_server::server: Tokio runtime found; starting in existing Tokio runtime
     2024-09-04T06:43:00.658988Z  INFO Consensus: sub-libp2p: 🔍 Discovered new external address for our node: /ip4/1.2.3.4/tcp/30333/p2p/12D3KooWB6VSys21gqsCGxVKkjYXk8kpoyTCkp5ogcncmMFFsaN1
@@ -121,27 +161,31 @@ import styles from '@site/src/pages/index.module.css';
     2024-09-04T06:44:46.197731Z  INFO Consensus: substrate: 💤 Idle (40 peers), best: #3131617 (0x4b91…1060), finalized #3063319 (0x366a…fd89), ⬇ 225.3kiB/s ⬆ 23.9kiB/s
     ```
 
-## Step 3: Start the Advanced CLI Farmer
+
+## Step 4: Start the Advanced CLI Farmer
 ---
 
-:::tip Farm Location Guidance
-To avoid running out of space on your operating system or node database drive, it's recommended to store your plots on a separate drive. 
-
-If you choose to use the same drive for plots and the node database, make sure to leave at least 60 GiB of free space for node database growth. This helps ensure that you have enough space for both system operations and node functionality.
-:::
-
 1. Open a new terminal and navigate to the directory where the Subspace farmer binary is located. Start the farmer with the following command:
-    ```bash
-    # Replace <WALLET_ADDRESS> with your wallet address
-    # Replace <PATH_TO_FARM> with the directory where you want to store the plot
-    # Replace <PLOT_SIZE> with the size of the plot (e.g. 10GB, 2TiB)
 
-    ./subspace-farmer-ubuntu-x86_64-skylake-taurus-2024-nov-05 farm \
-      --reward-address <WALLET_ADDRESS> \
-      path=<PATH_TO_FARM>,size=<PLOT_SIZE>
-    ```
+    :::tip Farming multiple plots
 
-   You should see output similar to this in your terminal:
+    You can farm multiple plots by adding additional plots separated by a space:
+
+    `path=PATH_TO_FARM,size=PLOT_SIZE path=ADDITIONAL_PATH_TO_FARM,size=PLOT_SIZE`
+
+    :::
+
+      ```bash
+      # Replace <WALLET_ADDRESS> with your wallet address
+      # Replace <PATH_TO_FARM> with the directory where you want to store the plot
+      # Replace <PLOT_SIZE> with the size of the plot (e.g. 10GB, 2TiB)
+
+      ./subspace-farmer-ubuntu-x86_64-skylake-mainnet-2024-nov-28 farm \
+        --reward-address <WALLET_ADDRESS> \
+        path=<PATH_TO_FARM>,size=<PLOT_SIZE>
+      ```
+
+2. You should see output similar to this in your terminal:
     ```
     2024-09-09T20:36:25.712636Z  INFO subspace_farmer::commands::farm: Connecting to node RPC url=ws://192.168.0.101:9944
     2024-09-09T20:36:25.716493Z  INFO subspace_farmer::node_client::caching_proxy_node_client: Downloading all segment headers from node...
@@ -174,7 +218,3 @@ If you choose to use the same drive for plots and the node database, make sure t
     2024-09-09T20:37:17.155181Z  INFO subspace_farmer::farmer_cache: Finished piece cache synchronization
     2024-09-09T20:37:32.155736Z  INFO {farm_index=0}:{sector_index=11803}: subspace_farmer::single_disk_farm::plotting: Plotting sector (82.06% complete)
     ```
-
-## You Are Now Farming!
-
-You're all set! After your node syncs, plotting will start, and each plotted sector will automatically begin farming and become eligible to earn rewards.
