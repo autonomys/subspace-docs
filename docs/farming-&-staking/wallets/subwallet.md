@@ -116,7 +116,7 @@ This also can be helpful for in-development networks such as the Autonomys Netwo
 
 The only required option is the Provider URL. Adding an explorer is optional. The default block explorer for the Autonomys Network is [Astral Block Explorer](https://astral.autonomys.xyz).
 
-You can refer to the *RPC Endpoints* above for available provider URLs for the Autonomy sNetwork.
+You can refer to the *RPC Endpoints* above for available provider URLs for the Autonomys Network.
     
 5. Fill in the provider URL, once you click out of this box it will check the URL and add the rest of the information, then click Save. 
     - *In this example we will be using the Taurus Testnet RPC `wss://rpc.taurus.subspace.foundation/ws`*
