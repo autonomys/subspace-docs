@@ -28,7 +28,7 @@ You can track your farmer through the [Astral Block Explorer](https://astral.aut
     ![Select Wallet](/img/doc-imgs/verify-farmer/select-wallet.png)
 
 
-3. Find the new **Get your Farmer role on Discord** section within the panel. **NOTE: This section will not appear if you have not farmed any TSSC yet.**
+3. Find the new **Get your Farmer role on Discord** section within the panel. **NOTE: This section will not appear if you have not farmed any AI3 yet.**
 
     ![Wallet Panel](/img/doc-imgs/verify-farmer/wallet-panel.png)
 

@@ -1,9 +1,9 @@
 {
-  "label": "♊ Nova EVM",
+  "label": "♊ Auto EVM",
   "position": 3,
   "link": {
     "type": "generated-index",
-    "slug": "develop/nova",
+    "slug": "develop/auto-evm",
     "description": "Developers' guide on utilizing Autonomys Network"
   }
 }

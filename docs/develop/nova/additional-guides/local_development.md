@@ -2,7 +2,7 @@
 title: Local Development
 sidebar_position: 3
 description: Guide on local development Autonomys Node and Farmer
-slug: /develop/nova/guides/local-development
+slug: /develop/auto-evm/guides/local-development
 keywords:
   - local development
   - autonomys network

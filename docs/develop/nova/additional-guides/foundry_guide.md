@@ -2,7 +2,7 @@
 title: Foundry
 sidebar_position: 1
 description: Testing and Deploying Smart Contracts using Foundry
-slug: /develop/nova/guides/foundry
+slug: /develop/auto-evm/guides/foundry
 keywords:
   - autonomys network
   - book getfoundry
@@ -110,7 +110,7 @@ keywords:
     Nice, all tests are passing, meaning the smart contract is working as expected.
 
 6. Next, there are **two things** we need to set, in order to **deploy our smart contract**:
-    - We need to connect a wallet that has sufficient balance of TSSC to cover the gas fees.
+    - We need to connect a wallet that has sufficient balance of AI3 to cover the gas fees.
     - We need to set an environment variable we will use later.
 
     In order to make our lives easier, let’s create a new `Makefile` as well as `.env` file at the root of our project.
@@ -168,11 +168,11 @@ keywords:
     ```
     
     :::caution
-    Do not attempt to speed up a transaction (do not include a tip on top of the gas fees). To read more about this, please refer to [this section](/develop/nova/introduction#important-note-about-submitting-a-transaction).
+    Do not attempt to speed up a transaction (do not include a tip on top of the gas fees). To read more about this, please refer to [this section](/develop/auto-evm/introduction#important-note-about-submitting-a-transaction).
     :::
 
     :::caution
-    In some cases when deploying the script, you may experience **"No manual gas limit set"** or **"Gas estimation failed"** issues. Please refer to [this section](/develop/nova/introduction#gas-estimation-issue) for the solution. 
+    In some cases when deploying the script, you may experience **"No manual gas limit set"** or **"Gas estimation failed"** issues. Please refer to [this section](/develop/auto-evm/introduction#gas-estimation-issue) for the solution. 
     :::
 
 8. **Congratulations**, you've successfully deployed your smart contract on Autonomys EVM! 
