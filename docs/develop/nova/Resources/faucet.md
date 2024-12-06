@@ -2,7 +2,7 @@
 title: Autonomys Faucet
 sidebar_position: 1
 description: Guide on utilizing Autonomys faucets for getting test tokens
-slug: /develop/nova/faucet
+slug: /develop/auto-evm/faucet
 keywords:
   - faucet
   - autonomys network

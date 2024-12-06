@@ -63,7 +63,7 @@ Interact with storage, consensus and domains via the Auto SDK to build powerful 
 
 The Autonomys Network hosts an **EVM (Ethereum Virtual Machine)**, that allows you to deploy your **smart contracts.** 
 
-#### - [EVM Development](/develop/nova/introduction)
+#### - [EVM Development](/develop/auto-evm/introduction)
 
 ### Utilize the Core Protocol
 The Autonomys Network aims to provide an amazing developer experience to anyone who wishes to build on top of the protocol. As such we have started working on a variety of tools to assist and promote development on our network. 
