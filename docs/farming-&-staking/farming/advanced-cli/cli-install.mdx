@@ -1,7 +1,9 @@
 ---
 title: Install
 sidebar_position: 1
-description: How to run an Autonomys Network Farmer with the Substrate CLI
+toc_min_heading_level: 6
+toc_max_heading_level: 6
+description: How to Run an Autonomys Network Node and Farmer on Mainnet Using the Advanced CLI
 slug: /farming/advanced-cli/install
 keywords:
     - Farmer
@@ -10,7 +12,8 @@ keywords:
     - Binaries
     - Docker
 ---
-import LinuxPage from './platforms/_linux.mdx';
+
+import UbuntuPage from './platforms/_ubuntu.mdx';
 import WindowsPage from './platforms/_windows.mdx';
 import MacOSPage from './platforms/_macos.mdx';
 import SystemDPage from './platforms/_systemd.mdx';
@@ -20,39 +23,18 @@ import SourcePage from './platforms/_source.mdx';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-:::info Multiple Versions Available
-We offer several versions of our releases to accommodate different CPU architectures:
-
-- **Skylake:** Optimized for Intel Skylake and newer CPUs, as well as AMD Ryzen processors. Ideal for PCs manufactured from 2015 onward.
-- **Legacy (x86-64-v2):** Designed for Intel Broadwell, Haswell, and older CPUs, along with their AMD counterparts. Suitable for systems built between 2009 and 2015 and for virtual environments that do not support Skylake instructions.
-
-For the latest binaries and source code, please visit the **Releases** section on our [GitHub](https://github.com/autonomys/subspace/releases).
-:::
-
-:::tip Available Parameters
-
-A complete list of parameters and their functions can be obtained using the `--help` option with both `subspace-node` and `subspace-farmer`.
-
-:::
-
-## Advanced CLI Installation Guide
-
-:::tip Substrate Address Needed
-
-To use this software, you need a Substrate wallet address. For assistance in creating a Substrate wallet, refer to our guides for ✨ [SubWallet](/wallets/subwallet) or [Polkadot.js](/wallets/polkadot).
-
-If you have a previous wallet address that starts with `st`, you can still use it, or you can transform it to the new `su` prefix. You can convert your existing wallet address using the tool available at [ss58.org](https://ss58.org). Previously, our testnets used the prefix `2254`, while the Taurus testnet and Autonomys mainnet use the prefix `6094`.
-
-:::
-
-We’ll provide the files you need for your operating system:
-- **subspace-node**: The node implementation for the Subspace protocol.
-- **subspace-farmer**: Manages plotting, replotting, and farming rewards.
+import Card from '@site/src/components/Card';
+import CardBody from '@site/src/components/Card/CardBody';
+import CardFooter from '@site/src/components/Card/CardFooter';
+import CardHeader from '@site/src/components/Card/CardHeader';
+import CardImage from '@site/src/components/Card/CardImage';
+import Column from '@site/src/components/Column';
+import Columns from '@site/src/components/Columns';
 
 <Tabs groupId="OS">
 
-<TabItem value="linux" label="🐧 Ubuntu" default>
-<LinuxPage />
+<TabItem value="ubuntu" label="🐧 Ubuntu" default>
+<UbuntuPage />
 </TabItem>
 
 <TabItem value="windows" label="🖼️ Windows">
@@ -77,20 +59,38 @@ We’ll provide the files you need for your operating system:
 
 </Tabs>
 
-:::tip Farming multiple plots
-You can farm multiple plots by adding additional plots separated by a space:
+### You Are Now Farming!
+<br /><br />
 
-`path=PATH_TO_FARM,size=PLOT_SIZE path=ADDITIONAL_PATH_TO_FARM,size=PLOT_SIZE`
-:::
-
-:::note Learn More About Syncing, Plotting & Farming
-To learn more about the syncing, plotting, and farming processes on the Autonomys Network, please refer to the links below from our Autonomys Academy:
-- [Synchronization](https://academy.autonomys.xyz/subspace-protocol/network-architecture/networking-protocols#synchronization)
-- [Plotting](https://academy.autonomys.xyz/subspace-protocol/consensus/proof-of-archival-storage/plotting)
-- [Farming](https://academy.autonomys.xyz/subspace-protocol/consensus/proof-of-archival-storage/farming)
-
-:::
-
-:::info Leave Feedback!
-Help us improve by sharing your [feedback](https://autonomys.typeform.com/to/tRe4Z0uI) on our releases. We’re eager to hear from you and make things better!
-:::
+<Card>
+    <CardBody
+    style={{ backgroundColor: '#54a260', color: 'black' }}
+    className="padding-vert--md"
+    textAlign="center"
+    transform="uppercase"
+    >
+    <h3>Learn More & Leave Feedback</h3>
+    To learn more about the syncing, plotting, and farming processes on the Autonomys Network, please refer to the links below from our Autonomys Academy.
+    <br />
+    We’re eager to hear from you and make things better!
+    </CardBody>
+    <CardFooter
+    style={{ backgroundColor: '#87d688', color: 'black' }}
+    className="text--center"
+    >
+    <div className="button-group button-group--block">
+    <a href="https://academy.autonomys.xyz/subspace-protocol/network-architecture/networking-protocols#synchronization" className="button button--secondary">🔄 Synchronization</a>
+    <a href="https://academy.autonomys.xyz/subspace-protocol/consensus/proof-of-archival-storage/plotting" className="button button--secondary">🌱 Plotting</a>
+    <a href="https://academy.autonomys.xyz/subspace-protocol/consensus/proof-of-archival-storage/farming" className="button button--secondary">🚜 Farming</a>
+    </div>
+    </CardFooter>
+    <CardFooter
+    style={{ backgroundColor: '#87d688', color: 'black' }}
+    className="text--center"
+    >
+    <div className="button-group button-group--block">
+    <a href="https://autonomys.typeform.com/to/tRe4Z0uI" className="button button--secondary">🗣️ Help us improve by sharing your feedback!</a>
+    </div>
+    </CardFooter>
+</Card>
+<br />

@@ -44,7 +44,7 @@ const config = {
   // to replace "en" with "zh-Hans".
   i18n: {
     defaultLocale,
-    locales: ["de", "en", "fr", "id", "it", "ja", "uk", "pt", "ru", "vi", "es", "zh", "tr"],
+    locales: ["de", "en", "es", "fr", "id", "it", "ja", "pt", "ru", "tr", "uk", "vi", "zh" ],
   },
   
   markdown: {
@@ -361,7 +361,7 @@ const config = {
       prism: {
         theme: lightCodeTheme,
         darkTheme: darkCodeTheme,
-        additionalLanguages: ['toml', 'powershell', 'shell-session', 'ini'],
+        additionalLanguages: ['bash', 'ini', 'powershell', 'shell-session', 'toml'],
       },
       algolia: {
         // The application ID provided by Algolia
