@@ -29,7 +29,7 @@ We are continuously working to expand this list. For the most up-to-date list of
 
 ## Translation Guide
 
-Thank you for considering contributing to the Space Acres UI locallization! This guide is here to help you contribute to our goal of making farming on the Autonomys Network more accessible and inclusive by localizing or translating the user interface. The Autonomys Network is driven by a vision of a decentralized and equitable future, and we believe that overcoming language barriers is crucial to achieving this vision.
+Thank you for considering contributing to the Space Acres UI localization! This guide is here to help you contribute to our goal of making farming on the Autonomys Network more accessible and inclusive by localizing or translating the user interface. The Autonomys Network is driven by a vision of a decentralized and equitable future, and we believe that overcoming language barriers is crucial to achieving this vision.
 
 ## Before you start
 
@@ -90,7 +90,7 @@ Space Acres has a lot of technical and Autonomys-related slang that **will not b
 
     ![sa-translate-12](/img/doc-imgs/space-acres-translate/sa-translate-12.png)
 
-13. Submit your changed by clicking on **Create pull request**.
+13. Submit your changes by clicking on **Create pull request**.
 
     ![sa-translate-13](/img/doc-imgs/space-acres-translate/sa-translate-13.png)
 
