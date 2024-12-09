@@ -1,16 +1,16 @@
 ---
-title: Nova Block Explorer
+title: Auto EVM Block Explorer
 sidebar_position: 2
 description: Autonomys hosted block explorer
-slug: /develop/nova/block-explorer
+slug: /develop/auto-evm/block-explorer
 keywords:
-  - EVM Domain Nova
+  - EVM Domain Auto EVM
   - Autonomys Network
 ---
 
-### EVM Domain Nova Block Explorer
+### EVM Domain Auto EVM Block Explorer
 
-**[Nova Block Explorer](https://nova.subspace.network)**
+**[Auto EVM Block Explorer](https://nova.subspace.network)**
 
 This early version provides a clear and user-friendly visualization of Autonomys-specific statistics that cater to the needs of our farmers and developers.
 
