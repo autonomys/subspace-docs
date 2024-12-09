@@ -33,7 +33,7 @@ You can track your farmer through the [Astral Block Explorer](https://astral.aut
     ![Wallet Panel](/img/doc-imgs/verify-farmer/wallet-panel.png)
 
 
-4. Select **Verfiy the ownership of the wallet**.
+4. Select **Verify the ownership of the wallet**.
     
     ![Verify Wallet](/img/doc-imgs/verify-farmer/verify-wallet.png)
 
