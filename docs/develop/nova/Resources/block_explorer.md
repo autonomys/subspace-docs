@@ -2,7 +2,7 @@
 title: Auto EVM Block Explorer
 sidebar_position: 2
 description: Autonomys hosted block explorer
-slug: /develop/nova/block-explorer
+slug: /develop/auto-evm/block-explorer
 keywords:
   - EVM Domain Auto EVM
   - Autonomys Network
