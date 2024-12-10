@@ -2,16 +2,16 @@
 title: Introduction
 sidebar_position: 1
 description: Quick start one-pager
-slug: /develop/nova/introduction
+slug: /develop/auto-evm/introduction
 keywords:
   - autonomys network
   - quickstart
 ---
 
 :::info
-Currently, Nova is available exclusively on the **Gemini-3h** network. It will soon be accessible on the new test network, **Taurus**.
+Currently, Auto EVM is available exclusively on **Taurus** network. 
 
-Nova's availability on the mainnet is planned for **Phase 2 of the mainnet launch**. For further details, please refer to our [Phased Launch Roadmap](https://forum.autonomys.xyz/t/phased-launch-roadmap/4414) post on the forum.
+Auto EVM's availability on the mainnet is planned for **Phase 2 of the mainnet launch**. For further details, please refer to our [Phased Launch Roadmap](https://forum.autonomys.xyz/t/phased-launch-roadmap/4414) post on the forum.
 :::
 
 ## The only tools needed to get you started
@@ -24,14 +24,14 @@ Autonomys utilizes EVM (Ethereum Virtual Machine) so any tool available for Ethe
 ---
 ```
 Network Name: Autonomys EVM
-New RPC URL: https://nova-0.gemini-3h.subspace.network/ws
+New RPC URL: https://auto-evm-0.taurus.subspace.network/ws
 Chain ID: 490000
-Currency Symbol: TSSC
+Currency Symbol: tAI3
 ```
 
 ### Get tokens to your wallet using our faucet
 ---
-Follow the instructions [here](/develop/nova/faucet) to use our **Faucet** to get some TSSC.
+Follow the instructions [here](/develop/auto-evm/faucet) to use our **Faucet** to get some tAI3.
 
 ### Test and deploy your smart contract
 ---
@@ -47,11 +47,11 @@ Please avoid attempting to accelerate a transaction by including a tip alongside
 ---
 ### Gas Estimation Issue
 
-When deploying smart contracts to our EVM-compatible domain **Nova**, you may encounter an error related to gas estimation, typically presenting as:
+When deploying smart contracts to our EVM-compatible domain **Auto EVM**, you may encounter an error related to gas estimation, typically presenting as:
 
 `"No manual gas limit set" or "Gas estimation failed"`.
 
-This issue often occurs because development tools like Foundry simulate transactions and use calculated or hardcoded gas estimation instead of querying the RPC (Remote Procedure Call) for it. **Nova** may require different gas amounts for certain operations compared to other EVM-compatible chains like Ethereum's testnets.
+This issue often occurs because development tools like Foundry simulate transactions and use calculated or hardcoded gas estimation instead of querying the RPC (Remote Procedure Call) for it. **Auto EVM** may require different gas amounts for certain operations compared to other EVM-compatible chains like Ethereum's testnets.
 
 :::note
 We have submitted an upstream PR to fix this issue with **Foundry**. Described below are the workarounds, until the issue is resolved by the **Foundry team**.

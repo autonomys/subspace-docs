@@ -20,7 +20,7 @@ We pride ourselves on enabling unlimited possibilities - there are no boundaries
 
 ## Development Options
 
-**Developers** can choose to utilize **Auto SDK** - a comprehensive toolkit designed to simplify development on the Autonomys Network, or **Nova** - Autonomys's EVM-compatible domain, allowing you to utilize all the familiar functionalities available on networks like Ethereum. Soon, you'll also be able to build your own local custom virtual machines.
+**Developers** can choose to utilize **Auto SDK** - a comprehensive toolkit designed to simplify development on the Autonomys Network, or **Auto EVM** - Autonomys's EVM-compatible domain, allowing you to utilize all the familiar functionalities available on networks like Ethereum. Soon, you'll also be able to build your own local custom virtual machines.
 
 ## [Auto SDK](/develop/auto-sdk/intro)
 
@@ -32,26 +32,26 @@ We pride ourselves on enabling unlimited possibilities - there are no boundaries
 ### Getting Started with Auto SDK
 To start using Auto SDK, refer to our [Setup Instructions](/develop/auto-sdk/intro) to clone the repository, install dependencies, and run tests. The SDK is designed to be developer-friendly, ensuring you can get up and running quickly.
 
-## [Nova - EVM Compatible Domain](/develop/nova/introduction)
+## [Auto EVM - EVM Compatible Domain](/develop/auto-evm/introduction)
 
 :::info
-Currently, Nova is available exclusively on the **Gemini-3h** network. It will soon be accessible on the new test network, **Taurus**.
+Currently, Auto EVM is available exclusively on the **Taurus** network.
 
-Nova's availability on the mainnet is planned for **Phase 2 of the mainnet launch**. For further details, please refer to our [Phased Launch Roadmap](https://forum.autonomys.xyz/t/phased-launch-roadmap/4414) post on the forum.
+Auto EVM's availability on the mainnet is planned for **Phase 2 of the mainnet launch**. For further details, please refer to our [Phased Launch Roadmap](https://forum.autonomys.xyz/t/phased-launch-roadmap/4414) post on the forum.
 :::
 
 ### Key Features:
 - **Solidity Smart Contracts**: Write and deploy smart contracts using Solidity, just as you would on Ethereum.
-- **Tool Compatibility**: Any tool available for Ethereum development - like Remix, Truffle, or Hardhat - is compatible with Nova.
+- **Tool Compatibility**: Any tool available for Ethereum development - like Remix, Truffle, or Hardhat - is compatible with Auto EVM.
 - **Seamless Transition**: Developers familiar with Ethereum can transition to Autonomys without a steep learning curve.
 
-### Why Use Nova?
+### Why Use Auto EVM?
 - **Familiar Environment**: Leverage existing knowledge and resources from the Ethereum ecosystem.
 - **Scalability and Security**: Benefit from Autonomys's scalable and secure infrastructure while using tried-and-true development practices.
 - **Interoperability**: Create applications that can interact seamlessly with other EVM-compatible networks.
 
-### Getting Started with Nova
-To start using Nova, refer to our [Guides and Manuals](/develop/nova/introduction).
+### Getting Started with Auto EVM
+To start using Auto EVM, refer to our [Guides and Manuals](/develop/auto-evm/introduction).
 
 
 ## RPC endpoints
@@ -64,11 +64,11 @@ To start using Nova, refer to our [Guides and Manuals](/develop/nova/introductio
 - wss://rpc.taurus.subspace.foundation/ws
 - wss://rpc.mainnet.subspace.foundation/ws
 
-:::tip Nova
-Currently, Nova is available exclusively on the gemini-3h network. It will soon be accessible on the taurus network.
+:::tip Auto EVM
+Currently, Auto EVM is available exclusively on the taurus network. Availability on mainnet is planned in Q1, 2025
 :::
 
-#### Nova
+#### Auto EVM
 - wss://nova-0.gemini-3h.subspace.network/ws 
 - wss://nova-1.gemini-3h.subspace.network/ws
 
