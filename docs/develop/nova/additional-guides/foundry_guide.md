@@ -110,7 +110,7 @@ keywords:
     Nice, all tests are passing, meaning the smart contract is working as expected.
 
 6. Next, there are **two things** we need to set, in order to **deploy our smart contract**:
-    - We need to connect a wallet that has sufficient balance of AI3 to cover the gas fees.
+    - We need to connect a wallet that has sufficient balance of tAI3 to cover the gas fees.
     - We need to set an environment variable we will use later.
 
     In order to make our lives easier, let’s create a new `Makefile` as well as `.env` file at the root of our project.

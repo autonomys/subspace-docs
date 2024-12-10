@@ -29,7 +29,7 @@ A smart contract is a digital agreement coded into a blockchain network, designe
 ### Differences with Ethereum
 ---
 Autonomys Token (AI3) (TSSC for Subspace Credit during the testnet) is the sole method of payment for gas within the Autonomys EVM runtime.
-There will be a bridge to convert farmed tokens into EVM-compatible tokens to cover the gas fees, however, at the moment the only viable option to get some AI3 on your wallet is through the Autonomys [faucet](/develop/auto-evm/faucet).
+There will be a bridge to convert farmed tokens into EVM-compatible tokens to cover the gas fees, however, at the moment the only viable option to get some tAI3 on your wallet is through the Autonomys [faucet](/develop/auto-evm/faucet).
 
 ### What is Solidity? 
 ---
