@@ -219,8 +219,8 @@ const config = {
                 href: '/participate/contribute/intro',
               },
               {
-                label: 'Community Resources',
-                href: '/participate/community/resources',
+                label: 'Community Contributions',
+                href: '/participate/community/contributions',
               },
               {
                 label: 'Help Us Translate!',
