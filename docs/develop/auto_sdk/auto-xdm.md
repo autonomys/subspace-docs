@@ -1,6 +1,6 @@
 ---
-title: XDM
-sidebar_position: 4
+title: Auto XDM
+sidebar_position: 5
 description: Functions to utilize Auto XDM (Cross-Domain Messaging)
 slug: /develop/auto-sdk/xdm
 keywords:
@@ -10,6 +10,10 @@ keywords:
     - Auto SDK
     - Auto XDM
 ---
+
+:::warning
+XDM is not yet enabled on Taurus Network or Autonomys Mainnet
+:::
 
 ### Cross-Domain Transfers
 

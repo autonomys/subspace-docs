@@ -1,7 +1,7 @@
 ---
 
 title: Auto ID  
-sidebar_position: 3  
+sidebar_position: 6  
 description: Functions to build on Auto ID domain
 slug: /develop/auto-sdk/auto-id
 keywords:
@@ -14,6 +14,10 @@ keywords:
 --- 
 
 ## Auto-ID Package Documentation
+
+:::warning
+Auto ID domain is not yet available on Taurus Network or Autonomys Mainnet
+:::
 
 ### Introduction
 

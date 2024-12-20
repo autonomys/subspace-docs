@@ -1,6 +1,6 @@
 ---
-title: Utils
-sidebar_position: 5
+title: Auto Utils
+sidebar_position: 4
 description: Utility functions for the Auto SDK
 slug: /develop/auto-sdk/utils
 keywords:
