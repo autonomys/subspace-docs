@@ -1,6 +1,6 @@
 --- 
 
-title: Consensus  
+title: Auto Consensus  
 sidebar_position: 2  
 description: Functions to interact with the consensus chain  
 slug: /develop/auto-sdk/consensus  

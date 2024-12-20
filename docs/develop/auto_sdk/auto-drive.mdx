@@ -1,6 +1,6 @@
 ---
-title: Drive
-sidebar_position: 6
+title: Auto Drive
+sidebar_position: 3
 description: Utilities for creating and managing IPLD DAGs
 slug: /develop/auto-sdk/drive
 keywords:
@@ -25,6 +25,48 @@ The `@autonomys/auto-drive` package provides utilities for creating and managing
 - **CID Management**: Utilities for working with Content Identifiers (CIDs).
 - **TypeScript Support**: Fully typed for enhanced developer experience.
 
+---
+
+## Auto Drive Dashboard
+
+Logging in to Auto Drive will allow you to view your upload and download limits, access files uploaded by other users, and manage and share your submissions.
+
+1. Log in to [Auto Drive](https://auto-drive-demo.netlify.app/)
+2. Sign in via Google or Discord  
+
+   ![Auto-Drive-1](/img/developers/Auto-Drive-1.png)
+
+3. On the landing page (dashboard) you will see:  
+
+   - Your upload limit (currently **100MB** per month)  
+   - Your download limit (currently **5GB** per month) 
+   - A list of **uploaded files** and their **CIDs**
+   - Options to **Download**, **Share**, or **Remove** each file
+
+  ![Auto-Drive-2](/img/developers/Auto-Drive-2.png)
+
+:::tip NOTE
+Removing a file does not delete it from the DSN, as it is permanent storage. It only removes the file from your dashboard.
+:::
+
+You can use the in-browser environment to upload, download, or share files, or you can use the SDK functions (described later on this page) to upload files or folders via the CLI.
+
+  ![Auto-Drive-3](/img/developers/Auto-Drive-3.png)
+
+
+### Getting an API Key
+
+Click on `Profile` to create your `API` key. You can then use this API key in the CLI to upload files or folders.
+
+  ![Auto-Drive-4](/img/developers/Auto-Drive-4.png)
+
+### Sharing Files
+
+To share a file, click the `Share` button next to the file. You can share it using a link, or by providing the user’s public ID. Each user’s public ID is visible on their `Profile` page.
+
+  ![Auto-Drive-5](/img/developers/Auto-Drive-5.png)
+
+---
 ### Installation
 
 Install the package via npm or yarn:
@@ -48,6 +90,7 @@ import { createFileIPLDDag, createFolderIPLDDag } from '@autonomys/auto-drive';
 // Or import everything
 import * as drive from '@autonomys/auto-drive';
 ```
+
 
 ---
 
@@ -89,19 +132,25 @@ import * as drive from '@autonomys/auto-drive';
 
 ## Usage Examples
 
-### 1. Creating an IPLD DAG from a File
+### 1. Uploading a File
 
-Create an IPLD DAG for a file:
 
 ```typescript
-import { createFileIPLDDag } from '@autonomys/auto-drive';
+import { createAutoDriveApi, uploadFileFromFilepath } from '@autonomys/auto-drive';
 import fs from 'fs';
 
-const fileBuffer = fs.readFileSync('path/to/your/file.txt');
+const filePath = fs.readFileSync('path/to/your/file.txt');
+const api = createAutoDriveApi({ apiKey: 'Your_API_Key' });
 
-const dag = createFileIPLDDag(fileBuffer, 'file.txt');
+/// passing options is optional, provide `password` if you prefer to ensrypt your file
+const options = {
+  password: 'password'
+  compression: true,
+};
 
-console.log('File DAG created:', dag);
+const upload = uploadFileFromFilepath(api, filePath, options);
+
+console.log('Upload:', upload);
 ```
 
 ### 2. Creating an IPLD DAG from a Folder
