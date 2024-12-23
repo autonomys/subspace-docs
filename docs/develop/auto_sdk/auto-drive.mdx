@@ -39,7 +39,7 @@ Logging in to Auto Drive will allow you to view your upload and download limits,
 3. On the landing page (dashboard) you will see:  
 
    - Your upload limit (currently **100MB** per month)  
-   - Your download limit (currently **5GB** per month) 
+   - Your download limit (currently **5GB** per month)  
    - A list of **uploaded files** and their **CIDs**
    - Options to **Download**, **Share**, or **Remove** each file
 
@@ -91,15 +91,28 @@ import { createFileIPLDDag, createFolderIPLDDag } from '@autonomys/auto-drive';
 import * as drive from '@autonomys/auto-drive';
 ```
 
-
 ---
 
 ## Available Functions
 
-### File and Folder DAG Creation
+### Upload and Download Operations
 
-- **`createFileIPLDDag(fileBuffer, fileName): IPLDDag`**: Creates an IPLD DAG for a file from its buffer and name.
-- **`createFolderIPLDDag(childCIDs, folderName, folderSize): IPLDDag`**: Creates an IPLD DAG for a folder with given child CIDs, name, and size.
+- **`uploadFile(api, file, options): Promise<string>`**: Uploads a file (using a buffer, `File`, or a custom interface) with optional encryption and compression. Returns the resulting CID as a string.
+- **`uploadFileFromFilepath(api, filepath, options): Promise<string>`**: Uploads a file from a filesystem path.
+- **`uploadFileFromInput(api, file, options): Promise<string>`**: Uploads a file obtained from a browser's `File` API.
+- **`uploadFolderFromFolderPath(api, folderPath, options): Promise<string>`**: Uploads a folder from a filesystem path.
+- **`uploadFolderFromInput(api, fileList, options): Promise<string>`**: Uploads a folder from a browser's `FileList`.
+- **`uploadFileWithinFolderUpload(api, uploadId, file, options): Promise<string>`**: Uploads a file within an existing folder upload session.
+- **`downloadFile(api, cid, password?): AsyncIterable<Buffer>`**: Downloads a file from its CID, with optional decryption using a password.
+- **`downloadObject(api, params): AsyncIterable<Buffer>`**: Downloads an object by its CID. *(Likely implemented as `apiCalls.downloadObject`.)*
+
+
+### Utility Functions
+
+- **`uploadFileChunks(api, fileUploadId, asyncIterable, uploadChunkSize, onProgress): Promise<void>`**: Handles the chunked upload of files to the server.
+- **`constructZipBlobFromTreeAndPaths(tree, filesMap): Promise<Blob>`**: Creates a zip archive from a file tree and corresponding file paths.
+- **`constructFromInput(files): FolderTree`**: Constructs a folder tree from an array of files.
+- **`fileToIterable(file): AsyncIterable<Buffer>`**: Converts a file into an async iterable of buffers.
 
 ### CID Utilities
 
@@ -112,276 +125,173 @@ import * as drive from '@autonomys/auto-drive';
 - **`encodeNode(node): Uint8Array`**: Encodes an IPLD node into a byte array.
 - **`decodeNode(encodedNode): any`**: Decodes a byte array back into an IPLD node.
 
-### Metadata Handling
-
-- **`createMetadataNode(metadata): any`**: Creates a metadata node for an IPLD DAG.
-- **`createMetadataIPLDDag(metadata): IPLDDag`**: Creates an IPLD DAG for metadata.
-
-### Upload and Download Operations
-
-- **`uploadFile(api, file, options): PromisedObservable<UploadFileStatus>`**: Uploads a file with optional encryption and compression.
-- **`uploadFileFromFilepath(api, filepath, options): PromisedObservable<UploadFileStatus>`**: Uploads a file from a filesystem path.
-- **`uploadFolderFromFolderPath(api, folderPath, options): PromisedObservable<UploadFolderStatus>`**: Uploads a folder from a filesystem path.
-- **`downloadObject(api, params): AsyncIterable<Buffer>`**: Downloads an object by its CID.
-
 ---
 
-*Note:* All asynchronous functions return a `Promise` and should be used with `await` for proper execution flow.
+*Note:* All asynchronous functions return a `Promise` (or an async iterable in the case of `downloadObject`), and should be used with `await` for proper execution flow.
 
 ---
 
 ## Usage Examples
 
-### 1. Uploading a File
-
+### 1. Uploading a File from Filepath
 
 ```typescript
-import { createAutoDriveApi, uploadFileFromFilepath } from '@autonomys/auto-drive';
-import fs from 'fs';
+import { uploadFileFromFilepath,createAutoDriveApi } from '@autonomys/auto-drive'
 
-const filePath = fs.readFileSync('path/to/your/file.txt');
-const api = createAutoDriveApi({ apiKey: 'Your_API_Key' });
-
-/// passing options is optional, provide `password` if you prefer to ensrypt your file
+const api = createAutoDriveApi({ apiKey: 'your-api-key' }) // Initialize your API instance with API key
+const filePath = 'path/to/your/file.txt' // Specify the path to your file
 const options = {
-  password: 'password'
+  password: 'your-encryption-password', // Optional: specify a password for encryption
   compression: true,
-};
+  // an optional callback useful for large file uploads
+  onProgress?: (progress: number) => {
+    console.log(`The upload is completed is ${progress}% completed`)
+  }
+}
 
-const upload = uploadFileFromFilepath(api, filePath, options);
+const cid = await uploadFileFromFilepath(api, filePath, options)
 
-console.log('Upload:', upload);
+console.log(`The file is uploaded and its cid is ${cid}`)
 ```
 
-### 2. Creating an IPLD DAG from a Folder
-
-Create an IPLD DAG for a folder:
+### 2. Uploading a File from Input (Interface)
 
 ```typescript
-import { createFolderIPLDDag } from '@autonomys/auto-drive';
-import { CID } from 'multiformats';
+import { uploadFileFromInput, createAutoDriveApi } from '@autonomys/auto-drive'
 
-// Example child CIDs and folder information
-const childCIDs: CID[] = [
-  /* array of CIDs */
-];
-const folderName = 'my-folder';
-const folderSize = 1024; // size in bytes
+const api = createAutoDriveApi({ apiKey: 'your-api-key' }) // Initialize your API instance with API key
 
-const folderDag = createFolderIPLDDag(childCIDs, folderName, folderSize);
-
-console.log('Folder DAG created:', folderDag);
-```
-
-### 3. Working with CIDs
-
-Generate and manipulate CIDs:
-
-```typescript
-import { cidOfNode, cidToString, stringToCid } from '@autonomys/auto-drive';
-
-// Assuming you have an IPLD node
-const node = { /* IPLD node data */ };
-
-// Create a CID from a node
-const cid = cidOfNode(node);
-
-// Convert the CID to a string
-const cidString = cidToString(cid);
-console.log('CID as string:', cidString);
-
-// Parse a string back into a CID
-const parsedCID = stringToCid(cidString);
-console.log('Parsed CID:', parsedCID);
-```
-
-### 4. Encoding and Decoding Nodes
-
-Encode and decode IPLD nodes:
-
-```typescript
-import { encodeNode, decodeNode } from '@autonomys/auto-drive';
-
-// Assume you have an IPLD node
-const node = { /* IPLD node data */ };
-
-// Encode a node
-const encodedNode = encodeNode(node);
-
-// Decode a node
-const decodedNode = decodeNode(encodedNode);
-
-console.log('Decoded node:', decodedNode);
-```
-
-### 5. Handling Metadata
-
-Add metadata to a node:
-
-```typescript
-import { createMetadataNode } from '@autonomys/auto-drive';
-
-const metadata = {
-  name: 'My File',
-  description: 'This is a sample file',
-  // ... other metadata fields
-};
-
-const metadataNode = createMetadataNode(metadata);
-
-console.log('Metadata node created:', metadataNode);
-```
-
-### 6. Example: Creating a File DAG and Converting to CID
-
-```typescript
-import { createFileIPLDDag, cidOfNode, cidToString } from '@autonomys/auto-drive';
-import fs from 'fs';
-
-const fileBuffer = fs.readFileSync('path/to/your/file.txt');
-
-const dag = createFileIPLDDag(fileBuffer, 'file.txt');
-
-// Generate CID from the DAG
-const cid = cidOfNode(dag.head);
-
-// Convert CID to string
-const cidString = cidToString(cid);
-
-console.log(`CID of the file DAG: ${cidString}`);
-```
-
-### 7. Example: Converting Metadata to DAG
-
-```typescript
-import {
-  createMetadataIPLDDag,
-  cidOfNode,
-  cidToString,
-  type OffchainMetadata,
-} from '@autonomys/auto-drive';
-import fs from 'fs';
-
-const metadataContent = fs.readFileSync('path/to/your/metadata.json', 'utf-8');
-const metadata: OffchainMetadata = JSON.parse(metadataContent);
-
-const dag = createMetadataIPLDDag(metadata);
-
-const cid = cidOfNode(dag.head);
-const cidString = cidToString(cid);
-
-console.log(`CID of the metadata DAG: ${cidString}`);
-```
-
-### 8. Uploading a File from Filepath
-
-```typescript
-import { uploadFileFromFilepath, createAutoDriveApi } from '@autonomys/auto-drive';
-
-const api = createAutoDriveApi({ apiKey: 'your-api-key' });
-const filePath = 'path/to/your/file.txt';
+// e.g Get File from object from HTML event
+const file: File = e.target.value // Substitute with your file
 const options = {
-  password: 'your-encryption-password', // Optional
+  password: 'your-encryption-password', // Optional: specify a password for encryption
   compression: true,
-};
+}
+const cid = await uploadFileFromInput(api, file, options)
 
-const uploadObservable = uploadFileFromFilepath(api, filePath, options)
-  .then(() => {
-    console.log('File uploaded successfully!');
-  })
-  .catch((error) => {
-    console.error('Error uploading file:', error);
-  });
+console.log(`The file is uploaded and its cid is ${cid}`)
+
 ```
 
-### 9. Uploading a File with Custom Interface
+### 3. Uploading a file from Custom Interface
+
+Some times you might have a custom interface that doesn't fit either File or filepath. For those cases exists the interface GenericFile:
+
+
 
 ```typescript
-import { uploadFile, createAutoDriveApi } from '@autonomys/auto-drive';
+export interface GenericFile {
+  read(): AsyncIterable<Buffer> // A buffer generator function that will output the bytes of the file
+  name: string
+  mimeType?: string
+  size: number
+  path: string // Could be ignored in file upload
+}
+```
 
-const api = createAutoDriveApi({ apiKey: 'your-api-key' });
-const buffer = Buffer.from(/* ... */);
+You could upload any file that could be represented in that way. For example, uploading a file as a Buffer
+
+```typescript
+import { createAutoDriveApi, uploadFile } from '@autonomys/auto-drive'
+
+const api = createAutoDriveApi({ apiKey: 'your-api-key' }) // Initialize your API instance with API key
+const buffer = Buffer.from(...);
 const genericFile = {
   read: async function *() {
-    yield buffer;
+    yield buffer
   },
   name: "autonomys-whitepaper.pdf",
   mimeType: "application/pdf",
   size: 1234556,
   path: "autonomys-whitepaper.pdf"
-};
+}
 
 const options = {
-  password: 'your-encryption-password',
+  password: 'your-encryption-password', // Optional: specify a password for encryption
   compression: true,
-};
+  // an optional callback useful for large file uploads
+  onProgress?: (progress: number) => {
+    console.log(`The upload is completed is ${progress}% completed`)
+  }
+}
 
-const uploadObservable = uploadFile(api, genericFile, options)
-  .then(() => {
-    console.log('File uploaded successfully!');
-  })
-  .catch((error) => {
-    console.error('Error uploading file:', error);
-  });
+const cid = uploadFile(api, genericFile, options)
+
+console.log(`The file is uploaded and its cid is ${cid}`)
 ```
 
-### 10. Uploading a Folder
+
+### 4. Uploading a folder
 
 ```typescript
-import { uploadFolderFromFolderPath, createAutoDriveApi } from '@autonomys/auto-drive';
+import { createAutoDriveApi, uploadFolderFromFolderPath } from '@autonomys/auto-drive'
 
-const api = createAutoDriveApi({ apiKey: 'your-api-key' });
-const folderPath = 'path/to/your/folder';
+const api = createAutoDriveApi({ apiKey: 'your-api-key' }) // Initialize your API instance with API key
+const folderPath = 'path/to/your/folder' // Specify the path to your folder
 
 const options = {
-  uploadChunkSize: 1024 * 1024,
-  password: 'your-encryption-password',
-};
+  uploadChunkSize: 1024 * 1024, // Optional: specify the chunk size for uploads
+  password: 'your-encryption-password', // Optional: If folder is encrypted
+  // an optional callback useful for large file uploads
+  onProgress: (progress: number) => {
+    console.log(`The upload is completed is ${progress}% completed`)
+  },
+}
 
-const uploadObservable = uploadFolderFromFolderPath(api, folderPath, options);
+const folderCID = await uploadFolderFromFolderPath(api, folderPath, options)
+
+console.log(`The folder is uploaded and its cid is ${folderCID}`)
+
 ```
 
-### 11. Tracking Upload Progress
+:::note
+When the folder is encrypted, a zip file would be generated first, and then that file would be encrypted and uploaded.
+:::
+
+### 5. Downloading files
 
 ```typescript
-import { useState, useEffect } from 'react';
-import { uploadFile, createAutoDriveApi } from '@autonomys/auto-drive';
+import { createAutoDriveApi, downloadFile } from '@autonomys/auto-drive'
 
-const UploadComponent = () => {
-  const [progress, setProgress] = useState<number>(0);
-
-  useEffect(() => {
-    const uploadFile = async () => {
-      const api = createAutoDriveApi({ apiKey: 'your-api-key' });
-      const finalStatus = await uploadFile(api, genericFile, options).forEach((status) => {
-        setProgress(status.progress);
-      });
-    };
-    uploadFile();
-  }, []);
-
-  return <div>Upload Progress: {progress}%</div>;
-};
-```
-
-### 12. Downloading a File
-
-```typescript
-import { downloadObject, createAutoDriveApi } from '@autonomys/auto-drive';
-import fs from 'fs';
-
-const api = createAutoDriveApi({ apiKey: 'your-api-key' });
+const api = createAutoDriveApi({ apiKey: 'your-api-key' }) // Initialize your API instance with API key
 
 try {
-  const stream = fs.createWriteStream('/path/to/file');
-  const asyncBuffer = await downloadObject(api, { cid: 'your-cid' });
-  for await (const buffer of asyncBuffer) {
-    stream.write(buffer);
+  const cid = '..'
+  const stream = await downloadFile(api, cid)
+  let file = Buffer.alloc(0)
+  for await (const chunk of stream) {
+    file = Buffer.concat([file, chunk])
   }
+  console.log('File downloaded successfully:', stream)
 } catch (error) {
-  console.error('Error downloading file:', error);
+  console.error('Error downloading file:', error)
 }
 ```
+
+### 6. Usage example of `getRoots` (retrieve the root directories)
+
+
+```typescript
+import { createAutoDriveApi, apiCalls, Scope } from '@autonomys/auto-drive'
+
+const api = createAutoDriveApi({ apiKey: 'your-api-key' }) // Initialize your API instance with API key
+
+try {
+  const myFiles = await apiCalls.getRoots(api, {
+    scope: Scope.User,
+    limit: 100,
+    offset: 0,
+  })
+
+  console.log(`Retrieved ${myFiles.rows.length} files of ${myFiles.totalCount} total`)
+  for (const file of myFiles.rows) {
+    console.log(`${file.name} - ${file.headCid}: ${file.size}`)
+  }
+} catch (error) {
+  console.error('Error downloading file:', error)
+}
+```
+
 ---
 
 ## Notes
