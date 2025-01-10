@@ -59,9 +59,14 @@ function generateKey(name) {
     return crypto.createHash('sha256').update(normalized).digest('hex');
 }
 
-// Change start and end dates
-const startDate = "2024-12-01T00:00:00+00:00";
-const endDate = "2024-12-31T23:59:59+00:00";
+function formatDateToBeginningOfMonth(date) {
+    const year = date.getFullYear();
+    const month = date.getMonth() + 1; // getMonth() is zero-indexed
+
+    return `${year}-${month.toString().padStart(2, '0')}-01T00:00:00+00:00`;
+}
+
+const formattedDate = formatDateToBeginningOfMonth(date);
 
 async function getProjectMembers() {
     try {
