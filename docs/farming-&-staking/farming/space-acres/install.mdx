@@ -17,6 +17,8 @@ import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';  
 import Link from '@docusaurus/Link';  
 import styles from '@site/src/pages/index.module.css';  
+import useBaseUrl from '@docusaurus/useBaseUrl';
+import ThemedImage from '@theme/ThemedImage';
 
 import WindowsPage from './platforms/_windows.mdx';  
 import MacOSPage from './platforms/_macos.mdx';  
@@ -107,67 +109,130 @@ For those who prefer a visual guide, we have prepared installation videos to ass
 
 Now comes the exciting part—setting up your farm! Here's what you'll see on the first screen:
 
-1. **Subspace (Autonomys) Network Rewards Address**:
+   <ThemedImage
+   alt="Space Acres Configuration"
+   sources={{
+      light: useBaseUrl('img/doc-imgs/space-acres/space-acres-setup-1-light.png'),
+      dark: useBaseUrl('img/doc-imgs/space-acres/space-acres-setup-1-dark.png'),
+   }}
+   /> 
+
+
+1. **Node path**:
+   - This is where Space Acres will store important data.
+   - Pick a location with plenty of free space; it might be as simple as **/Documents**.
+
+2. **Rewards address**:
    - This is where your farming rewards will be sent.
-   - It starts with **st** for **SubWallet** and with **5** for `{Polkadot.js}` extension.
+   - It starts with **su** for **SubWallet** and with **5** for `{Polkadot.js}` extension.
    - If you don't have one, click **Create wallet** to create a wallet.
 
-2. **Choose the folder for node**:
-   - This is where Space Acres will store important data.
-   - Pick a location with plenty of free space; it might be as simple as **/Downloads**.
-
-3. **Choose the folder for farming and size of the farm**:
+3. **Path to Farm 0 and its size**:
    - This is where your **plots** (farming data) will be stored.
    - The size determines your probability of getting a reward on the Network. In most cases, larger plots (or larger farm size) will gain you more rewards.
+   - The size could be set as a fixed size, e.g. 4TB, or 500GB, or as a percentage value of the available disk space.
    - If you prefer to have a few farms (e.g. you have some spare space on different SSD drives), you can click on **Add farm** to pledge some additional storage space.
 
+   <ThemedImage
+   alt="Configured setup screen"
+   sources={{
+      light: useBaseUrl('img/doc-imgs/space-acres/space-acres-setup-2-light.png'),
+      dark: useBaseUrl('img/doc-imgs/space-acres/space-acres-setup-2-dark.png'),
+   }}
+   />
+
+   :::tip
+   The screen above is just an example of configured setup screen, make sure to use your own **Node path**, **Rewards address*, **Path to farm 0 and its size**, and **Fixed size / Disk space percentage** values
+   :::
+
 4. **Advanced configuration (optional)**:
+   - Toggle **Reduce plotting CPU load** (select this option if you're using your farming PC for other tasks)
+   - Modify the default values for blockchain and DSN P2P ports
+   - Toggle **Faster Networking** (selecting this option may increase the load on your router)
+
 
    :::tip
    Don't worry about this unless you're an experienced user.
    :::
 
-For a comprehensive list of prerequisites and explanations, refer to our [Getting Started Guide](/farming/intro). 
+   For a comprehensive list of prerequisites and explanations, refer to our [Getting Started Guide](/farming/intro). 
 
-![space-acres-setup-1](/img/doc-imgs/space-acres/space-acres-setup-1.png)
 
-:::info
-Your screen may look slightly different depending on your operating system, but the basic information required will be the same.
-:::
+   :::info
+   Your screen may look slightly different depending on your operating system, but the basic information required will be the same.
+   :::
 
 ## Step 3: Start Farming
 
-1. After entering your information, click **Start**.
-2. Space Acres will now set up your node and connect to the Autonomys Network.
-3. You'll see progress bars as it syncs data and creates your farm plots.
+   1. After entering your information, click **Start**.
+   2. Space Acres will now set up your node and connect to the Autonomys Network.
+   3. You'll see progress bars as it syncs data and creates your farm plots.
 
-![space-acres-setup-2](/img/doc-imgs/space-acres/space-acres-setup-2.png)
+   <ThemedImage
+   alt="Initialization"
+   sources={{
+      light: useBaseUrl('img/doc-imgs/space-acres/space-acres-setup-3-light.png'),
+      dark: useBaseUrl('img/doc-imgs/space-acres/space-acres-setup-3-dark.png'),
+   }}
+   />
 
 4. Once everything is ready, you'll see the main Space Acres dashboard where you can monitor your farming activity.
 
-![space-acres-setup-3](/img/doc-imgs/space-acres/space-acres-setup-3.png)
+   <ThemedImage
+   alt="Space Acres Dashboard"
+   sources={{
+      light: useBaseUrl('img/doc-imgs/space-acres/space-acres-setup-4-light.png'),
+      dark: useBaseUrl('img/doc-imgs/space-acres/space-acres-setup-4-dark.png'),
+   }}
+   />
 
 5. Initial syncing and plotting can take from a few hours to days, depending on your hardware, network speed, and specified farm size. Below are examples of the various stages you can expect.
 
    a. **Cache Syncing**
 
-   ![space-acres-setup-5](/img/doc-imgs/space-acres/space-acres-setup-5.png) 
+   <ThemedImage
+   alt="Space Acres Dashboard"
+   sources={{
+      light: useBaseUrl('img/doc-imgs/space-acres/space-acres-setup-5-light.png'),
+      dark: useBaseUrl('img/doc-imgs/space-acres/space-acres-setup-5-dark.png'),
+   }}
+   />
 
    b. **Initial Plotting**
 
-   ![space-acres-setup-6](/img/doc-imgs/space-acres/space-acres-setup-6.png)
+   <ThemedImage
+   alt="Space Acres Dashboard"
+   sources={{
+      light: useBaseUrl('img/doc-imgs/space-acres/space-acres-setup-6-light.png'),
+      dark: useBaseUrl('img/doc-imgs/space-acres/space-acres-setup-6-dark.png'),
+   }}
+   />
 
    c. **Plotting Complete, Now Farming**
 
-   ![space-acres-setup-7](/img/doc-imgs/space-acres/space-acres-setup-7.png)
+   <ThemedImage
+   alt="Space Acres Dashboard"
+   sources={{
+      light: useBaseUrl('img/doc-imgs/space-acres/space-acres-setup-7-light.png'),
+      dark: useBaseUrl('img/doc-imgs/space-acres/space-acres-setup-7-dark.png'),
+   }}
+   />
 
-6. Once syncing and plotting are complete, you’ll notice a drop in CPU and RAM usage, and the dashboard will display your earned rewards and the estimated time until the next reward.
+6. Once syncing and plotting are complete, you'll notice a drop in CPU and RAM usage, and the dashboard will display your earned rewards and the estimated time until the next reward.
 
-![space-acres-setup-7](/img/doc-imgs/space-acres/space-acres-setup-7.png)
+   <ThemedImage
+   alt="Space Acres Dashboard"
+   sources={{
+      light: useBaseUrl('img/doc-imgs/space-acres/space-acres-setup-8-light.png'),
+      dark: useBaseUrl('img/doc-imgs/space-acres/space-acres-setup-8-dark.png'),
+   }}
+   />
 
-You can toggle the dashboard to view brief statistics or display all plotted sectors along with their status. The color codes of sectors are explained below. By hovering over the icons on the right, you can check the number of missed challenges, your average auditing and proving performance, and other useful stats.
+   :::tip
+   You can toggle the dashboard to view brief statistics or display all plotted sectors along with their status. The color codes of sectors are explained below. By hovering over the icons on the right, you can check the number of missed challenges, your average auditing and proving performance, and other useful stats.
+   :::
 
-**Happy farming!** 
+### Happy farming!
 
 ## Understanding Your Farm
 
@@ -193,6 +258,19 @@ To learn more about the syncing, plotting, and farming processes on the Autonomy
 :::info Leave Feedback!
 Help us improve by sharing your [feedback](https://autonomys.typeform.com/to/diTegrNj) on our releases. We’re eager to hear from you and make things better!
 :::
+
+## View Logs, Change Configuration, Leave Feedback
+
+   Click on the burger button menu to view the available options. 
+
+   <ThemedImage
+   alt="Burger button manu"
+   sources={{
+      light: useBaseUrl('img/doc-imgs/space-acres/space-acres-setup-9-light.png'),
+      dark: useBaseUrl('img/doc-imgs/space-acres/space-acres-setup-9-dark.png'),
+   }}
+   />
+
 
 ## Troubleshooting
 
