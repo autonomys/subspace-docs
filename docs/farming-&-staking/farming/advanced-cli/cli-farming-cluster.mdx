@@ -254,12 +254,12 @@ Refer to `./subspace-farmer cluster farmer --help` for an explanation of each op
     controller \
         --base-path /path/to/controller-dir \
         --node-rpc-url ws://<node_ip>:<rpc_port>
-    --
+    -- \
     cache \
         path=/path/to/cache,size=<size>
-    --
+    -- \
     plotter
-    --
+    -- \
     farmer \
         --reward-address <reward_address> \
         path=/path/to/farm,size=<size>
@@ -346,7 +346,7 @@ Farmer3 <-->  NATS
 
 :::caution Multiple Cache Groups
 
-Each Controller and Cache Component must be assigned a unique cache group. This can be done by specifying an alphanumeric cache group name with `--cache-group <group_name>`.
+Each cache group must have a unique name, and controllers can be assigned one or more. Specify an alphanumeric name for each using `--cache-group <group_name>`.
 
 :::
 
@@ -359,7 +359,8 @@ Each Controller and Cache Component must be assigned a unique cache group. This 
         --nats-server nats://<nats_ip>:4222 \
     controller \
         --base-path /path/to/controller-dir \
-        --cache-group <group_1>
+        --cache-group <group_1> \
+        --cache-group <group_2> \
         --node-rpc-url ws://<node_ip>:<rpc_port>
 ```
 
@@ -369,7 +370,7 @@ Each Controller and Cache Component must be assigned a unique cache group. This 
         --nats-server nats://<nats_ip>:4222 \
     controller \
         --base-path /path/to/controller-dir \
-        --cache-group <group_2>
+        --cache-group <group_2> \
         --node-rpc-url ws://<node_ip>:<rpc_port>
 ```
 
