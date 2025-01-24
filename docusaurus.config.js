@@ -58,9 +58,6 @@ const config = {
       '@docusaurus/plugin-client-redirects',
       {
         redirects: [
-          // Redirect Links
-          // Redirecting to the new root URL (/) as the previous root (/docs) is no longer in use.
-
           // Learn
           { to: '/learn/intro', from: ['/category/learn', '/docs/learn/intro'] },
           { to: '/learn/security', from: ['/docs/learn/security'] },
@@ -70,7 +67,6 @@ const config = {
           {to: '/wallets', from: ['/docs/category/wallets'] }, 
           { to: '/wallets/subwallet', from: ['/docs/farming-&-staking/wallets/subwallet'] },
           { to: '/wallets/polkadot', from: ['/docs/farming-&-staking/wallets/polkadot/'] },
-
 
           { to: '/category/farming', from: ['/docs/category/get-started-with-farming', '/protocol/farm/farming', '/docs/category/farming'] },
           { to: '/farming/intro', from: ['/docs/farming-&-staking/farming/prerequisites/', '/docs/farming-&-staking/farming/intro/'] },
@@ -93,28 +89,6 @@ const config = {
 
           { to: '/farming/timekeeper', from: ['/docs/protocol/timekeeping', '/docs/farming-&-staking/timekeeping'] },
 
-          // Develop
-          // Redirects from Docusaurus Developer Docs to new Nextra Docs https://develop.autonomys.xyz
-          { to: 'https://develop.autonomys.xyz/', from: ['/develop/intro', '/docs/category/developer-documentation/', '/docs/developers/intro/', '/docs/category/develop', '/docs/develop/intro'] },
-
-          { to: 'https://develop.autonomys.xyz/sdk', from: ['/develop/auto-sdk', '/docs/category/develop-using-auto-sdk'] },
-          { to: 'https://develop.autonomys.xyz/sdk', from: ['/develop/auto-sdk/intro', '/docs/develop/auto_sdk/intro'] },
-          { to: 'https://develop.autonomys.xyz/sdk/auto-consensus', from: ['/develop/auto-sdk/consensus', '/docs/develop/auto_sdk/auto-consensus'] },
-          { to: 'https://develop.autonomys.xyz/sdk/auto-id', from: ['/develop/auto-sdk/auto-id', '/docs/develop/auto_sdk/auto-id'] },
-          { to: 'https://develop.autonomys.xyz/sdk/auto-xdm', from: ['/develop/auto-sdk/xdm', '/docs/develop/auto_sdk/auto-xdm'] },
-          { to: 'https://develop.autonomys.xyz/sdk/auto-utils', from: ['/develop/auto-sdk/utils','/docs/develop/auto_sdk/auto-utils'] },
-
-          { to: 'https://develop.autonomys.xyz/evm/introduction', from: ['/develop/auto-evm', '/docs/category/develop-on-nova-evm', '/develop/nova'] },
-          { to: 'https://develop.autonomys.xyz/evm/introduction', from: ['/develop/auto-evm/introduction', '/docs/develop/nova/quick_start', '/develop/nova/introduction'] },
-          { to: 'https://develop.autonomys.xyz/evm/general_information', from: ['/develop/auto-evm/general', '/docs/develop/nova/general-information', '/develop/nova/general'] },
-          { to: 'https://develop.autonomys.xyz/evm/metamask', from: ['/develop/auto-evm/metamask', '/docs/develop/nova/setting-up-metamask', '/develop/nova/metamask'] },
-          { to: 'https://develop.autonomys.xyz/evm/foundry', from: ['/develop/auto-evm/guides/foundry', '/docs/develop/nova/foundry_guide', '/develop/nova/guides/foundry'] },
-          { to: 'https://develop.autonomys.xyz/evm/hardhat', from: ['/develop/auto-evm/guides/hardhat', '/docs/develop/nova/hardhat_guide', '/develop/nova/guides/hardhat'] },
-          { to: 'https://develop.autonomys.xyz/evm/local', from: ['/develop/auto-evm/guides/local-development', '/docs/develop/nova/local_development', '/develop/nova/guides/local-development'] },
-          { to: 'https://develop.autonomys.xyz/evm/remix', from: ['/develop/auto-evm/guides/remix', '/docs/develop/nova/remix_guide', '/develop/nova/guides/remix'] },
-          { to: 'https://develop.autonomys.xyz/evm/faucet', from: ['/develop/auto-evm/faucet', '/docs/develop/nova/faucet', '/develop/nova/faucet'] },
-          { to: 'https://develop.autonomys.xyz/evm/block_explorer', from: ['/develop/auto-evm/block-explorer', '/docs/develop/nova/block_explorer', '/develop/nova/block-explorer'] },
-
           // Participate
           { to: '/participate/contribute/intro', from: ['/docs/community/contribute/', '/docs/category/participate'] },
 
@@ -123,6 +97,75 @@ const config = {
 
           { to: '/participate/community/contributions', from: ['/participate/community/tools', '/participate/community/resources', '/docs/participate/', '/docs/participate/contribute', '/docs/participate/community_resources/community-maintained-tools'] },
         ],
+        
+        // External redirects using createRedirects to a new developer hub develop.autonomys.xyz
+        createRedirects(existingPath) {
+          return [
+            // Developer Documentation
+            {
+              from: ['/develop/intro', '/docs/category/developer-documentation/', '/docs/developers/intro/', '/docs/category/develop', '/docs/develop/intro'],
+              to: 'https://develop.autonomys.xyz/'
+            },
+            // SDK Documentation
+            {
+              from: ['/develop/auto-sdk', '/docs/category/develop-using-auto-sdk', '/develop/auto-sdk/intro', '/docs/develop/auto_sdk/intro'],
+              to: 'https://develop.autonomys.xyz/sdk'
+            },
+            {
+              from: ['/develop/auto-sdk/consensus', '/docs/develop/auto_sdk/auto-consensus'],
+              to: 'https://develop.autonomys.xyz/sdk/auto-consensus'
+            },
+            {
+              from: ['/develop/auto-sdk/auto-id', '/docs/develop/auto_sdk/auto-id'],
+              to: 'https://develop.autonomys.xyz/sdk/auto-id'
+            },
+            {
+              from: ['/develop/auto-sdk/xdm', '/docs/develop/auto_sdk/auto-xdm'],
+              to: 'https://develop.autonomys.xyz/sdk/auto-xdm'
+            },
+            {
+              from: ['/develop/auto-sdk/utils', '/docs/develop/auto_sdk/auto-utils'],
+              to: 'https://develop.autonomys.xyz/sdk/auto-utils'
+            },
+            // EVM Documentation
+            {
+              from: ['/develop/auto-evm', '/docs/category/develop-on-nova-evm', '/develop/nova', '/develop/auto-evm/introduction', '/docs/develop/nova/quick_start', '/develop/nova/introduction'],
+              to: 'https://develop.autonomys.xyz/evm/introduction'
+            },
+            {
+              from: ['/develop/auto-evm/general', '/docs/develop/nova/general-information', '/develop/nova/general'],
+              to: 'https://develop.autonomys.xyz/evm/general_information'
+            },
+            {
+              from: ['/develop/auto-evm/metamask', '/docs/develop/nova/setting-up-metamask', '/develop/nova/metamask'],
+              to: 'https://develop.autonomys.xyz/evm/metamask'
+            },
+            {
+              from: ['/develop/auto-evm/guides/foundry', '/docs/develop/nova/foundry_guide', '/develop/nova/guides/foundry'],
+              to: 'https://develop.autonomys.xyz/evm/foundry'
+            },
+            {
+              from: ['/develop/auto-evm/guides/hardhat', '/docs/develop/nova/hardhat_guide', '/develop/nova/guides/hardhat'],
+              to: 'https://develop.autonomys.xyz/evm/hardhat'
+            },
+            {
+              from: ['/develop/auto-evm/guides/local-development', '/docs/develop/nova/local_development', '/develop/nova/guides/local-development'],
+              to: 'https://develop.autonomys.xyz/evm/local'
+            },
+            {
+              from: ['/develop/auto-evm/guides/remix', '/docs/develop/nova/remix_guide', '/develop/nova/guides/remix'],
+              to: 'https://develop.autonomys.xyz/evm/remix'
+            },
+            {
+              from: ['/develop/auto-evm/faucet', '/docs/develop/nova/faucet', '/develop/nova/faucet'],
+              to: 'https://develop.autonomys.xyz/evm/faucet'
+            },
+            {
+              from: ['/develop/auto-evm/block-explorer', '/docs/develop/nova/block_explorer', '/develop/nova/block-explorer'],
+              to: 'https://develop.autonomys.xyz/evm/block_explorer'
+            }
+          ];
+        }
       },
     ],
   ],
