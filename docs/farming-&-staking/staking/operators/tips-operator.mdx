@@ -15,52 +15,13 @@ import Link from '@docusaurus/Link';
 import styles from '@site/src/pages/index.module.css';
 
 
-### Claiming tSSC
-The minimum amount of tokens required to register an operator is 100 tSSC.  If you don't have that much, there is a way to claim it as long as you are a verified farmer.
-
-1. Proceed to the staking tab on [Astral](https://astral.autonomys.xyz) and connect your wallet.
-
-![NStaking-1](/img/doc-imgs/operators-staking/NStaking-1.png)
-
-2. Select the wallet you would like to connect. Both **Subwallet** and **PolkadotJS** wallets are supported.
-
-![NStaking-2](/img/doc-imgs/operators-staking/NStaking-2.png)
-
-3. Enter your password to give an access to your wallet.
-
-![NStaking-3](/img/doc-imgs/operators-staking/NStaking-3.png)
-
-4. Select the account you'd like to use form the dropdown menu. You can click the button in the upper left corner to see available and locked (staked) token balances for the selected account. 
-
-![NStaking-4](/img/doc-imgs/operators-staking/NStaking-4.png)
-
-![NStaking-14](/img/doc-imgs/operators-staking/NStaking-14.png)
-
-5. As long as you are a verified farmer, you should have the Claim button available.
-
-![NStaking-15](/img/doc-imgs/operators-staking/NStaking-15.png)
-
-6. Click the Claim button and it should change to Pending.
-
-![NStaking-16](/img/doc-imgs/operators-staking/NStaking-16.png)
-
-7.  After about 5 minutes you should see an additional 100 tSSC in your account.
-
-![NStaking-17](/img/doc-imgs/operators-staking/NStaking-17.png)
-
-:::note
-If the claim button is not available you may need to disconnect and reconnect your wallet. If you still don't see the claim button you may need to click refresh.
-
-![NStaking-18](/img/doc-imgs/operators-staking/NStaking-18.png)
-:::
-
 ### Insert key to Keystore:
 This might be useful if you decided to switch domains or already have **the secret phrase**. Read more about switching domain in the next section.
 
 To insert the key, use the following command:
 
 ```bash
-target/production/subspace-node domain key insert \
+subspace-node domain key insert \
 --base-path NODE_DATA_PATH --domain-id DOMAIN_ID --keystore-suri "<Secret phrase>"
 ```
 
@@ -82,9 +43,7 @@ In order to switch domain:
 ![Staking-24](/img/doc-imgs/operators-staking/Staking-24.png)
 
 :::note
-
 Only the account who registered **Operator** can swith the domain.
-
 :::
 
 :::note
@@ -92,9 +51,7 @@ You need to move your keypair to a new location, if you switch domains. Follow t
 :::
 
 :::note
-
 Stake of your **Nominators** won't be released, but will be moved to the new domain as well. 
-
 :::
 
 ## Useful commands
@@ -109,14 +66,19 @@ To run both operator and validator at the same time, provide required flags for 
 <TabItem value="windows" label="🖼️ Windows" default>
 
 <CodeBlock>
-{`target/production/subspace-node run \`
+{`subspace-node run \`
 --chain taurus \`
 --farmer \`
 --name your_node_name \`
+--base-path NODE_DATA_PATH \`
+--blocks-pruning archive-canonical \`
+--state-pruning archive-canonical \`
+--sync full \`
 -- \`
 --domain-id your_domain_id \`
 --operator-id your_operator_id \`
---listen-on /ip4/0.0.0.0/tcp/40333`}
+--blocks-pruning archive-canonical \`
+--state-pruning 16000`}
 </CodeBlock>
 
 </TabItem>
@@ -125,14 +87,19 @@ To run both operator and validator at the same time, provide required flags for 
 <TabItem value="macos" label="🍎 macOS">
 
 <CodeBlock>
-{`target/production/subspace-node run \\
+{`subspace-node run \\
 --chain taurus \\
 --farmer \\
 --name your_node_name \\
+--base-path NODE_DATA_PATH \\
+--blocks-pruning archive-canonical \\
+--state-pruning archive-canonical \\
+--sync full \\
 -- \\
 --domain-id your_domain_id \\
 --operator-id your_operator_id \\
---listen-on /ip4/0.0.0.0/tcp/40333`}
+--blocks-pruning archive-canonical \\
+--state-pruning 16000`}
 </CodeBlock>
 
 </TabItem>
@@ -140,14 +107,19 @@ To run both operator and validator at the same time, provide required flags for 
 <TabItem value="linux" label="🐧 Ubuntu">
 
 <CodeBlock>
-{`target/production/subspace-node run \\
+{`subspace-node run \\
 --chain taurus \\
 --farmer \\
 --name your_node_name \\
+--base-path NODE_DATA_PATH \\
+--blocks-pruning archive-canonical \\
+--state-pruning archive-canonical \\
+--sync full \\
 -- \\
 --domain-id your_domain_id \\
 --operator-id your_operator_id \\
---listen-on /ip4/0.0.0.0/tcp/40333`}
+--blocks-pruning archive-canonical \\
+--state-pruning 16000`}
 </CodeBlock>
 </TabItem>
 
@@ -156,7 +128,7 @@ To run both operator and validator at the same time, provide required flags for 
 <CodeBlock>
 {`services:
   node:
-    # Replace snapshot-DATE with the latest release (like snapshot-2024-jun-18)
+    # Replace snapshot-DATE with the latest release (like snapshot-2025-jan-07)
     image: ghcr.io/autonomys/node:snapshot-DATE
     volumes:
 # Instead of specifying volume (which will store data in /var/lib/docker), you can
@@ -173,21 +145,25 @@ To run both operator and validator at the same time, provide required flags for 
     restart: unless-stopped
     command: [
       "run",
-      "--chain", "gemini-3h",
+      "--chain", "taurus",
       "--base-path", "/var/subspace",
-      "--listen-on", "30333",
-      "--dsn-listen-on", "/ip4/0.0.0.0/tcp/30433",
       "--rpc-cors", "all",
       "--rpc-methods", "unsafe",
       "--rpc-listen-on", "0.0.0.0:9944",
       "--farmer",
+     # Replace INSERT_YOUR_ID with your node ID (will be shown in telemetry)
       "--name", "INSERT_YOUR_ID",
+      "--blocks-pruning", "archive-canonical",
+      "--state-pruning", "archive-canonical", 
+      "--sync", "full", 
       "--",
       # Replace INSERT_YOUR_DOMAIN_ID with domain ID you want to be operator on
       "--domain-id", "INSERT_YOUR_DOMAIN_ID",
       # Replace INSERT_YOUR_OPERATOR_ID with your operator ID
       "--operator-id", "INSERT_YOUR_OPERATOR_ID",
-      "--listen-on", "/ip4/0.0.0.0/tcp/40333",
+      "--blocks-pruning", "archive-canonical",
+      "--state-pruning", "16000",
+      "--listen-on", "/ip4/0.0.0.0/tcp/40333"
 # Replace INSERT_YOUR_ID with your node ID (will be shown in telemetry)
     ]
     healthcheck:
@@ -199,7 +175,7 @@ To run both operator and validator at the same time, provide required flags for 
     depends_on:
       node:
         condition: service_healthy
-    # Replace snapshot-DATE with latest release (like snapshot-2024-jun-18)
+    # Replace snapshot-DATE with latest release (like snapshot-2025-jan-07)
     image: ghcr.io/autonomys/farmer:snapshot-DATE
     volumes:
 # Instead of specifying volume (which will store data in /var/lib/docker), you can

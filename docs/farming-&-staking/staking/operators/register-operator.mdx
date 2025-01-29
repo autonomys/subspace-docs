@@ -45,8 +45,8 @@ For running the Operator Node on Linux, proceed directly to the next step.
 
 ### Choosing the right domain
 
-An operator needs to register on a specific domain and create a key pair to participate in bundle production.  Stake Wars is using domains with IDs 0 (Auto EVM) and 1 (AutoID).
-It is possible to register an operator for each domain, but each operator will require running a node.
+An operator needs to register on a specific domain and create a key pair to participate in bundle production. Autonomys is currently using `domain 0` for the EVM domain.
+It is possible to register an operator for each domain, but each operator will require running it's own node. Currently operators can only be registered on the Taurus network.
 
 :::tip
 Any account with the **minimum operator stake** can become an operator. 
@@ -102,16 +102,12 @@ Ensure you replace `your_domain_id` with your domain identifier in the command a
 You can ignore setting up `your_operator_id` while you're syncing your node as you won't have an operator id until you have registered your operator. Make sure to set it after syncing and registration.
 :::
 
-:::note
-While it is possible to use `archive` for `blocks-pruning` and `state-pruning`, it is recommended to use `archive-canonical`. Using `archive` will keep the state of all blocks and will use additional disk space.
-:::
-
 <Tabs groupId="OS">
 
 <TabItem value="windows" label="🖼️ Windows" default>
 
 <CodeBlock>
-{`target/production/subspace-node run \`
+{`subspace-node run \`
 --chain taurus \`
 --name your_node_name \`
 --base-path NODE_DATA_PATH \`
@@ -121,7 +117,8 @@ While it is possible to use `archive` for `blocks-pruning` and `state-pruning`, 
 -- \`
 --domain-id your_domain_id \`
 --operator-id your_operator_id \`
---listen-on /ip4/0.0.0.0/tcp/40333`}
+--blocks-pruning archive-canonical \`
+--state-pruning 16000`}
 </CodeBlock>
 
 </TabItem>
@@ -129,7 +126,7 @@ While it is possible to use `archive` for `blocks-pruning` and `state-pruning`, 
 <TabItem value="macos" label="🍎 macOS">
 
 <CodeBlock>
-{`target/production/subspace-node run \\
+{`subspace-node run \\
 --chain taurus \\
 --name your_node_name \\
 --base-path NODE_DATA_PATH \\
@@ -139,7 +136,8 @@ While it is possible to use `archive` for `blocks-pruning` and `state-pruning`, 
 -- \\
 --domain-id your_domain_id \\
 --operator-id your_operator_id \\
---listen-on /ip4/0.0.0.0/tcp/40333`}
+--blocks-pruning archive-canonical \\
+--state-pruning 16000`}
 </CodeBlock>
 
 </TabItem>
@@ -147,7 +145,7 @@ While it is possible to use `archive` for `blocks-pruning` and `state-pruning`, 
 <TabItem value="linux" label="🐧 Ubuntu">
 
 <CodeBlock>
-{`target/production/subspace-node run \\
+{`subspace-node run \\
 --chain taurus \\
 --name your_node_name \\
 --base-path NODE_DATA_PATH \\
@@ -157,7 +155,8 @@ While it is possible to use `archive` for `blocks-pruning` and `state-pruning`, 
 -- \\
 --domain-id your_domain_id \\
 --operator-id your_operator_id \\
---listen-on /ip4/0.0.0.0/tcp/40333`}
+--blocks-pruning archive-canonical \\
+--state-pruning 16000`}
 </CodeBlock>
 
 </TabItem>
@@ -167,7 +166,7 @@ While it is possible to use `archive` for `blocks-pruning` and `state-pruning`, 
 <CodeBlock>
 {`services:
   node:
-    # Replace snapshot-DATE with the latest release (like snapshot-2024-jun-18)
+    # Replace snapshot-DATE with the latest release (like snapshot-2025-jan-07)
     image: ghcr.io/autonomys/node:snapshot-DATE
     volumes:
 # Instead of specifying volume (which will store data in /var/lib/docker), you can
@@ -198,6 +197,8 @@ While it is possible to use `archive` for `blocks-pruning` and `state-pruning`, 
       "--domain-id", "INSERT_YOUR_DOMAIN_ID",
       # Replace INSERT_YOUR_OPERATOR_ID with your operator ID
       "--operator-id", "INSERT_YOUR_OPERATOR_ID",
+      "--blocks-pruning", "archive-canonical",
+      "--state-pruning", "16000",
       "--listen-on", "/ip4/0.0.0.0/tcp/40333"
     ]
     healthcheck:
@@ -212,12 +213,6 @@ volumes:
 </TabItem>
 </Tabs>
 
-:::note
-If you're running an operator node for **AutoID domain**, add the following bootstrap node to the list of domain arguments:
-
---bootstrap-node /dns/bootstrap-0.autoid.gemini-3h.subspace.network/tcp/30334/p2p/12D3KooWFoiz2iTkmnnSqiL2oQRhGzaqgtUjYNz2jyWKQqgPXgx9
-:::
-
 You should see the node start successfully and begin syncing. 
 
 ![Staking-13](/img/doc-imgs/operators-staking/Staking-13.png)
@@ -227,13 +222,13 @@ You should see the node start successfully and begin syncing.
 
 :::info
 It's crucial to fully sync your node before registering as an operator. Please follow the commands in the ***Start the domain operator*** node section and only register as an operator once your node is fully synced. If many operators are registered but their nodes are still syncing or offline, it can adversely affect the speed of block production in the domain.
-You are required to have at least 100 tSSC in order to register your operator. If you are a verified farmer but do not have enough tSSC, you can visit the [Operator Tips & Tricks](/staking/operator/tips) page to find out how to claim 100 tSSC.
+You are required to have at least 100 tSSC in order to register your operator.
 :::
 
 
 #### Register an operator using Autonomys Staking interface
 
-1. Proceed to the staking tab on [Astral](https://astral.autonomys.xyz) and connect your wallet.
+1. Proceed to the staking tab on [Astral](https://astral.autonomys.xyz/taurus/consensus) and connect your wallet.
 
 ![NStaking-1](/img/doc-imgs/operators-staking/NStaking-1.png)
 
@@ -251,33 +246,23 @@ You are required to have at least 100 tSSC in order to register your operator. I
 
 ![NStaking-5](/img/doc-imgs/operators-staking/NStaking-5.png)
 
-5. Proceed to the `Register Operator` tab.
-
-![NStaking-6](/img/doc-imgs/operators-staking/NStaking-6.png)
-
-6. Select the `domainId` you would like to be registered on.  For Stake Wars, Auto EVM is Domain 0 and Auto-ID should be Domain 1 once it is available.
-
-![NStaking-7](/img/doc-imgs/operators-staking/NStaking-7.png)
-
-7. An important security change from Stake Wars one is that you are now required to have a Proof of signing key ownership signature.  This is derived from your seed phrase when creating the operator key.  
-You can either select the file that contains your seed in the subfolder of **NODE_DATA_PATH** under `/domains/domainID/keystore` and then click the choose file and point to that file or you can choose the Proof with seed and manually enter the seed phrase.
-Once you click the Generate proof button it will automatically populate the `Signing key` and `Proof of signing key ownership signature` fields.  Enter the `Amount to Stake`, `Nominator Tax`, `Minimum Nominator Stake` and then click `Next`.
+5. Proceed to the `Staking` tab and `Register Operator`.
 
 :::info
 Make sure to specify a Minimum Nominator Stake of at least 1 tSSC.
 :::
 
-![NStaking-8](/img/doc-imgs/operators-staking/NStaking-8.png)
+![NStaking-6](/img/doc-imgs/operators-staking/NStaking-6.png)
 
 :::info
-Make sure to either locate the signing key file generated on the previous **[Create operator key](#create-operator-key)** step or use the key phrase that was displayed when the key was created and is also in that key file.
+Make sure to use the operator key generated on the previous **[Create operator key](#create-operator-key)** step.
 :::
 
-8. Approve the request in the pop-up window. 
+6. Approve the request in the pop-up window. 
 
 ![NStaking-9](/img/doc-imgs/operators-staking/NStaking-9.png)
 
-9. Congratulations, you're now registered as an **operator**!  You can click on the Manage My Operator tab to see your operator and get the Operator Id.
+7. Congratulations, you're now registered as an **operator**!  You can click on the Manage My Operator tab to see your operator and get the Operator Id.
 
 ![NStaking-10](/img/doc-imgs/operators-staking/NStaking-10.png)
 
