@@ -1,6 +1,8 @@
 ---
 title: Getting Started
 sidebar_position: 1
+toc_min_heading_level: 2
+toc_max_heading_level: 4
 description: Introduction to Staking and Operators
 slug: /staking/intro
 keywords:
@@ -11,21 +13,21 @@ keywords:
     - Sub-domain
 ---
 
-:::note 
-This guide is focused on how to setup an operator, if you would like to learn more about the function of operators read the [Autonomys Academy](https://academy.autonomys.xyz/subspace-protocol/decoupled-execution) to get a better understanding.
+:::warning Operator and Staking Availability
+Running an Operator and staking are only available on the Taurus and Gemini-3h testnets.  
+Availability on the mainnet is planned for Phase 2. For further details, please refer to our [Phased Launch Roadmap](https://forum.autonomys.xyz/t/4414).
 :::
 
-:::info
-Currently, Staking (becoming an Operator or Nominator) is available exclusively on the **Gemini-3h** network. It will soon be accessible on the test network, **Taurus**.
 
-Staking availability on the mainnet is planned for **Phase 2 of the mainnet launch**. For further details, please refer to our [Phased Launch Roadmap](https://forum.autonomys.xyz/t/phased-launch-roadmap/4414) post on the forum.
-:::
-
-## Operators are a key part in solving the farmer's dilemma
+## Decoupled Execution Framework
 
 Autonomys introduces the Decoupled Execution Framework (DecEx) to tackle the state-bloat issue by separating transaction ordering from execution. Farmers confirm and order transactions, while staked operator nodes execute them, allowing different hardware requirements for each role. This keeps farming accessible and lays the groundwork for scalable execution. Users submit transactions to operators who batch them into bundles. Farmers verify and order them, with operators executing the transactions in this order. The process forms a deterministic receipt chain, with an initial implementation using an optimistic fraud-proof validation scheme. 
 
-# Key differences between farming and being an operator
+:::info Decoupled Execution
+For more information on how Subspace separates consensus and computation, check out [Autonomys Academy](https://academy.autonomys.xyz/subspace-protocol/decoupled-execution).
+:::
+
+## Farming vs. Operators: Key Differences
 
 ### Farming
 - **Consensus:** This is the primary role of Farmers, and provides security and consensus for the network. Our Farmers are what ensure we don't trust, but verify.
@@ -34,10 +36,10 @@ Autonomys introduces the Decoupled Execution Framework (DecEx) to tackle the sta
 - **Verification**: Farmers only verify the proof-of-election and ensure that the data is available.
 - **Transactions**: Farmers do not execute transactions; they focus on ordering them and including them in the blockchain.
 
-### Being an operator
+### Being an Operator
 
 - **Transaction Submission and Execution**: Operators are responsible for batching transactions into bundles and submitting them to the consensus chain, executing transactions included in the consensus block and maintaining the resulting chain state.
-- **Higher [Hardware Requirements](#operator-hardware-requirements)**: Operators require more substantial hardware capabilities, as they must execute complex transactions.
+- **Higher Hardware Requirements**: Operators require more substantial hardware capabilities, as they must execute complex transactions.
 - **Require Initial Investment:** Operators are required to stake a certain amount of AI3. If an operator acts maliciously, their stake is at risk of being **slashed**. Engaging in such malicious behavior carries significant penalties, providing crypto-economic security to execution.
 - **Pre-Validation and Batching**: Operators pre-validate and batch transactions into bundles through a stake-weighted election process.
 - **Deterministic Execution**: The operators execute transactions in a specific, deterministic order, producing state commitments in the form of execution receipts.
@@ -45,44 +47,75 @@ Autonomys introduces the Decoupled Execution Framework (DecEx) to tackle the sta
 - **Supports Various Environments**: Can support different smart contract execution environments like the Ethereum Virtual Machine (EVM) or Web-Assembly (WASM).
 
 
-### Operator hardware requirements
+## Operators
 
-:::note
-The hardware requirements have been reduced from the first Stake Wars in order to encourage as much participation as possible.  Most likely these will be higher in mainnet. 
+### Requirements
+
+:::warning Requirement Changes
+Hardware requirements are lowered for testing but will likely increase on the mainnet.
 :::
 
-**CPU**: 
-- x86-64 compatible;
-- Intel Ice Lake, or newer (Xeon or Core series); AMD Zen3, or newer (EPYC or Ryzen);
-- 4 physical cores @ 3.4GHz;
-- Prefer single-threaded performance over higher cores count. A comparison of single-threaded performance can be found [here](https://www.cpubenchmark.net/singleThread.html).
+#### Operating System
 
-**Storage**:
-- An NVMe SSD of 300 GB. In general, the latency is more important than the throughput.
+<small>
+    <table>
+    <tr>
+        <th>Application</th>
+        <th colspan="3">Minimum Supported Version*</th>
+    </tr>
+    <tr>
+        <td><strong>CLI</strong></td>
+        <td>🐧 Ubuntu 22.04</td>
+        <td>🪟 Windows 11</td>
+        <td>🍎 macOS 14 (Sonoma)</td>
+    </tr>
+    </table>
+&#42; Note that these are the officially supported minimum versions. For example, Windows 10 will not be officially supported but is likely to work. Team will not prioritise supporting issues that are only present on Windows 10.
+</small>
 
-**Memory**:
-- 16 GB.
+#### Hardware
 
-**System**:
-- Linux Kernel 5.16 or newer.
+<a id="min-hardware"></a>
+<a id="min-node-storage"></a>
+<a id="min-network"></a>
 
-**Network**:
-- The minimum symmetric networking speed is set to 50 Mbit/s.
+| CPU | RAM | Storage | Network |
+| --- | :-: | :-: | :-: |
+| 4 Cores+ @ 3.4GHz [¹](https://docs.autonomys.xyz/staking/intro#min-hardware) | 16 GB | 300 GB NVMe [²](https://docs.autonomys.xyz/staking/intro#min-node-storage) | 50 Mbps [³](https://docs.autonomys.xyz/staking/intro#min-network) |
 
-### Folder structure
+<small>¹ Intel Ice Lake or newer (Xeon or Core series), and AMD Zen 3 or newer (EPYC or Ryzen), with a preference for single-threaded performance over a higher core count.</small>
+<br />
+<p>
+<small>² Latency is more important than throughput.</small>
+<br />
+<small>³ Bandwidth throughput listed refers to the required upload speed.</small>
+<br />
+</p>
 
-Starting with Gemini 3h, the **Autonomys Node** will create the following directory structure:
 
-- subspace-node/db
-- subspace-node/domains/0/keystore
-- subspace-node/domains/0/db
-- subspace-node/domains/1/keystore
-- subspace-node/domains/1/db
-- subspace-node/network
+### Directory Structure
 
-For operators it means that you can find your key pair under `NODE_DATA_PATH/domains/domainID/keystore`.
+:::info Key Pair Location
 
-### Staking
+For operators, the key pair can be found in `/<base-path>/domains/<domain-id>/keystore`.
+
+:::
+
+
+
+```bash
+📂 subspace-node
+ ┣ 📂 db
+ ┣ 📂 domains
+ ┃ ┗ 📂 0
+ ┃ ┃ ┣ 📂 db
+ ┃ ┃ ┣ 📂 evm
+ ┃ ┃ ┗ 📂 keystore
+ ┗ 📂 network
+```
+
+
+## Staking
 
 The Autonomys Network relies on staking from both domain operators and farmers to secure the network and provide resources. Autonomys implements a Nominated Proof-of-Stake algorithm where token holders endorse operators who execute transactions and produce blocks.
 
@@ -97,7 +130,3 @@ The nomination pools in Autonomys are "lazy": any fees earned by the operator ar
 ### Stake epoch
 
 Stake epoch is a designated period in domain blocks within a blockchain system that marks each stake allocation re-adjustment period. Occurring every `StakeEpochDuration` blocks (at the moment, it's set to every 100 blocks or ~10 minutes), an epoch transition triggers specific actions such as finalizing operator domain switches, deregistering operators, unlocking operators and their associated funds, and recalculating stake distribution for the Verifiable Random Function (VRF) election. These transitions are designed to adjust the stake distribution dynamically, finalize various staking-related operations, process rewards, and manage deposits and withdrawals. The uniform duration across all domains helps maintain consistency in the network, while the specific starting point for each domain's epoch transition may vary based on when it is registered, helping to amortize the load of these transitions.
-
-:::note
-Read [Autonomys Academy](https://academy.autonomys.xyz/subspace-protocol/decoupled-execution) to get a full picture behind decoupled execution!
-:::
