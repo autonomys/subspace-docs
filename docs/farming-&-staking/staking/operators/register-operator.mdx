@@ -45,11 +45,12 @@ For running the Operator Node on Linux, proceed directly to the next step.
 
 ### Choosing the right domain
 
-An operator needs to register on a specific domain and create a key pair to participate in bundle production. Autonomys is currently using `domain 0` for the EVM domain.
-It is possible to register an operator for each domain, but each operator will require running it's own node. Currently operators can only be registered on the Taurus network.
+An operator needs to register on a specific domain and create a key pair to participate in bundle production. Autonomys is currently using `domain 0` for the EVM domain. 
+More domains will be available in the future. It is possible to register an operator for each domain, but each operator will require running its own node. 
+Currently operators can only be registered on the Taurus network.
 
 :::tip
-Any account with the **minimum operator stake** can become an operator. 
+Any account with the **minimum operator stake of 100 tAI3** can become an operator. 
 :::
 
 ### Create operator key
@@ -81,9 +82,6 @@ The domain operator node is running with an embedded consensus node, thus you ne
 subspace-node [consensus-chain-args] -- [domain-args]
 ```
 
-Example:
-Start a node as operator on `taurus` chain:
-
 
 :::note
 Currently, the domain chain does not support syncing from other operator nodes; it needs to be deterministically derived from the consensus chain block by block.
@@ -94,12 +92,9 @@ You need to **wipe** and sync your node from genesis block without using snap sy
 You do not need to wipe any existing plots. 
 :::
 
-:::note
-Ensure you replace `your_domain_id` with your domain identifier in the command and `your_operator_id` with your operator_id.
-:::
-
 :::tip
-You can ignore setting up `your_operator_id` while you're syncing your node as you won't have an operator id until you have registered your operator. Make sure to set it after syncing and registration.
+You can ignore setting up `your_operator_id` while you're syncing your node as you won't have an operator id until you have registered your operator. Make sure to set it after syncing and registration
+by replacing `your_operator_id` with your operator_id obtained when registering the operator.
 :::
 
 <Tabs groupId="OS">
@@ -166,7 +161,7 @@ You can ignore setting up `your_operator_id` while you're syncing your node as y
 <CodeBlock>
 {`services:
   node:
-    # Replace snapshot-DATE with the latest release (like snapshot-2025-jan-07)
+    # Replace snapshot-DATE with the latest release (like mainnet-2025-jan-28)
     image: ghcr.io/autonomys/node:snapshot-DATE
     volumes:
 # Instead of specifying volume (which will store data in /var/lib/docker), you can
@@ -195,7 +190,7 @@ You can ignore setting up `your_operator_id` while you're syncing your node as y
       "--",
       # Replace INSERT_YOUR_DOMAIN_ID with domain ID you want to be operator on
       "--domain-id", "INSERT_YOUR_DOMAIN_ID",
-      # Replace INSERT_YOUR_OPERATOR_ID with your operator ID
+      # Replace INSERT_YOUR_OPERATOR_ID with your operator ID once you have registered
       "--operator-id", "INSERT_YOUR_OPERATOR_ID",
       "--blocks-pruning", "archive-canonical",
       "--state-pruning", "16000",
@@ -232,7 +227,7 @@ You are required to have at least 100 tSSC in order to register your operator.
 
 ![NStaking-1](/img/doc-imgs/operators-staking/NStaking-1.png)
 
-2. Select the wallet you would like to connect. Both **Subwallet** and **PolkadotJS** wallets are supported.
+2. Select the wallet you would like to connect. **Subwallet**, **PolkadotJS**, and **Talisman** wallets are supported.
 
 ![NStaking-2](/img/doc-imgs/operators-staking/NStaking-2.png)
 
@@ -246,23 +241,29 @@ You are required to have at least 100 tSSC in order to register your operator.
 
 ![NStaking-5](/img/doc-imgs/operators-staking/NStaking-5.png)
 
-5. Proceed to the `Staking` tab and `Register Operator`.
+5. While still on the `Staking` tab, select `Register Operator`.
+
+![NStaking-15](/img/doc-imgs/operators-staking/NStaking-15.png)
 
 :::info
 Make sure to specify a Minimum Nominator Stake of at least 1 tSSC.
 :::
 
-![NStaking-6](/img/doc-imgs/operators-staking/NStaking-6.png)
+--This will need a new image once we have the gemini text replaced with Taurus text
+
+6. Select your Domain (It will default to the Taurus EVM), Signing key, Amount to Stake, Nominator Tax, and a Minimum Nominator Stake.
+
+![NStaking-6](/img/doc-imgs/operators-staking/NStaking-6.png) 
 
 :::info
 Make sure to use the operator key generated on the previous **[Create operator key](#create-operator-key)** step.
 :::
 
-6. Approve the request in the pop-up window. 
+7. Approve the request in the pop-up window. 
 
 ![NStaking-9](/img/doc-imgs/operators-staking/NStaking-9.png)
 
-7. Congratulations, you're now registered as an **operator**!  You can click on the Manage My Operator tab to see your operator and get the Operator Id.
+8. Congratulations, you're now registered as an **operator**!  While still on the `Staking` tab, select `Operators` and then Change the switch to say `My nominations` to see your operator and get the Operator Id.
 
 ![NStaking-10](/img/doc-imgs/operators-staking/NStaking-10.png)
 
@@ -272,5 +273,5 @@ It can take up to 10 minutes for the operator to be registered and appear on the
 
 :::tip
 You can view some additional actions by clicking on `action` next to your operator. 
-You can increase your stake (Nominate), withdraw some stake and de-register your operator from there. 
+You can increase your stake (Nominate), withdraw some existing stake, de-register your operator, and unlock funds. 
 :::
