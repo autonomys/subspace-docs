@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkportal=self.webpackChunkportal||[]).push([[4583],{6866:(n,t,e)=>{e.r(t),e.d(t,{default:()=>r});var a=e(6540),l=e(6347);function r(){const n=(0,l.W6)();return(0,a.useEffect)((()=>{const t=window.location.pathname.split("/")[1];t?n.push(`/${t}/learn/intro`):n.push("/learn/intro")}),[n]),null}}}]);
