@@ -1,5 +1,5 @@
 ---
-title: ✨ Talisman
+title: Talisman
 sidebar_position: 2
 description: How to configure the Talisman wallet for the Autonomys Network
 slug: /wallets/talisman
@@ -30,13 +30,13 @@ To learn more about Talisman visit their [Website](https://talisman.xyz).
 2. Once extension is installed, open it.
 ![step-2](/img/doc-imgs/talisman/Talisman-1.png)
 
-3. After clicking the `Get Started`, you will need to set a password.
+3. After clicking the `Get Started` button, you will need to set a password.
 ![step-3](/img/doc-imgs/talisman/Talisman-2.png)
 
 4. Once you set your password and click `Continue`, you will need to answer a privacy question.
 ![step-4](/img/doc-imgs/talisman/Talisman-3.png)
 
-5. You will get a welcome screen and need to click `Enter Talisman`.
+5. You will then get a welcome screen and need to click `Enter Talisman`.
 ![step-5](/img/doc-imgs/talisman/Talisman-4.png)
 
 6. Once you enter Talisman, you will see a dashboard.
@@ -49,7 +49,7 @@ To learn more about Talisman visit their [Website](https://talisman.xyz).
 7. Click the `Add account` button and you will see a multi-tab screen.
 ![step-7](/img/doc-imgs/talisman/Talisman-6.png)
 
-8. Next click `New Polkadot account` and you will be prompted to choose an account name.
+8. Next click on `New Polkadot account` and you will be prompted to choose an account name.
 ![step-8](/img/doc-imgs/talisman/Talisman-7.png)
 
 9. After choosing a name and clicking `Create`, you will see some information about your recovery phrase. 
@@ -84,6 +84,8 @@ To learn more about Talisman visit their [Website](https://talisman.xyz).
 18. Once you click the `Import` button, the screen will expand for you to choose a name for the account and enter your seed phrase.
 ![step-18](/img/doc-imgs/talisman/Talisman-18.png)
 
+19. To finish the import, client the `Import` button again.
+
 
 ## Troubleshooting
 
@@ -95,7 +97,7 @@ If you face any trouble or would like to learn about other features for Talisman
 1. You can backup/export your wallet. Click on the three dots in the top right to show the menu.
 ![step-19](/img/doc-imgs/talisman/Talisman-19.png)
 
-2. After choosing `Export as JSON` from the menu
+2. Next choose `Export as JSON` from the menu.
 ![step-20](/img/doc-imgs/talisman/Talisman-20.png)
 
 3. You will need to enter the password for your account and click `Submit`
