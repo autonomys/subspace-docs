@@ -76,7 +76,7 @@ const config = {
           { to: '/farming/intro', from: ['/docs/farming-&-staking/farming/prerequisites/', '/docs/farming-&-staking/farming/intro/'] },
           { to: '/farming/space-acres/install', from: ['/docs/protocol/pulsar/', '/docs/category/pulsar-recommended', '/docs/category/pulsar', '/docs/category/space-acres', '/docs/farming-&-staking/farming/pulsar', '/docs/category/space-acres-recommended', '/docs/farming-&-staking/farming/space-acres/space-acres-install', '/docs/farming-&amp;-staking/farming/space-acres/space-acres-install', '/docs/farming-&amp;-staking/farming/space-acres/install', '/docs/farming-&-staking/farming/space-acres/install'] },
           { to: '/farming/space-acres/translate', from: ['/docs/farming-&-staking/farming/space-acres/translate_space_acres'] },
-          { to: '/farming/cli/install', from: ['/docs/farming-&amp;-staking/farming/advanced-cli/cli-install', '/docs/protocol/cli/', '/docs/protocol/substrate-cli/', '/docs/Farming%20&%20Staking/Farming/Advanced-Cli/cli-install', '/docs/category/advanced-cli-recommended', '/docs/category/advanced-cli', '/docs/farming-&-staking/farming/advanced-cli/cli-install', '/docs/farming-&amp;-staking/farming/cli/cli-install', '/docs/protocol/cli/', '/docs/protocol/substrate-cli/', '/docs/Farming%20&%20Staking/Farming/Cli/cli-install', '/docs/category/cli-recommended', '/docs/category/cli', '/docs/farming-&-staking/farming/cli/cli-install'] },
+          { to: '/farming/cli/install', from: ['/docs/farming-&amp;-staking/farming/advanced-cli/cli-install', '/docs/protocol/cli/', '/docs/protocol/substrate-cli/', '/docs/Farming%20&%20Staking/Farming/Advanced-Cli/cli-install', '/docs/category/advanced-cli-recommended', '/docs/category/advanced-cli', '/docs/farming-&-staking/farming/advanced-cli/cli-install', '/docs/farming-&amp;-staking/farming/cli/cli-install', '/docs/Farming%20&%20Staking/Farming/Cli/cli-install', '/docs/category/cli-recommended', '/docs/category/cli', '/docs/farming-&-staking/farming/cli/cli-install'] },
           { to: '/farming/cli/cluster', from: ['/docs/farming-&-staking/farming/advanced-cli/cli-farming-cluster', '/docs/farming-&-staking/farming/cli/cli-farming-cluster'] },
           { to: '/farming/cli/tips', from: ['/docs/farming-&-staking/farming/advanced-cli/cli-tips', '/docs/farming-&-staking/farming/advanced-cli/cli-troubleshooting', '/farming/advanced-cli/troubleshooting', '/docs/farming-&-staking/farming/cli/cli-tips', '/docs/farming-&-staking/farming/cli/cli-troubleshooting', '/farming/cli/troubleshooting'] },
           { to: '/farming/common-problems', from: ['/docs/farming-&-staking/farming/common_problems'] },
@@ -98,7 +98,7 @@ const config = {
           { to: '/develop/intro', from: ['/docs/category/developer-documentation/', '/docs/developers/intro/', '/docs/category/develop', '/docs/develop/intro'] },
 
           { to: '/develop/auto-sdk', from: ['/docs/category/develop-using-auto-sdk'] },
-          { to: 'https://develop.autonomys.xyz/sdk/', from: ['/develop/auto-sdk/intro', '/docs/develop/auto_sdk/intro'] },
+          { to: '/develop/auto-sdk/intro', from: ['/docs/develop/auto_sdk/intro'] },
           { to: '/develop/auto-sdk/consensus', from: ['/docs/develop/auto_sdk/auto-consensus'] },
           { to: '/develop/auto-sdk/auto-id', from: ['/docs/develop/auto_sdk/auto-id'] },
           { to: '/develop/auto-sdk/xdm', from: ['/docs/develop/auto_sdk/auto-xdm'] },
