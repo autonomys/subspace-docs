@@ -70,7 +70,7 @@ To learn more about Talisman visit their [website](https://talisman.xyz).
 14. Clicking on the QR code icon and you will get a QR code and can click `Copy Address` to copy the address to your clipboard.
 ![step-14](/img/doc-imgs/talisman/Talisman-13.png)
 
-**Importing an existing Account**
+**Importing an existing account**
 
 15. Click the `Add account` button and you will see a multi-tab screen.
 ![step-15](/img/doc-imgs/talisman/Talisman-6.png) 
