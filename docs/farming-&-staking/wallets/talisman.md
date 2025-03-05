@@ -42,7 +42,7 @@ To learn more about Talisman visit their [website](https://talisman.xyz).
 6. Once you enter Talisman, you will see a dashboard.
 ![step-6](/img/doc-imgs/talisman/Talisman-5.png)
 
-## Connect wallet to Autonomys and find wallet public address
+## Connect a wallet to Autonomys and find your wallet public address
 
 **Creating a new account**
 
