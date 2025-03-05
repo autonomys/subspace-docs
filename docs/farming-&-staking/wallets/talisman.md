@@ -21,7 +21,7 @@ Talisman is a 3rd party Ethereum and Polkadot wallet created by the [Talisman Te
 
 Talisman is an Ethereum and Polkadot wallet that makes web3 simple for beginners and unlocks superpowers for pros. 
 
-To learn more about Talisman visit their [Website](https://talisman.xyz).
+To learn more about Talisman visit their [website](https://talisman.xyz).
 
 ## Create or Import A New Wallet
 
