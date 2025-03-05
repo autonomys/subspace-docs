@@ -27,7 +27,7 @@ To learn more about Talisman visit their [website](https://talisman.xyz).
 
 1. Visit the [Talisman website](https://talisman.xyz/download) and add the extension to your browser.
 
-2. Once extension is installed, open it.
+2. Once the extension is installed, open it.
 ![step-2](/img/doc-imgs/talisman/Talisman-1.png)
 
 3. After clicking the `Get Started` button, you will need to set a password.
