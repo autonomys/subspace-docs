@@ -12,16 +12,8 @@ keywords:
 ---
 
 :::note
-
 Talisman is a 3rd party Ethereum and Polkadot wallet created by the [Talisman Team](https://talisman.xyz).
-
-*This guide will be following the browser extension pathway as there are not any mobile applications available at this time.*
-
 :::
-
-Talisman is an Ethereum and Polkadot wallet that makes web3 simple for beginners and unlocks superpowers for pros. 
-
-To learn more about Talisman visit their [website](https://talisman.xyz).
 
 ## Create or Import A New Wallet
 
@@ -58,6 +50,10 @@ To learn more about Talisman visit their [website](https://talisman.xyz).
 
 10. Then click `Acknowledge and Continue`, and you will see your recovery phrase.
 ![step-11](/img/doc-imgs/talisman/Talisman-10.png)
+
+:::warning Protect Your Cryptocurrency Recovery Phrase at All Costs
+Your recovery phrase (also known as a seed phrase) is the master key to your cryptocurrency wallet. Anyone with access to this phrase can take complete control of your funds. Never share it with anyone, never store it in unsecured digital platforms or emails, and always ensure you have a safe offline backup. Treat it like your most sensitive personal or financial information. *If it’s exposed or lost, you could permanently lose access to your cryptocurrency*.
+:::
 
 11. You can either Verify the recovery phrase or Skip Verification and it will take you to the dashboard.
 ![step-12](/img/doc-imgs/talisman/Talisman-11.png)
