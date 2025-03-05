@@ -44,7 +44,7 @@ To learn more about Talisman visit their [website](https://talisman.xyz).
 
 ## Connect wallet to Autonomys and find wallet public address
 
-**Creating a new Account**
+**Creating a new account**
 
 7. Click the `Add account` button and you will see a multi-tab screen.
 ![step-7](/img/doc-imgs/talisman/Talisman-6.png)
