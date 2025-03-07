@@ -59,6 +59,10 @@ function generateKey(name) {
     return crypto.createHash('sha256').update(normalized).digest('hex');
 }
 
+// Change start and end dates
+const startDate = "2025-02-01T00:00:00+00:00";
+const endDate = "2025-02-28T23:59:59+00:00";
+
 function formatDateToBeginningOfMonth(date) {
     const year = date.getFullYear();
     const month = date.getMonth() + 1; // getMonth() is zero-indexed
@@ -97,7 +101,7 @@ async function generateMonthlyReport() {
         const response = await makeRequest('post', `${CONFIG.CROWDIN_API_ENDPOINT}/projects/${CONFIG.CROWDIN_PROJECT_ID}/reports`, {
             data: {
                 name: "top-members",
-                schema: { unit: "words", format: "csv", dateFrom: formattedDate }
+                schema: { unit: "words", format: "csv", dateFrom: startDate, dateTo: endDate }
             },
             headers: { 'Authorization': `Bearer ${CROWDIN_PERSONAL_TOKEN}`, 'Content-Type': 'application/json' }
         });
