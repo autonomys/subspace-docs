@@ -1,5 +1,5 @@
 ---
-title: ✨ FoxWallet
+title: FoxWallet
 sidebar_position: 3
 description: How to configure the FoxWallet Web3 wallet for the Autonomys Network
 slug: /wallets/foxwallet
