@@ -96,7 +96,7 @@ If you face any trouble or would like to learn about other features for FoxWalle
 
 6. Acknowledge the warning about not taking a screenshot and click `View seed phrase`.
 
-![step-14](/img/doc-imgs/foxwallet/FoxWallet-13.jpg)
+![step-14](/img/doc-imgs/foxwallet/FoxWallet-13.png)
 
 7. Your seed phrase will be displayed.
 
