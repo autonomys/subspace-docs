@@ -13,7 +13,7 @@ keywords:
 
 :::note
 FoxWallet is a 3rd party multi-chain wallet created by the [FoxWallet Team](https://foxwallet.com/).
-*Although FoxWallet has a web app, it does not yet support Autonomys.
+*Although FoxWallet has a browser extension, it does not yet support Autonomys. This guide deals with the mobile app only.*
 :::
 
 ## Installation of Wallet
@@ -38,7 +38,7 @@ FoxWallet is a 3rd party multi-chain wallet created by the [FoxWallet Team](http
 
 4. After confirming, you will go to Step 2 where you can see your seed phrase. You will first need to acknowledge a warning about protecting the phrase.
 
-5. This screen is set to prevent screenshots for saftey reasons. To advance to step 3, you will need to `Confirm backup`.
+5. This screen is set to prevent screenshots for safety reasons. To advance to step 3, you will need to `Confirm backup`.
 
 :::warning Protect Your Cryptocurrency Recovery Phrase at All Costs
 Your recovery phrase (also known as a seed phrase) is the master key to your cryptocurrency wallet. Anyone with access to this phrase can take complete control of your funds. Never share it with anyone, never store it in unsecured digital platforms or emails, and always ensure you have a safe offline backup. Treat it like your most sensitive personal or financial information. *If it’s exposed or lost, you could permanently lose access to your cryptocurrency*.
