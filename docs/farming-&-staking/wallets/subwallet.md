@@ -103,7 +103,7 @@ This also can be helpful for in-development networks such as the Autonomys Netwo
 
 #### Auto EVM (Taurus)
 ```
-    wss://nova-0.gemini-3h.subspace.network/ws
+    wss://auto-evm.taurus.autonomys.xyz/ws
     wss://nova-1.gemini-3h.subspace.network/ws
 ```
 
