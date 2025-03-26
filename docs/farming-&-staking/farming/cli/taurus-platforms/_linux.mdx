@@ -10,14 +10,14 @@ import styles from '@site/src/pages/index.module.css';
 <div className={`${styles.buttons} ${styles.flexContainer}`}>
   <Link
     className="button button--secondary"
-    to="https://github.com/autonomys/subspace/releases/download/taurus-2025-mar-17/subspace-node-ubuntu-x86_64-skylake-taurus-2025-mar-17"
+    to="https://github.com/autonomys/subspace/releases/download/taurus-2025-mar-26/subspace-node-ubuntu-x86_64-skylake-taurus-2025-mar-26"
     style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', textAlign: 'center', padding: '10px' }}>
     <span style={{ fontSize: '20px' }}>Node Executable</span>
     <span style={{ fontSize: '14px' }}>(Skylake+ CPU)</span>
   </Link>
   <Link
     className="button button--secondary"
-    to="https://github.com/autonomys/subspace/releases/download/taurus-2025-mar-17/subspace-farmer-ubuntu-x86_64-skylake-taurus-2025-mar-17"
+    to="https://github.com/autonomys/subspace/releases/download/taurus-2025-mar-26/subspace-farmer-ubuntu-x86_64-skylake-taurus-2025-mar-26"
     style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', textAlign: 'center', padding: '10px' }}>
     <span style={{ fontSize: '20px' }}>Farmer Executable</span>
     <span style={{ fontSize: '14px' }}>(Skylake+ CPU)</span>
@@ -27,14 +27,14 @@ import styles from '@site/src/pages/index.module.css';
 <div className={`${styles.buttons} ${styles.flexContainer}`}>
   <Link
     className="button button--secondary"
-    to="https://github.com/autonomys/subspace/releases/download/taurus-2025-mar-17/subspace-node-ubuntu-x86_64-v2-taurus-2025-mar-17"
+    to="https://github.com/autonomys/subspace/releases/download/taurus-2025-mar-26/subspace-node-ubuntu-x86_64-v2-taurus-2025-mar-26"
     style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', textAlign: 'center', padding: '10px' }}>
     <span style={{ fontSize: '20px' }}>Node Executable</span>
     <span style={{ fontSize: '14px' }}>(Legacy CPU)</span>
   </Link>
   <Link
     className="button button--secondary"
-    to="https://github.com/autonomys/subspace/releases/download/taurus-2025-mar-17/subspace-farmer-ubuntu-x86_64-v2-taurus-2025-mar-17"
+    to="https://github.com/autonomys/subspace/releases/download/taurus-2025-mar-26/subspace-farmer-ubuntu-x86_64-v2-taurus-2025-mar-26"
     style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', textAlign: 'center', padding: '10px' }}>
     <span style={{ fontSize: '20px' }}>Farmer Executable</span>
     <span style={{ fontSize: '14px' }}>(Legacy CPU)</span>
@@ -44,14 +44,14 @@ import styles from '@site/src/pages/index.module.css';
 <div className={`${styles.buttons} ${styles.flexContainer}`}>
   <Link
     className="button button--secondary"
-    to="https://github.com/autonomys/subspace/releases/download/taurus-2025-mar-17/subspace-node-ubuntu-aarch64-taurus-2025-mar-17"
+    to="https://github.com/autonomys/subspace/releases/download/taurus-2025-mar-26/subspace-node-ubuntu-aarch64-taurus-2025-mar-26"
     style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', textAlign: 'center', padding: '10px' }}>
     <span style={{ fontSize: '20px' }}>Node Executable</span>
     <span style={{ fontSize: '14px' }}>(Aarch64/Raspberry Pi)</span>
   </Link>
   <Link
     className="button button--secondary"
-    to="https://github.com/autonomys/subspace/releases/download/taurus-2025-mar-17/subspace-farmer-ubuntu-aarch64-taurus-2025-mar-17"
+    to="https://github.com/autonomys/subspace/releases/download/taurus-2025-mar-26/subspace-farmer-ubuntu-aarch64-taurus-2025-mar-26"
     style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', textAlign: 'center', padding: '10px' }}>
     <span style={{ fontSize: '20px' }}>Farmer Executable</span>
     <span style={{ fontSize: '14px' }}>(Aarch64/Raspberry Pi)</span>
@@ -68,14 +68,14 @@ import styles from '@site/src/pages/index.module.css';
 
 2. Make the `farmer` and `node` executable:
     ```bash
-    chmod +x subspace-farmer-ubuntu-x86_64-skylake-taurus-2025-mar-17
-    chmod +x subspace-node-ubuntu-x86_64-skylake-taurus-2025-mar-17
+    chmod +x subspace-farmer-ubuntu-x86_64-skylake-taurus-2025-mar-26
+    chmod +x subspace-node-ubuntu-x86_64-skylake-taurus-2025-mar-26
     ```
 
 3. Start the node using the command below. Replace `<NODE_DATA_PATH>` with the path where you want to store the node database and `<YOUR_NODE_NAME>` with a nickname of your choice. Ensure you copy the entire command:
 
     ```bash
-    ./subspace-node-ubuntu-x86_64-skylake-taurus-2025-mar-17 \
+    ./subspace-node-ubuntu-x86_64-skylake-taurus-2025-mar-26 \
       run \
       --chain taurus \
       --base-path "<NODE_DATA_PATH>" \
@@ -136,7 +136,7 @@ If you choose to use the same drive for plots and the node database, make sure t
     # Replace <PATH_TO_FARM> with the directory where you want to store the plot
     # Replace <PLOT_SIZE> with the size of the plot (e.g. 10GB, 2TiB)
 
-    ./subspace-farmer-ubuntu-x86_64-skylake-taurus-2025-mar-17 farm \
+    ./subspace-farmer-ubuntu-x86_64-skylake-taurus-2025-mar-26 farm \
       --reward-address <WALLET_ADDRESS> \
       path=<PATH_TO_FARM>,size=<PLOT_SIZE>
     ```
