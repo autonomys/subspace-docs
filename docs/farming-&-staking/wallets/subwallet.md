@@ -101,7 +101,7 @@ This also can be helpful for in-development networks such as the Autonomys Netwo
     wss://rpc.taurus.subspace.foundation/ws
 ```
 
-#### Auto EVM
+#### Auto EVM (Taurus)
 ```
     wss://nova-0.gemini-3h.subspace.network/ws
     wss://nova-1.gemini-3h.subspace.network/ws
