@@ -105,11 +105,6 @@ This also can be helpful for in-development networks such as the Autonomys Netwo
 ```
     wss://auto-evm.taurus.autonomys.xyz/ws
 ```
-
-#### Auto ID
-```
-    wss://autoid-0.gemini-3h.subspace.network/ws
-``` 
 </details>
 
 
