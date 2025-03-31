@@ -28,7 +28,7 @@ subspace-node run \
 ```
 
 :::info Farming with a full node 
-When running a full node, farmers need to add `--farmer` to allow a the farmer CLI to connect.
+When running a full node, farmers need to add a `farmer` parameter to allow a the farmer CLI to connect to the full node.
 :::
 
 ### Archive Consensus Node
@@ -96,7 +96,7 @@ subspace-node run \
 
 An operator node is closer to an *archive domain node* rather than a *full domain node*. The differences are that `archive-canonical` can be used and the `state-pruning` is set to 28,800 blocks. Also you need to specify a `domain-id` and an `operator-id`.
 
-``bash
+```bash
 subspace-node run \
 --chain taurus \
 --name your_node_name \
@@ -118,8 +118,8 @@ Timekeepers run the Proof-of-Time chain and maintain the randomness beacon for t
 ```bash
 subspace-node run \
 --chain mainnet \
---timekeeper \\
---timekeeper-cpu-cores 4\\ 
+--timekeeper \
+--timekeeper-cpu-cores 4 \ 
 --base-path NODE_DATA_PATH
 ```
 
