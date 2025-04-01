@@ -113,7 +113,7 @@ subspace-node run \
 
 ### Timekeeper Node
 
-Timekeepers run the Proof-of-Time chain and maintain the randomness beacon for the consensus chain. They are responsible for evaluating the delay function (within the target time slot duration of 1 second) and announcing the outputs to other nodes, requiring a powerful last-generation CPU. You will need to set the `timekeeper` parameter and you can also force it to use the fastest code with `timekeeper-cpu-cores`.
+Timekeepers run the Proof-of-Time chain and maintain the randomness beacon for the consensus chain. They are responsible for evaluating the delay function (within the target time slot duration of 1 second) and announcing the outputs to other nodes, requiring a powerful latest-generation CPU. You will need to set the `--timekeeper` parameter and you can also force it to use the fastest core with `--timekeeper-cpu-cores`.
 
 ```bash
 subspace-node run \
