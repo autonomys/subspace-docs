@@ -94,7 +94,7 @@ subspace-node run \
 
 ### Operator Node
 
-An operator node is closer to an *archive domain node* rather than a *full domain node*. The differences are that `archive-canonical` can be used and the `state-pruning` is set to 28,800 blocks. Also you need to specify a `domain-id` and an `operator-id`.
+An operator node is closer to an *archive domain node* rather than a *full domain node*. The differences are that `archive-canonical` can be used and the `state-pruning` is set to 28,800 blocks. Also you need to specify a `--domain-id` and an `--operator-id`.
 
 ```bash
 subspace-node run \
