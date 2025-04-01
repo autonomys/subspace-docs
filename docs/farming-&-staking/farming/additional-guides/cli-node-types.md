@@ -33,7 +33,7 @@ When running a full node, farmers need to add the `--farmer` parameter to allow 
 
 ### Archive Consensus Node
 
-An archival node processes all blocks and services peers. It preserves the blockchain's state and entire history. It is useful for faster historical block retrieval and block explorers. All farmers, operators and timekeepers can become archival nodes.
+An archival node keeps a history of all blocks and serves peers. It preserves the blockchain's state and entire history. It is useful for faster historical block retrieval and block explorers. All farmers, operators and timekeepers can be archival nodes.
 
 ```bash
 subspace-node run \
