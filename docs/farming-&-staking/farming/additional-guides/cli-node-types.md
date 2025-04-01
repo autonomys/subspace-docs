@@ -50,7 +50,7 @@ subspace-node run \
 
 ## Domain Nodes
 
-Domains are essentially built-in rollups that support any conceivable state transition framework and smart contract execution environment, making deploying a domain as easy as deploying a smart contract. They allow builders to easily launch their own network without bootstrapping a new validator set, while still benefiting from the shared security and interoperability provided by the Autonomys Network consensus chain.
+Domains are essentially built-in rollups that support any conceivable state transition framework and smart contract execution environment through custom runtimes. Deploying a domain as easy as deploying a smart contract. They allow builders to easily launch their own network without bootstrapping a new validator set, while still benefiting from the shared security and interoperability provided by the Autonomys Network consensus chain.
 
 There are also two ways to configure a Domain node. One is for **Full nodes** and one for **Archive nodes**. 
 
