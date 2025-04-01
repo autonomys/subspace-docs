@@ -45,7 +45,7 @@ subspace-node run \
 ```
 
 :::note archive vs archive-canonical
-*blocks-pruning* and *state-pruning* can be set to `archive` or `archive-canonical`.  The former keeps state of all blocks and the latter only canonical finalized chain.
+*blocks-pruning* and *state-pruning* can be set to `archive` or `archive-canonical`.  The former keeps state of all blocks and the latter only blocks which form the canonical chain.
 :::
 
 ## Domain Nodes
