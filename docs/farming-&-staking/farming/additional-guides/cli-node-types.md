@@ -28,7 +28,7 @@ subspace-node run \
 ```
 
 :::info Farming with a full node 
-When running a full node, farmers need to add a `farmer` parameter to allow a the farmer CLI to connect to the full node.
+When running a full node, farmers need to add the `--farmer` parameter to allow the farmer CLI to connect to the full node.
 :::
 
 ### Archive Consensus Node
