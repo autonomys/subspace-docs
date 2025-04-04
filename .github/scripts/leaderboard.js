@@ -59,6 +59,10 @@ function generateKey(name) {
     return crypto.createHash('sha256').update(normalized).digest('hex');
 }
 
+// Change start and end dates
+const startDate = "2025-03-01T00:00:00+00:00";
+const endDate = "2025-03-31T23:59:59+00:00";
+
 function formatDateToBeginningOfMonth(date) {
     const year = date.getFullYear();
     const month = date.getMonth() + 1; // getMonth() is zero-indexed
