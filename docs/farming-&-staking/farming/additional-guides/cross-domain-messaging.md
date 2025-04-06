@@ -1,11 +1,15 @@
 ---
-title: Cross Domain Messaging (XDM)
+title: Cross Domain Messaging (XDM) Guide
 sidebar_position: 6
 description: An overview of the different types of nodes
 slug: /farming/guides/xdm
 keywords:
     - XDM
     - Domain
+    - EVM
+    - Messaging
+    - Message
+    - Transfer
 ---
 
 import Tabs from '@theme/Tabs';
@@ -34,7 +38,7 @@ To maintain security, there is a challenge period that has to expire when transf
 
 ### Refunds due to a failure to complete an XDM transfer will take 28,800 blocks in total
 
-As long as the XDM is confirmed on the source chain (100 consensus blocks or 14,400 domain blocks) the XDM is able to be relayed and executed (i.e. transfer happens) on the destination chain.
+As long as the XDM is confirmed on the source chain (100 consensus blocks or 14,400 domain blocks) the XDM is able to be relayed and executed (the transfer happens) on the destination chain.
 
 The destination chain generates an XDM response that will be sent back to the source chain after the XDM response is confirmed on the destination chain (100 consensus blocks or 14,400 domain blocks), but the XDM response is mostly a no-op and only useful when the XDM is failed and it is necessary to refund the sender on the sender chain.
 
@@ -52,39 +56,39 @@ The tAI3 is earned by the operators for processing the transaction. They share t
 
 Visit https://astral.autonomys.xyz/taurus/transfer
 
-![XDM-1](/img/doc-imgs/additional-guides/XDM-1.png)
+![Astral - Transfer](/img/doc-imgs/additional-guides/XDM-1.png)
 
 Select networks for XDM consensus → Auto EVM. Enter amount to transfer.
 
-![XDM-2](/img/doc-imgs/additional-guides/XDM-2.png)
+![Astral - XDM Amount](/img/doc-imgs/additional-guides/XDM-2.png)
 
 Hit Send token and you will be asked to approve the signature request.
 
-![XDM-3](/img/doc-imgs/additional-guides/XDM-3.png)
+![SubWallet - Consensus to Auto EVM](/img/doc-imgs/additional-guides/XDM-3.png)
 
 After hitting Approve you will see an extrinsic hash.
 
-![XDM-4](/img/doc-imgs/additional-guides/XDM-4.png)
+![Astral - Extrinsic Hash](/img/doc-imgs/additional-guides/XDM-4.png)
 
 Which you can search on Astral.
 
-![XDM-5](/img/doc-imgs/additional-guides/XDM-5.png)
+![Astral - Search Extrinsic](/img/doc-imgs/additional-guides/XDM-5.png)
 
-![XDM-6](/img/doc-imgs/additional-guides/XDM-6.png)
+![Astral - View Extrinsic](/img/doc-imgs/additional-guides/XDM-6.png)
 
 Our target account starts with no tokens
 
-![XDM-7](/img/doc-imgs/additional-guides/XDM-7.png)
+![SubWallet - No Tokens](/img/doc-imgs/additional-guides/XDM-7.png)
 
 We can also check the balance on the Auto EVM explorer at https://blockscout.taurus.autonomys.xyz/
 
-![XDM-8](/img/doc-imgs/additional-guides/XDM-8.png)
+![Blockscout - No Tokens](/img/doc-imgs/additional-guides/XDM-8.png)
 
 We wait 10 minutes for the confirmation…
 
-![XDM-9](/img/doc-imgs/additional-guides/XDM-9.png)
+![SubWallet - Tokens Arrived](/img/doc-imgs/additional-guides/XDM-9.png)
 
-![XDM-10](/img/doc-imgs/additional-guides/XDM-10.png)
+![Blockscout - Tokens Arrived](/img/doc-imgs/additional-guides/XDM-10.png)
 
 And we have successfully completed an XDM transfer from consensus to Auto EVM.
 
@@ -94,7 +98,7 @@ So now we have some tokens on the Auto EVM domain, let’s try and send some bac
 
 First, we will need the `0x` public key of the account you want to send the tokens to on consensus. If you do not have this, you can get it from [ss58.org](http://ss58.org) as per the below screenshot.
 
-![XDM-11](/img/doc-imgs/additional-guides/XDM-11.png)
+![Convert Public Key](/img/doc-imgs/additional-guides/XDM-11.png)
 
 Next, you will need to navigate to the Auto EVM domain in PolkadotJS by either selecting it in the network switcher or following this link: https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Fauto-evm.taurus.autonomys.xyz%2Fws#/extrinsics
 
@@ -107,7 +111,7 @@ Working from the top down:
 5. Enter the amount. Which will be the number of tokens with 18 zeroes afterwards as the value is in Shannons.
 6. Submit Transaction.
 
-![XDM-12](/img/doc-imgs/additional-guides/XDM-12.png)
+![PolkadotJS](/img/doc-imgs/additional-guides/XDM-12.png)
 
 Remember that there is a 2 tAI3 fee for each XDM transaction and that you will need to wait for 14,400 domain blocks to pass which is about a day before the funds are available in the destination account.
 
