@@ -106,14 +106,10 @@ by replacing `your_operator_id` with your operator_id obtained when registering 
 --chain taurus \`
 --name your_node_name \`
 --base-path NODE_DATA_PATH \`
---blocks-pruning archive-canonical \`
---state-pruning archive-canonical \`
 --sync full \`
 -- \`
 --domain-id your_domain_id \`
---operator-id your_operator_id \`
---blocks-pruning archive-canonical \`
---state-pruning 28800`}
+--operator-id your_operator_id}
 </CodeBlock>
 
 </TabItem>
@@ -125,14 +121,10 @@ by replacing `your_operator_id` with your operator_id obtained when registering 
 --chain taurus \\
 --name your_node_name \\
 --base-path NODE_DATA_PATH \\
---blocks-pruning archive-canonical \\
---state-pruning archive-canonical \\
 --sync full \\
 -- \\
 --domain-id your_domain_id \\
---operator-id your_operator_id \\
---blocks-pruning archive-canonical \\
---state-pruning 28800`}
+--operator-id your_operator_id`}
 </CodeBlock>
 
 </TabItem>
@@ -144,14 +136,10 @@ by replacing `your_operator_id` with your operator_id obtained when registering 
 --chain taurus \\
 --name your_node_name \\
 --base-path NODE_DATA_PATH \\
---blocks-pruning archive-canonical \\
---state-pruning archive-canonical \\
 --sync full \\
 -- \\
 --domain-id your_domain_id \\
---operator-id your_operator_id \\
---blocks-pruning archive-canonical \\
---state-pruning 28800`}
+--operator-id your_operator_id`}
 </CodeBlock>
 
 </TabItem>
@@ -184,16 +172,12 @@ by replacing `your_operator_id` with your operator_id obtained when registering 
       "--dsn-listen-on", "/ip4/0.0.0.0/tcp/30433",
       # Replace INSERT_YOUR_ID with your node ID (will be shown in telemetry)
       "--name", "INSERT_YOUR_ID",
-      "--blocks-pruning", "archive-canonical",
-      "--state-pruning", "archive-canonical", 
       "--sync", "full", 
       "--",
       # Replace INSERT_YOUR_DOMAIN_ID with domain ID you want to be operator on
       "--domain-id", "INSERT_YOUR_DOMAIN_ID",
       # Replace INSERT_YOUR_OPERATOR_ID with your operator ID once you have registered
       "--operator-id", "INSERT_YOUR_OPERATOR_ID",
-      "--blocks-pruning", "archive-canonical",
-      "--state-pruning", "28800",
       "--listen-on", "/ip4/0.0.0.0/tcp/40333"
     ]
     healthcheck:
