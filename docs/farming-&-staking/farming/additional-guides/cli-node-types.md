@@ -101,14 +101,10 @@ subspace-node run \
 --chain taurus \
 --name your_node_name \
 --base-path NODE_DATA_PATH \
---blocks-pruning archive-canonical \
---state-pruning archive-canonical \
 --sync full \
 -- \
 --domain-id your_domain_id \
 --operator-id your_operator_id \
---blocks-pruning archive-canonical \
---state-pruning 28800
 ```
 
 ### Timekeeper Node
