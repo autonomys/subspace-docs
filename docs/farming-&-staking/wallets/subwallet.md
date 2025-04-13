@@ -1,6 +1,6 @@
 ---
 title: ✨ SubWallet
-sidebar_position: 3
+sidebar_position: 1
 description: How to configure the SubWallet Substrate wallet for the Autonomys Network
 slug: /wallets/subwallet
 keywords:

@@ -1,6 +1,6 @@
 ---
 title: Polkadot
-sidebar_position: 2
+sidebar_position: 3
 description: How to configure the Polkadot{.js} Substrate wallet for the Autonomys Network
 slug: /wallets/polkadot
 keywords:

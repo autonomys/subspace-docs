@@ -1,6 +1,6 @@
 ---
 title: FoxWallet
-sidebar_position: 1
+sidebar_position: 2
 description: How to configure the FoxWallet Web3 wallet for the Autonomys Network
 slug: /wallets/foxwallet
 keywords:
