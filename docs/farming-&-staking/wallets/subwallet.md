@@ -98,7 +98,7 @@ This also can be helpful for in-development networks such as the Autonomys Netwo
 
 #### Consensus (Taurus Testnet)
 ```
-    wss://rpc-0.taurus.subspace.network/ws
+    wss://rpc.taurus.autonomys.xyz
 ```
 
 #### Auto EVM (Taurus)
