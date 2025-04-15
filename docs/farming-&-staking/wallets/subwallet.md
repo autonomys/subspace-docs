@@ -91,7 +91,7 @@ This also can be helpful for in-development networks such as the Autonomys Netwo
 
 :::info RPC Endpoints
 **Gemini 3h Endpoint:** `wss://rpc-1.gemini-3h.subspace.network/ws`<br />
-**Taurus Testnet Endpoint:** `wss://rpc.taurus.subspace.foundation/ws`<br />
+**Taurus Testnet Endpoint:** `wss://rpc.taurus.autonomys.xyz/ws`<br />
 **Mainnet Endpoint:** `wss://rpc.mainnet.subspace.foundation/ws`
 :::
 
@@ -119,7 +119,7 @@ The only required option is the Provider URL. Adding an explorer is optional. Th
 You can refer to the *RPC Endpoints* above for available provider URLs for the Autonomys Network.
     
 5. Fill in the provider URL, once you click out of this box it will check the URL and add the rest of the information, then click Save. 
-    - *In this example we will be using the Taurus Testnet RPC `wss://rpc.taurus.subspace.foundation/ws`*
+    - *In this example we will be using the Taurus Testnet RPC `wss://rpc.taurus.autonomys.xyz/ws`*
 
     ![rpc-step-4](/img/doc-imgs/subwallet/rpc-4.png)
 
