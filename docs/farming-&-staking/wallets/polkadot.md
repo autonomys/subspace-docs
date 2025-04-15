@@ -1,7 +1,7 @@
 ---
-title: polkadot{.js} extension
-sidebar_position: 4
-description: How to configure the Polkadot Substrate wallet for the Autonomys Network
+title: Polkadot
+sidebar_position: 3
+description: How to configure the Polkadot{.js} Substrate wallet for the Autonomys Network
 slug: /wallets/polkadot
 keywords:
     - Farmer

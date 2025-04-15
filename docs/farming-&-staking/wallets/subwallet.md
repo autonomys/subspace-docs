@@ -89,11 +89,25 @@ Sometimes you won't see the network you would like to connect to in a list of av
 
 This also can be helpful for in-development networks such as the Autonomys Network Testnet. Below you will find a simple guide on how to add these new networks. Additionally we will try and keep an updated list of active RPC endpoints below for development.
 
-:::info RPC Endpoints
-**Gemini 3h Endpoint:** `wss://rpc-1.gemini-3h.subspace.network/ws`<br />
-**Taurus Testnet Endpoint:** `wss://rpc.taurus.subspace.foundation/ws`<br />
-**Mainnet Endpoint:** `wss://rpc.mainnet.subspace.foundation/ws`
-:::
+<details>
+<summary>📝 RPC endpoints</summary>
+#### Consensus (Mainnet)
+```
+    wss://rpc.mainnet.subspace.foundation/ws
+```
+
+#### Consensus (Taurus Testnet)
+```
+    wss://rpc.taurus.autonomys.xyz
+```
+
+#### Auto EVM (Taurus)
+```
+    wss://auto-evm.taurus.autonomys.xyz/ws
+```
+</details>
+
+
 
 1. Open SubWallet, select the 3 line menu in the top left of the wallet.
 
