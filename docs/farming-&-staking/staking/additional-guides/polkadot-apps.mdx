@@ -1,0 +1,86 @@
+---
+title: Polkadot Apps
+sidebar_position: 2
+description: Polkadot Apps Guide
+slug: /staking/operator/polkadot
+keywords:
+- Polkadot
+- Extrinsics
+- Guide
+---
+
+import Link from '@docusaurus/Link';
+import styles from '@site/src/pages/index.module.css';
+
+This guide provides step-by-step instructions for submitting common types of extrinsics on the Autonomys Network using the Polkadot Apps interface. It is intended to help operators and nominators perform these actions directly via RPC calls as an alternative to using [Astral Block Explorer](https://astral.autonomys.xyz).
+
+:::tip Polkadot
+These extrinsics can be submitted on [Polkadot](https://polkadot.js.org/apps/?rpc=wss://rpc.taurus.autonomys.xyz/ws#/extrinsics) under **Developer** ➔ **Extrinsics**.
+:::
+
+## Nominate an Operator
+<details>
+<summary>Use the following extrinsic to nominate an operator.</summary>
+
+![Nominate Operator](/img/doc-imgs/polkadot/nominateOperator.png)
+
+1. Select the wallet you’d like to use (if you have more than one).  
+2. Choose `domains`.  
+3. Select `nominateOperator`.  
+4. Enter the `OperatorId` you wish to nominate.  
+5. Set the nomination `amount` in **Shannons**. For reference, 100 tAI3 equals 100 followed by 18 zeros.  
+6. Click `Submit Transaction` and sign the extrinsic with your supported [wallet](/wallets).
+</details>
+
+## Register an Operator
+<details>
+<summary>Use the following extrinsic to register an operator.</summary>
+
+![Register an Operator](/img/doc-imgs/polkadot/registerOperator.png)
+
+1. Select the wallet you’d like to use (if you have more than one).  
+2. Choose `domains`.  
+3. Select `registerOperator`.  
+4. Enter the `domainId` you wish to register an operator on. Auto EVM is on domain 0.
+5. Set the initial operator stake `amount` in **Shannons**. For reference, 100 tAI3 is represented as 100 followed by 18 zeros. The value must be an integer equal to or greater than 100 tokens.
+6. Set the minimum nominator stake required to participate under this operator in **Shannons**. For reference, 10 tAI3 is represented as 10 followed by 18 zeros. The value must be an integer equal to or greater than 1 token.
+7. Set the nomination tax percentage to be collected from nominators participating under this operator. The value must be an integer equal to or greater than 0.
+8. Click `Submit Transaction` and sign the extrinsic with your supported [wallet](/wallets).
+</details>
+
+
+## Withdraw Stake
+<details>
+<summary>Use the following extrinsic to withdraw the stake made to an operator.</summary>
+
+:::caution Funds Not Immediately Available
+It will take **14,400 domain blocks** from a successful withdrawal before you can finalize the process and [unlock](#unlock-nominator) the funds.
+:::
+
+![Withdraw Stake](/img/doc-imgs/polkadot/withdrawStake.png)
+
+1. Select the wallet you’d like to use (if you have more than one).  
+2. Choose `domains`.  
+3. Select `withdrawStake`.  
+4. Enter the `OperatorId` you wish to nominate.  
+5. Select `All` to withdraw the full amount, or choose `Stake` to withdraw only a portion. If you choose to withdraw a partial stake, enter 80% of the amount you wish to withdraw. The remaining 20% is held in a storage fund and will be refunded automatically. For example, to withdraw 100 tAI3, you would enter (100 * 0.80), which equals 80 followed by 18 zeros as the amount is in **Shannons**.
+6. Click `Submit Transaction` and sign the extrinsic with your supported [wallet](/wallets).
+</details>
+
+
+## Unlock Nominator
+<details>
+<summary>Use the following extrinsic to unlock nominator funds after a successful stake withdrawal from an operator.</summary>
+
+:::caution Funds Not Immediately Available
+It will take **14,400 domain blocks** from a successful withdrawal before you can finalize the process and unlock the funds.
+:::
+
+![Unlock Nominator](/img/doc-imgs/polkadot/unlockNominator.png)
+
+1. Select the wallet you’d like to use (if you have more than one).  
+2. Choose `domains`.  
+3. Select `unlockNominator`.  
+4. Enter the `OperatorId` you wish to nominate.  
+5. Click `Submit Transaction` and sign the extrinsic with your supported [wallet](/wallets).
+</details>
