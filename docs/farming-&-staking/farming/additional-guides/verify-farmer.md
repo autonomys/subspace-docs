@@ -12,18 +12,18 @@ keywords:
 ---
 
 We are thrilled to announce the **Verified Farmer** role on our [Discord server](https://autonomys.xyz/discord)!
-You can track your farmer through the [Astral Block Explorer](https://astral.autonomys.xyz).
+You can track your farmer through [Astral Block Explorer](https://astral.autonomys.xyz).
 
 ## Eligibility for the Verified Farmer Role
 
-**If you have earned a block or vote reward**, you can now link your Discord account to your farmer wallet through the [Astral](https://astral.autonomys.xyz) to obtain this role. Here’s how to do it:
+**If you have earned a block or vote reward**, you can now link your Discord account to your farmer wallet through [Astral Block Explorer](https://astral.autonomys.xyz) to obtain this role. Here’s how to do it:
 
-1. Select **Connect Wallet** in the top right corner of the [Astral Block Explorer](https://astral.autonomys.xyz).
+1. Select **Connect Wallet** in the top right corner of [Astral Block Explorer](https://astral.autonomys.xyz).
     
     ![Connect Wallet](/img/doc-imgs/verify-farmer/connect-wallet.png)
 
 
-2. Sign into your wallet through Subwallet or Polkadot.
+2. Sign into your wallet through SubWallet or Polkadot.
 
     ![Select Wallet](/img/doc-imgs/verify-farmer/select-wallet.png)
 
