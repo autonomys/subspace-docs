@@ -17,8 +17,8 @@ The Autonomys Network is an ambitious layer zero protocol which is the first sca
 - [What is Autonomys Network](https://www.autonomys.xyz/project)
 - [Rewards & Fees on the Autonomys Network](https://academy.autonomys.xyz/subspace-protocol/rewards-and-fees)
 - [Autonomys Forum - Knowledge-Sharing Platform](https://forum.autonomys.xyz)
-- [Whitepaper](https://cdn.prod.website-files.com/66d7181179fbc331d39e9df0/6734a4bf4a74c3c5c6b01d34_autonomys_whitepaper.pdf)
-- [Litepaper](https://autonomys-public-assets.s3.us-east-1.amazonaws.com/autonomys-lightpaper.pdf)
+- [Whitepaper](hhttps://gateway.autonomys.xyz/file/bafkr6ia6q74kzrtdpfl3scb5v5f2vuvsip7ilfo4qkl27ievd7uvnluw2a)
+- [Litepaper](https://gateway.autonomys.xyz/file/bafkr6ibiqakm4js5yqifosrm2kdtxkbncbya2z2na2a34gaubwirqxt6bi)
 
 ## 🤝 Participate on the Autonomys Network
 ---
@@ -33,7 +33,7 @@ Choose one of the following methods to **start farming** on the Network (from ea
 
 ### **Become a nominator**
 
-Farmers can nominate **operators** and back them with their tokens, increasing their stake and chance of being elected as slot leaders. Generally speaking, any SSC token holder can stake their tokens by **nominating** a domain operator without having to become an operator or farmer themselves. **Nominators** earn **staking** rewards, proportional to their **staking amount** and pay the operator a pre-agreed **tax** on them.
+Farmers can nominate **operators** and back them with their tokens, increasing their stake and chance of being elected as slot leaders. Generally speaking, any tAI3 token holder can stake their tokens by **nominating** a domain operator without having to become an operator or farmer themselves. **Nominators** earn **staking** rewards, proportional to their **staking amount** and pay the operator a pre-agreed **tax** on them.
 
 #### - [Start Staking](/staking/stake)
 
@@ -56,14 +56,14 @@ Farmers can nominate **operators** and back them with their tokens, increasing t
 
 Interact with storage, consensus and domains via the Auto SDK to build powerful applications with ease.  
 
-#### - [Auto SDK](/develop/auto-sdk/intro)
+#### - [Auto SDK](https://develop.autonomys.xyz/sdk)
 
 
 ### Utilize the EVM Domain
 
 The Autonomys Network hosts an **EVM (Ethereum Virtual Machine)**, that allows you to deploy your **smart contracts.** 
 
-#### - [EVM Development](/develop/auto-evm/introduction)
+#### - [EVM Development](https://develop.autonomys.xyz/evm/introduction)
 
 ### Utilize the Core Protocol
 The Autonomys Network aims to provide an amazing developer experience to anyone who wishes to build on top of the protocol. As such we have started working on a variety of tools to assist and promote development on our network. 

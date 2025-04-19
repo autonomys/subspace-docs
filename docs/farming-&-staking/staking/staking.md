@@ -18,7 +18,7 @@ Three important factors to pay attention to are `Nominator Tax`, `Min. Stake`, a
 
 ![NStaking-1](/img/doc-imgs/operators-staking/NStaking-1.png)
 
-2. Select the wallet you would like to connect. Both **Subwallet** and **PolkadotJS** wallets are supported.
+2. Select the wallet you would like to connect. Both **SubWallet** and **PolkadotJS** wallets are supported.
 
 ![NStaking-2](/img/doc-imgs/operators-staking/NStaking-2.png)
 
@@ -91,7 +91,7 @@ Any **operator** or **nominator** can initiate withdrawal. They can withdraw the
 
 ![NStaking-1](/img/doc-imgs/operators-staking/NStaking-1.png)
 
-2. Select the wallet you would like to connect. Both **Subwallet** and **PolkadotJS** wallets are supported.
+2. Select the wallet you would like to connect. Both **SubWallet** and **PolkadotJS** wallets are supported.
 
 ![NStaking-2](/img/doc-imgs/operators-staking/NStaking-2.png)
 
