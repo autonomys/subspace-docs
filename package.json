@@ -20,7 +20,7 @@
   },
   "dependencies": {
     "@algolia/client-search": "^4.9.1",
-    "@crowdin/cli": "^4.3.0",
+    "@crowdin/cli": "^4.7.0",
     "@docusaurus/core": "^3.7.0",
     "@docusaurus/plugin-client-redirects": "^3.7.0",
     "@docusaurus/plugin-google-gtag": "^3.7.0",
