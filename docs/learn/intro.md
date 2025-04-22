@@ -17,7 +17,7 @@ The Autonomys Network is an ambitious layer zero protocol which is the first sca
 - [What is Autonomys Network](https://www.autonomys.xyz/project)
 - [Rewards & Fees on the Autonomys Network](https://academy.autonomys.xyz/subspace-protocol/rewards-and-fees)
 - [Autonomys Forum - Knowledge-Sharing Platform](https://forum.autonomys.xyz)
-- [Whitepaper](hhttps://gateway.autonomys.xyz/file/bafkr6ia6q74kzrtdpfl3scb5v5f2vuvsip7ilfo4qkl27ievd7uvnluw2a)
+- [Whitepaper](https://gateway.autonomys.xyz/file/bafkr6ia6q74kzrtdpfl3scb5v5f2vuvsip7ilfo4qkl27ievd7uvnluw2a)
 - [Litepaper](https://gateway.autonomys.xyz/file/bafkr6ibiqakm4js5yqifosrm2kdtxkbncbya2z2na2a34gaubwirqxt6bi)
 
 ## 🤝 Participate on the Autonomys Network
