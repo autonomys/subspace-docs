@@ -13,9 +13,9 @@ keywords:
 
 :::note
 
-SubWallet is a 3rd party Substrate/EVM wallet created by the [Subwallet Team](https://subwallet.app).
+SubWallet is a third-party wallet built for Substrate and EVM networks by the [SubWallet Team](https://subwallet.app).
 
-*This guide will be following the browser extension pathway. There is also a mobile application available for [Android](https://play.google.com/store/apps/details?id=app.subwallet.mobile) and [IOS](https://testflight.apple.com/join/ZW3pUbWj).*
+*This guide covers the browser extension setup. A mobile app is also available on [Android](https://play.google.com/store/apps/details?id=app.subwallet.mobile) and [iOS](https://testflight.apple.com/join/ZW3pUbWj).*
 
 :::
 
@@ -25,7 +25,7 @@ To learn more about SubWallet visit their [Website](https://subwallet.app).
 
 ## Create or Import A New Wallet
 
-1. Visit the [SubWallet website](https://subwallet.app/download.html) and Download your respective version. 
+1. Visit the [SubWallet website](https://www.subwallet.app/download.html) and Download your respective version. 
 2. Once extension is installed, open it.
 3. The extension will give you up to four options. You will most likely want to select `Create a new account`.
 

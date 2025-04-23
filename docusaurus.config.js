@@ -206,7 +206,7 @@ const config = {
               },
               {
                 label: 'Develop on Autonomys',
-                href: '/develop/intro',
+                href: 'https://develop.autonomys.xyz/',
               }
             ],
           },
@@ -235,16 +235,20 @@ const config = {
             position: 'left',
             items: [
               {
-                label: 'Telemetry',
-                href: 'https://telemetry.subspace.foundation',
-              },
-              {
                 label: 'Astral Block Explorer',
                 href: 'https://astral.autonomys.xyz',
               },
               {
                 label: 'PolkadotJS Portal',
-                href: 'https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Frpc.mainnet.subspace.foundation%2Fws#/explorer',
+                href: 'https://polkadot.js.org/apps/?rpc=wss://rpc.mainnet.subspace.foundation/ws#/explorer',
+              },
+              {
+                label: 'Taurus Auto EVM explorer',
+                href: 'https://blockscout.taurus.autonomys.xyz',
+              },
+              {
+                label: 'Telemetry',
+                href: 'https://telemetry.subspace.foundation',
               },
             ],
           },
@@ -259,7 +263,7 @@ const config = {
               },
               {
                 label: 'Whitepaper',
-                href: 'https://cdn.prod.website-files.com/66d7181179fbc331d39e9df0/6734a4bf4a74c3c5c6b01d34_autonomys_whitepaper.pdf',
+                href: 'https://gateway.autonomys.xyz/file/bafkr6ia6q74kzrtdpfl3scb5v5f2vuvsip7ilfo4qkl27ievd7uvnluw2a',
               }
             ]
           },
