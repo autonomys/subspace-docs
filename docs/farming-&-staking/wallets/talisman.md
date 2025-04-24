@@ -1,6 +1,6 @@
 ---
 title: Talisman
-sidebar_position: 2
+sidebar_position: 4
 description: How to configure the Talisman wallet for the Autonomys Network
 slug: /wallets/talisman
 keywords:
