@@ -108,7 +108,6 @@ This also can be helpful for in-development networks such as the Autonomys Netwo
 </details>
 
 
-
 1. Open SubWallet, select the 3 line menu in the top left of the wallet.
 
     ![rpc-step-1](/img/doc-imgs/subwallet/rpc-1.png)
@@ -133,7 +132,7 @@ The only required option is the Provider URL. Adding an explorer is optional. Th
 You can refer to the *RPC Endpoints* above for available provider URLs for the Autonomys Network.
     
 5. Fill in the provider URL, once you click out of this box it will check the URL and add the rest of the information, then click Save. 
-    - *In this example we will be using the Taurus Testnet RPC `wss://rpc.taurus.subspace.foundation/ws`*
+    - *In this example we will be using the Taurus Testnet RPC `wss://rpc.taurus.autonomys.xyz/ws`*
 
     ![rpc-step-4](/img/doc-imgs/subwallet/rpc-4.png)
 
