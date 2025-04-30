@@ -62,7 +62,7 @@ Select networks for XDM Consensus → Auto EVM. Enter amount to transfer.
 
 ![Astral - XDM Amount](/img/doc-imgs/additional-guides/XDM-2.png)
 
-Hit Send token and you will be asked to approve the signature request.
+Hit **Send token** and you will be asked to approve the signature request.
 
 ![SubWallet - Consensus to Auto EVM](/img/doc-imgs/additional-guides/XDM-3.png)
 
