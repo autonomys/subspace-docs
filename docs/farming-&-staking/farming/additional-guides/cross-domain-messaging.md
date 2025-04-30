@@ -135,7 +135,7 @@ Make sure that you have some funds in your EVM wallet. In these examples, there 
 
 Visit https://astral.autonomys.xyz/taurus/transfer
 
-![Talisman](/img/doc-imgs/additional-guides/XDM-16.png)
+![Astral - Transfer](/img/doc-imgs/additional-guides/XDM-1.png)
 
 Select networks for Auto EVM. → XDM consensus. Enter amount to transfer, and a destination address.
 
