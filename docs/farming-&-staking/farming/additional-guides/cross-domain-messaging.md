@@ -135,7 +135,7 @@ Select networks for Auto EVM → Consensus. Enter an amount to transfer, and a d
 
 ![Talisman](/img/doc-imgs/additional-guides/XDM-17.png)
 
-Hit Send token and you will be asked to approve the signature request.
+Hit **Send token** and you will be asked to approve the signature request.
 
 ![Talisman](/img/doc-imgs/additional-guides/XDM-18.png)
 
