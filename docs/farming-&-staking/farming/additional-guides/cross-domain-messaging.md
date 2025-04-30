@@ -58,7 +58,7 @@ Visit https://astral.autonomys.xyz/taurus/transfer
 
 ![Astral - Transfer](/img/doc-imgs/additional-guides/XDM-1.png)
 
-Select networks for XDM consensus → Auto EVM. Enter amount to transfer.
+Select networks for XDM Consensus → Auto EVM. Enter amount to transfer.
 
 ![Astral - XDM Amount](/img/doc-imgs/additional-guides/XDM-2.png)
 
@@ -113,12 +113,6 @@ Working from the top down:
 
 ![PolkadotJS](/img/doc-imgs/additional-guides/XDM-12.png)
 
-Remember that there is a 2 tAI3 fee for each XDM transaction and that you will need to wait for 14,400 domain blocks to pass which is about a day before the funds are available in the destination account.
-
-We are working on an update for EVM wallet detection in Astral that will enable you to XDM back to consensus without needing to use PolkadotJS and instead stay entirely within Astral.
-
-It is also possible to use the [Auto SDK](https://develop.autonomys.xyz/sdk/auto-xdm)’s `@autonomys/auto-xdm` package to submit these transactions if you’d like to automate them in some way.
-
 ### Auto EVM domain to consensus with Talisman
 
 Transferring tokens from XDM to Consensus can be tricky in SubWallet because of its Unified Accounts design. With the [Talisman Wallet](/wallets/talisman), the flow is far simpler - just as easy as sending tokens from Consensus to EVM.
@@ -156,3 +150,9 @@ Checking the EVM account balance, you can see that it is now 7. 1 tAI3 token was
 After waiting 14,400 domain blocks (can be from 1-2 days depending on block production speed), you can see that the Consensus account balance has increased by 1 tAI3 to 11 tAI3.
 
 ![Talisman](/img/doc-imgs/additional-guides/XDM-20.png)
+
+### Automated XDM
+
+We are working on an update for EVM wallet detection in Astral that will enable you to XDM back to consensus without needing to use PolkadotJS and instead stay entirely within Astral.
+
+It is also possible to use the [Auto SDK](https://develop.autonomys.xyz/sdk/auto-xdm)’s `@autonomys/auto-xdm` package to submit these transactions if you’d like to automate them in some way.
