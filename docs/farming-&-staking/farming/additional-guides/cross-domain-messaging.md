@@ -108,7 +108,7 @@ Working from the top down:
 2. Select the `transporter.transfer()` extrinsic.
 3. Select `Consensus` in the `dstLocation` `chainId`.
 4. Enter the `0x` account address we got above in the `AccountId32` textbox. *NOTE: it is possible to use the “Substrate: 42” address that starts with a `5` in this box if you find that easier.*
-5. Enter the amount. Which will be the number of tokens with 18 zeroes afterwards as the value is in Shannons.
+5. Enter the amount, which will be the number of tokens with 18 zeroes afterwards as the value is in Shannons.
 6. Submit Transaction.
 
 ![PolkadotJS](/img/doc-imgs/additional-guides/XDM-12.png)
