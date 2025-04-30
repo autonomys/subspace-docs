@@ -66,7 +66,7 @@ Hit **Send token** and you will be asked to approve the signature request.
 
 ![SubWallet - Consensus to Auto EVM](/img/doc-imgs/additional-guides/XDM-3.png)
 
-After hitting Approve you will see an extrinsic hash.
+After hitting **Approve** you will see an extrinsic hash.
 
 ![Astral - Extrinsic Hash](/img/doc-imgs/additional-guides/XDM-4.png)
 
