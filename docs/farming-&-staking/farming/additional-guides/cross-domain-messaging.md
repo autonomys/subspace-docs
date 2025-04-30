@@ -154,4 +154,4 @@ After waiting 14,400 domain blocks (can be from 1-2 days depending on block prod
 ### Automated XDM
 
 
-It is also possible to use the [Auto SDK](https://develop.autonomys.xyz/sdk/auto-xdm)’s `@autonomys/auto-xdm` package to submit these transactions if you’d like to automate them in some way.
+It is possible to use the [Auto SDK](https://develop.autonomys.xyz/sdk/auto-xdm)’s `@autonomys/auto-xdm` package to submit these transactions if you’d like to automate them in some way.
