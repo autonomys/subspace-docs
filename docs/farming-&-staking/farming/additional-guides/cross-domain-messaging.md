@@ -153,6 +153,6 @@ Checking the EVM account balance, you can see that it is now 7. 1 tAI3 token was
 
 ![Talisman](/img/doc-imgs/additional-guides/XDM-19.png)
 
-After waiting 14,400 domain blocks (can be from 1-2 days), you can see that the Consensus account balance has increased by 1 tAI3 to 11 tAI3.
+After waiting 14,400 domain blocks (can be from 1-2 days depending on block production speed), you can see that the Consensus account balance has increased by 1 tAI3 to 11 tAI3.
 
 ![Talisman](/img/doc-imgs/additional-guides/XDM-20.png)
