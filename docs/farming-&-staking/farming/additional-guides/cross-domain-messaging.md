@@ -92,7 +92,7 @@ We wait 10 minutes for the confirmation…
 
 And we have successfully completed an XDM transfer from consensus to Auto EVM.
 
-### Auto EVM domain to consensus
+### Auto EVM domain to consensus with SubWallet
 
 So now we have some tokens on the Auto EVM domain, let’s try and send some back the other way.
 
@@ -119,15 +119,15 @@ We are working on an update for EVM wallet detection in Astral that will enable 
 
 It is also possible to use the [Auto SDK](https://develop.autonomys.xyz/sdk/auto-xdm)’s `@autonomys/auto-xdm` package to submit these transactions if you’d like to automate them in some way.
 
-### Talisman Shortcut
+### Auto EVM domain to consensus with Talisman
 
-Due to the way the Unified Accounts feature of the Subwallet works, sending tokens from XDM to Consensus is quite involved. If you use the [Talisman Wallet](/wallets/talisman), it is much more like sending tokens from Consensus to EVM.
+Transferring tokens from XDM to Consensus can be tricky in SubWallet because of its Unified Accounts design. With the [Talisman Wallet](/wallets/talisman), the flow is far simpler—just as easy as sending tokens from Consensus to EVM.
 
 In your wallet you should have both a consensus account and an EVM account listed.
 
 ![Talisman](/img/doc-imgs/additional-guides/XDM-13.png)
 
-Make sure that you have some funds in your EVM wallet. In these examples, there are 10 tAI3 in both the consensus and EVM accounts.
+Make sure that you have some funds in your EVM wallet. For this demonstration, there are 10 tAI3 tokens in both the consensus and EVM accounts.
 
 ![Talisman](/img/doc-imgs/additional-guides/XDM-14.png)
 
@@ -137,7 +137,7 @@ Visit https://astral.autonomys.xyz/taurus/transfer
 
 ![Astral - Transfer](/img/doc-imgs/additional-guides/XDM-1.png)
 
-Select networks for Auto EVM. → XDM consensus. Enter amount to transfer, and a destination address.
+Select networks for Auto EVM. → XDM consensus. Enter an amount to transfer, and a destination address.
 
 ![Talisman](/img/doc-imgs/additional-guides/XDM-17.png)
 
@@ -153,6 +153,6 @@ Checking the EVM account balance, you can see that it is now 7. 1 tAI3 token was
 
 ![Talisman](/img/doc-imgs/additional-guides/XDM-19.png)
 
-After waiting 14,400 domain blocks (can be from 1-2 days), you can see that the Consensus account balance has increased by 1 to 11.
+After waiting 14,400 domain blocks (can be from 1-2 days), you can see that the Consensus account balance has increased by 1 tAI3 to 11 tAI3.
 
 ![Talisman](/img/doc-imgs/additional-guides/XDM-20.png)
