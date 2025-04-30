@@ -115,7 +115,7 @@ Working from the top down:
 
 ### Auto EVM domain to consensus with Talisman
 
-Transferring tokens from XDM to Consensus can be tricky in SubWallet because of its Unified Accounts design. With the [Talisman Wallet](/wallets/talisman), the flow is far simpler - just as easy as sending tokens from Consensus to EVM.
+Transferring tokens from Auto EVM to Consensus can be tricky in SubWallet because of its unified accounts design. With the [Talisman Wallet](/wallets/talisman), the flow is far simpler - just as easy as sending tokens from Consensus to Auto EVM.
 
 In your wallet you should have both a consensus account and an EVM account listed.
 
