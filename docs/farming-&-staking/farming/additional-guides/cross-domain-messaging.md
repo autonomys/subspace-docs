@@ -137,7 +137,7 @@ Visit https://astral.autonomys.xyz/taurus/transfer
 
 ![Astral - Transfer](/img/doc-imgs/additional-guides/XDM-1.png)
 
-Select networks for Auto EVM. → XDM consensus. Enter an amount to transfer, and a destination address.
+Select networks for Auto EVM → Consensus. Enter an amount to transfer, and a destination address.
 
 ![Talisman](/img/doc-imgs/additional-guides/XDM-17.png)
 
