@@ -92,7 +92,7 @@ We wait 10 minutes for the confirmation…
 
 And we have successfully completed an XDM transfer from consensus to Auto EVM.
 
-### Auto EVM domain to consensus with SubWallet
+### Auto EVM domain to consensus with SubWallet and PolkadotJS
 
 So now we have some tokens on the Auto EVM domain, let’s try and send some back the other way.
 
