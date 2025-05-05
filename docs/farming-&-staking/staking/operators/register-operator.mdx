@@ -23,8 +23,8 @@ import LinuxPage from '/docs/farming-&-staking/staking/operators/platforms/_linu
 
 Download `Subspace Node` for your respective operating system.
 
-:::tip
-For running the Operator Node on Linux, proceed directly to the next step. 
+:::info Taurus Network Only
+Currently, only running and registering an operator on the Taurus network is supported.
 :::
 
 <Tabs groupId="OS">
@@ -200,52 +200,50 @@ You should see the node start successfully and begin syncing.
 ### Register an operator on domain
 
 :::info
-It's crucial to fully sync your node before registering as an operator. Please follow the commands in the ***Start the domain operator*** node section and only register as an operator once your node is fully synced. If many operators are registered but their nodes are still syncing or offline, it can adversely affect the speed of block production in the domain.
+It's crucial to **fully sync** your node before registering as an operator. Please follow the commands in the ***Start the domain operator*** node section and only register as an operator once your node is fully synced. If many operators are registered but their nodes are still syncing or offline, it can adversely affect the speed of block production in the domain.
 You are required to have at least 100 tAI3 in order to register your operator. You can obtain tAI3 by farming on the taurus network.
 :::
 
 
 #### Register an operator using Autonomys Staking interface
 
-1. Proceed to the staking tab on [Astral](https://astral.autonomys.xyz/taurus/consensus) and connect your wallet.
+1. Proceed to the staking tab on [Astral](https://astral.autonomys.xyz/taurus/consensus) and make sure you have the Tarus network selected.
+
+![NStaking-19](/img/doc-imgs/operators-staking/NStaking-19.png)
+
+2. Next, connect your wallet.
 
 ![NStaking-1](/img/doc-imgs/operators-staking/NStaking-1.png)
 
-2. Select the wallet you would like to connect. **SubWallet**, **PolkadotJS**, and **Talisman** wallets are supported.
+3. Select the wallet you would like to connect. **SubWallet**, **NovaWallet**, and **Talisman** wallets are supported.
 
 ![NStaking-2](/img/doc-imgs/operators-staking/NStaking-2.png)
 
-3. Enter your password to give an access to your wallet.
+4. Enter your password to give an access to your wallet.
 
 ![NStaking-3](/img/doc-imgs/operators-staking/NStaking-3.png)
 
-4. Select the account you'd like to use from the dropdown menu. You can click the button in the upper left corner to see available and locked (staked) token balances for the selected account. 
+5. Select the account you'd like to use from the dropdown menu. You can click the button in the upper left corner to see available and locked (staked) token balances for the selected account. 
 
 ![NStaking-4](/img/doc-imgs/operators-staking/NStaking-4.png)
 
 ![NStaking-5](/img/doc-imgs/operators-staking/NStaking-5.png)
 
-5. While still on the `Staking` tab, select `Register Operator`.
+6. While still on the `Staking` tab, select `Register Operator`.
 
-![NStaking-15](/img/doc-imgs/operators-staking/NStaking-15.png)
+![NStaking-6](/img/doc-imgs/operators-staking/NStaking-6.png)
 
-:::info
-Make sure to specify a Minimum Nominator Stake of at least 1 tAI3.
-:::
-
-6. Select your Domain (It will default to the Taurus EVM), Signing key, Amount to Stake, Nominator Tax, and a Minimum Nominator Stake.
-
-![NStaking-6](/img/doc-imgs/operators-staking/NStaking-6.png) 
+7. Select your Domain (It will default to the Taurus EVM), Signing key, Amount to Stake, Nominator Tax, a Minimum Nominator Stake, and then click on the `Register Operator` button at the bottom of the page.
 
 :::info
-Make sure to use the operator key generated on the previous **[Create operator key](#create-operator-key)** step.
+Make sure to specify a Minimum Nominator Stake of at least 1 tAI3 and to use the operator key generated on the previous **[Create operator key](#create-operator-key)** step.
 :::
 
-7. Approve the request in the pop-up window. 
+8. Approve the request in the pop-up window.
 
 ![NStaking-9](/img/doc-imgs/operators-staking/NStaking-9.png)
 
-8. Congratulations, you're now registered as an **operator**!  While still on the `Staking` tab, select `Operators` and then Change the switch to say `My nominations` to see your operator and get the Operator Id.
+9. Congratulations, you're now registered as an **operator**!  While still on the `Staking` tab, select `Operators` and then Change the switch to say `My nominations` to see your operator and get the Operator Id.
 
 ![NStaking-10](/img/doc-imgs/operators-staking/NStaking-10.png)
 
@@ -254,6 +252,8 @@ It can take up to 10 minutes for the operator to be registered and appear on the
 :::
 
 :::tip
-You can view some additional actions by clicking on `action` next to your operator. 
-You can increase your stake (Nominate), withdraw some existing stake, de-register your operator, and unlock funds. 
+You can increase your stake by clicking on the Nominate Button. 
 :::
+
+![NStaking-10](/img/doc-imgs/operators-staking/NStaking-8.png)
+
