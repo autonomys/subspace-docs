@@ -1,8 +1,8 @@
 ---
 title: Verified Discord Roles
 sidebar_position: 4
-description: How to verified roles on the Autonomys Network
-slug: /farming/guides/verified-farmer
+description: How to obtain verified roles on the Autonomys Network
+slug: /farming/guides/verified-roles
 keywords:
     - Farmer
     - Verify
