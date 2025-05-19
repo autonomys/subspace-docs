@@ -27,7 +27,7 @@ This role can be obtained by farming on the Taurus testnet and earning a block o
 
 ### Verified Taurus Operator
 
-This role can be obtained by registering and operator on the Taurus testnet.
+This role can be obtained by registering an operator on the Taurus testnet.
 
 ### Verified Taurus Nominator
 
