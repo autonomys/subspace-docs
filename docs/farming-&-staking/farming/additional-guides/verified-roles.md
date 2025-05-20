@@ -12,7 +12,7 @@ keywords:
     - Nominator
 ---
 
-We are thrilled to announce new Verified Roles including **Verified Taurus Farmer**, **Verified Taurus Operator**, and **Verified Taurus Nominator** on our [Discord server](https://autonomys.xyz/discord)!
+We are thrilled to announce new Verified Roles including **Verified Mainnet Farmer**, **Verified Taurus Farmer**, **Verified Taurus Operator**, and **Verified Taurus Nominator** on our [Discord server](https://autonomys.xyz/discord)!
 You can track your farmer through [Astral Block Explorer](https://astral.autonomys.xyz).
 
 ## All Roles Currently Available
@@ -35,7 +35,7 @@ This role can be obtained by nominating an operator on the Taurus testnet.
 
 ### Verified Talisman Terraformer
 
-This role can be obtained by setting up a Talisman wallet and farming at least one vote or block reward.
+This exclusive role can be obtained by setting up a Talisman wallet and farming at least one vote or block reward during the Cosmic Cultivators campaign. Details of the initiative are on the forum.
 
 ## Getting the Verified Roles in Discord
 
@@ -51,7 +51,7 @@ This role can be obtained by setting up a Talisman wallet and farming at least o
 
 ![NStaking-3](/img/doc-imgs/operators-staking/NStaking-3.png)
 
-4. You can click the button in the upper right hand corner to open the wallet panel. 
+4. You can click the button in the upper right hand corner to open the wallet sidekick. 
 
 ![NStaking-4](/img/doc-imgs/operators-staking/NStaking-4.png)
 
