@@ -47,37 +47,42 @@ This guide will walk you through the process of providing translations for this 
 - Crowdin Account: They are free and will be necessary if you would like to contribute to our translations. You can create an account [here](https://accounts.crowdin.com/register)
 - Join the Autonomys Network project on Crowdin.
     - [Documentation Project Portal](https://crowdin.com/project/subspace-docs)
-    - [Website Project Portal](https://crowdin.com/project/subspace-website)
+    - [Website Project Portal](https://crowdin.com/project/subspace-docs)
 
 ### Guidelines
 
 - Our goal is to crowdsource translations to support multiple languages. If a translation already exists, please review it instead of creating a duplicate.
-- Ensure you follow our [Contributing](/participate/contribute/translate) Standards, and our [Code of Conduct](/participate/contribute/code-of-conduct).
+- Ensure you follow our [Contributing Standards](/participate/contribute/translate), and our [Code of Conduct](/participate/contribute/code-of-conduct).
 
 ### How-To
 
 Below you will find the walkthrough of how to provide translations for the Autonomys Network through the Crowdin translation portal. 
 
-1. Visit the respective translation portal for which website you would like to help translate (See above)
+1. Visit and join the respective translation portal for which website you would like to help translate (see above).
 
-    ![translate-step-1](/img/doc-imgs/crowdin/login-page.png)
+    ![translate-step-1](/img/doc-imgs/crowdin/crowdIn_login_page.png)
 
-2. Once you have logged in and joined the project, you will be taken to the project Dashboard, where you can select the files you wish to translate. (See below)
+You can also find the "Official Subspace Documentation" project yourself by using the search in CrowdIn.
+Once you're on the project page – click the "Join" button.
+    ![translate-step-2](/img/doc-imgs/crowdin/crowdIn_join_page.png)
 
-    ![translate-step-2](/img/doc-imgs/crowdin/dashboard-page.png)
+2. Once you have logged in and joined the project, you will be taken to the project Dashboard, where you can select the files you wish to translate.
 
-3. You will find yourself at a screen with all of the source files listed, select `Translate All` in the top right (See Below)
+    ![translate-step-3](/img/doc-imgs/crowdin/crowdIn_project_page_lang_select.png)
 
-    ![translate-step-3](/img/doc-imgs/crowdin/translate-all.png)
+3. You will find yourself at a screen with all of the source files listed, select `Translate All` in the top right.
 
-4. You will then be brought into the Translation Portal, In this portal you will find the following
-    1. English Version of the Text
-    2. Spot to input language translation of english text
-    3. Automated Suggestions for text
-    4. Word List that needs translating
-    5. A spot for comments if something needs clarification
+    ![translate-step-4](/img/doc-imgs/crowdin/translate-all.png)
 
-    ![translate-step-4](/img/doc-imgs/crowdin/translation-page.png)
+4. You will then be taken to the Crowdin Translation Portal. There, you'll see the following interface elements:
+
+    1. Source Strings – the original string (usually English) to be translated
+    2. Translation Input Field – where you type your translation
+    3. Machine Translation Suggestions – machine-generated translation options
+    4. Glossary Terms – highlighted terms with defined translations
+    5. Comments/Discussions Panel – for feedback or clarifications
+
+    ![translate-step-5](/img/doc-imgs/crowdin/crowdIn_translation_portal.png)
 
 5. From here you will fill in your translations as you would like and finalize once you are done.
 
