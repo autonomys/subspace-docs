@@ -76,11 +76,11 @@ Below you will find the walkthrough of how to provide translations for the Auton
 
 5. You will then be taken to the Crowdin Translation Portal. There, you'll see the following interface elements:
 
-    1. Source Strings – the original string (usually English) to be translated
-    2. Translation Input Field – where you type your translation
-    3. Machine Translation Suggestions – machine-generated translation options
-    4. Glossary Terms – highlighted terms with defined translations
-    5. Comments/Discussions Panel – for feedback or clarifications
+- **Source Strings** – the original string (usually English) to be translated  
+- **Translation Input Field** – where you type your translation  
+- **Machine Translation Suggestions** – machine-generated translation options  
+- **Glossary Terms** – highlighted terms with defined translations  
+- **Comments/Discussions Panel** – for feedback or clarifications
 
     ![translate-step-5](/img/doc-imgs/crowdin/crowdIn_translation_portal.png)
 
