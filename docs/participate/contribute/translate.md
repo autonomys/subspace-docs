@@ -47,7 +47,6 @@ This guide will walk you through the process of providing translations for this 
 - Crowdin Account: They are free and will be necessary if you would like to contribute to our translations. You can create an account [here](https://accounts.crowdin.com/register)
 - Join the Autonomys Network project on Crowdin.
     - [Documentation Project Portal](https://crowdin.com/project/subspace-docs)
-    - [Website Project Portal](https://crowdin.com/project/subspace-docs)
 
 ### Guidelines
 
@@ -62,19 +61,20 @@ Below you will find the walkthrough of how to provide translations for the Auton
 
     ![translate-step-1](/img/doc-imgs/crowdin/crowdIn_login_page.png)
 
-You can also find the "Official Subspace Documentation" project yourself by using the search in CrowdIn.
-Once you're on the project page – click the "Join" button.
+2. You can also find the "Official Subspace Documentation" project yourself by using the search in CrowdIn.
+   Once you're on the project page – click the "Join" button.
+
     ![translate-step-2](/img/doc-imgs/crowdin/crowdIn_join_page.png)
 
-2. Once you have logged in and joined the project, you will be taken to the project Dashboard, where you can select the files you wish to translate.
+3. Once you have logged in and joined the project, you will be taken to the project Dashboard, where you can select the files you wish to translate.
 
     ![translate-step-3](/img/doc-imgs/crowdin/crowdIn_project_page_lang_select.png)
 
-3. You will find yourself at a screen with all of the source files listed, select `Translate All` in the top right.
+4. You will find yourself at a screen with all of the source files listed, select `Translate All` in the top right.
 
     ![translate-step-4](/img/doc-imgs/crowdin/translate-all.png)
 
-4. You will then be taken to the Crowdin Translation Portal. There, you'll see the following interface elements:
+5. You will then be taken to the Crowdin Translation Portal. There, you'll see the following interface elements:
 
     1. Source Strings – the original string (usually English) to be translated
     2. Translation Input Field – where you type your translation
@@ -84,6 +84,6 @@ Once you're on the project page – click the "Join" button.
 
     ![translate-step-5](/img/doc-imgs/crowdin/crowdIn_translation_portal.png)
 
-5. From here you will fill in your translations as you would like and finalize once you are done.
+6. From here you will fill in your translations as you would like and finalize once you are done.
 
-6. Your translation will be reviewed and approved on a timely basis, please note translations can take a couple days before they populate on the deployed documentation.
+7. Your translation will be reviewed and approved on a timely basis, please note translations can take a couple days before they populate on the deployed documentation.
