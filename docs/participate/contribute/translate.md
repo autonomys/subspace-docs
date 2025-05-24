@@ -58,11 +58,11 @@ This guide will walk you through the process of providing translations for this 
 Below you will find the walkthrough of how to provide translations for the Autonomys Network through the Crowdin translation portal. 
 
 1. Visit and join the respective translation portal for which website you would like to help translate (see above).
+   Or you can find the "Official Subspace Documentation" project yourself by using the search in CrowdIn.
 
     ![translate-step-1](/img/doc-imgs/crowdin/crowdIn_login_page.png)
 
-2. You can also find the "Official Subspace Documentation" project yourself by using the search in CrowdIn.
-   Once you're on the project page – click the "Join" button.
+2. Once you're on the project page – click the "Join" button.
 
     ![translate-step-2](/img/doc-imgs/crowdin/crowdIn_join_page.png)
 
