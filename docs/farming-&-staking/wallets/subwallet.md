@@ -1,7 +1,7 @@
 ---
 title: SubWallet
 sidebar_position: 4
-description: How to configure the SubWallet Substrate wallet for the Autonomys Network
+description: How to configure SubWallet for the Autonomys Network
 slug: /wallets/subwallet
 keywords:
     - Farmer
