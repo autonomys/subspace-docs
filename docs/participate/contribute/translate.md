@@ -60,29 +60,29 @@ Below you will find the walkthrough of how to provide translations for the Auton
 1. Visit and join the respective translation portal for which website you would like to help translate (see above).
    Or you can find the "Official Subspace Documentation" project yourself by using the search in CrowdIn.
 
-    ![translate-step-1](/img/doc-imgs/crowdin/crowdIn_login_page.png)
+    ![translate-step-1](/img/doc-imgs/crowdin/crowdin_login_page.png)
 
 2. Once you're on the project page – click the "Join" button.
 
-    ![translate-step-2](/img/doc-imgs/crowdin/crowdIn_join_page.png)
+    ![translate-step-2](/img/doc-imgs/crowdin/crowdin_join_page.png)
 
 3. Once you have logged in and joined the project, you will be taken to the project Dashboard, where you can select the files you wish to translate.
 
-    ![translate-step-3](/img/doc-imgs/crowdin/crowdIn_project_page_lang_select.png)
+    ![translate-step-3](/img/doc-imgs/crowdin/crowdin_project_page_lang_select.png)
 
 4. You will find yourself at a screen with all of the source files listed, select `Translate All` in the top right.
 
-    ![translate-step-4](/img/doc-imgs/crowdin/translate-all.png)
+    ![translate-step-4](/img/doc-imgs/crowdin/crowdin_translate_all_btn.png)
 
 5. You will then be taken to the Crowdin Translation Portal. There, you'll see the following interface elements:
 
-- **Source Strings** – the original string (usually English) to be translated  
-- **Translation Input Field** – where you type your translation  
-- **Machine Translation Suggestions** – machine-generated translation options  
-- **Glossary Terms** – highlighted terms with defined translations  
+- **Source Strings** – the original string (usually English) to be translated
+- **Translation Input Field** – where you type your translation
+- **Machine Translation Suggestions** – machine-generated translation options
+- **Glossary Terms** – highlighted terms with defined translations
 - **Comments/Discussions Panel** – for feedback or clarifications
 
-    ![translate-step-5](/img/doc-imgs/crowdin/crowdIn_translation_portal.png)
+    ![translate-step-5](/img/doc-imgs/crowdin/crowdin_translation_portal.png)
 
 6. From here you will fill in your translations as you would like and finalize once you are done.
 
