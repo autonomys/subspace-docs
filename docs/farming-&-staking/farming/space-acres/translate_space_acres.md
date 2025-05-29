@@ -33,7 +33,7 @@ Thank you for considering contributing to the Space Acres UI localization! This 
 
 ## Before you start
 
-Space Acres has a lot of technical and Autonomys-related slang that **will not be translated correctly** via LLMs such as **Chat GPT** or translation services such as **Google Translate**. We kindly ask you to work to do all translations manually, since we can't really verify their correctness. We thank you for your understanding! 
+Space Acres contains technical and **Autonomys-specific terminology** that may not be accurately translated by LLMs such as ChatGPT or translation services such as Google Translate. We kindly ask you to do all translations manually, since we can't really verify their correctness. We thank you for your understanding! 
 
 ## Step by Step Tutorial
 
@@ -52,7 +52,7 @@ Space Acres has a lot of technical and Autonomys-related slang that **will not b
 
     ![sa-translate-3](/img/doc-imgs/space-acres-translate/sa-translate-3.png)
 
-    For example, if you're planning to translate the Space Acres UI into the **Russian language**, you would put `ru/messages.ftl` (or alternatively if you want to specify the region: `ru-RU/messages.ftl`). You will notice that as soon as you put the forward slash `/` after the 2-character language code, it will turn **blue** in the interface, indicating that your translation file will be correctly created in the appropriate folder.
+    For example, if you're planning to translate the Space Acres UI into the **Russian language**, you would put `ru/messages.ftl` (or alternatively if you want to specify the region: `ru-RU/messages.ftl`). As soon as you enter the forward slash `/` after the 2-character language code, it will turn blue in the interface, indicating that your translation file is correctly placed in the appropriate folder.
 
     ![sa-translate-4](/img/doc-imgs/space-acres-translate/sa-translate-4.png)
 
@@ -64,7 +64,7 @@ Space Acres has a lot of technical and Autonomys-related slang that **will not b
 
     ![sa-translate-5](/img/doc-imgs/space-acres-translate/sa-translate-5.png)
 
-7. Start translating messages from the UI into the language of your choice! Please make sure to only translate the text that comes after the `=` sign. Also, please **don't translate** any variables, e.g. `{$chain_name}`.
+7. Start translating messages from the UI into the language of your choice! Please make sure to translate only the text that comes after the `=` sign. Also, please **don't translate** any variables, e.g. `{$chain_name}`.
 
     ![sa-translate-6](/img/doc-imgs/space-acres-translate/sa-translate-6.png)
 
@@ -94,4 +94,4 @@ Space Acres has a lot of technical and Autonomys-related slang that **will not b
 
     ![sa-translate-13](/img/doc-imgs/space-acres-translate/sa-translate-13.png)
 
-    Your translation submission is now complete and next steps are for the team to review before providing feedback and/or merging the pull request. Thanks for your help in bringing Space Acres to an even wider audience!
+    Your translation submission is now complete. The next step is for the team to review it before providing feedback and/or merging the pull request. Thanks for your help in bringing Space Acres to an even wider audience!
