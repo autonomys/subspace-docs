@@ -92,7 +92,7 @@ Hardware requirements are lowered for testing but will likely increase on mainne
 ### Directory Structure
 
 :::info Key Pair Location
-For operators, the key pair can be found in `/<base-path>/domains/<domain-id>/keystore`.
+For operators, the key pair can be found in `/<BASE_PATH>/domains/<DOMAIN_ID>/keystore`.
 :::
 
 ```bash
