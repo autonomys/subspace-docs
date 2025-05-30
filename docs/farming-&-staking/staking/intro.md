@@ -13,7 +13,7 @@ keywords:
 ---
 
 :::warning Operator and Staking Availability
-Running an Operator and staking are only available on the Taurus and Gemini-3h testnets.  
+Running an Operator and staking are only available on the Taurus testnet.  
 Availability on the mainnet is planned for Phase 2. For further details, please refer to our [Phased Launch Roadmap](https://forum.autonomys.xyz/t/4414).
 :::
 
