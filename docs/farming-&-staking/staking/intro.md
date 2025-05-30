@@ -14,7 +14,7 @@ keywords:
 
 :::warning Operator and Staking Availability
 Running an Operator and staking are only available on the Taurus testnet.  
-Availability on the mainnet is planned for Phase 2. For further details, please refer to our [Phased Launch Roadmap](https://forum.autonomys.xyz/t/4831).
+Availability on mainnet is planned for Phase 2. For further details, please refer to our [Phased Launch Roadmap](https://forum.autonomys.xyz/t/4831).
 :::
 
 ## Decoupled Execution Framework
@@ -49,7 +49,7 @@ For more information on how Subspace separates consensus and computation, check 
 ### Requirements
 
 :::warning Requirement Changes
-Hardware requirements are lowered for testing but will likely increase on the mainnet.
+Hardware requirements are lowered for testing but will likely increase on mainnet.
 :::
 
 #### Operating System

@@ -82,7 +82,7 @@ If you face any trouble or would like to learn about other features for Polkadot
 
     ![trouble-1](/img/doc-imgs/polkadot/trouble-1.png)
 
-- You can see your Autonomys Mainnet public address via the `...` menu and setting the `Allow Use on Any Chain` dropdown to `Autonomys Mainnet`, once you exit you will see the public address now starts with `su`
+- You can see your Autonomys mainnet public address via the `...` menu and setting the `Allow Use on Any Chain` dropdown to `Autonomys mainnet`, once you exit you will see the public address now starts with `su`
 
     ![trouble-2](/img/doc-imgs/polkadot/trouble-2.png)
 
@@ -116,7 +116,7 @@ If you face any trouble or would like to learn about other features for Polkadot
 
     ![trouble-8](/img/doc-imgs/polkadot/trouble-8.png)
 
-7. You will now see `Autonomys Mainnet` as an option on the `Allow use on any chain` dropdown. 
+7. You will now see `Autonomys mainnet` as an option on the `Allow use on any chain` dropdown. 
 
     ![trouble-9](/img/doc-imgs/polkadot/trouble-9.png)
 
