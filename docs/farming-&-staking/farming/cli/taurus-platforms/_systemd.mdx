@@ -1,6 +1,5 @@
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
-import CodeBlock from '@theme/CodeBlock';
 import { AdvancedSystemdServiceFileGenerator } from '@site/src/components/SystemdServiceFileGenerator/index.jsx';
 
 
@@ -13,22 +12,22 @@ Running a node as a root user carries significant risks for the system.
 It is recommended to create a separate user for this purpose.
 :::
 
-<CodeBlock language="shell-session">
-{`sudo useradd -m -p ! -s /sbin/nologin -c "" subspace`}
-</CodeBlock>
+```bash
+sudo useradd -m -p ! -s /sbin/nologin -c "" subspace
+```
 
 You can also use an existing user, but having a separate user enhances the security of your server.
 
 Switch to the Newly Created User:
-<CodeBlock language="shell-session">
-{`sudo su subspace -s /bin/bash`}
-</CodeBlock>
+```bash
+sudo su subspace -s /bin/bash
+```
 
 Create a Directory for Executable Files:
 
-<CodeBlock language="shell-session">
-{`mkdir -p ~/.local/bin`}
-</CodeBlock>
+```bash
+mkdir -p ~/.local/bin
+```
 
 Download the Executable Files, using the appropriate commands:
 
@@ -41,26 +40,26 @@ Download the Executable Files, using the appropriate commands:
         Version 2 - for older processors since ~2009 and some old VMs
         </summary>
 		Node:
-		<CodeBlock language="shell-session">
-		{`wget -O ~/.local/bin/subspace-node https://github.com/autonomys/subspace/releases/download/taurus-2025-may-27/subspace-node-ubuntu-x86_64-v2-taurus-2025-may-27`}
-		</CodeBlock>
+		```bash
+		wget -O ~/.local/bin/subspace-node https://github.com/autonomys/subspace/releases/download/taurus-2025-may-27/subspace-node-ubuntu-x86_64-v2-taurus-2025-may-27
+		```
 		Farmer:
-		<CodeBlock language="shell-session">
-		{`wget -O ~/.local/bin/subspace-farmer https://github.com/autonomys/subspace/releases/download/taurus-2025-may-27/subspace-farmer-ubuntu-x86_64-v2-taurus-2025-may-27`}
-		</CodeBlock>
+		```bash
+		wget -O ~/.local/bin/subspace-farmer https://github.com/autonomys/subspace/releases/download/taurus-2025-may-27/subspace-farmer-ubuntu-x86_64-v2-taurus-2025-may-27
+		```
     </details>
     <details>
         <summary>
         Version skylake - For newer processors since ~2015
         </summary>
 		Node:
-		<CodeBlock language="shell-session">
-		{`wget -O ~/.local/bin/subspace-node https://github.com/autonomys/subspace/releases/download/taurus-2025-may-27/subspace-node-ubuntu-x86_64-skylake-taurus-2025-may-27`}
-		</CodeBlock>
+		```bash
+		wget -O ~/.local/bin/subspace-node https://github.com/autonomys/subspace/releases/download/taurus-2025-may-27/subspace-node-ubuntu-x86_64-skylake-taurus-2025-may-27
+		```
 		Farmer:
-		<CodeBlock language="shell-session">
-		{`wget -O ~/.local/bin/subspace-farmer https://github.com/autonomys/subspace/releases/download/taurus-2025-may-27/subspace-farmer-ubuntu-x86_64-skylake-taurus-2025-may-27`}
-		</CodeBlock>
+		```bash
+		wget -O ~/.local/bin/subspace-farmer https://github.com/autonomys/subspace/releases/download/taurus-2025-may-27/subspace-farmer-ubuntu-x86_64-skylake-taurus-2025-may-27
+		```
     </details>
 </details>
 
@@ -69,13 +68,13 @@ Download the Executable Files, using the appropriate commands:
     Aarch64/64-bit Raspberry Pi Executables
     </summary>
 	Node:
-	<CodeBlock language="shell-session">
-	{`wget -O ~/.local/bin/subspace-node https://github.com/autonomys/subspace/releases/download/taurus-2025-may-27/subspace-node-ubuntu-aarch64-taurus-2025-may-27`}
-	</CodeBlock>
+	```bash
+	wget -O ~/.local/bin/subspace-node https://github.com/autonomys/subspace/releases/download/taurus-2025-may-27/subspace-node-ubuntu-aarch64-taurus-2025-may-27
+	```
 	Farmer:
-	<CodeBlock language="shell-session">
-	{`wget -O ~/.local/bin/subspace-farmer https://github.com/autonomys/subspace/releases/download/taurus-2025-may-27/subspace-farmer-ubuntu-aarch64-taurus-2025-may-27`}
-	</CodeBlock>
+	```bash
+	wget -O ~/.local/bin/subspace-farmer https://github.com/autonomys/subspace/releases/download/taurus-2025-may-27/subspace-farmer-ubuntu-aarch64-taurus-2025-may-27
+	```
 </details>
 
 By default, these commands download the executable files to the `~/.local/bin` directory. 
@@ -84,20 +83,20 @@ You can change the directory by modifying the respective string.
 You can use the same commands to update the node.
 
 Make the Files Executable:
-<CodeBlock language="shell-session">
-{`chmod +x ~/.local/bin/subspace-node
-chmod +x ~/.local/bin/subspace-farmer`}
-</CodeBlock>
+```bash
+chmod +x ~/.local/bin/subspace-node
+chmod +x ~/.local/bin/subspace-farmer
+```
 
 Create a Directory for Node and Farmer Data:
-<CodeBlock language="shell-session">
-{`mkdir -p ~/.local/share`}
-</CodeBlock>
+```bash
+mkdir -p ~/.local/share
+```
 
 Exit from the User:
-<CodeBlock language="shell-session">
-{`exit`}
-</CodeBlock>
+```bash
+exit
+```
 
 ---
 
@@ -107,102 +106,102 @@ Remember to change the username if setting up the node from a regular user:
 <AdvancedSystemdServiceFileGenerator />
 
 Open the Node Service File and Paste the Corresponding Generated Content:
-<CodeBlock language="shell-session">
-{`EDITOR=nano sudo -e /etc/systemd/system/subspace-node.service`}
-</CodeBlock>
+```bash
+EDITOR=nano sudo -e /etc/systemd/system/subspace-node.service
+```
 
 Open the Farmer Service File and Paste the Corresponding Generated Content:
-<CodeBlock language="shell-session">
-{`EDITOR=nano sudo -e /etc/systemd/system/subspace-farmer.service`}
-</CodeBlock>
+```bash
+EDITOR=nano sudo -e /etc/systemd/system/subspace-farmer.service
+```
 
 Enable and Start the Node and Farmer:
-<CodeBlock language="shell-session">
-{`sudo systemctl enable --now subspace-{node,farmer}`}
-</CodeBlock>
+```bash
+sudo systemctl enable --now subspace-{node,farmer}
+```
 
 ---
 
 ### Useful Commands
 
 Start Node:
-<CodeBlock language="shell-session">
-{`sudo systemctl start subspace-node`}
-</CodeBlock>
+```bash
+sudo systemctl start subspace-node
+```
 
 Start Farmer:
-<CodeBlock language="shell-session">
-{`sudo systemctl start subspace-farmer`}
-</CodeBlock>
+```bash
+sudo systemctl start subspace-farmer
+```
 
 Stop Node:
-<CodeBlock language="shell-session">
-{`sudo systemctl stop subspace-node`}
-</CodeBlock>
+```bash
+sudo systemctl stop subspace-node
+```
 
 Stop Farmer:
-<CodeBlock language="shell-session">
-{`sudo systemctl stop subspace-farmer`}
-</CodeBlock>
+```bash
+sudo systemctl stop subspace-farmer
+```
 
 Enable Node (for automatic startup on system boot):
-<CodeBlock language="shell-session">
-{`sudo systemctl enable subspace-node`}
-</CodeBlock>
+```bash
+sudo systemctl enable subspace-node
+```
 
 Enable Farmer (for automatic startup on system boot):
-<CodeBlock language="shell-session">
-{`sudo systemctl enable subspace-farmer`}
-</CodeBlock>
+```bash
+sudo systemctl enable subspace-farmer
+```
 
 Disable Node (to prevent automatic startup on system boot):
-<CodeBlock language="shell-session">
-{`sudo systemctl disable subspace-node`}
-</CodeBlock>
+```bash
+sudo systemctl disable subspace-node
+```
 
 Disable Farmer (to prevent automatic startup on system boot):
-<CodeBlock language="shell-session">
-{`sudo systemctl disable subspace-farmer`}
-</CodeBlock>
+```bash
+sudo systemctl disable subspace-farmer
+```
 
 Check Node Service Status:
-<CodeBlock language="shell-session">
-{`sudo systemctl status subspace-node`}
-</CodeBlock>
+```bash
+sudo systemctl status subspace-node
+```
 
 Check Farmer Service Status:
-<CodeBlock language="shell-session">
-{`sudo systemctl status subspace-farmer`}
-</CodeBlock>
+```bash
+sudo systemctl status subspace-farmer
+```
 
 View Node Logs:
-<CodeBlock language="shell-session">
-{`sudo journalctl -f -o cat -u subspace-node`}
-</CodeBlock>
+```bash
+sudo journalctl -f -o cat -u subspace-node
+```
 
 View Farmer Logs:
-<CodeBlock language="shell-session">
-{`sudo journalctl -f -o cat -u subspace-farmer`}
-</CodeBlock>
+```bash
+sudo journalctl -f -o cat -u subspace-farmer
+```
 
 Count Farmer Rewards Received in the Last Hour:
-<CodeBlock language="shell-session">
-{`sudo journalctl -o cat -u subspace-farmer --since="1 hour ago" | grep -i "Successfully signed reward hash" | wc -l`}
-</CodeBlock>
+```bash
+sudo journalctl -o cat -u subspace-farmer --since="1 hour ago" | grep -i "Successfully signed reward hash" | wc -l
+```
 
 ---
 
 ### Upgrade
 
 To upgrade a node and farmer, first, stop running services:
-<CodeBlock language="shell-session">
-{`sudo systemctl stop subspace-{node,farmer}`}
-</CodeBlock>
+```bash
+sudo systemctl stop subspace-{node,farmer}
+```
 
 After using the commands from the beginning of the manual, download the executable files of the new release.
 And if you installed under a regular user, you will need to switch to that user beforehand.
 
 Now you can start the services:
-<CodeBlock language="shell-session">
-{`sudo systemctl start subspace-{node,farmer}`}
-</CodeBlock>
+```bash
+sudo systemctl start subspace-{node,farmer}
+```
