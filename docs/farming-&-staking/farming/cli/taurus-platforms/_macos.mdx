@@ -43,15 +43,18 @@ After this, simply repeat the step you prompted for (step 4 or 6). This time, cl
 - `chmod +x subspace-node-macos-aarch64-taurus-2025-may-27`
 3. We will then start the node using the following command
 
+:::tip Replace these placeholders
+- `<BASE_PATH>`: Path where you want to store the node database
+- `<NAME>`: Nickname of your choice for your node
+:::
+
 ```bash
-# Replace `INSERT_YOUR_ID` with a nickname you choose
-# Copy all of the lines below, they are all part of the same command
 ./subspace-node-macos-aarch64-taurus-2025-may-27 \
   run \
   --chain taurus \
-  --base-path NODE_DATA_PATH \
+  --base-path "<BASE_PATH>" \
   --farmer \
-  --name "INSERT_YOUR_ID"
+  --name "<NAME>"
 ```
 
 :::note
@@ -86,11 +89,17 @@ Using **run**, setting **--base-path** and specifying **--chain** is mandatory.
 
 
 1. We will then open another terminal, change to the downloads directory, then start the farmer node with the following command:
+
+:::tip Replace these placeholders
+- `<REWARD_ADDRESS>`: Your wallet address for farming rewards
+- `<PATH_TO_FARM>`: Directory where you want to store the farm
+- `<FARM_SIZE>`: Amount of space allocated for farming (e.g. 4TiB, 8TiB)
+
+Leave at least 60GiB of disk space for node and some for OS.
+:::
+
 ```bash
-# Replace `PATH_TO_FARM` with location where you want you store plot files
-# Replace `WALLET_ADDRESS` below with your account address from Polkadot.js wallet
-# Replace `PLOT_SIZE` with plot size in gigabytes or terabytes, for example 100G or 2T (but leave at least 60G of disk space for node and some for OS)
-./subspace-farmer-macos-aarch64-taurus-2025-may-27 farm --reward-address WALLET_ADDRESS path=PATH_TO_FARM,size=PLOT_SIZE
+./subspace-farmer-macos-aarch64-taurus-2025-may-27 farm --reward-address "<REWARD_ADDRESS>" path="<PATH_TO_FARM>,size=<FARM_SIZE>"
 ```
 
 2. You should see something similar in the terminal:
@@ -111,4 +120,4 @@ Using **run**, setting **--base-path** and specifying **--chain** is mandatory.
 2022-06-02T00:02:09.492868Z  INFO subspace_farmer::archiving: Plotted segment segment_index=5
 ```
 
-3. You are now farming! Just wait for your node to fully sync, and for your farmer to fully plot.
+3. You are now farming! Just wait for your node to fully sync, and for your farmer to finish creating your farm.

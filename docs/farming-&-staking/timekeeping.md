@@ -38,7 +38,7 @@ Being a timekeeper has high hardware requirements to ensure that a user with a s
 | --- | --- |
 | CPU | 4 core+ with as high a frequency as possible. An overclocked Intel 14900k is the ideal. Note that only 1 core will be occupied with timekeeping. |
 | RAM | 8GB+ |
-| Storage | 100GB SSD |
+| Storage | 100GiB SSD |
 
 ## Command Line Parameters
 
