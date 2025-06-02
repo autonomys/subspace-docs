@@ -51,7 +51,7 @@ Please follow this pathway for *minor* contributions such as Spelling errors, Ty
 No worries! We all start somewhere 🚀 There are several videos & resources online to show various ways to use GitHub.
 Check out some of these amazing guides to help get you familiar with GitHub and contributing.
 - [First Contributions - Terminal](https://github.com/firstcontributions/first-contributions)
-- [First Contributions - GitHub Desktop](https://github.com/firstcontributions/first-contributions/blob/master/gui-tool-tutorials/github-desktop-tutorial.md)
+- [First Contributions - GitHub Desktop](https://github.com/firstcontributions/first-contributions/blob/main/docs/gui-tool-tutorials/github-desktop-tutorial.md)
 - [How to Contribute to an Open Source Project on GitHub](https://egghead.io/courses/how-to-contribute-to-an-open-source-project-on-github)
 
 ## Advanced Fix
