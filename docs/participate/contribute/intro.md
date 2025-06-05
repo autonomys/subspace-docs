@@ -15,18 +15,18 @@ keywords:
 
 ### You Rock!
 
-First off, thank you for considering contributing to the Autonomys Network. It's through the amazing collaboration of people like yourself that truly makes the open source community amazing. ❤️
+First off, thank you for considering contributing to the Autonomys Network. It's through the amazing collaboration of people like yourself that truly make the open source community amazing. ❤️
 
-### Help us, Help you, Help us!
+### Help Us Help You Help Us!
 
-Following these guidelines shows that you respect the time of the developers who manage and develop this open source project. In return, they should reciprocate that respect by addressing your issue, assessing changes, and helping you finalize your pull requests.
+Following these guidelines shows that you respect the time of the developers who maintain this open source project. In return, they should reciprocate that respect by addressing your issue, assessing changes, and helping you finalize your pull requests.
 
 
 ### What Can I Contribute?
 
-We are a fully open source project, meaning we are open to all kinds of contributions from our community. Here are a few examples of contributions that we are open to:
+We are a fully open source project, meaning we welcome all kinds of contributions from the community. Here are a few examples of contributions that we are open to:
 
-- **Added Content:** Writing a nice guide? Submit it on the [forum guides](https://forum.autonomys.xyz/c/guides-and-faqs/13). 
+- **Add Content:** Writing a nice guide? Submit it on the [forum guides](https://forum.autonomys.xyz/c/guides-and-faqs/13). 
 - **Bug Reports & Fixes:** Find a bug or error? Let us know where it's hiding. Report it at the [support forum](https://forum.autonomys.xyz/c/support/5).
 - **Feature Requests & Implementations:** Looking for a new feature? Share your ideas so we can improve.
 
@@ -45,23 +45,20 @@ Please follow this pathway for *minor* contributions such as spelling errors, ty
 
 1. Go to the [Autonomys Documentation](https://docs.autonomys.xyz), and find the page that you would like to change.
 2. Scroll to the bottom and click `Edit this page`.
-3. This will open up GitHub, and direct you to the raw page on GitHub.
-4. In the top right click the `pencil` emoji to edit the page.
-5. GitHub will change the page to a text editor, where you will be able to make changes.
-6. Once you are satisfied with your changes, scroll to the bottom and fill out the following fields.
-    - Fill out Title
-    - Fill out Description
-    - Click the `Create a new branch for this commit and start a pull request.` option
-7. Click `Propose Changes`
-8. On the right you will see some options, you will want to apply the most accurate `labels` listed.
-9. Click `Create Pull Request`
+3. This will open the page in GitHub’s web editor.
+4. Once you are satisfied with your changes, click the ‘Commit changes…’ button in the top right, fill Commit message and Extended description.
+5. Click `Create Pull Request`
+
+> 💡 **Tip:** Submitting a change will create a new branch in your newly created fork (`<your_github_name>/subspace-docs`), so you can send a pull request.  
+> Sending a PR through the website is simpler but has it's limitations.
+
 
 🎉Congratulations! You have just submitted your first pull request! 
 *Please provide some time for a maintainer to view your pull request and approve it, or request adjustments.*
 
 ## Never contributed before?
 
-No worries! We all start somewhere 🚀 There are several videos and resources online to show various ways to use GitHub.
+No worries! We all start somewhere. 🚀 There are several videos and resources online to show various ways to use GitHub.
 Check out some of these amazing guides to help get you familiar with GitHub and contributing.
 - [First Contributions - Terminal](https://github.com/firstcontributions/first-contributions)
 - [First Contributions - GitHub Desktop](https://github.com/firstcontributions/first-contributions/blob/master/gui-tool-tutorials/github-desktop-tutorial.md)
@@ -72,13 +69,13 @@ Check out some of these amazing guides to help get you familiar with GitHub and 
 This section presumes a better understanding of GitHub, and programming basics.
 
 For larger, more advanced fixes please ensure you follow the basic principles below.
-* Do **not** comment simple trivial code such as importing existing components, and basic HTML/CSS.
+* Do **not** comment simple, trivial code such as importing existing components, and basic HTML/CSS.
 * Do comment on complex non-trivial code, complex logic should be easy to understand.
 * All public functions need to be commented.
 * If code is trivial but could be forgotten over time, please comment.
-* Try and think about your code from a 3rd person view, it should make sense to anyone with a similar background in the technology that you are using.
+* Try to think about your code from a 3rd person view, it should make sense to anyone with a similar background in the technology that you are using.
 * Sometimes difficult to understand code needs refactoring instead of more comments.
-* Make sure the program can still build prior to pull request.
+* Make sure the program still builds before submitting a pull request.
 
 For advanced fixes you should follow the general pathway for GitHub.
 
