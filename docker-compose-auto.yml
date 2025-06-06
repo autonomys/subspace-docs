@@ -55,7 +55,7 @@ services:
       "--listen-on", "/ip4/0.0.0.0/tcp/30533",
 # Replace `WALLET_ADDRESS` with your Polkadot.js wallet address
       "--reward-address", "WALLET_ADDRESS",
-      # Set `FARM_SIZE` using binary units (GiB/TiB) or decimal units (GB/TB), such as 4TiB or 8TiB. Reserve at least 60GiB for the node and additional space for your operating system.
+      # Set `FARM_SIZE` using binary units (GiB/TiB) or decimal units (GB/TB), such as 4TiB or 8TiB. Reserve at least 100GiB for the node and additional space for your operating system.
       "path=/var/subspace,size=<FARM_SIZE>",
     ]
 volumes:
