@@ -1,5 +1,6 @@
 {
     "label": "Develop",
     "position": 3,
-    "link": null
+    "link": null,
+    "className": "sidebar-hidden"
 }
