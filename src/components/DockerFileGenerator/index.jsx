@@ -15,7 +15,7 @@ function DockerFileGeneratorPreRelease() {
         nodeData: '',
         farmerData: '',
         rewardAddress: 'sub55p3aScFJeey32VWnqjYeHaGYE59Nvmt4DMWdTBfDtsq2p',
-        plotSize: '100G',
+        farmSize: '4TiB',
 	    arch: 'x86_64',
     });
 
@@ -140,7 +140,7 @@ services:
         "--node-rpc-url", "ws://node:9944",
         "--listen-on", "/ip4/0.0.0.0/tcp/30533",
         "--reward-address", "${formData.rewardAddress}",
-        "path=/var/subspace,size=${formData.plotSize}"
+        "path=/var/subspace,size=${formData.farmSize}"
       ]
 ${formData.nodeData && formData.farmerData ? "" : "volumes:"}${formData.nodeData ? "" : "\n  node-data:"}${formData.farmerData ? "" : "\n  farmer-data:"}\
             `;
@@ -167,8 +167,8 @@ ${formData.nodeData && formData.farmerData ? "" : "volumes:"}${formData.nodeData
         if (!/^[a-zA-Z0-9_/-]+$/.test(formData.nodeName)) {
             errors.nodeName = 'Invalid Node Name';
         }
-        if (!/^\d+(G|T)?$/.test(formData.plotSize)) {
-            errors.plotSize = 'Invalid Plot Size';
+        if (!/^\d+(G|T|GB|TB|GiB|TiB)$/.test(formData.farmSize)) {
+            errors.farmSize = 'Invalid Farm Size';
         }
         if (!/^(st|su)[A-Za-z0-9]{47}$/.test(formData.rewardAddress)) {
             errors.rewardAddress = 'Invalid Reward Address';
@@ -212,7 +212,7 @@ ${formData.nodeData && formData.farmerData ? "" : "volumes:"}${formData.nodeData
                             { label: 'Node DSN Port', name: 'nodeDsnPort' },
                             { label: 'Farmer Port', name: 'farmerPort' },
                             { label: 'Node Name', name: 'nodeName' },
-                            { label: 'Plot Size', name: 'plotSize' },
+                            { label: 'Farm Size', name: 'farmSize' },
                             { label: 'Reward Address', name: 'rewardAddress' },
                             { label: 'Node Data (Optional)', name: 'nodeData' },
                             { label: 'Farmer Data (Optional)', name: 'farmerData' }
