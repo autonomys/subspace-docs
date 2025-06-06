@@ -14,7 +14,7 @@
 
 
 <script src="https://widget.kapa.ai/kapa-widget.bundle.js" data-website-id="591e207f-fb7d-4966-9bb0-9eaee7844460" data-project-name="Autonomys Network" data-project-color="#f2f2f5" data-project-logo="https://i.postimg.cc/BQjSkRPy/Autonomys-small-light.png" data-button-text-color="#576eb2" data-modal-disclaimer="This is a custom LLM for Autonomys Network with access to all documentation (docs.autonomys.xyz/). Since this is AI technology please use your best judgment." async></script><link rel="stylesheet" href="/zh/assets/css/styles.0a45fb77.css">
-<script src="/zh/assets/js/runtime~main.7111f3bc.js" defer="defer"></script>
+<script src="/zh/assets/js/runtime~main.6e75aa62.js" defer="defer"></script>
 <script src="/zh/assets/js/main.bf53c05d.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -57,9 +57,9 @@
 </ul></div></div></div>
 <hr>
 <h2 class="anchor anchorWithStickyNavbar_LWe7" id="计时器">计时器<a href="#计时器" class="hash-link" aria-label="直接链接到 计时器" title="直接链接到 计时器">​</a></h2>
-<p>Gemini-3g 引入了时间证明，并为node 添加了一个新的可选角色。计时器帮助运行时间证明以确保网络的安全， 计时器需要高性能核心 CPU，但可以由任何node runner 进行。您可以使用以下命令启用计时器</p>
+<p>Proof-of-Time is secured by Timekeepers, an optional role that has been added to the node. Timekeepers help run PoT to ensure the security of the network. Timekeeping requires a high-performance core CPU but can be undertaken by any node runner. You can enable timekeeping with the following commands.</p>
 <ul>
-<li><code>--timekeeper</code>: 在NODE节  点启用计时器功能</li>
+<li><code>--timekeeper</code>: 在NODE节点启用计时器功能</li>
 <li><code>--timekeeper-cpu-cores</code>: 指定计时器运行在哪个核心上</li>
 </ul>
 <p>阅读 <a href="/zh/farming/timekeeper">计时器</a>的更多信息</p>
@@ -75,14 +75,14 @@
 <hr>
 <h3 class="anchor anchorWithStickyNavbar_LWe7" id="numa-支持">NUMA 支持<a href="#numa-支持" class="hash-link" aria-label="直接链接到 NUMA 支持" title="直接链接到 NUMA 支持">​</a></h3>
 <div class="theme-admonition theme-admonition-note admonition_xJq3 alert alert--secondary"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M6.3 5.69a.942.942 0 0 1-.28-.7c0-.28.09-.52.28-.7.19-.18.42-.28.7-.28.28 0 .52.09.7.28.18.19.28.42.28.7 0 .28-.09.52-.28.7a1 1 0 0 1-.7.3c-.28 0-.52-.11-.7-.3zM8 7.99c-.02-.25-.11-.48-.31-.69-.2-.19-.42-.3-.69-.31H6c-.27.02-.48.13-.69.31-.2.2-.3.44-.31.69h1v3c.02.27.11.5.31.69.2.2.42.31.69.31h1c.27 0 .48-.11.69-.31.2-.19.3-.42.31-.69H8V7.98v.01zM7 2.3c-3.14 0-5.7 2.54-5.7 5.68 0 3.14 2.56 5.7 5.7 5.7s5.7-2.55 5.7-5.7c0-3.15-2.56-5.69-5.7-5.69v.01zM7 .98c3.86 0 7 3.14 7 7s-3.14 7-7 7-7-3.12-7-7 3.14-7 7-7z"></path></svg></span>备注</div><div class="admonitionContent_BuS1"><p>NUMA 支持将使拥有强大 CPU 和大容量内存的矿工受益。所需的 RAM 容量取决于处理器和线程数\</p></div></div>
-<p>以前，绘制/重新绘 制线程池是为每个farm 单独创建的，尽管一次只能使用配置数量的线程池（默认情况下只有一个）。
+<p>以前，绘制/重新绘制线程池是为每个farm 单独创建的，尽管一次只能使用配置数量的线程池（默认情况下只有一个）。
 随着 NUMA 支持的引入，farmer 应用程序拥有一个线程池管理器，它将创建必要数量的线程池，这些线程池将分配给当前绘制/重新绘制的farms。
 创建线程池时，它会被分配给一组 CPU 核心，并且只能使用这些核心。Pinning不会将线程 1:1 固定到核心，相反，操作系统可以自由地在核心之间移动线程，但只能在为线程池分配的 CPU 核心内移动。这将确保特定扇区的绘制只发生在特定的 CPU/NUMA node 上。</p>
 <h4 class="anchor anchorWithStickyNavbar_LWe7" id="在-windowslinux-机器上启用-numa">在 Windows/Linux 机器上启用 NUMA。<a href="#在-windowslinux-机器上启用-numa" class="hash-link" aria-label="直接链接到 在 Windows/Linux 机器上启用 NUMA。" title="直接链接到 在 Windows/Linux 机器上启用 NUMA。">​</a></h4>
 <p>在 Linux 和 Windows 上，farmer 将检测 NUMA 系统并创建与 NUMA node 数量相对应的线程池数量。这意味着对于大型 CPU，默认行为将发生变化，并因此消耗更多内存，但如果需要，可以使用 CLI 选项将其更改为以前的行为。
 要使用 NUMA，您需要通过主板的 BIOS 启用它，以便 farmer 知道它的存在。此选项存在于 <strong>Threadripper/Epyc processors</strong> 的主板中，但也可能存在于其他主板中。如果您不启用它，操作系统和 farmer 都会认为您有一个 UMA 处理器，并且无法应用优化。</p>
 <p>要了解有关 NUMA 支持的更多信息以及它为大型 CPU 提供的好处，请阅读[此论坛帖子]（<a href="https://forum.autonomys.xyz/t/numa-support-is-coming/2299?u=nazar-pc%EF%BC%89" target="_blank" rel="noopener noreferrer">https://forum.autonomys.xyz/t/numa-support-is-coming/2299?u=nazar-pc）</a></p>
-<h4 class="anchor anchorWithStickyNavbar_LWe7" id="更改打开文件数量限制linux">更改打开  文件数量限制（Linux）<a href="#更改打开文件数量限制linux" class="hash-link" aria-label="直接链接到 更改打开文件数量限制（Linux）" title="直接链接到 更改打开文件数量限制（Linux）">​</a></h4>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="更改打开 文件数量限制linux">更改打开文件数量限制（Linux）<a href="#更改打开文件数量限制linux" class="hash-link" aria-label="直接链接到 更改打开文件数量限制（Linux）" title="直接链接到 更改打开文件数量限制（Linux）">​</a></h4>
 <p>有时，更改 Linux 上的打开文件数量限制对于系统和应用程序性能调整都是必要的。管理文件共享或分发的应用程序（包括对等系统）可能需要同时打开与不同对等点的大量连接。更高的打开文件数限制允许这些应用程序维持更多连接，从而提高数据传输速率和系统效率。</p>
 <p>这也有助于缓解“打开文件过多”错误</p>
 <p>您可以使用“ulimit”命令临时更改打开文件的限制。例如，设置“ulimit -n 2048”将把限制设置为 2048。注销或重新启动后，此更改将恢复。</p>
