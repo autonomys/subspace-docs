@@ -13,8 +13,8 @@ keywords:
 ---
 
 :::warning Operator and Staking Availability
-Running an Operator and staking are only available on the Taurus and Gemini-3h testnets.  
-Availability on the mainnet is planned for Phase 2. For further details, please refer to our [Phased Launch Roadmap](https://forum.autonomys.xyz/t/4414).
+Running an Operator and staking are only available on the Taurus testnet.  
+Availability on mainnet is planned for Phase 2. For further details, please refer to our [Phased Launch Roadmap](https://forum.autonomys.xyz/t/4831).
 :::
 
 ## Decoupled Execution Framework
@@ -49,7 +49,7 @@ For more information on how Subspace separates consensus and computation, check 
 ### Requirements
 
 :::warning Requirement Changes
-Hardware requirements are lowered for testing but will likely increase on the mainnet.
+Hardware requirements are lowered for testing but will likely increase on mainnet.
 :::
 
 #### Operating System
@@ -92,7 +92,7 @@ Hardware requirements are lowered for testing but will likely increase on the ma
 ### Directory Structure
 
 :::info Key Pair Location
-For operators, the key pair can be found in `/<base-path>/domains/<domain-id>/keystore`.
+For operators, the key pair can be found in `/<BASE_PATH>/domains/<DOMAIN_ID>/keystore`.
 :::
 
 ```bash

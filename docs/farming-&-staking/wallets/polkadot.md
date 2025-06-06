@@ -17,9 +17,9 @@ polkadot.js extension is a Substrate/EVM wallet created by the creators of Subst
 
 :::
 
-This is the barebones wallet. This is because it is the barebones Substrate wallet that supports all Substrate based networks. This is an extension that works similarly to MetaMask, or most other browser based wallets you’ve likely used in the past.
+This is the barebones wallet. This is because it is a wallet that supports all Substrate based networks. This is an extension that works similarly to MetaMask, or most other browser based wallets you’ve likely used in the past.
 
-## Create A New Wallet
+## Create a New Wallet
 
 1. Visit the [Polkadot.js](https://polkadot.js.org/extension/) Website and Download your respective version. 
 
@@ -82,13 +82,13 @@ If you face any trouble or would like to learn about other features for Polkadot
 
     ![trouble-1](/img/doc-imgs/polkadot/trouble-1.png)
 
-- You can see your Autonomys Mainnet public address via the `...` menu and setting the `Allow Use on Any Chain` dropdown to `Autonomys Mainnet`, once you exit you will see the public address now starts with `su`
+- You can see your Autonomys mainnet public address via the `...` menu and setting the `Allow Use on Any Chain` dropdown to `Autonomys mainnet`, once you exit you will see the public address now starts with `su`
 
     ![trouble-2](/img/doc-imgs/polkadot/trouble-2.png)
 
     ![trouble-10](/img/doc-imgs/polkadot/trouble-10.png)
 
-### I Dont see `Autonomys mainnet` or any Autonomys Networks as an option in chain settings
+### I Don't See `Autonomys mainnet` or Any Autonomys Networks as an Option in Chain Settings
 
 - As seen below, sometimes when you first install or update the Substrate wallet you will need to update the wallet metadata.
 
@@ -116,11 +116,11 @@ If you face any trouble or would like to learn about other features for Polkadot
 
     ![trouble-8](/img/doc-imgs/polkadot/trouble-8.png)
 
-7. You will now see `Autonomys Mainnet` as an option on the `Allow use on any chain` dropdown. 
+7. You will now see `Autonomys mainnet` as an option on the `Allow use on any chain` dropdown. 
 
     ![trouble-9](/img/doc-imgs/polkadot/trouble-9.png)
 
-### How do I backup my wallet?
+### How Do I Backup my Wallet?
 
 1. You can backup/export your wallet via the `...` menu, then click `Export Account`
 

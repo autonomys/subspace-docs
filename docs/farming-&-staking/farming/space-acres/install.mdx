@@ -12,7 +12,6 @@ keywords:
 
 ---
 
-import DownloadButtons from './platforms/_download.mdx'  
 import Tabs from '@theme/Tabs';  
 import TabItem from '@theme/TabItem';  
 import Link from '@docusaurus/Link';  
@@ -29,13 +28,13 @@ import LinuxPage from './platforms/_linux.mdx';
 Make sure you have:
 
 1. A computer with a reliable internet connection.
-2. Enough free disk space (we'll help you determine how much later).
-3. Administrator access to your computer.
+2. Enough free disk space (we'll help you determine the required amount later).
+3. Administrator access on your computer.
 
 What to expect: 
 
-- Sync might take from a few hours to up to a day.
-- The initial syncing and plotting process requires substantial computational resources, so you may notice that your computer runs slower for day-to-day tasks until syncing and plotting are complete.
+- Syncing might take from a few hours up to a day.
+- The initial syncing and plotting require substantial computational resources, so your computer might run slower for daily tasks until completion.
 
 :::note
 Please note that a wallet with a Substrate address is required to run the software.<br />
@@ -43,7 +42,8 @@ To learn how to create a Substrate wallet, please visit our pages on [SubWallet 
 :::
 
 :::caution Port Forwarding
-To ensure proper communication between Space Acres and other peers, you need to forward ports 30333 and 30433 from your router to the PC running Space Acres. For more details, refer to the [Port Forwarding Guide](https://docs.autonomys.xyz/farming/guides/port-config#ports-to-forward--firewall-access).
+To ensure proper communication between Space Acres and other peers, forward ports 30333 and 30433 on your router to the PC running Space Acres.
+For more details, refer to the [Port Forwarding Guide](https://docs.autonomys.xyz/farming/guides/port-config#ports-to-forward--firewall-access).
 :::
 
 ### Installation Videos
@@ -120,17 +120,17 @@ Now comes the exciting part—setting up your farm! Here's what you'll see on th
 
 1. **Node path**:
    - This is where Space Acres will store important data.
-   - Pick a location with plenty of free space; it might be as simple as **/Documents**.
+   - Choose a location with plenty of free space, e.g., `/Documents`.
 
 2. **Rewards address**:
    - This is where your farming rewards will be sent.
-   - It starts with **su** for **SubWallet** and with **5** for `{Polkadot.js}` extension.
-   - If you don't have one, click **Create wallet** to create a wallet.
+   - If you don't have one, click **Create wallet**.
+   - The address starts with an **s** for **Talisman**, **FoxWallet**, **SubWallet**, and with **5** for **\{Polkadot.js\}**.
 
 3. **Path to Farm 0 and its size**:
-   - This is where your **plots** (farming data) will be stored.
-   - The size determines your probability of getting a reward on the Network. In most cases, larger plots (or larger farm size) will gain you more rewards.
-   - The size could be set as a fixed size, e.g. 4TB, or 500GB, or as a percentage value of the available disk space.
+   - This is where your **farms** (farming data) will be stored.
+   - The size determines your probability of getting a reward on the Network. In most cases, larger farms will gain you more rewards.
+   - The size could be set as a fixed size, e.g. 4TiB, or 8TiB, or as a percentage value of the available disk space.
    - If you prefer to have a few farms (e.g. you have some spare space on different SSD drives), you can click on **Add farm** to pledge some additional storage space.
 
    <ThemedImage
@@ -142,17 +142,17 @@ Now comes the exciting part—setting up your farm! Here's what you'll see on th
    />
 
    :::tip
-   The screen above is just an example of configured setup screen, make sure to use your own **Node path**, **Rewards address**, **Path to farm 0 and its size**, and **Fixed size / Disk space percentage** values
+   The screen above is an example. Use your own **Node path**, **Rewards address**, **Path to farm 0 and its size**, and **Fixed size / Disk space percentage** values
    :::
 
 4. **Advanced configuration (optional)**:
-   - Toggle **Reduce plotting CPU load** (select this option if you're using your farming PC for other tasks)
-   - Modify the default values for blockchain and DSN P2P ports
-   - Toggle **Faster Networking** (selecting this option may increase the load on your router)
+   - Toggle **Reduce plotting CPU load** (select if using the farming PC for other tasks).
+   - Modify default blockchain and DSN P2P ports.
+   - Toggle **Faster Networking** (may increase router load).
 
 
    :::tip
-   Don't worry about this unless you're an experienced user.
+   No need to adjust unless you are an experienced user.
    :::
 
    For a comprehensive list of prerequisites and explanations, refer to our [Getting Started Guide](/farming/intro). 
@@ -165,8 +165,8 @@ Now comes the exciting part—setting up your farm! Here's what you'll see on th
 ## Step 3: Start Farming
 
    1. After entering your information, click **Start**.
-   2. Space Acres will now set up your node and connect to the Autonomys Network.
-   3. You'll see progress bars as it syncs data and creates your farm plots.
+   2. Space Acres will set up your node and connect to the Autonomys Network.
+   3. Progress bars will show syncing and plot creation.
 
    <ThemedImage
    alt="Initialization"
@@ -186,7 +186,7 @@ Now comes the exciting part—setting up your farm! Here's what you'll see on th
    }}
    />
 
-5. Initial syncing and plotting can take from a few hours to days, depending on your hardware, network speed, and specified farm size. Below are examples of the various stages you can expect.
+5. Initial syncing and plotting can take hours to days, depending on hardware, network speed, and farm size. Below are examples of the various stages you can expect.
 
    a. **Cache Syncing**
 
@@ -236,17 +236,17 @@ Now comes the exciting part—setting up your farm! Here's what you'll see on th
 
 ## Understanding Your Farm
 
-Your farm is made up of **sectors** that change color based on their status. For your convenience, we've provided a table detailing the color codes associated with different sector statuses. This will enhance your insight into the activities and conditions of your plot.
+Your farm is made up of **sectors** that change color based on their status. For your convenience, we've provided a table detailing the color codes associated with different sector statuses. This will enhance your insight into the activities and conditions of your farm.
 
 | Status            | Color Preview | Description                                                  |
 |-------------------|---------------|--------------------------------------------------------------|
-| Default           | ![#727272](https://dummyimage.com/15/727272/000000&text=+) #727272 | Default state of a farm sector                               |
-| Plotted           | ![#9fc4ff](https://dummyimage.com/15/9fc4ff/000000&text=+) #9fc4ff | Sector is plotted                                            |
-| About to Expire   | ![#ffd678](https://dummyimage.com/15/ffd678/000000&text=+) #ffd678 | Sector is nearing expiration                                 |
-| Expired           | ![#ff877c](https://dummyimage.com/15/ff877c/000000&text=+) #ff877c | Sector has expired                                           |
-| Downloading       | ![#499249](https://dummyimage.com/15/499249/000000&text=+) #499249 | Sector is in the process of downloading (animated)           |
-| Encoding          | ![#ff5365](https://dummyimage.com/15/ff5365/000000&text=+) #ff5365 | Sector is encoding data (animated)                           |
-| Writing           | ![#9fc4ff](https://dummyimage.com/15/9fc4ff/000000&text=+) #9fc4ff | Sector is writing data (animated)                            |
+| Default           | ![#727272](https://dummyimage.com/15/727272/000000&text=+) #727272 | Default farm sector state                                 |
+| Plotted           | ![#9fc4ff](https://dummyimage.com/15/9fc4ff/000000&text=+) #9fc4ff | Sector is plotted                                         |
+| About to Expire   | ![#ffd678](https://dummyimage.com/15/ffd678/000000&text=+) #ffd678 | Sector is nearing expiration                              |
+| Expired           | ![#ff877c](https://dummyimage.com/15/ff877c/000000&text=+) #ff877c | Sector has expired                                        |
+| Downloading       | ![#499249](https://dummyimage.com/15/499249/000000&text=+) #499249 | Sector downloading (animated)                             |
+| Encoding          | ![#ff5365](https://dummyimage.com/15/ff5365/000000&text=+) #ff5365 | Sector encoding data (animated)                           |
+| Writing           | ![#9fc4ff](https://dummyimage.com/15/9fc4ff/000000&text=+) #9fc4ff | Sector writing data (animated)                            |
 
 :::note Learn More About Syncing, Plotting & Farming
 To learn more about the syncing, plotting, and farming processes on the Autonomys Network, please refer to the links below from our Autonomys Academy:

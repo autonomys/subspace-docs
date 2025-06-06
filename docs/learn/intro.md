@@ -22,28 +22,28 @@ The Autonomys Network is an ambitious layer zero protocol which is the first sca
 
 ## 🤝 Participate on the Autonomys Network
 ---
-### **Become a farmer**
+### **Become a Farmer**
 
-**Farmers** on the Autonomys Network are responsible for maintaining consensus, they do this by securing the **consensus chain**. A **farmer** plots pieces of **archival history** to disk, farms the created plot for block and vote rewards, and joins the DSN as a node for data retrieval.
+**Farmers** on the Autonomys Network are responsible for maintaining consensus. They do this by securing the consensus chain. A farmer plots pieces of archival history to disk, farms the created plot for block and vote rewards, and joins the DSN as a node for data retrieval.
 
-Choose one of the following methods to **start farming** on the Network (from easy to more complex):
+Choose one of the following methods to start farming on the Network (from easy to more complex):
 
 #### - [Start Farming with Space Acres](/farming/space-acres/install)
 #### - [Start Farming with CLI](/farming/cli/install)
 
-### **Become a nominator**
+### **Become a Nominator**
 
-Farmers can nominate **operators** and back them with their tokens, increasing their stake and chance of being elected as slot leaders. Generally speaking, any tAI3 token holder can stake their tokens by **nominating** a domain operator without having to become an operator or farmer themselves. **Nominators** earn **staking** rewards, proportional to their **staking amount** and pay the operator a pre-agreed **tax** on them.
+**Farmers** can nominate **operators** by backing them with tokens, increasing their stake and chances of being elected as slot leaders. Any tAI3 token holder can stake their tokens by nominating them to a domain operator, without taking on the role of an operator or farmer. Nominators earn staking rewards proportional to their stake and pay the operator a pre-agreed fee.
 
 #### - [Start Staking](/staking/stake)
 
-### **Become an operator**
+### **Become an Operator**
 
-**Operators** are responsible for validating and executing transactions, producing execution receipts, applying state transitions and earn rewards for their work.
+**Operators** are responsible for validating and executing transactions, producing execution receipts, applying state transitions, and earning rewards for their work
 
 #### - [Start an Operator node](/staking/operator/register)
 
-### **Become a timekeeper**
+### **Become a Timekeeper**
 
 **Timekeepers** on the Autonomys Network are responsible for running the **Proof-of-Time chain** and maintaining the randomness beacon for the **consensus chain**.
 
@@ -61,11 +61,11 @@ Interact with storage, consensus and domains via the Auto SDK to build powerful 
 
 ### Utilize the EVM Domain
 
-The Autonomys Network hosts an **EVM (Ethereum Virtual Machine)**, that allows you to deploy your **smart contracts.** 
+The Autonomys Network hosts an EVM (Ethereum Virtual Machine) that allows you to deploy your smart contracts. 
 
 #### - [EVM Development](https://develop.autonomys.xyz/evm/introduction)
 
 ### Utilize the Core Protocol
-The Autonomys Network aims to provide an amazing developer experience to anyone who wishes to build on top of the protocol. As such we have started working on a variety of tools to assist and promote development on our network. 
+The Autonomys Network aims to provide an excellent developer experience for those building on the protocol. As such, we have developed various tools to assist and promote development on our network.
 
 #### - [Core Protocol Development](https://github.com/autonomys/subspace/blob/main/docs/development.md)

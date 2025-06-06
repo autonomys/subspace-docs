@@ -24,7 +24,7 @@ import LinuxPage from '/docs/farming-&-staking/staking/operators/platforms/_linu
 Download `Subspace Node` for your respective operating system.
 
 :::info Taurus Network Only
-Currently, only running and registering an operator on the Taurus test network is supported.
+Currently, only running and registering an operator on the Taurus testnet is supported.
 :::
 
 <Tabs groupId="OS">
@@ -58,9 +58,15 @@ Any account with the **minimum operator stake of 100 tAI3** can become an operat
 An operator needs a key pair to participate in bundle production.
 
 To create a new operator key, run the following command:
-`subspace-node domain key create --base-path NODE_DATA_PATH --domain-id DOMAIN`
 
-Make sure to specify the base **--base-path** for the key generation, and running an operator node and make sure to replace the value in **--domain-id** with the domain ID you would like to be an operator on.
+:::tip Replace these placeholders
+- `<BASE_PATH>`: Path to store node data
+- `<DOMAIN_ID>`: Domain ID you want to operate on (e.g., 0 for EVM domain)
+:::
+
+```bash
+./subspace-node-ubuntu-x86_64-skylake-taurus-2025-may-27 domain key create --base-path "<BASE_PATH>" --domain-id "<DOMAIN_ID>"
+```
 
 :::tip
 The operator is responsible for finding out the correct domain ID they want to operate on.
@@ -72,7 +78,7 @@ The operator is responsible for finding out the correct domain ID they want to o
 Be sure to record and securely store the printed seed phrase. If it is leaked or stolen, both your operator and nominator stakes could be at risk of being slashed.
 :::
 
-The keys were generated in the subfolder of **NODE_DATA_PATH** under `/domains/domainID/keystore`. If you don't see the generated keypair in the subfolder, something went wrong. 
+The keys were generated in the subfolder of `<BASE_PATH>/domains/<DOMAIN_ID>/keystore`. If you don't see the generated keypair in the subfolder, something went wrong. 
 
 ### Start the domain operator node
 
@@ -89,65 +95,71 @@ Currently, the domain chain does not support syncing from other operator nodes; 
 
 :::info
 You need to **wipe** and sync your node from genesis block without using snap sync, since you need to sync both consensus and domain chains.
-You do not need to wipe any existing plots. 
+You do not need to wipe any existing farms. 
 :::
 
 :::tip
-You can ignore setting up `your_operator_id` while you're syncing your node as you won't have an operator id until you have registered your operator. Make sure to set it after syncing and registration
-by replacing `your_operator_id` with your operator_id obtained when registering the operator.
+You can ignore setting up `<OPERATOR_ID>` while you're syncing your node as you won't have an operator id until you have registered your operator. Make sure to set it after syncing and registration by replacing `<OPERATOR_ID>` with your operator_id obtained when registering the operator.
+:::
+
+:::tip Replace these placeholders
+- `<NAME>`: Your node name for telemetry
+- `<BASE_PATH>`: Path to store node data
+- `<DOMAIN_ID>`: Domain ID you want to operate on
+- `<OPERATOR_ID>`: Your operator ID (obtained after registration)
 :::
 
 <Tabs groupId="OS">
 
 <TabItem value="windows" label="🖼️ Windows" default>
 
-<CodeBlock>
-{`subspace-node run \`
---chain taurus \`
---name your_node_name \`
---base-path NODE_DATA_PATH \`
---sync full \`
--- \`
---domain-id your_domain_id \`
---operator-id your_operator_id`}
-</CodeBlock>
+```powershell
+subspace-node-windows-x86_64-skylake-taurus-2025-may-27.exe run `
+--chain taurus `
+--name "<NAME>" `
+--base-path "<BASE_PATH>" `
+--sync full `
+-- `
+--domain-id "<DOMAIN_ID>" `
+--operator-id "<OPERATOR_ID>"
+```
 
 </TabItem>
 
 <TabItem value="macos" label="🍎 macOS">
 
-<CodeBlock>
-{`subspace-node run \\
---chain taurus \\
---name your_node_name \\
---base-path NODE_DATA_PATH \\
---sync full \\
--- \\
---domain-id your_domain_id \\
---operator-id your_operator_id`}
-</CodeBlock>
+```bash
+./subspace-node-macos-aarch64-taurus-2025-may-27 run \
+--chain taurus \
+--name "<NAME>" \
+--base-path "<BASE_PATH>" \
+--sync full \
+-- \
+--domain-id "<DOMAIN_ID>" \
+--operator-id "<OPERATOR_ID>"
+```
 
 </TabItem>
 
 <TabItem value="linux" label="🐧 Ubuntu">
 
-<CodeBlock>
-{`subspace-node run \\
---chain taurus \\
---name your_node_name \\
---base-path NODE_DATA_PATH \\
---sync full \\
--- \\
---domain-id your_domain_id \\
---operator-id your_operator_id`}
-</CodeBlock>
+```bash
+./subspace-node-ubuntu-x86_64-skylake-taurus-2025-may-27 run \
+--chain taurus \
+--name "<NAME>" \
+--base-path "<BASE_PATH>" \
+--sync full \
+-- \
+--domain-id "<DOMAIN_ID>" \
+--operator-id "<OPERATOR_ID>"
+```
 
 </TabItem>
 
 <TabItem value="docker" label="🐋 Docker">
 
-<CodeBlock>
-{`services:
+```yaml
+services:
   node:
     # Replace snapshot-DATE with the latest release (like mainnet-2025-march-05)
     image: ghcr.io/autonomys/node:snapshot-DATE
@@ -170,14 +182,11 @@ by replacing `your_operator_id` with your operator_id obtained when registering 
       "--base-path", "/var/subspace",
       "--listen-on", "0.0.0.0:30333",
       "--dsn-listen-on", "/ip4/0.0.0.0/tcp/30433",
-      # Replace INSERT_YOUR_ID with your node ID (will be shown in telemetry)
-      "--name", "INSERT_YOUR_ID",
+      "--name", "<NAME>",
       "--sync", "full", 
       "--",
-      # Replace INSERT_YOUR_DOMAIN_ID with domain ID you want to be operator on
-      "--domain-id", "INSERT_YOUR_DOMAIN_ID",
-      # Replace INSERT_YOUR_OPERATOR_ID with your operator ID once you have registered
-      "--operator-id", "INSERT_YOUR_OPERATOR_ID",
+      "--domain-id", "<DOMAIN_ID>",
+      "--operator-id", "<OPERATOR_ID>",
       "--listen-on", "/ip4/0.0.0.0/tcp/40333"
     ]
     healthcheck:
@@ -187,8 +196,7 @@ by replacing `your_operator_id` with your operator_id obtained when registering 
       retries: 60
 volumes:
   node-data:
-  `}
-</CodeBlock>
+```
 </TabItem>
 </Tabs>
 
@@ -248,11 +256,56 @@ Make sure to specify a Minimum Nominator Stake of at least 1 tAI3 and to use the
 ![NStaking-10](/img/doc-imgs/operators-staking/NStaking-10.png)
 
 :::info
-It can take up to 10 minutes for the operator to be registered and appear on the page.  It may take a day before your Stake amount is displayed under Total Stake in the table.  Once you have your Operator Id you can restart your operator node and include the `--operator-id **OPERATOR_ID**` as a parameter. 
+It will take until the end of **[an epoch](#staking-epoch)** for the operator to be registered and appear on the page. Once you have your Operator Id you can restart your operator node and include the `--operator-id **OPERATOR_ID**` as a parameter. 
 :::
 
-:::tip
-You can increase your stake by clicking on the Nominate Button. 
-:::
+### Increasing Stake
 
-![NStaking-10](/img/doc-imgs/operators-staking/NStaking-8.png)
+1. To Increase your existing operator stake, you can click on the `Nominate` button next to your operator either from the `Operators` page or the `My Nominations` page.
+
+2. Choose an amount to stake and click on the `Nominate` button on the pop-up.
+
+![NStaking-11](/img/doc-imgs/operators-staking/NStaking-8.png)
+
+3. After approving the transaction, you will then see a pending transaction under your operator that should be completed at the end of **[an epoch](#staking-epoch)**
+
+![NStaking-12](/img/doc-imgs/operators-staking/NStaking-21.png)
+
+### Decreasing Stake
+
+1. To decrease your existing operator stake, you can click on the `Withdraw` button next to your operator on the `My Nominations` page.
+
+![NStaking-13](/img/doc-imgs/operators-staking/NStaking-22.png)
+
+2. Use the slider to determine what percentage of your stake you wish to withdraw.
+
+![NStaking-14](/img/doc-imgs/operators-staking/NStaking-20.png)
+
+3. Click on the `Withdraw` button to confirm the withdrawal and approve the transaction.
+
+4. You will then see a pending transaction for the withdrawal.
+
+![NStaking-15](/img/doc-imgs/operators-staking/NStaking-23.png)
+
+Your funds will be automatically withdrawn after 14,400 domain blocks  (can be from 1-2 days depending on block production speed).
+
+5. After the withdraw is complete, you will want to click on the `Unlock Funds` button.
+
+![NStaking-16](/img/doc-imgs/operators-staking/NStaking-24.png)
+
+6. Next confirm the unlock in the pop-up by pressing the Unlock Funds button. Your funds should now by unlocked and available for use.
+
+![NStaking-17](/img/doc-imgs/operators-staking/NStaking-25.png)
+
+## Staking Epoch
+
+A staking epoch is a period of time during which staking distribution remains the same. This period is currently set to 100 blocks (~10 minutes). The end of each epoch triggers a series of events to transition to the next epoch. 
+These events include:
+
+- allocation of fees earned for the blocks confirmed during the epoch
+
+- deposits and withdrawals of stake
+
+- operator registrations and de-registrations
+
+- recalculation of stake distribution for the slot leader election

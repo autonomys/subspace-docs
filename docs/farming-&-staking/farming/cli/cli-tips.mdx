@@ -31,11 +31,15 @@ There are some cases where version updates will cause issue with your Node & Far
 ### Wipe
 
 If you were running a node previously, and want to switch to a new network, please perform these steps and then follow the guide again:
+
+:::tip Replace these placeholders
+- `<PATH_TO_FARM>`: Path to your farm directory
+- `<BASE_PATH>`: Path to your node data directory
+:::
+
 ```bash
-# Replace `FARMER_FILE_NAME` with the name of the farmer file you downloaded from releases
-./FARMER_FILE_NAME wipe PATH_TO_FARM
-# Replace `NODE_FILE_NAME` with the name of the node file you downloaded from releases
-./NODE_FILE_NAME wipe NODE_DATA_PATH
+./subspace-farmer-ubuntu-x86_64-skylake-mainnet-2025-jan-14 wipe <PATH_TO_FARM>
+./subspace-node-ubuntu-x86_64-skylake-mainnet-2025-jan-14 wipe <BASE_PATH>
 ```
 
 Now follow the installation guide from the beginning.
@@ -44,12 +48,14 @@ Now follow the installation guide from the beginning.
 
 To maximize storage capabilities, you can engage multiple disks directly. This is often more efficient than relying on RAID configurations:
 
-Example:
-```shell-session
-./FARMER_FILE_NAME farm --reward-address WALLET_ADDRESS \
-    path=/media/ssd1,size=100GiB \
-    path=/media/ssd2,size=10T \
-    path=/media/ssd3,size=10T
+:::tip Replace these placeholders
+- `<REWARD_ADDRESS>`: Your wallet address for farming rewards
+:::
+
+```bash
+./subspace-farmer-ubuntu-x86_64-skylake-mainnet-2025-jan-14 farm --reward-address "<REWARD_ADDRESS>" \
+    path="/media/ssd1,size=4TiB" \
+    path="/media/ssd2,size=8TiB"
 ```
 ### Optimizing DSN Syncing
 
@@ -108,23 +114,34 @@ If you prefer to use the previous behavior, or if your RAM usage becomes too hig
 
 ### Create Missing Farms
 
-A farmer has the option to specify whether the system should automatically create missing farms upon startup. If you provide a path to a plot that isn't found, the system will generate a new one. However, this may not be desirable if a drive fails to mount properly. 
-By default, this option is set to `true`, but you can override it by adding `--create false`. Setting this flag to `false` after establishing your plots can prevent unintentional file writes to the wrong drive.
+A farmer has the option to specify whether the system should automatically create missing farms upon startup. If you provide a path to a farm that isn't found, the system will generate a new one. However, this may not be desirable if a drive fails to mount properly. 
+By default, this option is set to `true`, but you can override it by adding `--create false`. Setting this flag to `false` after establishing your farms can prevent unintentional file writes to the wrong drive.
 
 
 ### Record Chunks Reading Mode
 
-Upon startup, each farm will [benchmark](#benchmarking-your-farmer) the performance of every plot to identify the most efficient proving method, yielding either `ConcurrentChunks` or `WholeSector` results. If you already know the optimal method for your setup, you can specify it as an argument for each farm to save time benchmarking. 
-For example, you can include record-chunks-mode= after defining the path and size, assigning the desired value, e.g., `path=/mnt/subspace1,size=100G,record-chunks-mode=ConcurrentChunks`. If you do not provide this parameter, the system will benchmark each disk on startup to identify the most efficient method.
+Upon startup, each farm will [benchmark](#benchmarking-your-farmer) the performance to identify the most efficient proving method, yielding either `ConcurrentChunks` or `WholeSector` results. If you already know the optimal method for your setup, you can specify it as an argument for each farm to save time benchmarking. 
+
+:::tip Replace these placeholders
+- `<PATH_TO_FARM>`: Directory where you want to store the farm
+- `<FARM_SIZE>`: Amount of space allocated for farming (e.g. 4TiB, 8TiB)
+- `<RECORD_CHUNKS_MODE>`: Either `ConcurrentChunks` or `WholeSector`
+:::
+
+For example, you can include record-chunks-mode= after defining the path and size, assigning the desired value, e.g., `path=<PATH_TO_FARM>,size=<FARM_SIZE>,record-chunks-mode=<RECORD_CHUNKS_MODE>`. If you do not provide this parameter, the system will benchmark each disk on startup to identify the most efficient method.
 
 ### Benchmarking Your Farmer
 Benchmarking helps you test the plotting speed of your farmer against different versions of the Autonomys Network.
 
 ```
-./subspace-farmer benchmark audit /path/to/your/plot
+./subspace-farmer-ubuntu-x86_64-skylake-mainnet-2025-jan-14 benchmark audit <PATH_TO_FARM>
 ```
 
-Replace /path/to/your/plot with the actual path to your plot. This will provide you with metrics and insights regarding plotting performance.
+:::tip
+Replace `<PATH_TO_FARM>` with the actual path to your farm.
+:::
+
+This will provide you with metrics and insights regarding plotting performance.
 
 At the moment, Autonomys Node supports `rayon` implementation mechanism, that opens files as many times as there are farming threads and, for each thread, uses a dedicated file handle.
 
@@ -135,11 +152,11 @@ To read more about audit benchmarking, [read this forum post](https://forum.auto
 There is a second command available, which helps you determine how much time your farmer has after auditing to provide proof.
 
 ```
-./subspace-farmer benchmark prove /path/to/your/plot
+./subspace-farmer-ubuntu-x86_64-skylake-mainnet-2025-jan-14 benchmark prove <PATH_TO_FARM>
 ```
 
 Each farmer has ~4 seconds to audit and prove, so depending on how fast auditing is, the remaining time will be used for proving.
-Proving performance doesn't depend on the plot size.
+Proving performance doesn't depend on the farm size.
 
 If an environment does not have enough time for the proving step, a message such as this is logged by the farmer:
 
@@ -148,13 +165,17 @@ If an environment does not have enough time for the proving step, a message such
 To read more about prove benchmarking, [read this forum post](https://forum.autonomys.xyz/t/audit-benchmark-result-explanation-please/2150).
 
 ### Scrubbing Your Farmer
-In certain situations, especially when the farmer terminates unexpectedly or encounters an error, it might fail to restart correctly. The scrub command assists in resolving such issues by cleaning or resetting the specified plot.
+In certain situations, especially when the farmer terminates unexpectedly or encounters an error, it might fail to restart correctly. The scrub command assists in resolving such issues by cleaning or resetting the specified farm.
 
 ```
-./subspace-farmer scrub /path/to/your/plot
+./subspace-farmer-ubuntu-x86_64-skylake-mainnet-2025-jan-14 scrub <PATH_TO_FARM>
 ```
 
-Ensure to replace /path/to/your/plot with your actual plot path. Use this command cautiously as it modifies the plot state to recover from errors.
+:::tip
+Replace `<PATH_TO_FARM>` with your actual farm path.
+:::
+
+Use this command cautiously as it modifies the farm state to recover from errors.
 
 
 ### Specify Exact CPU Cores for Plotting/Replotting (CPU only)
@@ -198,7 +219,7 @@ If you are having issues with running a node or farmer for Autonomys, feel free 
 
 ## Timekeepers
 
-Gemini-3g introduces Proof-of-Time and a new, optional role has been added to the node. Timekeepers help run PoT to ensure the security of the network. Timekeeping requires a high-performance core CPU but can be undertaken by any node runner. You can enable timekeeping with the following commands. 
+Proof-of-Time is secured by Timekeepers, an optional role that has been added to the node. Timekeepers help run PoT to ensure the security of the network. Timekeeping requires a high-performance core CPU but can be undertaken by any node runner. You can enable timekeeping with the following commands. 
 - `--timekeeper`: To enable timekeeping on the node
 - `--timekeeper-cpu-cores`: To specify which cores the Timekeeper will run on. 
 
@@ -210,10 +231,15 @@ Read more about [Timekeepers](/farming/timekeeper)
 
 For both the node and the farmer, here are some frequently used commands:
 
-- Display farm information: `./FARMER_FILE_NAME info PATH_TO_FARM`
-- Scrub the farm for errors: `./FARMER_FILE_NAME scrub PATH_TO_FARM`
-- Erase all farmer-related data: `./FARMER_FILE_NAME wipe PATH_TO_FARM`
-- Erase all node-related data: `./NODE_FILE_NAME wipe NODE_DATA_PATH`
+:::tip Replace these placeholders
+- `<PATH_TO_FARM>`: Path to your farm directory
+- `<BASE_PATH>`: Path to your node data directory
+:::
+
+- Display farm information: `./subspace-farmer info <PATH_TO_FARM>`
+- Scrub the farm for errors: `./subspace-farmer scrub <PATH_TO_FARM>`
+- Erase all farmer-related data: `./subspace-farmer wipe <PATH_TO_FARM>`
+- Erase all node-related data: `./subspace-node wipe <BASE_PATH>`
 
 --- 
 

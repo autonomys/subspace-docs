@@ -1,7 +1,7 @@
 ---
 title: SubWallet
 sidebar_position: 4
-description: How to configure the SubWallet Substrate wallet for the Autonomys Network
+description: How to configure SubWallet for the Autonomys Network
 slug: /wallets/subwallet
 keywords:
     - Farmer
@@ -59,7 +59,7 @@ If you would like to Import an **Existing** Wallet, then select `Import an accou
 
 ![step-9](/img/doc-imgs/subwallet/Subwallet-7.png)
 
-## Connect wallet to Autonomys Mainnet and find wallet public address
+## Connect wallet to Autonomys mainnet and find wallet public address
 
 1. Open SubWallet, scroll all the way down and click on *Manage tokens*.
 
@@ -70,7 +70,7 @@ If you would like to Import an **Existing** Wallet, then select `Import an accou
 ![wallet-2](/img/doc-imgs/subwallet/Subwallet-9.png)
 
 3. In the search bar, start typing the name of the network, e.g. Autonomys.
-You will see two networks - **Mainnet** and **Taurus** test network.
+You will see two networks - **mainnet** and **Taurus** testnet.
 
 ![wallet-3](/img/doc-imgs/subwallet/Subwallet-10.png)
 
@@ -91,7 +91,7 @@ This also can be helpful for in-development networks such as the Autonomys Netwo
 
 <details>
 <summary>📝 RPC endpoints</summary>
-#### Consensus (Mainnet)
+#### Consensus (mainnet)
 ```
     wss://rpc.mainnet.subspace.foundation/ws
 ```
