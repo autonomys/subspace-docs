@@ -15,7 +15,7 @@ keywords:
 
 The Farming Cluster is designed for larger farmers, addressing the challenges of scaling effectively. It consists of four main components, all interconnected through a NATS Server.
 
-This setup enables powerful remote computing capabilities. For example, if a computer is ideal for farming but not for plotting, you can run the farming component on that machine while utilizing one or more remote machines for plotting. This ensures continuous plotting and replotting across multiple farms, optimizing the use of plotters until all sectors are fully plotted and replotted.
+This setup enables powerful remote computing capabilities. For example, if a computer is ideal for proving challenges but not for plotting, you can run the farmer component on that machine while utilizing one or more remote machines for plotting. This ensures continuous plotting and replotting across all storage locations, optimizing the use of plotters until all sectors are fully plotted and replotted.
 
 <div style={{ textAlign: 'center' }}>
 
@@ -48,7 +48,7 @@ You can reduce LAN bandwidth usage by running the NATS, Controller, Cache, and P
 ## Key Benefits
 
 - **Remote Compute Capability**  
-  Multiple PCs can contribute their CPU and GPU resources for plotting and replotting, without the need to store farm plots locally.
+  Multiple PCs can contribute their CPU and GPU resources for plotting and replotting, without the need to store farms locally.
 
 - **Redundancy**  
   Running multiple computers for each process increases redundancy and system resilience.
@@ -57,7 +57,7 @@ You can reduce LAN bandwidth usage by running the NATS, Controller, Cache, and P
   Centralized storage of the piece cache helps conserve WAN bandwidth.
   
 - **Additional Space**  
-  Relocating the piece sync cache to a central location frees up an additional 1% of plot capacity for farming, compared to the Standalone Farmer.
+  Relocating the piece sync cache to a central location frees up an additional 1% of farm capacity for farming, compared to the Standalone Farmer.
 
 
 ## NATS
@@ -76,12 +76,16 @@ max_payload = 2MB
 ```
 2. Start NATS with Docker:
 
+:::tip Replace these placeholders
+- `<PATH_TO_NATS_CONFIG>`: The path to your nats.config file created in step 1
+:::
+
 ```bash
 docker run \
     --name nats \
     --restart unless-stopped \
     --publish 4222:4222 \
-    --volume /path/to/nats.config:/nats.config:ro \
+    --volume <PATH_TO_NATS_CONFIG>:/nats.config:ro \
     nats -c /nats.config
 ```
 
@@ -102,37 +106,38 @@ The first component to start is the Controller. It connects to a single node, an
 
 :::caution Proper Port Forwarding
 
-For your cluster to be reachable, open and forward the default port `30533` to the Controller. If you've changed the port or are using multiple controllers, set it with `--listen-on /ip4/0.0.0.0/tcp/<port>`.
+For your cluster to be reachable, open and forward the default port `30533` to the Controller. If you've changed the port or are using multiple controllers, set it with `--listen-on "/ip4/0.0.0.0/tcp/<PORT>"`.
 
-If you have an IPv6 address but no public IPv4 address, setting the listen port to with `--listen-on /ip6/::/tcp/<port>`. to accept IPv6 connections is highly recommended.
+If you have an IPv6 address but no public IPv4 address, setting the listen port to with `--listen-on "/ip6/::/tcp/<PORT>"`. to accept IPv6 connections is highly recommended.
 
 Refer to our guide on [Port Forwarding](/farming/guides/port-config).
 
 :::
 
+:::tip Replace these placeholders
+- `<NATS_IP>`: The IP address of your NATS server
+- `<BASE_PATH>`: The path where the controller's peer network details will be saved
+- `<NODE_IP>`: Your node's IP address
+- `<RPC_PORT>`: Your node's RPC port
+:::
+
 ```bash
-./subspace-farmer \
+./subspace-farmer-ubuntu-x86_64-skylake-mainnet-2025-jan-14 \
     cluster \
-        --nats-server nats://<nats_ip>:4222 \
+        --nats-server "nats://<NATS_IP>:4222" \
     controller \
-        --base-path /path/to/controller-dir \
-        --node-rpc-url ws://<node_ip>:<rpc_port>
+        --base-path "<BASE_PATH>" \
+        --node-rpc-url "ws://<NODE_IP>:<RPC_PORT>"
 ```
-
-Replace the following placeholders:
-
-- `<nats_ip>`: The IP address of your NATS server.
-- `/path/to/controller-dir`: The path where the controller's peer network details will be saved.
-- `<node_ip>` and `<rpc_port>`: Your node's IP address and RPC port.
 
 <details>
 <summary>Common Parameters</summary>
 
 Refer to `./subspace-farmer cluster controller --help` for an explanation of each option and its default values.
 
-```shell
---listen-on /ip4/0.0.0.0/tcp/<port>
---listen-on /ip6/::1/tcp/<port>
+```bash
+--listen-on "/ip4/0.0.0.0/tcp/<PORT>"
+--listen-on "/ip6/::1/tcp/<PORT>"
 
 --cache-group
 --in-connections
@@ -155,30 +160,34 @@ The current Archive History Size can be found in the top cards on [Astral Block 
 
 :::
 
+:::tip Replace these placeholders
+- `<NATS_IP>`: The IP address of your NATS server
+- `<PATH_TO_CACHE>`: The path for cache storage
+- `<CACHE_SIZE>`: The size for cache storage
+:::
+
 ```bash
-./subspace-farmer \
+./subspace-farmer-ubuntu-x86_64-skylake-mainnet-2025-jan-14 \
     cluster \
-        --nats-server nats://<nats_ip>:4222 \
+        --nats-server "nats://<NATS_IP>:4222" \
     cache \
-        path=/path/to/cache,size=<size>
+        path="<PATH_TO_CACHE>,size=<CACHE_SIZE>"
 ```
 
-Replace the following placeholders:
-
-- `<nats_ip>`: The IP address of your NATS server.
-- `/path/to/cache` and `<size>`: The path and size for cache storage. Multiple caches are supported on a single Cache component:
-
-    ```
-    path=/path/to/cache1,size=<size> \
-    path=/path/to/cache2,size=<size>
-    ```
+:::note Multiple caches
+Multiple caches are supported on a single Cache component:
+```
+path="<PATH_TO_CACHE1>,size=<CACHE_SIZE1>" \
+path="<PATH_TO_CACHE2>,size=<CACHE_SIZE2>"
+```
+:::
 
 <details>
 <summary>Common Parameters</summary>
 
 Refer to `./subspace-farmer cluster cache --help` for an explanation of additional parameters and their default values.
 
-```shell
+```bash
 --cache-group
 ```
 </details>
@@ -188,16 +197,16 @@ Refer to `./subspace-farmer cluster cache --help` for an explanation of addition
 <details open>
 <summary>Plotter (Generates and uploads plotted sectors, downloading pieces from cache as needed)</summary>
 
+:::tip Replace these placeholders
+- `<NATS_IP>`: The IP address of your NATS server
+:::
+
 ```bash
-./subspace-farmer \
+./subspace-farmer-ubuntu-x86_64-skylake-mainnet-2025-jan-14 \
     cluster \
-        --nats-server nats://<nats_ip>:4222 \
+        --nats-server "nats://<NATS_IP>:4222" \
     plotter
 ```
-
-Replace the following placeholders:
-
-- `<nats_ip>`: The IP address of your NATS server.
 
 <details>
 <summary>Common Parameters</summary>
@@ -211,32 +220,36 @@ Refer to `./subspace-farmer cluster plotter --help` for an explanation of parame
 <details open>
 <summary>Farmer (Manages farms, audits, and retrieves plotted pieces. Requests sector plotting from the Plotter.)</summary>
 
+:::tip Replace these placeholders
+- `<NATS_IP>`: The IP address of your NATS server
+- `<REWARD_ADDRESS>`: The reward address where your winning rewards will be sent
+- `<PATH_TO_FARM>`: The path for storing your farm
+- `<FARM_SIZE>`: The size for storing your farm
+:::
+
 ```bash
-./subspace-farmer \
+./subspace-farmer-ubuntu-x86_64-skylake-mainnet-2025-jan-14 \
     cluster \
-        --nats-server nats://<nats_ip>:4222 \
+        --nats-server "nats://<NATS_IP>:4222" \
     farmer \
-        --reward-address <reward_address> \
-        path=/path/to/farm,size=<size>
+        --reward-address "<REWARD_ADDRESS>" \
+        path="<PATH_TO_FARM>,size=<FARM_SIZE>"
 ```
 
-Replace the following placeholders:
-
-- `<nats_ip>`: The IP address of your NATS server.
-- `<reward_address>`: The reward address where your winning rewards will be sent.
-- `/path/to/farm` and `<size>`: The path and size for storing your plots. You can add multiple plots to your farm:
-
-    ```
-    path=/path/to/farm1,size=<size> \
-    path=/path/to/farm2,size=<size>
-    ```
+:::note Multiple farms
+You can add multiple farms:
+```
+path="<PATH_TO_FARM1>,size=<FARM_SIZE1>" \
+path="<PATH_TO_FARM2>,size=<FARM_SIZE2>"
+```
+:::
 
 <details>
 <summary>Common Parameters</summary>
 
 Refer to `./subspace-farmer cluster farmer --help` for an explanation of each option and its default values.
 
-```shell
+```bash
 --create
 ```
 </details>
@@ -249,20 +262,21 @@ Refer to `./subspace-farmer cluster farmer --help` for an explanation of each op
 <summary>You can run Farming Cluster components individually or combine them to run simultaneously.</summary>
 
 ```bash
+./subspace-farmer-ubuntu-x86_64-skylake-mainnet-2025-jan-14 \
     cluster \
-        --nats-server nats://<nats_ip>:4222 \
+        --nats-server "nats://<NATS_IP>:4222" \
     controller \
-        --base-path /path/to/controller-dir \
-        --node-rpc-url ws://<node_ip>:<rpc_port>
+        --base-path "<BASE_PATH>" \
+        --node-rpc-url "ws://<NODE_IP>:<RPC_PORT>"
     -- \
     cache \
-        path=/path/to/cache,size=<size>
+        path="<PATH_TO_CACHE>,size=<CACHE_SIZE>"
     -- \
     plotter
     -- \
     farmer \
-        --reward-address <reward_address> \
-        path=/path/to/farm,size=<size>
+        --reward-address "<REWARD_ADDRESS>" \
+        path="<PATH_TO_FARM>,size=<FARM_SIZE>"
 ```
 
 </details>
@@ -291,15 +305,15 @@ flowchart
 </div>
 
 <details>
-<summary>Example</summary>
+<summary>Configuration</summary>
 
 ```bash
-./subspace-farmer cluster \
+./subspace-farmer-ubuntu-x86_64-skylake-mainnet-2025-jan-14 cluster \
     controller \
-        --nats-server=nats://<nats_ip_1>:4222 \
-        --nats-server=nats://<nats_ip_2>:4222 \
-        --base-path /path/to/controller-dir \
-        --node-rpc-url ws://<node_ip>:<rpc_port>        
+        --nats-server="nats://<NATS_IP_1>:4222" \
+        --nats-server="nats://<NATS_IP_2>:4222" \
+        --base-path "<BASE_PATH>" \
+        --node-rpc-url "ws://<NODE_IP>:<RPC_PORT>"        
 ```
 
 </details>
@@ -346,91 +360,91 @@ Farmer3 <-->  NATS
 
 :::caution Multiple Cache Groups
 
-Each cache group must have a unique name, and controllers can be assigned one or more. Specify an alphanumeric name for each using `--cache-group <group_name>`.
+Each cache group must have a unique name, and controllers can be assigned one or more. Specify an alphanumeric name for each using `--cache-group "<CACHE_GROUP>"`.
 
 :::
 
 <details>
-<summary>Example</summary>
+<summary>Configuration</summary>
 
 ```bash title="Controller #1"
-./subspace-farmer \
+./subspace-farmer-ubuntu-x86_64-skylake-mainnet-2025-jan-14 \
     cluster \
-        --nats-server nats://<nats_ip>:4222 \
+        --nats-server "nats://<NATS_IP>:4222" \
     controller \
-        --base-path /path/to/controller-dir \
-        --cache-group <group_1> \
-        --cache-group <group_2> \
-        --node-rpc-url ws://<node_ip>:<rpc_port>
+        --base-path "<BASE_PATH>" \
+        --cache-group "<CACHE_GROUP_1>" \
+        --cache-group "<CACHE_GROUP_2>" \
+        --node-rpc-url "ws://<NODE_IP>:<RPC_PORT>"
 ```
 
 ```bash title="Controller #2"
-./subspace-farmer \
+./subspace-farmer-ubuntu-x86_64-skylake-mainnet-2025-jan-14 \
     cluster \
-        --nats-server nats://<nats_ip>:4222 \
+        --nats-server "nats://<NATS_IP>:4222" \
     controller \
-        --base-path /path/to/controller-dir \
-        --cache-group <group_2> \
-        --node-rpc-url ws://<node_ip>:<rpc_port>
+        --base-path "<BASE_PATH>" \
+        --cache-group "<CACHE_GROUP_2>" \
+        --node-rpc-url "ws://<NODE_IP>:<RPC_PORT>"
 ```
 
 ```bash title="Cache #1"
-./subspace-farmer \
+./subspace-farmer-ubuntu-x86_64-skylake-mainnet-2025-jan-14 \
     cluster \
-        --nats-server nats://<nats_ip>:4222 \
+        --nats-server "nats://<NATS_IP>:4222" \
     cache \
-        --cache-group <group_1> \
-        path=/path/to/cache,size=<size>
+        --cache-group "<CACHE_GROUP_1>" \
+        path="<PATH_TO_CACHE>,size=<CACHE_SIZE>"
 ```
 
 ```bash title="Cache #2"
-./subspace-farmer \
+./subspace-farmer-ubuntu-x86_64-skylake-mainnet-2025-jan-14 \
     cluster \
-        --nats-server nats://<nats_ip>:4222 \
+        --nats-server "nats://<NATS_IP>:4222" \
     cache \
-        --cache-group <group_2> \
-        path=/path/to/cache,size=<size>
+        --cache-group "<CACHE_GROUP_2>" \
+        path="<PATH_TO_CACHE>,size=<CACHE_SIZE>"
 ```
 
 ```bash title="Plotter #1"
-./subspace-farmer \
+./subspace-farmer-ubuntu-x86_64-skylake-mainnet-2025-jan-14 \
     cluster \
-        --nats-server nats://<nats_ip>:4222 \
+        --nats-server "nats://<NATS_IP>:4222" \
     plotter
 ```
 
 ```bash title="Plotter #2"
-./subspace-farmer \
+./subspace-farmer-ubuntu-x86_64-skylake-mainnet-2025-jan-14 \
     cluster \
-        --nats-server nats://<nats_ip>:4222 \
+        --nats-server "nats://<NATS_IP>:4222" \
     plotter
 ```
 
 ```bash title="Farmer #1"
-./subspace-farmer \
+./subspace-farmer-ubuntu-x86_64-skylake-mainnet-2025-jan-14 \
     cluster \
-        --nats-server nats://<nats_ip>:4222 \
+        --nats-server "nats://<NATS_IP>:4222" \
     farmer \
-        --reward-address <reward_address> \
-        path=/path/to/farm,size=<size>
+        --reward-address "<REWARD_ADDRESS>" \
+        path="<PATH_TO_FARM>,size=<FARM_SIZE>"
 ```
 
 ```bash title="Farmer #2"
-./subspace-farmer \
+./subspace-farmer-ubuntu-x86_64-skylake-mainnet-2025-jan-14 \
     cluster \
-        --nats-server nats://<nats_ip>:4222 \
+        --nats-server "nats://<NATS_IP>:4222" \
     farmer \
-        --reward-address <reward_address> \
-        path=/path/to/farm,size=<size>
+        --reward-address "<REWARD_ADDRESS>" \
+        path="<PATH_TO_FARM>,size=<FARM_SIZE>"
 ```
 
 ```bash title="Farmer #3"
-./subspace-farmer \
+./subspace-farmer-ubuntu-x86_64-skylake-mainnet-2025-jan-14 \
     cluster \
-        --nats-server nats://<nats_ip>:4222 \
+        --nats-server "nats://<NATS_IP>:4222" \
     farmer \
-        --reward-address <reward_address> \
-        path=/path/to/farm,size=<size>
+        --reward-address "<REWARD_ADDRESS>" \
+        path="<PATH_TO_FARM>,size=<FARM_SIZE>"
 ```
 </details>
 

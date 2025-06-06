@@ -20,12 +20,18 @@ This might be useful if you decided to switch domains or already have **the secr
 
 To insert the key, use the following command:
 
+:::tip Replace these placeholders
+- `<BASE_PATH>`: Path to your node data directory
+- `<DOMAIN_ID>`: The domain ID you want to operate on
+- `<SECRET_PHRASE>`: Your operator key's secret phrase
+:::
+
 ```bash
-subspace-node domain key insert \
---base-path NODE_DATA_PATH --domain-id DOMAIN_ID --keystore-suri "<Secret phrase>"
+./subspace-node-ubuntu-x86_64-skylake-taurus-2025-may-27 domain key insert \
+--base-path "<BASE_PATH>" --domain-id "<DOMAIN_ID>" --keystore-suri "<SECRET_PHRASE>"
 ```
 
-The command above will insert the keypair in the subfolder of `NODE_DATA_PATH/domains/DOMAIN_ID/keystore`.
+The command above will insert the keypair in the subfolder of `<BASE_PATH>/domains/<DOMAIN_ID>/keystore`.
 
 `suri` is the secret phrase of the operator key.
 
@@ -61,60 +67,69 @@ Stake of your **Nominators** won't be released, but will be moved to the new dom
 To run both operator and validator at the same time, provide required flags for both roles when starting your node. 
 :::
 
+:::tip Replace these placeholders
+- `<NAME>`: Your node name for telemetry
+- `<BASE_PATH>`: Path to store node data
+- `<DOMAIN_ID>`: Domain ID you want to operate on
+- `<OPERATOR_ID>`: Your operator ID (obtained after registration)
+- `<WALLET_ADDRESS>`: Your wallet address for farming rewards
+- `<FARM_SIZE>`: Farm size (e.g. 4TiB, 8TiB)
+:::
+
 <Tabs groupId="OS">
 
 <TabItem value="windows" label="🖼️ Windows" default>
 
-<CodeBlock>
-{`subspace-node run \`
---chain taurus \`
---farmer \`
---name your_node_name \`
---base-path NODE_DATA_PATH \`
---sync full \`
--- \`
---domain-id your_domain_id \`
---operator-id your_operator_id`}
-</CodeBlock>
+```powershell
+.\subspace-node-windows-x86_64-skylake-taurus-2025-may-27.exe run `
+--chain taurus `
+--farmer `
+--name "<NAME>" `
+--base-path "<BASE_PATH>" `
+--sync full `
+-- `
+--domain-id "<DOMAIN_ID>" `
+--operator-id "<OPERATOR_ID>"
+```
 
 </TabItem>
 
 
 <TabItem value="macos" label="🍎 macOS">
 
-<CodeBlock>
-{`subspace-node run \\
---chain taurus \\
---farmer \\
---name your_node_name \\
---base-path NODE_DATA_PATH \\
---sync full \\
--- \\
---domain-id your_domain_id \\
---operator-id your_operator_id`}
-</CodeBlock>
+```bash
+./subspace-node-macos-aarch64-taurus-2025-may-27 run \
+--chain taurus \
+--farmer \
+--name "<NAME>" \
+--base-path "<BASE_PATH>" \
+--sync full \
+-- \
+--domain-id "<DOMAIN_ID>" \
+--operator-id "<OPERATOR_ID>"
+```
 
 </TabItem>
 
 <TabItem value="linux" label="🐧 Ubuntu">
 
-<CodeBlock>
-{`subspace-node run \\
---chain taurus \\
---farmer \\
---name your_node_name \\
---base-path NODE_DATA_PATH \\
---sync full \\
--- \\
---domain-id your_domain_id \\
---operator-id your_operator_id`}
-</CodeBlock>
+```bash
+./subspace-node-ubuntu-x86_64-skylake-taurus-2025-may-27 run \
+--chain taurus \
+--farmer \
+--name "<NAME>" \
+--base-path "<BASE_PATH>" \
+--sync full \
+-- \
+--domain-id "<DOMAIN_ID>" \
+--operator-id "<OPERATOR_ID>"
+```
 </TabItem>
 
 <TabItem value="docker" label="🐋 Docker">
 
-<CodeBlock>
-{`services:
+```yaml
+services:
   node:
     # Replace snapshot-DATE with the latest release (like snapshot-2025-jan-07)
     image: ghcr.io/autonomys/node:snapshot-DATE
@@ -139,16 +154,12 @@ To run both operator and validator at the same time, provide required flags for 
       "--rpc-methods", "unsafe",
       "--rpc-listen-on", "0.0.0.0:9944",
       "--farmer",
-     # Replace INSERT_YOUR_ID with your node ID (will be shown in telemetry)
-      "--name", "INSERT_YOUR_ID",
+      "--name", "<NAME>",
       "--sync", "full", 
       "--",
-      # Replace INSERT_YOUR_DOMAIN_ID with domain ID you want to be operator on
-      "--domain-id", "INSERT_YOUR_DOMAIN_ID",
-      # Replace INSERT_YOUR_OPERATOR_ID with your operator ID
-      "--operator-id", "INSERT_YOUR_OPERATOR_ID",
+      "--domain-id", "<DOMAIN_ID>",
+      "--operator-id", "<OPERATOR_ID>",
       "--listen-on", "/ip4/0.0.0.0/tcp/40333"
-# Replace INSERT_YOUR_ID with your node ID (will be shown in telemetry)
     ]
     healthcheck:
       timeout: 5s
@@ -176,18 +187,16 @@ To run both operator and validator at the same time, provide required flags for 
       "farm",
       "--node-rpc-url", "ws://node:9944",
       "--listen-on", "/ip4/0.0.0.0/tcp/30533",
-# Replace WALLET_ADDRESS with your Polkadot.js wallet address
-      "--reward-address", "WALLET_ADDRESS",
-      # Replace PLOT_SIZE with plot size in gigabytes or terabytes, for example 100G or 2T (but leave at least 60G of disk space for node and some for OS)
-      "path=/var/subspace,size=PLOT_SIZE",
+      "--reward-address", "<WALLET_ADDRESS>",
+      "path=/var/subspace,size=<FARM_SIZE>",
     ]
 volumes:
   node-data:
   farmer-data:
-  `}
-</CodeBlock>
+```
 </TabItem>
 </Tabs>
+
 
 You should see the node start successfully and begin syncing. 
 
