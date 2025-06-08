@@ -1,15 +1,9 @@
-import Link from '@docusaurus/Link';
-import styles from '@site/src/pages/index.module.css';
+import ReleaseButton from '@site/src/components/ReleaseButton';
+import ReleaseContainer from '@site/src/components/ReleaseContainer';
 
 ### Download CLI Executables
 ---
  
-<div className={`${styles.buttons} ${styles.flexContainer}`}>
-  <Link
-    className="button button--secondary"
-    to="https://github.com/autonomys/subspace/releases/download/taurus-2025-may-27/subspace-node-macos-aarch64-taurus-2025-may-27.zip"
-    style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', textAlign: 'center', padding: '10px' }}>
-    <span style={{ fontSize: '20px' }}>Node Executable</span>
-    <span style={{ fontSize: '14px' }}>(Apple CPU)</span>
-  </Link>
-</div>
+<ReleaseContainer>
+  <ReleaseButton to="https://github.com/autonomys/subspace/releases/download/taurus-2025-may-27/subspace-node-macos-aarch64-taurus-2025-may-27.zip" title="Node Executable" subtitle="(Apple CPU)" />
+</ReleaseContainer>

@@ -342,8 +342,8 @@ WantedBy=multi-user.target`;
                         ))}
 		    </div>
 		    
-		    <div className={`${styles['systemd-service-generator-form__group']} text--center`}>
-                        <button className={`button button--primary button--lg ${styles['systemd-service-generator-form__button--primary']}`} onClick={generateOutput}>Generate</button>
+		    <div className="text--center margin-top--lg">
+                        <button className="button button--primary button--lg" onClick={generateOutput}>Generate</button>
 		    </div>
 		</div>
 	    </div>

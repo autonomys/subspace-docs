@@ -1,8 +1,7 @@
 // @ts-check
 // Note: type annotations allow type checking and IDEs autocompletion
 
-const lightCodeTheme = require('prism-react-renderer/themes/github');
-const darkCodeTheme = require('prism-react-renderer/themes/dracula');
+const codeTheme = require('prism-react-renderer/themes/dracula'); // Using Dracula theme for both light and dark modes
 // @ts-ignore
 const ConfigLocalized = require('./docusaurus.config.localized.json');
 const defaultLocale = 'en';
@@ -358,15 +357,13 @@ const config = {
       announcementBar: {
         id: 'developer_hub',
         content:
-          '<br /><h4>Check out our new Autonomys Developer Documentation by visiting our <a target="_blank" href="https://develop.autonomys.xyz/">Developer Hub</a></h4>',
-        backgroundColor: '#ac9dc7',
-        textColor: '#292929',
+          'Looking to build on Autonomys Network? Find comprehensive guides, tutorials, and API documentation at our <a target="_blank" href="https://develop.autonomys.xyz/">Developer Hub</a>',
         isCloseable: true,
       },
       prism: {
-        theme: lightCodeTheme,
-        darkTheme: darkCodeTheme,
-        additionalLanguages: ['toml', 'powershell', 'shell-session', 'ini'],
+        theme: codeTheme,
+        darkTheme: codeTheme,
+        additionalLanguages: ['bash', 'powershell', 'shell-session', 'yaml'],
       },
       algolia: {
         // The application ID provided by Algolia

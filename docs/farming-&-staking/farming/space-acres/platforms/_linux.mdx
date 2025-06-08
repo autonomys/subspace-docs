@@ -1,5 +1,5 @@
-import Link from '@docusaurus/Link';
-import styles from '@site/src/pages/index.module.css';
+import ReleaseButton from '@site/src/components/ReleaseButton';
+import ReleaseContainer from '@site/src/components/ReleaseContainer';
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -11,22 +11,10 @@ Currently, there are two ways to get Space Acres on Linux:
 - by installing `.deb` package on Ubuntu (recommended)
 - by running `.AppImage` bundle directly on any modern Linux distribution (including Ubuntu if you want to)
 
-<div className={`${styles.buttons} ${styles.flexContainer}`}>
-    <Link
-        className="button button--secondary"
-        to="https://github.com/autonomys/space-acres/releases/download/0.2.12/space-acres_0.2.12-1_amd64.deb"
-        style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', textAlign: 'center', padding: '10px' }}>
-        <span style={{ fontSize: '20px' }}>Ubuntu Installer</span>
-        <span style={{ fontSize: '14px' }}>(.deb)</span>
-    </Link>
-    <Link
-        className="button button--secondary"
-        to="https://github.com/autonomys/space-acres/releases/download/0.2.12/space-acres-0.2.12-x86_64.AppImage"
-        style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', textAlign: 'center', padding: '10px' }}>
-        <span style={{ fontSize: '20px' }}>Linux Portable App</span>
-        <span style={{ fontSize: '14px' }}>(AppImage)</span>
-    </Link>
-</div>
+<ReleaseContainer>
+    <ReleaseButton to="https://github.com/autonomys/space-acres/releases/download/0.2.12/space-acres_0.2.12-1_amd64.deb" title="Ubuntu Installer" subtitle="(.deb)" />
+    <ReleaseButton to="https://github.com/autonomys/space-acres/releases/download/0.2.12/space-acres-0.2.12-x86_64.AppImage" title="Linux Portable App" subtitle="(AppImage)" />
+</ReleaseContainer>
 
 ### Install Space Acres
 
