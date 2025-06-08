@@ -127,6 +127,7 @@
   --ifm-dropdown-hover-background-color: var(--ifm-color-emphasis-100);
   --ifm-menu-color: var(--ifm-color-content);
   --ifm-menu-color-active: var(--ifm-color-primary);
+  --ifm-menu-link-sublist-icon: url('/img/icons/chevron-right.svg');
   
   /* Badge colors */
   --ifm-badge-background-color: var(--ifm-color-emphasis-200);
@@ -948,15 +949,34 @@ svg.icon-featured {
 /* ==================================================
    SIDEBAR/MENU STYLES
    ================================================== */
+/* Override default chevron styles */
 .menu__caret:before,
 .menu__link--sublist-caret:after {
-  background-size: 1.25rem 1.25rem !important;
+  background-color: var(--ifm-color-emphasis-600) !important;
+  mask-image: url('/img/icons/chevron-right.svg') !important;
+  mask-position: center !important;
+  width: 1rem !important;
+  height: 1rem !important;
 }
 
-.menu__link--sublist-caret {
-  align-items: center;
-  display: flex;
-  justify-content: space-between;
+/* Default state - chevron pointing right (collapsed) */
+.menu__list-item--collapsed .menu__link--sublist-caret:after,
+.menu__list-item--collapsed .menu__caret:before,
+.menu__list-item--collapsed .menu__list-item-collapsible .menu__link--sublist-caret:after,
+.menu__list-item--collapsed .menu__list-item-collapsible .menu__caret:before {
+  transform: none !important;
+}
+
+/* Expanded state - chevron pointing down */
+.menu__list-item:not(.menu__list-item--collapsed) > .menu__link--sublist-caret:after,
+.menu__list-item:not(.menu__list-item--collapsed) > .menu__list-item-collapsible > .menu__caret:before,
+.menu__list-item:not(.menu__list-item--collapsed) > .menu__list-item-collapsible > .menu__link--sublist-caret:after {
+  transform: rotate(90deg) !important;
+}
+
+/* Style the separate chevron button */
+.menu__caret {
+  padding: var(--ifm-menu-link-padding-vertical) 0.5rem !important;
 }
 
 .menu__caret:hover {
