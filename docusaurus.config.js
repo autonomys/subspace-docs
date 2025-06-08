@@ -196,16 +196,16 @@ const config = {
             position: 'left',
             items: [
               {
-                label: 'Farming',
-                href: '/category/farming'
+                label: 'Start Farming',
+                href: '/farming/space-acres/install'
               },
               {
-                label: 'Operators & Nominators',
-                href: '/staking/intro'
+                label: 'Start Staking',
+                href: '/staking/stake'
               },
               {
-                label: 'Develop on Autonomys',
-                href: 'https://develop.autonomys.xyz/',
+                label: 'Become an Operator',
+                href: '/staking/operator/register'
               }
             ],
           },
@@ -259,6 +259,14 @@ const config = {
               {
                 label: 'Autonomys Academy',
                 href: 'https://academy.autonomys.xyz',
+              },
+              {
+                label: 'Developer Hub',
+                href: 'https://develop.autonomys.xyz/',
+              },
+              {
+                label: 'Litepaper',
+                href: 'https://gateway.autonomys.xyz/file/bafkr6ibiqakm4js5yqifosrm2kdtxkbncbya2z2na2a34gaubwirqxt6bi',
               },
               {
                 label: 'Whitepaper',

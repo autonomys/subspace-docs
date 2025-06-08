@@ -11,6 +11,7 @@ keywords:
 
 import Link from '@docusaurus/Link';
 import Icon from '@site/src/components/Icon';
+import ActionButton from '@site/src/components/ActionButton';
 
 # Discover the Autonomys' protocol - Subspace Protocol
 
@@ -29,12 +30,12 @@ Autonomys Academy is more than a guide; it's a deep dive into the philosophy, ar
 
 <div className="center-content">
   <div className="releases-container">
-    <Link to="https://academy.autonomys.xyz/" className="button button--primary button--lg">
-      <Icon icon="mdi:school" className="download-icon" />
-      <div className="button-text">
-        <span>Autonomys Academy</span>
-        <span>Learn the fundamentals</span>
-      </div>
-    </Link>
+    <ActionButton 
+      to="https://academy.autonomys.xyz/" 
+      title="Autonomys Academy" 
+      subtitle="Learn the fundamentals" 
+      icon="mdi:school" 
+      external 
+    />
   </div>
 </div>

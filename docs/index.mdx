@@ -12,6 +12,10 @@ keywords:
 ---
 
 import Link from '@docusaurus/Link';
+import FeaturedBadge from '@site/src/components/FeaturedBadge';
+import Icon from '@site/src/components/Icon';
+import ActionButton from '@site/src/components/ActionButton';
+import ResourceCard from '@site/src/components/ResourceCard';
 
 ![Autonomys Network Introduction](/img/learn/intro-banner.avif)
 
@@ -34,71 +38,117 @@ This documentation site is designed to enhance your experience with the Autonomy
 ### Choose Your Path
 
 <div className="releases-container">
-  <Link to="/farming/space-acres/install" className="button button--primary button--lg">
-    <Icon icon="mdi:tractor" className="download-icon" />
-    <div className="button-text">
-      <span>Start Farming</span>
-      <span>Earn rewards by storing data</span>
-    </div>
-  </Link>
+  <ActionButton 
+    to="/farming/space-acres/install" 
+    title="Start Farming" 
+    subtitle="Earn rewards by storing data" 
+    icon="mdi:tractor" 
+  />
   
-  <Link to="/staking/stake" className="button button--primary button--lg">
-    <Icon icon="mdi:account-heart" className="download-icon" />
-    <div className="button-text">
-      <span>Start Staking</span>
-      <span>Nominate operators & earn</span>
-    </div>
-  </Link>
+  <ActionButton 
+    to="/staking/stake" 
+    title="Start Staking" 
+    subtitle="Nominate operators & earn" 
+    icon="mdi:account-heart" 
+  />
   
-  <Link to="/staking/operator/register" className="button button--primary button--lg">
-    <Icon icon="mdi:server" className="download-icon" />
-    <div className="button-text">
-      <span>Become an Operator</span>
-      <span>Validate transactions</span>
-    </div>
-  </Link>
+  <ActionButton 
+    to="/staking/operator/register" 
+    title="Become an Operator" 
+    subtitle="Validate transactions" 
+    icon="mdi:server" 
+  />
   
-  <Link to="https://academy.autonomys.xyz/" className="button button--primary button--lg">
-    <Icon icon="mdi:school" className="download-icon" />
-    <div className="button-text">
-      <span>Autonomys Academy</span>
-      <span>Learn the fundamentals</span>
-    </div>
-  </Link>
+  <ActionButton 
+    to="https://academy.autonomys.xyz/" 
+    title="Autonomys Academy" 
+    subtitle="Learn the fundamentals" 
+    icon="mdi:school" 
+    external 
+  />
   
-  <Link to="https://develop.autonomys.xyz" className="button button--primary button--lg">
-    <Icon icon="lineicons:dev" className="download-icon" />
-    <div className="button-text">
-      <span>Developer Hub</span>
-      <span>Build more. Code less.</span>
-    </div>
-  </Link>
+  <ActionButton 
+    to="https://develop.autonomys.xyz" 
+    title="Developer Hub" 
+    subtitle="Build more. Code less." 
+    icon="lineicons:dev" 
+    external 
+  />
+  
+  <ActionButton 
+    to="/participate/contribute/intro" 
+    title="Contribute" 
+    subtitle="Improve docs & help others" 
+    icon="material-symbols:partner-exchange" 
+  />
 </div>
 
 </div>
 
 ---
 
-## <Icon icon="token:autonomys" />Essential Resources
+## <Icon icon="mdi:web" />Essential Resources
 
-Dive deeper into the technology and vision behind the network:
+Connect with the Autonomys community and explore our ecosystem:
 
-- **[What is Autonomys Network](https://www.autonomys.xyz/project)** - Project overview and mission
-- **[Rewards & Fees](https://academy.autonomys.xyz/subspace-protocol/rewards-and-fees)** - Economics and incentives
-- **[Community Forum](https://forum.autonomys.xyz)** - Knowledge-sharing platform
-- **[Whitepaper](https://gateway.autonomys.xyz/file/bafkr6ia6q74kzrtdpfl3scb5v5f2vuvsip7ilfo4qkl27ievd7uvnluw2a)** - Technical deep dive
-- **[Litepaper](https://gateway.autonomys.xyz/file/bafkr6ibiqakm4js5yqifosrm2kdtxkbncbya2z2na2a34gaubwirqxt6bi)** - Simplified overview
+<div className="resource-cards">
+  <ResourceCard 
+    to="https://autonomys.xyz/discord" 
+    title="Discord" 
+    subtitle="Join our community chat" 
+    icon="mdi:discord" 
+  />
+  
+  <ResourceCard 
+    to="https://t.me/subspace_network" 
+    title="Telegram" 
+    subtitle="Connect on Telegram" 
+    icon="mdi:telegram" 
+  />
+  
+  <ResourceCard 
+    to="https://github.com/autonomys" 
+    title="GitHub" 
+    subtitle="Explore our open source code" 
+    icon="mdi:github" 
+  />
+  
+  <ResourceCard 
+    to="https://autonomys.xyz" 
+    title="Autonomys Website" 
+    subtitle="Learn about our vision" 
+    icon="token:autonomys" 
+  />
+  
+  <ResourceCard 
+    to="https://astral.autonomys.xyz" 
+    title="Astral Block Explorer" 
+    subtitle="Explore network activity" 
+    icon="mdi:cube-scan" 
+  />
+  
+  <ResourceCard 
+    to="https://forum.autonomys.xyz" 
+    title="Community Forums" 
+    subtitle="Discuss and share knowledge" 
+    icon="mdi:forum" 
+  />
+</div>
 
 ---
 
 ## <Icon icon="mdi:account-group" />Network Participants
 
+:::tip Look for the <FeaturedBadge text="Recommended" /> Badge
+Throughout this documentation, you'll see the <FeaturedBadge text="Recommended" /> badge highlighting our community-tested, hand-picked solutions. These are carefully selected options that offer the best balance of ease-of-use, reliability, and features for most users. When multiple paths exist, we guide you toward the ones that have proven most successful for our community.
+:::
+
 ### <Icon icon="mdi:tractor" />Farmers
 Secure the network by storing archival history and earn rewards. Farmers maintain consensus, plot data to disk, and participate in the Distributed Storage Network (DSN).
 
 **Getting Started:**
-- **[Space Acres](/farming/space-acres/install)** <FeaturedBadge text="Recommended" /> - Easy setup with graphical interface
-- **[CLI Farmer](/farming/cli/install)** - Advanced command-line setup
+- **[Space Acres](/farming/space-acres/install)** <FeaturedBadge text="Recommended" /> - User-friendly GUI application perfect for beginners, with visual setup and monitoring
+- **[CLI Farmer](/farming/cli/install)** - Command-line interface for advanced users seeking full control and automation capabilities
 
 ### <Icon icon="mdi:account-heart" />Nominators
 Stake your tAI3 tokens by nominating operators to increase their chances of being elected as slot leaders. Earn proportional rewards while supporting network security.
