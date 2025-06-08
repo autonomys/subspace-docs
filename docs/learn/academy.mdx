@@ -10,6 +10,7 @@ keywords:
 ---
 
 import Link from '@docusaurus/Link';
+import Icon from '@site/src/components/Icon';
 
 # Discover the Autonomys' protocol - Subspace Protocol
 
@@ -27,9 +28,13 @@ Unlock the capabilities of Autonomys Network, a cutting-edge blockchain that per
 Autonomys Academy is more than a guide; it's a deep dive into the philosophy, architecture, and community that make Autonomys unique. Ready to be part of the revolution?
 
 <div className="center-content">
-    <Link
-    className="button button--primary"
-    to="https://academy.autonomys.xyz/subspace-protocol/introduction">
-      Explore Autonomys Academy
+  <div className="releases-container">
+    <Link to="https://academy.autonomys.xyz/" className="button button--primary button--lg">
+      <Icon icon="mdi:school" className="download-icon" />
+      <div className="button-text">
+        <span>Autonomys Academy</span>
+        <span>Learn the fundamentals</span>
+      </div>
     </Link>
+  </div>
 </div>

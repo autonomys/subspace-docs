@@ -43,7 +43,7 @@ const config = {
   // to replace "en" with "zh-Hans".
   i18n: {
     defaultLocale,
-    locales: ["de", "en", "fr", "id", "it", "ja", "uk", "pt", "ru", "vi", "es", "zh", "tr"],
+    locales: ["en", "de", "es", "fr", "id", "it", "ja", "pt", "ru", "tr", "uk", "vi", "zh"],
   },
   
   markdown: {
@@ -61,7 +61,7 @@ const config = {
           // Redirecting to the new root URL (/) as the previous root (/docs) is no longer in use.
 
           // Learn
-          { to: '/learn/intro', from: ['/category/learn', '/docs/learn/intro'] },
+          { to: '/', from: ['/category/learn', '/docs/learn/intro'] },
           { to: '/learn/security', from: ['/docs/learn/security'] },
           { to: '/learn/academy', from: ['/docs/learn/academy'] },
 
@@ -282,8 +282,9 @@ const config = {
           },
           {
             href: 'https://github.com/autonomys',
-            label: 'GitHub',
             position: 'right',
+            className: 'header-github-link',
+            'aria-label': 'GitHub repository',
           },
         ],
       },
