@@ -697,6 +697,32 @@ div[class*="announcementBar"] button[class*="close"] svg {
 }
 
 /* ==================================================
+   NAVBAR LOGO CUSTOMIZATIONS
+   ================================================== */
+/* Navbar logo styling */
+.navbar__logo {
+  height: 2rem;
+  width: auto;
+  margin-right: 0.5rem;
+}
+
+.navbar__logo img {
+  height: 100%;
+  width: auto;
+  display: block;
+}
+
+/* Hide navbar title since logo contains text */
+.navbar__title {
+  display: none;
+}
+
+/* Ensure navbar brand link doesn't have extra spacing */
+.navbar__brand {
+  margin-right: 1rem;
+}
+
+/* ==================================================
    NAVBAR ICON CUSTOMIZATIONS
    ================================================== */
 /* Common styles for masked SVG icons in navbar */

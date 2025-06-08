@@ -183,11 +183,13 @@ const config = {
         },
       },
       navbar: {
-        title: 'Autonomys',
         logo: {
-          alt: 'Autonomys Logo',
-          src: 'img/logo-black.png',
-          srcDark: 'img/logo-white.png',
+          alt: 'Autonomys',
+          src: 'img/banner-black.png',
+          srcDark: 'img/banner-white.png',
+          href: '/',
+          height: 32,
+          width: 128,
         },
         items: [
           {
@@ -298,69 +300,6 @@ const config = {
       },
       footer: {
         style: 'dark',
-        links: [
-          {
-            title: 'Autonomys Network',
-            items: [
-              {
-                label: 'Official Website',
-                href: 'https://www.autonomys.xyz'
-              },
-              {
-                label: 'Space Acres Desktop GUI',
-                href: 'https://github.com/autonomys/space-acres'
-              },
-              {
-                label: 'Astral Block Explorer',
-                href: 'https://astral.autonomys.xyz'
-              }
-            ],
-          },
-          {
-            title: 'Community',
-            items: [
-              {
-                label: 'GitHub',
-                href: 'https://github.com/autonomys',
-              },
-              {
-                label: 'Discord',
-                href: 'https://autonomys.xyz/discord',
-              },
-              {
-                label: 'Telegram',
-                href: 'https://t.me/subspace_network',
-              },
-            ],
-          },
-          {
-            title: 'Social',
-            items: [
-              {
-                label: 'YouTube',
-                href: 'https://www.youtube.com/@AutonomysNetwork',
-              },
-              {
-                label: 'LinkedIn',
-                href: 'https://www.linkedin.com/company/autonomys',
-              },
-              {
-                label: 'Twitter',
-                href: 'https://x.com/AutonomysNet',
-              },
-              {
-                label: 'Medium',
-                href: 'https://medium.com/subspace-network',
-              }
-            ],
-          },
-        ],
-        logo: {
-          alt: 'Autonomys Labs Banner Logo',
-          src: 'img/banner-black.png',
-          srcDark: 'img/banner-white.png',
-          href: 'https://autonomys.xyz',
-        },
         copyright: `Copyright © ${new Date().getFullYear()} Autonomys Labs, Inc.`,
       },
       announcementBar: {
