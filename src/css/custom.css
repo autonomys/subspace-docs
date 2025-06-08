@@ -1019,6 +1019,11 @@ svg.icon-featured {
   display: none !important;
 }
 
+/* Hide sidebar categories marked as sidebar-hidden */
+.sidebar-hidden {
+  display: none !important;
+}
+
 /* ==================================================
    RESOURCE CARDS
    ================================================== */
