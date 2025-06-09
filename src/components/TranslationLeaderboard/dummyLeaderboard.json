@@ -1,6 +1,14 @@
-[
-  {
-    "Name": "Jean-Luc Picard (picard)",
+{
+  "metadata": {
+    "period": "All Time",
+    "description": "All time contributions",
+    "startDate": "2020-01-01T00:00:00+00:00",
+    "endDate": "2024-12-15T14:30:00+00:00",
+    "generatedAt": "2024-12-15T14:30:00Z"
+  },
+  "data": [
+    {
+      "Name": "Jean-Luc Picard (picard)",
     "Languages": "Federation Standard",
     "Translated (Words)": "19148",
     "Target Words": "28738",
@@ -12,7 +20,7 @@
     "Joined": "2364-09-13 13:08:12",
     "originalName": "picard",
     "id": 16008847,
-    "avatarUrl": "https://via.placeholder.com/150?text=picard",
+    "avatarUrl": "https://gravatar.com/avatar/8b1d41ccb353509f8c864b1fadbbf638?cacheBreaker=b67a6beaca?s=40&d=https%3A%2F%2Fcrowdin.com%2Fimages%2Fuser-picture.png",
     "hashKey": "c664fcb7081dc4e677ef54ee7b1a71332a0a7a3045427277b52fbe3b0d3eecf2"
   },
   {
@@ -28,7 +36,7 @@
     "Joined": "2265-08-20 23:44:36",
     "originalName": "Spock",
     "id": 14942527,
-    "avatarUrl": "https://via.placeholder.com/150?text=spock",
+    "avatarUrl": "https://gravatar.com/avatar/2a1d41ccb353509f8c864b1fadbbf639?cacheBreaker=b67a6beaca?s=40&d=https%3A%2F%2Fcrowdin.com%2Fimages%2Fuser-picture.png",
     "hashKey": "21734af256e326baa1d64904abbe4f9548bd13090e9faaa030f6db7575437297"
   },
   {
@@ -44,7 +52,7 @@
     "Joined": "2265-08-20 16:43:28",
     "originalName": "kirk",
     "id": 15974887,
-    "avatarUrl": "https://via.placeholder.com/150?text=kirk",
+    "avatarUrl": "https://gravatar.com/avatar/3b1d41ccb353509f8c864b1fadbbf640?cacheBreaker=b67a6beaca?s=40&d=https%3A%2F%2Fcrowdin.com%2Fimages%2Fuser-picture.png",
     "hashKey": "58309e779828e01397748a49ba7bee12e17eb789057c637351ff4fd8d45f73b6"
   },
   {
@@ -60,7 +68,7 @@
     "Joined": "2364-08-30 18:47:31",
     "originalName": "troi",
     "id": 15495550,
-    "avatarUrl": "https://via.placeholder.com/150?text=troi",
+    "avatarUrl": "https://gravatar.com/avatar/4c1d41ccb353509f8c864b1fadbbf641?cacheBreaker=b67a6beaca?s=40&d=https%3A%2F%2Fcrowdin.com%2Fimages%2Fuser-picture.png",
     "hashKey": "49d51559b3fd8799e78668062248008c786ed9b8a0cc29f619e4726ad41f80bd"
   },
   {
@@ -76,7 +84,7 @@
     "Joined": "2364-09-07 04:07:32",
     "originalName": "laforge",
     "id": 15726675,
-    "avatarUrl": "https://via.placeholder.com/150?text=laforge",
+    "avatarUrl": "https://gravatar.com/avatar/5d1d41ccb353509f8c864b1fadbbf642?cacheBreaker=b67a6beaca?s=40&d=https%3A%2F%2Fcrowdin.com%2Fimages%2Fuser-picture.png",
     "hashKey": "9138e6b3809eabcd42eff352026f1d0f7ac224e75cc0a7bd8585941ae2e43fcb"
   },
   {
@@ -92,7 +100,7 @@
     "Joined": "2364-08-18 06:11:56",
     "originalName": "worf",
     "id": 15971811,
-    "avatarUrl": "https://via.placeholder.com/150?text=worf",
+    "avatarUrl": "https://gravatar.com/avatar/6e1d41ccb353509f8c864b1fadbbf643?cacheBreaker=b67a6beaca?s=40&d=https%3A%2F%2Fcrowdin.com%2Fimages%2Fuser-picture.png",
     "hashKey": "25827931047760c295ce924e682f6ec84c1b3c0d142584b26ce42e213d3b4841"
   },
   {
@@ -108,7 +116,7 @@
     "Joined": "2364-07-28 20:31:10",
     "originalName": "data",
     "id": 15326880,
-    "avatarUrl": "https://via.placeholder.com/150?text=data",
+    "avatarUrl": "https://gravatar.com/avatar/7f1d41ccb353509f8c864b1fadbbf644?cacheBreaker=b67a6beaca?s=40&d=https%3A%2F%2Fcrowdin.com%2Fimages%2Fuser-picture.png",
     "hashKey": "581eaf4658d71e887559af819f7f32d5d7175c57c4ccb9863f483450c215dcc1"
   },
   {
@@ -124,7 +132,7 @@
     "Joined": "2364-08-29 09:56:51",
     "originalName": "crusher",
     "id": 15987401,
-    "avatarUrl": "https://via.placeholder.com/150?text=crusher",
+    "avatarUrl": "https://gravatar.com/avatar/8a1d41ccb353509f8c864b1fadbbf645?cacheBreaker=b67a6beaca?s=40&d=https%3A%2F%2Fcrowdin.com%2Fimages%2Fuser-picture.png",
     "hashKey": "54172b0afaee05a8e73ff243762691f80da22a8a78fb1bc240fcc7f3c3f75153"
   },
   {
@@ -140,7 +148,7 @@
     "Joined": "2364-08-24 15:53:13",
     "originalName": "riker",
     "id": 15981007,
-    "avatarUrl": "https://via.placeholder.com/150?text=riker",
+    "avatarUrl": "https://gravatar.com/avatar/9b1d41ccb353509f8c864b1fadbbf646?cacheBreaker=b67a6beaca?s=40&d=https%3A%2F%2Fcrowdin.com%2Fimages%2Fuser-picture.png",
     "hashKey": "ded30e170534f5b35de63722bd3421bfde5d2d84b53e419778cca898af1fda0c"
   },
   {
@@ -156,7 +164,8 @@
     "Joined": "2364-08-31 10:36:55",
     "originalName": "guinan",
     "id": 15979195,
-    "avatarUrl": "https://via.placeholder.com/150?text=guinan",
+    "avatarUrl": "https://gravatar.com/avatar/0c1d41ccb353509f8c864b1fadbbf647?cacheBreaker=b67a6beaca?s=40&d=https%3A%2F%2Fcrowdin.com%2Fimages%2Fuser-picture.png",
     "hashKey": "340815ee3d824cdcb7f9d491dfec3946b4dfb6d6a3cabfb16518e42b74eb3b85"
   }
-]
+  ]
+}

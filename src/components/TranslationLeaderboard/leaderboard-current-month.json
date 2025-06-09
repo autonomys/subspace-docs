@@ -1,0 +1,56 @@
+{
+  "metadata": {
+    "period": "December 2024",
+    "startDate": "2024-12-01T00:00:00+00:00",
+    "endDate": "2024-12-15T14:30:00+00:00",
+    "description": "Current month contributions",
+    "generatedAt": "2024-12-15T14:30:00Z"
+  },
+  "data": [
+    {
+      "Name": "Jean-Luc Picard (picard)",
+    "Languages": "Federation Standard",
+    "Translated (Words)": "2500",
+    "Target Words": "3000",
+    "Approved (Words)": "0",
+    "Voted": "0",
+    "\"+\" votes received": "0",
+    "\"-\" votes received": "0",
+    "Winning": "0",
+    "originalName": "picard",
+    "id": 123456,
+    "avatarUrl": "https://gravatar.com/avatar/8b1d41ccb353509f8c864b1fadbbf638?cacheBreaker=b67a6beaca?s=40&d=https%3A%2F%2Fcrowdin.com%2Fimages%2Fuser-picture.png",
+    "hashKey": "abc123def456"
+  },
+  {
+    "Name": "William T. Riker (riker)",
+    "Languages": "Federation Standard",
+    "Translated (Words)": "1800",
+    "Target Words": "2500",
+    "Approved (Words)": "0",
+    "Voted": "0",
+    "\"+\" votes received": "0",
+    "\"-\" votes received": "0",
+    "Winning": "0",
+    "originalName": "riker",
+    "id": 123457,
+    "avatarUrl": "https://gravatar.com/avatar/7c1d41ccb353509f8c864b1fadbbf639?cacheBreaker=b67a6beaca?s=40&d=https%3A%2F%2Fcrowdin.com%2Fimages%2Fuser-picture.png",
+    "hashKey": "def456ghi789"
+  },
+  {
+    "Name": "Data (data)",
+    "Languages": "Federation Standard, Binary",
+    "Translated (Words)": "3200",
+    "Target Words": "3500",
+    "Approved (Words)": "0",
+    "Voted": "0",
+    "\"+\" votes received": "0",
+    "\"-\" votes received": "0",
+    "Winning": "0",
+    "originalName": "data",
+    "id": 123458,
+    "avatarUrl": "https://gravatar.com/avatar/9d1d41ccb353509f8c864b1fadbbf640?cacheBreaker=b67a6beaca?s=40&d=https%3A%2F%2Fcrowdin.com%2Fimages%2Fuser-picture.png",
+    "hashKey": "ghi789jkl012"
+  }
+  ]
+}

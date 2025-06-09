@@ -1,0 +1,71 @@
+{
+  "metadata": {
+    "period": "November 2024",
+    "startDate": "2024-11-01T00:00:00+00:00",
+    "endDate": "2024-11-30T23:59:59+00:00",
+    "description": "Previous month contributions",
+    "generatedAt": "2024-12-01T00:00:00Z"
+  },
+  "data": [
+    {
+      "Name": "Geordi La Forge (laforge)",
+    "Languages": "Federation Standard, Technical",
+    "Translated (Words)": "4200",
+    "Target Words": "5000",
+    "Approved (Words)": "0",
+    "Voted": "0",
+    "\"+\" votes received": "0",
+    "\"-\" votes received": "0",
+    "Winning": "0",
+    "originalName": "laforge",
+    "id": 123459,
+    "avatarUrl": "https://gravatar.com/avatar/2e1d41ccb353509f8c864b1fadbbf641?cacheBreaker=b67a6beaca?s=40&d=https%3A%2F%2Fcrowdin.com%2Fimages%2Fuser-picture.png",
+    "hashKey": "jkl012mno345"
+  },
+  {
+    "Name": "Worf (worf)",
+    "Languages": "Klingon, Federation Standard",
+    "Translated (Words)": "3800",
+    "Target Words": "4500",
+    "Approved (Words)": "0",
+    "Voted": "0",
+    "\"+\" votes received": "0",
+    "\"-\" votes received": "0",
+    "Winning": "0",
+    "originalName": "worf",
+    "id": 123460,
+    "avatarUrl": "https://gravatar.com/avatar/5f1d41ccb353509f8c864b1fadbbf642?cacheBreaker=b67a6beaca?s=40&d=https%3A%2F%2Fcrowdin.com%2Fimages%2Fuser-picture.png",
+    "hashKey": "mno345pqr678"
+  },
+  {
+    "Name": "Deanna Troi (troi)",
+    "Languages": "Betazoid, Federation Standard",
+    "Translated (Words)": "2900",
+    "Target Words": "3500",
+    "Approved (Words)": "0",
+    "Voted": "0",
+    "\"+\" votes received": "0",
+    "\"-\" votes received": "0",
+    "Winning": "0",
+    "originalName": "troi",
+    "id": 123461,
+    "avatarUrl": "https://gravatar.com/avatar/4b1d41ccb353509f8c864b1fadbbf643?cacheBreaker=b67a6beaca?s=40&d=https%3A%2F%2Fcrowdin.com%2Fimages%2Fuser-picture.png",
+    "hashKey": "pqr678stu901"
+  },
+  {
+    "Name": "Beverly Crusher (crusher)",
+    "Languages": "Federation Standard, Medical",
+    "Translated (Words)": "3100",
+    "Target Words": "3800",
+    "Approved (Words)": "0",
+    "Voted": "0",
+    "\"+\" votes received": "0",
+    "\"-\" votes received": "0",
+    "Winning": "0",
+    "originalName": "crusher",
+    "id": 123462,
+    "avatarUrl": "https://gravatar.com/avatar/6c1d41ccb353509f8c864b1fadbbf644?cacheBreaker=b67a6beaca?s=40&d=https%3A%2F%2Fcrowdin.com%2Fimages%2Fuser-picture.png",
+    "hashKey": "stu901vwx234"
+  }
+  ]
+}
