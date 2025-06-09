@@ -60,8 +60,9 @@ function generateKey(name) {
 }
 
 // Change start and end dates
-const startDate = "2025-05-01T00:00:00+00:00";
-const endDate = "2025-05-31T23:59:59+00:00";
+// Only uncomment for leaderboard screenshots
+// const startDate = "2025-05-01T00:00:00+00:00";
+// const endDate = "2025-05-31T23:59:59+00:00";
 
 function formatDateToBeginningOfMonth(date) {
     const year = date.getFullYear();
@@ -101,7 +102,9 @@ async function generateMonthlyReport() {
         const response = await makeRequest('post', `${CONFIG.CROWDIN_API_ENDPOINT}/projects/${CONFIG.CROWDIN_PROJECT_ID}/reports`, {
             data: {
                 name: "top-members",
-                schema: { unit: "words", format: "csv", dateFrom: startDate, dateTo: endDate}
+                // uncomment for screenshot only
+                // schema: { unit: "words", format: "csv", dateFrom: dateFrom, dateTo: endDate}
+                schema: { unit: "words", format: "csv", dateFrom: formattedDate}
             },
             headers: { 'Authorization': `Bearer ${CROWDIN_PERSONAL_TOKEN}`, 'Content-Type': 'application/json' }
         });
