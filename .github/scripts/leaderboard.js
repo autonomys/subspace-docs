@@ -266,7 +266,7 @@ async function saveDataToJson(data, filePath, metadata = {}) {
         await saveDataToJson(allTimeLeaderboardData, `${CONFIG.LEADERBOARD_FILE}.json`, {
             period: 'All Time',
             description: 'All time contributions',
-            startDate: '2020-01-01T00:00:00+00:00', // Approximate project start
+            startDate: '2023-07-28T00:00:00+00:00', // Project start date
             endDate: now.toISOString().replace(/\.\d{3}Z$/, '+00:00')
         });
 
