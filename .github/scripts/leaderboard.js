@@ -102,7 +102,7 @@ async function generateMonthlyReport() {
         const response = await makeRequest('post', `${CONFIG.CROWDIN_API_ENDPOINT}/projects/${CONFIG.CROWDIN_PROJECT_ID}/reports`, {
             data: {
                 name: "top-members",
-                // uncomment for screenshot only
+                // uncomment for screenshots only
                 // schema: { unit: "words", format: "csv", dateFrom: dateFrom, dateTo: endDate}
                 schema: { unit: "words", format: "csv", dateFrom: formattedDate}
             },
