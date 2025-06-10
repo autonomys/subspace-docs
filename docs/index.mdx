@@ -13,6 +13,7 @@ keywords:
 
 import Link from '@docusaurus/Link';
 import FeaturedBadge from '@site/src/components/FeaturedBadge';
+import TestnetBadge from '@site/src/components/TestnetBadge';
 import Icon from '@site/src/components/Icon';
 import ActionButton from '@site/src/components/ActionButton';
 import ResourceCard from '@site/src/components/ResourceCard';
@@ -139,8 +140,10 @@ Connect with the Autonomys community and explore our ecosystem:
 
 ## <Icon icon="mdi:account-group" />Network Participants
 
-:::tip Look for the <FeaturedBadge text="Recommended" /> Badge
+:::tip Understanding Our Badges
 Throughout this documentation, you'll see the <FeaturedBadge text="Recommended" /> badge highlighting our community-tested, hand-picked solutions. These are carefully selected options that offer the best balance of ease-of-use, reliability, and features for most users. When multiple paths exist, we guide you toward the ones that have proven most successful for our community.
+
+You'll also notice the <TestnetBadge text="Testnet" /> badge on certain features and sections. This indicates functionality that is currently only available on our Taurus testnet. These features are being tested and refined before their mainnet release, giving early adopters a chance to explore upcoming capabilities while helping us ensure they're ready for production use. Taurus serves as our proving ground for innovation, where new features undergo rigorous testing by our community.
 :::
 
 ### <Icon icon="mdi:tractor" />Farmers
@@ -154,13 +157,13 @@ Secure the network by storing archival history and earn rewards. Farmers maintai
 Stake your tAI3 tokens by nominating operators to increase their chances of being elected as slot leaders. Earn proportional rewards while supporting network security.
 
 **Getting Started:**
-- **[Start Staking](/staking/stake)** - Begin nominating operators
+- **[Start Staking](/staking/stake)** <TestnetBadge text="Testnet" /> - Begin nominating operators
 
 ### <Icon icon="mdi:server" />Operators
 Validate and execute transactions, produce execution receipts, and apply state transitions across domains while earning rewards for your work.
 
 **Getting Started:**
-- **[Register as Operator](/staking/operator/register)** - Set up your operator node
+- **[Register as Operator](/staking/operator/register)** <TestnetBadge text="Testnet" /> - Set up your operator node
 
 ### <Icon icon="mdi:clock" />Timekeepers
 Run the Proof-of-Time chain and maintain the randomness beacon that secures the consensus chain.
