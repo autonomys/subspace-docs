@@ -1,5 +1,5 @@
-import Link from '@docusaurus/Link';
-import styles from '@site/src/pages/index.module.css';
+import ReleaseButton from '@site/src/components/ReleaseButton';
+import ReleaseContainer from '@site/src/components/ReleaseContainer';
 
 ### Windows Specific Warnings:
 :::caution  Windows No Output Bug
@@ -9,39 +9,15 @@ If you face an error where the node outputs nothing and no error code is given i
 ## Step 1: Download the CLI Executables 
 ---
 
-<div className={`${styles.buttons} ${styles.flexContainer}`}>
-  <Link
-    className="button button--secondary"
-    to="https://github.com/autonomys/subspace/releases/download/mainnet-2025-jan-14/subspace-node-windows-x86_64-skylake-mainnet-2025-jan-14.exe"
-    style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', textAlign: 'center', padding: '10px' }}>
-    <span style={{ fontSize: '20px' }}>Node Executable</span>
-    <span style={{ fontSize: '14px' }}>(Skylake+ CPU)</span>
-  </Link>
-  <Link
-    className="button button--secondary"
-    to="https://github.com/autonomys/subspace/releases/download/mainnet-2025-jan-14/subspace-farmer-windows-x86_64-skylake-mainnet-2025-jan-14.exe"
-    style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', textAlign: 'center', padding: '10px' }}>
-    <span style={{ fontSize: '20px' }}>Farmer Executable</span>
-    <span style={{ fontSize: '14px' }}>(Skylake+ CPU)</span>
-  </Link>
-</div>
+<ReleaseContainer>
+  <ReleaseButton to="https://github.com/autonomys/subspace/releases/download/mainnet-2025-jan-14/subspace-node-windows-x86_64-skylake-mainnet-2025-jan-14.exe" title="Node Executable" subtitle="(Skylake+ CPU)" />
+  <ReleaseButton to="https://github.com/autonomys/subspace/releases/download/mainnet-2025-jan-14/subspace-farmer-windows-x86_64-skylake-mainnet-2025-jan-14.exe" title="Farmer Executable" subtitle="(Skylake+ CPU)" />
+</ReleaseContainer>
  
-<div className={`${styles.buttons} ${styles.flexContainer}`}>
-  <Link
-    className="button button--secondary"
-    to="https://github.com/autonomys/subspace/releases/download/mainnet-2025-jan-14/subspace-node-windows-x86_64-v2-mainnet-2025-jan-14.exe"
-    style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', textAlign: 'center', padding: '10px' }}>
-    <span style={{ fontSize: '20px' }}>Node Executable</span>
-    <span style={{ fontSize: '14px' }}>(Legacy CPU)</span>
-  </Link>
-  <Link
-    className="button button--secondary"
-    to="https://github.com/autonomys/subspace/releases/download/mainnet-2025-jan-14/subspace-farmer-windows-x86_64-v2-mainnet-2025-jan-14.exe"
-    style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', textAlign: 'center', padding: '10px' }}>
-    <span style={{ fontSize: '20px' }}>Farmer Executable</span>
-    <span style={{ fontSize: '14px' }}>(Legacy CPU)</span>
-  </Link>
-</div>
+<ReleaseContainer>
+  <ReleaseButton to="https://github.com/autonomys/subspace/releases/download/mainnet-2025-jan-14/subspace-node-windows-x86_64-v2-mainnet-2025-jan-14.exe" title="Node Executable" subtitle="(Legacy CPU)" />
+  <ReleaseButton to="https://github.com/autonomys/subspace/releases/download/mainnet-2025-jan-14/subspace-farmer-windows-x86_64-v2-mainnet-2025-jan-14.exe" title="Farmer Executable" subtitle="(Legacy CPU)" />
+</ReleaseContainer>
 
 
 ## Step 2: Start CLI Node

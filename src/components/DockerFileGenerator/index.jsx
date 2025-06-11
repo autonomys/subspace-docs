@@ -256,8 +256,8 @@ ${formData.nodeData && formData.farmerData ? "" : "volumes:"}${formData.nodeData
 			</div>
                     </div>
 
-                    <div className={`${styles['compose-generator-form__group']} text--center`}>
-                        <button className={`button button--primary button--lg ${styles['compose-generator-form__button--primary']}`} onClick={generateOutput}>Generate</button>
+                    <div className="text--center margin-top--lg">
+                        <button className="button button--primary button--lg" onClick={generateOutput}>Generate</button>
                     </div>
                 </div>
             </div>

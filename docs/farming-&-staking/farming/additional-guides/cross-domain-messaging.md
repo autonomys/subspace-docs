@@ -1,7 +1,7 @@
 ---
-title: Cross Domain Messaging (XDM) Guide
+title: Cross Domain Messaging (XDM)
 sidebar_position: 6
-description: An overview of the different types of nodes
+description: Learn how to use Cross Domain Messaging (XDM) to transfer assets between consensus and domain chains on the Autonomys Network
 slug: /farming/guides/xdm
 keywords:
     - XDM

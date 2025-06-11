@@ -4,227 +4,1142 @@
  * work well for content-centric websites.
  */
 
- @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+/* ==================================================
+   FONT IMPORTS
+   ================================================== */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
 
 :root {
-  --ifm-font-family-monospace: "Montserrat", sans-serif;
-  --ifm-font-family-base: "Montserrat", sans-serif;
+  --ifm-font-family-base: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
 }
 
-/* You can override the default Infima variables here. */
-:root {  
-  --ifm-color-primary-darkest: #26133f;
-  --ifm-color-primary-darker: #4c277e;
-  --ifm-color-primary-dark: #3f2068;
-  --ifm-color-primary: #562b8e;
-  --ifm-color-primary-light: #773ec2;
-  --ifm-color-primary-lighter: #8749d8;
-  --ifm-color-primary-lightest: #a25aec;
+/* ==================================================
+   LIGHT MODE VARIABLES
+   ================================================== */
+:root {
+  /* Primary color shades - Light mode uses original primary */
+  --ifm-color-primary: #5870B3;
+  --ifm-color-primary-dark: #4A5FA5;
+  --ifm-color-primary-darker: #44579C;
+  --ifm-color-primary-darkest: #384880;
+  --ifm-color-primary-light: #6B81C1;
+  --ifm-color-primary-lighter: #7A8FCA;
+  --ifm-color-primary-lightest: #9DAEE0;
+  
+  /* Secondary color shades - Light mode */
+  --ifm-color-secondary: #1D2C57;
+  --ifm-color-secondary-dark: #19254A;
+  --ifm-color-secondary-darker: #162040;
+  --ifm-color-secondary-darkest: #111933;
+  --ifm-color-secondary-light: #2A3B68;
+  --ifm-color-secondary-lighter: #374A79;
+  --ifm-color-secondary-lightest: #4A5E8E;
+  
+  /* Success colors (green) */
+  --ifm-color-success: #00A86B;
+  --ifm-color-success-dark: #009760;
+  --ifm-color-success-darker: #008C5A;
+  --ifm-color-success-darkest: #007149;
+  --ifm-color-success-light: #1AB976;
+  --ifm-color-success-lighter: #26C47C;
+  --ifm-color-success-lightest: #4DD593;
+  
+  /* Info colors (blue-teal) */
+  --ifm-color-info: #0891B2;
+  --ifm-color-info-dark: #0782A0;
+  --ifm-color-info-darker: #077997;
+  --ifm-color-info-darkest: #05627C;
+  --ifm-color-info-light: #1C9DC4;
+  --ifm-color-info-lighter: #29A6CD;
+  --ifm-color-info-lightest: #4DBAE0;
+  
+  /* Warning colors (amber) */
+  --ifm-color-warning: #D97706;
+  --ifm-color-warning-dark: #C36B05;
+  --ifm-color-warning-darker: #B96405;
+  --ifm-color-warning-darkest: #975204;
+  --ifm-color-warning-light: #E18413;
+  --ifm-color-warning-lighter: #E68B1C;
+  --ifm-color-warning-lightest: #EEA03B;
+  
+  /* Danger colors (red) */
+  --ifm-color-danger: #DC2626;
+  --ifm-color-danger-dark: #C61F1F;
+  --ifm-color-danger-darker: #BB1D1D;
+  --ifm-color-danger-darkest: #9A1818;
+  --ifm-color-danger-light: #E13939;
+  --ifm-color-danger-lighter: #E44545;
+  --ifm-color-danger-lightest: #ED6969;
+  
+  /* Background and surface colors */
+  --ifm-background-color: #ffffff;
+  --ifm-background-surface-color: #ffffff;
+  --ifm-hover-overlay: rgba(0, 0, 0, 0.05);
+  --ifm-color-emphasis-alpha-10: rgba(0, 0, 0, 0.1);
+  
+  /* Text colors */
+  --ifm-color-content: #1F2937;
+  --ifm-color-content-secondary: #4B5563;
+  
+  /* Code blocks */
+  --ifm-code-background: #F3F4F6;
+  --ifm-code-border-color: #E5E7EB;
+  --ifm-code-color: #E9126F;
   --ifm-code-font-size: 95%;
+  
+  /* Additional UI elements */
+  --ifm-navbar-background-color: #ffffff;
+  --ifm-toc-border-color: #E5E7EB;
+  --ifm-table-border-color: #E5E7EB;
+  
+  /* Link colors */
+  --ifm-link-color: var(--ifm-color-primary);
+  --ifm-link-hover-color: var(--ifm-color-primary-dark);
+  
+  /* Shadows for depth */
+  --ifm-global-shadow-lw: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --ifm-global-shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --ifm-global-shadow-tl: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  
+  /* Focus states */
+  --ifm-color-focus: #4A5FA5;
+  --ifm-focus-ring-color: rgba(88, 112, 179, 0.4);
+  
+  /* Selection colors */
+  --ifm-color-selection-background: rgba(88, 112, 179, 0.3);
+  --ifm-color-selection-text: inherit;
+  
+  /* Scrollbar colors */
+  --ifm-scrollbar-track-background-color: var(--ifm-color-emphasis-100);
+  --ifm-scrollbar-thumb-background-color: var(--ifm-color-emphasis-300);
+  --ifm-scrollbar-thumb-hover-background-color: var(--ifm-color-emphasis-400);
+  
+  /* Search colors */
+  --docsearch-primary-color: var(--ifm-color-primary);
+  --docsearch-text-color: var(--ifm-color-content);
+  --docsearch-highlight-color: var(--ifm-color-primary);
+  --docsearch-muted-color: var(--ifm-color-content-secondary);
+  --docsearch-searchbox-background: var(--ifm-color-emphasis-100);
+  --docsearch-searchbox-focus-background: #ffffff;
+  
+  /* Menu and dropdown colors */
+  --ifm-dropdown-background-color: var(--ifm-background-color);
+  --ifm-dropdown-hover-background-color: var(--ifm-color-emphasis-100);
+  --ifm-menu-color: var(--ifm-color-content);
+  --ifm-menu-color-active: var(--ifm-color-primary);
+  --ifm-menu-link-sublist-icon: url('/img/icons/chevron-right.svg');
+  
+  /* Badge colors */
+  --ifm-badge-background-color: var(--ifm-color-emphasis-200);
+  --ifm-badge-color: var(--ifm-color-content);
+  
+  /* Breadcrumb colors */
+  --ifm-breadcrumb-color-active: var(--ifm-color-primary);
+  --ifm-breadcrumb-item-background-active: transparent;
+  --ifm-breadcrumb-separator-color: var(--ifm-color-emphasis-500);
+  
+  /* Pagination colors */
+  --ifm-pagination-color: var(--ifm-color-content);
+  --ifm-pagination-color-active: var(--ifm-color-primary);
 }
 
-/* For readability concerns, you should choose a lighter palette in dark mode. */
-html[data-theme='dark'] {
-  --ifm-color-primary-darkest: #6238a3;
-  --ifm-color-primary-darker: #7449b8;
-  --ifm-color-primary-dark: #8759cc;
-  --ifm-color-primary: #9f6de0;
-  --ifm-color-primary-light: #b07bf4;
-  --ifm-color-primary-lighter: #c190f8;
-  --ifm-color-primary-lightest: #d3a5fd;
-}
-
+/* Light mode emphasis colors */
 html[data-theme='light'] {
-  --ifm-background-color: #f3f3f5;
   --ifm-color-emphasis-0: #fafafa;
-  --ifm-color-emphasis-100: #e0e0e2;
-  --ifm-color-emphasis-200: #b0b0b3;
-  --ifm-color-emphasis-300: #78787c;
-  --ifm-link-color: #6f5ca0;
-  --ifm-link-hover-color: #594d8a;
+  --ifm-color-emphasis-100: #F3F4F6;
+  --ifm-color-emphasis-200: #E5E7EB;
+  --ifm-color-emphasis-300: #D1D5DB;
+  --ifm-color-emphasis-400: #9CA3AF;
+  --ifm-color-emphasis-500: #6B7280;
+  --ifm-color-emphasis-600: #4B5563;
+  --ifm-color-emphasis-700: #374151;
+  --ifm-color-emphasis-800: #1F2937;
+  --ifm-color-emphasis-900: #111827;
+}
 
-  --ifm-background-color-rgb: 243, 243, 245;
-  --ifm-color-emphasis-0-rgb: 250, 250, 250;
-  --ifm-color-emphasis-100-rgb: 224, 224, 226;
-  --ifm-color-emphasis-200-rgb: 176, 176, 179;
-  --ifm-color-emphasis-300-rgb: 120, 120, 124;
+/* ==================================================
+   DARK MODE VARIABLES
+   ================================================== */
+html[data-theme='dark'] {
+  /* Primary color shades - Material Design dark theme */
+  --ifm-color-primary: #8FA3E0;
+  --ifm-color-primary-dark: #7690D8;
+  --ifm-color-primary-darker: #6A85D4;
+  --ifm-color-primary-darkest: #5870B3;
+  --ifm-color-primary-light: #A8B6E8;
+  --ifm-color-primary-lighter: #B4C1EC;
+  --ifm-color-primary-lightest: #D0D7F5;
+  
+  /* On-Primary colors for text on primary surfaces */
+  --ifm-color-on-primary: #000000;
+  
+  /* Success colors - Material Design dark theme (desaturated) */
+  --ifm-color-success: #81C784;
+  --ifm-color-success-dark: #66BB6A;
+  --ifm-color-success-darker: #4CAF50;
+  --ifm-color-success-darkest: #388E3C;
+  --ifm-color-success-light: #A5D6A7;
+  --ifm-color-success-lighter: #C8E6C9;
+  --ifm-color-success-lightest: #E8F5E9;
+  
+  /* Info colors - Material Design dark theme (desaturated) */
+  --ifm-color-info: #64B5F6;
+  --ifm-color-info-dark: #42A5F5;
+  --ifm-color-info-darker: #2196F3;
+  --ifm-color-info-darkest: #1976D2;
+  --ifm-color-info-light: #90CAF9;
+  --ifm-color-info-lighter: #BBDEFB;
+  --ifm-color-info-lightest: #E3F2FD;
+  
+  /* Warning colors - Material Design dark theme (desaturated) */
+  --ifm-color-warning: #FFB74D;
+  --ifm-color-warning-dark: #FFA726;
+  --ifm-color-warning-darker: #FF9800;
+  --ifm-color-warning-darkest: #F57C00;
+  --ifm-color-warning-light: #FFCC80;
+  --ifm-color-warning-lighter: #FFE0B2;
+  --ifm-color-warning-lightest: #FFF3E0;
+  
+  /* Danger/Error colors - Material Design dark theme */
+  --ifm-color-danger: #CF6679;
+  --ifm-color-danger-dark: #B85566;
+  --ifm-color-danger-darker: #A14453;
+  --ifm-color-danger-darkest: #8A3340;
+  --ifm-color-danger-light: #E6778C;
+  --ifm-color-danger-lighter: #FD889F;
+  --ifm-color-danger-lightest: #FF99B2;
+  
+  /* On-Error color */
+  --ifm-color-on-danger: #000000;
+  
+  /* Secondary colors - Material Design dark theme */
+  --ifm-color-secondary: #7A8CC4;
+  --ifm-color-secondary-dark: #6578B8;
+  --ifm-color-secondary-darker: #5064AC;
+  --ifm-color-secondary-darkest: #1D2C57;
+  --ifm-color-secondary-light: #8F9FD0;
+  --ifm-color-secondary-lighter: #A4B2DC;
+  --ifm-color-secondary-lightest: #B9C5E8;
+  
+  /* On-Secondary colors for text on secondary surfaces */
+  --ifm-color-on-secondary: #FFFFFF;
+  
+  /* Background and surface colors - Material Design dark theme */
+  --ifm-background-color: #121212;
+  --ifm-background-surface-color: #1E1E1E;
+  --ifm-hover-overlay: rgba(255, 255, 255, 0.05);
+  --ifm-color-emphasis-alpha-10: rgba(255, 255, 255, 0.1);
+  
+  /* Text colors - Material Design dark theme */
+  --ifm-color-content: rgba(255, 255, 255, 0.87);
+  --ifm-color-content-secondary: rgba(255, 255, 255, 0.60);
+  --ifm-color-content-disabled: rgba(255, 255, 255, 0.38);
+  
+  /* Code blocks */
+  --ifm-code-background: var(--ifm-color-emphasis-100);
+  --ifm-code-border-color: var(--ifm-color-emphasis-200);
+  --ifm-code-color: #FB7185;
+  
+  /* Additional UI elements */
+  --ifm-navbar-background-color: var(--ifm-background-surface-color);
+  --ifm-toc-border-color: var(--ifm-color-emphasis-100);
+  --ifm-table-border-color: var(--ifm-color-emphasis-100);
+  
+  /* Material Design dark theme - reduced shadows */
+  --ifm-global-shadow-lw: none;
+  --ifm-global-shadow-md: none;
+  --ifm-global-shadow-tl: none;
+  
+  /* State overlays for interactive elements */
+  --ifm-hover-overlay: rgba(255, 255, 255, 0.08);
+  --ifm-pressed-overlay: rgba(255, 255, 255, 0.12);
+  --ifm-selected-overlay: rgba(255, 255, 255, 0.16);
+  --ifm-activated-overlay: rgba(255, 255, 255, 0.24);
+  --ifm-dragged-overlay: rgba(255, 255, 255, 0.32);
+  
+  /* Focus states */
+  --ifm-color-focus: #A8B6E8;
+  --ifm-focus-ring-color: rgba(143, 163, 224, 0.4);
+  
+  /* Selection colors */
+  --ifm-color-selection-background: rgba(143, 163, 224, 0.3);
+  --ifm-color-selection-text: inherit;
+  
+  /* Search colors for dark mode */
+  --docsearch-searchbox-background: var(--ifm-color-emphasis-100);
+  --docsearch-searchbox-focus-background: var(--ifm-color-emphasis-200);
+  --docsearch-modal-background: var(--ifm-color-emphasis-800);
+  --docsearch-footer-background: var(--ifm-color-emphasis-600);
+  --docsearch-hit-background: var(--ifm-color-emphasis-100);
+  
+  /* Menu and dropdown colors */
+  --ifm-dropdown-background-color: var(--ifm-color-emphasis-500);
+  --ifm-dropdown-hover-background-color: var(--ifm-color-emphasis-600);
+  --ifm-menu-background: var(--ifm-background-color);
+  
+  /* Badge colors */
+  --ifm-badge-background-color: var(--ifm-color-emphasis-200);
+  --ifm-badge-color: var(--ifm-color-content);
+  
+  /* Material Design specific properties */
+  --ifm-color-surface: var(--ifm-background-surface-color);
+  --ifm-color-on-surface: var(--ifm-color-content);
+  --ifm-color-on-background: var(--ifm-color-content);
+  
+  /* Link colors - using primary */
+  --ifm-link-color: var(--ifm-color-primary);
+  --ifm-link-hover-color: var(--ifm-color-primary-light);
+  --ifm-link-visited-color: var(--ifm-color-primary-dark);
+}
 
-  --ifm-color-secondary-darkest: #53535a;
-  --ifm-color-secondary-darker: #6e6e76;
-  --ifm-color-secondary-dark: #898992;
-  --ifm-color-secondary: #a4a4ae;
-  --ifm-color-secondary-light: #bfbfc9;
-  --ifm-color-secondary-lighter: #d9d9e4;
-  --ifm-color-secondary-lightest: #f3f3ff;
+/* Dark mode emphasis colors - Material Design elevation system */
+html[data-theme='dark'] {
+  /* 
+   * Material Design Dark Theme Elevation System
+   * Base color: #121212 with white overlays for elevation
+   * 
+   * Usage guidelines:
+   * - 00dp: Background surfaces (sidebar, main content)
+   * - 01dp: Surface containers (cards, sheets)
+   * - 02dp: Contained buttons, app bars
+   * - 03dp: FABs (resting), raised buttons
+   * - 04dp: Navigation drawers, raised cards
+   * - 06dp: FABs (pressed), snackbars
+   * - 08dp: Menus, tooltips, standard side sheets
+   * - 12dp: FABs (pressed on above surfaces)
+   * - 16dp: Modal side sheets
+   * - 24dp: Dialogs, modal surfaces
+   */
+  --ifm-color-emphasis-0: #1E1E1E;
+  --ifm-color-emphasis-100: #232323;
+  --ifm-color-emphasis-200: #252525;
+  --ifm-color-emphasis-300: #272727;
+  --ifm-color-emphasis-400: #2C2C2C;
+  --ifm-color-emphasis-500: #2E2E2E;
+  --ifm-color-emphasis-600: #333333;
+  --ifm-color-emphasis-700: #353535;
+  --ifm-color-emphasis-800: #373737;
+  --ifm-color-emphasis-900: #ffffff;
+}
 
-  --ifm-color-success-darkest: #2f6445;
-  --ifm-color-success-darker: #418052;
-  --ifm-color-success-dark: #54a260;
-  --ifm-color-success: #6dc474;
-  --ifm-color-success-light: #87d688;
-  --ifm-color-success-lighter: #a1e89c;
-  --ifm-color-success-lightest: #bbfbb0;
+/* ==================================================
+   DARK MODE SPECIFIC STYLES
+   ================================================== */
+[data-theme='dark'] {
+  /* Base surfaces */
+  --ifm-sidebar-background: var(--ifm-background-color);
+  --ifm-hero-background-color: var(--ifm-background-color);
+  
+  /* Cards and surfaces */
+  --ifm-card-background-color: var(--ifm-color-emphasis-100);
+  
+  /* Raised components */
+  --ifm-navbar-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+  
+  /* Modals and dropdowns */
+  --ifm-dropdown-background-color: var(--ifm-color-emphasis-500);
+  
+  /* Transparent elements */
+  --ifm-breadcrumb-background-color: transparent;
+}
 
-  --ifm-color-info-darkest: #2f4861;
-  --ifm-color-info-darker: #416384;
-  --ifm-color-info-dark: #547fa8;
-  --ifm-color-info: #6a9bcc;
-  --ifm-color-info-light: #83b7df;
-  --ifm-color-info-lighter: #9cd4f2;
-  --ifm-color-info-lightest: #b6f1ff;
+[data-theme='dark'] .navbar {
+  background-color: var(--ifm-navbar-background-color);
+  border-bottom: none;
+}
 
-  --ifm-color-warning-darkest: #644f2f;
-  --ifm-color-warning-darker: #896c40;
-  --ifm-color-warning-dark: #ae8a52;
-  --ifm-color-warning: #d3a963;
-  --ifm-color-warning-light: #e9c074;
-  --ifm-color-warning-lighter: #fcd886;
-  --ifm-color-warning-lightest: #ffef97;
+[data-theme='dark'] .theme-doc-toc-desktop {
+  background-color: var(--ifm-background-color);
+}
 
-  --ifm-color-danger-darkest: #642f2f;
-  --ifm-color-danger-darker: #894141;
-  --ifm-color-danger-dark: #ae5353;
-  --ifm-color-danger: #d36666;
-  --ifm-color-danger-light: #e98383;
-  --ifm-color-danger-lighter: #fd9fa0;
-  --ifm-color-danger-lightest: #ffbcbc;
+[data-theme='dark'] .theme-doc-sidebar-container {
+  background-color: var(--ifm-background-color);
+  border-right: none;
+}
+
+[data-theme='dark'] .tabs {
+  background-color: var(--ifm-color-emphasis-0);
+}
+
+[data-theme='dark'] .menu__list-item--active {
+  background-color: var(--ifm-color-emphasis-100);
+}
+
+[data-theme='dark'] .menu__link:hover {
+  background-color: var(--ifm-hover-overlay);
+}
+
+[data-theme='dark'] .menu__link--active {
+  background-color: var(--ifm-selected-overlay);
+  color: var(--ifm-color-primary);
+}
+
+[data-theme='dark'] a:hover {
+  color: var(--ifm-color-primary-light);
+}
+
+[data-theme='dark'] .card {
+  background-color: var(--ifm-color-emphasis-100);
+  border: 1px solid var(--ifm-color-emphasis-200);
+}
+
+[data-theme='dark'] .card h2,
+[data-theme='dark'] .card h3,
+[data-theme='dark'] .card p {
+  color: var(--ifm-color-content) !important;
+}
+
+[data-theme='dark'] .card:hover {
+  background-color: var(--ifm-color-emphasis-200);
+  border-color: var(--ifm-color-emphasis-300);
+}
+
+[data-theme='dark'] .card:hover h2,
+[data-theme='dark'] .card:hover h3,
+[data-theme='dark'] .card:hover p {
+  color: var(--ifm-color-primary) !important;
 }
 
 html[data-theme='dark'] .footer {
-  background-color: #292929;
+  background-color: var(--ifm-background-surface-color);
 }
 
+html[data-theme='dark'] .details {
+  border: 1px solid var(--ifm-color-emphasis-100);
+  box-shadow: none;
+}
+
+/* ==================================================
+   LIGHT MODE SPECIFIC STYLES
+   ================================================== */
 html[data-theme='light'] .footer {
-  background-color: rgba(var(--ifm-color-emphasis-100-rgb), 0.151);
-  color: var(--ifm-color-primary-dark);
-}
-
-html[data-theme='light'] .footer .footer__link-item {
-  color: var(--ifm-link-color);
+  background-color: var(--ifm-color-emphasis-100);
+  color: var(--ifm-color-content);
 }
 
 html[data-theme='light'] .footer .footer__title {
   color: var(--ifm-color-primary-darker);
 }
 
-html[data-theme='light'] .button--secondary {
-  background-color: var(--ifm-color-emphasis-100);
-  color: #2c2c2c;
-}
-
-html[data-theme='light'] .button--secondary:hover {
-  background-color: var(--ifm-color-emphasis-200);
-  color: #2c2c2c;  
-}
-
 html[data-theme='light'] .navbar {
-  background-color: var(--ifm-background-color);
-  border-bottom: 1px solid var(--ifm-color-emphasis-100);
-}
-
-.prism-code {
-    transition: box-shadow 0.0s;
-}
-
-html[data-theme='light'] .alert {
-  box-shadow: 0 0.18rem 0.31rem rgba(0, 0, 0, 0.05);
+  background-color: var(--ifm-navbar-background-color);
+  border-bottom: 1px solid var(--ifm-color-emphasis-200);
 }
 
 html[data-theme='light'] .details {
-  box-shadow: 0 0.18rem 0.31rem rgba(0, 0, 0, 0.05);
+  box-shadow: var(--ifm-global-shadow-lw);
 }
 
-html[data-theme='light'] .prism-code {
-  border: 0.03rem solid rgba(var(--ifm-color-emphasis-200-rgb), 0.1);
-  box-shadow: 0 0.18rem 0.31rem rgba(0, 0, 0, 0.05);
+html[data-theme='light'] .card {
+  background-color: var(--ifm-background-surface-color);
+  border: 1px solid var(--ifm-color-emphasis-200);
+  box-shadow: var(--ifm-global-shadow-lw);
 }
 
-html[data-theme='dark'] .alert {
-  box-shadow: 0 0.18rem 0.31rem rgba(0, 0, 0, 0.2);
+html[data-theme='light'] .card:hover {
+  box-shadow: var(--ifm-global-shadow-md);
 }
 
-html[data-theme='dark'] .details {
-  box-shadow: 0 0.18rem 0.31rem rgba(0, 0, 0, 0.2);
-}
-
-html[data-theme='dark'] .prism-code {
-  border: 0.03rem solid rgba(62, 62, 66, 0.3);
-  box-shadow: 0 0.18rem 0.31rem rgba(0, 0, 0, 0.2);
-}
-
-html[data-theme='light'] .token {
-  color: var(--ifm-color-primary-darker);
-}
-
-html[data-theme='light'] .token.comment,
-html[data-theme='light'] .token.prolog,
-html[data-theme='light'] .token.doctype,
-html[data-theme='light'] .token.cdata {
-  color: var(--ifm-color-secondary-dark); 
-}
-
-html[data-theme='light'] .token.punctuation {
-  color: var(--ifm-color-emphasis-300);
-}
-
-html[data-theme='light'] .token.operator,
-html[data-theme='light'] .token.boolean,
-html[data-theme='light'] .token.number {
-  color: var(--ifm-color-primary);
-}
-
-html[data-theme='light'] .token.property,
-html[data-theme='light'] .token.tag,
-html[data-theme='light'] .token.string,
-html[data-theme='light'] .token.selector,
-html[data-theme='light'] .token.attr-name {
-  color: var(--ifm-color-primary-light);
-}
-
-html[data-theme='light'] .token.function {
-  color: var(--ifm-color-emphasis-200);
-}
-
-html[data-theme='light'] .token.keyword {
-  color: var(--ifm-color-primary-lighter);
-}
-
-.docusaurus-highlight-code-line {
-  background-color: rgba(0, 0, 0, 0.1);
-  display: block;
-  margin: 0 calc(-1 * var(--ifm-pre-padding));
-  padding: 0 var(--ifm-pre-padding);
-}
-
-html[data-theme='dark'] .docusaurus-highlight-code-line {
-  background-color: rgba(0, 0, 0, 0.3);
-}
-
-.flexContainer {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 20px;
-}
-
-.buttons {
-  margin-bottom: 20px;
-}
-
-.sidebar-recommendation-label {
-  margin-top: 20px;  /* Space between the last sidebar item and the label */
-  font-size: 0.8rem;
-  font-style: italic;
-  text-align: left;
-  padding-left: 20px;
-}
-
+/* ==================================================
+   GENERAL STYLES
+   ================================================== */
 .small-print {
+  color: var(--ifm-color-content-secondary);
   font-size: 0.85em;
-  color: #666;
 }
 
-[data-theme='light'] img[src$='#gh-dark-mode-only'],
-[data-theme='dark'] img[src$='#gh-light-mode-only'] {
+/* ==================================================
+   BUTTON STYLES
+   ================================================== */
+/* Primary buttons - same colors in both themes */
+.button--primary {
+  --ifm-button-background-color: #5870B3;
+  --ifm-button-color: #ffffff;
+}
+
+.button--primary:hover {
+  --ifm-button-background-color: #1D2C57;
+  --ifm-button-color: #ffffff !important;
+  color: #ffffff !important;
+}
+
+/* Secondary buttons - dark style with text glow on hover */
+.button--secondary {
+  --ifm-button-background-color: #1D2C57;
+  --ifm-button-color: #ffffff;
+  transition: all 0.2s ease-in-out;
+}
+
+.button--secondary:hover {
+  --ifm-button-background-color: #1D2C57;
+  --ifm-button-color: #ffffff !important;
+  color: #ffffff !important;
+  text-shadow: 0 0 4px rgba(255, 255, 255, 0.5);
+}
+
+/* Center button content */
+a.button.button > * {
+  margin: 0 !important;
+}
+
+/* ==================================================
+   UTILITY CLASSES
+   ================================================== */
+.center-content {
+  margin-top: 2rem;
+  text-align: center;
+}
+
+/* ==================================================
+   RELEASE CONTAINER STYLES
+   ================================================== */
+.releases-container {
+  align-items: center !important;
+  display: flex !important;
+  flex-wrap: wrap !important;
+  gap: 20px !important;
+  justify-content: center !important;
+  margin-bottom: 20px !important;
+}
+
+.releases-container > a {
+  --ifm-button-background-color: #5870B3;
+  --ifm-button-color: #ffffff;
+  align-items: center !important;
+  background-color: #5870B3 !important;
+  border: 1px solid transparent;
+  border-radius: var(--ifm-button-border-radius);
+  color: #ffffff !important;
+  display: flex !important;
+  flex-direction: row !important;
+  font-weight: var(--ifm-button-font-weight);
+  gap: 15px !important;
+  justify-content: flex-start !important;
+  min-height: 80px !important;
+  padding: 10px 20px !important;
+  text-align: left !important;
+  text-decoration: none !important;
+  transition: all 0.2s ease-in-out !important;
+  width: 260px !important;
+}
+
+.releases-container > a:hover {
+  background-color: #1D2C57 !important;
+  color: #ffffff !important;
+  text-decoration: none !important;
+}
+
+.releases-container > a .download-icon {
+  flex-shrink: 0;
+  height: 24px;
+  transition: transform 0.2s ease;
+  width: 24px;
+}
+
+.releases-container > a:hover .download-icon {
+  transform: translateY(2px);
+}
+
+.releases-container > a .button-text {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.releases-container > a .button-text span:first-child {
+  font-size: 18px !important;
+  font-weight: 500 !important;
+  line-height: 1.2 !important;
+}
+
+.releases-container > a .button-text span:last-child {
+  font-size: 13px !important;
+  line-height: 1.2 !important;
+  opacity: 0.9;
+}
+
+/* Release download buttons with same color scheme as primary */
+.button--releases {
+  --ifm-button-background-color: #5870B3;
+  --ifm-button-color: #ffffff;
+  align-items: center !important;
+  display: flex !important;
+  flex-direction: row !important;
+  gap: 15px !important;
+  justify-content: flex-start !important;
+  min-height: 80px !important;
+  padding: 10px 20px !important;
+  text-align: left !important;
+  transition: all 0.2s ease-in-out !important;
+  width: 260px !important;
+}
+
+.button--releases:hover {
+  --ifm-button-background-color: #1D2C57;
+  --ifm-button-color: #ffffff !important;
+  color: #ffffff !important;
+  text-decoration: none !important;
+}
+
+.button--releases .download-icon {
+  flex-shrink: 0;
+  height: 24px;
+  transition: transform 0.2s ease;
+  width: 24px;
+}
+
+.button--releases:hover .download-icon {
+  transform: translateY(2px);
+}
+
+.button--releases .button-text {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.button--releases .button-text span:first-child {
+  font-size: 18px !important;
+  font-weight: 500 !important;
+  line-height: 1.2 !important;
+}
+
+.button--releases .button-text span:last-child {
+  font-size: 13px !important;
+  line-height: 1.2 !important;
+  opacity: 0.9;
+}
+
+/* ==================================================
+   SELECTION AND FOCUS STYLES
+   ================================================== */
+::selection {
+  background-color: var(--ifm-color-selection-background);
+  color: var(--ifm-color-selection-text);
+}
+
+::-moz-selection {
+  background-color: var(--ifm-color-selection-background);
+  color: var(--ifm-color-selection-text);
+}
+
+:focus-visible {
+  outline: 2px solid var(--ifm-color-focus);
+  outline-offset: 2px;
+}
+
+/* ==================================================
+   SCROLLBAR STYLES
+   ================================================== */
+::-webkit-scrollbar {
+  height: 12px;
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--ifm-scrollbar-track-background-color);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--ifm-scrollbar-thumb-background-color);
+  border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--ifm-scrollbar-thumb-hover-background-color);
+}
+
+/* ==================================================
+   ANNOUNCEMENT BAR STYLES
+   ================================================== */
+[class*="announcementBar"] {
+  background-color: #5870B3 !important;
+  color: #ffffff !important;
+  font-size: 0.875rem !important;
+  font-weight: 500 !important;
+  line-height: 1.4 !important;
+  margin-left: calc(-50vw + 50%) !important;
+  margin-right: calc(-50vw + 50%) !important;
+  padding: 0.75rem 3rem !important;
+  position: relative !important;
+  text-align: center !important;
+}
+
+[class*="announcementBar"] a {
+  background-color: #1D2C57 !important;
+  border-radius: var(--ifm-button-border-radius) !important;
+  color: #ffffff !important;
+  font-weight: 500 !important;
+  margin: 0 0.25rem;
+  padding: 0.125rem 0.5rem !important;
+  text-decoration: none !important;
+  transition: all 0.2s ease-in-out !important;
+  white-space: nowrap !important;
+}
+
+[class*="announcementBar"] a:hover {
+  text-shadow: 0 0 4px rgba(255, 255, 255, 0.5);
+}
+
+/* Close button must be more specific to override Docusaurus defaults */
+div[class*="announcementBar"] button[class*="close"],
+div[class*="announcementBar"] button[class*="close"] svg {
+  color: #ffffff !important;
+  cursor: pointer !important;
+  opacity: 1 !important;
+  padding: 0 !important;
+  position: absolute !important;
+  right: 0.5rem !important;
+  top: 50% !important;
+  transform: translateY(-50%) !important;
+  width: auto !important;
+}
+
+/* ==================================================
+   NAVBAR LOGO CUSTOMIZATIONS
+   ================================================== */
+/* Navbar logo styling */
+.navbar__logo {
+  height: 2rem;
+  width: auto;
+  margin-right: 0.5rem;
+}
+
+.navbar__logo img {
+  height: 100%;
+  width: auto;
+  display: block;
+}
+
+/* Hide navbar title since logo contains text */
+.navbar__title {
   display: none;
+}
+
+/* Ensure navbar brand link doesn't have extra spacing */
+.navbar__brand {
+  margin-right: 1rem;
+}
+
+/* ==================================================
+   NAVBAR ICON CUSTOMIZATIONS
+   ================================================== */
+/* Common styles for masked SVG icons in navbar */
+.header-github-link:before,
+[data-theme='light'] [class*='lightToggleIcon'],
+[data-theme='dark'] [class*='darkToggleIcon'] {
+  background-color: currentColor;
+  height: 24px;
+  mask-position: center;
+  mask-repeat: no-repeat;
+  mask-size: contain;
+  width: 24px;
+}
+
+/* GitHub icon */
+.header-github-link:hover {
+  opacity: 0.6;
+}
+
+.header-github-link:before {
+  content: "";
+  display: flex;
+  mask-image: url("/img/icons/github.svg");
+}
+
+/* Theme toggle color inheritance */
+[class*='colorModeToggle'] button {
+  color: var(--ifm-navbar-link-color) !important;
+}
+
+[class*='colorModeToggle'] button:hover {
+  color: var(--ifm-navbar-link-hover-color) !important;
+}
+
+/* Sun icon (light mode) */
+[data-theme='light'] [class*='lightToggleIcon'] {
+  mask-image: url("/img/icons/sun.svg");
+}
+
+[data-theme='light'] [class*='lightToggleIcon'] svg {
+  display: none !important;
+}
+
+/* Moon icon (dark mode) */
+[data-theme='dark'] [class*='darkToggleIcon'] {
+  mask-image: url("/img/icons/moon.svg");
+}
+
+[data-theme='dark'] [class*='darkToggleIcon'] svg {
+  display: none !important;
+}
+
+/* ==================================================
+   HERO/BANNER IMAGES
+   ================================================== */
+/* Hero banner styling for intro pages */
+article img[src*="intro-banner"] {
+  border-radius: 0.5rem;
+  box-shadow: var(--ifm-global-shadow-md);
+  margin-bottom: 2rem;
+  margin-top: 1rem;
+  width: 100%;
+}
+
+[data-theme='dark'] article img[src*="intro-banner"] {
+  opacity: 0.9;
+}
+
+
+/* ==================================================
+   ICONIFY ICON STYLES
+   ================================================== */
+/* Base icon styles with primary color */
+.icon {
+  color: var(--ifm-color-primary);
+  display: inline-flex;
+  line-height: 1;
+  vertical-align: middle;
+}
+
+/* Icon sizing based on context - inherit font size */
+h1 .icon,
+.icon-h1 {
+  font-size: inherit;
+  margin-right: 0.5rem;
+}
+
+h2 .icon,
+.icon-h2 {
+  font-size: inherit;
+  margin-right: 0.5rem;
+}
+
+h3 .icon,
+.icon-h3 {
+  font-size: inherit;
+  margin-right: 0.5rem;
+}
+
+/* Common inline icon */
+.icon-inline {
+  font-size: 1em;
+  margin-left: 0.25rem;
+  margin-right: 0.25rem;
+}
+
+/* Fix vertical alignment for Iconify SVGs in headers */
+h1 svg.iconify,
+h2 svg.iconify,
+h3 svg.iconify,
+h4 svg.iconify,
+h5 svg.iconify,
+h6 svg.iconify {
+  vertical-align: -0.125em;
+}
+
+/* Featured icon styles */
+.icon-featured {
+  animation: shimmer 6s ease-in-out infinite;
+  color: #FFB800;
+  display: inline-block;
+  font-size: 1.1em;
+  margin-right: 0.5rem;
+  transform-origin: center;
+}
+
+/* Testnet icon styles */
+.icon-testnet {
+  color: #F97316; /* Orange-500 for clear testnet indication */
+  display: inline-block;
+  font-size: 1.1em;
+  margin-right: 0.5rem;
+}
+
+/* Dark mode testnet color adjustment */
+[data-theme='dark'] .icon-testnet {
+  color: #FB923C; /* Orange-400 for better visibility in dark mode */
+}
+
+/* Shimmer animation for featured icons - very subtle sparkle effect */
+@keyframes shimmer {
+  0%, 85%, 100% {
+    transform: rotate(0deg) scale(1);
+    filter: brightness(1);
+  }
+  90% {
+    transform: rotate(-2deg) scale(1.02);
+    filter: brightness(1.05);
+  }
+  92.5% {
+    transform: rotate(2deg) scale(1.03);
+    filter: brightness(1.1) drop-shadow(0 0 2px rgba(255, 184, 0, 0.15));
+  }
+  95% {
+    transform: rotate(-1deg) scale(1.02);
+    filter: brightness(1.05);
+  }
+}
+
+/* Apply animation to all featured icon elements */
+.icon-featured,
+.icon-featured svg,
+.featured-badge .icon,
+.featured-badge .icon svg,
+svg.icon-featured {
+  animation: shimmer 6s ease-in-out infinite !important;
+  display: inline-block !important;
+  transform-origin: center !important;
+}
+
+/* Reduce motion for accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .icon-featured,
+  .icon-featured svg,
+  .featured-badge .icon,
+  .featured-badge .icon svg {
+    animation: none;
+  }
+}
+
+/* Featured badge for inline use */
+.featured-badge {
+  align-items: center;
+  background-color: #FFF3CD;
+  border: 1px solid #FFE69C;
+  border-radius: 0.25rem;
+  color: #664D03;
+  display: inline-flex;
+  font-size: 0.75rem;
+  font-weight: 600;
+  margin-left: 0.25rem;
+  margin-right: 0.25rem;
+  padding: 0.125rem 0.375rem;
+  text-transform: uppercase;
+}
+
+.featured-badge .icon {
+  animation: shimmer 6s ease-in-out infinite;
+  color: #FFB800;
+  font-size: 0.875rem;
+  margin-right: 0.25rem;
+}
+
+/* Dark mode featured styles */
+[data-theme='dark'] .featured-badge {
+  background-color: rgba(255, 184, 0, 0.15);
+  border-color: rgba(255, 184, 0, 0.4);
+  color: #FFD55F;
+}
+
+[data-theme='dark'] .featured-badge .icon {
+  color: #FFB800;
+}
+
+/* Sidebar featured items */
+.menu__link--featured::before {
+  color: #FFB800;
+  content: '★';
+  font-size: 1rem;
+  margin-right: 0.5rem;
+}
+
+/* Testnet badge for inline use */
+.testnet-badge {
+  align-items: center;
+  background-color: #FED7AA;
+  border: 1px solid #FDBA74;
+  border-radius: 0.25rem;
+  color: #9A3412;
+  display: inline-flex;
+  font-size: 0.75rem;
+  font-weight: 600;
+  margin-left: 0.25rem;
+  margin-right: 0.25rem;
+  padding: 0.125rem 0.375rem;
+  text-transform: uppercase;
+}
+
+.testnet-badge .icon {
+  color: #F97316;
+  font-size: 0.875rem;
+  margin-right: 0.25rem;
+}
+
+/* Dark mode testnet styles */
+[data-theme='dark'] .testnet-badge {
+  background-color: rgba(249, 115, 22, 0.15);
+  border-color: rgba(249, 115, 22, 0.4);
+  color: #FDBA74;
+}
+
+[data-theme='dark'] .testnet-badge .icon {
+  color: #FB923C;
+}
+
+/* ==================================================
+   SIDEBAR/MENU STYLES
+   ================================================== */
+/* Override default chevron styles */
+.menu__caret:before,
+.menu__link--sublist-caret:after {
+  background-color: var(--ifm-color-emphasis-600) !important;
+  mask-image: url('/img/icons/chevron-right.svg') !important;
+  mask-position: center !important;
+  width: 1rem !important;
+  height: 1rem !important;
+}
+
+/* Default state - chevron pointing right (collapsed) */
+.menu__list-item--collapsed .menu__link--sublist-caret:after,
+.menu__list-item--collapsed .menu__caret:before,
+.menu__list-item--collapsed .menu__list-item-collapsible .menu__link--sublist-caret:after,
+.menu__list-item--collapsed .menu__list-item-collapsible .menu__caret:before {
+  transform: none !important;
+}
+
+/* Expanded state - chevron pointing down */
+.menu__list-item:not(.menu__list-item--collapsed) > .menu__link--sublist-caret:after,
+.menu__list-item:not(.menu__list-item--collapsed) > .menu__list-item-collapsible > .menu__caret:before,
+.menu__list-item:not(.menu__list-item--collapsed) > .menu__list-item-collapsible > .menu__link--sublist-caret:after {
+  transform: rotate(90deg) !important;
+}
+
+/* Style the separate chevron button */
+.menu__caret {
+  padding: var(--ifm-menu-link-padding-vertical) 0.5rem !important;
+}
+
+.menu__caret:hover {
+  background-color: transparent !important;
+}
+
+.menu__link {
+  font-size: 0.875rem !important;
+  font-weight: 400;
+  padding: 0.25rem 0.5rem !important;
+}
+
+.menu__list .menu__list {
+  border-left: 1px solid var(--ifm-toc-border-color);
+  margin-left: 0.75rem;
+  padding-left: 0.5rem;
+}
+
+/* ==================================================
+   TABLE STYLES
+   ================================================== */
+[data-theme='light'] table tbody tr:nth-child(even) {
+  background-color: rgba(0, 0, 0, 0.02);
+}
+
+[data-theme='dark'] table tbody tr:nth-child(even) {
+  background-color: rgba(255, 255, 255, 0.02);
+}
+
+/* ==================================================
+   TERMINAL/CODE BLOCK STYLES
+   ================================================== */
+[class*="language-bash"] pre,
+[class*="language-shell"] pre,
+[class*="language-powershell"] pre {
+  filter: none !important;
+  opacity: 1 !important;
+}
+
+[class*="language-bash"] pre,
+[class*="language-shell"] pre {
+  background: #0d1117 !important;
+  border: 1px solid #30363d !important;
+}
+
+[class*="language-powershell"] pre {
+  background: #012456 !important;
+  border: 1px solid #013a6b !important;
+}
+
+[data-theme='light'] pre:is([class*="language-bash"], [class*="language-shell"], [class*="language-powershell"]) :is(.token.plain, .token.operator, .token.punctuation) {
+  color: #f8f8f2 !important;
+}
+
+/* ==================================================
+   HIDE SPECIFIC SIDEBAR ITEMS
+   ================================================== */
+/* Hide the redirect intro page from sidebar */
+.menu__link[href="/learn/intro"] {
+  display: none !important;
+}
+
+/* Hide sidebar categories marked as sidebar-hidden */
+.sidebar-hidden {
+  display: none !important;
+}
+
+/* ==================================================
+   RESOURCE CARDS
+   ================================================== */
+.resource-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+  margin: 2rem 0;
+}
+
+.resource-card {
+  display: flex;
+  align-items: center;
+  padding: 1.25rem;
+  background-color: var(--ifm-background-surface-color);
+  border: 1px solid var(--ifm-color-emphasis-200);
+  border-radius: 0.5rem;
+  text-decoration: none !important;
+  transition: all 0.2s ease;
+  gap: 1rem;
+}
+
+.resource-card:hover {
+  border-color: var(--ifm-color-primary);
+  transform: translateY(-2px);
+  box-shadow: var(--ifm-global-shadow-md);
+  text-decoration: none !important;
+}
+
+.resource-icon {
+  font-size: 2.5rem;
+  color: var(--ifm-color-primary);
+  flex-shrink: 0;
+}
+
+.resource-content h4 {
+  margin: 0 0 0.25rem 0;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--ifm-color-content);
+}
+
+.resource-content p {
+  margin: 0;
+  font-size: 0.875rem;
+  color: var(--ifm-color-content-secondary);
+}
+
+/* Dark mode resource cards */
+[data-theme='dark'] .resource-card {
+  background-color: var(--ifm-color-emphasis-100);
+  border-color: var(--ifm-color-emphasis-200);
+}
+
+[data-theme='dark'] .resource-card:hover {
+  background-color: var(--ifm-color-emphasis-200);
+  border-color: var(--ifm-color-primary);
+}
+
+[data-theme='dark'] .resource-content h4 {
+  color: var(--ifm-color-content);
+}
+
+[data-theme='dark'] .resource-content p {
+  color: var(--ifm-color-content-secondary);
 }

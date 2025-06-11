@@ -1,18 +1,12 @@
-import Link from '@docusaurus/Link';
-import styles from '@site/src/pages/index.module.css';
+import ReleaseButton from '@site/src/components/ReleaseButton';
+import ReleaseContainer from '@site/src/components/ReleaseContainer';
 
 
 ### Download the Space Acres Installer
 
-<div className={`${styles.buttons} ${styles.flexContainer}`}>
-  <Link
-        className="button button--secondary"
-        to="https://github.com/autonomys/space-acres/releases/download/0.2.12/space-acres-0.2.12-x86_64.exe"
-        style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', textAlign: 'center', padding: '10px' }}>
-        <span style={{ fontSize: '20px' }}>Windows Installer</span>
-        <span style={{ fontSize: '14px' }}>(.exe)</span>
-  </Link>
-</div>
+<ReleaseContainer>
+  <ReleaseButton to="https://github.com/autonomys/space-acres/releases/download/0.2.12/space-acres-0.2.12-x86_64.exe" title="Windows Installer" subtitle="(.exe)" />
+</ReleaseContainer>
 
 ### Install Space Acres
 

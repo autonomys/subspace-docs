@@ -1,8 +1,10 @@
 ---
-title: ✨ Talisman
+title: Talisman
 sidebar_position: 1
 description: How to configure the Talisman wallet for the Autonomys Network
 slug: /wallets/talisman
+sidebar_custom_props:
+  featured: true
 keywords:
     - Farmer
     - Farming

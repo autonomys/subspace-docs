@@ -42,8 +42,7 @@
 
 .compose-generator-form__input,
 .compose-generator-form__label,
-.compose-generator-form__text--error,
-.compose-generator-form__button--primary {
+.compose-generator-form__text--error {
     font-family: var(--ifm-font-family-base);
     font-size: 1.008rem;
 }
@@ -77,6 +76,8 @@
     border-radius: 0.309rem; 
     border: 0.038rem solid var(--ifm-color-primary-darker);
     transition: border-color 0.3s;
+    background-color: var(--ifm-color-emphasis-100);
+    color: var(--ifm-color-content);
 }
 
 .compose-generator-form__input:hover {
@@ -98,38 +99,11 @@
     margin-top: 0.191rem; 
 }
 
-.compose-generator-form__button--primary {
-    grid-column: span 2;
-    padding: 0.381rem 1.008rem; 
-    border: none;
-    border-radius: 0.309rem;
-    background-color: var(--ifm-color-primary-lightest);
-    color: #FFF;
-    cursor: pointer;
-    box-shadow: 0 0.191rem 0.618rem rgba(0, 0, 0, 0.1);
-    transition: background-color 0.7s, filter 0.7s, transform 0.25s, box-shadow 0.7s;
-}
-
-.compose-generator-form__button--primary:hover {
-    filter: brightness(90%);
-    cursor: pointer;
-    box-shadow: 0 0.381rem 1.008rem rgba(0, 0, 0, 0.15);
-}
-
-.compose-generator-form__button--primary:active {
-    filter: brightness(80%);
-    transform: scale(0.93);
-    box-shadow: 0 0.095rem 0.309rem rgba(0, 0, 0, 0.2);
-}
-
-.compose-generator-form__button--primary:focus {
-    outline: none;
-    box-shadow: 0 0 0 0.095rem var(--ifm-color-primary-lighter);
-}
 
 html[data-theme='dark'] .compose-generator-form__card {
     border-radius: 0.618rem;
-    box-shadow: 0rem 0.077rem 0.309rem rgba(255, 255, 255, 0.08); 
+    box-shadow: 0rem 0.077rem 0.309rem rgba(255, 255, 255, 0.08);
+    background-color: var(--ifm-color-emphasis-0);
 }
 
 html[data-theme='dark'] .compose-generator-form__label--glow {
@@ -138,6 +112,8 @@ html[data-theme='dark'] .compose-generator-form__label--glow {
 
 html[data-theme='dark'] .compose-generator-form__input {
     border-color: var(--ifm-color-primary-darkest);
+    background-color: var(--ifm-background-color);
+    color: var(--ifm-color-content);
 }
 
 html[data-theme='dark'] .compose-generator-form__input:hover {
@@ -146,22 +122,4 @@ html[data-theme='dark'] .compose-generator-form__input:hover {
 
 html[data-theme='dark'] .compose-generator-form__input:focus {
     box-shadow: 0rem 0rem 0.309rem var(--ifm-color-primary-lighter);
-}
-
-html[data-theme='dark'] .compose-generator-form__button--primary {
-    background-color: var(--ifm-color-primary-light);
-    box-shadow: 0 0.191rem 0.618rem rgba(255, 255, 255, 0.1);
-}
-
-html[data-theme='dark'] .compose-generator-form__button--primary:hover {
-    filter: brightness(120%);
-    box-shadow: 0 0.381rem 1.008rem rgba(255, 255, 255, 0.15);
-}
-
-html[data-theme='dark'] .compose-generator-form__button--primary:active {
-    filter: brightness(130%);    
-}
-
-html[data-theme='dark'] .compose-generator-form__button--primary:focus {
-    box-shadow: 0 0 0 0.095rem var(--ifm-color-primary-lighter), 0 0.191rem 0.618rem rgba(255, 255, 255, 0.1);
 }

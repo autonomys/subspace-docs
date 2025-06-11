@@ -1,33 +1,9 @@
-import Link from '@docusaurus/Link';
-import styles from '@site/src/pages/index.module.css';
+import ReleaseButton from '@site/src/components/ReleaseButton';
+import ReleaseContainer from '@site/src/components/ReleaseContainer';
 
-<div className={`${styles.buttons} ${styles.flexContainer}`}>
-  <Link
-    className="button button--secondary"
-    to="https://github.com/autonomys/space-acres/releases/download/0.2.12/space-acres-0.2.12-x86_64.exe"
-    style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', textAlign: 'center', padding: '10px' }}>
-    <span style={{ fontSize: '20px' }}>Windows Installer</span>
-    <span style={{ fontSize: '14px' }}>(.exe)</span>
-  </Link>
-  <Link
-    className="button button--secondary"
-    to="https://github.com/autonomys/space-acres/releases/download/0.2.12/space-acres_0.2.12-1_amd64.deb"
-    style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', textAlign: 'center', padding: '10px' }}>
-    <span style={{ fontSize: '20px' }}>Linux Installer</span>
-    <span style={{ fontSize: '14px' }}>(.DEB)</span>
-  </Link>
-  <Link
-    className="button button--secondary"
-    to="https://github.com/autonomys/space-acres/releases/download/0.2.12/space-acres-0.2.12-x86_64.AppImage"
-    style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', textAlign: 'center', padding: '10px' }}>
-    <span style={{ fontSize: '20px' }}>Linux Portable App</span>
-    <span style={{ fontSize: '14px' }}>(AppImage)</span>
-  </Link>
-  <Link
-    className="button button--secondary"
-    to="https://github.com/autonomys/space-acres/releases/download/0.2.12/space-acres-0.2.12.dmg"
-    style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', textAlign: 'center', padding: '10px' }}>
-    <span style={{ fontSize: '20px' }}>macOS Installer</span>
-    <span style={{ fontSize: '14px' }}>(.dmg)</span>
-  </Link>
-</div>
+<ReleaseContainer>
+  <ReleaseButton to="https://github.com/autonomys/space-acres/releases/download/0.2.12/space-acres-0.2.12-x86_64.exe" title="Windows Installer" subtitle="(.exe)" />
+  <ReleaseButton to="https://github.com/autonomys/space-acres/releases/download/0.2.12/space-acres_0.2.12-1_amd64.deb" title="Linux Installer" subtitle="(.DEB)" />
+  <ReleaseButton to="https://github.com/autonomys/space-acres/releases/download/0.2.12/space-acres-0.2.12-x86_64.AppImage" title="Linux Portable App" subtitle="(AppImage)" />
+  <ReleaseButton to="https://github.com/autonomys/space-acres/releases/download/0.2.12/space-acres-0.2.12.dmg" title="macOS Installer" subtitle="(.dmg)" />
+</ReleaseContainer>

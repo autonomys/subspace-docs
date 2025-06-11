@@ -1,6 +1,9 @@
 {
-    "label": "✨ Space Acres",
+    "label": "Space Acres",
     "position": 2,
     "collapsed": false,
-    "link": null
+    "link": null,
+    "customProps": {
+        "featured": true
+    }
 }

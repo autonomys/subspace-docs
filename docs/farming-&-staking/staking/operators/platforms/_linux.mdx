@@ -1,38 +1,20 @@
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import CodeBlock from '@theme/CodeBlock';
-import Link from '@docusaurus/Link';
-import styles from '@site/src/pages/index.module.css';
+import ReleaseButton from '@site/src/components/ReleaseButton';
+import ReleaseContainer from '@site/src/components/ReleaseContainer';
 
 ### Download the CLI Executables 
 ---
 
-<div className={`${styles.buttons} ${styles.flexContainer}`}>
-  <Link
-    className="button button--secondary"
-    to="https://github.com/autonomys/subspace/releases/download/taurus-2025-may-27/subspace-node-ubuntu-x86_64-skylake-taurus-2025-may-27"
-    style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', textAlign: 'center', padding: '10px' }}>
-    <span style={{ fontSize: '20px' }}>Node Executable</span>
-    <span style={{ fontSize: '14px' }}>(Skylake+ CPU)</span>
-  </Link>
-</div>
+<ReleaseContainer>
+  <ReleaseButton to="https://github.com/autonomys/subspace/releases/download/taurus-2025-may-27/subspace-node-ubuntu-x86_64-skylake-taurus-2025-may-27" title="Node Executable" subtitle="(Skylake+ CPU)" />
+</ReleaseContainer>
 
-<div className={`${styles.buttons} ${styles.flexContainer}`}>
-  <Link
-    className="button button--secondary"
-    to="https://github.com/autonomys/subspace/releases/download/taurus-2025-may-27/subspace-node-ubuntu-x86_64-v2-taurus-2025-may-27"
-    style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', textAlign: 'center', padding: '10px' }}>
-    <span style={{ fontSize: '20px' }}>Node Executable</span>
-    <span style={{ fontSize: '14px' }}>(Legacy CPU)</span>
-  </Link>
-</div>
+<ReleaseContainer>
+  <ReleaseButton to="https://github.com/autonomys/subspace/releases/download/taurus-2025-may-27/subspace-node-ubuntu-x86_64-v2-taurus-2025-may-27" title="Node Executable" subtitle="(Legacy CPU)" />
+</ReleaseContainer>
 
-<div className={`${styles.buttons} ${styles.flexContainer}`}>
-  <Link
-    className="button button--secondary"
-    to="https://github.com/autonomys/subspace/releases/download/taurus-2025-may-27/subspace-node-ubuntu-aarch64-taurus-2025-may-27"
-    style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', textAlign: 'center', padding: '10px' }}>
-    <span style={{ fontSize: '20px' }}>Node Executable</span>
-    <span style={{ fontSize: '14px' }}>(Aarch64/Raspberry Pi)</span>
-  </Link>
-</div>
+<ReleaseContainer>
+  <ReleaseButton to="https://github.com/autonomys/subspace/releases/download/taurus-2025-may-27/subspace-node-ubuntu-aarch64-taurus-2025-may-27" title="Node Executable" subtitle="(Aarch64/Raspberry Pi)" />
+</ReleaseContainer>

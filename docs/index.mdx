@@ -1,0 +1,172 @@
+---
+title: Autonomys Docs
+description: Official documentation for farming, staking, operating, and building on the Autonomys Network
+hide_title: true
+sidebar_position: 0
+keywords:
+    - Autonomys Network
+    - Farming
+    - Staking
+    - Development
+    - Blockchain
+---
+
+import Link from '@docusaurus/Link';
+import FeaturedBadge from '@site/src/components/FeaturedBadge';
+import TestnetBadge from '@site/src/components/TestnetBadge';
+import Icon from '@site/src/components/Icon';
+import ActionButton from '@site/src/components/ActionButton';
+import ResourceCard from '@site/src/components/ResourceCard';
+
+![Autonomys Network Introduction](/img/learn/intro-banner.avif)
+
+Welcome to the Autonomys Network, the foundation for a radically decentralized future!  
+
+Whether you're a **farmer** ready to contribute storage and earn rewards, an **operator** looking to validate transactions and secure domains, a **nominator** wanting to stake your tokens, or a **developer** building the next generation of Web3 applications, you've found your home.
+
+The Autonomys Network isn't just another blockchain. As the world's first truly scalable layer-zero protocol, we've solved the blockchain trilemma by separating consensus from computation. This means farmers can participate with everyday hardware while the network maintains unprecedented security and scalability. Our innovative Proof-of-Archival-Storage consensus enables anyone, anywhere, to join the network and earn rewards by storing humanity's digital history.
+
+Join thousands of farmers across the globe who are already securing the network, earning rewards, and building the decentralized infrastructure that will power the next era of the internet. Together, we're not just participants, we're pioneers shaping the future of Web3.
+
+---
+
+## <Icon icon="mdi:rocket-launch" />Start Your Journey
+
+This documentation site is designed to enhance your experience with the Autonomys Network, providing clear guides and resources for every type of participant. We welcome your suggestions on how we can make it better - your feedback helps us build better documentation for our growing community.
+
+<div className="center-content">
+
+### Choose Your Path
+
+<div className="releases-container">
+  <ActionButton 
+    to="/farming/space-acres/install" 
+    title="Start Farming" 
+    subtitle="Earn rewards by storing data" 
+    icon="mdi:tractor" 
+  />
+  
+  <ActionButton 
+    to="/staking/stake" 
+    title="Start Staking" 
+    subtitle="Nominate operators & earn" 
+    icon="mdi:account-heart" 
+  />
+  
+  <ActionButton 
+    to="/staking/operator/register" 
+    title="Become an Operator" 
+    subtitle="Validate transactions" 
+    icon="mdi:server" 
+  />
+  
+  <ActionButton 
+    to="https://academy.autonomys.xyz/" 
+    title="Autonomys Academy" 
+    subtitle="Learn the fundamentals" 
+    icon="mdi:school" 
+    external 
+  />
+  
+  <ActionButton 
+    to="https://develop.autonomys.xyz" 
+    title="Developer Hub" 
+    subtitle="Build more. Code less." 
+    icon="lineicons:dev" 
+    external 
+  />
+  
+  <ActionButton 
+    to="/participate/contribute/intro" 
+    title="Contribute" 
+    subtitle="Improve docs & help others" 
+    icon="material-symbols:partner-exchange" 
+  />
+</div>
+
+</div>
+
+---
+
+## <Icon icon="mdi:web" />Essential Resources
+
+Connect with the Autonomys community and explore our ecosystem:
+
+<div className="resource-cards">
+  <ResourceCard 
+    to="https://autonomys.xyz/discord" 
+    title="Discord" 
+    subtitle="Join our community chat" 
+    icon="mdi:discord" 
+  />
+  
+  <ResourceCard 
+    to="https://t.me/subspace_network" 
+    title="Telegram" 
+    subtitle="Connect on Telegram" 
+    icon="mdi:telegram" 
+  />
+  
+  <ResourceCard 
+    to="https://github.com/autonomys" 
+    title="GitHub" 
+    subtitle="Explore our open source code" 
+    icon="mdi:github" 
+  />
+  
+  <ResourceCard 
+    to="https://autonomys.xyz" 
+    title="Autonomys Website" 
+    subtitle="Learn about our vision" 
+    icon="token:autonomys" 
+  />
+  
+  <ResourceCard 
+    to="https://astral.autonomys.xyz" 
+    title="Astral Block Explorer" 
+    subtitle="Explore network activity" 
+    icon="mdi:cube-scan" 
+  />
+  
+  <ResourceCard 
+    to="https://forum.autonomys.xyz" 
+    title="Community Forums" 
+    subtitle="Discuss and share knowledge" 
+    icon="mdi:forum" 
+  />
+</div>
+
+---
+
+## <Icon icon="mdi:account-group" />Network Participants
+
+:::tip Understanding Our Badges
+Throughout this documentation, you'll see the <FeaturedBadge text="Recommended" /> badge highlighting our community-tested, hand-picked solutions. These are carefully selected options that offer the best balance of ease-of-use, reliability, and features for most users. When multiple paths exist, we guide you toward the ones that have proven most successful for our community.
+
+You'll also notice the <TestnetBadge text="Testnet" /> badge on certain features and sections. This indicates functionality that is currently only available on our Taurus testnet. These features are being tested and refined before their mainnet release, giving early adopters a chance to explore upcoming capabilities while helping us ensure they're ready for production use. Taurus serves as our proving ground for innovation, where new features undergo rigorous testing by our community.
+:::
+
+### <Icon icon="mdi:tractor" />Farmers
+Secure the network by storing archival history and earn rewards. Farmers maintain consensus, plot data to disk, and participate in the Distributed Storage Network (DSN).
+
+**Getting Started:**
+- **[Space Acres](/farming/space-acres/install)** <FeaturedBadge text="Recommended" /> - User-friendly GUI application perfect for beginners, with visual setup and monitoring
+- **[CLI Farmer](/farming/cli/install)** - Command-line interface for advanced users seeking full control and automation capabilities
+
+### <Icon icon="mdi:account-heart" />Nominators
+Stake your tAI3 tokens by nominating operators to increase their chances of being elected as slot leaders. Earn proportional rewards while supporting network security.
+
+**Getting Started:**
+- **[Start Staking](/staking/stake)** <TestnetBadge text="Testnet" /> - Begin nominating operators
+
+### <Icon icon="mdi:server" />Operators
+Validate and execute transactions, produce execution receipts, and apply state transitions across domains while earning rewards for your work.
+
+**Getting Started:**
+- **[Register as Operator](/staking/operator/register)** <TestnetBadge text="Testnet" /> - Set up your operator node
+
+### <Icon icon="mdi:clock" />Timekeepers
+Run the Proof-of-Time chain and maintain the randomness beacon that secures the consensus chain.
+
+**Getting Started:**
+- **[Start Timekeeping](/farming/timekeeper)** - Contribute to network randomness

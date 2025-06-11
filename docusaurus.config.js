@@ -1,8 +1,7 @@
 // @ts-check
 // Note: type annotations allow type checking and IDEs autocompletion
 
-const lightCodeTheme = require('prism-react-renderer/themes/github');
-const darkCodeTheme = require('prism-react-renderer/themes/dracula');
+const codeTheme = require('prism-react-renderer/themes/dracula'); // Using Dracula theme for both light and dark modes
 // @ts-ignore
 const ConfigLocalized = require('./docusaurus.config.localized.json');
 const defaultLocale = 'en';
@@ -44,7 +43,7 @@ const config = {
   // to replace "en" with "zh-Hans".
   i18n: {
     defaultLocale,
-    locales: ["de", "en", "fr", "id", "it", "ja", "uk", "pt", "ru", "vi", "es", "zh", "tr"],
+    locales: ["en", "de", "es", "fr", "id", "it", "ja", "pt", "ru", "tr", "uk", "vi", "zh"],
   },
   
   markdown: {
@@ -62,7 +61,7 @@ const config = {
           // Redirecting to the new root URL (/) as the previous root (/docs) is no longer in use.
 
           // Learn
-          { to: '/learn/intro', from: ['/category/learn', '/docs/learn/intro'] },
+          { to: '/', from: ['/category/learn', '/docs/learn/intro'] },
           { to: '/learn/security', from: ['/docs/learn/security'] },
           { to: '/learn/academy', from: ['/docs/learn/academy'] },
 
@@ -184,11 +183,13 @@ const config = {
         },
       },
       navbar: {
-        title: 'Autonomys',
         logo: {
-          alt: 'Autonomys Logo',
-          src: 'img/logo-black.png',
-          srcDark: 'img/logo-white.png',
+          alt: 'Autonomys',
+          src: 'img/banner-black.png',
+          srcDark: 'img/banner-white.png',
+          href: '/',
+          height: 32,
+          width: 128,
         },
         items: [
           {
@@ -197,16 +198,16 @@ const config = {
             position: 'left',
             items: [
               {
-                label: 'Farming',
-                href: '/category/farming'
+                label: 'Start Farming',
+                href: '/farming/space-acres/install'
               },
               {
-                label: 'Operators & Nominators',
-                href: '/staking/intro'
+                label: 'Start Staking',
+                href: '/staking/stake'
               },
               {
-                label: 'Develop on Autonomys',
-                href: 'https://develop.autonomys.xyz/',
+                label: 'Become an Operator',
+                href: '/staking/operator/register'
               }
             ],
           },
@@ -262,6 +263,14 @@ const config = {
                 href: 'https://academy.autonomys.xyz',
               },
               {
+                label: 'Developer Hub',
+                href: 'https://develop.autonomys.xyz/',
+              },
+              {
+                label: 'Litepaper',
+                href: 'https://gateway.autonomys.xyz/file/bafkr6ibiqakm4js5yqifosrm2kdtxkbncbya2z2na2a34gaubwirqxt6bi',
+              },
+              {
                 label: 'Whitepaper',
                 href: 'https://gateway.autonomys.xyz/file/bafkr6ia6q74kzrtdpfl3scb5v5f2vuvsip7ilfo4qkl27ievd7uvnluw2a',
               }
@@ -283,90 +292,26 @@ const config = {
           },
           {
             href: 'https://github.com/autonomys',
-            label: 'GitHub',
             position: 'right',
+            className: 'header-github-link',
+            'aria-label': 'GitHub repository',
           },
         ],
       },
       footer: {
         style: 'dark',
-        links: [
-          {
-            title: 'Autonomys Network',
-            items: [
-              {
-                label: 'Official Website',
-                href: 'https://www.autonomys.xyz'
-              },
-              {
-                label: 'Space Acres Desktop GUI',
-                href: 'https://github.com/autonomys/space-acres'
-              },
-              {
-                label: 'Astral Block Explorer',
-                href: 'https://astral.autonomys.xyz'
-              }
-            ],
-          },
-          {
-            title: 'Community',
-            items: [
-              {
-                label: 'GitHub',
-                href: 'https://github.com/autonomys',
-              },
-              {
-                label: 'Discord',
-                href: 'https://autonomys.xyz/discord',
-              },
-              {
-                label: 'Telegram',
-                href: 'https://t.me/subspace_network',
-              },
-            ],
-          },
-          {
-            title: 'Social',
-            items: [
-              {
-                label: 'YouTube',
-                href: 'https://www.youtube.com/@AutonomysNetwork',
-              },
-              {
-                label: 'LinkedIn',
-                href: 'https://www.linkedin.com/company/autonomys',
-              },
-              {
-                label: 'Twitter',
-                href: 'https://x.com/AutonomysNet',
-              },
-              {
-                label: 'Medium',
-                href: 'https://medium.com/subspace-network',
-              }
-            ],
-          },
-        ],
-        logo: {
-          alt: 'Autonomys Labs Banner Logo',
-          src: 'img/banner-black.png',
-          srcDark: 'img/banner-white.png',
-          href: 'https://autonomys.xyz',
-        },
         copyright: `Copyright © ${new Date().getFullYear()} Autonomys Labs, Inc.`,
       },
       announcementBar: {
         id: 'developer_hub',
         content:
-          '<br /><h4>Check out our new Autonomys Developer Documentation by visiting our <a target="_blank" href="https://develop.autonomys.xyz/">Developer Hub</a></h4>',
-        backgroundColor: '#ac9dc7',
-        textColor: '#292929',
+          'Looking to build on Autonomys Network? Find comprehensive guides, tutorials, and API documentation at our <a target="_blank" href="https://develop.autonomys.xyz/">Developer Hub</a>',
         isCloseable: true,
       },
       prism: {
-        theme: lightCodeTheme,
-        darkTheme: darkCodeTheme,
-        additionalLanguages: ['toml', 'powershell', 'shell-session', 'ini'],
+        theme: codeTheme,
+        darkTheme: codeTheme,
+        additionalLanguages: ['bash', 'powershell', 'shell-session', 'yaml'],
       },
       algolia: {
         // The application ID provided by Algolia
