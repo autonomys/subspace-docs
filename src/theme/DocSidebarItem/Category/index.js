@@ -11,7 +11,7 @@ export default function CategoryWrapper(props) {
     // Determine which icon to use
     let iconElement = null;
     if (isTestnet) {
-      iconElement = <Icon icon="teenyicons:ab-testing-outline" className="icon-testnet" />;
+      iconElement = <Icon icon="mingcute:taurus-fill" className="icon-testnet" />;
     } else if (isFeatured) {
       iconElement = <Icon icon="material-symbols-light:star-shine" className="icon-featured" />;
     }
