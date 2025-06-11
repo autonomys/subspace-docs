@@ -22,6 +22,45 @@ if (!CROWDIN_PERSONAL_TOKEN) {
 
 const date = new Date(); 
 
+// Calculate current month boundaries in UTC (from start of month to now)
+function getCurrentMonthDates() {
+    const now = new Date();
+    const year = now.getUTCFullYear();
+    const month = now.getUTCMonth();
+    
+    const firstDay = new Date(Date.UTC(year, month, 1));
+    
+    const startDate = firstDay.toISOString().replace(/\.\d{3}Z$/, '+00:00');
+    const endDate = now.toISOString().replace(/\.\d{3}Z$/, '+00:00');
+    
+    return { startDate, endDate };
+}
+
+// Calculate previous month boundaries in UTC
+function getPreviousMonthDates() {
+    const now = new Date();
+    const year = now.getUTCFullYear();
+    const month = now.getUTCMonth();
+    
+    // Handle year transition
+    const prevMonth = month === 0 ? 11 : month - 1;
+    const prevYear = month === 0 ? year - 1 : year;
+    
+    const firstDay = new Date(Date.UTC(prevYear, prevMonth, 1));
+    const lastDay = new Date(Date.UTC(prevYear, prevMonth + 1, 0));
+    
+    const startDate = firstDay.toISOString().replace(/\.\d{3}Z$/, '+00:00');
+    const endDate = lastDay.toISOString().replace(/T[\d:]+\.\d{3}Z$/, 'T23:59:59+00:00');
+    
+    return { startDate, endDate };
+}
+
+// Format month name for display
+function getMonthDisplayName(year, month) {
+    const date = new Date(Date.UTC(year, month, 1));
+    return date.toLocaleDateString('en-US', { month: 'long', year: 'numeric', timeZone: 'UTC' });
+}
+
 async function delay(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
 }
@@ -59,19 +98,6 @@ function generateKey(name) {
     return crypto.createHash('sha256').update(normalized).digest('hex');
 }
 
-// Change start and end dates
-// Only uncomment for leaderboard screenshots
-// const startDate = "2025-05-01T00:00:00+00:00";
-// const endDate = "2025-05-31T23:59:59+00:00";
-
-function formatDateToBeginningOfMonth(date) {
-    const year = date.getFullYear();
-    const month = date.getMonth() + 1; // getMonth() is zero-indexed
-
-    return `${year}-${month.toString().padStart(2, '0')}-01T00:00:00+00:00`;
-}
-
-const formattedDate = formatDateToBeginningOfMonth(date);
 
 async function getProjectMembers() {
     try {
@@ -97,7 +123,7 @@ async function getProjectMembers() {
 
 
 
-async function generateMonthlyReport() {
+async function generateMonthlyReport(startDate, endDate) {
     try {
         const response = await makeRequest('post', `${CONFIG.CROWDIN_API_ENDPOINT}/projects/${CONFIG.CROWDIN_PROJECT_ID}/reports`, {
             data: {
@@ -110,7 +136,7 @@ async function generateMonthlyReport() {
         });
         return response.data.data.identifier;
     } catch (error) {
-        console.error('Error in generateReport:', error);
+        console.error('Error in generateMonthlyReport:', error);
         throw error;
     }
 }
@@ -198,9 +224,16 @@ async function processCsvData(csvData, membersMapping, blacklistedContributors) 
     });
 }
 
-async function saveDataToJson(data, filePath) {
+async function saveDataToJson(data, filePath, metadata = {}) {
     try {
-        await fs.writeFile(filePath, JSON.stringify(data, null, 2), 'utf8');
+        const output = {
+            metadata: {
+                generatedAt: new Date().toISOString(),
+                ...metadata
+            },
+            data: data
+        };
+        await fs.writeFile(filePath, JSON.stringify(output, null, 2), 'utf8');
     } catch (error) {
         console.error('Error in saveDataToJson:', error);
         throw error;
@@ -214,19 +247,52 @@ async function saveDataToJson(data, filePath) {
         const blacklistedContributors = await loadBlacklistedContributors();
         const membersMapping = await getProjectMembers();
 
+        // Get date ranges
+        const currentMonthDates = getCurrentMonthDates();
+        const previousMonthDates = getPreviousMonthDates();
+        
+        // Get current date info for display names
+        const now = new Date();
+        const currentYear = now.getUTCFullYear();
+        const currentMonth = now.getUTCMonth();
+        const prevMonth = currentMonth === 0 ? 11 : currentMonth - 1;
+        const prevYear = currentMonth === 0 ? currentYear - 1 : currentYear;
+
         // Generating and processing the all-time report
         const allTimeReportIdentifier = await generateAllTimeReport();
         const allTimeDownloadUrl = await downloadReport(allTimeReportIdentifier);
         const allTimeCsvDataResponse = await makeRequest('get', allTimeDownloadUrl);
         const allTimeLeaderboardData = await processCsvData(allTimeCsvDataResponse.data, membersMapping, blacklistedContributors);
-        await saveDataToJson(allTimeLeaderboardData, `${CONFIG.LEADERBOARD_FILE}.json`); // Save the all-time data
+        await saveDataToJson(allTimeLeaderboardData, `${CONFIG.LEADERBOARD_FILE}.json`, {
+            period: 'All Time',
+            description: 'All time contributions',
+            startDate: '2023-07-28T00:00:00+00:00', // Project start date
+            endDate: now.toISOString().replace(/\.\d{3}Z$/, '+00:00')
+        });
 
-        // Generating and processing the monthly report
-        const monthlyReportIdentifier = await generateMonthlyReport();
-        const monthlyDownloadUrl = await downloadReport(monthlyReportIdentifier);
-        const monthlyCsvDataResponse = await makeRequest('get', monthlyDownloadUrl);
-        const monthlyLeaderboardData = await processCsvData(monthlyCsvDataResponse.data, membersMapping, blacklistedContributors);
-        await saveDataToJson(monthlyLeaderboardData, `${CONFIG.LEADERBOARD_FILE}-monthly.json`); // Save the monthly data
+        // Generating and processing the current month report
+        const currentMonthReportIdentifier = await generateMonthlyReport(currentMonthDates.startDate, currentMonthDates.endDate);
+        const currentMonthDownloadUrl = await downloadReport(currentMonthReportIdentifier);
+        const currentMonthCsvDataResponse = await makeRequest('get', currentMonthDownloadUrl);
+        const currentMonthLeaderboardData = await processCsvData(currentMonthCsvDataResponse.data, membersMapping, blacklistedContributors);
+        await saveDataToJson(currentMonthLeaderboardData, `${CONFIG.LEADERBOARD_FILE}-current-month.json`, {
+            period: getMonthDisplayName(currentYear, currentMonth),
+            startDate: currentMonthDates.startDate,
+            endDate: currentMonthDates.endDate,
+            description: 'Current month contributions'
+        });
+
+        // Generating and processing the previous month report
+        const previousMonthReportIdentifier = await generateMonthlyReport(previousMonthDates.startDate, previousMonthDates.endDate);
+        const previousMonthDownloadUrl = await downloadReport(previousMonthReportIdentifier);
+        const previousMonthCsvDataResponse = await makeRequest('get', previousMonthDownloadUrl);
+        const previousMonthLeaderboardData = await processCsvData(previousMonthCsvDataResponse.data, membersMapping, blacklistedContributors);
+        await saveDataToJson(previousMonthLeaderboardData, `${CONFIG.LEADERBOARD_FILE}-previous-month.json`, {
+            period: getMonthDisplayName(prevYear, prevMonth),
+            startDate: previousMonthDates.startDate,
+            endDate: previousMonthDates.endDate,
+            description: 'Previous month contributions'
+        });
 
     } catch (error) {
         console.error('Error in main function:', error);

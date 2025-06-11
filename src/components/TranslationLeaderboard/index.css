@@ -106,21 +106,61 @@ html[data-theme='dark'] .ranking {
   animation: glow-effect-dark 1.6s ease-in-out 1 forwards;
 }
 
+.leaderboard-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 1.5rem;
+}
+
 .leaderboard-buttons {
-  margin-bottom: 1rem;
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 0.75rem;
 }
 
 .leaderboard-buttons button {
-  margin-right: 0.5rem;
   padding: 0.5rem 1rem;
-  background-color: var(--ifm-color-primary);
-  color: white;
-  border: none;
+  background-color: transparent;
+  color: var(--ifm-color-primary);
+  border: 2px solid var(--ifm-color-primary);
   border-radius: 0.3rem;
   cursor: pointer;
-  transition: background-color 0.3s;
+  transition: all 0.3s;
+  font-weight: 500;
 }
 
 .leaderboard-buttons button:hover {
-  background-color: var(--ifm-color-primary-dark);
+  background-color: var(--ifm-color-primary-lightest);
+}
+
+.leaderboard-buttons button.active {
+  background-color: var(--ifm-color-primary);
+  color: white;
+}
+
+.date-range-display {
+  font-size: 0.9rem;
+  color: var(--ifm-color-emphasis-600);
+  font-style: italic;
+  text-align: center;
+}
+
+html[data-theme='dark'] .leaderboard-buttons button {
+  color: var(--ifm-color-primary-lighter);
+  border-color: var(--ifm-color-primary-lighter);
+}
+
+html[data-theme='dark'] .leaderboard-buttons button:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+html[data-theme='dark'] .leaderboard-buttons button.active {
+  background-color: var(--ifm-color-primary-lighter);
+  color: var(--ifm-background-color);
+}
+
+html[data-theme='dark'] .date-range-display {
+  color: var(--ifm-color-emphasis-500);
 }
