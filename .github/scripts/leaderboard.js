@@ -18,9 +18,7 @@ const CROWDIN_PERSONAL_TOKEN = process.env.CROWDIN_PERSONAL_TOKEN;
 if (!CROWDIN_PERSONAL_TOKEN) {
     console.error('CROWDIN_PERSONAL_TOKEN is not set');
     process.exit(1);
-}
-
-const date = new Date(); 
+} 
 
 // Calculate current month boundaries in UTC (from start of month to now)
 function getCurrentMonthDates() {
@@ -128,9 +126,7 @@ async function generateMonthlyReport(startDate, endDate) {
         const response = await makeRequest('post', `${CONFIG.CROWDIN_API_ENDPOINT}/projects/${CONFIG.CROWDIN_PROJECT_ID}/reports`, {
             data: {
                 name: "top-members",
-                // uncomment for screenshots only
-                // schema: { unit: "words", format: "csv", dateFrom: dateFrom, dateTo: endDate}
-                schema: { unit: "words", format: "csv", dateFrom: formattedDate}
+                schema: { unit: "words", format: "csv", dateFrom: startDate, dateTo: endDate }
             },
             headers: { 'Authorization': `Bearer ${CROWDIN_PERSONAL_TOKEN}`, 'Content-Type': 'application/json' }
         });
@@ -152,7 +148,7 @@ async function generateAllTimeReport() {
         });
         return response.data.data.identifier;
     } catch (error) {
-        console.error('Error in generateReport:', error);
+        console.error('Error in generateAllTimeReport:', error);
         throw error;
     }
 }
@@ -209,8 +205,10 @@ async function processCsvData(csvData, membersMapping, blacklistedContributors) 
                     if (membersMapping[key]) {
                         Object.assign(record, membersMapping[key]);
                     }
-                    const isBlacklisted = blacklistedContributors.has(record.originalName); // Check if originalName is blacklisted
-                    if(isBlacklisted) console.log('Filtered out blacklisted contributor:', record.originalName); // Log if a blacklisted contributor is filtered out
+                    // Use the extracted username if originalName is not available
+                    const nameToCheck = record.originalName || usernameFromCsv;
+                    const isBlacklisted = blacklistedContributors.has(nameToCheck);
+                    if(isBlacklisted) console.log('Filtered out blacklisted contributor:', nameToCheck);
                     return !isBlacklisted;
                 });
                 resolve(filteredRecords);
