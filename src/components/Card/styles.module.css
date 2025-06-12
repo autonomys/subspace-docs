@@ -1,0 +1,242 @@
+.cardSection {
+  margin-bottom: 3rem;
+  scroll-margin-top: calc(var(--ifm-navbar-height) + 1rem);
+}
+
+.sectionTitle {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid var(--ifm-color-emphasis-200);
+  color: var(--ifm-color-primary);
+  font-size: 1.75rem;
+  font-weight: 600;
+}
+
+.sectionIcon {
+  display: inline-flex;
+  font-size: 1.5rem;
+}
+
+.cardList {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.cardItem {
+  background: var(--ifm-background-surface-color);
+  border: 1px solid var(--ifm-color-emphasis-200);
+  border-radius: 8px;
+  padding: 0;
+  transition: all 0.2s ease;
+  overflow: hidden;
+}
+
+.cardItem:hover {
+  border-color: var(--ifm-color-primary-light);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+[data-theme='dark'] .cardItem:hover {
+  box-shadow: 0 2px 8px rgba(255, 255, 255, 0.1);
+}
+
+/* Dark theme header adjustments */
+[data-theme='dark'] .titleWrapper {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+[data-theme='dark'] .lastUpdated {
+  background: rgba(255, 255, 255, 0.02);
+}
+
+/* Highlight when targeted via anchor */
+.cardItem:target-within,
+.title:target {
+  animation: highlight 2s ease-in-out;
+}
+
+@keyframes highlight {
+  0%, 100% {
+    background-color: transparent;
+  }
+  20%, 80% {
+    background-color: var(--ifm-color-primary-lightest);
+  }
+}
+
+.titleWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1.25rem 1.5rem;
+  background: rgba(0, 0, 0, 0.03);
+  border-bottom: 1px solid var(--ifm-color-emphasis-200);
+}
+
+.title {
+  margin: 0;
+  color: var(--ifm-heading-color);
+  font-size: 1.125rem;
+  font-weight: 600;
+  line-height: 1.4;
+  scroll-margin-top: calc(var(--ifm-navbar-height) + 1rem);
+  flex: 1;
+}
+
+.shareButton {
+  background: var(--ifm-background-surface-color);
+  border: 1px solid var(--ifm-color-emphasis-200);
+  border-radius: 6px;
+  padding: 0.375rem 0.75rem;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--ifm-color-content-secondary);
+  font-size: 0.875rem;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+  position: relative;
+}
+
+.shareButton:hover {
+  border-color: var(--ifm-color-primary);
+  color: var(--ifm-color-primary);
+  background: var(--ifm-color-primary-lightest);
+}
+
+.shareButton:active {
+  transform: scale(0.95);
+}
+
+.shareIcon {
+  width: 16px !important;
+  height: 16px !important;
+}
+
+.copiedText {
+  font-size: 0.75rem;
+  color: var(--ifm-color-success);
+  font-weight: 600;
+}
+
+.content {
+  color: var(--ifm-color-content-secondary);
+  line-height: 1.6;
+  padding: 1.5rem;
+}
+
+.content:last-child {
+  padding-bottom: 1.5rem;
+}
+
+.content a {
+  color: var(--ifm-color-primary);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.content a:hover {
+  text-decoration: underline;
+}
+
+
+.content code {
+  background: var(--ifm-code-background);
+  padding: 0.125rem 0.375rem;
+  border-radius: 4px;
+  font-size: 0.875rem;
+}
+
+.content pre {
+  margin-top: 0.5rem;
+}
+
+/* Tab styles within FAQ items */
+.content :global(.tabs-container) {
+  margin-top: 1rem;
+}
+
+.content :global(.tabs) {
+  border-bottom: 2px solid var(--ifm-color-emphasis-200);
+}
+
+.content :global(.tabs__item) {
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+  border-bottom: 2px solid transparent;
+  margin-bottom: -2px;
+}
+
+.content :global(.tabs__item--active) {
+  border-bottom-color: var(--ifm-color-primary);
+  color: var(--ifm-color-primary);
+}
+
+.content :global(.tabs__content) {
+  padding: 1rem 0;
+}
+
+.content :global(.tabs__content) h4 {
+  margin-top: 0;
+  margin-bottom: 0.75rem;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--ifm-color-content);
+}
+
+.content :global(.tabs__content) p {
+  margin-bottom: 1rem;
+}
+
+.lastUpdated {
+  padding: 0.75rem 1.5rem;
+  background: rgba(0, 0, 0, 0.02);
+  border-top: 1px solid var(--ifm-color-emphasis-100);
+  font-size: 0.75rem;
+  color: var(--ifm-color-content-secondary);
+  opacity: 0.7;
+  text-align: right;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .sectionTitle {
+    font-size: 1.5rem;
+  }
+  
+  .title {
+    font-size: 1rem;
+  }
+  
+  .titleWrapper {
+    padding: 1rem 1.25rem;
+  }
+  
+  .content {
+    padding: 1.25rem;
+  }
+  
+  .lastUpdated {
+    padding: 0.5rem 1.25rem;
+  }
+  
+  .shareButton {
+    padding: 0.25rem 0.5rem;
+    font-size: 0.75rem;
+  }
+  
+  .shareIcon {
+    width: 14px !important;
+    height: 14px !important;
+  }
+  
+  .copiedText {
+    display: none;
+  }
+}

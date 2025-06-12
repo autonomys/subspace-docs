@@ -15,7 +15,7 @@ keywords:
 
 ### You Rock!
 
-First off, thank you for considering contributing to the Autonomys Network. It's through the amazing collaboration of people like yourself that truly make the open source community amazing. ❤️
+First off, thank you for considering contributing to the Autonomys Network. It's through the amazing collaboration of people like yourself that truly make the open source community amazing.
 
 ### Help Us Help You Help Us!
 
@@ -41,7 +41,10 @@ Please refer to our [Code of Conduct](/participate/contribute/code-of-conduct).
 ## Simple Fix
 
 Please follow this pathway for *minor* contributions such as spelling errors, typos, rewording, etc. 
-> If you are adding entirely new pages, features, etc, then please refer to the `Advanced` portion of this section.
+
+:::info For Major Contributions
+If you are adding entirely new pages, features, etc, then please refer to the [Advanced](#advanced-fix) portion of this section.
+:::
 
 1. Go to the [Autonomys Documentation](https://docs.autonomys.xyz), and find the page that you would like to change.
 2. Scroll to the bottom and click `Edit this page`.
@@ -49,16 +52,17 @@ Please follow this pathway for *minor* contributions such as spelling errors, ty
 4. Once you are satisfied with your changes, click the ‘Commit changes…’ button in the top right, fill Commit message and Extended description.
 5. Click `Create Pull Request`
 
-> 💡 **Tip:** Submitting a change will create a new branch in your newly created fork (`<your_github_name>/subspace-docs`), so you can send a pull request.  
-> Sending a PR through the website is simpler but has it's limitations.
+:::tip GitHub Web Editor
+When you submit changes through the web editor, GitHub automatically creates a fork of the repository under your account `<your_github_name>/subspace-docs` and opens a pull request. While this method is convenient for quick edits, it has limitations for more complex contributions.
+:::
 
 
-🎉Congratulations! You have just submitted your first pull request! 
+Congratulations! You have just submitted your first pull request! 
 *Please provide some time for a maintainer to view your pull request and approve it, or request adjustments.*
 
 ## Never contributed before?
 
-No worries! We all start somewhere. 🚀 There are several videos and resources online to show various ways to use GitHub.
+No worries! We all start somewhere. There are several videos and resources online to show various ways to use GitHub.
 Check out some of these amazing guides to help get you familiar with GitHub and contributing.
 - [First Contributions - Terminal](https://github.com/firstcontributions/first-contributions)
 - [First Contributions - GitHub Desktop](https://github.com/firstcontributions/first-contributions/blob/master/gui-tool-tutorials/github-desktop-tutorial.md)

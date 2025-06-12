@@ -1,107 +1,178 @@
 ---
 title: Frequently Asked Questions
 sidebar_position: 3
-toc_min_heading_level: 2
-toc_max_heading_level: 4
-description: Find answers to common questions about the Autonomys Network.
+toc_min_heading_level: 5
+toc_max_heading_level: 6
+description: Frequently asked questions about farming, staking, and network operations.
 keywords:
   - FAQ
+  - Frequently asked questions
+  - Farming rewards
+  - Hardware requirements
+  - Network statistics
+  - RPC endpoints
+  - Token transfers
+  - Plotting time
+  - Port configuration
+  - Mainnet
+  - Testnet
+  - Autonomys Network
 ---
 
 import Link from '@docusaurus/Link';
 import styles from '@site/src/pages/index.module.css';
+import Icon from '@site/src/components/Icon';
+import { ICONS } from '@site/src/constants';
+import { CardSection, CardItem } from '@site/src/components/Card';
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
 
 
-Find answers to the most frequently asked questions about the Autonomys Network, including running a farm on the Subspace protocol.
+Welcome to the Autonomys Network FAQ! This comprehensive guide addresses the most common questions from our community, covering everything from network fundamentals to practical farming operations.
 
-## Network<a id="network"></a>
----
+## Quick Navigation
 
-### How large is the network? {#network-size}
-📝 Network stats are available at the top of the [Astral Block Explorer](https://astral.autonomys.xyz/).  
-<small><sub>📅 Last Updated: 2025-01-25</sub></small>
+- **[Network](#network)** - Learn about network statistics, RPC endpoints, token information, and mainnet milestones
+- **[Farming](#farming)** - Get answers about hardware requirements, plotting times, port configuration, and earning rewards
 
-### What are the current RPC endpoints? {#rpc-endpoints}
-<details>
-<summary>📝 RPC endpoints</summary>
-#### Consensus (mainnet)
-```
-    wss://rpc.mainnet.subspace.foundation/ws
-    wss://rpc-0.mainnet.autonomys.xyz/ws 
-```
+We regularly update this FAQ based on community feedback and network developments.
 
-#### Consensus (Taurus Testnet)
-```
-    wss://rpc.taurus.autonomys.xyz/ws
-```
+:::tip Need More Help?
+Can't find what you're looking for? Join our [Discord](https://autonomys.xyz/discord) community or visit the [Forum](https://forum.autonomys.xyz) for additional support.
+:::
 
-#### Auto EVM (Taurus Testnet)
-```
-    wss://auto-evm.taurus.autonomys.xyz/ws
-```
-</details>
-<small><sub>📅 Last Updated: 2025-05-30</sub></small>
+<CardSection title="Network" icon={<Icon icon={ICONS.WEB} />} id="network">
+  <CardItem 
+    title="How large is the network?" 
+    id="network-size"
+    lastUpdated="2025-01-25"
+  >
+    Network stats are available at the top of the <Link to="https://astral.autonomys.xyz/">Astral Block Explorer</Link>.
+  </CardItem>
 
-### What happened to testnet tokens? {#testnet-tokens}
-📝 The testnet tokens (tSSC) earned during the various incentivized Gemini testnet phases were converted to mainnet tokens (AI3) at the time of mainnet launch, and this conversion was included in the genesis block. The [Astral Testnet Rewards Checker](https://astral.autonomys.xyz/mainnet/testnet-rewards) allows you to see how much AI3 you were rewarded, proportional to your participation in the different testnet phases.  
-<small><sub>📅 Last Updated: 2025-05-30</sub></small>
+  <CardItem 
+    title="What are the current RPC endpoints?" 
+    id="rpc-endpoints"
+    lastUpdated="2025-05-30"
+  >
+    <Tabs>
+      <TabItem value="mainnet" label="Mainnet" default>
+        <h4>Consensus</h4>
+        ```
+        wss://rpc.mainnet.subspace.foundation/ws
+        wss://rpc-0.mainnet.autonomys.xyz/ws
+        ```
+      </TabItem>
+      
+      <TabItem value="taurus" label="Taurus Testnet">
+        <h4>Consensus</h4>
+        ```
+        wss://rpc.taurus.autonomys.xyz/ws
+        ```
+        
+        <h4>Auto EVM</h4>
+        ```
+        wss://auto-evm.taurus.autonomys.xyz/ws
+        ```
+      </TabItem>
+    </Tabs>
+  </CardItem>
 
-### When TGE? {#tge}
-📝 Please see the [Mainnet Phase 2 Roadmap](https://forum.autonomys.xyz/t/4831) for more details.  
-<small><sub>📅 Last Updated: 2025-05-30</sub></small>
+  <CardItem 
+    title="What happened to testnet tokens?" 
+    id="testnet-tokens"
+    lastUpdated="2025-05-30"
+  >
+    The testnet tokens (tSSC) earned during the various incentivized Gemini testnet phases were converted to mainnet tokens (AI3) at the time of mainnet launch, and this conversion was included in the genesis block. The <Link to="https://astral.autonomys.xyz/mainnet/testnet-rewards">Astral Testnet Rewards Checker</Link> allows you to see how much AI3 you were rewarded, proportional to your participation in the different testnet phases.
+  </CardItem>
 
-### When will mainnet launch? {#mainnet-launch}
-📝 Mainnet launched on November 6, 2024.  
-<small><sub>📅 Last Updated: 2025-05-30</sub></small>
+  <CardItem 
+    title="When TGE?" 
+    id="tge"
+    lastUpdated="2025-05-30"
+  >
+    Please see the <Link to="https://forum.autonomys.xyz/t/4831">Mainnet Phase 2 Roadmap</Link> for more details.
+  </CardItem>
 
-### When will token transfers be enabled? {#token-transfers}
-📝 Token transfers will be enabled in Phase 2 of mainnet, which will begin once all milestones are met. Please see the [Mainnet Phase 2 Roadmap](https://forum.autonomys.xyz/t/4831) for more details.  
-<small><sub>📅 Last Updated: 2025-05-30</sub></small>
+  <CardItem 
+    title="When will mainnet launch?" 
+    id="mainnet-launch"
+    lastUpdated="2025-05-30"
+  >
+    Mainnet launched on November 6, 2024.
+  </CardItem>
 
-## Farming<a id="farming"></a>
----
+  <CardItem 
+    title="When will token transfers be enabled?" 
+    id="token-transfers"
+    lastUpdated="2025-05-30"
+  >
+    Token transfers will be enabled in Phase 2 of mainnet, which will begin once all milestones are met. Please see the <Link to="https://forum.autonomys.xyz/t/4831">Mainnet Phase 2 Roadmap</Link> for more details.
+  </CardItem>
+</CardSection>
 
-### How do you change the default ports? {#change-default-ports}
+<CardSection title="Farming" icon={<Icon icon={ICONS.FARMER} />} id="farming">
 
-📝 If you need to change the default ports for the farmer and node, whether to run multiple instances on the same local network or to operate both the mainnet and the Taurus testnet at the same time, you must configure them to use unique ports.
+  <CardItem 
+    title="How do you change the default ports?" 
+    id="change-default-ports"
+    lastUpdated="2025-02-03"
+  >
+    If you need to change the default ports for the farmer and node, whether to run multiple instances on the same local network or to operate both the mainnet and the Taurus testnet at the same time, you must configure them to use unique ports.
+    
+    <Tabs>
+      <TabItem value="cli" label="CLI" default>
+        <p>Use the following parameters to assign new ports, ensuring they do not conflict with existing ones on the network:</p>
+        
+        <h4>Node</h4>
+        ```shell
+        listen-on "/ip4/0.0.0.0/tcp/30333"  
+        dsn-listen-on "/ip4/0.0.0.0/tcp/30433"  
+        ```
+        
+        <h4>Farmer</h4>
+        ```shell
+        listen-on "/ip4/0.0.0.0/tcp/30533"  
+        ```
+      </TabItem>
+      
+      <TabItem value="space-acres" label="Space Acres">
+        <p>Open the <strong>Hamburger Menu</strong>, select <strong>Change configuration</strong>, then go to <strong>Advanced configuration</strong> to modify the port settings.</p>
+      </TabItem>
+    </Tabs>
+    
+    <p>For more details, including steps to enable port forwarding, refer to the <Link to="/farming/guides/port-config">Ports to Forward & Firewall Access</Link> guide.</p>
+  </CardItem>
 
-<details>
-<summary>CLI</summary>
+  <CardItem 
+    title="How long will it take to earn rewards?" 
+    id="reward-time"
+    lastUpdated="2025-01-25"
+  >
+    Rewards are earned proportionally to the amount of storage you have pledged to the network. While there is a luck factor involved, you can estimate the time between wins using the <Link to="https://ai3.farm/resources/rewards">AI3 Rewards Calculator</Link>. This is a community provided tool.
+  </CardItem>
 
-Use the following parameters to assign new ports, ensuring they do not conflict with existing ones on the network:
+  <CardItem 
+    title="How long will it take to plot my farm?" 
+    id="plotting-time"
+    lastUpdated="2025-01-25"
+  >
+    The initial plotting time depends on your hardware. Using a <Link to="/farming/guides/gpu-plotter">supported GPU</Link> can significantly speed up the plotting process while consuming less power. However, CPU plotting is also supported if you prefer or don't have access to a compatible GPU. Once the initial plotting is complete, ongoing replotting (as sectors expire) will take less time. You can check out the <Link to="https://ai3.farm/resources/plotting-speed">plotting speed results</Link> from community members to get an idea of what to expect based on different hardware setups.
+  </CardItem>
 
-<h2>Node</h2>
-```shell
-listen-on "/ip4/0.0.0.0/tcp/30333"  
-dsn-listen-on "/ip4/0.0.0.0/tcp/30433"  
-```
+  <CardItem 
+    title="What are the hardware requirements?" 
+    id="minimum-requirements"
+    lastUpdated="2025-01-25"
+  >
+    Please refer to the <Link to="/farming/intro">Getting Started Guide</Link> for a list of minimum hardware and operating system requirements.
+  </CardItem>
 
-<h2>Farmer</h2>
-```shell
-listen-on "/ip4/0.0.0.0/tcp/30533"  
-```
-</details>
-
-<details>
-<summary>Space Acres</summary>
-
-Open the **Hamburger Menu**, select **Change configuration**, then go to **Advanced configuration** to modify the port settings.
-</details>
-For more details, including steps to enable port forwarding, refer to the [Ports to Forward & Firewall Access](/farming/guides/port-config) guide.  
-<small><sub>📅 Last Updated: 2025-02-03</sub></small>
-
-### How long will it take to earn rewards? {#reward-time}
-📝 Rewards are earned proportionally to the amount of storage you have pledged to the network. While there is a luck factor involved, you can estimate the time between wins using the [AI3 Rewards Calculator](https://ai3.farm/resources/rewards). This is a community provided tool.  
-<small><sub>📅 Last Updated: 2025-01-25</sub></small>
-
-### How long will it take to plot my farm? {#plotting-time}
-📝 The initial plotting time depends on your hardware. Using a [supported GPU](/farming/guides/gpu-plotter) can significantly speed up the plotting process while consuming less power. However, CPU plotting is also supported if you prefer or don't have access to a compatible GPU. Once the initial plotting is complete, ongoing replotting (as sectors expire) will take less time. You can check out the [plotting speed results](https://ai3.farm/resources/plotting-speed) from community members to get an idea of what to expect based on different hardware setups.  
-<small><sub>📅 Last Updated: 2025-01-25</sub></small>
-
-### What are the hardware requirements? {#minimum-requirements}
-📝 Please refer to the [Getting Started Guide](/farming/intro) for a list of minimum hardware and operating system requirements.  
-<small><sub>📅 Last Updated: 2025-01-25</sub></small>
-
-### What GPUs are supported? {#supported-gpus}
-📝 Farming does not require or support the use of GPUs. For a list of compatible GPUs for plotting and replotting, please refer to the [GPU Plotter](/farming/guides/gpu-plotter) guide.  
-<small><sub>📅 Last Updated: 2025-01-25</sub></small>
+  <CardItem 
+    title="What GPUs are supported?" 
+    id="supported-gpus"
+    lastUpdated="2025-01-25"
+  >
+    Farming does not require or support the use of GPUs. For a list of compatible GPUs for plotting and replotting, please refer to the <Link to="/farming/guides/gpu-plotter">GPU Plotter</Link> guide.
+  </CardItem>
+</CardSection>

@@ -1,14 +1,12 @@
 import React from 'react';
 import MDXComponents from '@theme-original/MDXComponents';
 import Icon from '@site/src/components/Icon';
-import FeaturedBadge from '@site/src/components/FeaturedBadge';
-import FeaturedIcon from '@site/src/components/FeaturedIcon';
-import TestnetBadge from '@site/src/components/TestnetBadge';
+import Badge from '@site/src/components/Badge';
+import TabLabel from '@site/src/components/TabLabel';
 
 export default {
   ...MDXComponents,
   Icon,
-  FeaturedBadge,
-  FeaturedIcon,
-  TestnetBadge,
+  Badge,
+  TabLabel,
 };

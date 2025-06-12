@@ -1,6 +1,7 @@
 import React from 'react';
 import Link from '@theme-original/DocSidebarItem/Link';
 import Icon from '@site/src/components/Icon';
+import { ICONS } from '@site/src/constants';
 
 export default function LinkWrapper(props) {
   // Check if this page is featured or testnet (from sidebar_custom_props in frontmatter)
@@ -11,9 +12,9 @@ export default function LinkWrapper(props) {
     // Determine which icon to use
     let iconElement = null;
     if (isTestnet) {
-      iconElement = <Icon icon="mingcute:taurus-fill" className="icon-testnet" />;
+      iconElement = <Icon icon={ICONS.TESTNET} className="icon-testnet" />;
     } else if (isFeatured) {
-      iconElement = <Icon icon="material-symbols-light:star-shine" className="icon-featured" />;
+      iconElement = <Icon icon={ICONS.RECOMMENDED} className="icon-featured" />;
     }
     
     // Clone the item and modify the label to include the appropriate icon

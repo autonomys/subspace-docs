@@ -19,6 +19,8 @@ keywords:
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
+import Icon from '@site/src/components/Icon';
+import { ICONS } from '@site/src/constants';
 
 ## Overview
 
@@ -46,46 +48,46 @@ For security reasons, RPC ports 9944 and 9945 should never be exposed to the int
 
 <TabItem value="space-acres" label="Space Acres" default>
 
-| Port  | Protocol | ↪️ | 🛡️ | Component | Purpose  |
+| Port  | Protocol | <Icon icon={ICONS.PORT_FORWARD} /> | <Icon icon={ICONS.FIREWALL} /> | Component | Purpose  |
 |--|-- |--|--|--|--|
-| 30333 | TCP | ☑️ | ☑️ | Node (Consensus) | Facilitate block, transaction, and PoT gossip exchange. |
-| 30433 | TCP | ☑️ | ☑️ | Node (DSN) | Retrieve and serve pieces of data and metadata related to archival history from the P2P network. |
+| 30333 | TCP | <Icon icon={ICONS.CHECK} className="icon-check-mark" /> | <Icon icon={ICONS.CHECK} className="icon-check-mark" /> | Node (Consensus) | Facilitate block, transaction, and PoT gossip exchange. |
+| 30433 | TCP | <Icon icon={ICONS.CHECK} className="icon-check-mark" /> | <Icon icon={ICONS.CHECK} className="icon-check-mark" /> | Node (DSN) | Retrieve and serve pieces of data and metadata related to archival history from the P2P network. |
 
 </TabItem>
 
 <TabItem value="cli-farmer" label="CLI (Farmer)">
 
-| Port  | Protocol | ↪️ | 🛡️ | Component | Purpose  |
+| Port  | Protocol | <Icon icon={ICONS.PORT_FORWARD} /> | <Icon icon={ICONS.FIREWALL} /> | Component | Purpose  |
 |--|--|--|--|--|--|
-| 30333  | TCP | ☑️ | ☑️ | Node (Consensus) | Facilitate block, transaction, and PoT gossip exchange. |
-| 30433  | TCP | ☑️ | ☑️ | Node (DSN) | Retrieve and serve pieces of data and metadata related to archival history from the P2P network. |
-| 30533  | TCP | ☑️ | ☑️ | Farmer | Retrieve blockchain archival history. |
-| 9944   | TCP | ❌ | ☑️ | Node (Consensus RPC) | Required for farmer operation. |
+| 30333  | TCP | <Icon icon={ICONS.CHECK} className="icon-check-mark" /> | <Icon icon={ICONS.CHECK} className="icon-check-mark" /> | Node (Consensus) | Facilitate block, transaction, and PoT gossip exchange. |
+| 30433  | TCP | <Icon icon={ICONS.CHECK} className="icon-check-mark" /> | <Icon icon={ICONS.CHECK} className="icon-check-mark" /> | Node (DSN) | Retrieve and serve pieces of data and metadata related to archival history from the P2P network. |
+| 30533  | TCP | <Icon icon={ICONS.CHECK} className="icon-check-mark" /> | <Icon icon={ICONS.CHECK} className="icon-check-mark" /> | Farmer | Retrieve blockchain archival history. |
+| 9944   | TCP | <Icon icon={ICONS.CROSS} className="icon-cross-mark" /> | <Icon icon={ICONS.CHECK} className="icon-check-mark" /> | Node (Consensus RPC) | Required for farmer operation. |
 
 </TabItem>
 
 <TabItem value="cli-domain" label="CLI (Domain Operator)">
 
-| Port  | Protocol | ↪️ | 🛡️ | Component | Purpose  |
+| Port  | Protocol | <Icon icon={ICONS.PORT_FORWARD} /> | <Icon icon={ICONS.FIREWALL} /> | Component | Purpose  |
 |--|--|--|--|--|--|
-| 30333  | TCP | ☑️ | ☑️ | Node (Consensus) | Facilitate block, transaction, and PoT gossip exchange. |
-| 30334  | TCP | ☑️ | ☑️ | Node (Domain) | Essential for a domain node to maintain strong connectivity with the P2P network. |
-| 30433  | TCP | ☑️ | ☑️ | Node (DSN) | Retrieve and serve pieces of data and metadata related to archival history from the P2P network. |
+| 30333  | TCP | <Icon icon={ICONS.CHECK} className="icon-check-mark" /> | <Icon icon={ICONS.CHECK} className="icon-check-mark" /> | Node (Consensus) | Facilitate block, transaction, and PoT gossip exchange. |
+| 30334  | TCP | <Icon icon={ICONS.CHECK} className="icon-check-mark" /> | <Icon icon={ICONS.CHECK} className="icon-check-mark" /> | Node (Domain) | Essential for a domain node to maintain strong connectivity with the P2P network. |
+| 30433  | TCP | <Icon icon={ICONS.CHECK} className="icon-check-mark" /> | <Icon icon={ICONS.CHECK} className="icon-check-mark" /> | Node (DSN) | Retrieve and serve pieces of data and metadata related to archival history from the P2P network. |
 
 </TabItem>
 
 <TabItem value="rpc-server" label="RPC Server (Public)">
 
-| Port  | Protocol | ↪️ | 🛡️ | Component | Purpose  |
+| Port  | Protocol | <Icon icon={ICONS.PORT_FORWARD} /> | <Icon icon={ICONS.FIREWALL} /> | Component | Purpose  |
 |--|--|--|--|--|--|
-| 9944   | TCP | ☑️ | ☑️ | Node (Consensus RPC) | Enables transaction submissions via HTTP and WebSocket, supports slot challenges, and provides access to real-time and historical blockchain data for querying events, transactions, block contents, and chain state. |
-| 9945   | TCP | ☑️ | ☑️ | Node (Domain RPC) | Enables sending transactions, including deploying and calling smart contracts. |
+| 9944   | TCP | <Icon icon={ICONS.CHECK} className="icon-check-mark" /> | <Icon icon={ICONS.CHECK} className="icon-check-mark" /> | Node (Consensus RPC) | Enables transaction submissions via HTTP and WebSocket, supports slot challenges, and provides access to real-time and historical blockchain data for querying events, transactions, block contents, and chain state. |
+| 9945   | TCP | <Icon icon={ICONS.CHECK} className="icon-check-mark" /> | <Icon icon={ICONS.CHECK} className="icon-check-mark" /> | Node (Domain RPC) | Enables sending transactions, including deploying and calling smart contracts. |
 
 </TabItem>
 
 </Tabs>
 
-**Legend:** The ↪️ column indicates whether the port should be forwarded on the router, while the 🛡️ column specifies if inbound firewall access should be allowed through the operating system.
+**Legend:** The <Icon icon={ICONS.PORT_FORWARD} /> column indicates whether the port should be forwarded on the router, while the <Icon icon={ICONS.FIREWALL} /> column specifies if inbound firewall access should be allowed through the operating system.
 
 ## Steps to Forward Ports
 
@@ -136,7 +138,7 @@ For D-Link routers, port forwarding is done in the "Advanced" tab under "Port Fo
 ## Firewall Configuration
 
 <details open>
-<summary>🐧 Linux CLI (Farmer)</summary>
+<summary>Linux CLI (Farmer)</summary>
 
 If you are using Linux with UFW (Uncomplicated Firewall) enabled, you will need to allow traffic on the necessary ports to ensure your node and farmer can communicate properly. Use the following commands to update your firewall settings:
 
