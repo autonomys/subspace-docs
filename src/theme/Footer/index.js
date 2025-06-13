@@ -1,21 +1,18 @@
 import React from 'react';
 import Footer from '@theme-original/Footer';
 import Icon from '@site/src/components/Icon';
+import { ICONS } from '@site/src/constants';
 import Link from '@docusaurus/Link';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import styles from './styles.module.css';
 
-function FooterLink({to, href, label, icon, customIcon, ...props}) {
+function FooterLink({to, href, label, icon, ...props}) {
   const linkProps = to ? {to} : {href};
   const LinkComponent = to ? Link : 'a';
   
   return (
     <LinkComponent {...linkProps} className={styles.footerLink} {...props}>
-      {customIcon ? (
-        <span className={`${styles.footerIcon} ${styles[customIcon]}`} />
-      ) : (
-        icon && <Icon icon={icon} className={styles.footerIcon} />
-      )}
+      {icon && <Icon icon={icon} className={styles.footerIcon} />}
       <span>{label}</span>
     </LinkComponent>
   );
@@ -36,7 +33,7 @@ export default function FooterWrapper(props) {
               className={styles.logoImage}
             />
             <p className={styles.tagline}>
-              Building the foundation for a radically decentralized future
+              The Foundation Layer for AI3.0
             </p>
           </div>
           
@@ -45,7 +42,6 @@ export default function FooterWrapper(props) {
             {/* Ecosystem Section */}
             <div className={styles.footerSection}>
               <h3 className={styles.footerTitle}>
-                <Icon icon="mdi:web" className={styles.titleIcon} />
                 Ecosystem
               </h3>
               <ul className={styles.footerList}>
@@ -53,28 +49,28 @@ export default function FooterWrapper(props) {
                   <FooterLink 
                     href="https://autonomys.xyz" 
                     label="Official Website" 
-                    icon="token:autonomys"
+                    icon={ICONS.AUTONOMYS}
                   />
                 </li>
                 <li>
                   <FooterLink 
                     href="https://astral.autonomys.xyz" 
                     label="Block Explorer" 
-                    icon="mdi:cube-scan"
+                    icon={ICONS.EXPLORER}
                   />
                 </li>
                 <li>
                   <FooterLink 
                     href="https://academy.autonomys.xyz" 
                     label="Academy" 
-                    icon="mdi:school"
+                    icon={ICONS.ACADEMY}
                   />
                 </li>
                 <li>
                   <FooterLink 
                     href="https://develop.autonomys.xyz" 
                     label="Developer Hub" 
-                    icon="lineicons:dev"
+                    icon={ICONS.DEVELOPER}
                   />
                 </li>
               </ul>
@@ -83,7 +79,6 @@ export default function FooterWrapper(props) {
             {/* Documentation Section */}
             <div className={styles.footerSection}>
               <h3 className={styles.footerTitle}>
-                <Icon icon="mdi:book-open-variant" className={styles.titleIcon} />
                 Documentation
               </h3>
               <ul className={styles.footerList}>
@@ -91,28 +86,28 @@ export default function FooterWrapper(props) {
                   <FooterLink 
                     to="/farming/space-acres/install" 
                     label="Start Farming" 
-                    icon="mdi:tractor"
+                    icon={ICONS.FARMER}
                   />
                 </li>
                 <li>
                   <FooterLink 
                     to="/staking/stake" 
                     label="Start Staking" 
-                    icon="mdi:account-heart"
+                    icon={ICONS.NOMINATOR}
                   />
                 </li>
                 <li>
                   <FooterLink 
                     to="/staking/operator/register" 
                     label="Become Operator" 
-                    icon="mdi:server"
+                    icon={ICONS.OPERATOR}
                   />
                 </li>
                 <li>
                   <FooterLink 
                     to="/participate/contribute/intro" 
                     label="Contribute" 
-                    icon="material-symbols:partner-exchange"
+                    icon={ICONS.CONTRIBUTE}
                   />
                 </li>
               </ul>
@@ -121,7 +116,6 @@ export default function FooterWrapper(props) {
             {/* Community Section */}
             <div className={styles.footerSection}>
               <h3 className={styles.footerTitle}>
-                <Icon icon="mdi:account-group" className={styles.titleIcon} />
                 Community
               </h3>
               <ul className={styles.footerList}>
@@ -129,28 +123,28 @@ export default function FooterWrapper(props) {
                   <FooterLink 
                     href="https://autonomys.xyz/discord" 
                     label="Discord" 
-                    icon="mdi:discord"
+                    icon={ICONS.DISCORD}
                   />
                 </li>
                 <li>
                   <FooterLink 
                     href="https://t.me/subspace_network" 
                     label="Telegram" 
-                    icon="mdi:telegram"
+                    icon={ICONS.TELEGRAM}
                   />
                 </li>
                 <li>
                   <FooterLink 
                     href="https://forum.autonomys.xyz" 
                     label="Forum" 
-                    icon="mdi:forum"
+                    icon={ICONS.FORUM}
                   />
                 </li>
                 <li>
                   <FooterLink 
                     href="https://github.com/autonomys" 
                     label="GitHub" 
-                    icon="mdi:github"
+                    icon={ICONS.GITHUB}
                   />
                 </li>
               </ul>
@@ -159,7 +153,6 @@ export default function FooterWrapper(props) {
             {/* Social Section */}
             <div className={styles.footerSection}>
               <h3 className={styles.footerTitle}>
-                <Icon icon="mdi:share-variant" className={styles.titleIcon} />
                 Follow Us
               </h3>
               <ul className={styles.footerList}>
@@ -167,28 +160,28 @@ export default function FooterWrapper(props) {
                   <FooterLink 
                     href="https://x.com/AutonomysNet" 
                     label="X (Twitter)" 
-                    customIcon="xTwitterIcon"
+                    icon={ICONS.X_TWITTER}
                   />
                 </li>
                 <li>
                   <FooterLink 
                     href="https://www.youtube.com/@AutonomysNetwork" 
                     label="YouTube" 
-                    icon="mdi:youtube"
+                    icon={ICONS.YOUTUBE}
                   />
                 </li>
                 <li>
                   <FooterLink 
                     href="https://www.linkedin.com/company/autonomys" 
                     label="LinkedIn" 
-                    icon="mdi:linkedin"
+                    icon={ICONS.LINKEDIN}
                   />
                 </li>
                 <li>
                   <FooterLink 
                     href="https://medium.com/subspace-network" 
                     label="Medium" 
-                    icon="mdi:medium"
+                    icon={ICONS.MEDIUM}
                   />
                 </li>
               </ul>

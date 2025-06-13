@@ -19,6 +19,10 @@ import SourcePage from './platforms/_source.mdx';
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
+import Icon from '@site/src/components/Icon';
+import TabLabel from '@site/src/components/TabLabel';
+import { ICONS } from '@site/src/constants';
+import Badge from '@site/src/components/Badge';
 
 :::info Multiple Versions Available
 We offer several versions of our releases to accommodate different CPU architectures:
@@ -39,7 +43,7 @@ A complete list of parameters and their functions can be obtained using the `--h
 
 :::tip Substrate Address Needed
 
-To use this software, you need a Substrate wallet address. For assistance in creating a Substrate wallet, refer to our guides for ✨ [SubWallet](/wallets/subwallet) or [Polkadot.js](/wallets/polkadot).
+To use this software, you need a Substrate wallet address. You can use [Talisman](/wallets/talisman) <Badge variant="recommended" text="Recommended" /> or check out other compatible [wallets](/farming-&-staking/wallets).
 
 If you have a previous wallet address that starts with `st`, you can still use it, or you can transform it to the new `su` prefix. You can convert your existing wallet address using the tool available at [ss58.org](https://ss58.org). Previously, our testnets used the prefix `2254`, while the Taurus testnet and Autonomys mainnet use the prefix `6094`.
 
@@ -51,27 +55,27 @@ We’ll provide the files you need for your operating system:
 
 <Tabs groupId="OS">
 
-<TabItem value="linux" label="🐧 Ubuntu" default>
+<TabItem value="linux" label={<TabLabel icon={ICONS.UBUNTU}>Ubuntu</TabLabel>} default>
 <LinuxPage />
 </TabItem>
 
-<TabItem value="windows" label="🖼️ Windows">
+<TabItem value="windows" label={<TabLabel icon={ICONS.WINDOWS}>Windows</TabLabel>}>
 <WindowsPage />
 </TabItem>
 
-<TabItem value="macos" label="🍎 macOS">
+<TabItem value="macos" label={<TabLabel icon={ICONS.MACOS}>macOS</TabLabel>}>
 <MacOSPage />
 </TabItem>
 
-<TabItem value="systemd_service" label="🤖 Linux Service (SystemD)">
+<TabItem value="systemd_service" label={<TabLabel icon={ICONS.SERVICE}>Linux Service (SystemD)</TabLabel>}>
 <SystemDPage />
 </TabItem>
 
-<TabItem value="docker" label="🐳 Docker">
+<TabItem value="docker" label={<TabLabel icon={ICONS.DOCKER}>Docker</TabLabel>}>
 <DockerPage />
 </TabItem>
 
-<TabItem value="source" label="🛠️ Build from Source">
+<TabItem value="source" label={<TabLabel icon={ICONS.CODE}>Build from Source</TabLabel>}>
 <SourcePage />
 </TabItem>
 

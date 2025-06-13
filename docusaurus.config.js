@@ -279,16 +279,7 @@ const config = {
           {
             type: 'localeDropdown',
             position: 'right',
-            dropdownItemsAfter: [
-              {
-                type: 'html',
-                value: '<hr style="margin: 0.3rem 0;">',
-              },
-              {
-                href: '/participate/contribute/translate',
-                label: '🌏 Help Translate',
-              },
-            ],
+            dropdownItemsAfter: [],
           },
           {
             href: 'https://github.com/autonomys',

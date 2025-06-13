@@ -14,31 +14,30 @@ import TabItem from '@theme/TabItem';
 import CodeBlock from '@theme/CodeBlock';
 import Link from '@docusaurus/Link';
 import styles from '@site/src/pages/index.module.css';
+import Icon from '@site/src/components/Icon';
+import { ICONS } from '@site/src/constants';
+import Badge from '@site/src/components/Badge';
 
 import WindowsPage from '/docs/farming-&-staking/staking/operators/platforms/_windows.mdx';
 import MacOSPage from '/docs/farming-&-staking/staking/operators/platforms/_macos.mdx';
 import LinuxPage from '/docs/farming-&-staking/staking/operators/platforms/_linux.mdx';
 
-## Download Subspace Node
+## Download Subspace Node <Badge variant="testnet" text="Testnet" />
 
 Download `Subspace Node` for your respective operating system.
 
-:::info Taurus Network Only
-Currently, only running and registering an operator on the Taurus testnet is supported.
-:::
-
 <Tabs groupId="OS">
 
-<TabItem value="windows" label="🖼️ Windows" default>
+<TabItem value="linux" label={<><Icon icon={ICONS.UBUNTU} /> Ubuntu</>} default>
+<LinuxPage />
+</TabItem>
+
+<TabItem value="windows" label={<><Icon icon={ICONS.WINDOWS} /> Windows</>}>
 <WindowsPage />
 </TabItem>
 
-<TabItem value="macos" label="🍎macOS" default>
+<TabItem value="macos" label={<><Icon icon={ICONS.MACOS} /> macOS</>}>
 <MacOSPage />
-</TabItem>
-
-<TabItem value="linux" label="🐧Ubuntu">
-<LinuxPage />
 </TabItem>
 
 </Tabs>
@@ -53,7 +52,7 @@ Currently operators can only be registered on the Taurus network.
 Any account with the **minimum operator stake of 100 tAI3** can become an operator. 
 :::
 
-### Create operator key
+### Create operator key <Badge variant="testnet" text="Testnet" />
 
 An operator needs a key pair to participate in bundle production.
 
@@ -80,7 +79,7 @@ Be sure to record and securely store the printed seed phrase. If it is leaked or
 
 The keys were generated in the subfolder of `<BASE_PATH>/domains/<DOMAIN_ID>/keystore`. If you don't see the generated keypair in the subfolder, something went wrong. 
 
-### Start the domain operator node
+### Start the domain operator node <Badge variant="testnet" text="Testnet" />
 
 The domain operator node is running with an embedded consensus node, thus you need to specify the args for both the consensus node and the domain operator node:
 
@@ -111,37 +110,7 @@ You can ignore setting up `<OPERATOR_ID>` while you're syncing your node as you 
 
 <Tabs groupId="OS">
 
-<TabItem value="windows" label="🖼️ Windows" default>
-
-```powershell
-subspace-node-windows-x86_64-skylake-taurus-2025-may-27.exe run `
---chain taurus `
---name "<NAME>" `
---base-path "<BASE_PATH>" `
---sync full `
--- `
---domain-id "<DOMAIN_ID>" `
---operator-id "<OPERATOR_ID>"
-```
-
-</TabItem>
-
-<TabItem value="macos" label="🍎 macOS">
-
-```bash
-./subspace-node-macos-aarch64-taurus-2025-may-27 run \
---chain taurus \
---name "<NAME>" \
---base-path "<BASE_PATH>" \
---sync full \
--- \
---domain-id "<DOMAIN_ID>" \
---operator-id "<OPERATOR_ID>"
-```
-
-</TabItem>
-
-<TabItem value="linux" label="🐧 Ubuntu">
+<TabItem value="linux" label={<><Icon icon={ICONS.UBUNTU} /> Ubuntu</>} default>
 
 ```bash
 ./subspace-node-ubuntu-x86_64-skylake-taurus-2025-may-27 run \
@@ -156,7 +125,37 @@ subspace-node-windows-x86_64-skylake-taurus-2025-may-27.exe run `
 
 </TabItem>
 
-<TabItem value="docker" label="🐋 Docker">
+<TabItem value="windows" label={<><Icon icon={ICONS.WINDOWS} /> Windows</>}>
+
+```powershell
+subspace-node-windows-x86_64-skylake-taurus-2025-may-27.exe run `
+--chain taurus `
+--name "<NAME>" `
+--base-path "<BASE_PATH>" `
+--sync full `
+-- `
+--domain-id "<DOMAIN_ID>" `
+--operator-id "<OPERATOR_ID>"
+```
+
+</TabItem>
+
+<TabItem value="macos" label={<><Icon icon={ICONS.MACOS} /> macOS</>}>
+
+```bash
+./subspace-node-macos-aarch64-taurus-2025-may-27 run \
+--chain taurus \
+--name "<NAME>" \
+--base-path "<BASE_PATH>" \
+--sync full \
+-- \
+--domain-id "<DOMAIN_ID>" \
+--operator-id "<OPERATOR_ID>"
+```
+
+</TabItem>
+
+<TabItem value="docker" label={<><Icon icon={ICONS.DOCKER} /> Docker</>}>
 
 ```yaml
 services:
@@ -205,7 +204,7 @@ You should see the node start successfully and begin syncing.
 ![Staking-13](/img/doc-imgs/operators-staking/Staking-13.png)
 
 
-### Register an operator on domain
+### Register an operator on domain <Badge variant="testnet" text="Testnet" />
 
 :::info
 It's crucial to **fully sync** your node before registering as an operator. Please follow the commands in the ***Start the domain operator*** node section and only register as an operator once your node is fully synced. If many operators are registered but their nodes are still syncing or offline, it can adversely affect the speed of block production in the domain.

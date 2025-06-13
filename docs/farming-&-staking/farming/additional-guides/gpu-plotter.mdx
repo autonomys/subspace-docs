@@ -11,6 +11,9 @@ keywords:
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
+import Icon from '@site/src/components/Icon';
+import TabLabel from '@site/src/components/TabLabel';
+import { ICONS } from '@site/src/constants';
 
 Autonomys utilizes your drive storage, specifically SSD or NVMe drives, to store farms. After the plotting or replotting process is finished, your CPU then uses these farms to prove challenges. Farming is not particularly demanding on the CPU, enabling most modern processors to manage a substantial farm size. However, the farm creation process is highly resource intensive, which makes CPU plotting the main bottleneck.
 
@@ -20,13 +23,20 @@ Although GPU plotting is not mandatory, it provides enhanced energy efficiency a
 
 ## Platform Compatibility
 
-| Platform | 🐧 Linux | 🪟 Windows | Nvidia | AMD | Intel |
+| Platform | <Icon icon={ICONS.UBUNTU} /> Ubuntu | <Icon icon={ICONS.WINDOWS} /> Windows | <Icon icon={ICONS.NVIDIA} /> Nvidia | <Icon icon={ICONS.AMD} /> AMD | Intel |
 |---|:-:|:-:|:-:|:-:|:-:|
-| [CLI](https://github.com/autonomys/subspace/releases) | ✅ | ✅ |✅ | 🛠️ | 🔮 |
-| [Space Acres](https://github.com/autonomys/space-acres/releases) | ✅ | ✅ | ✅ | 🔜 | 🔮 |
+| [CLI](https://github.com/autonomys/subspace/releases) | <Icon icon={ICONS.CHECK} className="icon-check-mark" /> | <Icon icon={ICONS.CHECK} className="icon-check-mark" /> |<Icon icon={ICONS.CHECK} className="icon-check-mark" /> | <Icon icon={ICONS.LIMITED} className="icon-limited" /> | <Icon icon={ICONS.FUTURE} className="icon-future" /> |
+| [Space Acres](https://github.com/autonomys/space-acres/releases) | <Icon icon={ICONS.CHECK} className="icon-check-mark" /> | <Icon icon={ICONS.CHECK} className="icon-check-mark" /> | <Icon icon={ICONS.CHECK} className="icon-check-mark" /> | <Icon icon={ICONS.FUTURE} className="icon-future" /> | <Icon icon={ICONS.FUTURE} className="icon-future" /> |
 
 <div className="small-print">
-  🛠️ Limited AMD Support for **Linux only** is available in recent test builds. The most recent test builds are linked on the [forum](https://forum.autonomys.xyz/t/rocm-gpu-support-amd/4440)
+  <Icon icon={ICONS.CHECK} className="icon-check-mark" /> Supported
+  &nbsp;&nbsp;|&nbsp;&nbsp;
+  <Icon icon={ICONS.LIMITED} className="icon-limited" /> Limited Support
+  &nbsp;&nbsp;|&nbsp;&nbsp;
+  <Icon icon={ICONS.FUTURE} className="icon-future" /> Possible Future Support
+
+  <br/><br/>
+  <Icon icon={ICONS.LIMITED} className="icon-limited" /> Limited AMD Support for **Ubuntu only** is available in recent test builds. The most recent test builds are linked on the [forum](https://forum.autonomys.xyz/t/rocm-gpu-support-amd/4440)
 
   See Discord [farmer-chat](https://discord.com/channels/864285291518361610/1062507270539321485) channel for limited support.
 </div>
@@ -35,12 +45,12 @@ Although GPU plotting is not mandatory, it provides enhanced energy efficiency a
 
 <Tabs queryString="brand">
 
-<TabItem value="nvidia" label="Nvidia" queryString="nvidia" default>
+<TabItem value="nvidia" label={<><Icon icon={ICONS.NVIDIA} /> Nvidia</>} default>
 
 | Series/Model | Supported |
 |---|:--:|
-| RTX 20xx and Newer | ✅ |
-| GTX 16 Series | ✅ |
+| RTX 20xx and Newer | <Icon icon={ICONS.CHECK} className="icon-check-mark" /> |
+| GTX 16 Series | <Icon icon={ICONS.CHECK} className="icon-check-mark" /> |
 
 
 <div className="small-print">
@@ -49,7 +59,7 @@ Although GPU plotting is not mandatory, it provides enhanced energy efficiency a
 
 </TabItem>
 
-<TabItem value="amd" label="AMD">
+<TabItem value="amd" label={<><Icon icon={ICONS.AMD} /> AMD</>}>
 
 *There are many challenges to overcome regarding AMD ROCm support. There is much more information on this topic on the [forum](https://forum.autonomys.xyz/t/rocm-gpu-support-amd/4440).*
 
@@ -57,21 +67,21 @@ Although GPU plotting is not mandatory, it provides enhanced energy efficiency a
 
 | Series/Model | Ubuntu |Windows |
 |---|:---:|:---:|
-| RX 7900 XTX | ✅ | ❌ |
-| RX 7600 XT | ✅ | ❌ |
-| RX 7600 | ✅ | ❌ |
-| RX 6800 | ✅ | ❌ |
-| RX 6700 XT | ❔ | ❌ |
-| RX 6600 XT | ✅ | ❌ |
-| RX 6600 | ✅ | ❌ |
-| RX 5700 XT | ❌ | ❌ |
-| RX 5700 | ❌ | ❌ |
-| RX 5600 | ❌ | ❌ |
-| AMD BC-250 | ❌ | ❌ |
+| RX 7900 XTX | <Icon icon={ICONS.CHECK} className="icon-check-mark" /> | <Icon icon={ICONS.CROSS} className="icon-cross-mark" /> |
+| RX 7600 XT | <Icon icon={ICONS.CHECK} className="icon-check-mark" /> | <Icon icon={ICONS.CROSS} className="icon-cross-mark" /> |
+| RX 7600 | <Icon icon={ICONS.CHECK} className="icon-check-mark" /> | <Icon icon={ICONS.CROSS} className="icon-cross-mark" /> |
+| RX 6800 | <Icon icon={ICONS.CHECK} className="icon-check-mark" /> | <Icon icon={ICONS.CROSS} className="icon-cross-mark" /> |
+| RX 6700 XT | <Icon icon={ICONS.QUESTION} className="icon-question" /> | <Icon icon={ICONS.CROSS} className="icon-cross-mark" /> |
+| RX 6600 XT | <Icon icon={ICONS.CHECK} className="icon-check-mark" /> | <Icon icon={ICONS.CROSS} className="icon-cross-mark" /> |
+| RX 6600 | <Icon icon={ICONS.CHECK} className="icon-check-mark" /> | <Icon icon={ICONS.CROSS} className="icon-cross-mark" /> |
+| RX 5700 XT | <Icon icon={ICONS.CROSS} className="icon-cross-mark" /> | <Icon icon={ICONS.CROSS} className="icon-cross-mark" /> |
+| RX 5700 | <Icon icon={ICONS.CROSS} className="icon-cross-mark" /> | <Icon icon={ICONS.CROSS} className="icon-cross-mark" /> |
+| RX 5600 | <Icon icon={ICONS.CROSS} className="icon-cross-mark" /> | <Icon icon={ICONS.CROSS} className="icon-cross-mark" /> |
+| AMD BC-250 | <Icon icon={ICONS.CROSS} className="icon-cross-mark" /> | <Icon icon={ICONS.CROSS} className="icon-cross-mark" /> |
 
 <Tabs groupId="OS">
 
-<TabItem value="linux" label="🐧 Ubuntu" default>
+<TabItem value="linux" label={<TabLabel icon={ICONS.UBUNTU}>Ubuntu</TabLabel>} default>
 
 The `subspace-farmer-rocm-*` binaries provide ROCm support, with corresponding CLI options similar to CUDA and prefixed with `--rocm`.
 
@@ -102,12 +112,12 @@ The `subspace-farmer-rocm-*` binaries provide ROCm support, with corresponding C
 
 </TabItem>
 
-<TabItem value="windows" label="🪟 Windows">
+<TabItem value="windows" label={<TabLabel icon={ICONS.WINDOWS}>Windows</TabLabel>}>
 
 AMD GPUs on Windows (including through WSL) are not currently supported. We hope to add support in the future.
 
 </TabItem>
-<TabItem value="docker" label="🐳 Docker">
+<TabItem value="docker" label={<TabLabel icon={ICONS.DOCKER}>Docker</TabLabel>}>
 
 *Cross-compilation no longer requires separate Dockerfiles (which is why they are removed), both native and cross-compilation is supported with a single file*
 
@@ -146,7 +156,7 @@ services:
 
 <TabItem value="intel" label="Intel">
 
-Intel Arc GPUs *may* be supported in the future, but specific compatibility details have not been announced yet.
+Support for Intel Arc GPUs is not currently available. Compatibility details have not been announced yet.
 
 </TabItem>
 
@@ -164,13 +174,22 @@ When a compatible GPU is detected, CPU plotting is automatically disabled by def
 
 **Disable GPU Plotting**
 
-  ```bash title="Linux"
-    --cuda-gpus ""
-  ```
+<Tabs>
+<TabItem value="ubuntu" label={<><Icon icon={ICONS.UBUNTU} /> Ubuntu</>} default>
 
-  ```powershell title="Windows"
-  --cuda-gpus 99
-  ```
+```bash
+--cuda-gpus ""
+```
+
+</TabItem>
+<TabItem value="windows" label={<><Icon icon={ICONS.WINDOWS} /> Windows</>}>
+
+```powershell
+--cuda-gpus 99
+```
+
+</TabItem>
+</Tabs>
 
 **Specify specific GPUs**
 

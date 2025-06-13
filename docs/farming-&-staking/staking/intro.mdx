@@ -12,6 +12,10 @@ keywords:
     - Decoupled Execution
 ---
 
+import Icon from '@site/src/components/Icon';
+import { ICONS } from '@site/src/constants';
+import Badge from '@site/src/components/Badge';
+
 :::warning Operator and Staking Availability
 Running an Operator and staking are only available on the Taurus testnet.  
 Availability on mainnet is planned for Phase 2. For further details, please refer to our [Phased Launch Roadmap](https://forum.autonomys.xyz/t/4831).
@@ -44,7 +48,7 @@ For more information on how Subspace separates consensus and computation, check 
 - **Secondary Network Role**: Monitors the Domain chain for malicious activity and submits fraud proofs to consensus chain.
 - **Supports Various Environments**: Can support different smart contract execution environments like the Ethereum Virtual Machine (EVM) or Web-Assembly (WASM).
 
-## Operators
+## Operators <Badge variant="testnet" text="Testnet" />
 
 ### Requirements
 
@@ -54,21 +58,11 @@ Hardware requirements are lowered for testing but will likely increase on mainne
 
 #### Operating System
 
-<small>
-    <table>
-    <tr>
-        <th>Application</th>
-        <th colspan="3">Minimum Supported Version*</th>
-    </tr>
-    <tr>
-        <td><strong>CLI</strong></td>
-        <td>🐧 Ubuntu 22.04</td>
-        <td>🪟 Windows 11</td>
-        <td>🍎 macOS 14 (Sonoma)</td>
-    </tr>
-    </table>
-&#42; Note that these are the officially supported minimum versions. For example, Windows 10 will not be officially supported but is likely to work. Team will not prioritise supporting issues that are only present on Windows 10.
-</small>
+| Application | <Icon icon={ICONS.UBUNTU} /> Ubuntu | <Icon icon={ICONS.WINDOWS} /> Windows | <Icon icon={ICONS.MACOS} /> macOS |
+| --- | :-: | :-: | :-: |
+| **CLI** | 22.04 | 11 | 14 (Sonoma) |
+
+<small>* Note that these are the officially supported minimum versions. For example, Windows 10 will not be officially supported but is likely to work. Team will not prioritise supporting issues that are only present on Windows 10.</small>
 
 #### Hardware
 
@@ -95,18 +89,18 @@ Hardware requirements are lowered for testing but will likely increase on mainne
 For operators, the key pair can be found in `/<BASE_PATH>/domains/<DOMAIN_ID>/keystore`.
 :::
 
-```bash
-📂 subspace-node
- ┣ 📂 db
- ┣ 📂 domains
- ┃ ┗ 📂 0
- ┃ ┃ ┣ 📂 db
- ┃ ┃ ┣ 📂 evm
- ┃ ┃ ┗ 📂 keystore
- ┗ 📂 network
-```
+<div style={{fontFamily: 'monospace', fontSize: '0.9rem', lineHeight: '1.8'}}>
+  <div><Icon icon={ICONS.FOLDER} /> subspace-node</div>
+  <div style={{paddingLeft: '1.5rem'}}><Icon icon={ICONS.FOLDER} /> db</div>
+  <div style={{paddingLeft: '1.5rem'}}><Icon icon={ICONS.FOLDER_OPEN} /> domains</div>
+  <div style={{paddingLeft: '3rem'}}><Icon icon={ICONS.FOLDER_OPEN} /> 0</div>
+  <div style={{paddingLeft: '4.5rem'}}><Icon icon={ICONS.FOLDER} /> db</div>
+  <div style={{paddingLeft: '4.5rem'}}><Icon icon={ICONS.FOLDER} /> evm</div>
+  <div style={{paddingLeft: '4.5rem'}}><Icon icon={ICONS.FOLDER} /> keystore</div>
+  <div style={{paddingLeft: '1.5rem'}}><Icon icon={ICONS.FOLDER} /> network</div>
+</div>
 
-## Staking
+## Staking <Badge variant="testnet" text="Testnet" />
 
 The Autonomys Network relies on staking from both domain operators and farmers to secure the network and provide resources. Autonomys implements a Nominated Proof-of-Stake algorithm where token holders endorse operators who execute transactions and produce blocks.
 

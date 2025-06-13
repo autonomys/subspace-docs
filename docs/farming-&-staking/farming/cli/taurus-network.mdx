@@ -19,6 +19,9 @@ import SystemDPage from './taurus-platforms/_systemd.mdx';
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
+import TabLabel from '@site/src/components/TabLabel';
+import { ICONS } from '@site/src/constants';
+import Badge from '@site/src/components/Badge';
 
 ## Network Description
 
@@ -32,7 +35,7 @@ Currently the only difference between taurus and mainnet is the chain specificat
 
 :::tip Substrate Address Needed
 
-To use this software, you need a Substrate wallet address. For assistance in creating a Substrate wallet, refer to our guides for ✨ [SubWallet](/wallets/subwallet) or [Polkadot.js](/wallets/polkadot).
+To use this software, you need a Substrate wallet address. You can use [Talisman](/wallets/talisman) <Badge variant="recommended" text="Recommended" /> or check out other compatible [wallets](/farming-&-staking/wallets).
 
 If you have a previous wallet address that starts with `st`, you can still use it, or you can transform it to the new `su` prefix. You can convert your existing wallet address using the tool available at [ss58.org](https://ss58.org). Previously, our testnets used the prefix `2254`, while the Taurus testnet and Autonomys mainnet use the prefix `6094`.
 
@@ -44,15 +47,15 @@ We’ll provide the files you need for your operating system:
 
 <Tabs groupId="OS">
 
-<TabItem value="linux" label="🐧 Ubuntu" default>
+<TabItem value="linux" label={<TabLabel icon={ICONS.UBUNTU}>Ubuntu</TabLabel>} default>
 <LinuxPage />
 </TabItem>
 
-<TabItem value="windows" label="🖼️ Windows">
+<TabItem value="windows" label={<TabLabel icon={ICONS.WINDOWS}>Windows</TabLabel>}>
 <WindowsPage />
 </TabItem>
 
-<TabItem value="macos" label="🍎 macOS">
+<TabItem value="macos" label={<TabLabel icon={ICONS.MACOS}>macOS</TabLabel>}>
 <MacOSPage />
 </TabItem>
 

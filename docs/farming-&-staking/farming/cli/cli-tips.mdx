@@ -13,6 +13,8 @@ keywords:
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
+import TabLabel from '@site/src/components/TabLabel';
+import { ICONS } from '@site/src/constants';
 
 ## Additional Tips
 
@@ -103,7 +105,7 @@ Both the node and the farmer have a variety of flags and parameters. To see a fu
 
 <Tabs groupId="component">
 
-<TabItem value="farmer" label="Farmer">
+<TabItem value="farmer" label={<TabLabel icon={ICONS.FARMER}>Farmer</TabLabel>}>
 
 ### Plotting concurrency (CPU only)
 
@@ -189,7 +191,7 @@ Note that setting `--cpu-plotting-cores` requires `--cpu-replotting-cores` to be
 
 </TabItem>
 
-<TabItem value="node" label="Node">
+<TabItem value="node" label={<TabLabel icon={ICONS.NODE}>Node</TabLabel>}>
 
 ### Snap Sync
 
@@ -199,7 +201,7 @@ There are cases where you might not want to use Snap Sync. To perform a full syn
 
 </TabItem>
 
-<TabItem value="docker" label="Docker">
+<TabItem value="docker" label={<TabLabel icon={ICONS.DOCKER}>Docker</TabLabel>}>
 
 ### Docker Wipe
 
