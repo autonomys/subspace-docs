@@ -1,11 +1,14 @@
 ---
 title: Operator Tips & Tricks
-sidebar_position: 1
+sidebar_position: 2
 description: Operators Tips & Tricks
-slug: /staking/operator/tips
+slug: /staking/taurus-operator/tips-taurus
+sidebar_custom_props:
+  testnet: true
 keywords:
 - Operator
 - Guide
+- Taurus
 ---
 
 import Tabs from '@theme/Tabs';
@@ -15,7 +18,7 @@ import Link from '@docusaurus/Link';
 import styles from '@site/src/pages/index.module.css';
 
 :::note
-This guide is for running an operator on the **Mainnet** network
+This guide is for running an operator on the **Taurus** network
 :::
 
 ### Insert key to Keystore:
@@ -30,7 +33,7 @@ To insert the key, use the following command:
 :::
 
 ```bash
-./subspace-node-ubuntu-x86_64-skylake-mainnet-2025-jun-06 domain key insert \
+./subspace-node-ubuntu-x86_64-skylake-taurus-2025-may-27 domain key insert \
 --base-path "<BASE_PATH>" --domain-id "<DOMAIN_ID>" --keystore-suri "<SECRET_PHRASE>"
 ```
 
@@ -84,8 +87,8 @@ To run both operator and validator at the same time, provide required flags for 
 <TabItem value="windows" label="🖼️ Windows" default>
 
 ```powershell
-.\subspace-node-windows-x86_64-skylake-mainnet-2025-jun-06.exe run `
---chain mainnet `
+.\subspace-node-windows-x86_64-skylake-taurus-2025-may-27.exe run `
+--chain taurus `
 --farmer `
 --name "<NAME>" `
 --base-path "<BASE_PATH>" `
@@ -101,8 +104,8 @@ To run both operator and validator at the same time, provide required flags for 
 <TabItem value="macos" label="🍎 macOS">
 
 ```bash
-./subspace-node-macos-aarch64-mainnet-2025-jun-06 run \
---chain mainnet \
+./subspace-node-macos-aarch64-taurus-2025-may-27 run \
+--chain taurus \
 --farmer \
 --name "<NAME>" \
 --base-path "<BASE_PATH>" \
@@ -117,8 +120,8 @@ To run both operator and validator at the same time, provide required flags for 
 <TabItem value="linux" label="🐧 Ubuntu">
 
 ```bash
-./subspace-node-ubuntu-x86_64-skylake-mainnet-2025-jun-06 run \
---chain mainnet \
+./subspace-node-ubuntu-x86_64-skylake-taurus-2025-may-27 run \
+--chain taurus \
 --farmer \
 --name "<NAME>" \
 --base-path "<BASE_PATH>" \
@@ -134,7 +137,7 @@ To run both operator and validator at the same time, provide required flags for 
 ```yaml
 services:
   node:
-    # Replace snapshot-DATE with the latest release (like mainnet-2025-jun-06)
+    # Replace snapshot-DATE with the latest release (like taurus-2025-may-27)
     image: ghcr.io/autonomys/node:snapshot-DATE
     volumes:
 # Instead of specifying volume (which will store data in /var/lib/docker), you can
@@ -151,7 +154,7 @@ services:
     restart: unless-stopped
     command: [
       "run",
-      "--chain", "mainnet",
+      "--chain", "taurus",
       "--base-path", "/var/subspace",
       "--rpc-cors", "all",
       "--rpc-methods", "unsafe",
@@ -173,7 +176,7 @@ services:
     depends_on:
       node:
         condition: service_healthy
-    # Replace snapshot-DATE with latest release (like mainnet-2025-jun-06)
+    # Replace snapshot-DATE with latest release (like taurus-2025-may-27)
     image: ghcr.io/autonomys/farmer:snapshot-DATE
     volumes:
 # Instead of specifying volume (which will store data in /var/lib/docker), you can

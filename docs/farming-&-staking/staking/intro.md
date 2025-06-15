@@ -12,9 +12,8 @@ keywords:
     - Decoupled Execution
 ---
 
-:::warning Operator and Staking Availability
-Running an Operator and staking are only available on the Taurus testnet.  
-Availability on mainnet is planned for Phase 2. For further details, please refer to our [Phased Launch Roadmap](https://forum.autonomys.xyz/t/4831).
+:::info 
+Running an Operator and Staking an Operator is available on either the mainnet or taurus networks
 :::
 
 ## Decoupled Execution Framework
@@ -38,7 +37,7 @@ For more information on how Subspace separates consensus and computation, check 
 
 - **Transaction Submission and Execution**: Operators are responsible for batching transactions into bundles and submitting them to the consensus chain, executing transactions included in the consensus block and maintaining the resulting chain state.
 - **Higher Hardware Requirements**: Operators require more substantial hardware capabilities, as they must execute complex transactions.
-- **Require Initial Investment:** Operators are required to stake a certain amount of AI3. If an operator acts maliciously, their stake is at risk of being **slashed**. Engaging in such malicious behavior carries significant penalties, providing crypto-economic security to execution.
+- **Require Initial Investment:** Operators are required to stake a certain amount of AI3/tAI3. If an operator acts maliciously, their stake is at risk of being **slashed**. Engaging in such malicious behavior carries significant penalties, providing crypto-economic security to execution.
 - **Pre-Validation and Batching**: Operators pre-validate and batch transactions into bundles through a stake-weighted election process.
 - **Deterministic Execution**: The operators execute transactions in a specific, deterministic order, producing state commitments in the form of execution receipts.
 - **Secondary Network Role**: Monitors the Domain chain for malicious activity and submits fraud proofs to consensus chain.
@@ -114,7 +113,7 @@ Our staking model consists of two tiers:
 
 - Farmers earn rewards proportional to their pledged storage. Farmers can choose to nominate operators and back them with their own stake, increasing their chance of being elected as a slot leader. Farmers, who have earned storage rewards, nominate operators to execute transactions. This nomination system balances the power between farmers who nominate and operators with both parties sharing the execution fees and the potential penalties (slashing). 
 
-- Operators stake to gain the right to produce bundles within a domain. They are responsible for validating and executing transactions, producing execution receipts, applying state transitions, submitting a storage fee for bundle execution and earning fees for their work. The operator's chances to be elected as a slot leader and produce a bundle are weighted by their stake. Operators can be nominated by farmers or other AI3 holders.
+- Operators stake to gain the right to produce bundles within a domain. They are responsible for validating and executing transactions, producing execution receipts, applying state transitions, submitting a storage fee for bundle execution and earning fees for their work. The operator's chances to be elected as a slot leader and produce a bundle are weighted by their stake. Operators can be nominated by farmers or other AI3/tAI3 holders.
 
 The nomination pools in Autonomys are "lazy": any fees earned by the operator are assigned to the pool and are not deposited to the nominators wallet unless they ask for a withdrawal. Unless withdrawn, the fees are "auto-staked" - they count towards the total stake of the pool, increasing its chance of being elected to produce bundles.
 
