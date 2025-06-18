@@ -26,7 +26,7 @@ This is the most common type of node as it is used by farmers. It processes all 
 :::
 
 ```bash
-./subspace-node-ubuntu-x86_64-skylake-mainnet-2025-jan-14 run \
+./subspace-node-ubuntu-x86_64-skylake-mainnet-2025-jun-18 run \
 --chain mainnet \
 --base-path "<BASE_PATH>"
 ```
@@ -44,7 +44,7 @@ An archival node keeps a history of all blocks and serves peers. It preserves th
 :::
 
 ```bash
-./subspace-node-ubuntu-x86_64-skylake-mainnet-2025-jan-14 run \
+./subspace-node-ubuntu-x86_64-skylake-mainnet-2025-jun-18 run \
 --chain mainnet \
 --base-path "<BASE_PATH>" \
 --blocks-pruning archive \
@@ -76,7 +76,7 @@ A domain full node processes all blocks and serves peers. It preserves the block
 :::
 
 ```bash
-./subspace-node-ubuntu-x86_64-skylake-mainnet-2025-jan-14 run \
+./subspace-node-ubuntu-x86_64-skylake-mainnet-2025-jun-18 run \
 --chain mainnet \
 --base-path "<BASE_PATH>" \
 --blocks-pruning archive \
@@ -96,7 +96,7 @@ A domain archive node allows an RPC user to query any historical blocks on the d
 :::
 
 ```bash
-./subspace-node-ubuntu-x86_64-skylake-mainnet-2025-jan-14 run \
+./subspace-node-ubuntu-x86_64-skylake-mainnet-2025-jun-18 run \
 --chain mainnet \
 --base-path "<BASE_PATH>" \
 --blocks-pruning archive \
@@ -122,7 +122,7 @@ An operator node is closer to an *archive domain node* rather than a *full domai
 :::
 
 ```bash
-./subspace-node-ubuntu-x86_64-skylake-mainnet-2025-jan-14 run \
+./subspace-node-ubuntu-x86_64-skylake-mainnet-2025-jun-18 run \
 --chain taurus \
 --name "<NAME>" \
 --base-path "<BASE_PATH>" \
@@ -141,7 +141,7 @@ Timekeepers run the Proof-of-Time chain and maintain the randomness beacon for t
 :::
 
 ```bash
-./subspace-node-ubuntu-x86_64-skylake-mainnet-2025-jan-14 run \
+./subspace-node-ubuntu-x86_64-skylake-mainnet-2025-jun-18 run \
 --chain mainnet \
 --timekeeper \
 --timekeeper-cpu-cores 4 \ 
