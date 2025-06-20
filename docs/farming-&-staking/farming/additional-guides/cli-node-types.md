@@ -108,6 +108,36 @@ A domain archive node allows an RPC user to query any historical blocks on the d
 --state-pruning archive
 ```
 
+### EVM Archive Node
+
+A EVM archive node allows an RPC user to query any historical blocks on the domain it targets. It is useful when a complete history of the domain needs to be made available and accessed via RPC.
+
+:::tip Replace these placeholders
+- `<BASE_PATH>`: Path where you want to store the node database
+- `<DOMAIN_ID>`: The domain ID you want to connect to
+- `<RPC_PORT>`: The RPC Port to listen on
+:::
+
+```bash
+./subspace-node-ubuntu-x86_64-skylake-mainnet-2025-jun-18 run \
+--chain mainnet \
+--base-path "<BASE_PATH>" \
+--blocks-pruning archive \
+--state-pruning archive \
+--sync full \
+-- \
+--domain-id "<DOMAIN_ID>" \
+--blocks-pruning archive \
+--state-pruning archive \
+--rpc-methods unsafe \
+--rpc-cors all \
+--rpc-listen-on 0.0.0.0:"<RPC_PORT>"
+```
+
+:::tip RPC Port
+By default the RPC port is 9944 so you can leave the *rpc-listen-on* out. If you want to change it, you can set it to `0.0.0.0:"<RPC_PORT>"`
+:::
+
 ## Specialized Nodes
 
 ### Operator Node
