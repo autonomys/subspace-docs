@@ -1033,3 +1033,19 @@ article img[src*="intro-banner"] {
 [data-theme='dark'] .resource-content p {
   color: var(--ifm-color-content-secondary);
 }
+
+/* ==================================================
+   H6 FOOTNOTE STYLES
+   ================================================== */
+h6 {
+  font-weight: normal !important;
+  font-size: 0.875rem !important;
+  margin-top: 0.5rem !important;
+  margin-bottom: 0.5rem !important;
+  color: var(--ifm-color-content-secondary);
+}
+
+/* Add more space when H6 is followed by other elements */
+h6 + :not(h6) {
+  margin-top: 1.5rem;
+}

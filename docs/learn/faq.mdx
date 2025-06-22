@@ -23,7 +23,7 @@ import Link from '@docusaurus/Link';
 import styles from '@site/src/pages/index.module.css';
 import Icon from '@site/src/components/Icon';
 import { ICONS } from '@site/src/constants';
-import { CardSection, CardItem } from '@site/src/components/Card';
+import { ContentGroup, ContentBlock, ContentText, ContentSubtitle, ContentList, ContentListItem, ContentCode, ContentFooter } from '@site/src/components/ContentBlock';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
@@ -38,141 +38,160 @@ Welcome to the Autonomys Network FAQ! This comprehensive guide addresses the mos
 We regularly update this FAQ based on community feedback and network developments.
 
 
-<CardSection title="Network" icon={<Icon icon={ICONS.WEB} />} id="network">
-  <CardItem 
+<ContentGroup title="Network" icon={<Icon icon={ICONS.WEB} />} id="network">
+  <ContentBlock 
     title="How large is the network?" 
-    id="network-size"
+    slug="network-size"
     lastUpdated="2025-01-25"
   >
-    Network stats are available at the top of the <Link to="https://astral.autonomys.xyz/">Astral Block Explorer</Link>.
-  </CardItem>
+    <ContentText>
+      Network stats are available at the top of the <Link to="https://astral.autonomys.xyz/">Astral Block Explorer</Link>.
+    </ContentText>
+  </ContentBlock>
 
-  <CardItem 
+  <ContentBlock 
     title="What are the current RPC endpoints?" 
-    id="rpc-endpoints"
+    slug="rpc-endpoints"
     lastUpdated="2025-05-30"
   >
     <Tabs>
       <TabItem value="mainnet" label="Mainnet" default>
-        <h4>Consensus</h4>
-        ```
-        wss://rpc.mainnet.subspace.foundation/ws
-        wss://rpc-0.mainnet.autonomys.xyz/ws
-        ```
+        <ContentSubtitle>Consensus</ContentSubtitle>
+        <ContentCode language="text">
+{`wss://rpc.mainnet.subspace.foundation/ws
+wss://rpc-0.mainnet.autonomys.xyz/ws`}
+        </ContentCode>
       </TabItem>
       
       <TabItem value="taurus" label="Taurus Testnet">
-        <h4>Consensus</h4>
-        ```
-        wss://rpc.taurus.autonomys.xyz/ws
-        ```
+        <ContentSubtitle>Consensus</ContentSubtitle>
+        <ContentCode language="text">
+{`wss://rpc.taurus.autonomys.xyz/ws`}
+        </ContentCode>
         
-        <h4>Auto EVM</h4>
-        ```
-        wss://auto-evm.taurus.autonomys.xyz/ws
-        ```
+        <ContentSubtitle>Auto EVM</ContentSubtitle>
+        <ContentCode language="text">
+{`wss://auto-evm.taurus.autonomys.xyz/ws`}
+        </ContentCode>
       </TabItem>
     </Tabs>
-  </CardItem>
+  </ContentBlock>
 
-  <CardItem 
+  <ContentBlock 
     title="What happened to testnet tokens?" 
-    id="testnet-tokens"
+    slug="testnet-tokens"
     lastUpdated="2025-05-30"
   >
-    The testnet tokens (tSSC) earned during the various incentivized Gemini testnet phases were converted to mainnet tokens (AI3) at the time of mainnet launch, and this conversion was included in the genesis block. The <Link to="https://astral.autonomys.xyz/mainnet/testnet-rewards">Astral Testnet Rewards Checker</Link> allows you to see how much AI3 you were rewarded, proportional to your participation in the different testnet phases.
-  </CardItem>
+    <ContentText>
+      The testnet tokens (tSSC) earned during the various incentivized Gemini testnet phases were converted to mainnet tokens (AI3) at the time of mainnet launch, and this conversion was included in the genesis block. The <Link to="https://astral.autonomys.xyz/mainnet/testnet-rewards">Astral Testnet Rewards Checker</Link> allows you to see how much AI3 you were rewarded, proportional to your participation in the different testnet phases.
+    </ContentText>
+  </ContentBlock>
 
-  <CardItem 
+  <ContentBlock 
     title="When TGE?" 
-    id="tge"
+    slug="tge"
     lastUpdated="2025-05-30"
   >
-    Please see the <Link to="https://forum.autonomys.xyz/t/4831">Mainnet Phase 2 Roadmap</Link> for more details.
-  </CardItem>
+    <ContentText>
+      Please see the <Link to="https://forum.autonomys.xyz/t/4831">Mainnet Phase 2 Roadmap</Link> for more details.
+    </ContentText>
+  </ContentBlock>
 
-  <CardItem 
+  <ContentBlock 
     title="When will mainnet launch?" 
-    id="mainnet-launch"
+    slug="mainnet-launch"
     lastUpdated="2025-05-30"
   >
-    Mainnet launched on November 6, 2024.
-  </CardItem>
+    <ContentText>
+      Mainnet launched on November 6, 2024.
+    </ContentText>
+  </ContentBlock>
 
-  <CardItem 
+  <ContentBlock 
     title="When will token transfers be enabled?" 
-    id="token-transfers"
+    slug="token-transfers"
     lastUpdated="2025-05-30"
   >
-    Token transfers will be enabled in Phase 2 of mainnet, which will begin once all milestones are met. Please see the <Link to="https://forum.autonomys.xyz/t/4831">Mainnet Phase 2 Roadmap</Link> for more details.
-  </CardItem>
-</CardSection>
+    <ContentText>
+      Token transfers will be enabled in Phase 2 of mainnet, which will begin once all milestones are met. Please see the <Link to="https://forum.autonomys.xyz/t/4831">Mainnet Phase 2 Roadmap</Link> for more details.
+    </ContentText>
+  </ContentBlock>
+</ContentGroup>
 
-<CardSection title="Farming" icon={<Icon icon={ICONS.FARMER} />} id="farming">
+<ContentGroup title="Farming" icon={<Icon icon={ICONS.FARMER} />} id="farming">
 
-  <CardItem 
+  <ContentBlock 
     title="How do you change the default ports?" 
-    id="change-default-ports"
+    slug="change-default-ports"
     lastUpdated="2025-02-03"
+    description="If you need to change the default ports for the farmer and node, whether to run multiple instances on the same local network or to operate both the mainnet and the Taurus testnet at the same time, you must configure them to use unique ports."
   >
-    If you need to change the default ports for the farmer and node, whether to run multiple instances on the same local network or to operate both the mainnet and the Taurus testnet at the same time, you must configure them to use unique ports.
-    
     <Tabs>
       <TabItem value="cli" label="CLI" default>
-        <p>Use the following parameters to assign new ports, ensuring they do not conflict with existing ones on the network:</p>
+        <ContentText>Use the following parameters to assign new ports, ensuring they do not conflict with existing ones on the network:</ContentText>
         
-        <h4>Node</h4>
-        ```shell
-        listen-on "/ip4/0.0.0.0/tcp/30333"  
-        dsn-listen-on "/ip4/0.0.0.0/tcp/30433"  
-        ```
+        <ContentSubtitle>Node</ContentSubtitle>
+        <ContentCode language="shell">
+{`listen-on "/ip4/0.0.0.0/tcp/30333"  
+dsn-listen-on "/ip4/0.0.0.0/tcp/30433"`}
+        </ContentCode>
         
-        <h4>Farmer</h4>
-        ```shell
-        listen-on "/ip4/0.0.0.0/tcp/30533"  
-        ```
+        <ContentSubtitle>Farmer</ContentSubtitle>
+        <ContentCode language="shell">
+{`listen-on "/ip4/0.0.0.0/tcp/30533"`}
+        </ContentCode>
       </TabItem>
       
       <TabItem value="space-acres" label="Space Acres">
-        <p>Open the <strong>Hamburger Menu</strong>, select <strong>Change configuration</strong>, then go to <strong>Advanced configuration</strong> to modify the port settings.</p>
+        <ContentText>Open the <strong>Hamburger Menu</strong>, select <strong>Change configuration</strong>, then go to <strong>Advanced configuration</strong> to modify the port settings.</ContentText>
       </TabItem>
     </Tabs>
     
-    <p>For more details, including steps to enable port forwarding, refer to the <Link to="/farming/guides/port-config">Ports to Forward & Firewall Access</Link> guide.</p>
-  </CardItem>
+    <ContentFooter>
+      For more details, including steps to enable port forwarding, refer to the <Link to="/farming/guides/port-config">Ports to Forward &amp; Firewall Access</Link> guide.
+    </ContentFooter>
+  </ContentBlock>
 
-  <CardItem 
+  <ContentBlock 
     title="How long will it take to earn rewards?" 
-    id="reward-time"
+    slug="reward-time"
     lastUpdated="2025-01-25"
   >
-    Rewards are earned proportionally to the amount of storage you have pledged to the network. While there is a luck factor involved, you can estimate the time between wins using the <Link to="https://ai3.farm/resources/rewards">AI3 Rewards Calculator</Link>. This is a community provided tool.
-  </CardItem>
+    <ContentText>
+      Rewards are earned proportionally to the amount of storage you have pledged to the network. While there is a luck factor involved, you can estimate the time between wins using the <Link to="https://ai3.farm/resources/rewards">AI3 Rewards Calculator</Link>. This is a community provided tool.
+    </ContentText>
+  </ContentBlock>
 
-  <CardItem 
+  <ContentBlock 
     title="How long will it take to plot my farm?" 
-    id="plotting-time"
+    slug="plotting-time"
     lastUpdated="2025-01-25"
   >
-    The initial plotting time depends on your hardware. Using a <Link to="/farming/guides/gpu-plotter">supported GPU</Link> can significantly speed up the plotting process while consuming less power. However, CPU plotting is also supported if you prefer or don't have access to a compatible GPU. Once the initial plotting is complete, ongoing replotting (as sectors expire) will take less time. You can check out the <Link to="https://ai3.farm/resources/plotting-speed">plotting speed results</Link> from community members to get an idea of what to expect based on different hardware setups.
-  </CardItem>
+    <ContentText>
+      The initial plotting time depends on your hardware. Using a <Link to="/farming/guides/gpu-plotter">supported GPU</Link> can significantly speed up the plotting process while consuming less power. However, CPU plotting is also supported if you prefer or don't have access to a compatible GPU. Once the initial plotting is complete, ongoing replotting (as sectors expire) will take less time. You can check out the <Link to="https://ai3.farm/resources/plotting-speed">plotting speed results</Link> from community members to get an idea of what to expect based on different hardware setups.
+    </ContentText>
+  </ContentBlock>
 
-  <CardItem 
+  <ContentBlock 
     title="What are the hardware requirements?" 
-    id="minimum-requirements"
+    slug="minimum-requirements"
     lastUpdated="2025-01-25"
   >
-    Please refer to the <Link to="/farming/intro">Getting Started Guide</Link> for a list of minimum hardware and operating system requirements.
-  </CardItem>
+    <ContentText>
+      Please refer to the <Link to="/farming/intro">Getting Started Guide</Link> for a list of minimum hardware and operating system requirements.
+    </ContentText>
+  </ContentBlock>
 
-  <CardItem 
+  <ContentBlock 
     title="What GPUs are supported?" 
-    id="supported-gpus"
+    slug="supported-gpus"
     lastUpdated="2025-01-25"
   >
-    Farming does not require or support the use of GPUs. For a list of compatible GPUs for plotting and replotting, please refer to the <Link to="/farming/guides/gpu-plotter">GPU Plotter</Link> guide.
-  </CardItem>
-</CardSection>
+    <ContentText>
+      Farming does not require or support the use of GPUs. For a list of compatible GPUs for plotting and replotting, please refer to the <Link to="/farming/guides/gpu-plotter">GPU Plotter</Link> guide.
+    </ContentText>
+  </ContentBlock>
+</ContentGroup>
 
 :::info Still have questions?
 If you can't find the answer you're looking for above, connect with our community:

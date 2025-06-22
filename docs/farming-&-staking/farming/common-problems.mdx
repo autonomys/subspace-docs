@@ -27,8 +27,7 @@ import Icon from '@site/src/components/Icon';
 import TabLabel from '@site/src/components/TabLabel';
 import { ICONS } from '@site/src/constants';
 import Badge from '@site/src/components/Badge';
-import { CardSection, CardItem } from '@site/src/components/Card';
-import cardStyles from '@site/src/components/Card/styles.module.css';
+import { ContentGroup, ContentBlock, ContentText, ContentSubtitle, ContentList, ContentListItem, ContentCode, ContentFooter } from '@site/src/components/ContentBlock';
 
 This page documents known errors and warnings you may encounter while running Autonomys software. Each issue includes its severity level, explanation, and resolution steps to help you quickly identify and fix problems.
 
@@ -47,83 +46,89 @@ These errors and warnings are tied to specific components. In this section, we h
 <Tabs queryString="component">
 
 <TabItem value="node" label={<TabLabel icon={ICONS.NODE}>Node</TabLabel>} default>
-
-  <div className={cardStyles.cardList}>
-    <CardItem 
+    <ContentBlock 
       title="WARN Consensus: telemetry: ❌ Error while dialing" 
-      id="telemetry-error"
+      slug="telemetry-error"
       confirmedVersion="mainnet-2025-jun-06"
+      severity="low"
+      description="This error is specifically related to the telemetry server. It may occur occasionally, but it has no impact on farming operations and can be safely ignored."
     >
-      <p><Icon icon={ICONS.STATUS_GREEN} className="icon-status-green" /> <strong>Low Severity</strong></p>
-      <p>This error is specifically related to the telemetry server. It may occur occasionally, but it has no impact on farming operations and can be safely ignored.</p>
-      <p><strong>Error message:</strong></p>
-      <pre><code>WARN Consensus: telemetry: ❌ Error while dialing /dns/telemetry.subspace.foundation/tcp/443/x-parity-wss/%2Fsubmit%2F: Custom &#123; kind: Other, error: Timeout &#125;</code></pre>
-    </CardItem>
+      <ContentSubtitle>Error message:</ContentSubtitle>
+      <ContentCode language="log">
+{`WARN Consensus: telemetry: ❌ Error while dialing /dns/telemetry.subspace.foundation/tcp/443/x-parity-wss/%2Fsubmit%2F: Custom { kind: Other, error: Timeout }`}
+      </ContentCode>
+    </ContentBlock>
 
-    <CardItem 
+    <ContentBlock 
       title="WARN Consensus: Proof of time chain reorg" 
-      id="pot-chain-reorg"
+      slug="pot-chain-reorg"
       confirmedVersion="mainnet-2025-jun-06"
+      severity="medium"
+      description="This situation arises when two or more valid blocks are created at the same height in the blockchain. Initially, network nodes may disagree on which block to add to the chain, resulting in multiple temporary forks. Once this disagreement is resolved, the blocks from the discarded fork become orphaned, and the chain reorganizes to incorporate the blocks from the winning fork."
     >
-      <p><Icon icon={ICONS.STATUS_ORANGE} className="icon-status-orange" /> <strong>Medium Severity</strong></p>
-      <p>This situation arises when two or more valid blocks are created at the same height in the blockchain. Initially, network nodes may disagree on which block to add to the chain, resulting in multiple temporary forks. Once this disagreement is resolved, the blocks from the discarded fork become orphaned, and the chain reorganizes to incorporate the blocks from the winning fork.</p>
-      <p><strong>Resolution:</strong> This should resolve on its own.</p>
-      <p><strong>Error message:</strong></p>
-      <pre><code>WARN Consensus: sc_proof_of_time::source: Proof of time chain reorg happened from_next_slot=&lt;block&gt; to_next_slot=&lt;block&gt;</code></pre>
-    </CardItem>
+      <ContentSubtitle>Resolution:</ContentSubtitle>
+      <ContentText>This should resolve on its own.</ContentText>
+      
+      <ContentSubtitle>Error message:</ContentSubtitle>
+      <ContentCode language="log">
+{`WARN Consensus: sc_proof_of_time::source: Proof of time chain reorg happened from_next_slot=<block> to_next_slot=<block>`}
+      </ContentCode>
+    </ContentBlock>
 
-    <CardItem 
+    <ContentBlock 
       title="WARN Consensus: Proof of time chain extended" 
-      id="pot-chain-extended"
+      slug="pot-chain-extended"
       confirmedVersion="mainnet-2025-jun-06"
+      severity="medium"
+      description="This warning message should not affect your rewards or the operation of your node. It's just a log message indicating the normal operation of the network."
     >
-      <p><Icon icon={ICONS.STATUS_ORANGE} className="icon-status-orange" /> <strong>Medium Severity</strong></p>
-      <p>This warning message should not affect your rewards or the operation of your node. It's just a log message indicating the normal operation of the network.</p>
-      <p><strong>Error message:</strong></p>
-      <pre><code>WARN Consensus: sc_proof_of_time::source: Proof of time chain was extended from block import from_next_slot=&lt;block&gt; to_next_slot=&lt;block&gt;</code></pre>
-    </CardItem>
-  </div>
+      <ContentSubtitle>Error message:</ContentSubtitle>
+      <ContentCode language="log">
+{`WARN Consensus: sc_proof_of_time::source: Proof of time chain was extended from block import from_next_slot=<block> to_next_slot=<block>`}
+      </ContentCode>
+    </ContentBlock>
 
 </TabItem>
 
 <TabItem value="farmer" label={<TabLabel icon={ICONS.FARMER}>Farmer</TabLabel>}>
-
-  <div className={cardStyles.cardList}>
-    <CardItem 
+    <ContentBlock 
       title="ERROR: Failed to store piece in cache, no space" 
-      id="cache-no-space"
+      slug="cache-no-space"
       confirmedVersion="mainnet-2025-jun-06"
+      severity="high"
+      description="This indicates that there is not enough space in the cache to store a new piece of data."
     >
-      <p><Icon icon={ICONS.STATUS_RED} className="icon-status-red" /> <strong>High Severity</strong></p>
-      <p>This indicates that there is not enough space in the cache to store a new piece of data.</p>
-      <p><strong>Resolution:</strong></p>
-      <ul>
-        <li>The drive where you are storing your farm is out of space</li>
-        <li>Reduce the farm size and restart the farmer</li>
-        <li>Ensure that you are saving the farm to the correct drive and that it is properly mounted</li>
-      </ul>
-      <p><strong>Error message:</strong></p>
-      <pre><code>ERROR subspace_farmer::farmer_cache: Failed to store piece in cache, there was no space piece_index=&lt;piece&gt;</code></pre>
-    </CardItem>
-  </div>
+      <ContentSubtitle>Resolution:</ContentSubtitle>
+      <ContentList>
+        <ContentListItem>The drive where you are storing your farm is out of space</ContentListItem>
+        <ContentListItem>Reduce the farm size and restart the farmer</ContentListItem>
+        <ContentListItem>Ensure that you are saving the farm to the correct drive and that it is properly mounted</ContentListItem>
+      </ContentList>
+      
+      <ContentSubtitle>Error message:</ContentSubtitle>
+      <ContentCode language="log">
+{`ERROR subspace_farmer::farmer_cache: Failed to store piece in cache, there was no space piece_index=<piece>`}
+      </ContentCode>
+    </ContentBlock>
 
 </TabItem>
 
 <TabItem value="farming-cluster" label={<TabLabel icon={ICONS.CLUSTER}>Farming Cluster</TabLabel>}>
-
-  <div className={cardStyles.cardList}>
-    <CardItem 
+    <ContentBlock 
       title="WARN: Failed to plot sector, retrying" 
-      id="plot-sector-retry"
+      slug="plot-sector-retry"
       confirmedVersion="mainnet-2025-jun-06"
+      severity="medium"
+      description="This is a known issue that is actively being investigated."
     >
-      <p><Icon icon={ICONS.STATUS_ORANGE} className="icon-status-orange" /> <strong>Medium Severity</strong></p>
-      <p>This is a known issue that is actively being investigated.</p>
-      <p><strong>Mitigation:</strong> To help mitigate these errors, run your NATS component on the same system as your Controller, Cache, and Plotter components.</p>
-      <p><strong>Error message:</strong></p>
-      <pre><code>WARN &#123;farm_index=3&#125;:&#123;sector_index=1036&#125;: subspace_farmer::single_disk_farm::plotting: Failed to plot sector, retrying in 1s error=Low-level plotting error: Received only &lt;sector&gt; sector bytes out of &lt;bytes&gt; expected bytes</code></pre>
-    </CardItem>
-  </div>
+      <ContentSubtitle>Mitigation:</ContentSubtitle>
+      <ContentText>To help mitigate these errors, run your NATS component on the same system as your Controller, Cache, and Plotter components.</ContentText>
+      
+      <ContentSubtitle>Error message:</ContentSubtitle>
+      <ContentCode language="log">
+{`WARN {farm_index=3}:{sector_index=1036}: subspace_farmer::single_disk_farm::plotting: Failed to plot sector, retrying in 1s error=Low-level plotting error: Received only <sector> sector bytes out of <bytes> expected bytes`}
+      </ContentCode>
+    </ContentBlock>
 
 </TabItem>
 
@@ -133,33 +138,37 @@ These errors and warnings are tied to specific components. In this section, we h
 
 These unexpected behaviors are not linked to specific components. In this section, we outline common issues and provide available remediation steps.
 
-<CardSection>
-  <CardItem 
+<ContentGroup>
+  <ContentBlock 
     title="No Output and Missing Error Codes (Windows)" 
-    id="no-output-windows"
+    slug="no-output-windows"
   >
-    <p>If you encounter a situation in Windows where the node produces no output and does not display any error code, it is likely that you simply need to install the latest version of the <Link to="https://learn.microsoft.com/en-us/cpp/windows/latest-supported-vc-redist">Visual C++ Redistributable package</Link>.</p>
-  </CardItem>
+    <ContentText>
+      If you encounter a situation in Windows where the node produces no output and does not display any error code, it is likely that you simply need to install the latest version of the <Link to="https://learn.microsoft.com/en-us/cpp/windows/latest-supported-vc-redist">Visual C++ Redistributable package</Link>.
+    </ContentText>
+  </ContentBlock>
 
-  <CardItem 
+  <ContentBlock 
     title="Farmer stuck on plotting" 
-    id="stuck-plotting"
+    slug="stuck-plotting"
   >
-    <p>Try restarting your node or farmer. We've observed that when creating larger farms, the process may sometimes seem stalled, but it typically resumes automatically after a while.</p>
-  </CardItem>
+    <ContentText>
+      Try restarting your node or farmer. We've observed that when creating larger farms, the process may sometimes seem stalled, but it typically resumes automatically after a while.
+    </ContentText>
+  </ContentBlock>
 
-  <CardItem 
+  <ContentBlock 
     title="No rewards after several days" 
-    id="no-rewards"
+    slug="no-rewards"
   >
-    <p>If you haven't earned any rewards after several days of farming, try these steps:</p>
-    <ul>
-      <li>Ensure you are using the latest release of either <Link to="https://github.com/autonomys/space-acres/releases">Space Acres</Link> <Badge variant="recommended" text="Recommended" /> or the <Link to="https://github.com/autonomys/subspace/releases">CLI</Link></li>
-      <li>Confirm that your farmer is active and on the highest block by checking our <Link to="https://telemetry.subspace.foundation">telemetry</Link> server</li>
-      <li>Check your balance using <Link to="https://astral.autonomys.xyz">Astral Block Explorer</Link> or the <Link to="https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Frpc.mainnet.subspace.foundation%2Fws#/explorer">Polkadot Explorer</Link></li>
-    </ul>
-  </CardItem>
-</CardSection>
+    <ContentText>If you haven't earned any rewards after several days of farming, try these steps:</ContentText>
+    <ContentList>
+      <ContentListItem>Ensure you are using the latest release of either <Link to="https://github.com/autonomys/space-acres/releases">Space Acres</Link> <Badge variant="recommended" text="Recommended" /> or the <Link to="https://github.com/autonomys/subspace/releases">CLI</Link></ContentListItem>
+      <ContentListItem>Confirm that your farmer is active and on the highest block by checking our <Link to="https://telemetry.subspace.foundation">telemetry</Link> server</ContentListItem>
+      <ContentListItem>Check your balance using <Link to="https://astral.autonomys.xyz">Astral Block Explorer</Link> or the <Link to="https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Frpc.mainnet.subspace.foundation%2Fws#/explorer">Polkadot Explorer</Link></ContentListItem>
+    </ContentList>
+  </ContentBlock>
+</ContentGroup>
 
 :::info Still experiencing issues?
 If your problem isn't listed above or the suggested solutions didn't work, reach out to our community:

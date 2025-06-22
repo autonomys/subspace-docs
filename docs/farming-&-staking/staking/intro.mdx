@@ -15,6 +15,7 @@ keywords:
 import Icon from '@site/src/components/Icon';
 import { ICONS } from '@site/src/constants';
 import Badge from '@site/src/components/Badge';
+import { DirectoryTree, Dir, File } from '@site/src/components/DirectoryTree';
 
 :::warning Operator and Staking Availability
 Running an Operator and staking are only available on the Taurus testnet.  
@@ -62,43 +63,39 @@ Hardware requirements are lowered for testing but will likely increase on mainne
 | --- | :-: | :-: | :-: |
 | **CLI** | 22.04 | 11 | 14 (Sonoma) |
 
-<small>* Note that these are the officially supported minimum versions. For example, Windows 10 will not be officially supported but is likely to work. Team will not prioritise supporting issues that are only present on Windows 10.</small>
+###### * Note that these are the officially supported minimum versions. For example, Windows 10 will not be officially supported but is likely to work. Team will not prioritise supporting issues that are only present on Windows 10.
 
 #### Hardware
 
-<a id="min-hardware"></a>
-<a id="min-node-storage"></a>
-<a id="min-network"></a>
-
 | CPU | RAM | Storage | Network |
 | --- | :-: | :-: | :-: |
-| 4 Cores+ @ 3.4GHz [¹](https://docs.autonomys.xyz/staking/intro#min-hardware) | 16 GB | 300 GB NVMe [²](https://docs.autonomys.xyz/staking/intro#min-node-storage) | 50 Mbps [³](https://docs.autonomys.xyz/staking/intro#min-network) |
+| 4 Cores+ @ 3.4GHz ¹ | 16 GB | 300 GB NVMe ² | 50 Mbps ³ |
 
-<small>¹ Intel Ice Lake or newer (Xeon or Core series), and AMD Zen 3 or newer (EPYC or Ryzen), with a preference for single-threaded performance over a higher core count.</small>
-<br />
-<p>
-<small>² Latency is more important than throughput.</small>
-<br />
-<small>³ Bandwidth throughput listed refers to the required upload speed.</small>
-<br />
-</p>
+###### ¹ Intel Ice Lake or newer (Xeon or Core series), and AMD Zen 3 or newer (EPYC or Ryzen), with a preference for single-threaded performance over a higher core count.
+
+###### ² Latency is more important than throughput.
+
+###### ³ Bandwidth throughput listed refers to the required upload speed.
 
 ### Directory Structure
 
-:::info Key Pair Location
-For operators, the key pair can be found in `/<BASE_PATH>/domains/<DOMAIN_ID>/keystore`.
+:::info Operator Key Storage
+The operator key pair is stored in the `keystore` directory within your domain folder. In the example below, `0` represents the domain ID, which will vary based on which domain you're operating on.
 :::
 
-<div style={{fontFamily: 'monospace', fontSize: '0.9rem', lineHeight: '1.8'}}>
-  <div><Icon icon={ICONS.FOLDER} /> subspace-node</div>
-  <div style={{paddingLeft: '1.5rem'}}><Icon icon={ICONS.FOLDER} /> db</div>
-  <div style={{paddingLeft: '1.5rem'}}><Icon icon={ICONS.FOLDER_OPEN} /> domains</div>
-  <div style={{paddingLeft: '3rem'}}><Icon icon={ICONS.FOLDER_OPEN} /> 0</div>
-  <div style={{paddingLeft: '4.5rem'}}><Icon icon={ICONS.FOLDER} /> db</div>
-  <div style={{paddingLeft: '4.5rem'}}><Icon icon={ICONS.FOLDER} /> evm</div>
-  <div style={{paddingLeft: '4.5rem'}}><Icon icon={ICONS.FOLDER} /> keystore</div>
-  <div style={{paddingLeft: '1.5rem'}}><Icon icon={ICONS.FOLDER} /> network</div>
-</div>
+<DirectoryTree>
+  <Dir name="subspace-node">
+    <Dir name="db" />
+    <Dir name="domains" open>
+      <Dir name="0" open focused >
+        <Dir name="db" />
+        <Dir name="evm" />
+        <Dir name="keystore" focused />
+      </Dir>
+    </Dir>
+    <Dir name="network" />
+  </Dir>
+</DirectoryTree>
 
 ## Staking <Badge variant="testnet" text="Testnet" />
 
