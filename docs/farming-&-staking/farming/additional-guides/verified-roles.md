@@ -71,7 +71,7 @@ This exclusive role can be obtained by setting up a Talisman wallet and farming 
     
 ![Connect Discord](/img/doc-imgs/verify-farmer/connect-discord.png)
 
-6. After these steps, you should now see all of the roles you are elgible for and have received those roles in Discord.
+6. After these steps, you should now see all of the roles you are eligible for and have received those roles in Discord.
 
 ![Successful Role](/img/doc-imgs/verify-farmer/successful-role.png)
 
