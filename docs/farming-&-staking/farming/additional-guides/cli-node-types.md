@@ -105,8 +105,15 @@ A domain archive node allows an RPC user to query any historical blocks on the d
 -- \
 --domain-id "<DOMAIN_ID>" \
 --blocks-pruning archive \
---state-pruning archive
+--state-pruning archive \
+--rpc-methods unsafe \
+--rpc-cors all \
+--rpc-listen-on 0.0.0.0:"<RPC_PORT>"
 ```
+
+:::tip RPC Port
+By default the RPC port is 9944 so you can leave the *rpc-listen-on* out. If you want to change it, you can set it to `0.0.0.0:"<RPC_PORT>"`
+:::
 
 ## Specialized Nodes
 
