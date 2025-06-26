@@ -1,8 +1,5 @@
 {
     "label": "Operators & Nominators",
     "position": 2,
-    "link": null,
-    "customProps": {
-        "testnet": true
-    }
+    "link": null
 }

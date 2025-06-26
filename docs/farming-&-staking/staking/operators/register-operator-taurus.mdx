@@ -1,8 +1,10 @@
 ---
-title: Register an Operator
-sidebar_position: 1
+title: Register a Taurus Operator
+sidebar_position: 2
 description: Operators Setup guide
-slug: /staking/operator/register
+slug: /staking/operator/register-taurus
+sidebar_custom_props:
+  testnet: true
 keywords:
 - Operator
 - Guide
@@ -15,16 +17,16 @@ import CodeBlock from '@theme/CodeBlock';
 import Link from '@docusaurus/Link';
 import styles from '@site/src/pages/index.module.css';
 
-import WindowsPage from '/docs/farming-&-staking/staking/operators/platforms/_windows.mdx';
-import MacOSPage from '/docs/farming-&-staking/staking/operators/platforms/_macos.mdx';
-import LinuxPage from '/docs/farming-&-staking/staking/operators/platforms/_linux.mdx';
+import WindowsPage from '/docs/farming-&-staking/staking/operators/platforms/_windows-taurus.mdx';
+import MacOSPage from '/docs/farming-&-staking/staking/operators/platforms/_macos-taurus.mdx';
+import LinuxPage from '/docs/farming-&-staking/staking/operators/platforms/_linux-taurus.mdx';
 
 ## Download Subspace Node
 
 Download `Subspace Node` for your respective operating system.
 
 :::note
-This guide is for registering an operator on the **Mainnet** network
+This guide is for registering an operator on the **Taurus** network
 :::
 
 <Tabs groupId="OS">
@@ -46,10 +48,10 @@ This guide is for registering an operator on the **Mainnet** network
 ### Choosing the right domain
 
 An operator needs to register on a specific domain and create a key pair to participate in bundle production. Autonomys is currently using `domain 0` for the EVM domain. 
-More domains will be available in the future. It is possible to register an operator for each domain, but each operator will require running its own node. 
+More domains will be available in the future. It is possible to register an operator for each domain, but each operator will require running its own node.
 
 :::tip
-Any account with the **minimum operator stake of 100 AI3** can become an operator. 
+Any account with the **minimum operator stake of 100 tAI3** can become an operator. 
 :::
 
 ### Create operator key
@@ -64,7 +66,7 @@ To create a new operator key, run the following command:
 :::
 
 ```bash
-./subspace-node-ubuntu-x86_64-skylake-mainnet-2025-jun-06 domain key create --base-path "<BASE_PATH>" --domain-id "<DOMAIN_ID>"
+./subspace-node-ubuntu-x86_64-skylake-taurus-2025-may-27 domain key create --base-path "<BASE_PATH>" --domain-id "<DOMAIN_ID>"
 ```
 
 :::tip
@@ -113,8 +115,8 @@ You can ignore setting up `<OPERATOR_ID>` while you're syncing your node as you 
 <TabItem value="windows" label="🖼️ Windows" default>
 
 ```powershell
-subspace-node-windows-x86_64-skylake-mainnet-2025-jun-06.exe run `
---chain mainnet `
+subspace-node-windows-x86_64-skylake-taurus-2025-may-27.exe run `
+--chain taurus `
 --name "<NAME>" `
 --base-path "<BASE_PATH>" `
 --sync full `
@@ -128,8 +130,8 @@ subspace-node-windows-x86_64-skylake-mainnet-2025-jun-06.exe run `
 <TabItem value="macos" label="🍎 macOS">
 
 ```bash
-./subspace-node-macos-aarch64-mainnet-2025-jun-06 run \
---chain mainnet \
+./subspace-node-macos-aarch64-taurus-2025-may-27 run \
+--chain taurus \
 --name "<NAME>" \
 --base-path "<BASE_PATH>" \
 --sync full \
@@ -143,8 +145,8 @@ subspace-node-windows-x86_64-skylake-mainnet-2025-jun-06.exe run `
 <TabItem value="linux" label="🐧 Ubuntu">
 
 ```bash
-./subspace-node-ubuntu-x86_64-skylake-mainnet-2025-jun-06 run \
---chain mainnet \
+./subspace-node-ubuntu-x86_64-skylake-taurus-2025-may-27 run \
+--chain taurus \
 --name "<NAME>" \
 --base-path "<BASE_PATH>" \
 --sync full \
@@ -160,7 +162,7 @@ subspace-node-windows-x86_64-skylake-mainnet-2025-jun-06.exe run `
 ```yaml
 services:
   node:
-    # Replace snapshot-DATE with the latest release (like mainnet-2025-jun-06)
+    # Replace snapshot-DATE with the latest release (like taurus-2025-may-27)
     image: ghcr.io/autonomys/node:snapshot-DATE
     volumes:
 # Instead of specifying volume (which will store data in /var/lib/docker), you can
@@ -177,7 +179,7 @@ services:
     restart: unless-stopped
     command: [
       "run",
-      "--chain", "mainnet",
+      "--chain", "taurus",
       "--base-path", "/var/subspace",
       "--listen-on", "0.0.0.0:30333",
       "--dsn-listen-on", "/ip4/0.0.0.0/tcp/30433",
@@ -208,13 +210,13 @@ You should see the node start successfully and begin syncing.
 
 :::info
 It's crucial to **fully sync** your node before registering as an operator. Please follow the commands in the ***Start the domain operator*** node section and only register as an operator once your node is fully synced. If many operators are registered but their nodes are still syncing or offline, it can adversely affect the speed of block production in the domain.
-You are required to have at least 100 AI3 in order to register your operator. You can obtain AI3 by farming on the mainnet network.
+You are required to have at least 100 tAI3 in order to register your operator. You can obtain tAI3 by farming on the taurus network.
 :::
 
 
 #### Register an operator using Autonomys Staking interface
 
-1. Proceed to the staking tab on [Astral](https://astral.autonomys.xyz/mainnet/consensus) and make sure you have the Mainnet network selected.
+1. Proceed to the staking tab on [Astral](https://astral.autonomys.xyz/taurus/consensus) and make sure you have the Taurus network selected.
 
 ![NStaking-19](/img/doc-imgs/operators-staking/NStaking-19.png)
 
@@ -243,7 +245,7 @@ You are required to have at least 100 AI3 in order to register your operator. Yo
 7. Select your Domain (It will default to Auto EVM), Signing key, Amount to Stake, Nominator Tax, a Minimum Nominator Stake, and then click on the `Register Operator` button at the bottom of the page.
 
 :::info
-Make sure to specify a Minimum Nominator Stake of at least 1 AI3 and to use the operator key generated on the previous **[Create operator key](#create-operator-key)** step.
+Make sure to specify a Minimum Nominator Stake of at least 1 tAI3 and to use the operator key generated on the previous **[Create operator key](#create-operator-key)** step.
 :::
 
 8. Approve the request in the pop-up window.
@@ -276,12 +278,12 @@ It will take until the end of **[an epoch](#staking-epoch)** for the operator to
 
 ![NStaking-22](/img/doc-imgs/operators-staking/NStaking-22.png)
 
-2. Use the slider to determine what percentage you want to withdraw or you can click one of the preset percentages as well as the max button to withdraw your entire stake.
+2. Use the slider to determine what percentage of your stake you wish to withdraw.
 
 ![NStaking-20](/img/doc-imgs/operators-staking/NStaking-20.png)
 
 :::warning
-You cannot withdraw more than the 100 AI3 minimum operator stake. If you try to withdraw more than the minimum, the request will be rejected.
+You cannot withdraw more than the 100 tAI3 minimum operator stake. If you try to withdraw more than the minimum, the request will be rejected.
 :::
 
 3. Click on the `Withdraw` button to confirm the withdrawal and approve the transaction.
