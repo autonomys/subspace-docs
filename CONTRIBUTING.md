@@ -6,7 +6,7 @@ First off, thank you for considering contributing to the Autonomys Network. It's
 
 ### Help us, Help you, Help us!
 
-Following these guidelines shows that you respect the time of the developers who manage and develope this open source project. In return, they should reciprocate that respect in addressing your issue, assessing changes, and helping you finalize your pull requests.
+Following these guidelines shows that you respect the time of the developers who manage and develop this open source project. In return, they should reciprocate that respect in addressing your issue, assessing changes, and helping you finalize your pull requests.
 
 
 ### What Can I Contribute?
