@@ -13,12 +13,13 @@ If you face an error where the node outputs nothing and no error code is given i
   <ReleaseButton to="https://github.com/autonomys/subspace/releases/download/mainnet-2025-jun-18/subspace-node-windows-x86_64-skylake-mainnet-2025-jun-18.exe" title="Node Executable" subtitle="(Skylake+ CPU)" />
   <ReleaseButton to="https://github.com/autonomys/subspace/releases/download/mainnet-2025-jun-18/subspace-farmer-windows-x86_64-skylake-mainnet-2025-jun-18.exe" title="Farmer Executable" subtitle="(Skylake+ CPU)" />
 </ReleaseContainer>
-
+ 
 <ReleaseContainer>
   <ReleaseButton to="https://github.com/autonomys/subspace/releases/download/mainnet-2025-jun-18/subspace-node-windows-x86_64-v2-mainnet-2025-jun-18.exe" title="Node Executable" subtitle="(Legacy CPU)" />
   <ReleaseButton to="https://github.com/autonomys/subspace/releases/download/mainnet-2025-jun-18/subspace-farmer-windows-x86_64-v2-mainnet-2025-jun-18.exe" title="Farmer Executable" subtitle="(Legacy CPU)" />
 </ReleaseContainer>
- 
+
+
 ## Step 2: Start CLI Node
 ---
 
@@ -37,8 +38,6 @@ This is because the application is trying to access the internet. This is expect
 :::
 
 ```powershell
-# Replace `INSERT_YOUR_ID` with a nickname you choose
-# Copy all of the lines below, they are all part of the same command
 .\subspace-node-windows-x86_64-skylake-mainnet-2025-jun-18.exe `
   run `
   --chain mainnet `

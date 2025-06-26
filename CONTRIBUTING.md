@@ -2,7 +2,7 @@
 
 ### You Rock!
 
-First off, thank you for considering contributing to the Autonomys Network. It's through the amazing collaboration of people like yourself that truly makes the Open Source community amazing. ❤️
+First off, thank you for considering contributing to the Autonomys Network. It's through the amazing collaboration of people like yourself that truly makes the Open Source community amazing.
 
 ### Help us, Help you, Help us!
 
@@ -43,12 +43,12 @@ Please follow this pathway for *minor* contributions such as Spelling errors, Ty
 8. On the right you will see some options, you will want to apply the most accurate `labels` listed.
 9. Click `Create Pull Request`
 
-🎉Congratulations! You have just submitted your first Pull Request! 
+Congratulations! You have just submitted your first Pull Request! 
 *Please provide some time for a maintainer to view your pull request and approve it, or request adjustments.*
 
 ## Never contributed before?
 
-No worries! We all start somewhere 🚀 There are several videos & resources online to show various ways to use GitHub.
+No worries! We all start somewhere. There are several videos & resources online to show various ways to use GitHub.
 Check out some of these amazing guides to help get you familiar with GitHub and contributing.
 - [First Contributions - Terminal](https://github.com/firstcontributions/first-contributions)
 - [First Contributions - GitHub Desktop](https://github.com/firstcontributions/first-contributions/blob/main/docs/gui-tool-tutorials/github-desktop-tutorial.md)

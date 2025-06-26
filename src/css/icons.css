@@ -1,0 +1,318 @@
+/* ==================================================
+   ICON STYLES
+   ================================================== */
+
+/* Base icon styles - default size 20px */
+.icon {
+  color: var(--ifm-color-primary);
+  display: inline-flex;
+  line-height: 1;
+  vertical-align: middle;
+  width: 20px;
+  height: 20px;
+}
+
+/* Ensure all iconify SVGs respect parent icon sizing */
+.icon svg.iconify {
+  width: 100% !important;
+  height: 100% !important;
+}
+
+/* Local SVG icons using CSS mask technique */
+.icon-local {
+  background-color: currentColor;
+  display: inline-block;
+  height: 20px;
+  mask-position: center;
+  mask-repeat: no-repeat;
+  mask-size: contain;
+  width: 20px;
+}
+
+/* Icon size variants - using px for consistency */
+.icon-xs {
+  width: 12px;
+  height: 12px;
+}
+
+.icon-sm {
+  width: 16px;
+  height: 16px;
+}
+
+.icon-md {
+  width: 24px;
+  height: 24px;
+}
+
+.icon-lg {
+  width: 32px;
+  height: 32px;
+}
+
+.icon-xl {
+  width: 40px;
+  height: 40px;
+}
+
+.icon-2xl {
+  width: 48px;
+  height: 48px;
+}
+
+/* Icon sizing in headers */
+h1 .icon {
+  width: 30px;
+  height: 30px;
+  margin-right: 0.5rem;
+}
+
+h2 .icon {
+  width: 28px;
+  height: 28px;
+  margin-right: 0.5rem;
+}
+
+h3 .icon {
+  width: 26px;
+  height: 26px;
+  margin-right: 0.5rem;
+}
+
+/* Inline icons in tables and text - ensure proper vertical alignment */
+td .icon,
+p .icon,
+li .icon,
+span .icon {
+  vertical-align: middle;
+  position: relative;
+  top: -0.05em; /* Fine-tune alignment */
+}
+
+/* Fix vertical alignment for Iconify SVGs in headers */
+h1 svg.iconify,
+h2 svg.iconify,
+h3 svg.iconify,
+h4 svg.iconify,
+h5 svg.iconify,
+h6 svg.iconify {
+  vertical-align: -0.125em;
+}
+
+/* ==================================================
+   STATUS INDICATOR ICONS
+   ================================================== */
+
+/* Status indicator icons - check/success */
+svg.iconify[data-icon*="check-circle"] {
+  color: #22C55E; /* Green-500 for success */
+}
+
+/* Status indicator icons - close/error */
+svg.iconify[data-icon*="close-circle"] {
+  color: #EF4444; /* Red-500 for error */
+}
+
+/* Dark mode status icon color adjustments */
+[data-theme='dark'] svg.iconify[data-icon*="check-circle"] {
+  color: #4ADE80; /* Green-400 for better visibility in dark mode */
+}
+
+[data-theme='dark'] svg.iconify[data-icon*="close-circle"] {
+  color: #F87171; /* Red-400 for better visibility in dark mode */
+}
+
+/* Severity status indicators */
+.icon-status-green {
+  color: #22C55E !important; /* Green-500 */
+  vertical-align: middle;
+}
+
+.icon-status-orange {
+  color: #F97316 !important; /* Orange-500 */
+  vertical-align: middle;
+}
+
+.icon-status-red {
+  color: #EF4444 !important; /* Red-500 */
+  vertical-align: middle;
+}
+
+/* Dark mode severity indicators */
+[data-theme='dark'] .icon-status-green {
+  color: #4ADE80 !important; /* Green-400 */
+}
+
+[data-theme='dark'] .icon-status-orange {
+  color: #FB923C !important; /* Orange-400 */
+}
+
+[data-theme='dark'] .icon-status-red {
+  color: #F87171 !important; /* Red-400 */
+}
+
+/* ==================================================
+   TABLE STATUS ICONS
+   ================================================== */
+
+/* Table status icons */
+.icon-check-mark {
+  color: #22C55E; /* Green-500 */
+}
+
+.icon-cross-mark {
+  color: #EF4444; /* Red-500 */
+}
+
+.icon-limited {
+  color: #F97316; /* Orange-500 */
+}
+
+.icon-future {
+  color: #6B7280; /* Gray-500 */
+}
+
+.icon-question {
+  color: #6B7280; /* Gray-500 */
+}
+
+/* Dark mode table status icons */
+[data-theme='dark'] .icon-check-mark {
+  color: #4ADE80; /* Green-400 */
+}
+
+[data-theme='dark'] .icon-cross-mark {
+  color: #F87171; /* Red-400 */
+}
+
+[data-theme='dark'] .icon-limited {
+  color: #FB923C; /* Orange-400 */
+}
+
+[data-theme='dark'] .icon-future {
+  color: #9CA3AF; /* Gray-400 */
+}
+
+[data-theme='dark'] .icon-question {
+  color: #9CA3AF; /* Gray-400 */
+}
+
+/* Table header icons */
+th .icon {
+  display: inline-block;
+  text-align: center;
+}
+
+/* Table cell status icons - keep at default size */
+td .icon-check-mark,
+td .icon-cross-mark,
+td .icon-limited,
+td .icon-future,
+td .icon-question {
+  width: 24px;
+  height: 24px;
+}
+
+/* Center content in table cells with icons */
+table:has(th .icon) td {
+  text-align: center;
+  vertical-align: middle;
+}
+
+table:has(th .icon) td:first-child {
+  text-align: left;
+}
+
+
+
+/* ==================================================
+   FEATURED & TESTNET ICONS
+   ================================================== */
+
+/* Featured icon styles */
+.icon-featured {
+  animation: shimmer 6s ease-in-out infinite;
+  color: #FFB800;
+  display: inline-block;
+  margin-right: 0.5rem;
+  transform-origin: center;
+}
+
+/* Testnet icon styles */
+.icon-testnet {
+  color: #F97316; /* Orange-500 for clear testnet indication */
+  display: inline-block;
+  margin-right: 0.5rem;
+}
+
+/* Dark mode testnet color adjustment */
+[data-theme='dark'] .icon-testnet {
+  color: #FB923C; /* Orange-400 for better visibility in dark mode */
+}
+
+/* Shimmer animation for featured icons - very subtle sparkle effect */
+@keyframes shimmer {
+  0%, 85%, 100% {
+    transform: rotate(0deg) scale(1);
+    filter: brightness(1);
+  }
+  90% {
+    transform: rotate(-2deg) scale(1.02);
+    filter: brightness(1.05);
+  }
+  92.5% {
+    transform: rotate(2deg) scale(1.03);
+    filter: brightness(1.1) drop-shadow(0 0 2px rgba(255, 184, 0, 0.15));
+  }
+  95% {
+    transform: rotate(-1deg) scale(1.02);
+    filter: brightness(1.05);
+  }
+}
+
+/* Apply animation to all featured icon elements */
+.icon-featured,
+.icon-featured svg,
+.featured-badge .icon,
+.featured-badge .icon svg,
+svg.icon-featured {
+  animation: shimmer 6s ease-in-out infinite !important;
+  display: inline-block !important;
+  transform-origin: center !important;
+}
+
+/* Reduce motion for accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .icon-featured,
+  .icon-featured svg,
+  .featured-badge .icon,
+  .featured-badge .icon svg {
+    animation: none;
+  }
+}
+
+
+/* ==================================================
+   TAB ICON STYLES
+   ================================================== */
+
+/* Make all tab buttons flex containers for proper icon alignment */
+.tabs__item button,
+.tabs__item[role="tab"] {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 0.5rem !important;
+}
+
+/* Icons within tabs */
+.tabs__item .icon {
+  flex-shrink: 0; /* Prevent icon from shrinking */
+}
+
+/* Icon-only tabs - ensure proper sizing and padding */
+.tabs__item button:has(.icon:only-child),
+.tabs__item[role="tab"]:has(.icon:only-child) {
+  padding: 0.75rem 1rem;
+  min-width: 4rem;
+  justify-content: center;
+}

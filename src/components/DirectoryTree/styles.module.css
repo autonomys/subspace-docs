@@ -1,0 +1,94 @@
+.tree {
+  font-family: var(--ifm-font-family-monospace);
+  font-size: 0.9rem;
+  line-height: 1.8;
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  border-left: 3px solid var(--ifm-color-emphasis-300);
+  margin: 1rem 0;
+}
+
+.node {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.children {
+  padding-left: 1.5rem;
+}
+
+.icon {
+  flex-shrink: 0;
+  opacity: 0.7;
+  width: 16px;
+  height: 16px;
+}
+
+.name {
+  flex-shrink: 0;
+}
+
+.focused {
+  position: relative;
+  background: rgba(245, 158, 11, 0.08);
+  margin: -2px -8px;
+  padding: 2px 8px;
+  border-radius: 4px;
+}
+
+.focusIndicator {
+  position: absolute;
+  left: -1.5rem;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 6px 0 6px 8px;
+  border-color: transparent transparent transparent #F59E0B;
+}
+
+.note {
+  margin-left: 0.5rem;
+  font-size: 0.85em;
+  color: var(--ifm-color-content-secondary);
+  font-style: italic;
+  opacity: 0.8;
+}
+
+/* Dark mode styles */
+[data-theme='dark'] .tree {
+  border-left-color: var(--ifm-color-emphasis-400);
+}
+
+[data-theme='dark'] .focused {
+  background: rgba(251, 191, 36, 0.1);
+}
+
+[data-theme='dark'] .focusIndicator {
+  border-color: transparent transparent transparent #FBBF24;
+}
+
+[data-theme='dark'] .icon {
+  opacity: 0.6;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .tree {
+    font-size: 0.85rem;
+    line-height: 1.6;
+    padding: 0.5rem 1rem;
+  }
+  
+  .children {
+    padding-left: 1.25rem;
+  }
+  
+  .note {
+    display: block;
+    margin-left: 1.5rem;
+    margin-top: 0.125rem;
+  }
+}

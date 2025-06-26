@@ -12,9 +12,9 @@ keywords:
 ---
 
 import Link from '@docusaurus/Link';
-import FeaturedBadge from '@site/src/components/FeaturedBadge';
-import TestnetBadge from '@site/src/components/TestnetBadge';
+import Badge from '@site/src/components/Badge';
 import Icon from '@site/src/components/Icon';
+import { ICONS } from '@site/src/constants';
 import ActionButton from '@site/src/components/ActionButton';
 import ResourceCard from '@site/src/components/ResourceCard';
 
@@ -30,7 +30,7 @@ Join thousands of farmers across the globe who are already securing the network,
 
 ---
 
-## <Icon icon="mdi:rocket-launch" />Start Your Journey
+## <Icon icon={ICONS.ROCKET_LAUNCH} />Start Your Journey
 
 This documentation site is designed to enhance your experience with the Autonomys Network, providing clear guides and resources for every type of participant. We welcome your suggestions on how we can make it better - your feedback helps us build better documentation for our growing community.
 
@@ -43,28 +43,28 @@ This documentation site is designed to enhance your experience with the Autonomy
     to="/farming/space-acres/install" 
     title="Start Farming" 
     subtitle="Earn rewards by storing data" 
-    icon="mdi:tractor" 
+    icon={ICONS.FARMER} 
   />
   
   <ActionButton 
     to="/staking/stake" 
     title="Start Staking" 
     subtitle="Nominate operators & earn" 
-    icon="mdi:account-heart" 
+    icon={ICONS.NOMINATOR} 
   />
   
   <ActionButton 
     to="/staking/operator/register" 
     title="Become an Operator" 
     subtitle="Validate transactions" 
-    icon="mdi:server" 
+    icon={ICONS.OPERATOR} 
   />
   
   <ActionButton 
     to="https://academy.autonomys.xyz/" 
     title="Autonomys Academy" 
     subtitle="Learn the fundamentals" 
-    icon="mdi:school" 
+    icon={ICONS.ACADEMY} 
     external 
   />
   
@@ -72,7 +72,7 @@ This documentation site is designed to enhance your experience with the Autonomy
     to="https://develop.autonomys.xyz" 
     title="Developer Hub" 
     subtitle="Build more. Code less." 
-    icon="lineicons:dev" 
+    icon={ICONS.DEVELOPER} 
     external 
   />
   
@@ -80,7 +80,7 @@ This documentation site is designed to enhance your experience with the Autonomy
     to="/participate/contribute/intro" 
     title="Contribute" 
     subtitle="Improve docs & help others" 
-    icon="material-symbols:partner-exchange" 
+    icon={ICONS.CONTRIBUTE} 
   />
 </div>
 
@@ -88,7 +88,7 @@ This documentation site is designed to enhance your experience with the Autonomy
 
 ---
 
-## <Icon icon="mdi:web" />Essential Resources
+## <Icon icon={ICONS.WEB} />Essential Resources
 
 Connect with the Autonomys community and explore our ecosystem:
 
@@ -97,76 +97,76 @@ Connect with the Autonomys community and explore our ecosystem:
     to="https://autonomys.xyz/discord" 
     title="Discord" 
     subtitle="Join our community chat" 
-    icon="mdi:discord" 
+    icon={ICONS.DISCORD} 
   />
   
   <ResourceCard 
     to="https://t.me/subspace_network" 
     title="Telegram" 
     subtitle="Connect on Telegram" 
-    icon="mdi:telegram" 
+    icon={ICONS.TELEGRAM} 
   />
   
   <ResourceCard 
     to="https://github.com/autonomys" 
     title="GitHub" 
     subtitle="Explore our open source code" 
-    icon="mdi:github" 
+    icon={ICONS.GITHUB} 
   />
   
   <ResourceCard 
     to="https://autonomys.xyz" 
     title="Autonomys Website" 
     subtitle="Learn about our vision" 
-    icon="token:autonomys" 
+    icon={ICONS.AUTONOMYS} 
   />
   
   <ResourceCard 
     to="https://astral.autonomys.xyz" 
     title="Astral Block Explorer" 
     subtitle="Explore network activity" 
-    icon="mdi:cube-scan" 
+    icon={ICONS.EXPLORER} 
   />
   
   <ResourceCard 
     to="https://forum.autonomys.xyz" 
     title="Community Forums" 
     subtitle="Discuss and share knowledge" 
-    icon="mdi:forum" 
+    icon={ICONS.FORUM} 
   />
 </div>
 
 ---
 
-## <Icon icon="mdi:account-group" />Network Participants
+## <Icon icon={ICONS.COMMUNITY} />Network Participants
 
 :::tip Understanding Our Badges
 
-Throughout this documentation, you'll see the <FeaturedBadge text="Recommended" /> badge highlighting our community-tested, hand-picked solutions. These are carefully selected options that offer the best balance of ease-of-use, reliability, and features for most users. When multiple paths exist, we guide you toward the ones that have proven most successful for our community.
+Throughout this documentation, you'll see the <Badge variant="recommended" text="Recommended" /> badge highlighting our community-tested, hand-picked solutions. These are carefully selected options that offer the best balance of ease-of-use, reliability, and features for most users. When multiple paths exist, we guide you toward the ones that have proven most successful for our community.
 
-You'll also notice the <TestnetBadge text="Testnet" /> badge on certain features and sections. This indicates functionality that is currently only available on our Taurus testnet. These features are being tested and refined before their mainnet release, giving early adopters a chance to explore upcoming capabilities while helping us ensure they're ready for production use. Taurus serves as our proving ground for innovation, where new features undergo rigorous testing by our community.
+You'll also notice the <Badge variant="testnet" text="Testnet" /> badge on certain features and sections. This indicates functionality that is currently only available on our Taurus testnet. These features are being tested and refined before their mainnet release, giving early adopters a chance to explore upcoming capabilities while helping us ensure they're ready for production use. Taurus serves as our proving ground for innovation, where new features undergo rigorous testing by our community.
 :::
 
-### <Icon icon="mdi:tractor" />Farmers
+### <Icon icon={ICONS.FARMER} />Farmers
 Secure the network by storing archival history and earn rewards. Farmers maintain consensus, plot data to disk, and participate in the Distributed Storage Network (DSN).
 
 **Getting Started:**
-- **[Space Acres](/farming/space-acres/install)** <FeaturedBadge text="Recommended" /> - User-friendly GUI application perfect for beginners, with visual setup and monitoring
+- **[Space Acres](/farming/space-acres/install)** <Badge variant="recommended" text="Recommended" /> - User-friendly GUI application perfect for beginners, with visual setup and monitoring
 - **[CLI Farmer](/farming/cli/install)** - Command-line interface for advanced users seeking full control and automation capabilities
 
-### <Icon icon="mdi:account-heart" />Nominators
+### <Icon icon={ICONS.NOMINATOR} />Nominators
 Stake your tAI3 tokens by nominating operators to increase their chances of being elected as slot leaders. Earn proportional rewards while supporting network security.
 
 **Getting Started:**
-- **[Start Staking](/staking/stake)** <TestnetBadge text="Testnet" /> - Begin nominating operators
+- **[Start Staking](/staking/stake)** <Badge variant="testnet" text="Testnet" /> - Begin nominating operators
 
-### <Icon icon="mdi:server" />Operators
+### <Icon icon={ICONS.OPERATOR} />Operators
 Validate and execute transactions, produce execution receipts, and apply state transitions across domains while earning rewards for your work.
 
 **Getting Started:**
-- **[Register as Operator](/staking/operator/register)** <TestnetBadge text="Testnet" /> - Set up your operator node
+- **[Register as Operator](/staking/operator/register)** <Badge variant="testnet" text="Testnet" /> - Set up your operator node
 
-### <Icon icon="mdi:clock" />Timekeepers
+### <Icon icon={ICONS.TIMEKEEPER} />Timekeepers
 Run the Proof-of-Time chain and maintain the randomness beacon that secures the consensus chain.
 
 **Getting Started:**

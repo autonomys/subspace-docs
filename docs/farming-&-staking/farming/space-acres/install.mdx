@@ -18,12 +18,16 @@ import Link from '@docusaurus/Link';
 import styles from '@site/src/pages/index.module.css';  
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import ThemedImage from '@theme/ThemedImage';
+import Badge from '@site/src/components/Badge';
+import Icon from '@site/src/components/Icon';
+import TabLabel from '@site/src/components/TabLabel';
+import { ICONS } from '@site/src/constants';
 
 import WindowsPage from './platforms/_windows.mdx';  
 import MacOSPage from './platforms/_macos.mdx';  
 import LinuxPage from './platforms/_linux.mdx';  
 
-# Install Space Acres <FeaturedIcon />
+# <Badge variant="recommended" iconOnly /> Install Space Acres
 
 ## Before You Begin
 
@@ -54,7 +58,7 @@ For those who prefer a visual guide, we have prepared installation videos to ass
 
 <Tabs groupId="OS">
 
-<TabItem value="linux" label="🐧 Linux" default>
+<TabItem value="linux" label={<TabLabel icon={ICONS.UBUNTU}>Ubuntu</TabLabel>} default>
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/Gsjfxhnw-1w" title="SubWallet Setup" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
@@ -62,7 +66,7 @@ For those who prefer a visual guide, we have prepared installation videos to ass
 
 </TabItem>
 
-<TabItem value="windows" label="🖼️ Windows">
+<TabItem value="windows" label={<TabLabel icon={ICONS.WINDOWS}>Windows</TabLabel>}>
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/Gsjfxhnw-1w" title="SubWallet Setup" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
@@ -70,7 +74,7 @@ For those who prefer a visual guide, we have prepared installation videos to ass
 
 </TabItem>
 
-<TabItem value="macos" label="🍎 macOS">
+<TabItem value="macos" label={<TabLabel icon={ICONS.MACOS}>macOS</TabLabel>}>
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/Gsjfxhnw-1w" title="SubWallet Setup" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
@@ -87,19 +91,19 @@ For those who prefer a visual guide, we have prepared installation videos to ass
 
 <Tabs groupId="OS">
 
-<TabItem value="linux" label="🐧 Linux" default>
+<TabItem value="linux" label={<TabLabel icon={ICONS.UBUNTU}>Ubuntu</TabLabel>} default>
 
 <LinuxPage/>
 
 </TabItem>
 
-<TabItem value="windows" label="🖼️ Windows">
+<TabItem value="windows" label={<TabLabel icon={ICONS.WINDOWS}>Windows</TabLabel>}>
 
 <WindowsPage/>
 
 </TabItem>
 
-<TabItem value="macos" label="🍎 macOS">
+<TabItem value="macos" label={<TabLabel icon={ICONS.MACOS}>macOS</TabLabel>}>
 
 <MacOSPage/>
 

@@ -9,6 +9,11 @@
    ================================================== */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
 
+/* ==================================================
+   ICON STYLES IMPORT
+   ================================================== */
+@import url('./icons.css');
+
 :root {
   --ifm-font-family-base: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
 }
@@ -792,125 +797,10 @@ article img[src*="intro-banner"] {
   opacity: 0.9;
 }
 
-
-/* ==================================================
-   ICONIFY ICON STYLES
-   ================================================== */
-/* Base icon styles with primary color */
-.icon {
-  color: var(--ifm-color-primary);
-  display: inline-flex;
-  line-height: 1;
-  vertical-align: middle;
-}
-
-/* Icon sizing based on context - inherit font size */
-h1 .icon,
-.icon-h1 {
-  font-size: inherit;
-  margin-right: 0.5rem;
-}
-
-h2 .icon,
-.icon-h2 {
-  font-size: inherit;
-  margin-right: 0.5rem;
-}
-
-h3 .icon,
-.icon-h3 {
-  font-size: inherit;
-  margin-right: 0.5rem;
-}
-
-/* Common inline icon */
-.icon-inline {
-  font-size: 1em;
-  margin-left: 0.25rem;
-  margin-right: 0.25rem;
-}
-
-/* Fix vertical alignment for Iconify SVGs in headers */
-h1 svg.iconify,
-h2 svg.iconify,
-h3 svg.iconify,
-h4 svg.iconify,
-h5 svg.iconify,
-h6 svg.iconify {
-  vertical-align: -0.125em;
-}
-
-/* Featured icon styles */
-.icon-featured {
-  animation: shimmer 6s ease-in-out infinite;
-  color: #FFB800;
-  display: inline-block;
-  font-size: 1.1em;
-  margin-right: 0.5rem;
-  transform-origin: center;
-}
-
-/* Testnet icon styles */
-.icon-testnet {
-  color: #F97316; /* Orange-500 for clear testnet indication */
-  display: inline-block;
-  font-size: 1.1em;
-  margin-right: 0.5rem;
-}
-
-/* Dark mode testnet color adjustment */
-[data-theme='dark'] .icon-testnet {
-  color: #FB923C; /* Orange-400 for better visibility in dark mode */
-}
-
-/* Shimmer animation for featured icons - very subtle sparkle effect */
-@keyframes shimmer {
-  0%, 85%, 100% {
-    transform: rotate(0deg) scale(1);
-    filter: brightness(1);
-  }
-  90% {
-    transform: rotate(-2deg) scale(1.02);
-    filter: brightness(1.05);
-  }
-  92.5% {
-    transform: rotate(2deg) scale(1.03);
-    filter: brightness(1.1) drop-shadow(0 0 2px rgba(255, 184, 0, 0.15));
-  }
-  95% {
-    transform: rotate(-1deg) scale(1.02);
-    filter: brightness(1.05);
-  }
-}
-
-/* Apply animation to all featured icon elements */
-.icon-featured,
-.icon-featured svg,
-.featured-badge .icon,
-.featured-badge .icon svg,
-svg.icon-featured {
-  animation: shimmer 6s ease-in-out infinite !important;
-  display: inline-block !important;
-  transform-origin: center !important;
-}
-
-/* Reduce motion for accessibility */
-@media (prefers-reduced-motion: reduce) {
-  .icon-featured,
-  .icon-featured svg,
-  .featured-badge .icon,
-  .featured-badge .icon svg {
-    animation: none;
-  }
-}
-
-/* Featured badge for inline use */
-.featured-badge {
+/* Base badge styles */
+.badge {
   align-items: center;
-  background-color: #FFF3CD;
-  border: 1px solid #FFE69C;
   border-radius: 0.25rem;
-  color: #664D03;
   display: inline-flex;
   font-size: 0.75rem;
   font-weight: 600;
@@ -920,23 +810,34 @@ svg.icon-featured {
   text-transform: uppercase;
 }
 
-.featured-badge .icon {
-  animation: shimmer 6s ease-in-out infinite;
-  color: #FFB800;
+.badge .icon {
   font-size: 0.875rem;
   margin-right: 0.25rem;
 }
 
-/* Dark mode featured styles */
-[data-theme='dark'] .featured-badge {
+/* Recommended badge variant */
+.badge-recommended {
+  background-color: #FFF3CD;
+  border: 1px solid #FFE69C;
+  color: #664D03;
+}
+
+.badge-recommended .icon {
+  animation: shimmer 6s ease-in-out infinite;
+  color: #FFB800;
+}
+
+/* Dark mode recommended badge */
+[data-theme='dark'] .badge-recommended {
   background-color: rgba(255, 184, 0, 0.15);
   border-color: rgba(255, 184, 0, 0.4);
   color: #FFD55F;
 }
 
-[data-theme='dark'] .featured-badge .icon {
+[data-theme='dark'] .badge-recommended .icon {
   color: #FFB800;
 }
+
 
 /* Sidebar featured items */
 .menu__link--featured::before {
@@ -946,36 +847,25 @@ svg.icon-featured {
   margin-right: 0.5rem;
 }
 
-/* Testnet badge for inline use */
-.testnet-badge {
-  align-items: center;
+/* Testnet badge variant */
+.badge-testnet {
   background-color: #FED7AA;
   border: 1px solid #FDBA74;
-  border-radius: 0.25rem;
   color: #9A3412;
-  display: inline-flex;
-  font-size: 0.75rem;
-  font-weight: 600;
-  margin-left: 0.25rem;
-  margin-right: 0.25rem;
-  padding: 0.125rem 0.375rem;
-  text-transform: uppercase;
 }
 
-.testnet-badge .icon {
+.badge-testnet .icon {
   color: #F97316;
-  font-size: 0.875rem;
-  margin-right: 0.25rem;
 }
 
-/* Dark mode testnet styles */
-[data-theme='dark'] .testnet-badge {
+/* Dark mode testnet badge */
+[data-theme='dark'] .badge-testnet {
   background-color: rgba(249, 115, 22, 0.15);
   border-color: rgba(249, 115, 22, 0.4);
   color: #FDBA74;
 }
 
-[data-theme='dark'] .testnet-badge .icon {
+[data-theme='dark'] .badge-testnet .icon {
   color: #FB923C;
 }
 
@@ -1142,4 +1032,20 @@ svg.icon-featured {
 
 [data-theme='dark'] .resource-content p {
   color: var(--ifm-color-content-secondary);
+}
+
+/* ==================================================
+   H6 FOOTNOTE STYLES
+   ================================================== */
+h6 {
+  font-weight: normal !important;
+  font-size: 0.875rem !important;
+  margin-top: 0.5rem !important;
+  margin-bottom: 0.5rem !important;
+  color: var(--ifm-color-content-secondary);
+}
+
+/* Add more space when H6 is followed by other elements */
+h6 + :not(h6) {
+  margin-top: 1.5rem;
 }

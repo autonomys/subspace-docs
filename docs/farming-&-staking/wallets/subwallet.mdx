@@ -11,6 +11,9 @@ keywords:
     - Wallet
 ---
 
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
 :::note
 
 SubWallet is a third-party wallet built for Substrate and EVM networks by the [SubWallet Team](https://subwallet.app).
@@ -89,23 +92,26 @@ Sometimes you won't see the network you would like to connect to in a list of av
 
 This also can be helpful for in-development networks such as the Autonomys Network Testnet. Below you will find a simple guide on how to add these new networks. Additionally we will try and keep an updated list of active RPC endpoints below for development.
 
-<details>
-<summary>📝 RPC endpoints</summary>
-#### Consensus (mainnet)
-```
+<Tabs>
+  <TabItem value="mainnet" label="Mainnet" default>
+    ### Consensus
+    ```
     wss://rpc.mainnet.subspace.foundation/ws
-```
-
-#### Consensus (Taurus Testnet)
-```
+    ```
+  </TabItem>
+  
+  <TabItem value="taurus" label="Taurus Testnet">
+    ### Consensus
+    ```
     wss://rpc.taurus.autonomys.xyz
-```
-
-#### Auto EVM (Taurus)
-```
+    ```
+    
+    ### Auto EVM
+    ```
     wss://auto-evm.taurus.autonomys.xyz/ws
-```
-</details>
+    ```
+  </TabItem>
+</Tabs>
 
 
 1. Open SubWallet, select the 3 line menu in the top left of the wallet.
