@@ -93,6 +93,9 @@ A domain archive node allows an RPC user to query any historical blocks on the d
 :::tip Replace these placeholders
 - `<BASE_PATH>`: Path where you want to store the node database
 - `<DOMAIN_ID>`: The domain ID you want to connect to
+- `<RPC_PORT>`: The RPC port you want your node to be accessible at
+
+By default the RPC port is 9944 so you can leave the `rpc-listen-on` out. If you want to change it, you can set it to `0.0.0.0:"<RPC_PORT>"`
 :::
 
 ```bash
@@ -105,7 +108,10 @@ A domain archive node allows an RPC user to query any historical blocks on the d
 -- \
 --domain-id "<DOMAIN_ID>" \
 --blocks-pruning archive \
---state-pruning archive
+--state-pruning archive \
+--rpc-methods unsafe \
+--rpc-cors all \
+--rpc-listen-on 0.0.0.0:"<RPC_PORT>"
 ```
 
 ## Specialized Nodes
