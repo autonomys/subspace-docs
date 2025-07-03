@@ -45,10 +45,10 @@ function getPreviousMonthDates() {
     const prevYear = month === 0 ? year - 1 : year;
     
     const firstDay = new Date(Date.UTC(prevYear, prevMonth, 1));
-    const lastDay = new Date(Date.UTC(prevYear, prevMonth + 1, 0));
+    const lastDay = new Date(Date.UTC(prevYear, prevMonth + 1, 0, 23, 59, 59)); // Last day of previous month at 23:59:59
     
     const startDate = firstDay.toISOString().replace(/\.\d{3}Z$/, '+00:00');
-    const endDate = lastDay.toISOString().replace(/T[\d:]+\.\d{3}Z$/, 'T23:59:59+00:00');
+    const endDate = lastDay.toISOString().replace(/\.\d{3}Z$/, '+00:00');
     
     return { startDate, endDate };
 }
