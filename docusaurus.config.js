@@ -115,12 +115,12 @@ const config = {
           { to: '/develop/auto-evm/block-explorer', from: ['/docs/develop/nova/block_explorer', '/develop/nova/block-explorer'] },
 
           // Community (formerly Participate)
-          { to: '/community/contributing/intro', from: ['/participate/contribute/intro', '/docs/community/contribute/', '/docs/category/participate'] },
+          { to: '/community/contribute/intro', from: ['/participate/contribute/intro', '/docs/community/contribute/', '/docs/category/participate'] },
 
-          { to: '/community/contributing/code-of-conduct', from: ['/participate/contribute/code-of-conduct', '/docs/participate/CODE_OF_CONDUCT'] },
-          { to: '/community/contributing/translate', from: ['/participate/contribute/translate', '/docs/participate/translate'] },
+          { to: '/community/contribute/code-of-conduct', from: ['/participate/contribute/code-of-conduct', '/docs/participate/CODE_OF_CONDUCT'] },
+          { to: '/community/contribute/translate', from: ['/participate/contribute/translate', '/docs/participate/translate'] },
 
-          { to: '/community/community-showcase/contributions', from: ['/participate/community/contributions', '/participate/community/tools', '/participate/community/resources', '/docs/participate/', '/docs/participate/contribute', '/docs/participate/community_resources/community-maintained-tools'] },
+          { to: '/community/showcase/contributions', from: ['/participate/community/contributions', '/participate/community/tools', '/participate/community/resources', '/docs/participate/', '/docs/participate/contribute', '/docs/participate/community_resources/community-maintained-tools'] },
         ],
       },
     ],
@@ -218,15 +218,15 @@ const config = {
             items: [
               {
                 label: 'Contribute',
-                href: '/community/contributing/intro',
+                href: '/community/contribute/intro',
               },
               {
                 label: 'Community Contributions',
-                href: '/community/community-showcase/contributions',
+                href: '/community/showcase/contributions',
               },
               {
                 label: 'Help Us Translate!',
-                href: '/community/contributing/translate',
+                href: '/community/contribute/translate',
               }
             ],
           },
