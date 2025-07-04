@@ -2,7 +2,7 @@
 title: Getting started
 sidebar_position: 1
 description: How to contribute to the Autonomys Docs
-slug: /participate/contribute/intro
+slug: /community/contributing/intro
 keywords:
     - Docs
     - Contribute
