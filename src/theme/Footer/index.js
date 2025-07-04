@@ -105,7 +105,7 @@ export default function FooterWrapper(props) {
                 </li>
                 <li>
                   <FooterLink 
-                    to="/community/contributing/intro" 
+                    to="/community/contribute/intro" 
                     label="Contribute" 
                     icon={ICONS.CONTRIBUTE}
                   />
