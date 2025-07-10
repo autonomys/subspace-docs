@@ -88,6 +88,19 @@ These errors and warnings are tied to specific components. In this section, we h
       </ContentCode>
     </ContentBlock>
 
+    <ContentBlock 
+      title="ERROR Consensus: Snap sync fatal error" 
+      slug="snap-sync-failed"
+      confirmedVersion="mainnet-2025-jun-06"
+      severity="low"
+      description="When a new node is stood up with the default syncing method, it will attempt to download segments from the network. If the node is unable to download enough pieces to reconstruct a segment, it will exit with this error message. This can usually be ignored as it will restart the node and try again."
+    >
+      <ContentSubtitle>Error message:</ContentSubtitle>
+      <ContentCode language="log">
+{`ERROR Consensus: subspace_service: Snap sync exited with a fatal error error=Snap sync error: Failed to download segment pieces: Not enough (127/128) pieces for segment <segment>`}
+      </ContentCode>
+    </ContentBlock>
+
 </TabItem>
 
 <TabItem value="farmer" label={<TabLabel icon={ICONS.FARMER}>Farmer</TabLabel>}>
