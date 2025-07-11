@@ -46,103 +46,108 @@ These errors and warnings are tied to specific components. In this section, we h
 <Tabs queryString="component">
 
 <TabItem value="node" label={<TabLabel icon={ICONS.NODE}>Node</TabLabel>} default>
-    <ContentBlock 
-      title="WARN Consensus: telemetry: ❌ Error while dialing" 
-      slug="telemetry-error"
-      confirmedVersion="mainnet-2025-jun-06"
-      severity="low"
-      description="This error is specifically related to the telemetry server. It may occur occasionally, but it has no impact on farming operations and can be safely ignored."
-    >
-      <ContentSubtitle>Error message:</ContentSubtitle>
-      <ContentCode language="log">
-{`WARN Consensus: telemetry: ❌ Error while dialing /dns/telemetry.subspace.foundation/tcp/443/x-parity-wss/%2Fsubmit%2F: Custom { kind: Other, error: Timeout }`}
-      </ContentCode>
-    </ContentBlock>
+    <ContentGroup>
 
-    <ContentBlock 
-      title="WARN Consensus: Proof of time chain reorg" 
-      slug="pot-chain-reorg"
-      confirmedVersion="mainnet-2025-jun-06"
-      severity="medium"
-      description="This situation arises when two or more valid blocks are created at the same height in the blockchain. Initially, network nodes may disagree on which block to add to the chain, resulting in multiple temporary forks. Once this disagreement is resolved, the blocks from the discarded fork become orphaned, and the chain reorganizes to incorporate the blocks from the winning fork."
-    >
-      <ContentSubtitle>Resolution:</ContentSubtitle>
-      <ContentText>This should resolve on its own.</ContentText>
-      
-      <ContentSubtitle>Error message:</ContentSubtitle>
-      <ContentCode language="log">
-{`WARN Consensus: sc_proof_of_time::source: Proof of time chain reorg happened from_next_slot=<block> to_next_slot=<block>`}
-      </ContentCode>
-    </ContentBlock>
+        <ContentBlock 
+          title="WARN Consensus: telemetry: ❌ Error while dialing" 
+          slug="telemetry-error"
+          confirmedVersion="mainnet-2025-jun-06"
+          severity="low"
+          description="This error is specifically related to the telemetry server. It may occur occasionally, but it has no impact on farming operations and can be safely ignored."
+        >
+          <ContentSubtitle>Error message:</ContentSubtitle>
+          <ContentCode language="log">
+    {`WARN Consensus: telemetry: ❌ Error while dialing /dns/telemetry.subspace.foundation/tcp/443/x-parity-wss/%2Fsubmit%2F: Custom { kind: Other, error: Timeout }`}
+          </ContentCode>
+        </ContentBlock>
 
-    <ContentBlock 
-      title="WARN Consensus: Proof of time chain extended" 
-      slug="pot-chain-extended"
-      confirmedVersion="mainnet-2025-jun-06"
-      severity="medium"
-      description="This warning message should not affect your rewards or the operation of your node. It's just a log message indicating the normal operation of the network."
-    >
-      <ContentSubtitle>Error message:</ContentSubtitle>
-      <ContentCode language="log">
-{`WARN Consensus: sc_proof_of_time::source: Proof of time chain was extended from block import from_next_slot=<block> to_next_slot=<block>`}
-      </ContentCode>
-    </ContentBlock>
+        <ContentBlock 
+          title="WARN Consensus: Proof of time chain reorg" 
+          slug="pot-chain-reorg"
+          confirmedVersion="mainnet-2025-jun-06"
+          severity="medium"
+          description="This situation arises when two or more valid blocks are created at the same height in the blockchain. Initially, network nodes may disagree on which block to add to the chain, resulting in multiple temporary forks. Once this disagreement is resolved, the blocks from the discarded fork become orphaned, and the chain reorganizes to incorporate the blocks from the winning fork."
+        >
+          <ContentSubtitle>Resolution:</ContentSubtitle>
+          <ContentText>This should resolve on its own.</ContentText>
+          
+          <ContentSubtitle>Error message:</ContentSubtitle>
+          <ContentCode language="log">
+    {`WARN Consensus: sc_proof_of_time::source: Proof of time chain reorg happened from_next_slot=<block> to_next_slot=<block>`}
+          </ContentCode>
+        </ContentBlock>
 
-    <ContentBlock 
-      title="ERROR Consensus: Snap sync fatal error" 
-      slug="snap-sync-failed"
-      confirmedVersion="mainnet-2025-jun-06"
-      severity="low"
-      description="When a new node is stood up with the default (snap) syncing method, it will attempt to download segments from the network. If the node is unable to download enough pieces to reconstruct a segment, it will exit with this error message. This can be ignored and the node restarted to try again."
-    >
-      <ContentSubtitle>Error message:</ContentSubtitle>
-      <ContentCode language="log">
-{`ERROR Consensus: subspace_service: Snap sync exited with a fatal error error=Snap sync error: Failed to download segment pieces: Not enough (127/128) pieces for segment <segment>`}
-      </ContentCode>
-    </ContentBlock>
+        <ContentBlock 
+          title="WARN Consensus: Proof of time chain extended" 
+          slug="pot-chain-extended"
+          confirmedVersion="mainnet-2025-jun-06"
+          severity="medium"
+          description="This warning message should not affect your rewards or the operation of your node. It's just a log message indicating the normal operation of the network."
+        >
+          <ContentSubtitle>Error message:</ContentSubtitle>
+          <ContentCode language="log">
+    {`WARN Consensus: sc_proof_of_time::source: Proof of time chain was extended from block import from_next_slot=<block> to_next_slot=<block>`}
+          </ContentCode>
+        </ContentBlock>
 
+        <ContentBlock 
+          title="ERROR Consensus: Snap sync fatal error" 
+          slug="snap-sync-failed"
+          confirmedVersion="mainnet-2025-jun-06"
+          severity="low"
+          description="When a new node is stood up with the default (snap) syncing method, it will attempt to download segments from the network. If the node is unable to download enough pieces to reconstruct a segment, it will exit with this error message. This can be ignored and the node restarted to try again."
+        >
+          <ContentSubtitle>Error message:</ContentSubtitle>
+          <ContentCode language="log">
+    {`ERROR Consensus: subspace_service: Snap sync exited with a fatal error error=Snap sync error: Failed to download segment pieces: Not enough (127/128) pieces for segment <segment>`}
+          </ContentCode>
+        </ContentBlock>
+
+    </ContentGroup>
 </TabItem>
 
 <TabItem value="farmer" label={<TabLabel icon={ICONS.FARMER}>Farmer</TabLabel>}>
-    <ContentBlock 
-      title="ERROR: Failed to store piece in cache, no space" 
-      slug="cache-no-space"
-      confirmedVersion="mainnet-2025-jun-06"
-      severity="high"
-      description="This indicates that there is not enough space in the cache to store a new piece of data."
-    >
-      <ContentSubtitle>Resolution:</ContentSubtitle>
-      <ContentList>
-        <ContentListItem>The drive where you are storing your farm is out of space</ContentListItem>
-        <ContentListItem>Reduce the farm size and restart the farmer</ContentListItem>
-        <ContentListItem>Ensure that you are saving the farm to the correct drive and that it is properly mounted</ContentListItem>
-      </ContentList>
-      
-      <ContentSubtitle>Error message:</ContentSubtitle>
-      <ContentCode language="log">
-{`ERROR subspace_farmer::farmer_cache: Failed to store piece in cache, there was no space piece_index=<piece>`}
-      </ContentCode>
-    </ContentBlock>
-
+    <ContentGroup>
+        <ContentBlock 
+          title="ERROR: Failed to store piece in cache, no space" 
+          slug="cache-no-space"
+          confirmedVersion="mainnet-2025-jun-06"
+          severity="high"
+          description="This indicates that there is not enough space in the cache to store a new piece of data."
+        >
+          <ContentSubtitle>Resolution:</ContentSubtitle>
+          <ContentList>
+            <ContentListItem>The drive where you are storing your farm is out of space</ContentListItem>
+            <ContentListItem>Reduce the farm size and restart the farmer</ContentListItem>
+            <ContentListItem>Ensure that you are saving the farm to the correct drive and that it is properly mounted</ContentListItem>
+          </ContentList>
+          
+          <ContentSubtitle>Error message:</ContentSubtitle>
+          <ContentCode language="log">
+    {`ERROR subspace_farmer::farmer_cache: Failed to store piece in cache, there was no space piece_index=<piece>`}
+          </ContentCode>
+        </ContentBlock>
+    </ContentGroup>
 </TabItem>
 
 <TabItem value="farming-cluster" label={<TabLabel icon={ICONS.CLUSTER}>Farming Cluster</TabLabel>}>
-    <ContentBlock 
-      title="WARN: Failed to plot sector, retrying" 
-      slug="plot-sector-retry"
-      confirmedVersion="mainnet-2025-jun-06"
-      severity="medium"
-      description="This is a known issue that is actively being investigated."
-    >
-      <ContentSubtitle>Mitigation:</ContentSubtitle>
-      <ContentText>To help mitigate these errors, run your NATS component on the same system as your Controller, Cache, and Plotter components.</ContentText>
-      
-      <ContentSubtitle>Error message:</ContentSubtitle>
-      <ContentCode language="log">
-{`WARN {farm_index=3}:{sector_index=1036}: subspace_farmer::single_disk_farm::plotting: Failed to plot sector, retrying in 1s error=Low-level plotting error: Received only <sector> sector bytes out of <bytes> expected bytes`}
-      </ContentCode>
-    </ContentBlock>
-
+    <ContentGroup>
+        <ContentBlock 
+          title="WARN: Failed to plot sector, retrying" 
+          slug="plot-sector-retry"
+          confirmedVersion="mainnet-2025-jun-06"
+          severity="medium"
+          description="This is a known issue that is actively being investigated."
+        >
+          <ContentSubtitle>Mitigation:</ContentSubtitle>
+          <ContentText>To help mitigate these errors, run your NATS component on the same system as your Controller, Cache, and Plotter components.</ContentText>
+          
+          <ContentSubtitle>Error message:</ContentSubtitle>
+          <ContentCode language="log">
+    {`WARN {farm_index=3}:{sector_index=1036}: subspace_farmer::single_disk_farm::plotting: Failed to plot sector, retrying in 1s error=Low-level plotting error: Received only <sector> sector bytes out of <bytes> expected bytes`}
+          </ContentCode>
+        </ContentBlock>
+    </ContentGroup>
 </TabItem>
 
 </Tabs>
