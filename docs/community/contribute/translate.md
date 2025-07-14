@@ -2,7 +2,7 @@
 title: Docs Translation
 sidebar_position: 3
 description: Translation Guide for the Autonomys Docs
-slug: /participate/contribute/translate
+slug: /community/contribute/translate
 keywords:
     - Awesome
     - Community
