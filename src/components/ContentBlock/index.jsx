@@ -3,7 +3,7 @@ import styles from './styles.module.css';
 import Icon from '@site/src/components/Icon';
 import { ICONS } from '@site/src/constants';
 
-export function ContentBlock({ title, children, lastUpdated, confirmedVersion, slug, showShare = true, severity }) {
+export function ContentBlock({ title, children, lastUpdated, confirmedVersion, slug, showShare = true, severity, description }) {
   const [copied, setCopied] = useState(false);
 
   const handleCopyLink = () => {
@@ -45,6 +45,11 @@ export function ContentBlock({ title, children, lastUpdated, confirmedVersion, s
         <div className={styles.severity}>
           <span className={styles.severityIcon}>{getSeverityIcon()}</span>
           <span>{severity.charAt(0).toUpperCase() + severity.slice(1)} Severity</span>
+        </div>
+      )}
+      {description && (
+        <div className={styles.content}>
+          <p>{description}</p>
         </div>
       )}
       <div className={styles.content}>
