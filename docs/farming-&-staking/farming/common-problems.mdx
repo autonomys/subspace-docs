@@ -91,15 +91,15 @@ These errors and warnings are tied to specific components. In this section, we h
         </ContentBlock>
 
         <ContentBlock 
-          title="ERROR Consensus: Snap sync fatal error" 
+          title="WARN Consensus: Snap sync fatal error" 
           slug="snap-sync-failed"
           confirmedVersion="mainnet-2025-jun-06"
           severity="low"
-          description="When a new node is stood up with the default (snap) syncing method, it will attempt to download segments from the network. If the node is unable to download enough pieces to reconstruct a segment, it will exit with this error message. This can be ignored and the node restarted to try again."
+          description="When a new node is stood up with the default (snap) syncing method, it will attempt to download segments from the network. If the node is unable to download enough pieces to reconstruct a segment, it will try again."
         >
           <ContentSubtitle>Error message:</ContentSubtitle>
           <ContentCode language="log">
-    {`ERROR Consensus: subspace_service: Snap sync exited with a fatal error error=Snap sync error: Failed to download segment pieces: Not enough (127/128) pieces for segment <segment>`}
+    {`WARN Consensus: subspace_service::sync_from_dsn: Error when syncing blocks from DSN, stopping DSN sync until the next notification error=Other: Failed to download segment pieces during block import: Not enough (127/128) pieces for segment <segment>`}
           </ContentCode>
         </ContentBlock>
 
