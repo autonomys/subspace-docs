@@ -88,6 +88,19 @@ These errors and warnings are tied to specific components. In this section, we h
       </ContentCode>
     </ContentBlock>
 
+    <ContentBlock 
+      title="WARN Consensus: Error when syncing blocks from DSN" 
+      slug="snap-sync-failed"
+      confirmedVersion="mainnet-2025-jul-14"
+      severity="low"
+      description="When a new node is stood up with the default (snap) syncing method, it will attempt to download segments from the network. If the node is unable to download enough pieces to reconstruct a segment, it will try again."
+    >
+      <ContentSubtitle>Error message:</ContentSubtitle>
+      <ContentCode language="log">
+{`WARN Consensus: subspace_service::sync_from_dsn: Error when syncing blocks from DSN, stopping DSN sync until the next notification error=Other: Failed to download segment pieces during block import: Not enough (127/128) pieces for segment <segment>`}
+      </ContentCode>
+    </ContentBlock>
+
 </TabItem>
 
 <TabItem value="farmer" label={<TabLabel icon={ICONS.FARMER}>Farmer</TabLabel>}>
