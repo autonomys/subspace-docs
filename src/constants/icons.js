@@ -72,6 +72,13 @@ export const ICONS = {
   ANSWER: 'mdi:message-reply-text',
   CALENDAR: 'mdi:calendar',
   
+  // ===== Rewards & Points =====
+  DIAMOND: 'mdi:diamond-stone',
+  TROPHY: 'mdi:trophy',
+  STAR: 'mdi:star',
+  EXTERNAL_LINK: 'mdi:open-in-new',
+  ZEALY: 'local:/img/icons/zealy.svg',
+  
   // ===== Network & Security =====
   PORT_FORWARD: 'mdi:router-network',
   FIREWALL: 'mdi:shield-lock',
