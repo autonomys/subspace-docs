@@ -1,0 +1,272 @@
+---
+title: Start Contributing
+sidebar_position: 1
+description: Join the Autonomys community and make your mark on the future of decentralized infrastructure
+slug: /community/contribute/intro
+keywords:
+  - Contributing
+  - Open source
+  - Documentation
+  - Development
+  - Community
+  - Guide
+  - Getting started
+  - Autonomys Network
+---
+
+import Link from '@docusaurus/Link';
+import Icon from '@site/src/components/Icon';
+import { ICONS } from '@site/src/constants';
+import ActionButton from '@site/src/components/ActionButton';
+import ResourceCard from '@site/src/components/ResourceCard';
+import Badge from '@site/src/components/Badge';
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+# Start Contributing to Autonomys
+
+Welcome to the heart of open-source collaboration! The Autonomys Network thrives because of contributors like you who bring fresh ideas, spot improvements, and help build the future of decentralized infrastructure. Whether you're fixing a typo or implementing a new feature, every contribution matters.
+
+<div className="releases-container">
+  <ActionButton 
+    to="https://github.com/autonomys/subspace-docs" 
+    title="View on GitHub" 
+    subtitle="Explore the repository" 
+    icon={ICONS.GITHUB} 
+    external
+  />
+  <ActionButton 
+    to="#quick-start" 
+    title="Quick Start Guide" 
+    subtitle="Jump to instructions" 
+    icon={ICONS.ROCKET_LAUNCH} 
+  />
+</div>
+
+## Why Contribute?
+
+Contributing to Autonomys isn't just about code. It's about being part of a movement to decentralize the internet's infrastructure. When you contribute:
+
+- **Shape the Future**: Your ideas and improvements directly impact how thousands of users interact with the network
+- **Learn and Grow**: Gain hands-on experience with cutting-edge blockchain technology
+- **Join a Community**: Connect with developers, farmers, and enthusiasts from around the world
+- **Build Your Portfolio**: Open source contributions showcase your skills to potential employers
+- **Make a Difference**: Help create a more decentralized and equitable internet
+
+## Ways to Make an Impact
+
+<div className="resource-cards">
+  <ResourceCard 
+    to="#quick-start" 
+    title="Improve Documentation" 
+    subtitle="Fix typos, clarify concepts, add examples" 
+    icon={ICONS.CODE} 
+  />
+  
+  <ResourceCard 
+    to="https://forum.autonomys.xyz/c/guides-and-faqs/13" 
+    title="Write Guides" 
+    subtitle="Share tutorials and best practices" 
+    icon={ICONS.ACADEMY} 
+  />
+  
+  <ResourceCard 
+    to="https://github.com/autonomys/subspace-docs/issues" 
+    title="Report Issues" 
+    subtitle="Help us maintain quality" 
+    icon={ICONS.LIMITED} 
+  />
+  
+  <ResourceCard 
+    to="https://github.com/autonomys/subspace-docs/issues/new" 
+    title="Submit Features" 
+    subtitle="Suggest new improvements" 
+    icon={ICONS.STAR} 
+  />
+  
+  <ResourceCard 
+    to="/community/contribute/translate" 
+    title="Translate Documentation" 
+    subtitle="Help make docs accessible globally" 
+    icon={ICONS.WEB} 
+  />
+  
+  <ResourceCard 
+    to="/community/showcase/contributions" 
+    title="Build & Share Tools" 
+    subtitle="Create tools for the community" 
+    icon={ICONS.DEVELOPER} 
+  />
+</div>
+
+## Quick Start Guide {#quick-start}
+
+Choose your contribution path based on your comfort level and goals:
+
+<Tabs>
+  <TabItem value="simple" label="Simple Edits" default>
+    
+**Perfect for first-time contributors!** Make quick improvements directly in your browser—no technical setup required.
+
+### What you can do:
+- Fix typos and grammar
+- Improve clarity and readability
+- Update outdated information
+- Add missing details
+
+### How to contribute:
+1. Navigate to any page in the documentation
+2. Scroll to the bottom and click **"Edit this page"**
+3. Make your changes in GitHub's web editor
+4. Write a clear commit message describing your changes
+5. Click **"Propose changes"** and then **"Create pull request"**
+
+:::tip What happens next?
+Your changes will be automatically saved to a fork of the repository. Our maintainers will review and merge your contribution, usually within 1-2 days.
+:::
+
+  </TabItem>
+  
+  <TabItem value="advanced" label="Advanced Setup">
+
+**For substantial contributions** like new pages, features, or major restructuring.
+
+### Prerequisites:
+- Git and GitHub account
+- Node.js v22 or higher
+- Text editor or IDE (VS Code recommended)
+- Basic command line knowledge
+
+### Setup instructions:
+
+```bash
+# 1. Fork the repository on GitHub
+# 2. Clone your fork
+git clone https://github.com/YOUR-USERNAME/subspace-docs.git
+cd subspace-docs
+
+# 3. Install dependencies
+npm install
+# or
+yarn install
+
+# 4. Start development server
+npm run start
+# or
+yarn start
+
+# 5. Open http://localhost:3000 in your browser
+```
+
+### Contribution workflow:
+1. Create a new branch: `git checkout -b feature/your-feature-name`
+2. Make your changes and test locally
+3. Commit with descriptive messages: `git commit -m "Add: description of changes"`
+4. Push to your fork: `git push origin feature/your-feature-name`
+5. Open a pull request on GitHub
+
+:::info Need more help?
+Check out our [README](https://github.com/autonomys/subspace-docs/blob/main/README.md) for detailed setup instructions.
+:::
+
+  </TabItem>
+</Tabs>
+
+## Contribution Guidelines
+
+### Quality Standards
+
+To maintain high-quality documentation:
+
+- **Be Clear**: Use simple language and avoid unnecessary jargon
+- **Be Accurate**: Verify technical details and test code examples
+- **Be Consistent**: Follow existing patterns and conventions
+- **Be Complete**: Include all necessary information without being verbose
+- **Be Helpful**: Think from the reader's perspective
+
+### Before You Submit
+
+<div className="alert alert--warning" role="alert">
+  <strong>Checklist:</strong>
+  <ul>
+    <li>Test all links and code snippets</li>
+    <li>Run <code>npm run build</code> to ensure no build errors</li>
+    <li>Review your changes for typos and formatting</li>
+    <li>Write a clear PR title and description</li>
+    <li>Reference any related issues (e.g., "Fixes #123")</li>
+  </ul>
+</div>
+
+### Code Comments
+
+When contributing code or complex examples:
+
+```javascript
+// Don't comment obvious code
+const name = "Autonomys"; // Sets name to Autonomys
+
+// Do comment complex logic
+// Calculate expected rewards based on pledged space and network difficulty
+// Uses the formula: rewards = (pledgedSpace / totalNetworkSpace) * blockRewards
+function calculateExpectedRewards(pledgedSpace, networkStats) {
+  // Implementation here
+}
+```
+
+## Join Our Community
+
+Contributing is more rewarding when you're connected with fellow builders. Join us:
+
+<div className="resource-cards">
+  <ResourceCard 
+    to="https://autonomys.xyz/discord" 
+    title="Discord Server" 
+    subtitle="Chat with contributors" 
+    icon={ICONS.DISCORD} 
+  />
+  
+  <ResourceCard 
+    to="https://forum.autonomys.xyz" 
+    title="Community Forum" 
+    subtitle="Share ideas and guides" 
+    icon={ICONS.FORUM} 
+  />
+  
+  <ResourceCard 
+    to="https://github.com/autonomys" 
+    title="GitHub Organization" 
+    subtitle="Explore all repositories" 
+    icon={ICONS.GITHUB} 
+  />
+</div>
+
+### Getting Help
+
+- **Quick questions**: Ask in the `#developer-chat` channel on Discord
+- **Documentation help**: Post in `#docs-discussion` 
+- **Technical issues**: Open a GitHub issue with details
+- **General support**: Visit the forum's support section
+
+Remember to follow our <Link to="/community/contribute/code-of-conduct">Code of Conduct</Link> in all interactions.
+
+---
+
+## Ready to Make Your Mark?
+
+Every expert was once a beginner. Start small, ask questions, and don't be afraid to make mistakes. The Autonomys community is here to support your journey!
+
+<div className="releases-container">
+  <ActionButton 
+    to="/" 
+    title="Start Contributing" 
+    subtitle="Browse the docs" 
+    icon={ICONS.CONTRIBUTE} 
+  />
+</div>
+
+:::tip First Time Contributing?
+Check out these beginner-friendly resources:
+- [First Contributions Guide](https://github.com/firstcontributions/first-contributions) - Step-by-step tutorial
+- [How to Contribute to Open Source](https://opensource.guide/how-to-contribute/) - Comprehensive guide
+- [Understanding GitHub Flow](https://guides.github.com/introduction/flow/) - GitHub's workflow explained
+:::
