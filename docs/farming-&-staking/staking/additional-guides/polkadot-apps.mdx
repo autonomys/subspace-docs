@@ -31,80 +31,83 @@ These extrinsics can be submitted on [Polkadot Apps](https://polkadot.js.org/app
 :::
 
 <ContentGroup title="Extrinsic Operations" icon={<Icon icon={ICONS.CODE} />}>
-  <ContentBlock 
-    title="Nominate an Operator" 
-    slug="nominate-operator"
-    showShare={true}
-  >
-    ![Nominate Operator](/img/doc-imgs/polkadot/nominateOperator.png)
 
-    <ContentList ordered>
-      <ContentListItem>Select the wallet you'd like to use (if you have more than one).</ContentListItem>
-      <ContentListItem>Choose `domains`.</ContentListItem>
-      <ContentListItem>Select `nominateOperator`.</ContentListItem>
-      <ContentListItem>Enter the `OperatorId` you wish to nominate.</ContentListItem>
-      <ContentListItem>Set the nomination `amount` in **Shannons**. For reference, 100 tAI3 equals 100 followed by 18 zeros.</ContentListItem>
-      <ContentListItem>Click `Submit Transaction` and sign the extrinsic with your supported <Link to="/wallets">wallet</Link>.</ContentListItem>
-    </ContentList>
-  </ContentBlock>
+<ContentBlock 
+title="Nominate an Operator" 
+slug="nominate-operator"
+showShare={true}
+>
 
-  <ContentBlock 
-    title="Register an Operator" 
-    slug="register-operator"
-    showShare={true}
-  >
-    ![Register an Operator](/img/doc-imgs/polkadot/registerOperator.png)
+![Nominate Operator](/img/doc-imgs/polkadot/nominateOperator.png)
 
-    <ContentList ordered>
-      <ContentListItem>Select the wallet you'd like to use (if you have more than one).</ContentListItem>
-      <ContentListItem>Choose `domains`.</ContentListItem>
-      <ContentListItem>Select `registerOperator`.</ContentListItem>
-      <ContentListItem>Enter the `domainId` you wish to register an operator on. Auto EVM is on domain 0.</ContentListItem>
-      <ContentListItem>Set the initial operator stake `amount` in **Shannons**. For reference, 100 tAI3 is represented as 100 followed by 18 zeros. The value must be an integer equal to or greater than 100 tokens.</ContentListItem>
-      <ContentListItem>Set the minimum nominator stake required to participate under this operator in **Shannons**. For reference, 10 tAI3 is represented as 10 followed by 18 zeros. The value must be an integer equal to or greater than 1 token.</ContentListItem>
-      <ContentListItem>Set the nomination tax percentage to be collected from nominators participating under this operator. The value must be an integer equal to or greater than 0.</ContentListItem>
-      <ContentListItem>Click `Submit Transaction` and sign the extrinsic with your supported <Link to="/wallets">wallet</Link>.</ContentListItem>
-    </ContentList>
-  </ContentBlock>
+<ContentList   ordered>
+<ContentListItem>Select the wallet you'd like to use (if you have more than one).</ContentListItem>
+<ContentListItem>Choose `domains`.</ContentListItem>
+<ContentListItem>Select `nominateOperator`.</ContentListItem>
+<ContentListItem>Enter the `OperatorId` you wish to nominate.</ContentListItem>
+<ContentListItem>Set the nomination `amount` in **Shannons**. For reference, 100 tAI3 equals 100 followed by 18 zeros.</ContentListItem>
+<ContentListItem>Click `Submit Transaction` and sign the extrinsic with your supported <Link to="/wallets">wallet</Link>.</ContentListItem>
+</ContentList>
+</ContentBlock>
 
-  <ContentBlock 
-    title="Withdraw Stake" 
-    slug="withdraw-stake"
-    showShare={true}
-  >
-    :::caution Funds Not Immediately Available
-    It will take **14,400 domain blocks** from a successful withdrawal before you can finalize the process and [unlock](#unlock-nominator) the funds.
-    :::
+<ContentBlock 
+title="Register an Operator" 
+slug="register-operator"
+showShare={true}
+>
+![Register an Operator](/img/doc-imgs/polkadot/registerOperator.png)
 
-    ![Withdraw Stake](/img/doc-imgs/polkadot/withdrawStake.png)
+<ContentList ordered>
+<ContentListItem>Select the wallet you'd like to use (if you have more than one).</ContentListItem>
+<ContentListItem>Choose `domains`.</ContentListItem>
+<ContentListItem>Select `registerOperator`.</ContentListItem>
+<ContentListItem>Enter the `domainId` you wish to register an operator on. Auto EVM is on domain 0.</ContentListItem>
+<ContentListItem>Set the initial operator stake `amount` in **Shannons**. For reference, 100 tAI3 is represented as 100 followed by 18 zeros. The value must be an integer equal to or greater than 100 tokens.</ContentListItem>
+<ContentListItem>Set the minimum nominator stake required to participate under this operator in **Shannons**. For reference, 10 tAI3 is represented as 10 followed by 18 zeros. The value must be an integer equal to or greater than 1 token.</ContentListItem>
+<ContentListItem>Set the nomination tax percentage to be collected from nominators participating under this operator. The value must be an integer equal to or greater than 0.</ContentListItem>
+<ContentListItem>Click `Submit Transaction` and sign the extrinsic with your supported <Link to="/wallets">wallet</Link>.</ContentListItem>
+</ContentList>
+</ContentBlock>
 
-    <ContentList ordered>
-      <ContentListItem>Select the wallet you'd like to use (if you have more than one).</ContentListItem>
-      <ContentListItem>Choose `domains`.</ContentListItem>
-      <ContentListItem>Select `withdrawStake`.</ContentListItem>
-      <ContentListItem>Enter the `OperatorId` you wish to nominate.</ContentListItem>
-      <ContentListItem>Select `All` to withdraw the full amount, or choose `Stake` to withdraw only a portion. If you choose to withdraw a partial stake, enter 80% of the amount you wish to withdraw. The remaining 20% is held in a storage fund and will be refunded automatically. For example, to withdraw 100 tAI3, you would enter (100 * 0.80), which equals 80 followed by 18 zeros as the amount is in **Shannons**.</ContentListItem>
-      <ContentListItem>Click `Submit Transaction` and sign the extrinsic with your supported <Link to="/wallets">wallet</Link>.</ContentListItem>
-    </ContentList>
-  </ContentBlock>
+<ContentBlock 
+title="Withdraw Stake" 
+slug="withdraw-stake"
+showShare={true}
+>
+:::caution Funds Not Immediately Available
+It will take **14,400 domain blocks** from a successful withdrawal before you can finalize the process and [unlock](#unlock-nominator) the funds.
+:::
 
-  <ContentBlock 
-    title="Unlock Nominator" 
-    slug="unlock-nominator"
-    showShare={true}
-  >
-    :::caution Funds Not Immediately Available
-    It will take **14,400 domain blocks** from a successful withdrawal before you can finalize the process and unlock the funds.
-    :::
+![Withdraw Stake](/img/doc-imgs/polkadot/withdrawStake.png)
 
-    ![Unlock Nominator](/img/doc-imgs/polkadot/unlockNominator.png)
+<ContentList ordered>
+<ContentListItem>Select the wallet you'd like to use (if you have more than one).</ContentListItem>
+<ContentListItem>Choose `domains`.</ContentListItem>
+<ContentListItem>Select `withdrawStake`.</ContentListItem>
+<ContentListItem>Enter the `OperatorId` you wish to nominate.</ContentListItem>
+<ContentListItem>Select `All` to withdraw the full amount, or choose `Stake` to withdraw only a portion. If you choose to withdraw a partial stake, enter 80% of the amount you wish to withdraw. The remaining 20% is held in a storage fund and will be refunded automatically. For example, to withdraw 100 tAI3, you would enter (100 * 0.80), which equals 80 followed by 18 zeros as the amount is in **Shannons**.</ContentListItem>
+<ContentListItem>Click `Submit Transaction` and sign the extrinsic with your supported <Link to="/wallets">wallet</Link>.</ContentListItem>
+</ContentList>
+</ContentBlock>
 
-    <ContentList ordered>
-      <ContentListItem>Select the wallet you'd like to use (if you have more than one).</ContentListItem>
-      <ContentListItem>Choose `domains`.</ContentListItem>
-      <ContentListItem>Select `unlockNominator`.</ContentListItem>
-      <ContentListItem>Enter the `OperatorId` you wish to nominate.</ContentListItem>
-      <ContentListItem>Click `Submit Transaction` and sign the extrinsic with your supported <Link to="/wallets">wallet</Link>.</ContentListItem>
-    </ContentList>
-  </ContentBlock>
+<ContentBlock 
+title="Unlock Nominator" 
+slug="unlock-nominator"
+showShare={true}
+>
+:::caution Funds Not Immediately Available
+It will take **14,400 domain blocks** from a successful withdrawal before you can finalize the process and unlock the funds.
+:::
+
+![Unlock Nominator](/img/doc-imgs/polkadot/unlockNominator.png)
+
+<ContentList ordered>
+
+<ContentListItem>Select the wallet you'd like to use (if you have more than one).</ContentListItem>
+<ContentListItem>Choose `domains`.</ContentListItem>
+<ContentListItem>Select `unlockNominator`.</ContentListItem>
+<ContentListItem>Enter the `OperatorId` you wish to nominate.</ContentListItem>
+<ContentListItem>Click `Submit Transaction` and sign the extrinsic with your supported <Link to="/wallets">wallet</Link>.</ContentListItem>
+</ContentList>
+</ContentBlock>
 </ContentGroup>
