@@ -14,7 +14,7 @@ jobs:
     name: Install Dependencies
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
       - uses: actions/setup-node@v4
         with:
           node-version: '22.14.0'
@@ -29,7 +29,7 @@ jobs:
     env:
       CROWDIN_PERSONAL_TOKEN: ${{ secrets.CROWDIN_PERSONAL_TOKEN }}
     steps:
-        - uses: actions/checkout@v4
+        - uses: actions/checkout@v5
         - uses: actions/setup-node@v4
           with:
             node-version: '22.14.0'
@@ -45,7 +45,7 @@ jobs:
     env:
       CROWDIN_PERSONAL_TOKEN: ${{ secrets.CROWDIN_PERSONAL_TOKEN }}
     steps:
-        - uses: actions/checkout@v4
+        - uses: actions/checkout@v5
         - uses: actions/setup-node@v4
           with:
             node-version: '22.14.0'
@@ -59,7 +59,7 @@ jobs:
     needs: [build-leaderboard, sync-localization]
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
       - uses: actions/setup-node@v4
         with:
           node-version: '22.14.0'
