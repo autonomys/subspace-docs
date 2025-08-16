@@ -3,13 +3,20 @@ title: Getting Started
 sidebar_position: 1
 toc_min_heading_level: 2
 toc_max_heading_level: 4
-description: Introduction to Staking and Operators
+description: Comprehensive guide to Autonomys Network's Decoupled Execution Framework, covering farming vs operators, staking mechanics, nominations, and operator requirements for the Taurus testnet
 slug: /staking/intro
 keywords:
-    - Staking
-    - Operator
-    - Guide
     - Decoupled Execution
+    - Autonomys Network
+    - Operator Requirements
+    - Staking Mechanics
+    - Nomination
+    - Taurus Testnet
+    - Transaction Execution
+    - Consensus Layer
+    - AI3 Token
+    - Slashing
+    - Stake Epochs
 ---
 
 import Icon from '@site/src/components/Icon';
@@ -17,9 +24,8 @@ import { ICONS } from '@site/src/constants';
 import Badge from '@site/src/components/Badge';
 import { DirectoryTree, Dir, File } from '@site/src/components/DirectoryTree';
 
-:::warning Operator and Staking Availability
-Running an Operator and staking are only available on the Taurus testnet.  
-Availability on mainnet is planned for Phase 2. For further details, please refer to our [Phased Launch Roadmap](https://forum.autonomys.xyz/t/4831).
+:::warning Operator Availability
+Running an Operator is currently only available on the Taurus Testnet. On mainnet, only Subspace Labs and the Subspace Foundation are running operators. Community access to running operators on mainnet will be available in the future.
 :::
 
 ## Decoupled Execution Framework
@@ -97,7 +103,7 @@ The operator key pair is stored in the `keystore` directory within your domain f
   </Dir>
 </DirectoryTree>
 
-## Staking <Badge variant="testnet" text="Testnet" />
+## Staking
 
 The Autonomys Network relies on staking from both domain operators and farmers to secure the network and provide resources. Autonomys implements a Nominated Proof-of-Stake algorithm where token holders endorse operators who execute transactions and produce blocks.
 
@@ -109,6 +115,21 @@ Our staking model consists of two tiers:
 
 The nomination pools in Autonomys are "lazy": any fees earned by the operator are assigned to the pool and are not deposited to the nominators wallet unless they ask for a withdrawal. Unless withdrawn, the fees are "auto-staked" - they count towards the total stake of the pool, increasing its chance of being elected to produce bundles.
 
+### Nominations
+
+Any $AI3 token holder with the required nominator MinStake can join an operator's nomination pool by submitting a nomination transaction with their desired $AI3 stake deposit. The workflow is then as follows:
+
+1. The nominator's $AI3 deposit is added to the list of pending deposits in the nomination pool.
+
+2. At the end of the epoch, the nominator's deposit is processed.
+
+3. 20% of each nominator's deposit is reserved in the operator's storage fee fund to pay for bundles the operator creates. This does not affect the stake distribution and is proportionally refunded with each withdrawal. The remaining 80% is locked in the nominator's wallet.
+
+4. The nominator's share of the total pool is calculated based on their deposit as a percentage of the total stake and their length of time staked. This is used to calculate the nominator's share of the operator's execution fees.
+
 ### Stake epoch
 
-Stake epoch is a designated period in domain blocks within a blockchain system that marks each stake allocation re-adjustment period. Occurring every `StakeEpochDuration` blocks (at the moment, it's set to every 100 blocks or ~10 minutes), an epoch transition triggers specific actions such as finalizing operator domain switches, deregistering operators, unlocking operators and their associated funds, and recalculating stake distribution for the Verifiable Random Function (VRF) election. These transitions are designed to adjust the stake distribution dynamically, finalize various staking-related operations, process rewards, and manage deposits and withdrawals. The uniform duration across all domains helps maintain consistency in the network, while the specific starting point for each domain's epoch transition may vary based on when it is registered, helping to amortize the load of these transitions.
+The stake epoch is a designated period in domain blocks within a blockchain system that marks each stake allocation re-adjustment period. Occurring every `StakeEpochDuration` blocks (at the moment, it's set to every 100 blocks or ~10 minutes), an epoch transition triggers specific actions such as finalizing operator domain switches, deregistering operators, unlocking operators and their associated funds, and recalculating stake distribution for the Verifiable Random Function (VRF) election. These transitions are designed to adjust the stake distribution dynamically, finalize various staking-related operations, process rewards, and manage deposits and withdrawals. The uniform duration across all domains helps maintain consistency in the network, while the specific starting point for each domain's epoch transition may vary based on when it is registered, helping to amortize the load of these transitions.
+
+### Withdrawals 
+Withdrawals have a locking period of 14,400 domain blocks (~1 day), after which withdrawn tokens are unlocked in users' wallets. All withdrawals requested in the same stake epoch are aggregated together, and the total amount is unlocked at once. This locking period is necessary to ensure that the domain block executing the withdrawal is confirmed and not challenged by a fraud proof, increasing the economic stability of domains.
