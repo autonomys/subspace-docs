@@ -1,0 +1,139 @@
+---
+title: Staking
+sidebar_position: 3
+toc_min_heading_level: 2
+toc_max_heading_level: 4
+description: Complete step-by-step guide for staking AI3 tokens to operators using Polkadot.js Apps and Talisman wallet.
+slug: /staking/stake
+keywords:
+    - Staking Guide
+    - AI3 Token Staking
+    - Talisman Wallet
+    - Operator Nomination
+    - Mainnet Staking
+    - Testnet Staking
+    - Stake Verification
+    - Domain Operators
+---
+
+import Icon from '@site/src/components/Icon';
+import { ICONS } from '@site/src/constants';
+import Badge from '@site/src/components/Badge';
+import ActionButton from '@site/src/components/ActionButton';
+
+This comprehensive guide will walk you through the complete process of staking to an operator using the Polkadot.js interface in conjunction with the [Talisman wallet](/wallets/talisman) <Badge variant="recommended" text="Recommended" />.
+
+## Step 1: Access Polkadot.js Apps
+
+Navigate to Polkadot.js Apps to begin the staking process. Choose the appropriate network:
+
+<div className="releases-container">
+  <ActionButton 
+    to="https://polkadot.js.org/apps/?rpc=wss://rpc.mainnet.subspace.foundation/ws#/accounts" 
+    title="Mainnet" 
+    subtitle="For live $AI3 staking" 
+    icon={ICONS.WEB} 
+    external 
+  />
+  
+  <ActionButton 
+    to="https://polkadot.js.org/apps/?rpc=wss://rpc-1.taurus.subspace.network/ws#/accounts" 
+    title="Testnet" 
+    subtitle="For testnet tAI3 staking" 
+    icon={ICONS.TESTNET} 
+    external 
+  />
+</div>
+
+## Step 2: Connect Your Talisman Wallet
+
+When you access Polkadot.js Apps, you will be prompted to unlock your Talisman wallet if needed. You may also be presented with a popup from your Talisman wallet requesting permission to connect to the Polkadot.js interface if you have not performed this operation before. Select the wallet account(s) you want to use for staking and click "Connect" to establish the connection.
+
+<details>
+<summary><Icon icon="mdi:image-multiple" /> Wallet Connection Interface</summary>
+
+<div style={{display: 'flex', gap: '20px', flexWrap: 'wrap'}}>
+
+![Wallet Unlock](/img/doc-imgs/operators-staking/01-wallet-unlock.png)
+
+![Talisman Wallet Connection](/img/doc-imgs/operators-staking/02-wallet-connect.png)
+
+</div>
+
+</details>
+
+## Step 3: Navigate to Extrinsics
+
+Once your wallet is connected, navigate to the **Developer** section from the top navigation bar, then select **Extrinsics** from the dropdown menu.
+
+<details>
+<summary><Icon icon="mdi:image-multiple" /> Navigation Interface</summary>
+
+![Navigate to Extrinsics](/img/doc-imgs/operators-staking/03-navigate-extrinsics.png)
+
+</details>
+
+## Step 4: Configure Staking Parameters
+
+In the Extrinsics interface, you'll need to configure the following parameters:
+
+1. **Select your account** - Choose the account you want to use for staking from the dropdown
+2. **Select the pallet** - Choose `domains` from the submit the following extrinsic dropdown
+3. **Select the call** - Choose `nominateOperator` from the call dropdown
+4. **Operator ID** - Enter the operator ID you want to nominate (e.g., `0` or `1`)
+5. **Amount** - Enter the staking amount in Shannons. For example, to stake 100 AI3, enter `100000000000000000000` (100 followed by 18 zeros, as amounts are denominated in Shannons)
+6. **Submit the transaction** - Click the "Submit Transaction" button to proceed
+7. **Authorize the transaction** - After clicking "Submit Transaction", you'll be prompted to authorize the transaction in your Talisman wallet. Review the transaction details and click "Approve" to proceed with the staking nomination.
+
+<details>
+<summary><Icon icon="mdi:image-multiple" /> Staking Configuration</summary>
+
+![Staking Configuration Steps](/img/doc-imgs/operators-staking/04-staking-config.png)
+
+![Transaction Authorization](/img/doc-imgs/operators-staking/05-transaction-auth.png)
+
+</details>
+
+## Staking Complete
+
+Once you've authorized the transaction, you'll see a confirmation message indicating whether your staking nomination was successful or if there was an error.
+
+**Successful Staking:** If everything was configured correctly, you'll see a green checkmark confirming that your staking nomination has been completed successfully.
+
+**Error Handling:** If you encounter an error, it's likely due to entering an incorrect amount in the `amount` field or insufficient balance in your wallet. Review your inputs and ensure you have enough AI3 tokens to complete the staking process.
+
+<details>
+<summary><Icon icon="mdi:image-multiple" /> Transaction Results</summary>
+
+![Successful Staking](/img/doc-imgs/operators-staking/07-staking-success.png)
+
+![Staking Error](/img/doc-imgs/operators-staking/08-staking-error.png)
+
+</details>
+
+## Verify Your Stake
+
+After successfully completing the staking process, you can verify and view your stake on the operator.  
+To check your staking status:
+
+1. Navigate to the **Developer** section from the top navigation bar
+2. Select **Chain State** from the dropdown menu.
+3. Select **domains** from the pallet dropdown
+4. Select **depositOnHold** from the query dropdown
+5. Enter the **operator ID** you staked to
+6. Enter your **wallet address** that you staked with
+7. Click the **plus button** to trigger the lookup
+8. View the **staked amount** in the results
+
+:::caution Staked Funds
+The displayed staked amount will only show 80% of the funds you originally staked. This is because 20% of each nominator's deposit is reserved in the operator's storage fee fund to pay for bundles the operator creates. This does not affect the stake distribution and is proportionally refunded with each withdrawal. The remaining 80% is locked in the nominator's wallet.
+:::
+
+<details>
+<summary><Icon icon="mdi:image-multiple" /> Stake Verification</summary>
+
+![View Operator Stake](/img/doc-imgs/operators-staking/09-stake-verification.png)
+
+![Stake Amount Display](/img/doc-imgs/operators-staking/10-stake-amount.png)
+
+</details>
