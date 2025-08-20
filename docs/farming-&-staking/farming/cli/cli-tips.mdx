@@ -40,8 +40,8 @@ If you were running a node previously, and want to switch to a new network, plea
 :::
 
 ```bash
-./subspace-farmer-ubuntu-x86_64-skylake-mainnet-2025-jul-14 wipe <PATH_TO_FARM>
-./subspace-node-ubuntu-x86_64-skylake-mainnet-2025-jul-14 wipe <BASE_PATH>
+./subspace-farmer-ubuntu-x86_64-skylake-mainnet-2025-aug-25 wipe <PATH_TO_FARM>
+./subspace-node-ubuntu-x86_64-skylake-mainnet-2025-aug-25 wipe <BASE_PATH>
 ```
 
 Now follow the installation guide from the beginning.
@@ -55,7 +55,7 @@ To maximize storage capabilities, you can engage multiple disks directly. This i
 :::
 
 ```bash
-./subspace-farmer-ubuntu-x86_64-skylake-mainnet-2025-jul-14 farm --reward-address "<REWARD_ADDRESS>" \
+./subspace-farmer-ubuntu-x86_64-skylake-mainnet-2025-aug-25 farm --reward-address "<REWARD_ADDRESS>" \
     path="/media/ssd1,size=4TiB" \
     path="/media/ssd2,size=8TiB"
 ```
@@ -136,7 +136,7 @@ For example, you can include record-chunks-mode= after defining the path and siz
 Benchmarking helps you test the plotting speed of your farmer against different versions of the Autonomys Network.
 
 ```
-./subspace-farmer-ubuntu-x86_64-skylake-mainnet-2025-jul-14 benchmark audit <PATH_TO_FARM>
+./subspace-farmer-ubuntu-x86_64-skylake-mainnet-2025-aug-25 benchmark audit <PATH_TO_FARM>
 ```
 
 :::tip
@@ -154,7 +154,7 @@ To read more about audit benchmarking, [read this forum post](https://forum.auto
 There is a second command available, which helps you determine how much time your farmer has after auditing to provide proof.
 
 ```
-./subspace-farmer-ubuntu-x86_64-skylake-mainnet-2025-jul-14 benchmark prove <PATH_TO_FARM>
+./subspace-farmer-ubuntu-x86_64-skylake-mainnet-2025-aug-25 benchmark prove <PATH_TO_FARM>
 ```
 
 Each farmer has ~4 seconds to audit and prove, so depending on how fast auditing is, the remaining time will be used for proving.
@@ -170,7 +170,7 @@ To read more about prove benchmarking, [read this forum post](https://forum.auto
 In certain situations, especially when the farmer terminates unexpectedly or encounters an error, it might fail to restart correctly. The scrub command assists in resolving such issues by cleaning or resetting the specified farm.
 
 ```
-./subspace-farmer-ubuntu-x86_64-skylake-mainnet-2025-jul-14 scrub <PATH_TO_FARM>
+./subspace-farmer-ubuntu-x86_64-skylake-mainnet-2025-aug-25 scrub <PATH_TO_FARM>
 ```
 
 :::tip
