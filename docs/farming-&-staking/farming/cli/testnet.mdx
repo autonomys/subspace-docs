@@ -13,9 +13,9 @@ keywords:
     - Docker
 ---
 import LinuxPage from './platforms/testnet/_linux.mdx';
-import WindowsPage from './platforms/_windows.mdx';
-import MacOSPage from './platforms/_macos.mdx';
-import SystemDPage from './platforms/_systemd.mdx';
+import WindowsPage from './platforms/testnet/_windows.mdx';
+import MacOSPage from './platforms/testnet/_macos.mdx';
+import SystemDPage from './platforms/testnet/_systemd.mdx';
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -57,6 +57,10 @@ We’ll provide the files you need for your operating system:
 
 <TabItem value="macos" label={<TabLabel icon={ICONS.MACOS}>macOS</TabLabel>}>
 <MacOSPage />
+</TabItem>
+
+<TabItem value="systemd_service" label={<TabLabel icon={ICONS.SERVICE}>Linux Service (SystemD)</TabLabel>}>
+<SystemDPage />
 </TabItem>
 
 </Tabs>
