@@ -84,4 +84,4 @@ Both use the native Docusaurus `customProps` system, ensuring compatibility with
 
 ### Testnet Items
 - **Operators & Nominators** (category)
-- **Taurus Network** (individual page)
+- **Chronos Testnet** (individual page)

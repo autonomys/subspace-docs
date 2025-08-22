@@ -1,5 +1,8 @@
 {
-    "label": "Operators Guide",
+    "label": "Operators",
     "position": 2,
-    "link": null
+    "link": null,
+    "customProps": {
+        "testnet": true
+    }
 }

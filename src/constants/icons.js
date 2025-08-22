@@ -42,7 +42,7 @@ export const ICONS = {
   
   // ===== Special Purpose Icons =====
   RECOMMENDED: 'material-symbols-light:star-shine', // Used for featured/recommended items
-  TESTNET: 'mingcute:taurus-fill', // Used for testnet indicators
+  TESTNET: 'local:/img/icons/chronos.svg', // Used for testnet indicators - chronos icon
   AUTONOMYS: 'token:autonomys', // Autonomys brand icon
   
   // ===== Navigation & Content =====
