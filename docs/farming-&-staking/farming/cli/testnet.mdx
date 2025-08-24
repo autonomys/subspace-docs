@@ -1,8 +1,8 @@
 ---
-title: Taurus Network
+title: Chronos Testnet
 sidebar_position: 4
 description: How to run an Autonomys Testnet Network Farmer with the Substrate CLI
-slug: /farming/cli/taurus
+slug: /farming/cli/testnet
 sidebar_custom_props:
   testnet: true
 keywords:
@@ -12,10 +12,10 @@ keywords:
     - Binaries
     - Docker
 ---
-import LinuxPage from './taurus-platforms/_linux.mdx';
-import WindowsPage from './taurus-platforms/_windows.mdx';
-import MacOSPage from './taurus-platforms/_macos.mdx';
-import SystemDPage from './taurus-platforms/_systemd.mdx';
+import LinuxPage from './platforms/testnet/_linux.mdx';
+import WindowsPage from './platforms/testnet/_windows.mdx';
+import MacOSPage from './platforms/testnet/_macos.mdx';
+import SystemDPage from './platforms/testnet/_systemd.mdx';
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -25,11 +25,11 @@ import Badge from '@site/src/components/Badge';
 
 ## Network Description
 
-Taurus is our permanent testnet that started up in October of 2024. The purpose of this page is to highlight any differences between the Taurus testnet and our mainnet.
+Chronos is our permanent testnet that started up in October of 2024. The purpose of this page is to highlight any differences between the Chronos testnet and our mainnet.
 
 ## Chain Parameter
 
-Currently the only difference between taurus and mainnet is the chain specification (`--chain taurus` or `--chain mainnet`) and the client software. You can only run CLI, not Space Acres.
+Currently the only difference between chronos and mainnet is the chain specification (`--chain chronos` or `--chain mainnet`) and the client software. You can only run CLI, not Space Acres.
 
 ## CLI Installation Guide
 
@@ -37,7 +37,7 @@ Currently the only difference between taurus and mainnet is the chain specificat
 
 To use this software, you need a Substrate wallet address. You can use [Talisman](/wallets/talisman) <Badge variant="recommended" text="Recommended" /> or check out other compatible [wallets](/farming-&-staking/wallets).
 
-If you have a previous wallet address that starts with `st`, you can still use it, or you can transform it to the new `su` prefix. You can convert your existing wallet address using the tool available at [ss58.org](https://ss58.org). Previously, our testnets used the prefix `2254`, while the Taurus testnet and Autonomys mainnet use the prefix `6094`.
+If you have a previous wallet address that starts with `st`, you can still use it, or you can transform it to the new `su` prefix. You can convert your existing wallet address using the tool available at [ss58.org](https://ss58.org). Previously, our testnets used the prefix `2254`, while the Chronos testnet and Autonomys mainnet use the prefix `6094`.
 
 :::
 
@@ -57,6 +57,10 @@ We’ll provide the files you need for your operating system:
 
 <TabItem value="macos" label={<TabLabel icon={ICONS.MACOS}>macOS</TabLabel>}>
 <MacOSPage />
+</TabItem>
+
+<TabItem value="systemd_service" label={<TabLabel icon={ICONS.SERVICE}>Linux Service (SystemD)</TabLabel>}>
+<SystemDPage />
 </TabItem>
 
 </Tabs>

@@ -849,24 +849,28 @@ article img[src*="intro-banner"] {
 
 /* Testnet badge variant */
 .badge-testnet {
-  background-color: #FED7AA;
-  border: 1px solid #FDBA74;
-  color: #9A3412;
+  background-color: #D1D8EB;
+  border: 1px solid #292A41;
+  color: #1D2C57;
 }
 
+/* Don't override icon colors for testnet badge - let SVG colors show through */
 .badge-testnet .icon {
-  color: #F97316;
+  color: inherit;
+}
+
+/* Ensure img-based icons in badges display properly */
+.badge .icon.icon-img {
+  margin-bottom: 0.25em;
+  margin-right: 0.25em;
+  margin-top: 0.25em;
 }
 
 /* Dark mode testnet badge */
 [data-theme='dark'] .badge-testnet {
-  background-color: rgba(249, 115, 22, 0.15);
-  border-color: rgba(249, 115, 22, 0.4);
-  color: #FDBA74;
-}
-
-[data-theme='dark'] .badge-testnet .icon {
-  color: #FB923C;
+  background-color: #1D2C57;
+  border-color: #292A41;
+  color: #FFFFFF;
 }
 
 /* ==================================================

@@ -23,7 +23,7 @@ const BADGE_VARIANTS = {
  * 
  * Usage:
  * <Badge variant="recommended" text="Recommended" />
- * <Badge variant="testnet" text="Taurus" />
+ * <Badge variant="testnet" text="Chronos" />
  * <Badge variant="recommended" iconOnly />
  */
 export default function Badge({ variant = 'recommended', text, iconOnly = false, className = '' }) {
@@ -36,7 +36,8 @@ export default function Badge({ variant = 'recommended', text, iconOnly = false,
   
   // Icon-only mode - just return the icon with appropriate styling
   if (iconOnly) {
-    const iconClass = variant === 'recommended' ? 'icon-featured' : 'icon-testnet';
+    // For testnet, don't apply color styling - let the SVG colors show through
+    const iconClass = variant === 'recommended' ? 'icon-featured' : '';
     return <Icon icon={config.icon} className={`${iconClass} ${className}`.trim()} />;
   }
   
