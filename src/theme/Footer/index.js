@@ -54,7 +54,7 @@ export default function FooterWrapper(props) {
                 </li>
                 <li>
                   <FooterLink 
-                    href="https://astral.autonomys.xyz" 
+                    href="https://autonomys.subscan.io" 
                     label="Block Explorer" 
                     icon={ICONS.EXPLORER}
                   />
