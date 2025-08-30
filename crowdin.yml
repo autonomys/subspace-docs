@@ -2,9 +2,29 @@ project_id: '604593'
 api_token_env: CROWDIN_PERSONAL_TOKEN
 preserve_hierarchy: true
 files:
-  # JSON translation files
-  - source: /i18n/en/**/*
-    translation: "/i18n/%two_letters_code%/%original_path%/%original_file_name%"
-  # Docs Markdown files
-  - source: /docs/**/*
-    translation: /i18n/%two_letters_code%/docusaurus-plugin-content-docs/current/%original_path%/%original_file_name%
+  # Docusaurus theme/blog/docs JSON generated under i18n/en
+  - source: '/i18n/en/**/*.json'
+    translation: '/i18n/%two_letters_code%/%original_path%/%original_file_name%'
+    type: json
+    preserve_hierarchy: true
+    # (Optional while debugging)
+    # excluded_target_languages:
+    #   - ru
+
+  # Docs: MDX
+  - source: '/docs/**/*.mdx'
+    translation: '/i18n/%two_letters_code%/docusaurus-plugin-content-docs/current/%original_path%/%original_file_name%'
+    type: mdx
+    preserve_hierarchy: true
+    # (Optional while debugging)
+    # excluded_target_languages:
+    #   - ru
+
+  # Docs: Markdown
+  - source: '/docs/**/*.md'
+    translation: '/i18n/%two_letters_code%/docusaurus-plugin-content-docs/current/%original_path%/%original_file_name%'
+    type: markdown
+    preserve_hierarchy: true
+    # (Optional while debugging)
+    # excluded_target_languages:
+    #   - ru
