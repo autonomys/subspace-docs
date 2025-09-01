@@ -237,8 +237,8 @@ const config = {
             position: 'left',
             items: [
               {
-                label: 'Astral Block Explorer',
-                href: 'https://astral.autonomys.xyz',
+                label: 'Subscan Block Explorer',
+                href: 'https://autonomys.subscan.io',
               },
               {
                 label: 'PolkadotJS Portal',
