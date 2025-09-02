@@ -44,7 +44,7 @@ The destination chain generates an XDM response that will be sent back to the so
 
 ### XDM Fees
 
-Currently there are no additional fees for using XDM beyond the standard transaction fees on each chain. However, there is a small execution fee charged in tAI3 for processing the XDM transaction on the destination chain.
+Currently, there are no additional fees for using XDM beyond the standard transaction fees on each chain. However, there is a small execution fee charged for processing the XDM transaction on the destination chain.
 
 ## Executing XDM Transfers
 
@@ -52,7 +52,7 @@ Currently there are no additional fees for using XDM beyond the standard transac
 
 You will need to navigate to the Auto EVM domain in PolkadotJS by either selecting it in the network switcher or following this link: https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Frpc.mainnet.autonomys.xyz%2Fws#/extrinsics
 
-PolkadotJS must be linked to a wallet that has some tAI3 tokens on the consensus chain. You can use either [SubWallet](/wallets/subwallet) or [Talisman Wallet](/wallets/talisman) for this.
+PolkadotJS must be linked to a wallet that has some AI3 tokens on the consensus chain. You can use either [SubWallet](/wallets/subwallet) or [Talisman Wallet](/wallets/talisman) for this.
 
 :::note Tailsman Wallet
 If transfers to Auto EVM are being made from Talisman Wallet, you may need to add a new network if you don't see your non-zero token balance. You can do this by clicking the more button in the bottom left of the wallet pop-up.
@@ -60,21 +60,21 @@ Choose Manage Networks and then Add Network. You can then enter the following de
 
 - Platform: Ethereum
 - RPC Url: https://rpc.mainnet.autonomys.xyz
-- Network Name: Auto EVM Mainnet (Or any name you prefer)
-- Native Token Symbol: AI3 (Or any name you prefer)
+- Network Name: Auto EVM Mainnet (or any name you prefer)
+- Native Token Symbol: AI3
 - Native Token Coingecko ID: autonomys-network
-- Native Token Name: Autonomys EVM (Or any name you prefer)
+- Native Token Name: Autonomys EVM (or any name you prefer)
 - Block Explorer Url: https://explorer.auto-evm.mainnet.autonomys.xyz/
 :::
 
 Working from the top down:
 
-1. Select the account you want to consensus tokens from.
+1. Select the account you want to XDM consensus tokens from.
 2. Select the `transporter.transfer()` extrinsic.
-3. Select `Domain` in the `dstLocation` `chainId`.
+3. Select `Domain` in the `dstLocation` `chainId` dropdown.
 4. Enter the domain you want to use in the `Domain` with 0 being the Auto EVM domain.
 5. Select `AccountId20` in the `AccountId` dropdown.
-6. Enter the `0x` account address you want to send the tokens to on the Auto EVM domain.
+6. Enter the `0x` EVM account address you want to send the tokens to on the Auto EVM domain.
 7. Enter the amount, which will be the number of tokens with 18 zeroes afterwards as the value is in Shannons.
 8. Submit Transaction.
 
