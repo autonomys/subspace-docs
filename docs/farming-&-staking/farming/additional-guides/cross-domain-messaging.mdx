@@ -44,13 +44,13 @@ The destination chain generates an XDM response that will be sent back to the so
 
 ### XDM Fees
 
-Currently, there are no additional fees for using XDM beyond the standard transaction fees on each chain. However, there is a small execution fee charged for processing the XDM transaction on the destination chain.
+Currently, there are no additional fees for using XDM beyond the standard transaction fees on each chain. However, there is a small execution fee charged in AI3 for processing the XDM transaction on the destination chain.
 
 ## Executing XDM Transfers
 
 ### Consensus to Auto EVM domain with PolkadotJS
 
-You will need to navigate to the Auto EVM domain in PolkadotJS by either selecting it in the network switcher or following this link: https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Frpc.mainnet.autonomys.xyz%2Fws#/extrinsics
+You will need to navigate to the Concensus domain in PolkadotJS by either selecting it in the network switcher or following this link: https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Frpc.mainnet.autonomys.xyz%2Fws#/extrinsics
 
 PolkadotJS must be linked to a wallet that has some AI3 tokens on the consensus chain. You can use either [SubWallet](/wallets/subwallet) or [Talisman Wallet](/wallets/talisman) for this.
 
@@ -59,7 +59,7 @@ If transfers to Auto EVM are being made from Talisman Wallet, you may need to ad
 Choose Manage Networks and then Add Network. You can then enter the following details:
 
 - Platform: Ethereum
-- RPC Url: https://rpc.mainnet.autonomys.xyz
+- RPC Url: https://auto-evm.mainnet.autonomys.xyz/ws
 - Network Name: Auto EVM Mainnet (or any name you prefer)
 - Native Token Symbol: AI3
 - Native Token Coingecko ID: autonomys-network
@@ -82,20 +82,16 @@ Working from the top down:
 
 ### Auto EVM domain to consensus with PolkadotJS
 
-So now we have some tokens on the Auto EVM domain, let’s try and send some back the other way.
+You will need to navigate to the Auto EVM domain in PolkadotJS by either selecting it in the network switcher or following this link: https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Fauto-evm.mainnet.autonomys.xyz%2Fws#/extrinsics
 
-First, we will need the `0x` public key of the account you want to send the tokens to on consensus. If you do not have this, you can get it from [ss58.org](http://ss58.org) as per the below screenshot.
-
-![Convert Public Key](/img/doc-imgs/additional-guides/XDM-2.png)
-
-Next, you will need to navigate to the Auto EVM domain in PolkadotJS by either selecting it in the network switcher or following this link: https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Frpc.mainnet.autonomys.xyz%2Fws#/extrinsics
+PolkadotJS must be linked to a wallet that has some AI3 tokens on the EVM domain chain. You can use either [SubWallet](/wallets/subwallet) or [Talisman Wallet](/wallets/talisman) for this.
 
 Working from the top down:
 
 1. Select the account you want to XDM from.
 2. Select the `transporter.transfer()` extrinsic.
 3. Select `Consensus` in the `dstLocation` `chainId`.
-4. Enter the `0x` account address we got above in the `AccountId32` textbox. *NOTE: it is possible to use the “Substrate: 42” address that starts with a `5` in this box if you find that easier.*
+4. Enter your Autonomys account address in the `AccountId32` textbox. *NOTE: it is possible to use the “Substrate: 42” address that starts with a `5` in this box if you find that easier.*
 5. Enter the amount, which will be the number of tokens with 18 zeroes afterwards as the value is in Shannons.
 6. Submit Transaction.
 
