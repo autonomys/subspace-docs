@@ -44,15 +44,15 @@ The destination chain generates an XDM response that will be sent back to the so
 
 ### XDM Fees
 
-Currently, there are no additional fees for using XDM beyond the standard transaction fees on each chain. However, there is a small execution fee charged in AI3 for processing the XDM transaction on the destination chain.
+An XDM transaction is charged at 5x its standard weight since it is not possible to accurately predict the destination chain fee when submitting.
 
 ## Executing XDM Transfers
 
 ### Consensus to Auto EVM domain with PolkadotJS
 
-You will need to navigate to the Concensus domain in PolkadotJS by either selecting it in the network switcher or following this link: https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Frpc.mainnet.autonomys.xyz%2Fws#/extrinsics
+You will need to navigate to the consensus domain in PolkadotJS by either selecting it in the network switcher or following this link: https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Frpc.mainnet.autonomys.xyz%2Fws#/extrinsics
 
-PolkadotJS must be linked to a wallet that has some AI3 tokens on the consensus chain. You can use either [SubWallet](/wallets/subwallet) or [Talisman Wallet](/wallets/talisman) for this.
+PolkadotJS must be linked to a wallet that has some AI3 tokens on the consensus chain. You can use [SubWallet](/wallets/subwallet), [Polkadot](/wallets/polkadot), or [Talisman Wallet](/wallets/talisman) for this.
 
 :::note Tailsman Wallet
 If transfers to Auto EVM are being made from Talisman Wallet, you may need to add a new network if you don't see your non-zero token balance. You can do this by clicking the more button in the bottom left of the wallet pop-up.
@@ -91,7 +91,7 @@ Working from the top down:
 1. Select the account you want to XDM from.
 2. Select the `transporter.transfer()` extrinsic.
 3. Select `Consensus` in the `dstLocation` `chainId`.
-4. Enter your Autonomys account address in the `AccountId32` textbox. *NOTE: it is possible to use the “Substrate: 42” address that starts with a `5` in this box if you find that easier.*
+4. Enter your Autonomys account address in the `AccountId32` textbox.
 5. Enter the amount, which will be the number of tokens with 18 zeroes afterwards as the value is in Shannons.
 6. Submit Transaction.
 
