@@ -83,11 +83,8 @@ const config = {
           { to: '/farming/guides/gpu-plotter', from: ['/docs/farming-&-staking/farming/additional-guides/gpu-plotter'] },
           { to: '/farming/guides/port-config', from: ['/docs/farming-&-staking/farming/additional-guides/port-config'] },
           { to: '/farming/guides/grafana-dashboard', from: ['/docs/farming-&-staking/farming/additional-guides/grafana-dashboard'] },
-          { to: '/farming/guides/verified-roles', from: ['/docs/farming-&-staking/farming/additional-guides/verified-roles'] },
 
           { to: '/staking/intro', from: ['/docs/operators_and_staking/intro', '/docs/category/operators-and-nominators', '/docs/farming-&-staking/staking/intro'] },
-          { to: '/staking/operator/register', from: ['/docs/farming-&-staking/staking/operators', '/docs/farming-&-staking/staking/operators/register-operator'] },
-          { to: '/staking/operator/deregister', from: ['/docs/farming-&-staking/staking/operators/deregister-operator'] },
           { to: '/staking/operator/tips', from: ['/docs/farming-&-staking/staking/operators/tips-operator'] },
           { to: '/staking/stake', from: ['/docs/farming-&-staking/staking/'] },
 
@@ -243,10 +240,6 @@ const config = {
               {
                 label: 'PolkadotJS Portal',
                 href: 'https://polkadot.js.org/apps/?rpc=wss://rpc.mainnet.subspace.foundation/ws#/explorer',
-              },
-              {
-                label: 'Taurus Auto EVM explorer',
-                href: 'https://blockscout.taurus.autonomys.xyz',
               },
               {
                 label: 'Telemetry',
