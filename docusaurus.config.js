@@ -81,7 +81,7 @@ const config = {
           { to: '/farming/cli/testnet', from: ['/farming/cli/taurus', '/docs/farming-&-staking/farming/cli/taurus-network'] },
           { to: '/farming/common-problems', from: ['/docs/farming-&-staking/farming/common_problems'] },
           { to: '/farming/guides/gpu-plotter', from: ['/docs/farming-&-staking/farming/additional-guides/gpu-plotter'] },
-          { to: '/farming/guides/port-config', from: ['/docs/farming-&-staking/farming/additional-guides/port-config'] },
+          { to: '/network', from: ['/docs/farming-&-staking/farming/additional-guides/port-config', '/farming/guides/port-config'] },
           { to: '/farming/guides/grafana-dashboard', from: ['/docs/farming-&-staking/farming/additional-guides/grafana-dashboard'] },
           { to: '/farming/guides/verified-roles', from: ['/docs/farming-&-staking/farming/additional-guides/verified-roles'] },
 
