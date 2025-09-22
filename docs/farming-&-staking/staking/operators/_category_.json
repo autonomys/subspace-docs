@@ -3,6 +3,6 @@
     "position": 2,
     "link": null,
     "customProps": {
-        "testnet": true
+        "testnet": false
     }
 }
