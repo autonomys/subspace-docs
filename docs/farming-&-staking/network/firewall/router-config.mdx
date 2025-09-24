@@ -1,0 +1,474 @@
+---
+title: Router Configuration
+sidebar_position: 1
+description: Step-by-step router port forwarding setup for popular router brands
+slug: /network/firewall/router-config
+keywords:
+    - Router Configuration
+    - Port Forwarding
+    - NAT Setup
+    - Router Brands
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+import Icon from '@site/src/components/Icon';
+import { ICONS } from '@site/src/constants';
+
+# Router Configuration
+
+This guide provides step-by-step instructions for configuring port forwarding on popular router brands and models.
+
+## Before You Begin
+
+### Gather Required Information
+
+<Tabs>
+<TabItem value="cli" label="Command Line">
+
+```bash
+# Get your computer's local IP address
+# Linux/macOS:
+hostname -I | awk '{print $1}'
+
+# Windows PowerShell:
+(Get-NetIPAddress -AddressFamily IPv4 -InterfaceAlias Ethernet).IPAddress
+
+# Get your router's IP (default gateway)
+# Linux/macOS:
+ip route | grep default | awk '{print $3}'
+
+# Windows:
+ipconfig | findstr "Default Gateway"
+```
+
+</TabItem>
+<TabItem value="browser" label="Browser Method">
+
+1. **Find your public IP:** Visit [whatismyip.com](https://whatismyip.com)
+2. **Find your local IP:**
+   - Windows: Settings → Network & Internet → Properties
+   - macOS: System Preferences → Network → Advanced
+   - Or check your router's DHCP client list
+3. **Find router IP:** Usually `192.168.1.1` or `192.168.0.1`
+
+</TabItem>
+</Tabs>
+
+### Required Ports Reference
+
+| Application | Ports Needed |
+|:------------|:-------------|
+| Space Acres | 30333, 30433 |
+| CLI Farmer | 30333, 30433, 30533 |
+| Domain Operator | 30333, 30334, 30433, 40333 |
+
+## Router-Specific Guides
+
+<Tabs>
+
+<TabItem value="tp-link" label="TP-Link" default>
+
+### TP-Link Routers
+
+**Access Router:**
+1. Open browser and go to `192.168.1.1` or `tplinkwifi.net`
+2. Login (default: admin/admin)
+
+**Configure Port Forwarding:**
+1. Navigate to **Advanced** → **NAT Forwarding** → **Virtual Servers**
+2. Click **Add** or **+**
+3. Fill in details:
+   - **Service Type:** Custom
+   - **Device:** Select your computer or enter IP manually
+   - **External Port:** 30333
+   - **Internal Port:** 30333
+   - **Protocol:** TCP
+   - **Status:** Enabled
+4. Click **Save**
+5. Repeat for ports 30433 and 30533 (if needed)
+
+**Verify:**
+- Go to **System Tools** → **System Logs**
+- Look for port forwarding entries
+
+**Common Models:**
+- Archer AX series: Advanced → NAT Forwarding → Port Forwarding
+- Deco series: More → Advanced → Port Forwarding
+- Older models: Forwarding → Virtual Servers
+
+</TabItem>
+
+<TabItem value="netgear" label="Netgear">
+
+### Netgear Routers
+
+**Access Router:**
+1. Open browser and go to `192.168.1.1` or `routerlogin.net`
+2. Login (default: admin/password)
+
+**Configure Port Forwarding:**
+1. Navigate to **Dynamic DNS/Port Forwarding** or **Advanced Setup**
+2. Select **Port Forwarding / Port Triggering**
+3. Choose **Port Forwarding**
+4. Click **Add Custom Service**
+5. Configure:
+   - **Service Name:** Autonomys-Consensus
+   - **Protocol:** TCP
+   - **External Port Range:** 30333-30333
+   - **Internal IP Address:** Your computer's IP
+   - **Internal Port Range:** 30333-30333
+6. Click **Apply**
+7. Repeat for other required ports
+
+**Nighthawk Models:**
+1. **Dynamic DNS** → **Port Forwarding**
+2. Use the **Port Forwarding** table
+3. Can add multiple ports at once
+
+**Orbi Systems:**
+1. **Advanced** → **Setup** → **Port Forwarding**
+2. Similar process but may require app configuration
+
+</TabItem>
+
+<TabItem value="asus" label="ASUS">
+
+### ASUS Routers
+
+**Access Router:**
+1. Open browser and go to `192.168.1.1` or `router.asus.com`
+2. Login with your credentials
+
+**Configure Port Forwarding:**
+1. Navigate to **WAN** → **Virtual Server / Port Forwarding**
+2. Enable **Port Forwarding** if not already
+3. Add new rule:
+   - **Service Name:** Autonomys
+   - **Port Range:** 30333
+   - **Local IP:** Your computer's IP
+   - **Local Port:** 30333
+   - **Protocol:** TCP
+4. Click **+** to add
+5. Repeat for additional ports
+6. Click **Apply**
+
+**Gaming Routers (ROG):**
+- May have **Game Mode** → **Port Forwarding**
+- Can use **Gaming Boost** profiles
+
+**AiMesh Systems:**
+- Configure on main router
+- Nodes inherit settings automatically
+
+</TabItem>
+
+<TabItem value="linksys" label="Linksys">
+
+### Linksys Routers
+
+**Access Router:**
+1. Open browser and go to `192.168.1.1` or `myrouter.local`
+2. Login (newer models may use Linksys Smart WiFi)
+
+**Smart WiFi Interface:**
+1. Click **Priority** or **Security**
+2. Select **Port Range Forwarding**
+3. Click **Add a Rule**
+4. Configure:
+   - **Rule Name:** Autonomys Ports
+   - **Start Port - End Port:** 30333-30333
+   - **Protocol:** TCP
+   - **Device:** Select from list or enter IP
+5. **Save**
+
+**Classic Interface:**
+1. **Applications & Gaming** → **Port Range Forward**
+2. Enter:
+   - **Application:** Autonomys
+   - **Start/End Port:** 30333/30333
+   - **Protocol:** TCP
+   - **IP Address:** Your computer's IP
+   - **Enabled:** <Icon icon={ICONS.CHECK_CIRCLE} />
+3. **Save Settings**
+
+**Velop Mesh Systems:**
+- Use Linksys app
+- Network Administration → Port Forwarding
+
+</TabItem>
+
+<TabItem value="dlink" label="D-Link">
+
+### D-Link Routers
+
+**Access Router:**
+1. Open browser and go to `192.168.0.1` or `dlinkrouter.local`
+2. Login (default: admin/blank or admin/admin)
+
+**Configure Port Forwarding:**
+1. Navigate to **Advanced** → **Port Forwarding**
+2. Click **Add Rule** or **New**
+3. Fill in:
+   - **Name:** Autonomys
+   - **IP Address:** Your computer's IP
+   - **TCP/UDP:** TCP
+   - **Port:** 30333-30333
+   - **Schedule:** Always
+4. **Save**
+5. Add additional rules for other ports
+
+**Alternative Path:**
+- **Features** → **Virtual Server**
+- Similar configuration process
+
+**DIR Series:**
+- May use **Advanced** → **Virtual Server**
+- Check **Application Rules** for presets
+
+</TabItem>
+
+<TabItem value="google" label="Google/Nest">
+
+### Google Nest WiFi / Google WiFi
+
+**Using Google Home App:**
+1. Open Google Home app
+2. Tap **Wi-Fi** → **Settings** (gear icon)
+3. Select **Advanced networking**
+4. Tap **Port management** → **Add rule**
+5. Configure:
+   - **Internal IP:** Your computer's IP
+   - **Internal port:** 30333
+   - **External port:** 30333
+   - **Protocol:** TCP
+6. Save
+7. Repeat for additional ports
+
+**Notes:**
+- No web interface available
+- Must use mobile app
+- Limited to 50 port forwarding rules
+- UPnP can be enabled for automatic configuration
+
+</TabItem>
+
+<TabItem value="ubiquiti" label="Ubiquiti">
+
+### Ubiquiti UniFi / EdgeRouter
+
+**UniFi Dream Machine / Controller:**
+1. Access UniFi Controller
+2. Go to **Settings** → **Routing & Firewall**
+3. Select **Port Forwarding** tab
+4. Click **Create New Port Forward Rule**
+5. Configure:
+   - **Name:** Autonomys Consensus
+   - **From:** Any
+   - **Port:** 30333
+   - **Forward IP:** Your device IP
+   - **Forward Port:** 30333
+   - **Protocol:** TCP
+6. **Save**
+
+**EdgeRouter:**
+```bash
+# SSH into router
+ssh admin@192.168.1.1
+
+# Configure port forwarding
+configure
+set port-forward rule 1 description "Autonomys Consensus"
+set port-forward rule 1 forward-to address 192.168.1.100
+set port-forward rule 1 forward-to port 30333
+set port-forward rule 1 original-port 30333
+set port-forward rule 1 protocol tcp
+commit
+save
+exit
+```
+
+**UniFi Security Gateway:**
+- Similar to Dream Machine
+- Use Controller interface
+- Config → Routing & Firewall → Port Forwarding
+
+</TabItem>
+
+</Tabs>
+
+## Universal Port Forwarding Steps
+
+If your router isn't listed above:
+
+1. **Access Router Admin Panel**
+   - Common addresses: `192.168.1.1`, `192.168.0.1`, `10.0.0.1`
+   - Check router label for default credentials
+
+2. **Find Port Forwarding Section**
+   Look for these menu items:
+   - Port Forwarding
+   - Virtual Servers
+   - NAT/Gaming
+   - Applications
+   - Advanced → Forwarding
+
+3. **Create Rules**
+   For each required port:
+   - **Name/Description:** Descriptive name (e.g., "Autonomys-30333")
+   - **Protocol:** TCP
+   - **External/Public Port:** The port number
+   - **Internal/Private IP:** Your computer's local IP
+   - **Internal/Private Port:** Same as external
+   - **Enable/Active:** Yes/Checked
+
+4. **Save and Apply**
+   - Click Save/Apply
+   - Router may reboot
+
+## Advanced Configuration
+
+### Setting Static IP (DHCP Reservation)
+
+Ensures your computer always gets the same local IP:
+
+<Tabs>
+<TabItem value="general" label="General Steps">
+
+1. Find your computer's MAC address:
+   ```bash
+   # Linux/macOS
+   ip link show | grep ether
+
+   # Windows
+   ipconfig /all | findstr Physical
+   ```
+
+2. In router admin panel:
+   - Look for: DHCP Reservation, Static IP, Address Reservation
+   - Usually under: LAN Settings, DHCP, Network
+
+3. Add reservation:
+   - MAC Address: Your computer's MAC
+   - IP Address: Choose an IP (e.g., 192.168.1.100)
+   - Device Name: Your computer name
+
+4. Save and restart your computer's network
+
+</TabItem>
+<TabItem value="specific" label="Router Examples">
+
+**TP-Link:**
+- Advanced → Network → DHCP Server
+- Address Reservation → Add
+
+**Netgear:**
+- LAN Setup → Address Reservation
+- Add → Select device from list
+
+**ASUS:**
+- LAN → DHCP Server
+- Manually Assigned IP → Add
+
+**Linksys:**
+- Local Network → DHCP Reservation
+- Add DHCP Reservation
+
+</TabItem>
+</Tabs>
+
+### Port Triggering vs Port Forwarding
+
+| Feature | Port Forwarding | Port Triggering |
+|:--------|:---------------|:----------------|
+| **When to use** | Autonomys farming | Not recommended |
+| **IP requirement** | Static/Reserved IP | Dynamic IP OK |
+| **Multiple devices** | One per port | Can share |
+| **Security** | Always open | Opens on demand |
+| **Reliability** | High | Lower |
+
+**Recommendation:** Always use Port Forwarding for Autonomys Network.
+
+## Troubleshooting Router Issues
+
+### Port Forwarding Not Working
+
+1. **Verify local connectivity:**
+   ```bash
+   # Check if service is running
+   netstat -tuln | grep 30333
+   ```
+
+2. **Check for double NAT:**
+   ```bash
+   # Compare these IPs
+   curl -s https://api.ipify.org  # Public IP
+   # vs router's WAN IP (check in router status)
+   ```
+
+3. **Common fixes:**
+   - Disable router firewall temporarily to test
+   - Check ISP doesn't block ports
+   - Ensure Windows/OS firewall configured
+   - Try DMZ as last resort (security risk)
+
+### ISP Blocking Ports
+
+Some ISPs block common ports. Solutions:
+
+1. **Use alternate ports:**
+   - Change to 31333, 31433, 31533
+   - Update both router and application config
+
+2. **Contact ISP:**
+   - Request unblocking
+   - Ask for business plan
+   - Get static IP
+
+3. **Workarounds:**
+   - VPN with port forwarding
+   - IPv6 if available
+   - Cloud VPS as relay
+
+## Security Considerations
+
+### Essential Security Rules
+
+<Icon icon={ICONS.CHECK_CIRCLE} /> **Always:**
+- Use strong router admin password
+- Keep router firmware updated
+- Document your configuration
+- Use DHCP reservations
+
+<Icon icon={ICONS.CLOSE_CIRCLE} /> **Never:**
+- Use DMZ for farming computer
+- Disable firewall completely
+- Forward RPC ports (9944, 9945)
+- Share router admin credentials
+- Use default passwords
+
+### Monitoring Router Security
+
+```bash
+# Check open ports from outside
+nmap -p 30333,30433,30533,9944 YOUR_PUBLIC_IP
+
+# Expected: 30333-30533 open, 9944 closed/filtered
+```
+
+## Quick Reference Card
+
+### Common Router IPs
+- `192.168.1.1` - Most routers
+- `192.168.0.1` - D-Link, Netgear
+- `10.0.0.1` - Some cable modems
+- `192.168.2.1` - Belkin, SMC
+
+### Default Credentials
+- **TP-Link:** admin/admin
+- **Netgear:** admin/password
+- **Linksys:** admin/admin or blank/admin
+- **D-Link:** admin/blank or admin/admin
+- **ASUS:** admin/admin
+
+<Icon icon={ICONS.WARNING} /> Always change default credentials!

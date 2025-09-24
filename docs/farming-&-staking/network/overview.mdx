@@ -1,0 +1,107 @@
+---
+title: Network Overview
+sidebar_position: 1
+description: Understanding why network configuration matters for the Autonomys Network
+slug: /network
+keywords:
+    - Network Configuration
+    - Port Forwarding
+    - Firewall Setup
+    - P2P Connectivity
+    - Network Architecture
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+import Icon from '@site/src/components/Icon';
+import Badge from '@site/src/components/Badge';
+import { ICONS } from '@site/src/constants';
+import ActionButton from '@site/src/components/ActionButton';
+import ResourceCard from '@site/src/components/ResourceCard';
+
+# Network Overview
+
+Proper network configuration is critical for optimal Autonomys Network performance. This comprehensive guide will help you understand and configure your network for successful participation.
+
+## Port Configuration by Role
+
+<div className="resource-cards">
+  <ResourceCard
+    to="/network/port-config/space-acres"
+    title="Space Acres"
+    subtitle="Simple 2-port setup for GUI farming"
+    icon={ICONS.FARMER}
+  />
+
+  <ResourceCard
+    to="/network/port-config/cli"
+    title="CLI"
+    subtitle="3-port setup for node + farmer"
+    icon={ICONS.SETTINGS}
+  />
+
+  <ResourceCard
+    to="/network/port-config/domain-operator"
+    title="Domain Operator"
+    subtitle="Multi-port execution layer setup"
+    icon={ICONS.OPERATOR}
+  />
+
+  <ResourceCard
+    to="/network/port-config/farming-cluster"
+    title="Farming Cluster"
+    subtitle="Large-scale multi-machine deployments"
+    icon={ICONS.NETWORK}
+  />
+
+  <ResourceCard
+    to="/network/port-config/timekeeper"
+    title="Timekeeper"
+    subtitle="Proof-of-Time node configuration"
+    icon={ICONS.TIMEKEEPER}
+  />
+
+  <ResourceCard
+    to="/network/port-config/multi-network"
+    title="Multi-Network"
+    subtitle="Mainnet + testnet simultaneous setup"
+    icon={ICONS.NETWORK}
+  />
+
+  <ResourceCard
+    to="/network/port-config/public-rpc"
+    title="Public RPC Server"
+    subtitle="Infrastructure service setup"
+    icon={ICONS.WEB}
+  />
+</div>
+
+## Firewall & Router Setup
+
+<div className="resource-cards">
+  <ResourceCard
+    to="/network/firewall/router-config"
+    title="Router Configuration"
+    subtitle="Port forwarding for all router brands"
+    icon={ICONS.FIREWALL}
+  />
+
+  <ResourceCard
+    to="/network/firewall/os"
+    title="OS Firewalls"
+    subtitle="Windows, Linux, and macOS setup"
+    icon={ICONS.SHIELD}
+  />
+</div>
+
+## Troubleshooting
+
+<div className="resource-cards">
+  <ResourceCard
+    to="/network/connectivity-issues"
+    title="Connectivity Issues"
+    subtitle="Diagnose and fix network problems"
+    icon={ICONS.SEARCH}
+  />
+</div>
+

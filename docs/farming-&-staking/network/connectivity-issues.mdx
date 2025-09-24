@@ -1,0 +1,397 @@
+---
+title: Connectivity Issues
+sidebar_position: 3
+description: Diagnose and fix common network connectivity problems
+slug: /network/connectivity-issues
+keywords:
+    - Network Troubleshooting
+    - Connection Issues
+    - Peer Problems
+    - Network Diagnostics
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+import Icon from '@site/src/components/Icon';
+import { ICONS } from '@site/src/constants';
+
+# Connectivity Issues
+
+This guide helps diagnose and resolve common network connectivity problems with Autonomys Network.
+
+## Quick Diagnosis
+
+### Check Your Connection Status
+
+<Tabs>
+<TabItem value="space-acres" label="Space Acres">
+
+**In Space Acres Interface:**
+- Look for peer count in the status bar
+- Check sync progress indicator
+- Review any error messages in logs
+
+**Healthy indicators:**
+- <Icon icon={ICONS.CHECK_CIRCLE} /> Peer count > 40
+- <Icon icon={ICONS.CHECK_CIRCLE} /> Steady sync progress
+- <Icon icon={ICONS.CHECK_CIRCLE} /> No network error messages
+
+**Problem indicators:**
+- <Icon icon={ICONS.CLOSE_CIRCLE} /> Peer count < 40
+- <Icon icon={ICONS.CLOSE_CIRCLE} /> Stuck sync at specific block
+
+</TabItem>
+<TabItem value="cli" label="CLI">
+
+```bash
+# Check node peer count
+grep -i "peers" /path/to/node.log | tail -5
+
+# Check farmer logs
+grep -i "farming\|peers" /path/to/farmer.log | tail -5
+
+# Expected healthy node log output:
+# 2024-09-04T06:44:46.197731Z  INFO Consensus: substrate: 💤 Idle (40 peers), best: #3131617 (0x4b91…1060), finalized #3063319 (0x366a…fd89), ⬇ 225.3kiB/s ⬆ 23.9kiB/s
+
+# Expected healthy farmer log output:
+# 2024-09-09T20:36:28.671054Z  INFO {farm_index=0}: subspace_farmer::commands::farm:   Allocated space: 14.0 TiB (15.4 TB)
+# 2024-09-09T20:36:32.735211Z  INFO {farm_index=0}: subspace_farmer::single_disk_farm::farming: Subscribing to slot info notifications
+
+# Problem indicators:
+# Node: "💤 Idle (0 peers)" - No connectivity
+# Node: "⚙️  Preparing (2 peers)" - Poor connectivity during sync
+# Farmer: Connection errors to node RPC
+```
+
+</TabItem>
+</Tabs>
+
+## Common Issues and Solutions
+
+### Issue 1: Zero or Very Few Peers
+
+**Symptoms:**
+- Peer count stays very low and does not grow to at least 40 peers
+- No sync progress
+
+**Step-by-step diagnosis:**
+
+<Tabs>
+<TabItem value="diagnosis" label="1. Diagnose">
+
+```bash
+# 1. Check if service is running and listening
+netstat -tuln | grep -E "30333|30433|30533"
+# Expected: Shows LISTEN state on ports
+
+# 2. Test local connectivity
+telnet localhost 30333
+# Expected: Connected message
+
+# 3. Get your public IP
+curl -s https://api.ipify.org
+# Or visit whatismyip.com
+
+# 4. Test external connectivity (from another network)
+# Have friend run: nc -zv YOUR_PUBLIC_IP 30333
+# Or use online port checker
+```
+
+</TabItem>
+<TabItem value="fix-router" label="2. Fix Router">
+
+**Router not forwarding ports:**
+
+1. Access router admin panel (usually `192.168.1.1`)
+2. Verify port forwarding rules exist:
+   - External port matches internal port
+   - Points to correct internal IP
+   - Protocol is TCP
+   - Rule is enabled
+
+3. Common router issues:
+   - **UPnP conflicts**: Disable UPnP, use manual forwarding
+   - **Multiple routers**: Configure both (double NAT)
+   - **ISP router**: May need bridge mode
+
+</TabItem>
+<TabItem value="fix-firewall" label="3. Fix Firewall">
+
+```bash
+# Windows - Check firewall
+Get-NetFirewallRule -DisplayName "Autonomys*"
+
+# Linux - Check UFW
+sudo ufw status verbose
+
+# Temporarily disable firewall to test
+# Windows:
+Set-NetFirewallProfile -All -Enabled False
+# Test connection, then re-enable immediately:
+Set-NetFirewallProfile -All -Enabled True
+
+# Linux:
+sudo ufw disable
+# Test connection, then re-enable:
+sudo ufw enable
+```
+
+</TabItem>
+<TabItem value="fix-isp" label="4. Fix ISP Issues">
+
+**ISP blocking or using CGNAT:**
+
+```bash
+# Check for CGNAT
+curl -s https://api.ipify.org  # Your public IP
+# Compare with router's WAN IP
+# If different = CGNAT
+
+# Solutions:
+# 1. Call ISP, request public IP (may cost extra)
+# 2. Use different ports:
+./subspace-node --listen-on /ip4/0.0.0.0/tcp/31333
+# Update router/firewall for new port
+
+# 3. Try IPv6 if available:
+./subspace-node --listen-on /ip6/::/tcp/30333
+```
+
+</TabItem>
+</Tabs>
+
+### Issue 2: Intermittent Connection Loss
+
+**Symptoms:**
+- Peer count fluctuates wildly
+- Frequent reconnections
+- Sporadic farming rewards
+
+**Diagnosis and fixes:**
+
+```bash
+# 1. Check network stability
+ping -c 100 8.8.8.8 | grep "packet loss"
+# Expected: 0% packet loss
+
+# 2. Monitor bandwidth usage
+# Linux: iftop or nethogs
+# Windows: Resource Monitor
+# Look for bandwidth saturation
+
+# 3. Check system resources
+# CPU usage
+top -p $(pgrep subspace)
+
+# Memory usage
+free -h
+
+# Disk I/O
+iostat -x 1 10
+```
+
+**Common causes:**
+- Insufficient bandwidth
+- WiFi instability (use ethernet)
+- System resource exhaustion
+- ISP throttling P2P traffic
+
+### Issue 3: Can't Connect to Local Node (CLI)
+
+**Error:** "Cannot connect to node RPC at ws://..."
+
+<Tabs>
+<TabItem value="check-node" label="Check Node">
+
+```bash
+# 1. Verify node is running
+ps aux | grep subspace-node
+
+# 2. Check RPC is enabled
+grep "rpc" /path/to/node/startup/command
+
+# 3. Test RPC endpoint
+curl -H "Content-Type: application/json" \
+  -d '{"id":1, "jsonrpc":"2.0", "method": "system_health"}' \
+  http://127.0.0.1:9944
+
+# Expected: JSON response with result
+```
+
+</TabItem>
+<TabItem value="fix-rpc" label="Fix RPC">
+
+```bash
+# Ensure node started with RPC enabled
+./subspace-node run \
+  --rpc-listen-on 127.0.0.1:9944 \
+  --rpc-cors localhost \
+  --rpc-methods safe
+
+# For farmer on different machine
+./subspace-node run \
+  --rpc-listen-on 0.0.0.0:9944 \
+  --rpc-cors all
+
+# Farmer connects with
+./subspace-farmer farm \
+  --node-rpc-url ws://NODE_IP:9944
+```
+
+</TabItem>
+</Tabs>
+
+### Issue 4: Slow Synchronization
+
+**Symptoms:**
+- Sync speed < 10 blocks/second
+- Estimated time keeps increasing
+- High network latency
+
+**Optimization steps:**
+
+```bash
+# 1. Check latency to network
+ping 1.1.1.1
+# Good: < 100ms, Acceptable: < 200ms
+
+# 2. Increase peer connections
+./subspace-node run \
+  --in-peers 512 \
+  --out-peers 512
+
+# 3. Use warp sync for faster initial sync
+./subspace-node run --sync warp
+
+# 4. Check disk performance
+# Linux:
+dd if=/dev/zero of=test bs=1GiB count=1 oflag=direct
+# Should be > 100 MB/s for SSD
+```
+
+## Network Diagnostics Tools
+
+### Port Testing
+
+```bash
+# Comprehensive port test script
+#!/bin/bash
+echo "Testing Autonomys Network Ports..."
+
+# Get public IP
+PUBLIC_IP=$(curl -s https://api.ipify.org)
+echo "Public IP: $PUBLIC_IP"
+
+# Test each port
+for PORT in 30333 30433 30533; do
+    echo -n "Testing port $PORT: "
+    if timeout 2 bash -c "echo > /dev/tcp/localhost/$PORT" 2>/dev/null; then
+        echo "PASS - Listening locally"
+    else
+        echo "FAIL - Not listening"
+    fi
+done
+
+echo ""
+echo "Have someone external run:"
+echo "nc -zv $PUBLIC_IP 30333"
+```
+
+### Connection Monitoring
+
+<Tabs>
+<TabItem value="linux" label="Linux">
+
+```bash
+# Monitor active connections
+watch -n 2 'netstat -ant | grep -E "30333|30433|30533" | grep ESTABLISHED | wc -l'
+
+# Track peer IPs
+netstat -ant | grep -E "30333|30433|30533" | grep ESTABLISHED | \
+  awk '{print $5}' | cut -d: -f1 | sort | uniq -c | sort -rn
+
+# Monitor bandwidth per connection
+sudo iftop -P -n -f "port 30333 or port 30433 or port 30533"
+```
+
+</TabItem>
+<TabItem value="windows" label="Windows">
+
+```powershell
+# Monitor connections
+while($true) {
+    Clear-Host
+    $connections = Get-NetTCPConnection |
+        Where-Object {$_.LocalPort -in @(30333,30433,30533)} |
+        Where-Object {$_.State -eq "Established"}
+
+    Write-Host "Active connections: $($connections.Count)"
+    $connections | Group-Object RemoteAddress |
+        Select Name, Count | Sort Count -Descending
+
+    Start-Sleep -Seconds 2
+}
+
+# Check bandwidth usage
+Get-Counter "\Network Interface(*)\Bytes Total/sec"
+```
+
+</TabItem>
+</Tabs>
+
+### Advanced Diagnostics
+
+```bash
+# Trace network path issues
+traceroute 1.1.1.1
+# Look for high latency hops or timeouts
+
+# Check DNS resolution
+nslookup 1.1.1.1
+# Should resolve quickly
+
+# Test MTU size
+ping -M do -s 1472 8.8.8.8
+# Reduce size if fragmentation occurs
+
+# Packet capture for deep analysis
+sudo tcpdump -i any -w autonomys.pcap \
+  'port 30333 or port 30433 or port 30533'
+# Analyze with Wireshark
+```
+
+## When to Seek Help
+
+### Gather Information First
+
+Before asking for help, collect:
+
+```bash
+# System information
+uname -a  # Linux/macOS
+systeminfo  # Windows
+
+# Network configuration
+ip addr show  # Linux
+ipconfig /all  # Windows
+
+# Autonomys logs (last 100 lines)
+tail -n 100 /path/to/node.log > debug.log
+
+# Port status
+netstat -tuln | grep -E "30333|30433|30533" >> debug.log
+
+# Peer count over time
+grep -i "peers" /path/to/node.log | tail -20 >> debug.log
+```
+
+### Where to Get Help
+
+1. **Discord**: [Autonomys Discord](https://discord.gg/autonomys)
+   - #farming-support channel
+   - Include debug.log contents
+
+2. **Forum**: [Autonomys Forum](https://forum.autonomys.xyz)
+   - Network category
+   - Include system specs and configuration
+

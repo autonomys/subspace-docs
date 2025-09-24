@@ -26,6 +26,7 @@ export const ICONS = {
   DOCKER: 'simple-icons:docker',
   CODE: 'mdi:code-braces',
   SERVICE: 'mdi:cog',
+  SETTINGS: 'mdi:cog-outline',
   DEVELOPER: 'lineicons:dev',
   NODE: 'hugeicons:blockchain-06',
   CLUSTER: 'carbon:edge-cluster',
@@ -50,6 +51,7 @@ export const ICONS = {
   ACADEMY: 'mdi:school',
   EXPLORER: 'mdi:cube-scan',
   INFINITY: 'mdi:infinity',
+  SEARCH: 'mdi:magnify',
   
   // ===== Page Actions =====
   ROCKET_LAUNCH: 'mdi:rocket-launch',
@@ -71,6 +73,7 @@ export const ICONS = {
   QUESTION: 'mdi:help-circle-outline',
   ANSWER: 'mdi:message-reply-text',
   CALENDAR: 'mdi:calendar',
+  WARNING: 'mdi:alert',
   
   // ===== Rewards & Points =====
   DIAMOND: 'mdi:diamond-stone',
@@ -82,6 +85,8 @@ export const ICONS = {
   // ===== Network & Security =====
   PORT_FORWARD: 'mdi:router-network',
   FIREWALL: 'mdi:shield-lock',
+  SHIELD: 'mdi:shield',
+  NETWORK: 'mdi:network',
   
   // ===== File System =====
   FOLDER: 'mdi:folder',

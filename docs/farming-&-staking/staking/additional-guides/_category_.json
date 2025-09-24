@@ -1,6 +1,7 @@
 {
     "label": "Additional Guides",
     "position": 4,
+    "collapsed": true,
     "link": null,
     "description": "Operator and Staking Guides for the Autonomys Network"
 }
