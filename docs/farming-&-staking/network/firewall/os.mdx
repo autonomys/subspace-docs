@@ -1,0 +1,591 @@
+---
+title: Operating System Firewalls
+sidebar_position: 2
+description: Configure Windows, Linux, and macOS firewalls for Autonomys Network
+slug: /network/firewall/os
+keywords:
+    - Windows Firewall
+    - UFW
+    - iptables
+    - macOS Firewall
+    - Firewall Rules
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+import Icon from '@site/src/components/Icon';
+import { ICONS } from '@site/src/constants';
+
+# Operating System Firewalls
+
+After configuring your router, you must also configure your operating system's firewall to allow Autonomys Network traffic.
+
+## Quick Setup by OS
+
+<Tabs>
+
+<TabItem value="windows" label="Windows" default>
+
+## Windows Firewall Configuration
+
+### Method 1: PowerShell (Recommended)
+
+Run PowerShell as Administrator and execute:
+
+```powershell
+# Space Acres users - only need these two
+New-NetFirewallRule -DisplayName "Autonomys Consensus" `
+    -Direction Inbound -Protocol TCP -LocalPort 30333 -Action Allow
+New-NetFirewallRule -DisplayName "Autonomys DSN" `
+    -Direction Inbound -Protocol TCP -LocalPort 30433 -Action Allow
+
+# CLI Farmers - add this additional port
+New-NetFirewallRule -DisplayName "Autonomys Farmer" `
+    -Direction Inbound -Protocol TCP -LocalPort 30533 -Action Allow
+
+# Verify rules were created successfully
+Get-NetFirewallRule -DisplayName "Autonomys*" |
+    Format-Table DisplayName, Enabled, Direction, Action
+
+# Expected output:
+# DisplayName          Enabled Direction Action
+# -----------          ------- --------- ------
+# Autonomys Consensus  True    Inbound   Allow
+# Autonomys DSN        True    Inbound   Allow
+# Autonomys Farmer     True    Inbound   Allow
+```
+
+### Method 2: Windows Defender Firewall GUI
+
+1. **Open Windows Defender Firewall**
+   - Press `Win + R`, type `wf.msc`, press Enter
+   - Or: Control Panel → System and Security → Windows Defender Firewall → Advanced Settings
+
+2. **Create Inbound Rules**
+   - Click "Inbound Rules" in left panel
+   - Click "New Rule..." in right panel
+
+3. **Configure Rule (repeat for each port)**
+   - Rule Type: Select "Port" → Next
+   - Protocol and Ports:
+     - Select "TCP"
+     - Select "Specific local ports"
+     - Enter port number (30333, 30433, or 30533) → Next
+   - Action: Select "Allow the connection" → Next
+   - Profile: Check all three (Domain, Private, Public) → Next
+   - Name:
+     - Name: "Autonomys Consensus" (for 30333)
+     - Description: "Allow Autonomys Network consensus P2P"
+     - Finish
+
+4. **Verify Rules**
+   - Rules should appear in the Inbound Rules list
+   - Ensure they show as "Enabled: Yes"
+
+### Windows Firewall Troubleshooting
+
+**Check if ports are blocked:**
+```powershell
+# Test if firewall is blocking
+Test-NetConnection -ComputerName localhost -Port 30333
+
+# Check which program is using a port
+netstat -ano | findstr :30333
+
+# Get process name from PID
+Get-Process -Id (Get-NetTCPConnection -LocalPort 30333).OwningProcess
+```
+
+**Temporarily disable firewall (for testing only):**
+```powershell
+# Disable firewall temporarily
+Set-NetFirewallProfile -Profile Domain,Public,Private -Enabled False
+
+# Remember to re-enable!
+Set-NetFirewallProfile -Profile Domain,Public,Private -Enabled True
+```
+
+### Windows Advanced Security
+
+**Add application-specific rules:**
+```powershell
+# For Space Acres executable
+New-NetFirewallRule -DisplayName "Space Acres Application" `
+    -Direction Inbound `
+    -Program "C:\Program Files\Space Acres\space-acres.exe" `
+    -Action Allow
+
+# For CLI node
+New-NetFirewallRule -DisplayName "Subspace Node" `
+    -Direction Inbound `
+    -Program "C:\subspace\subspace-node.exe" `
+    -Action Allow
+```
+
+**Create outbound rules (usually not needed):**
+```powershell
+# If outbound is restricted
+New-NetFirewallRule -DisplayName "Autonomys Outbound" `
+    -Direction Outbound -Protocol TCP `
+    -RemotePort 30333,30433,30533 -Action Allow
+```
+
+</TabItem>
+
+<TabItem value="linux" label="Linux">
+
+## Linux Firewall Configuration
+
+### UFW (Ubuntu/Debian)
+
+UFW (Uncomplicated Firewall) is the easiest firewall tool for Ubuntu and Debian systems.
+
+```bash
+# Check if UFW is installed
+sudo ufw version
+
+# If not installed
+sudo apt update && sudo apt install ufw
+
+# Enable UFW (careful if SSH connected)
+sudo ufw enable
+
+# Allow SSH first if remotely connected
+sudo ufw allow ssh
+
+# Allow Autonomys ports
+sudo ufw allow 30333/tcp comment 'Autonomys Consensus'
+sudo ufw allow 30433/tcp comment 'Autonomys DSN'
+sudo ufw allow 30533/tcp comment 'Autonomys Farmer'  # CLI only
+
+# Check status and rules
+sudo ufw status verbose
+
+# Expected output:
+# Status: active
+# To                         Action      From
+# --                         ------      ----
+# 30333/tcp                  ALLOW       Anywhere
+# 30433/tcp                  ALLOW       Anywhere
+# 30533/tcp                  ALLOW       Anywhere
+```
+
+**Advanced UFW configurations:**
+```bash
+# Allow from specific subnet only
+sudo ufw allow from 192.168.1.0/24 to any port 9944 proto tcp
+
+# Rate limiting (prevent DoS)
+sudo ufw limit 30333/tcp
+
+# Delete a rule
+sudo ufw delete allow 30333/tcp
+
+# Reset all rules
+sudo ufw --force reset
+```
+
+### firewalld (RHEL/CentOS/Fedora)
+
+```bash
+# Check if firewalld is running
+sudo systemctl status firewalld
+
+# Add Autonomys ports
+sudo firewall-cmd --permanent --add-port=30333/tcp
+sudo firewall-cmd --permanent --add-port=30433/tcp
+sudo firewall-cmd --permanent --add-port=30533/tcp
+
+# Reload to apply changes
+sudo firewall-cmd --reload
+
+# Verify configuration
+sudo firewall-cmd --list-ports
+
+# Create custom service definition
+sudo tee /etc/firewalld/services/autonomys.xml << EOF
+<?xml version="1.0" encoding="utf-8"?>
+<service>
+  <short>Autonomys Network</short>
+  <description>Autonomys consensus and farming ports</description>
+  <port protocol="tcp" port="30333"/>
+  <port protocol="tcp" port="30433"/>
+  <port protocol="tcp" port="30533"/>
+</service>
+EOF
+
+# Use the service
+sudo firewall-cmd --permanent --add-service=autonomys
+sudo firewall-cmd --reload
+```
+
+### iptables (Advanced)
+
+For systems without UFW or firewalld:
+
+```bash
+# View current rules
+sudo iptables -L -n -v
+
+# Add Autonomys rules
+sudo iptables -A INPUT -p tcp --dport 30333 -j ACCEPT -m comment --comment "Autonomys Consensus"
+sudo iptables -A INPUT -p tcp --dport 30433 -j ACCEPT -m comment --comment "Autonomys DSN"
+sudo iptables -A INPUT -p tcp --dport 30533 -j ACCEPT -m comment --comment "Autonomys Farmer"
+
+# Save rules (varies by distribution)
+# Ubuntu/Debian:
+sudo apt install iptables-persistent
+sudo netfilter-persistent save
+
+# RHEL/CentOS:
+sudo service iptables save
+
+# Arch:
+sudo iptables-save > /etc/iptables/iptables.rules
+```
+
+**Advanced iptables security:**
+```bash
+# Rate limiting
+sudo iptables -A INPUT -p tcp --dport 30333 \
+    -m connlimit --connlimit-above 50 -j REJECT
+
+# Log connections (for debugging)
+sudo iptables -A INPUT -p tcp --dport 30333 \
+    -j LOG --log-prefix "Autonomys:" --log-level 4
+
+# Country-based filtering (requires xtables-addons)
+sudo iptables -A INPUT -m geoip --src-cc CN,RU -j DROP
+```
+
+### nftables (Modern Linux)
+
+The modern replacement for iptables:
+
+```bash
+# Create Autonomys ruleset
+sudo nft add table inet autonomys
+sudo nft add chain inet autonomys input { type filter hook input priority 0\; }
+
+# Add rules
+sudo nft add rule inet autonomys input tcp dport 30333 accept comment \"Consensus\"
+sudo nft add rule inet autonomys input tcp dport 30433 accept comment \"DSN\"
+sudo nft add rule inet autonomys input tcp dport 30533 accept comment \"Farmer\"
+
+# Save configuration
+sudo nft list ruleset > /etc/nftables.conf
+```
+
+</TabItem>
+
+<TabItem value="macos" label="macOS">
+
+## macOS Firewall Configuration
+
+### Method 1: System Preferences GUI
+
+1. **Open Firewall Settings**
+   - Apple Menu → System Preferences → Security & Privacy → Firewall
+   - Click the lock icon to make changes
+
+2. **Configure Firewall**
+   - Click "Firewall Options..."
+   - Ensure "Block all incoming connections" is **unchecked**
+   - Add Space Acres or subspace-node to allowed apps:
+     - Click "+" button
+     - Navigate to application
+     - Select and click "Add"
+
+3. **Enable Firewall**
+   - Turn on Firewall if not already enabled
+
+### Method 2: pfctl (Command Line)
+
+macOS uses pfctl (packet filter) for advanced firewall configuration.
+
+```bash
+# Create Autonomys rules file
+sudo tee /etc/pf.anchors/autonomys << 'EOF'
+# Autonomys Network Port Configuration
+# Allow incoming connections on Autonomys ports
+pass in inet proto tcp from any to any port 30333
+pass in inet proto tcp from any to any port 30433
+pass in inet proto tcp from any to any port 30533
+EOF
+
+# Load the anchor in main pf.conf
+sudo cp /etc/pf.conf /etc/pf.conf.backup
+echo "anchor \"autonomys\"" | sudo tee -a /etc/pf.conf
+echo "load anchor \"autonomys\" from \"/etc/pf.anchors/autonomys\"" | sudo tee -a /etc/pf.conf
+
+# Enable and load rules
+sudo pfctl -e -f /etc/pf.conf
+
+# Verify rules are loaded
+sudo pfctl -s rules | grep 30333
+```
+
+### Method 3: Application Firewall (socketfilterfw)
+
+```bash
+# Check firewall status
+/usr/libexec/ApplicationFirewall/socketfilterfw --getglobalstate
+
+# Allow specific application
+/usr/libexec/ApplicationFirewall/socketfilterfw --add /Applications/Space\ Acres.app
+/usr/libexec/ApplicationFirewall/socketfilterfw --unblockapp /Applications/Space\ Acres.app
+
+# For CLI tools
+/usr/libexec/ApplicationFirewall/socketfilterfw --add /usr/local/bin/subspace-node
+/usr/libexec/ApplicationFirewall/socketfilterfw --unblockapp /usr/local/bin/subspace-node
+
+# List all rules
+/usr/libexec/ApplicationFirewall/socketfilterfw --listapps
+```
+
+### macOS Network Diagnostics
+
+```bash
+# Check listening ports
+sudo lsof -iTCP -sTCP:LISTEN -P | grep -E "30333|30433|30533"
+
+# Test connectivity
+nc -zv localhost 30333
+
+# Monitor network connections
+nettop -m tcp
+
+# Check for blocking rules
+sudo pfctl -s rules
+```
+
+### Persistent Configuration
+
+To make pfctl rules persistent across reboots:
+
+```bash
+# Create launch daemon
+sudo tee /Library/LaunchDaemons/com.autonomys.pf.plist << 'EOF'
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>Label</key>
+    <string>com.autonomys.pf</string>
+    <key>ProgramArguments</key>
+    <array>
+        <string>/sbin/pfctl</string>
+        <string>-e</string>
+        <string>-f</string>
+        <string>/etc/pf.conf</string>
+    </array>
+    <key>RunAtLoad</key>
+    <true/>
+</dict>
+</plist>
+EOF
+
+# Load the daemon
+sudo launchctl load /Library/LaunchDaemons/com.autonomys.pf.plist
+```
+
+</TabItem>
+
+</Tabs>
+
+## Firewall Testing and Verification
+
+### Test Port Accessibility
+
+<Tabs>
+<TabItem value="local" label="Local Testing">
+
+```bash
+# Check if ports are listening
+# Linux/macOS:
+sudo netstat -tuln | grep -E "30333|30433|30533"
+sudo lsof -i :30333
+
+# Windows PowerShell:
+Get-NetTCPConnection -LocalPort 30333,30433,30533
+
+# Test local connectivity
+telnet localhost 30333
+nc -zv localhost 30333
+```
+
+</TabItem>
+<TabItem value="external" label="External Testing">
+
+```bash
+# Get your public IP
+curl -s https://api.ipify.org
+
+# Have someone external test (or use VPN)
+nc -zv YOUR_PUBLIC_IP 30333
+
+# Online port checkers
+# Visit: https://canyouseeme.org
+# Enter port 30333 and test
+```
+
+**Expected results:**
+- <Icon icon={ICONS.CHECK_CIRCLE} /> Port open/reachable
+- <Icon icon={ICONS.CLOSE_CIRCLE} /> Port closed = firewall blocking
+- <Icon icon={ICONS.CLOSE_CIRCLE} /> Port filtered = router not forwarding
+
+</TabItem>
+</Tabs>
+
+### Monitor Firewall Activity
+
+<Tabs>
+<TabItem value="linux" label="Linux">
+
+```bash
+# UFW logs
+sudo tail -f /var/log/ufw.log
+
+# iptables logging
+sudo dmesg | grep -i "autonomys"
+sudo journalctl -f | grep -i "firewall"
+
+# Connection tracking
+sudo conntrack -L | grep -E "30333|30433|30533"
+
+# Watch live connections
+watch -n 1 'ss -tuln | grep -E "30333|30433|30533"'
+```
+
+</TabItem>
+<TabItem value="windows" label="Windows">
+
+```powershell
+# Windows Firewall logs
+Get-Content C:\Windows\System32\LogFiles\Firewall\pfirewall.log -Tail 50
+
+# Enable logging if needed
+netsh advfirewall set currentprofile logging filename %SystemRoot%\System32\LogFiles\Firewall\pfirewall.log
+
+# Monitor connections
+Get-NetTCPConnection | Where-Object {$_.LocalPort -in @(30333,30433,30533)}
+
+# Watch for blocked connections
+Get-WinEvent -FilterHashtable @{LogName="Security"; ID=5152} | Select-Object -First 10
+```
+
+</TabItem>
+<TabItem value="macos" label="macOS">
+
+```bash
+# Check pfctl statistics
+sudo pfctl -s info
+
+# Monitor pf logs
+sudo tcpdump -n -e -ttt -i pflog0
+
+# Application firewall logs
+sudo log show --predicate 'process == "socketfilterfw"' --last 1h
+
+# Network connections
+sudo lsof -i TCP:30333
+```
+
+</TabItem>
+</Tabs>
+
+## Security Best Practices
+
+### Essential Rules
+
+<Icon icon={ICONS.CHECK_CIRCLE} /> **DO:**
+- Only open required ports
+- Use specific port numbers (not ranges)
+- Keep firewall enabled always
+- Log suspicious activity
+- Regular security updates
+
+<Icon icon={ICONS.CLOSE_CIRCLE} /> **DON'T:**
+- Disable firewall for testing (use specific rules)
+- Open all ports (DMZ mode)
+- Expose RPC ports (9944, 9945)
+- Ignore firewall logs
+- Use permissive rules (allow all)
+
+
+### Monitoring Tools
+
+**Recommended security tools:**
+
+- **fail2ban** (Linux) - Automatic IP banning
+- **pfBlockerNG** (pfSense) - Advanced filtering
+- **Little Snitch** (macOS) - Application firewall
+- **GlassWire** (Windows) - Network monitor
+
+## Common Issues and Solutions
+
+### Issue: Firewall Blocking Despite Rules
+
+**Diagnosis:**
+```bash
+# Check if application has permission
+# Linux: Check SELinux/AppArmor
+sestatus
+aa-status
+
+# Windows: Check Windows Defender
+Get-MpPreference | Select-Object ExclusionPath
+
+# macOS: Check app signature
+codesign -v /Applications/Space\ Acres.app
+```
+
+### Issue: Multiple Firewalls Conflict
+
+Some systems have multiple firewall layers:
+1. Cloud provider firewall (AWS/Azure/GCP)
+2. OS firewall (UFW/iptables/Windows)
+3. Third-party antivirus firewall
+4. Docker/container firewall
+
+**Solution:** Configure all layers consistently.
+
+### Issue: Firewall Rules Not Persisting
+
+<Tabs>
+<TabItem value="linux" label="Linux">
+
+```bash
+# Make UFW rules persistent
+sudo ufw enable
+
+# Save iptables rules
+sudo apt install iptables-persistent
+sudo netfilter-persistent save
+
+# Check startup services
+sudo systemctl enable ufw
+sudo systemctl enable netfilter-persistent
+```
+
+</TabItem>
+<TabItem value="windows" label="Windows">
+
+```powershell
+# Export firewall rules
+netsh advfirewall export "C:\firewall-backup.wfw"
+
+# Import on system restart
+netsh advfirewall import "C:\firewall-backup.wfw"
+
+# Create scheduled task for persistence
+$action = New-ScheduledTaskAction -Execute "netsh" `
+    -Argument "advfirewall import C:\firewall-backup.wfw"
+$trigger = New-ScheduledTaskTrigger -AtStartup
+Register-ScheduledTask -TaskName "RestoreFirewall" `
+    -Action $action -Trigger $trigger -RunLevel Highest
+```
+
+</TabItem>
+</Tabs>
+
