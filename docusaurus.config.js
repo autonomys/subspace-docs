@@ -156,18 +156,6 @@ const config = {
       }),
     ],
   ],
-  scripts: [
-    {
-      src: "https://widget.kapa.ai/kapa-widget.bundle.js",
-      "data-website-id": "591e207f-fb7d-4966-9bb0-9eaee7844460",
-      "data-project-name": "Autonomys Network",
-      "data-project-color": "#f2f2f5",
-      "data-project-logo": "https://i.postimg.cc/BQjSkRPy/Autonomys-small-light.png",
-      "data-button-text-color": "#576eb2",
-      "data-modal-disclaimer": "This is a custom LLM for Autonomys Network with access to all documentation (docs.autonomys.xyz/). Since this is AI technology please use your best judgment.",
-      async: true
-    }
-  ],
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
