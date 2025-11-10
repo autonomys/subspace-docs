@@ -1184,10 +1184,10 @@
   resolved "https://registry.npmjs.org/@colors/colors/-/colors-1.5.0.tgz"
   integrity sha512-ooWCrlZP11i8GImSjTHYHLkvFDP48nS4+204nGb1RiX/WXYHmJA2III9/e2DWVabCESdW7hBAEzHRqUn9OUVvQ==
 
-"@crowdin/cli@^4.7.0":
-  version "4.7.0"
-  resolved "https://registry.npmjs.org/@crowdin/cli/-/cli-4.7.0.tgz"
-  integrity sha512-l/fj4kIp4yo3tmJ/aa1JegSMBGslCem8ydA+2Lci73UY3tdZQ9zbJyxxtF2N3xl8XBqgZhLyi5nyE8/zCGt9RQ==
+"@crowdin/cli@^4.11.0":
+  version "4.11.0"
+  resolved "https://registry.yarnpkg.com/@crowdin/cli/-/cli-4.11.0.tgz#f60ce72c0c8d63282607f530383567e0eb6a9e12"
+  integrity sha512-oIOzCHCc9eHOqcQw1bjcnfFUoJDFVobCN5MEZ1rwjYOhPMpIcRNBDnUT/b43LcRWsogU3c0BwcWN/BHvV19DWg==
   dependencies:
     command-exists-promise "^2.0.2"
     node-fetch "2.7.0"
