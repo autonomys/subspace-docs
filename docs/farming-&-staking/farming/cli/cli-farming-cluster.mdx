@@ -77,7 +77,9 @@ max_payload = 2MB
 2. Start NATS with Docker:
 
 :::tip Replace these placeholders
+
 - `<PATH_TO_NATS_CONFIG>`: The path to your nats.config file created in step 1
+
 :::
 
 ```bash
@@ -115,10 +117,12 @@ Refer to our guide on [Port Forwarding](/farming/guides/port-config).
 :::
 
 :::tip Replace these placeholders
+
 - `<NATS_IP>`: The IP address of your NATS server
 - `<BASE_PATH>`: The path where the controller's peer network details will be saved
 - `<NODE_IP>`: Your node's IP address
 - `<RPC_PORT>`: Your node's RPC port
+
 :::
 
 ```bash
@@ -161,9 +165,11 @@ The current Archive History Size can be found in the top cards on [Subscan Block
 :::
 
 :::tip Replace these placeholders
+
 - `<NATS_IP>`: The IP address of your NATS server
 - `<PATH_TO_CACHE>`: The path for cache storage
 - `<CACHE_SIZE>`: The size for cache storage
+
 :::
 
 ```bash
@@ -175,11 +181,13 @@ The current Archive History Size can be found in the top cards on [Subscan Block
 ```
 
 :::note Multiple caches
+
 Multiple caches are supported on a single Cache component:
 ```
 path="<PATH_TO_CACHE1>,size=<CACHE_SIZE1>" \
 path="<PATH_TO_CACHE2>,size=<CACHE_SIZE2>"
 ```
+
 :::
 
 <details>
@@ -198,7 +206,9 @@ Refer to `./subspace-farmer cluster cache --help` for an explanation of addition
 <summary>Plotter (Generates and uploads plotted sectors, downloading pieces from cache as needed)</summary>
 
 :::tip Replace these placeholders
+
 - `<NATS_IP>`: The IP address of your NATS server
+
 :::
 
 ```bash
@@ -221,10 +231,12 @@ Refer to `./subspace-farmer cluster plotter --help` for an explanation of parame
 <summary>Farmer (Manages farms, audits, and retrieves plotted pieces. Requests sector plotting from the Plotter.)</summary>
 
 :::tip Replace these placeholders
+
 - `<NATS_IP>`: The IP address of your NATS server
 - `<REWARD_ADDRESS>`: The reward address where your winning rewards will be sent
 - `<PATH_TO_FARM>`: The path for storing your farm
 - `<FARM_SIZE>`: The size for storing your farm
+
 :::
 
 ```bash
@@ -237,11 +249,13 @@ Refer to `./subspace-farmer cluster plotter --help` for an explanation of parame
 ```
 
 :::note Multiple farms
+
 You can add multiple farms:
 ```
 path="<PATH_TO_FARM1>,size=<FARM_SIZE1>" \
 path="<PATH_TO_FARM2>,size=<FARM_SIZE2>"
 ```
+
 :::
 
 <details>
