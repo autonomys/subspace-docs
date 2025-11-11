@@ -1,0 +1,9 @@
+{
+    "label": "AI3 Token",
+    "position": 1,
+    "link": {
+        "type": "generated-index",
+        "slug": "/ai3token",
+        "description": "Guides on using the AI3 token"
+      }
+}
