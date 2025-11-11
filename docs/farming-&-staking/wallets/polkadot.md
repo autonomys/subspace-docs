@@ -47,7 +47,7 @@ MAKE SURE YOU STORE THIS SECURELY, AND NEVER SHARE IT
 
 ![step-4](/img/doc-imgs/polkadot/Polkadot-3.png)
 
-5. Once your seed is securely stored and saved, click the “I have saved my mnemonic seed safely” check box and click "Next Step"
+5. Once your seed is securely stored and saved, click the “I have saved my mnemonic seed safely” check box and click “Next Step”
 
 6. The next step will ask for a Name & Password for the wallet. then click “Add the account with the generated seed”
 
