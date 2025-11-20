@@ -1,7 +1,7 @@
 {
     "label": "Farm",
     "position": 3,
-    "collapsed": false,
+    "collapsed": true,
     "link": {
       "type": "generated-index",
       "description": "To earn block and vote rewards, you need to run a farmer that connects to a node. The simplest way to do this is by using Space Acres, while the CLI is a bit more complex to set up but offers greater control over configuration. We recommend starting with Space Acres."
