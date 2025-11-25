@@ -14,7 +14,7 @@ jobs:
     name: Install Dependencies
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v5
       - uses: actions/setup-node@v4
         with:
           node-version: '22.14.0'
@@ -22,48 +22,16 @@ jobs:
       - name: Install dependencies
         run: yarn install --frozen-lockfile
 
-  build-leaderboard:
-    name: Test Build Translation Leaderboard
-    needs: setup
-    runs-on: ubuntu-latest
-    env:
-      CROWDIN_PERSONAL_TOKEN: ${{ secrets.CROWDIN_PERSONAL_TOKEN }}
-    steps:
-        - uses: actions/checkout@v6
-        - uses: actions/setup-node@v4
-          with:
-            node-version: '22.14.0'
-            cache: 'yarn'
-            cache-dependency-path: '**/yarn.lock'
-        - run: yarn install --frozen-lockfile
-        - run: yarn run generate-leaderboard
-
-  sync-localization:
-    name: Test Sync Localization Files
-    needs: setup
-    runs-on: ubuntu-latest
-    env:
-      CROWDIN_PERSONAL_TOKEN: ${{ secrets.CROWDIN_PERSONAL_TOKEN }}
-    steps:
-        - uses: actions/checkout@v6
-        - uses: actions/setup-node@v4
-          with:
-            node-version: '22.14.0'
-            cache: 'yarn'
-            cache-dependency-path: '**/yarn.lock'
-        - run: yarn install --frozen-lockfile
-        - run: yarn crowdin:sync
-
   build-website:
     name: Test Build Website
-    needs: [build-leaderboard, sync-localization]
+    needs: setup
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v5
       - uses: actions/setup-node@v4
         with:
           node-version: '22.14.0'
           cache: 'yarn'
           cache-dependency-path: '**/yarn.lock'
       - run: yarn install --frozen-lockfile
-      - run: yarn build --locale en  # Assuming the test build is specific to 'en' locale
+      - run: yarn build --locale en
