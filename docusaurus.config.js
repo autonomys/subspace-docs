@@ -71,7 +71,7 @@ const config = {
           { to: '/wallets/polkadot', from: ['/docs/farming-&-staking/wallets/polkadot/'] },
 
 
-          // { to: '/category/farming', from: ['/docs/category/get-started-with-farming', '/protocol/farm/farming', '/docs/category/farming'] },
+          { to: '/category/farm', from: ['/docs/category/get-started-with-farming', '/protocol/farm/farming', '/docs/category/farming', '/category/farming'] },
           { to: '/farming/intro', from: ['/docs/farming-&-staking/farming/prerequisites/', '/docs/farming-&-staking/farming/intro/'] },
           { to: '/farming/space-acres/install', from: ['/docs/protocol/pulsar/', '/docs/category/pulsar-recommended', '/docs/category/pulsar', '/docs/category/space-acres', '/docs/farming-&-staking/farming/pulsar', '/docs/category/space-acres-recommended', '/docs/farming-&-staking/farming/space-acres/space-acres-install', '/docs/farming-&amp;-staking/farming/space-acres/space-acres-install', '/docs/farming-&amp;-staking/farming/space-acres/install', '/docs/farming-&-staking/farming/space-acres/install'] },
           { to: '/farming/space-acres/translate', from: ['/docs/farming-&-staking/farming/space-acres/translate_space_acres'] },

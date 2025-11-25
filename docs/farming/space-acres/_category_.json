@@ -1,7 +1,7 @@
 {
     "label": "Space Acres",
     "position": 2,
-    "collapsed": false,
+    "collapsed": true,
     "link": null,
     "customProps": {
         "featured": true
