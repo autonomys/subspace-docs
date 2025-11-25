@@ -1,0 +1,96 @@
+---
+title: Domains Node Types
+sidebar_position: 5
+description: An overview of the different types of nodes
+slug: /staking/guides/nodes
+keywords:
+    - Farmer
+    - Farming
+    - Node
+    - Executable
+    - Domain
+---
+
+Domain nodes can be configured in different ways to perform various functions. Nodes are launched with the CLI Application.
+
+## Domain Nodes
+
+Domains are essentially built-in rollups that support any conceivable state transition framework and smart contract execution environment through custom runtimes. Deploying a domain as easy as deploying a smart contract. They allow builders to easily launch their own network without bootstrapping a new validator set, while still benefiting from the shared security and interoperability provided by the Autonomys Network consensus chain.
+
+There are also two ways to configure a Domain node. One is for **Full nodes** and one for **Archive nodes**. 
+
+:::info
+To configure the domain part of the node, you need to include a line that is just two dashes `--`. That will tell the CLI that anything after those dashes applies to the domain portion.
+:::
+
+### Full Domain Node
+
+A domain full node processes all blocks and serves peers. It preserves the blockchain's state and recent history. 
+
+:::tip Replace these placeholders
+- `<BASE_PATH>`: Path where you want to store the node database
+- `<DOMAIN_ID>`: The domain ID you want to connect to
+:::
+
+```bash
+./subspace-node-ubuntu-x86_64-skylake-mainnet-2025-aug-20 run \
+--chain mainnet \
+--base-path "<BASE_PATH>" \
+--blocks-pruning archive \
+--state-pruning archive \
+--sync full \
+-- \
+--domain-id "<DOMAIN_ID>"
+```
+
+### Archive Domain Node
+
+A domain archive node allows an RPC user to query any historical blocks on the domain it targets. It is useful when a complete history of the domain needs to be made available. An example use case would be indexing the domain chain via RPC.
+
+:::tip Replace these placeholders
+- `<BASE_PATH>`: Path where you want to store the node database
+- `<DOMAIN_ID>`: The domain ID you want to connect to
+- `<RPC_PORT>`: The RPC port you want your node to be accessible at
+
+By default the RPC port is 9944 so you can leave the `rpc-listen-on` out. If you want to change it, you can set it to `0.0.0.0:"<RPC_PORT>"`
+:::
+
+```bash
+./subspace-node-ubuntu-x86_64-skylake-mainnet-2025-aug-20 run \
+--chain mainnet \
+--base-path "<BASE_PATH>" \
+--blocks-pruning archive \
+--state-pruning archive \
+--sync full \
+-- \
+--domain-id "<DOMAIN_ID>" \
+--blocks-pruning archive \
+--state-pruning archive \
+--rpc-methods unsafe \
+--rpc-cors all \
+--rpc-listen-on 0.0.0.0:"<RPC_PORT>"
+```
+
+## Specialized Nodes
+
+### Operator Node
+
+An operator node is closer to an *archive domain node* rather than a *full domain node*. The differences are that `archive-canonical` can be used and the `state-pruning` is set to 28,800 blocks. Also you need to specify a `--domain-id` and an `--operator-id`.
+
+:::tip Replace these placeholders
+- `<NAME>`: Your node name for telemetry
+- `<BASE_PATH>`: Path where you want to store the node database
+- `<DOMAIN_ID>`: The domain ID you want to operate on
+- `<OPERATOR_ID>`: Your operator ID (obtained after registration)
+:::
+
+```bash
+./subspace-node-ubuntu-x86_64-skylake-mainnet-2025-aug-20 run \
+--chain chronos \
+--name "<NAME>" \
+--base-path "<BASE_PATH>" \
+--sync full \
+-- \
+--domain-id "<DOMAIN_ID>" \
+--operator-id "<OPERATOR_ID>" \
+```
