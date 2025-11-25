@@ -88,7 +88,7 @@ const config = {
           { to: '/staking/operator/tips', from: ['/docs/farming-&-staking/staking/operators/tips-operator'] },
           { to: '/staking/stake', from: ['/docs/farming-&-staking/staking/'] },
 
-          { to: '/farming/timekeeper', from: ['/docs/protocol/timekeeping', '/docs/farming-&-staking/timekeeping'] },
+          { to: '/timekeeping', from: ['/docs/protocol/timekeeping', '/docs/farming-&-staking/timekeeping', '/farming/timekeeper'] },
 
           // Develop
           // Since external redirects are not supported, redirects are happening on each corresponding page. Redirects below are necessary to ensure that legacy links are still working.
