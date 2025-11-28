@@ -1,0 +1,76 @@
+---
+title: Farming and Consensus Node Types
+sidebar_position: 5
+description: An overview of the different types of nodes
+slug: /farming/guides/nodes
+keywords:
+    - Farmer
+    - Farming
+    - Node
+    - Executable
+---
+
+Farming and Consensus nodes can be configured in different ways to perform various functions. Nodes are launched with the CLI Application.
+
+## Consensus Nodes
+
+There are two ways to configure a Consensus node. One is for **Full nodes** and one for **Archive nodes**. 
+
+### Full Consensus Node
+
+This is the most common type of node as it is used by farmers. It processes all blocks and serves peers. It preserves the blockchain's state and recent history. While you can customize the block and state pruning, the defaults are 256 and 140,000. Running a full node allows the participant to verify all blocks, ensuring independent auditability. All farmers, operators and timekeepers are full nodes by default.
+
+:::tip Replace these placeholders
+- `<BASE_PATH>`: Path where you want to store the node database
+:::
+
+```bash
+./subspace-node-ubuntu-x86_64-skylake-mainnet-2025-aug-20 run \
+--chain mainnet \
+--base-path "<BASE_PATH>"
+```
+
+:::info Farming with a full node 
+When running a full node, farmers need to add the `--farmer` parameter to allow the farmer CLI to connect to the full node.
+:::
+
+### Archive Consensus Node
+
+An archival node keeps a history of all blocks and serves peers. It preserves the blockchain's state and entire history. It is useful for faster historical block retrieval and block explorers. All farmers, operators and timekeepers can be archival nodes.
+
+:::tip Replace these placeholders
+- `<BASE_PATH>`: Path where you want to store the node database
+:::
+
+```bash
+./subspace-node-ubuntu-x86_64-skylake-mainnet-2025-aug-20 run \
+--chain mainnet \
+--base-path "<BASE_PATH>" \
+--blocks-pruning archive \
+--state-pruning archive \
+--sync full
+```
+
+:::note archive vs archive-canonical
+*blocks-pruning* and *state-pruning* can be set to `archive` or `archive-canonical`.  The former keeps state of all blocks and the latter only blocks which form the canonical chain.
+:::
+
+### Timekeeper Node
+
+Timekeepers run the Proof-of-Time chain and maintain the randomness beacon for the consensus chain. They are responsible for evaluating the delay function (within the target time slot duration of 1 second) and announcing the outputs to other nodes, requiring a powerful latest-generation CPU. You will need to set the `--timekeeper` parameter and you can also force it to use the fastest core with `--timekeeper-cpu-cores`.
+
+:::tip Replace these placeholders
+- `<BASE_PATH>`: Path where you want to store the node database
+:::
+
+```bash
+./subspace-node-ubuntu-x86_64-skylake-mainnet-2025-aug-20 run \
+--chain mainnet \
+--timekeeper \
+--timekeeper-cpu-cores 4 \ 
+--base-path "<BASE_PATH>"
+```
+
+:::note
+The Subspace Foundation maintains several timekeepers as a public good.
+:::

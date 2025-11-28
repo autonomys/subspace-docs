@@ -1,0 +1,9 @@
+{
+    "label": "Network Configuration",
+    "position": 2,
+    "collapsed": true,
+    "link": {
+      "type": "doc",
+      "id": "networking/overview"
+    }
+}

@@ -2,7 +2,7 @@
 title: Timekeeping
 sidebar_position: 3
 description: Farming on the Autonomys Network
-slug: /farming/timekeeper
+slug: /timekeeping
 keywords:
   - Timekeeper
   - Timekeeping
