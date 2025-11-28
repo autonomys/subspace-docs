@@ -56,10 +56,9 @@ These errors and warnings are tied to specific components. In this section, we h
         >
           <ContentSubtitle>Error message:</ContentSubtitle>
           <ContentCode language="log">
-    {`WARN Consensus: telemetry: ❌ Error while dialing /dns/telemetry.subspace.foundation/tcp/443/x-parity-wss/%2Fsubmit%2F: Custom { kind: Other, error: Timeout }`}
+            {`WARN Consensus: telemetry: ❌ Error while dialing /dns/telemetry.subspace.foundation/tcp/443/x-parity-wss/%2Fsubmit%2F: Custom { kind: Other, error: Timeout }`}
           </ContentCode>
         </ContentBlock>
-
         <ContentBlock 
           title="WARN Consensus: Proof of time chain reorg" 
           slug="pot-chain-reorg"
@@ -69,13 +68,11 @@ These errors and warnings are tied to specific components. In this section, we h
         >
           <ContentSubtitle>Resolution:</ContentSubtitle>
           <ContentText>This should resolve on its own.</ContentText>
-          
           <ContentSubtitle>Error message:</ContentSubtitle>
           <ContentCode language="log">
-    {`WARN Consensus: sc_proof_of_time::source: Proof of time chain reorg happened from_next_slot=<block> to_next_slot=<block>`}
+            {`WARN Consensus: sc_proof_of_time::source: Proof of time chain reorg happened from_next_slot=<block> to_next_slot=<block>`}
           </ContentCode>
         </ContentBlock>
-
         <ContentBlock 
           title="WARN Consensus: Proof of time chain extended" 
           slug="pot-chain-extended"
@@ -85,10 +82,9 @@ These errors and warnings are tied to specific components. In this section, we h
         >
           <ContentSubtitle>Error message:</ContentSubtitle>
           <ContentCode language="log">
-    {`WARN Consensus: sc_proof_of_time::source: Proof of time chain was extended from block import from_next_slot=<block> to_next_slot=<block>`}
+            {`WARN Consensus: sc_proof_of_time::source: Proof of time chain was extended from block import from_next_slot=<block> to_next_slot=<block>`}
           </ContentCode>
         </ContentBlock>
-
         <ContentBlock 
           title="WARN Consensus: Error when syncing blocks from DSN" 
           slug="snap-sync-failed"
@@ -98,7 +94,7 @@ These errors and warnings are tied to specific components. In this section, we h
         >
           <ContentSubtitle>Error message:</ContentSubtitle>
           <ContentCode language="log">
-    {`WARN Consensus: subspace_service::sync_from_dsn: Error when syncing blocks from DSN, stopping DSN sync until the next notification error=Other: Failed to download segment pieces during block import: Not enough (127/128) pieces for segment <segment>`}
+            {`WARN Consensus: subspace_service::sync_from_dsn: Error when syncing blocks from DSN, stopping DSN sync until the next notification error=Other: Failed to download segment pieces during block import: Not enough (127/128) pieces for segment <segment>`}
           </ContentCode>
         </ContentBlock>
     </ContentGroup>
@@ -119,10 +115,9 @@ These errors and warnings are tied to specific components. In this section, we h
             <ContentListItem>Reduce the farm size and restart the farmer</ContentListItem>
             <ContentListItem>Ensure that you are saving the farm to the correct drive and that it is properly mounted</ContentListItem>
           </ContentList>
-          
           <ContentSubtitle>Error message:</ContentSubtitle>
           <ContentCode language="log">
-    {`ERROR subspace_farmer::farmer_cache: Failed to store piece in cache, there was no space piece_index=<piece>`}
+            {`ERROR subspace_farmer::farmer_cache: Failed to store piece in cache, there was no space piece_index=<piece>`}
           </ContentCode>
         </ContentBlock>
     </ContentGroup>
@@ -139,10 +134,9 @@ These errors and warnings are tied to specific components. In this section, we h
         >
           <ContentSubtitle>Mitigation:</ContentSubtitle>
           <ContentText>To help mitigate these errors, run your NATS component on the same system as your Controller, Cache, and Plotter components.</ContentText>
-          
           <ContentSubtitle>Error message:</ContentSubtitle>
           <ContentCode language="log">
-    {`WARN {farm_index=3}:{sector_index=1036}: subspace_farmer::single_disk_farm::plotting: Failed to plot sector, retrying in 1s error=Low-level plotting error: Received only <sector> sector bytes out of <bytes> expected bytes`}
+            {`WARN {farm_index=3}:{sector_index=1036}: subspace_farmer::single_disk_farm::plotting: Failed to plot sector, retrying in 1s error=Low-level plotting error: Received only <sector> sector bytes out of <bytes> expected bytes`}
           </ContentCode>
         </ContentBlock>
     </ContentGroup>
@@ -187,7 +181,9 @@ These unexpected behaviors are not linked to specific components. In this sectio
 </ContentGroup>
 
 :::info Still experiencing issues?
+
 If your problem isn't listed above or the suggested solutions didn't work, reach out to our community:
 - Search existing discussions on our [Forum](https://forum.autonomys.xyz/search?expanded=false&q=tags)
 - Get real-time help in our [Discord #support channel](https://discord.com/channels/864285291518361610/1062507270539321485)
+
 :::
