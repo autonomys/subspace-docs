@@ -3,7 +3,9 @@ import ReleaseContainer from '@site/src/components/ReleaseContainer';
 
 ### Windows Specific Warnings:
 :::caution  Windows No Output Bug
+
 If you face an error where the node outputs nothing and no error code is given it is likely you just need to install the latest Visual C++ Redistributable package [here](https://learn.microsoft.com/en-us/cpp/windows/latest-supported-vc-redist?view=msvc-170)
+
 :::
  
 ## Step 1: Download the CLI Executables 
@@ -36,8 +38,10 @@ If you face an error where the node outputs nothing and no error code is given i
 ---
 
 :::warning 
+
 A `Windows Defender Firewall has blocked some features of this app` warning may appear.
 This is because the application is trying to access the internet. This is expected as it is how the farmer talks to other farmers on the network, select `Allow access` to continue setup. 
+
 :::
 
 1. Open `Powershell` (we do not recommend using Command Prompt as its syntax is slightly different)
@@ -47,8 +51,10 @@ This is because the application is trying to access the internet. This is expect
 3. Start the node using the command below. Ensure you copy the entire command:
 
 :::tip Replace these placeholders
+
 - `<BASE_PATH>`: Path where you want to store the node database
 - `<NAME>`: Nickname of your choice for your node
+
 :::
 
 ```powershell
@@ -61,7 +67,9 @@ This is because the application is trying to access the internet. This is expect
 ```
 
 :::note
+
 Using **run**, setting **--base-path** and specifying **--chain** is mandatory.
+
 :::
 
 4. You should see output similar to this in the terminal:
@@ -91,19 +99,23 @@ Using **run**, setting **--base-path** and specifying **--chain** is mandatory.
 ---
 
 :::tip Farm Location Guidance
+
 To avoid running out of space on your operating system or node database drive, it's recommended to store your farms on a separate drive. 
 
 If you store your farm and node database on the same drive, reserve at least 100 GiB for the node and additional space for your operating system.
+
 :::
 
 1. Open a new terminal and navigate to the directory where the Subspace farmer binary is located. Start the farmer with the following command:
 
 :::tip Replace these placeholders
+
 - `<REWARD_ADDRESS>`: Your wallet address for farming rewards
 - `<PATH_TO_FARM>`: Directory where you want to store the farm
 - `<FARM_SIZE>`: Amount of space allocated for farming (e.g. 4TiB, 8TiB)
 
 Reserve at least 100GiB for the node and additional space for your operating system.
+
 :::
 
 ```PowerShell
