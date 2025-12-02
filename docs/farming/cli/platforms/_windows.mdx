@@ -3,38 +3,58 @@ import ReleaseContainer from '@site/src/components/ReleaseContainer';
 
 ### Windows Specific Warnings:
 :::caution  Windows No Output Bug
+
 If you face an error where the node outputs nothing and no error code is given it is likely you just need to install the latest Visual C++ Redistributable package [here](https://learn.microsoft.com/en-us/cpp/windows/latest-supported-vc-redist?view=msvc-170)
+
 :::
  
 ## Step 1: Download the CLI Executables 
 ---
 
 <ReleaseContainer>
-  <ReleaseButton to="https://github.com/autonomys/subspace/releases/download/mainnet-2025-aug-20/subspace-node-windows-x86_64-skylake-mainnet-2025-aug-20.exe" title="Node Executable" subtitle="(Skylake+ CPU)" />
-  <ReleaseButton to="https://github.com/autonomys/subspace/releases/download/mainnet-2025-aug-20/subspace-farmer-windows-x86_64-skylake-mainnet-2025-aug-20.exe" title="Farmer Executable" subtitle="(Skylake+ CPU)" />
+  <ReleaseButton 
+    to="https://github.com/autonomys/subspace/releases/download/mainnet-2025-aug-20/subspace-node-windows-x86_64-skylake-mainnet-2025-aug-20.exe" 
+    title="Node Executable" 
+    subtitle="(Skylake+ CPU)" />
+  <ReleaseButton 
+    to="https://github.com/autonomys/subspace/releases/download/mainnet-2025-aug-20/subspace-farmer-windows-x86_64-skylake-mainnet-2025-aug-20.exe" 
+    title="Farmer Executable" 
+    subtitle="(Skylake+ CPU)" />
 </ReleaseContainer>
  
 <ReleaseContainer>
-  <ReleaseButton to="https://github.com/autonomys/subspace/releases/download/mainnet-2025-aug-20/subspace-node-windows-x86_64-v2-mainnet-2025-aug-20.exe" title="Node Executable" subtitle="(Legacy CPU)" />
-  <ReleaseButton to="https://github.com/autonomys/subspace/releases/download/mainnet-2025-aug-20/subspace-farmer-windows-x86_64-v2-mainnet-2025-aug-20.exe" title="Farmer Executable" subtitle="(Legacy CPU)" />
+  <ReleaseButton 
+    to="https://github.com/autonomys/subspace/releases/download/mainnet-2025-aug-20/subspace-node-windows-x86_64-v2-mainnet-2025-aug-20.exe" 
+    title="Node Executable" 
+    subtitle="(Legacy CPU)" />
+  <ReleaseButton 
+    to="https://github.com/autonomys/subspace/releases/download/mainnet-2025-aug-20/subspace-farmer-windows-x86_64-v2-mainnet-2025-aug-20.exe" 
+    title="Farmer Executable" 
+    subtitle="(Legacy CPU)" />
 </ReleaseContainer>
 
 
-## Step 2: Start CLI Node
+## Step 2: Start the CLI Node
 ---
 
 :::warning 
+
 A `Windows Defender Firewall has blocked some features of this app` warning may appear.
 This is because the application is trying to access the internet. This is expected as it is how the farmer talks to other farmers on the network, select `Allow access` to continue setup. 
+
 :::
 
 1. Open `Powershell` (we do not recommend using Command Prompt as its syntax is slightly different)
+
 2. In the terminal we will change to the Downloads directory using this command `cd Downloads`
-3. We will then start the node using the following command:
+
+3. Start the node using the command below. Ensure you copy the entire command:
 
 :::tip Replace these placeholders
+
 - `<BASE_PATH>`: Path where you want to store the node database
 - `<NAME>`: Nickname of your choice for your node
+
 :::
 
 ```powershell
@@ -47,11 +67,12 @@ This is because the application is trying to access the internet. This is expect
 ```
 
 :::note
+
 Using **run**, setting **--base-path** and specifying **--chain** is mandatory.
+
 :::
 
-  
-4. You should see something similar in the terminal:
+4. You should see output similar to this in the terminal:
 ```text
 2022-02-03 10:52:23 Subspace
 2022-02-03 10:52:23 ✌️  version 0.1.0-35cf6f5-x86_64-windows
@@ -74,24 +95,34 @@ Using **run**, setting **--base-path** and specifying **--chain** is mandatory.
 2022-02-03 10:52:29 ⚙️  Syncing, target=#215883 (2 peers), best: #55 (0xafc7…bccf), finalized #0 (0x6ada…0d38), ⬇ 850.1kiB/s ⬆ 1.5kiB/s
 ```
 
-## Step 3: Start CLI Farmer
+## Step 3: Start the CLI Farmer
 ---
 
-1. We will then open another terminal, change to the downloads directory as we did before, then start the farmer node with the following command:
+:::tip Farm Location Guidance
+
+To avoid running out of space on your operating system or node database drive, it's recommended to store your farms on a separate drive. 
+
+If you store your farm and node database on the same drive, reserve at least 100 GiB for the node and additional space for your operating system.
+
+:::
+
+1. Open a new terminal and navigate to the directory where the Subspace farmer binary is located. Start the farmer with the following command:
 
 :::tip Replace these placeholders
+
 - `<REWARD_ADDRESS>`: Your wallet address for farming rewards
 - `<PATH_TO_FARM>`: Directory where you want to store the farm
 - `<FARM_SIZE>`: Amount of space allocated for farming (e.g. 4TiB, 8TiB)
 
 Reserve at least 100GiB for the node and additional space for your operating system.
+
 :::
 
 ```PowerShell
 .\subspace-farmer-windows-x86_64-skylake-mainnet-2025-aug-20.exe farm --reward-address "<REWARD_ADDRESS>" path="<PATH_TO_FARM>,size=<FARM_SIZE>"
 ```
 
-2. You should see something similar in the terminal:
+2. You should see output similar to this in your terminal:
 ```text
 2022-06-02T00:02:04.552120Z  INFO subspace_farmer::commands::farm: Connecting to node at ws://127.0.0.1:9944
 2022-06-02T00:02:04.557220Z  INFO jsonrpsee_client_transport::ws: Connection established to target: Target { sockaddrs: [], host: "127.0.0.1", host_header: "127.0.0.1:9944", _mode: Plain, path_and_query: "/" }
