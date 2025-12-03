@@ -126,7 +126,7 @@ Refer to our guide on [Port Forwarding](/farming/guides/port-config).
 :::
 
 ```bash
-./subspace-farmer-ubuntu-x86_64-skylake-mainnet-2025-aug-20 \
+./subspace-farmer-ubuntu-x86_64-skylake-mainnet-2025-dec-02 \
     cluster \
         --nats-server "nats://<NATS_IP>:4222" \
     controller \
@@ -173,7 +173,7 @@ The current Archive History Size can be found in the top cards on [Subscan Block
 :::
 
 ```bash
-./subspace-farmer-ubuntu-x86_64-skylake-mainnet-2025-aug-20 \
+./subspace-farmer-ubuntu-x86_64-skylake-mainnet-2025-dec-02 \
     cluster \
         --nats-server "nats://<NATS_IP>:4222" \
     cache \
@@ -212,7 +212,7 @@ Refer to `./subspace-farmer cluster cache --help` for an explanation of addition
 :::
 
 ```bash
-./subspace-farmer-ubuntu-x86_64-skylake-mainnet-2025-aug-20 \
+./subspace-farmer-ubuntu-x86_64-skylake-mainnet-2025-dec-02 \
     cluster \
         --nats-server "nats://<NATS_IP>:4222" \
     plotter
@@ -240,7 +240,7 @@ Refer to `./subspace-farmer cluster plotter --help` for an explanation of parame
 :::
 
 ```bash
-./subspace-farmer-ubuntu-x86_64-skylake-mainnet-2025-aug-20 \
+./subspace-farmer-ubuntu-x86_64-skylake-mainnet-2025-dec-02 \
     cluster \
         --nats-server "nats://<NATS_IP>:4222" \
     farmer \
@@ -276,7 +276,7 @@ Refer to `./subspace-farmer cluster farmer --help` for an explanation of each op
 <summary>You can run Farming Cluster components individually or combine them to run simultaneously.</summary>
 
 ```bash
-./subspace-farmer-ubuntu-x86_64-skylake-mainnet-2025-aug-20 \
+./subspace-farmer-ubuntu-x86_64-skylake-mainnet-2025-dec-02 \
     cluster \
         --nats-server "nats://<NATS_IP>:4222" \
     controller \
@@ -322,7 +322,7 @@ flowchart
 <summary>Configuration</summary>
 
 ```bash
-./subspace-farmer-ubuntu-x86_64-skylake-mainnet-2025-aug-20 cluster \
+./subspace-farmer-ubuntu-x86_64-skylake-mainnet-2025-dec-02 cluster \
     controller \
         --nats-server="nats://<NATS_IP_1>:4222" \
         --nats-server="nats://<NATS_IP_2>:4222" \
@@ -382,7 +382,7 @@ Each cache group must have a unique name, and controllers can be assigned one or
 <summary>Configuration</summary>
 
 ```bash title="Controller #1"
-./subspace-farmer-ubuntu-x86_64-skylake-mainnet-2025-aug-20 \
+./subspace-farmer-ubuntu-x86_64-skylake-mainnet-2025-dec-02 \
     cluster \
         --nats-server "nats://<NATS_IP>:4222" \
     controller \
@@ -393,7 +393,7 @@ Each cache group must have a unique name, and controllers can be assigned one or
 ```
 
 ```bash title="Controller #2"
-./subspace-farmer-ubuntu-x86_64-skylake-mainnet-2025-aug-20 \
+./subspace-farmer-ubuntu-x86_64-skylake-mainnet-2025-dec-02 \
     cluster \
         --nats-server "nats://<NATS_IP>:4222" \
     controller \
@@ -403,7 +403,7 @@ Each cache group must have a unique name, and controllers can be assigned one or
 ```
 
 ```bash title="Cache #1"
-./subspace-farmer-ubuntu-x86_64-skylake-mainnet-2025-aug-20 \
+./subspace-farmer-ubuntu-x86_64-skylake-mainnet-2025-dec-02 \
     cluster \
         --nats-server "nats://<NATS_IP>:4222" \
     cache \
@@ -412,7 +412,7 @@ Each cache group must have a unique name, and controllers can be assigned one or
 ```
 
 ```bash title="Cache #2"
-./subspace-farmer-ubuntu-x86_64-skylake-mainnet-2025-aug-20 \
+./subspace-farmer-ubuntu-x86_64-skylake-mainnet-2025-dec-02 \
     cluster \
         --nats-server "nats://<NATS_IP>:4222" \
     cache \
@@ -421,21 +421,21 @@ Each cache group must have a unique name, and controllers can be assigned one or
 ```
 
 ```bash title="Plotter #1"
-./subspace-farmer-ubuntu-x86_64-skylake-mainnet-2025-aug-20 \
+./subspace-farmer-ubuntu-x86_64-skylake-mainnet-2025-dec-02 \
     cluster \
         --nats-server "nats://<NATS_IP>:4222" \
     plotter
 ```
 
 ```bash title="Plotter #2"
-./subspace-farmer-ubuntu-x86_64-skylake-mainnet-2025-aug-20 \
+./subspace-farmer-ubuntu-x86_64-skylake-mainnet-2025-dec-02 \
     cluster \
         --nats-server "nats://<NATS_IP>:4222" \
     plotter
 ```
 
 ```bash title="Farmer #1"
-./subspace-farmer-ubuntu-x86_64-skylake-mainnet-2025-aug-20 \
+./subspace-farmer-ubuntu-x86_64-skylake-mainnet-2025-dec-02 \
     cluster \
         --nats-server "nats://<NATS_IP>:4222" \
     farmer \
@@ -444,7 +444,7 @@ Each cache group must have a unique name, and controllers can be assigned one or
 ```
 
 ```bash title="Farmer #2"
-./subspace-farmer-ubuntu-x86_64-skylake-mainnet-2025-aug-20 \
+./subspace-farmer-ubuntu-x86_64-skylake-mainnet-2025-dec-02 \
     cluster \
         --nats-server "nats://<NATS_IP>:4222" \
     farmer \
@@ -453,7 +453,7 @@ Each cache group must have a unique name, and controllers can be assigned one or
 ```
 
 ```bash title="Farmer #3"
-./subspace-farmer-ubuntu-x86_64-skylake-mainnet-2025-aug-20 \
+./subspace-farmer-ubuntu-x86_64-skylake-mainnet-2025-dec-02 \
     cluster \
         --nats-server "nats://<NATS_IP>:4222" \
     farmer \
