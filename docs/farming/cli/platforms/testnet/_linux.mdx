@@ -8,18 +8,18 @@ import ReleaseContainer from '@site/src/components/ReleaseContainer';
 ---
 
 <ReleaseContainer>
-  <ReleaseButton to="https://github.com/autonomys/subspace/releases/download/chronos-2026-jan-05/subspace-node-ubuntu-x86_64-skylake-chronos-2026-jan-05" title="Node Executable" subtitle="(Skylake+ CPU)" />
-  <ReleaseButton to="https://github.com/autonomys/subspace/releases/download/chronos-2026-jan-05/subspace-farmer-ubuntu-x86_64-skylake-chronos-2026-jan-05" title="Farmer Executable" subtitle="(Skylake+ CPU)" />
+  <ReleaseButton to="https://github.com/autonomys/subspace/releases/download/chronos-2026-jan-15/subspace-node-ubuntu-x86_64-skylake-chronos-2026-jan-15" title="Node Executable" subtitle="(Skylake+ CPU)" />
+  <ReleaseButton to="https://github.com/autonomys/subspace/releases/download/chronos-2026-jan-15/subspace-farmer-ubuntu-x86_64-skylake-chronos-2026-jan-15" title="Farmer Executable" subtitle="(Skylake+ CPU)" />
 </ReleaseContainer>
 
 <ReleaseContainer>
-  <ReleaseButton to="https://github.com/autonomys/subspace/releases/download/chronos-2026-jan-05/subspace-node-ubuntu-x86_64-v2-chronos-2026-jan-05" title="Node Executable" subtitle="(Legacy CPU)" />
-  <ReleaseButton to="https://github.com/autonomys/subspace/releases/download/chronos-2026-jan-05/subspace-farmer-ubuntu-x86_64-v2-chronos-2026-jan-05" title="Farmer Executable" subtitle="(Legacy CPU)" />
+  <ReleaseButton to="https://github.com/autonomys/subspace/releases/download/chronos-2026-jan-15/subspace-node-ubuntu-x86_64-v2-chronos-2026-jan-15" title="Node Executable" subtitle="(Legacy CPU)" />
+  <ReleaseButton to="https://github.com/autonomys/subspace/releases/download/chronos-2026-jan-15/subspace-farmer-ubuntu-x86_64-v2-chronos-2026-jan-15" title="Farmer Executable" subtitle="(Legacy CPU)" />
 </ReleaseContainer>
 
 <ReleaseContainer>
-  <ReleaseButton to="https://github.com/autonomys/subspace/releases/download/chronos-2026-jan-05/subspace-node-ubuntu-aarch64-chronos-2026-jan-05" title="Node Executable" subtitle="(Aarch64/Raspberry Pi)" />
-  <ReleaseButton to="https://github.com/autonomys/subspace/releases/download/chronos-2026-jan-05/subspace-farmer-ubuntu-aarch64-chronos-2026-jan-05" title="Farmer Executable" subtitle="(Aarch64/Raspberry Pi)" />
+  <ReleaseButton to="https://github.com/autonomys/subspace/releases/download/chronos-2026-jan-15/subspace-node-ubuntu-aarch64-chronos-2026-jan-15" title="Node Executable" subtitle="(Aarch64/Raspberry Pi)" />
+  <ReleaseButton to="https://github.com/autonomys/subspace/releases/download/chronos-2026-jan-15/subspace-farmer-ubuntu-aarch64-chronos-2026-jan-15" title="Farmer Executable" subtitle="(Aarch64/Raspberry Pi)" />
 </ReleaseContainer>
 
 ## Step 2: Start the CLI Node
@@ -32,8 +32,8 @@ import ReleaseContainer from '@site/src/components/ReleaseContainer';
 
 2. Make the `farmer` and `node` executable:
     ```bash
-    chmod +x subspace-farmer-ubuntu-x86_64-skylake-chronos-2026-jan-05
-    chmod +x subspace-node-ubuntu-x86_64-skylake-chronos-2026-jan-05
+    chmod +x subspace-farmer-ubuntu-x86_64-skylake-chronos-2026-jan-15
+    chmod +x subspace-node-ubuntu-x86_64-skylake-chronos-2026-jan-15
     ```
 
 3. Start the node using the command below:
@@ -44,7 +44,7 @@ import ReleaseContainer from '@site/src/components/ReleaseContainer';
     :::
 
     ```bash
-    ./subspace-node-ubuntu-x86_64-skylake-chronos-2026-jan-05 \
+    ./subspace-node-ubuntu-x86_64-skylake-chronos-2026-jan-15 \
       run \
       --chain chronos \
       --base-path "<BASE_PATH>" \
@@ -108,7 +108,7 @@ If you store your farm and node database on the same drive, reserve at least 100
     :::
 
     ```bash
-    ./subspace-farmer-ubuntu-x86_64-skylake-chronos-2026-jan-05 farm \
+    ./subspace-farmer-ubuntu-x86_64-skylake-chronos-2026-jan-15 farm \
       --reward-address "<REWARD_ADDRESS>" \
       path="<PATH_TO_FARM>,size=<FARM_SIZE>"
     ```
