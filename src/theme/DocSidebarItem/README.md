@@ -66,7 +66,7 @@ sidebar_custom_props:
 
 Examples:
 - Featured: `/docs/farming-&-staking/wallets/talisman.md`
-- Testnet: `/docs/farming-&-staking/farming/cli/taurus-network.mdx`
+- Testnet: `/docs/farming-&-staking/farming/cli/chronos-network.mdx`
 
 ## Implementation
 

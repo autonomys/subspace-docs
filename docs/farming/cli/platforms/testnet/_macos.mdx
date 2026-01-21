@@ -12,8 +12,8 @@ import ReleaseContainer from '@site/src/components/ReleaseContainer';
 ---
  
 <ReleaseContainer>
-  <ReleaseButton to="https://github.com/autonomys/subspace/releases/download/taurus-2025-jul-14/subspace-node-macos-aarch64-taurus-2025-jul-14.zip" title="Node Executable" subtitle="(Apple CPU)" />
-  <ReleaseButton to="https://github.com/autonomys/subspace/releases/download/taurus-2025-jul-14/subspace-farmer-macos-aarch64-taurus-2025-jul-14.zip" title="Farmer Executable" subtitle="(Apple CPU)" />
+  <ReleaseButton to="https://github.com/autonomys/subspace/releases/download/chronos-2026-jan-15/subspace-node-macos-aarch64-chronos-2026-jan-15.zip" title="Node Executable" subtitle="(Apple CPU)" />
+  <ReleaseButton to="https://github.com/autonomys/subspace/releases/download/chronos-2026-jan-15/subspace-farmer-macos-aarch64-chronos-2026-jan-15.zip" title="Farmer Executable" subtitle="(Apple CPU)" />
 </ReleaseContainer>
 
 ## Step 2: Start CLI Node
@@ -27,8 +27,8 @@ After this, simply repeat the step you prompted for (step 4 or 6). This time, cl
 
 1. Open your favorite terminal, and change to the Downloads directory using `cd Downloads`
 2. Make the farmer & node executable:
-- `chmod +x subspace-farmer-macos-aarch64-taurus-2025-jul-14`
-- `chmod +x subspace-node-macos-aarch64-taurus-2025-jul-14`
+- `chmod +x subspace-farmer-macos-aarch64-chronos-2026-jan-15`
+- `chmod +x subspace-node-macos-aarch64-chronos-2026-jan-15`
 3. We will then start the node using the following command
 
 :::tip Replace these placeholders
@@ -37,9 +37,9 @@ After this, simply repeat the step you prompted for (step 4 or 6). This time, cl
 :::
 
 ```bash
-./subspace-node-macos-aarch64-taurus-2025-jul-14 \
+./subspace-node-macos-aarch64-chronos-2026-jan-15 \
   run \
-  --chain taurus \
+  --chain chronos \
   --base-path "<BASE_PATH>" \
   --farmer \
   --name "<NAME>"
@@ -87,7 +87,7 @@ Reserve at least 100GiB for the node and additional space for your operating sys
 :::
 
 ```bash
-./subspace-farmer-macos-aarch64-taurus-2025-jul-14 farm --reward-address "<REWARD_ADDRESS>" path="<PATH_TO_FARM>,size=<FARM_SIZE>"
+./subspace-farmer-macos-aarch64-chronos-2026-jan-15 farm --reward-address "<REWARD_ADDRESS>" path="<PATH_TO_FARM>,size=<FARM_SIZE>"
 ```
 
 2. You should see something similar in the terminal:
