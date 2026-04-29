@@ -4,16 +4,16 @@ sidebar_position: 3
 description: Diagnose and fix common network connectivity problems
 slug: /network/connectivity-issues
 keywords:
-    - Network Troubleshooting
-    - Connection Issues
-    - Peer Problems
-    - Network Diagnostics
+  - Network Troubleshooting
+  - Connection Issues
+  - Peer Problems
+  - Network Diagnostics
 ---
 
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
-import Icon from '@site/src/components/Icon';
-import { ICONS } from '@site/src/constants';
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import Icon from "@site/src/components/Icon";
+import { ICONS } from "@site/src/constants";
 
 # Connectivity Issues
 
@@ -27,16 +27,19 @@ This guide helps diagnose and resolve common network connectivity problems with 
 <TabItem value="space-acres" label="Space Acres">
 
 **In Space Acres Interface:**
+
 - Look for peer count in the status bar
 - Check sync progress indicator
 - Review any error messages in logs
 
 **Healthy indicators:**
-- <Icon icon={ICONS.CHECK_CIRCLE} /> Peer count > 40
+
+- <Icon icon={ICONS.CHECK_CIRCLE} /> Peer count > 40 (8–12 peers is sufficient for Chronos phase)
 - <Icon icon={ICONS.CHECK_CIRCLE} /> Steady sync progress
 - <Icon icon={ICONS.CHECK_CIRCLE} /> No network error messages
 
 **Problem indicators:**
+
 - <Icon icon={ICONS.CLOSE_CIRCLE} /> Peer count < 40
 - <Icon icon={ICONS.CLOSE_CIRCLE} /> Stuck sync at specific block
 
@@ -71,6 +74,7 @@ grep -i "farming\|peers" /path/to/farmer.log | tail -5
 ### Issue 1: Zero or Very Few Peers
 
 **Symptoms:**
+
 - Peer count stays very low and does not grow to at least 40 peers
 - No sync progress
 
@@ -155,6 +159,10 @@ curl -s https://api.ipify.org  # Your public IP
 
 # 3. Try IPv6 if available:
 ./subspace-node --listen-on /ip6/::/tcp/30333
+
+# 4. For persistent 0 peers or CGNAT issues (Chronos):
+# Replace <BOOTSTRAP_ADDRESS> with the latest addresses from the #announcements channel
+./subspace-node run --out-peers 32 --bootstrap-node <BOOTSTRAP_ADDRESS>
 ```
 
 </TabItem>
@@ -163,6 +171,7 @@ curl -s https://api.ipify.org  # Your public IP
 ### Issue 2: Intermittent Connection Loss
 
 **Symptoms:**
+
 - Peer count fluctuates wildly
 - Frequent reconnections
 - Sporadic farming rewards
@@ -191,6 +200,7 @@ iostat -x 1 10
 ```
 
 **Common causes:**
+
 - Insufficient bandwidth
 - WiFi instability (use ethernet)
 - System resource exhaustion
@@ -244,6 +254,7 @@ curl -H "Content-Type: application/json" \
 ### Issue 4: Slow Synchronization
 
 **Symptoms:**
+
 - Sync speed < 10 blocks/second
 - Estimated time keeps increasing
 - High network latency
@@ -255,10 +266,11 @@ curl -H "Content-Type: application/json" \
 ping 1.1.1.1
 # Good: < 100ms, Acceptable: < 200ms
 
-# 2. Increase peer connections
+# 2. Increase/Optimize peer connections
+# For restrictive NAT/CGNAT, increase outgoing attempts:
 ./subspace-node run \
   --in-peers 512 \
-  --out-peers 512
+  --out-peers 32
 
 # 3. Use warp sync for faster initial sync
 ./subspace-node run --sync warp
@@ -394,4 +406,3 @@ grep -i "peers" /path/to/node.log | tail -20 >> debug.log
 2. **Forum**: [Autonomys Forum](https://forum.autonomys.xyz)
    - Network category
    - Include system specs and configuration
-
