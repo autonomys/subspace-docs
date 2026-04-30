@@ -34,13 +34,13 @@ This guide helps diagnose and resolve common network connectivity problems with 
 
 **Healthy indicators:**
 
-- <Icon icon={ICONS.CHECK_CIRCLE} /> Peer count > 40 (8–12 peers is sufficient for Chronos phase)
+- <Icon icon={ICONS.CHECK_CIRCLE} /> Peer count >= 40
 - <Icon icon={ICONS.CHECK_CIRCLE} /> Steady sync progress
 - <Icon icon={ICONS.CHECK_CIRCLE} /> No network error messages
 
 **Problem indicators:**
 
-- <Icon icon={ICONS.CLOSE_CIRCLE} /> Peer count < 40
+- <Icon icon={ICONS.CLOSE_CIRCLE} /> Peer count < 40 (less peers can be normal for the Chronos testnet depending on total node count)
 - <Icon icon={ICONS.CLOSE_CIRCLE} /> Stuck sync at specific block
 
 </TabItem>
@@ -159,10 +159,6 @@ curl -s https://api.ipify.org  # Your public IP
 
 # 3. Try IPv6 if available:
 ./subspace-node --listen-on /ip6/::/tcp/30333
-
-# 4. For persistent 0 peers or CGNAT issues (Chronos):
-# Replace <BOOTSTRAP_ADDRESS> with the latest addresses from the #announcements channel
-./subspace-node run --out-peers 32 --bootstrap-node <BOOTSTRAP_ADDRESS>
 ```
 
 </TabItem>
