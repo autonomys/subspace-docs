@@ -1,15 +1,23 @@
 ---
 title: Outbound Bridge
 sidebar_position: 2
-description: Learn how to bridge AI3 tokens to Ethereum
+description: Learn how to bridge AI3 tokens to Ethereum, BNB Chain, or Solana
 slug: /bridge/outbound
 keywords:
     - Bridge
     - EVM
     - Transfer
+    - Ethereum
+    - BNB Chain
+    - BSC
+    - Solana
 ---
 
-## Sending AI3 to Ethereum
+## Sending AI3 to an External Network
+
+:::tip
+The screenshots below show bridging to Ethereum, but the same steps apply when bridging to **BNB Chain** or **Solana** - simply select your preferred destination network in the bridge UI.
+:::
 
 1. Select the AI3 token and enter the amount you want to transfer.
 
@@ -55,7 +63,9 @@ keywords:
 
 ![Bridge](/img/doc-imgs/additional-guides/bridge-17.jpeg)
 
-## Adding WAI3 on Ethereum to Metamask
+## Adding Bridged Tokens to Your Wallet
+
+### Ethereum
 
 1. To view your bridged AI3 on Ethereum you will need to add the token to Metamask. The Ethereum WAI3 contract can be found at [0x363FCa95F23E10C76ef793D62d92d39e89d83AC1](https://etherscan.io/address/0x363FCa95F23E10C76ef793D62d92d39e89d83AC1) which will need importing.
 
@@ -78,3 +88,17 @@ keywords:
 6. The token and your balance now appears.
 
 ![Bridge](/img/doc-imgs/additional-guides/bridge-22.png)
+
+### BNB Chain
+
+1. To view your bridged AI3 on BNB Chain you will need to add the token to Metamask. The BNB Chain WAI3 contract can be found at [0x220375118d0600a8fce7bf1aad5fcf2ae6ed069b](https://bscscan.com/token/0x220375118d0600a8fce7bf1aad5fcf2ae6ed069b) which will need importing.
+
+2. Switch network in Metamask to BNB Chain, then follow the same steps as Ethereum above: go to the Tokens tab, click the hamburger button, click `Import Tokens`, switch to the Custom token tab, and enter the contract address `0x220375118d0600a8fce7bf1aad5fcf2ae6ed069b`. The symbol and decimals will auto-populate.
+
+### Solana
+
+On Solana, the bridged token is **AI3** (not WAI3). You will need a Solana-compatible wallet such as [Phantom](https://phantom.app/) or [Solflare](https://solflare.com/).
+
+1. To view your bridged AI3 on Solana, open your Solana wallet and add the token using the contract address [`veS2vDmcRY1Bd1zsC1TLiG85rXSwz119UCZAvNZBt7n`](https://solscan.io/token/veS2vDmcRY1Bd1zsC1TLiG85rXSwz119UCZAvNZBt7n).
+
+2. In Phantom, go to the tokens list, click `+`, and paste the contract address. The token name and symbol will auto-populate.

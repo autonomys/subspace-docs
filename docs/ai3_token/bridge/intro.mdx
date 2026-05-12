@@ -15,16 +15,36 @@ import Link from '@docusaurus/Link';
 
 This guide explains how to bridge tokens between Auto EVM and other networks.
 
+### Supported Networks
+
+The Autonomys bridge currently supports the following external networks:
+
+| Network | Status |
+|---------|--------|
+| Ethereum | Live |
+| BNB Chain | Live |
+| Solana | Live |
+
 :::tip
-In this example we will be bridging back and forth between Auto EVM and Ethereum on mainnet, but BNB Chain is also supported.
+The step-by-step examples in this guide use Ethereum, but the same flow applies to BNB Chain and Solana. Select your preferred network in the bridge UI when choosing the source or destination.
 :::
+
+### Token Contract Addresses
+
+When adding bridged tokens to your wallet, use the following contract addresses:
+
+| Network | Token | Contract Address |
+|---------|-------|-----------------|
+| Ethereum | WAI3 | [0x363FCa95F23E10C76ef793D62d92d39e89d83AC1](https://etherscan.io/address/0x363FCa95F23E10C76ef793D62d92d39e89d83AC1) |
+| BNB Chain | WAI3 | [0x220375118d0600a8fce7bf1aad5fcf2ae6ed069b](https://bscscan.com/token/0x220375118d0600a8fce7bf1aad5fcf2ae6ed069b) |
+| Solana | AI3 | [veS2vDmcRY1Bd1zsC1TLiG85rXSwz119UCZAvNZBt7n](https://solscan.io/token/veS2vDmcRY1Bd1zsC1TLiG85rXSwz119UCZAvNZBt7n) |
 
 ### Connecting a wallet to the Bridge
 
-:::note supported Networks
+:::note Mainnet and Testnet
 [Mainnet Bridge](https://bridge.mainnet.autonomys.xyz/)
 
-[Chronos Testnet Bridge](https://bridge.chronos.autonomys.xyz/)
+[Chronos Testnet Bridge](https://bridge.chronos.autonomys.xyz/) - use this to try bridging with testnet tokens. To get tAI3 testnet tokens, use the [official web-based faucet](https://autonomysfaucet.xyz/) or request them via the `/faucet` slash command in the [#faucet channel on Discord](https://autonomys.xyz/discord). Tokens can be requested once every 24 hours. See the [full faucet guide](https://develop.autonomys.xyz/evm/faucet) for details.
 :::
 
 1. Navigate to the [Mainnet Bridge Site](https://bridge.mainnet.autonomys.xyz/).
@@ -49,12 +69,12 @@ In this example we will be bridging back and forth between Auto EVM and Ethereum
 
 ## Bridging Options
 
-For information on sending AI3 to Ethereum, refer to the <Link to="/bridge/outbound">Outbound Bridge</Link> guide.
+For information on sending AI3 from Auto EVM to an external network (Ethereum, BNB Chain, or Solana), refer to the <Link to="/bridge/outbound">Outbound Bridge</Link> guide.
 
-For information on sending WAI3 to Auto EVM, refer to the <Link to="/bridge/inbound">Inbound Bridge</Link> guide.
+For information on sending tokens from an external network to Auto EVM, refer to the <Link to="/bridge/inbound">Inbound Bridge</Link> guide.
 
 ## Viewing Bridge Transactions
 
-Clicking on the account lozenge in the top right will give you a list of historical bridge transactions where you can inspect previous transfers.
+Click the clock icon to view a list of historical bridge transactions and inspect previous transfers. The arrows on the left edge of the slide-out close it.
 
 ![Bridge](/img/doc-imgs/additional-guides/bridge-29.jpeg)
