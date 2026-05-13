@@ -1,6 +1,6 @@
 const fs = require('fs');
 const path = require('path');
-const { locales } = require('../../docusaurus.config').i18n;
+const { locales, defaultLocale } = require('../../docusaurus.config').i18n;
 
 const moveContents = (source, destination) => {
   if (!fs.existsSync(source)) return; // Skip if the source doesn't exist
@@ -27,7 +27,7 @@ const moveContents = (source, destination) => {
   });
 };
 
-locales.forEach((locale) => {
+locales.filter((locale) => locale !== defaultLocale).forEach((locale) => {
   const basePath = `i18n/${locale}/docusaurus-plugin-content-docs`;
 
   // Move JSON files and other sections
@@ -44,3 +44,12 @@ locales.forEach((locale) => {
   fs.rmSync(`${basePath}/current/docs`, { recursive: true }); // Remove empty /docs folder
 
 });
+
+// Crowdin also downloads an "English" copy of every source file. Since the default locale
+// is English and Docusaurus serves it directly from docs/, any file that lands in
+// i18n/en/docusaurus-plugin-content-docs/current/ would silently override the real source.
+// Delete the directory so the built site always reflects the actual docs/ content.
+const enDocsPath = `i18n/${defaultLocale}/docusaurus-plugin-content-docs/current`;
+if (fs.existsSync(enDocsPath)) {
+  fs.rmSync(enDocsPath, { recursive: true });
+}
