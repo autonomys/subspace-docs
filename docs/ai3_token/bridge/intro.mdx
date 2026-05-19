@@ -4,77 +4,77 @@ sidebar_position: 1
 description: Learn how to bridge tokens on Auto EVM
 slug: /bridge
 keywords:
-    - Bridge
-    - EVM
-    - Transfer
+  - Bridge
+  - EVM
+  - Transfer
 ---
 
-import Link from '@docusaurus/Link';
+import Link from "@docusaurus/Link";
 
-## Bridging Tokens on the Autonomys Network
-
-This guide explains how to bridge tokens between Auto EVM and other networks.
+This guide explains how to safely securely transfer and bridge tokens between Auto EVM and supported external blockchain networks.
 
 ### Supported Networks
 
-The Autonomys bridge currently supports the following external networks:
+The Autonomys Bridge currently supports the following external networks:
 
-| Network | Status |
-|---------|--------|
-| Ethereum | Live |
-| BNB Chain | Live |
-| Solana | Live |
+| Network   | Status |
+| --------- | ------ |
+| Ethereum  | Live   |
+| BNB Chain | Live   |
+| Solana    | Live   |
 
 :::tip
-The step-by-step examples in this guide use Ethereum, but the same flow applies to BNB Chain and Solana. Select your preferred network in the bridge UI when choosing the source or destination.
+The step-by-step instructions in this guide utilize Ethereum as the baseline example, but the exact same transactional flow applies to BNB Chain and Solana. Simply select your preferred network interface within the bridge UI when choosing your source or destination chain.
 :::
 
 ### Token Contract Addresses
 
-When adding bridged tokens to your wallet, use the following contract addresses:
+When importing or adding bridged tokens to your Web3 wallet application, utilize the following official contract addresses:
 
-| Network | Token | Contract Address |
-|---------|-------|-----------------|
-| Ethereum | WAI3 | [0x363FCa95F23E10C76ef793D62d92d39e89d83AC1](https://etherscan.io/address/0x363FCa95F23E10C76ef793D62d92d39e89d83AC1) |
-| BNB Chain | WAI3 | [0x220375118d0600a8fce7bf1aad5fcf2ae6ed069b](https://bscscan.com/token/0x220375118d0600a8fce7bf1aad5fcf2ae6ed069b) |
-| Solana | AI3 | [veS2vDmcRY1Bd1zsC1TLiG85rXSwz119UCZAvNZBt7n](https://solscan.io/token/veS2vDmcRY1Bd1zsC1TLiG85rXSwz119UCZAvNZBt7n) |
+| Network   | Token | Contract Address                                                                                                      |
+| --------- | ----- | --------------------------------------------------------------------------------------------------------------------- |
+| Ethereum  | WAI3  | [0x363FCa95F23E10C76ef793D62d92d39e89d83AC1](https://etherscan.io/address/0x363FCa95F23E10C76ef793D62d92d39e89d83AC1) |
+| BNB Chain | WAI3  | [0x220375118d0600a8fce7bf1aad5fcf2ae6ed069b](https://bscscan.com/token/0x220375118d0600a8fce7bf1aad5fcf2ae6ed069b)    |
+| Solana    | AI3   | [veS2vDmcRY1Bd1zsC1TLiG85rXSwz119UCZAvNZBt7n](https://solscan.io/token/veS2vDmcRY1Bd1zsC1TLiG85rXSwz119UCZAvNZBt7n)   |
 
-### Connecting a wallet to the Bridge
+### Connecting Your Wallet to the Bridge
 
-:::note Mainnet and Testnet
-[Mainnet Bridge](https://bridge.mainnet.autonomys.xyz/)
+:::note Mainnet and Testnet Environments
 
-[Chronos Testnet Bridge](https://bridge.chronos.autonomys.xyz/) - use this to try bridging with testnet tokens. To get tAI3 testnet tokens, use the [official web-based faucet](https://autonomysfaucet.xyz/) or request them via the `/faucet` slash command in the [#faucet channel on Discord](https://autonomys.xyz/discord). Tokens can be requested once every 24 hours. See the [full faucet guide](https://develop.autonomys.xyz/evm/faucet) for details.
+- **[Mainnet Bridge Portal](https://bridge.mainnet.autonomys.xyz/)**
+- **[Chronos Testnet Bridge Portal](https://bridge.chronos.autonomys.xyz/)** — Use this environment to test bridging operations securely with testnet assets.
+
+To acquire `tAI3` testnet tokens, utilize the [Official Web Faucet](https://autonomysfaucet.xyz/) or request them via the `/faucet` slash command within the dedicated `#faucet` channel on the [Autonomys Discord Server](https://autonomys.xyz/discord). Token requests are limited to once every 24 hours. Review the [Full Faucet Guide](https://develop.autonomys.xyz/evm/faucet) for deeper technical parameters.
 :::
 
-1. Navigate to the [Mainnet Bridge Site](https://bridge.mainnet.autonomys.xyz/).
+1. Navigate to the official [Mainnet Bridge Platform](https://bridge.mainnet.autonomys.xyz/).
 
 ![Bridge](/img/doc-imgs/additional-guides/bridge-01.jpeg)
 
-2. Connect your wallet by clicking the `Connect Wallet` button in the upper right corner of your screen.
+2. Connect your Web3 wallet by clicking the `Connect Wallet` action button located in the upper right-hand corner of the user interface.
 
 ![Bridge](/img/doc-imgs/additional-guides/bridge-02.jpeg)
 
-3. You will be prompted to select your wallet type. We will use Metamask for this.
+3. You will be prompted to select your preferred provider. This guide demonstrates the flow utilizing MetaMask.
 
 ![Bridge](/img/doc-imgs/additional-guides/bridge-03.jpeg)
 
-4. Authorize the website in the Metamask popup.
+4. Authorize the connection profile within the MetaMask extension popup.
 
 ![Bridge](/img/doc-imgs/additional-guides/bridge-04.jpeg)
 
-5. You can now see the connected wallet in the top right. Note that the recipient address defaults to the connected wallet.
+5. Once authorized, your active wallet address will display in the top right corner. Note that the recipient field automatically defaults to your currently connected wallet address.
 
 ![Bridge](/img/doc-imgs/additional-guides/bridge-05.jpeg)
 
-## Bridging Options
+## Core Bridging Channels
 
-For information on sending AI3 from Auto EVM to an external network (Ethereum, BNB Chain, or Solana), refer to the <Link to="/bridge/outbound">Outbound Bridge</Link> guide.
+For comprehensive walkthroughs on transmitting AI3 from Auto EVM out to an external environment (Ethereum, BNB Chain, or Solana), please refer to the structural <Link to="/bridge/outbound">Outbound Bridge Guide</Link>.
 
-For information on sending tokens from an external network to Auto EVM, refer to the <Link to="/bridge/inbound">Inbound Bridge</Link> guide.
+For explicit details on routing assets from an external network into Auto EVM, please refer to the structural <Link to="/bridge/inbound">Inbound Bridge Guide</Link>.
 
-## Viewing Bridge Transactions
+## Tracking Bridge Transactions
 
-Click the clock icon to view a list of historical bridge transactions and inspect previous transfers. The arrows on the left edge of the slide-out close it.
+Click the clock icon on the application interface to view historical bridge ledgers and verify past transaction executions. To close the history slide-out panel, simply select the navigation arrows located on the left edge.
 
 ![Bridge](/img/doc-imgs/additional-guides/bridge-29.jpeg)
