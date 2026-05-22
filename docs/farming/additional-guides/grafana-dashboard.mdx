@@ -4,11 +4,11 @@ sidebar_position: 3
 description: How to configure the Grafana dashboard for an Autonomys Network node
 slug: /farming/guides/grafana-dashboard
 keywords:
-    - node
-    - farmer
-    - monitoring
-    - grafana
-    - prometheus
+  - node
+  - farmer
+  - monitoring
+  - grafana
+  - prometheus
 ---
 
 # Grafana Dashboard
@@ -36,6 +36,7 @@ To apply the changes, it's necessary to restart your node and farmer. You should
 ## Configure Prometheus targets
 
 Locate the `prometheus.yml` file and add the following job entry under the `scrape_configs` section:
+
 ```
 - job_name: "subspace"
   static_configs:
@@ -46,6 +47,7 @@ Locate the `prometheus.yml` file and add the following job entry under the `scra
       labels:
         group: 'farmer'
 ```
+
 On Linux machines, you can typically find the `prometheus.yml` file at the following path: `/etc/prometheus/prometheus.yml`
 
 Restart Prometheus with the new configuration.
@@ -77,3 +79,13 @@ Select your `Prometheus` as Data Source and click `Import`.
 At this point, you should be able to monitor your node.
 
 ![grafana-dashboard.png](/img/doc-imgs/additional-guides/grafana-dashboard.png)
+
+## Monitoring Node Sync & Cache Recovery
+
+When restarting a node or farmer after an extended offline period, the system must rebuild its local cache and sync outstanding data with the network history.
+
+### Key Metrics to Track during Recovery
+
+- **Block Sync Speed:** Monitor the gap between your local block height and the global network target. A steady increase indicates active catch-up.
+- **Scrape Target Performance:** Ensure your node (`localhost:9080`) and farmer (`localhost:9081`) endpoints maintain an `UP` state in Prometheus during intense history validation.
+- **Telemetry Sync Visibility:** If metrics appear static or do not update instantly, the node is allocating resources to database validation. Allow the cache history to clear the changed data block sequence before restarting the telemetry runtime.
