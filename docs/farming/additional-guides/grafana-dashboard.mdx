@@ -87,5 +87,6 @@ When restarting a node or farmer after an extended offline period, the system mu
 ### Key Metrics to Track during Recovery
 
 - **Block Sync Speed:** Monitor the gap between your local block height and the global network target. A steady increase indicates active catch-up.
-- **Scrape Target Performance:** Ensure your node (`localhost:9080`) and farmer (`localhost:9081`) endpoints maintain an `UP` state in Prometheus during intense history validation.
-- **Telemetry Sync Visibility:** If metrics appear static or do not update instantly, the node is allocating resources to database validation. Allow the cache history to clear the changed data block sequence before restarting the telemetry runtime.
+  - **Source:** Node (`substrate-node`)
+  - **Prometheus Metrics:** `substrate_block_height{type="best"}` (local height) and `substrate_block_height{type="target"}` (network target).
+  - **PromQL Gap Example:** `substrate_block_height{type="target"} - substrate_block_height{type="best"}`
