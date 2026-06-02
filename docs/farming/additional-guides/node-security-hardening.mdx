@@ -1,0 +1,116 @@
+# Autonomys Node Infrastructure Security Hardening Guide
+
+This document establishes the production-security baseline for running individual validator and farmer node infrastructure on the Autonomys Network. Because decentralized networks rely on the resilience of individual operators, hardening the local host environment is critical to mitigating penetration vectors, preventing unauthorized telemetry exposure, and securing operator rewards.
+
+## One: Host OS Hardening & Access Control
+
+### Enforce SSH Key-Based Authentication
+
+Password authentication leaves nodes vulnerable to automated, distributed brute-force attacks. System administrators must enforce cryptographic key authentication.
+
+1. Generate a strong cryptographic key pair locally (Ed25519 is recommended):
+
+```bash
+ssh-keygen -t ed25519 -C "operator-node-key"
+
+```
+
+2. Modify the SSH daemon configuration file on the node host (/etc/ssh/sshd_config):
+
+```text
+PasswordAuthentication no
+PubkeyAuthentication yes
+PermitRootLogin no
+
+```
+
+3. Restart the SSH service to apply changes:
+
+```bash
+sudo systemctl restart sshd
+
+```
+
+### Port Randomization & Ambient Scan Mitigation
+
+Automated botnets scan default port 22 continuously. Relocating the SSH listening port to a random high-numbered port filters out more than 99% of ambient network noise.
+
+1. Edit /etc/ssh/sshd_config to update the listening port (e.g., 49152 to 65535):
+
+```text
+Port 54321
+
+```
+
+2. Ensure your firewall permits traffic on the new port before terminating your current active session.
+
+### Deploy Automated Intrusion Prevention (Fail2Ban)
+
+Fail2Ban monitors authentication logs and dynamically modifies firewall rules to jail IP addresses demonstrating malicious authentication patterns.
+
+```bash
+sudo apt install fail2ban -y
+sudo cp /etc/fail2ban/jail.conf /etc/fail2ban/jail.local
+sudo systemctl enable fail2ban --now
+
+```
+
+---
+
+## Two: Network Firewall Segregation (UFW)
+
+A production node must implement a default-deny firewall posture, opening only explicit ports required for Peer-to-Peer (P2P) consensus communication.
+
+```bash
+# Default posture setup
+sudo ufw default deny incoming
+sudo ufw default allow outgoing
+
+# Allow custom SSH port
+sudo ufw allow 54321/tcp
+
+# Allow Autonomys P2P Network traffic
+sudo ufw allow 30333/tcp
+sudo ufw allow 30333/udp
+
+# Enable firewall
+sudo ufw enable
+
+```
+
+### Telemetry Isolation Warning
+
+:::danger CRITICAL SECURITY RISK
+As detailed in the accompanying Grafana setup guides, Grafana natively binds to port 3000 and Prometheus data sources utilize port 9090. Operators must **never** open these ports to the public internet on their firewall rules. Exposing metrics ports provides attackers with open access to your internal system logs, hardware specifications, and node state data.
+:::
+
+To monitor your node securely without exposing public ports, keep these services bound strictly to your local loopback interface (127.0.0.1) and open an encrypted SSH tunnel from your local machine to view the dashboards:
+
+```bash
+ssh -L 3000:127.0.0.1:3000 user@node-ip -p 54321
+
+```
+
+Once connected, you can open your local browser and safely navigate to http://localhost:3000 to track node synchronization.
+
+---
+
+## Three: Principle of Least Privilege Execution
+
+Running network-facing node software directly as the root user creates a catastrophic single point of failure. If an edge vulnerability ever targets the runtime client, an attacker instantly inherits administrative root privileges across the entire operating system host.
+
+### Create an Unprivileged System User
+
+Isolate your operational environment by provisioning a dedicated, non-login system user account with zero sudo permissions to run your farming and node binaries.
+
+```bash
+sudo useradd -r -s /bin/false autonomys
+
+```
+
+Ensure all network binaries, chain data directories, and plot files are explicitly owned by this unprivileged account:
+
+```bash
+sudo chown -R autonomys:autonomys /var/lib/autonomys-data
+
+```
