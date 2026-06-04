@@ -22,14 +22,13 @@ const { S3Client, PutObjectCommand } = require("@aws-sdk/client-s3");
 
 // Initialize the S3 Client pointed at the Auto Drive Endpoint
 const autoDriveClient = new S3Client({
-  region: "us-east-1", // Placeholder region required by the SDK
-  endpoint:
-    "[https://s3.auto-drive.autonomys.xyz](https://s3.auto-drive.autonomys.xyz)", // Replace with official Auto Drive S3 gateway URL
+  region: "us-east-1",
+  endpoint: "https://public.auto-drive.autonomys.xyz/s3", // Official Auto Drive S3 gateway URL
   credentials: {
-    accessKeyId: process.env.AUTONOMYS_ACCESS_KEY_ID,
-    secretAccessKey: process.env.AUTONOMYS_SECRET_ACCESS_KEY,
+    accessKeyId: "ANY_ANY_PLACEHOLDER_STRING", // Can be set to any arbitrary value
+    secretAccessKey: "ANY_ANY_PLACEHOLDER_STRING",
   },
-  forcePathStyle: true, // Enforces path-style addressing for object resolution
+  forcePathStyle: true,
 });
 
 async function uploadToPermanentStorage(bucketName, fileKey, fileBuffer) {
