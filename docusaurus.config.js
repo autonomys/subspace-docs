@@ -87,7 +87,7 @@ const config = {
 
           { to: '/staking/intro', from: ['/docs/operators_and_staking/intro', '/docs/category/operators-and-nominators', '/docs/farming-&-staking/staking/intro'] },
           { to: '/staking/operator/tips', from: ['/docs/farming-&-staking/staking/operators/tips-operator'] },
-          { to: '/staking/stake', from: ['/docs/farming-&-staking/staking/'] },
+          { to: '/staking/staking-portal', from: ['/docs/farming-&-staking/staking/', '/staking/stake'] },
 
           { to: '/timekeeping', from: ['/docs/protocol/timekeeping', '/docs/farming-&-staking/timekeeping', '/farming/timekeeper'] },
 
@@ -168,7 +168,7 @@ const config = {
               },
               {
                 label: 'Start Staking',
-                href: '/staking/stake'
+                href: '/staking/staking-portal'
               },
               {
                 label: 'Become an Operator',

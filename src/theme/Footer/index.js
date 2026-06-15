@@ -91,8 +91,8 @@ export default function FooterWrapper(props) {
                 </li>
                 <li>
                   <FooterLink 
-                    to="/staking/stake" 
-                    label="Start Staking" 
+                    to="/staking/staking-portal"
+                    label="Start Staking"
                     icon={ICONS.NOMINATOR}
                   />
                 </li>
