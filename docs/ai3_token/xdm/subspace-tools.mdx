@@ -1,0 +1,260 @@
+---
+title: Transfer with Subspace Tools
+sidebar_position: 1
+toc_min_heading_level: 2
+toc_max_heading_level: 4
+description: Friendly step-by-step guide for transferring AI3 between the consensus chain and Auto EVM using the Subspace Tools XDM sender.
+slug: /xdm/subspace-tools
+sidebar_custom_props:
+  featured: true
+keywords:
+    - XDM
+    - Cross Domain Messaging
+    - Subspace Tools
+    - Auto EVM
+    - Consensus Chain
+    - Transfer AI3
+    - Bridge
+    - MetaMask
+    - SubWallet
+    - Talisman
+---
+
+import Icon from '@site/src/components/Icon';
+import { ICONS } from '@site/src/constants';
+import Badge from '@site/src/components/Badge';
+import ActionButton from '@site/src/components/ActionButton';
+
+The [Subspace Tools XDM sender](https://subspace.tools/xdm/send) is the easiest way to move AI3 between the Autonomys consensus chain and Auto EVM. It guides you through choosing a direction, connecting your wallet, entering the recipient and amount, and tracking the transfer, without constructing extrinsics by hand. <Badge variant="recommended" text="Recommended" />
+
+If you'd rather submit the transfer extrinsics yourself via Polkadot.js Apps, see the [Transfer with the Substrate Portal](/xdm/substrate-portal) guide, which also explains the underlying timing, fees, and challenge periods in more detail.
+
+<div className="releases-container releases-container--auto">
+  <ActionButton
+    to="https://subspace.tools/xdm/send"
+    title="Open the XDM Sender"
+    subtitle="Transfer AI3 between consensus and Auto EVM"
+    icon={ICONS.WEB}
+    external
+  />
+</div>
+
+:::info Which wallet you need depends on the direction
+- **Auto EVM to consensus:** an EVM wallet such as MetaMask or Rabby, connected to Autonomys Mainnet Auto EVM (chain ID 870).
+- **Consensus to Auto EVM:** a Substrate wallet - [SubWallet](/wallets/subwallet), [Talisman](/wallets/talisman), or the [Polkadot.js extension](/wallets/polkadot).
+
+You type the destination address in manually, so you don't need both wallets connected at once. Keep a small amount of AI3 unstaked to cover transaction fees.
+:::
+
+## How XDM transfers work
+
+A few things worth knowing before you transfer:
+
+- **Direction sets the timing.** Consensus to Auto EVM completes in about 10 minutes (100 domain blocks). Auto EVM to consensus takes about 1 day (14,400 domain blocks) - this is a security challenge period built into the protocol.
+- **Minimum transfer.** The minimum XDM transfer is 1 AI3. The **MAX** button keeps a small buffer back for gas.
+- **Fees.** You pay a network transaction fee on the source chain. XDM transactions cost a little more than a standard transfer because they pay for execution on both chains, but the amount is still small.
+- **Transfers cannot be reversed.** Always double-check the destination address before sending.
+
+:::tip Where this fits in moving tokens to stake
+To stake AI3 it needs to reach the consensus chain. If your AI3 is on Auto EVM, the path is: [wrap or unwrap as needed](/wrap), bridge to the consensus chain with XDM (this guide), then [stake with the Staking Portal](/staking/staking-portal).
+:::
+
+---
+
+## Transfer from the consensus chain to Auto EVM
+
+Use this direction to move AI3 from the consensus chain onto Auto EVM. This direction is faster, completing in about 10 minutes.
+
+### Step 1: Open the XDM sender and choose your direction
+
+Go to [subspace.tools/xdm/send](https://subspace.tools/xdm/send). Under **Select Network** choose **Mainnet**, then under **Transfer Direction** choose **Consensus to Auto EVM**.
+
+<details>
+<summary><Icon icon="mdi:image-multiple" /> Network &amp; Direction</summary>
+
+![Select network and transfer direction](/img/doc-imgs/xdm-subspace-tools/xdm-consensus-network-direction.png)
+
+</details>
+
+### Step 2: Connect your Substrate wallet
+
+Under **Substrate Wallet (Source)** connect your Substrate wallet (SubWallet, Talisman, or Polkadot.js) and select the account holding your AI3.
+
+<details>
+<summary><Icon icon="mdi:image-multiple" /> Connect Substrate Wallet</summary>
+
+![Connect your Substrate wallet](/img/doc-imgs/xdm-subspace-tools/xdm-consensus-connect-wallet.png)
+
+</details>
+
+### Step 3: Enter the recipient address and amount
+
+In **Recipient EVM Address (0x...)** paste the Auto EVM address you want to receive the tokens (it starts with `0x`). Then in **Amount (AI3)** enter how much to transfer, or click **MAX**. The minimum transfer is 1 AI3, and the form shows an estimated confirmation time of about 10 minutes.
+
+<details>
+<summary><Icon icon="mdi:image-multiple" /> Recipient &amp; Amount</summary>
+
+![Enter recipient address and amount](/img/doc-imgs/xdm-subspace-tools/xdm-consensus-recipient-amount.png)
+
+</details>
+
+### Step 4: Send and confirm
+
+Click **Send Transfer**. Review the **Confirm Transfer** dialog, click **Confirm & Send**, then sign the transaction in your wallet.
+
+<details>
+<summary><Icon icon="mdi:image-multiple" /> Confirm &amp; Sign</summary>
+
+![Confirm transfer dialog](/img/doc-imgs/xdm-subspace-tools/xdm-consensus-confirm.png)
+
+</details>
+
+### Step 5: Track your transfer
+
+You are taken to the **XDM Transfer Status** page, which auto-refreshes every 30 seconds. This direction completes in about 10 minutes (100 domain blocks).
+
+<details>
+<summary><Icon icon="mdi:image-multiple" /> Transfer Status</summary>
+
+![XDM transfer status](/img/doc-imgs/xdm-subspace-tools/xdm-consensus-status.png)
+
+</details>
+
+---
+
+## Transfer from Auto EVM to the consensus chain
+
+Use this direction to move AI3 from Auto EVM onto the consensus chain, for example so you can stake it. This direction takes about 1 day to confirm.
+
+### Step 1: Open the XDM sender and choose your direction
+
+Go to [subspace.tools/xdm/send](https://subspace.tools/xdm/send). Under **Select Network** choose **Mainnet**, then under **Transfer Direction** choose **Auto EVM to Consensus**.
+
+<details>
+<summary><Icon icon="mdi:image-multiple" /> Network &amp; Direction</summary>
+
+![Select network and transfer direction](/img/doc-imgs/xdm-subspace-tools/xdm-evm-network-direction.png)
+
+</details>
+
+### Step 2: Connect your EVM wallet
+
+Under **EVM Wallet (Source)** click **Connect MetaMask** (or your EVM wallet) and approve the connection. Make sure the wallet is on the Autonomys Mainnet Auto EVM network (chain ID 870) - if you see **Wrong Network**, click **Switch Network**.
+
+<details>
+<summary><Icon icon="mdi:image-multiple" /> Connect EVM Wallet</summary>
+
+![Connect your EVM wallet](/img/doc-imgs/xdm-subspace-tools/xdm-evm-connect-wallet.png)
+
+</details>
+
+### Step 3: Enter the recipient address and amount
+
+In **Recipient Substrate Address** paste your consensus-chain address (it starts with `sub...`) - this is the address you will stake from, so make sure you control it. Then in **Amount (AI3)** enter how much to transfer, or click **MAX** (a small buffer is kept back for gas). The minimum transfer is 1 AI3, and the form shows an estimated confirmation time of about 1 day.
+
+<details>
+<summary><Icon icon="mdi:image-multiple" /> Recipient &amp; Amount</summary>
+
+![Enter recipient address and amount](/img/doc-imgs/xdm-subspace-tools/xdm-evm-recipient-amount.png)
+
+</details>
+
+### Step 4: Send and confirm
+
+Click **Send Transfer**. Review the **Confirm Transfer** dialog (direction, from, to, and amount), click **Confirm & Send**, then sign the transaction in your wallet.
+
+<details>
+<summary><Icon icon="mdi:image-multiple" /> Confirm &amp; Sign</summary>
+
+<div style={{display: 'flex', gap: '20px', flexWrap: 'wrap'}}>
+
+![Confirm transfer dialog](/img/doc-imgs/xdm-subspace-tools/xdm-evm-confirm.png)
+
+![Sign the transaction in your wallet](/img/doc-imgs/xdm-subspace-tools/xdm-evm-transaction-confirm.png)
+
+</div>
+
+</details>
+
+### Step 5: Track your transfer
+
+You are taken to the **XDM Transfer Status** page, which auto-refreshes every 30 seconds. The transfer takes about 1 day (14,400 domain blocks) to complete, after which your AI3 arrives on the consensus chain and is ready to stake.
+
+<details>
+<summary><Icon icon="mdi:image-multiple" /> Transfer Status</summary>
+
+![XDM transfer status](/img/doc-imgs/xdm-subspace-tools/xdm-evm-status.png)
+
+</details>
+
+---
+
+## Frequently asked questions
+
+<details>
+<summary>What is XDM?</summary>
+
+XDM (Cross Domain Messaging) is how AI3 moves between the Autonomys consensus chain and the Auto EVM domain. It is the official bridge between the two environments. This guide uses the Subspace Tools XDM sender; for background on how it works, see the [Transfer with the Substrate Portal](/xdm/substrate-portal) guide.
+
+</details>
+
+<details>
+<summary>How long does an XDM transfer take?</summary>
+
+It depends on the direction:
+- Consensus to Auto EVM: about 10 minutes (100 domain blocks)
+- Auto EVM to consensus: about 1 day (14,400 domain blocks)
+
+The longer time for Auto EVM to consensus is a security challenge period built into the protocol.
+
+</details>
+
+<details>
+<summary>Is there a minimum transfer amount?</summary>
+
+Yes. The minimum XDM transfer is 1 AI3. The sender also keeps a small amount of AI3 back to cover gas when you use the **MAX** button.
+
+</details>
+
+<details>
+<summary>Which wallet do I need?</summary>
+
+It depends on the source chain you are transferring from:
+- Auto EVM to consensus: an EVM wallet such as MetaMask or Rabby, connected to Auto EVM (chain ID 870)
+- Consensus to Auto EVM: a Substrate wallet such as SubWallet, Talisman, or Polkadot.js
+
+The recipient address is typed in manually, so you do not need both wallets connected at once.
+
+</details>
+
+<details>
+<summary>What address do I send to?</summary>
+
+You enter the destination address yourself:
+- Transferring to the consensus chain: enter your consensus (Substrate) address in **Recipient Substrate Address**
+- Transferring to Auto EVM: enter your 0x address in **Recipient EVM Address (0x...)**
+
+Double-check the address - transfers cannot be reversed.
+
+</details>
+
+<details>
+<summary>How do I track my transfer?</summary>
+
+After sending, you are taken to the **XDM Transfer Status** page, which auto-refreshes every 30 seconds and shows the progress of your transfer until it completes.
+
+</details>
+
+<details>
+<summary>Are there fees?</summary>
+
+You pay a network transaction fee on the source chain. XDM transactions are charged at a higher weight than a standard transfer because they pay for execution on both chains, but the cost is still small.
+
+</details>
+
+<details>
+<summary>I moved AI3 to the consensus chain - how do I stake it?</summary>
+
+Once your AI3 arrives on the consensus chain, follow the [Stake with the Staking Portal](/staking/staking-portal) guide to nominate an operator. If you still hold WAI3 on Auto EVM, first [unwrap it to native AI3](/wrap).
+
+</details>
