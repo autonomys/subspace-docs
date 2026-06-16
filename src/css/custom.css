@@ -507,6 +507,17 @@ a.button.button > * {
   margin-bottom: 20px !important;
 }
 
+/* Variant: let the button grow wider to fit its content on one line,
+   instead of the fixed 260px width used by the default download buttons. */
+.releases-container.releases-container--auto > a {
+  width: auto !important;
+  max-width: 100%;
+}
+
+.releases-container.releases-container--auto > a .button-text span {
+  white-space: nowrap !important;
+}
+
 .releases-container > a {
   --ifm-button-background-color: #5870B3;
   --ifm-button-color: #ffffff;
