@@ -55,10 +55,6 @@ A few things worth knowing before you transfer:
 - **Fees.** You pay a network transaction fee on the source chain. XDM transactions cost a little more than a standard transfer because they pay for execution on both chains, but the amount is still small.
 - **Transfers cannot be reversed.** Always double-check the destination address before sending.
 
-:::tip Where this fits in moving tokens to stake
-To stake AI3 it needs to reach the consensus chain. If your AI3 is on Auto EVM, the path is: [wrap or unwrap as needed](/wrap), bridge to the consensus chain with XDM (this guide), then [stake with the Staking Portal](/staking/staking-portal).
-:::
-
 ---
 
 ## Transfer from the consensus chain to Auto EVM
@@ -124,7 +120,7 @@ You are taken to the **XDM Transfer Status** page, which auto-refreshes every 30
 
 ## Transfer from Auto EVM to the consensus chain
 
-Use this direction to move AI3 from Auto EVM onto the consensus chain, for example so you can stake it. This direction takes about 1 day to confirm.
+Use this direction to move AI3 from Auto EVM onto the consensus chain. This direction takes about 1 day to confirm.
 
 ### Step 1: Open the XDM sender and choose your direction
 
@@ -150,7 +146,7 @@ Under **EVM Wallet (Source)** click **Connect MetaMask** (or your EVM wallet) an
 
 ### Step 3: Enter the recipient address and amount
 
-In **Recipient Substrate Address** paste your consensus-chain address (it starts with `sub...`) - this is the address you will stake from, so make sure you control it. Then in **Amount (AI3)** enter how much to transfer, or click **MAX** (a small buffer is kept back for gas). The minimum transfer is 1 AI3, and the form shows an estimated confirmation time of about 1 day.
+In **Recipient Substrate Address** paste the consensus-chain address you want to receive the tokens (it starts with `sub...`) - make sure you control it. Then in **Amount (AI3)** enter how much to transfer, or click **MAX** (a small buffer is kept back for gas). The minimum transfer is 1 AI3, and the form shows an estimated confirmation time of about 1 day.
 
 <details>
 <summary><Icon icon="mdi:image-multiple" /> Recipient &amp; Amount</summary>
@@ -178,7 +174,7 @@ Click **Send Transfer**. Review the **Confirm Transfer** dialog (direction, from
 
 ### Step 5: Track your transfer
 
-You are taken to the **XDM Transfer Status** page, which auto-refreshes every 30 seconds. The transfer takes about 1 day (14,400 domain blocks) to complete, after which your AI3 arrives on the consensus chain and is ready to stake.
+You are taken to the **XDM Transfer Status** page, which auto-refreshes every 30 seconds. The transfer takes about 1 day (14,400 domain blocks) to complete, after which your AI3 arrives on the consensus chain.
 
 <details>
 <summary><Icon icon="mdi:image-multiple" /> Transfer Status</summary>
@@ -253,8 +249,8 @@ You pay a network transaction fee on the source chain. XDM transactions are char
 </details>
 
 <details>
-<summary>I moved AI3 to the consensus chain - how do I stake it?</summary>
+<summary>Can I stake AI3 once it's on the consensus chain?</summary>
 
-Once your AI3 arrives on the consensus chain, follow the [Stake with the Staking Portal](/staking/staking-portal) guide to nominate an operator. If you still hold WAI3 on Auto EVM, first [unwrap it to native AI3](/wrap).
+Yes. Staking takes place on the consensus chain - see the [Stake with the Staking Portal](/staking/staking-portal) guide to nominate an operator.
 
 </details>
