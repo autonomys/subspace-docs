@@ -1,0 +1,7 @@
+{
+    "label": "Cross Domain Messaging (XDM)",
+    "position": 3,
+    "collapsed": true,
+    "link": null,
+    "description": "Transfer AI3 between the consensus chain and Auto EVM using Cross Domain Messaging (XDM)"
+}

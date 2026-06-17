@@ -70,7 +70,7 @@ const config = {
           { to: '/wallets/subwallet', from: ['/docs/farming-&-staking/wallets/subwallet'] },
           { to: '/wallets/polkadot', from: ['/docs/farming-&-staking/wallets/polkadot/'] },
           
-          { to: 'xdm', from: ['/farming/guides/xdm'] },
+          { to: '/xdm/subspace-tools', from: ['/xdm', '/farming/guides/xdm'] },
 
           { to: '/category/farm', from: ['/docs/category/get-started-with-farming', '/protocol/farm/farming', '/docs/category/farming', '/category/farming'] },
           { to: '/farming/intro', from: ['/docs/farming-&-staking/farming/prerequisites/', '/docs/farming-&-staking/farming/intro/'] },
