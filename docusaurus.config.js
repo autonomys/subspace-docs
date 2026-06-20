@@ -73,6 +73,10 @@ const config = {
             to: "/wallets/polkadot",
             from: ["/docs/farming-&-staking/wallets/polkadot/"],
           },
+          {
+            to: "/xdm/subspace-tools",
+            from: ["/xdm", "/farming/guides/xdm"],
+          },
 
           { to: "xdm", from: ["/farming/guides/xdm"] },
 
@@ -178,7 +182,6 @@ const config = {
               "/docs/farming-&-staking/farming/additional-guides/grafana-dashboard",
             ],
           },
-
           {
             to: "/staking/intro",
             from: [
@@ -191,7 +194,10 @@ const config = {
             to: "/staking/operator/tips",
             from: ["/docs/farming-&-staking/staking/operators/tips-operator"],
           },
-          { to: "/staking/stake", from: ["/docs/farming-&-staking/staking/"] },
+          {
+            to: "/staking/staking-portal",
+            from: ["/docs/farming-&-staking/staking/", "/staking/stake"],
+          },
 
           {
             to: "/timekeeping",
@@ -308,7 +314,7 @@ const config = {
               },
               {
                 label: "Start Staking",
-                href: "/staking/stake",
+                href: "/staking/staking-portal",
               },
               {
                 label: "Become an Operator",

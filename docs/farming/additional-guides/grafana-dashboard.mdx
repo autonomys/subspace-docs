@@ -4,11 +4,11 @@ sidebar_position: 3
 description: How to configure the Grafana dashboard for an Autonomys Network node
 slug: /farming/guides/grafana-dashboard
 keywords:
-    - node
-    - farmer
-    - monitoring
-    - grafana
-    - prometheus
+  - node
+  - farmer
+  - monitoring
+  - grafana
+  - prometheus
 ---
 
 # Grafana Dashboard
@@ -36,6 +36,7 @@ To apply the changes, it's necessary to restart your node and farmer. You should
 ## Configure Prometheus targets
 
 Locate the `prometheus.yml` file and add the following job entry under the `scrape_configs` section:
+
 ```
 - job_name: "subspace"
   static_configs:
@@ -46,6 +47,7 @@ Locate the `prometheus.yml` file and add the following job entry under the `scra
       labels:
         group: 'farmer'
 ```
+
 On Linux machines, you can typically find the `prometheus.yml` file at the following path: `/etc/prometheus/prometheus.yml`
 
 Restart Prometheus with the new configuration.
@@ -77,3 +79,14 @@ Select your `Prometheus` as Data Source and click `Import`.
 At this point, you should be able to monitor your node.
 
 ![grafana-dashboard.png](/img/doc-imgs/additional-guides/grafana-dashboard.png)
+
+## Monitoring Node Sync & Cache Recovery
+
+When restarting a node or farmer after an extended offline period, the system must rebuild its local cache and sync outstanding data with the network history.
+
+### Key Metrics to Track during Recovery
+
+- **Block Sync Speed:** Monitor the gap between your local block height and the global network target. A steady increase indicates active catch-up.
+  - **Source:** Node (`substrate-node`)
+  - **Prometheus Metrics:** `substrate_block_height{type="best"}` (local height) and `substrate_block_height{type="target"}` (network target).
+  - **PromQL Gap Example:** `substrate_block_height{type="target"} - substrate_block_height{type="best"}`

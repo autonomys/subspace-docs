@@ -286,7 +286,7 @@ sudo ufw allow 30533/tcp comment 'Farmer'
 sudo ufw enable
 ```
 
-**Note**: The ports shown above are the standard Autonomys network ports. For detailed information about port forwarding, firewall configuration, and scenarios with multiple nodes, refer to the comprehensive <Link to="/farming/guides/port-config">Port Forwarding & Firewall guide</Link>.
+**Note**: The ports shown above are the standard Autonomys network ports. For detailed information about port forwarding, firewall configuration, and scenarios with multiple nodes, refer to the comprehensive <Link to="/network">Port Forwarding & Firewall guide</Link>.
 
 </ContentBlock>
 

@@ -51,7 +51,7 @@ This guide will walk you through the process of providing translations for this 
 ### Guidelines
 
 - Our goal is to crowdsource translations to support multiple languages. If a translation already exists, please review it instead of creating a duplicate.
-- Ensure you follow our [Contributing Standards](/participate/contribute/translate), and our [Code of Conduct](/participate/contribute/code-of-conduct).
+- Ensure you follow our [Contributing Standards](/community/contribute/translate), and our [Code of Conduct](/community/contribute/code-of-conduct).
 
 ### How-To
 
