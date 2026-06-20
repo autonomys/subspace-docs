@@ -1,135 +1,79 @@
 ---
-title: Polkadot
-sidebar_position: 3
-description: How to configure the Polkadot{.js} Substrate wallet for the Autonomys Network
+title: Polkadot{.js} extension
+sidebar_position: 5
+description: How to configure the Polkadot{.js} extension wallet for the Autonomys Network
 slug: /wallets/polkadot
 keywords:
-    - Farmer
-    - Farming
-    - CLI
-    - polkadot.js
-    - Wallet
+  - Farmer
+  - Farming
+  - CLI
+  - Polkadot
+  - Wallet
+  - Staking
 ---
 
 :::note
-
-polkadot.js extension is a Substrate/EVM wallet created by the creators of Substrate & Polkadot/Kusama the [Parity Team](https://www.parity.io/).
-
+The Polkadot\{.js\} extension is a technical, developer-focused tool managed by the Web3 Foundation. It provides a raw interface for interacting with Substrate-based block architectures.
 :::
 
-This is the barebones wallet. This is because it is a wallet that supports all Substrate based networks. This is an extension that works similarly to MetaMask, or most other browser based wallets you've likely used in the past.
+The Polkadot\{.js\} browser extension manages accounts and allows signing transactions with those accounts. It is not a full-featured wallet application on its own, but an infrastructure bridge for accessing decentralized networks.
 
-## Create a New Wallet
+---
 
-1. Visit the [Polkadot.js](https://polkadot.js.org/extension/) Website and Download your respective version. 
+## Installation of the Extension
 
-:::tip
+1. Navigate to the official download engine layout on the [Polkadot\{.js\} extension website](https://polkadot.js.org/extension/).
+2. Select and install the dedicated binary version matching your desktop web browser (e.g., Chrome/Brave or Firefox).
+3. Once the setup completes, open the extension icon row pinning option from your browser interface.
+4. On first launch, review the primary user operations guide mapping out security parameters. Click **Understood, let me continue** to move to the workspace.
 
-The Chrome option will work on all Chromium based browsers such as Brave, Vivaldi, & Edge
+---
 
+## Managing Your Accounts
+
+To preserve deep chain validation integrity and track your staking operations easily, it is ideal to generate a fresh, unlinked account footprint.
+
+### Creating a New Account (Recommended for Staking)
+
+1. Click the large central **+** (Plus) icon or select the small add icon in the top right control bar.
+2. Select **Create new account** from the operational configuration list items.
+3. Your localized 12-word seed phrase sequence layer will generate automatically. Copy down this master sequence row onto a physical notebook sheet.
+
+:::warning Protect Your Cryptocurrency Recovery Phrase at All Costs
+Your recovery phrase (also known as a seed phrase) is the master key to your cryptocurrency wallet. Anyone with access to this phrase can take complete control of your funds. Never share it with anyone, never store it in unsecured digital platforms or emails, and always ensure you have a safe offline backup. Treat it like your most sensitive personal or financial information. _If it’s exposed or lost, you could permanently lose access to your cryptocurrency_.
 :::
 
-2. Once extension is installed, Open it. Read the notes. 
+4. Check the box confirming that you have safely recorded the mnemonic seed backup data securely offline.
+5. Click **Next step** to advance your dashboard view.
+6. In the account settings properties:
+   - Leave the **Network** configuration dropdown on the default selection: **Allow use on any chain**.
+   - Give your profile a descriptive local name string (e.g., `"Autonomys Core Staking"`).
+   - Define a strong local operational asset password to sign your local block events, and confirm it.
+7. Click **Add the account with the generated seed** to finalize.
 
-    ![step-2](/img/doc-imgs/polkadot/Polkadot-1.png)
+### Importing an Existing Account
 
-3. Click on + to add a new account. 
+1. Select the top right operational **+** icon row and choose **Import account from pre-existing seed**.
+2. Type or paste your 12-word mnemonic recovery phrase cleanly into the data text area space. Click **Next step**.
+3. Set your tracking network rule properties to **Allow use on any chain**.
+4. Assign your account tag name, insert your security control password string, and complete the setup.
 
-    ![step-3](/img/doc-imgs/polkadot/Polkadot-2.png)
+---
 
-4. The extension will then show you your 12-word mnemonic seed.
+## Connect to Autonomys & Find Your Public Address
 
-:::danger
+Because the Polkadot\{.js\} extension is built natively on standard Substrate base address layers, your generated account automatically maps down clean public key structures across all configurations.
 
-MAKE SURE YOU STORE THIS SECURELY, AND NEVER SHARE IT
+1. Locate your account profile block row on the extension home screen.
+2. Ensure the dropdown next to your account name says **Allow use on any chain**.
+3. Click directly on the structural circle avatar graphic icon on the left, or click the address string to copy your public address directly to your system clipboard.
 
-:::
+---
 
-![step-4](/img/doc-imgs/polkadot/Polkadot-3.png)
+## 🚀 Next Steps: The Staking Journey
 
-5. Once your seed is securely stored and saved, click the “I have saved my mnemonic seed safely” check box and click “Next Step”
+Now that your base access profile is initialized, proceed forward into your network tasks:
 
-6. The next step will ask for a Name & Password for the wallet. then click “Add the account with the generated seed”
-
-    ![step-6](/img/doc-imgs/polkadot/Polkadot-4.png)
-
-7. Congratulations you have created a polkadot.js wallet!
-
-    ![step-7](/img/doc-imgs/polkadot/Polkadot-5.png)
-
-
-## Importing an Existing Seed
-
-Some users may be provided an existing mnemonic seed phrase that may have been provided by Subspace-Desktop, if this is the case you will want to follow this portion of the guide.
-
-1. Install the Extension (See [step 1](#create-a-new-wallet) of the previous section)
-
-2. Once extension is installed, Open it and click `+`, & `Import account from pre-existing seed`
-
-    ![step-2a](/img/doc-imgs/polkadot/step-2a.png)
-
-3. Type or Paste in your 12-Word mnemonic seed phrase & click `Next`
-
-    ![step-3a](/img/doc-imgs/polkadot/step-3a.png)
-
-4. The next step will ask for a Name & Password for the wallet. then click `Add the account with the supplied seed`
-
-    ![step-4a](/img/doc-imgs/polkadot/step-4a.png)
-
-
-## Troubleshooting
-
-If you face any trouble or would like to learn about other features for Polkadot.js, please see the [Official Polkadot.js Documentation](https://polkadot.js.org/). We have included some basic FAQ's below.
-
-### How can I find my Public Address?
-- You can see your default substrate public address right below your Wallet name inside the extension
-
-    ![trouble-1](/img/doc-imgs/polkadot/trouble-1.png)
-
-- You can see your Autonomys mainnet public address via the `...` menu and setting the `Allow Use on Any Chain` dropdown to `Autonomys mainnet`, once you exit you will see the public address now starts with `su`
-
-    ![trouble-2](/img/doc-imgs/polkadot/trouble-2.png)
-
-    ![trouble-10](/img/doc-imgs/polkadot/trouble-10.png)
-
-### I Don't See `Autonomys mainnet` or Any Autonomys Networks as an Option in Chain Settings
-
-- As seen below, sometimes when you first install or update the Substrate wallet you will need to update the wallet metadata.
-
-    ![trouble-3](/img/doc-imgs/polkadot/trouble-3.png)
-
-1. Go to the Subspace/Polkadot Explorer here: [Polkadot/Substrate Portal](https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Frpc.mainnet.subspace.foundation%2Fws#/explorer)
-
-2. You will be prompted to allow the extension to connect, Select desired account(s),click `Connect 1 account(s)`
-
-    ![trouble-4](/img/doc-imgs/polkadot/trouble-4.png)
-
-3. On the Webpage, click `settings`
-
-    ![trouble-5](/img/doc-imgs/polkadot/trouble-5.png)
-
-4. Click `Metadata`
-
-    ![trouble-6](/img/doc-imgs/polkadot/trouble-6.png)
-
-5. Click `Update Metadata`
-
-    ![trouble-7](/img/doc-imgs/polkadot/trouble-7.png)
-
-6. You will get a popup from the extension asking you to confirm click `Yes, do this metadata update` 
-
-    ![trouble-8](/img/doc-imgs/polkadot/trouble-8.png)
-
-7. You will now see `Autonomys mainnet` as an option on the `Allow use on any chain` dropdown. 
-
-    ![trouble-9](/img/doc-imgs/polkadot/trouble-9.png)
-
-### How Do I Backup my Wallet?
-
-1. You can backup/export your wallet via the `...` menu, then click `Export Account`
-
-    ![trouble-11](/img/doc-imgs/polkadot/trouble-11.png)
-
-2. You will then enter your wallet password and click `I want to export this account`
-
-    ![trouble-12](/img/doc-imgs/polkadot/trouble-12.png)
+- **Fund Your Keys:** Use your copied address strings to receive your active utility tokens.
+- **Advanced Portal Setup:** To check your balances and map configurations cleanly, read the advanced [Polkadot.js Apps Guide](../../staking/additional-guides/polkadot-apps.mdx).
+- **Launch Staking Positions:** Head over to the primary [Staking Guide](../../staking/staking.mdx) to lock in your validation parameters.

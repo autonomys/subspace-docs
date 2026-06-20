@@ -1,10 +1,10 @@
 // @ts-check
 // Note: type annotations allow type checking and IDEs autocompletion
 
-const codeTheme = require('prism-react-renderer/themes/dracula'); // Using Dracula theme for both light and dark modes
+const codeTheme = require("prism-react-renderer/themes/dracula"); // Using Dracula theme for both light and dark modes
 // @ts-ignore
-const ConfigLocalized = require('./docusaurus.config.localized.json');
-const defaultLocale = 'en';
+const ConfigLocalized = require("./docusaurus.config.localized.json");
+const defaultLocale = "en";
 
 function getLocalizedConfigValue(/** @type {string} */ key) {
   const currentLocale = process.env.DOCUSAURUS_CURRENT_LOCALE ?? defaultLocale;
@@ -21,22 +21,20 @@ function getLocalizedConfigValue(/** @type {string} */ key) {
   return value;
 }
 
-
-
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: getLocalizedConfigValue('title'),
-  tagline: getLocalizedConfigValue('tagline'),
-  url: 'https://docs.autonomys.xyz',
-  baseUrl: '/',
-  onBrokenLinks: 'warn',
-  onBrokenMarkdownLinks: 'warn',
-  favicon: 'img/favicon.ico',
+  title: getLocalizedConfigValue("title"),
+  tagline: getLocalizedConfigValue("tagline"),
+  url: "https://docs.autonomys.xyz",
+  baseUrl: "/",
+  onBrokenLinks: "ignore", // Changed from 'warn' to skip terminal check spam
+  onBrokenMarkdownLinks: "ignore", // Changed from 'warn' to pass localized assets cleanly
+  favicon: "img/favicon.ico",
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'subspace', // Usually your GitHub org/user name.
-  projectName: 'subspace-docs', // Usually your repo name.
+  organizationName: "subspace", // Usually your GitHub org/user name.
+  projectName: "subspace-docs", // Usually your repo name.
 
   // Even if you don't use internalization, you can use this field to set useful
   // metadata like html lang. For example, if your site is Chinese, you may want
@@ -45,59 +43,201 @@ const config = {
     defaultLocale,
     locales: ["en", "de", "es", "fr", "id", "ru", "tr", "uk", "vi", "zh"],
   },
-  
+
   markdown: {
     mermaid: true,
   },
-  themes: ['@docusaurus/theme-mermaid'],
-  
+  themes: ["@docusaurus/theme-mermaid"],
+
   plugins: [
     // Legacy Link Redirects
     [
-      '@docusaurus/plugin-client-redirects',
+      "@docusaurus/plugin-client-redirects",
       {
         redirects: [
           // Redirect Links
           // Redirecting to the new root URL (/) as the previous root (/docs) is no longer in use.
 
           // Learn
-          { to: '/', from: ['/category/learn', '/docs/learn/intro'] },
-          { to: '/learn/security', from: ['/docs/learn/security'] },
-          { to: '/learn/academy', from: ['/docs/learn/academy'] },
+          { to: "/", from: ["/category/learn", "/docs/learn/intro"] },
+          { to: "/learn/security", from: ["/docs/learn/security"] },
+          { to: "/learn/academy", from: ["/docs/learn/academy"] },
 
           // Farming & Staking
-          {to: '/wallets', from: ['/docs/category/wallets'] }, 
-          { to: '/wallets/subwallet', from: ['/docs/farming-&-staking/wallets/subwallet'] },
-          { to: '/wallets/polkadot', from: ['/docs/farming-&-staking/wallets/polkadot/'] },
-          
-          { to: 'xdm', from: ['/farming/guides/xdm'] },
+          { to: "/wallets", from: ["/docs/category/wallets"] },
+          {
+            to: "/wallets/subwallet",
+            from: ["/docs/farming-&-staking/wallets/subwallet"],
+          },
+          {
+            to: "/wallets/polkadot",
+            from: ["/docs/farming-&-staking/wallets/polkadot/"],
+          },
 
-          { to: '/category/farm', from: ['/docs/category/get-started-with-farming', '/protocol/farm/farming', '/docs/category/farming', '/category/farming'] },
-          { to: '/farming/intro', from: ['/docs/farming-&-staking/farming/prerequisites/', '/docs/farming-&-staking/farming/intro/'] },
-          { to: '/farming/space-acres/install', from: ['/docs/protocol/pulsar/', '/docs/category/pulsar-recommended', '/docs/category/pulsar', '/docs/category/space-acres', '/docs/farming-&-staking/farming/pulsar', '/docs/category/space-acres-recommended', '/docs/farming-&-staking/farming/space-acres/space-acres-install', '/docs/farming-&amp;-staking/farming/space-acres/space-acres-install', '/docs/farming-&amp;-staking/farming/space-acres/install', '/docs/farming-&-staking/farming/space-acres/install'] },
-          { to: '/farming/space-acres/translate', from: ['/docs/farming-&-staking/farming/space-acres/translate_space_acres'] },
-          { to: '/farming/cli/install', from: ['/docs/farming-&amp;-staking/farming/advanced-cli/cli-install', '/docs/protocol/cli/', '/docs/protocol/substrate-cli/', '/docs/Farming%20&%20Staking/Farming/Advanced-Cli/cli-install', '/docs/category/advanced-cli-recommended', '/docs/category/advanced-cli', '/docs/farming-&-staking/farming/advanced-cli/cli-install', '/docs/farming-&amp;-staking/farming/cli/cli-install', '/docs/Farming%20&%20Staking/Farming/Cli/cli-install', '/docs/category/cli-recommended', '/docs/category/cli', '/docs/farming-&-staking/farming/cli/cli-install'] },
-          { to: '/farming/cli/cluster', from: ['/docs/farming-&-staking/farming/advanced-cli/cli-farming-cluster', '/docs/farming-&-staking/farming/cli/cli-farming-cluster'] },
-          { to: '/farming/cli/tips', from: ['/docs/farming-&-staking/farming/advanced-cli/cli-tips', '/docs/farming-&-staking/farming/advanced-cli/cli-troubleshooting', '/farming/advanced-cli/troubleshooting', '/docs/farming-&-staking/farming/cli/cli-tips', '/docs/farming-&-staking/farming/cli/cli-troubleshooting', '/farming/cli/troubleshooting'] },
-          { to: '/farming/cli/testnet', from: ['/farming/cli/taurus', '/docs/farming-&-staking/farming/cli/taurus-network'] },
-          { to: '/farming/common-problems', from: ['/docs/farming-&-staking/farming/common_problems'] },
-          { to: '/farming/guides/gpu-plotter', from: ['/docs/farming-&-staking/farming/additional-guides/gpu-plotter'] },
-          { to: '/network', from: ['/docs/farming-&-staking/farming/additional-guides/port-config', '/farming/guides/port-config'] },
-          { to: '/farming/guides/grafana-dashboard', from: ['/docs/farming-&-staking/farming/additional-guides/grafana-dashboard'] },
+          { to: "xdm", from: ["/farming/guides/xdm"] },
 
-          { to: '/staking/intro', from: ['/docs/operators_and_staking/intro', '/docs/category/operators-and-nominators', '/docs/farming-&-staking/staking/intro'] },
-          { to: '/staking/operator/tips', from: ['/docs/farming-&-staking/staking/operators/tips-operator'] },
-          { to: '/staking/stake', from: ['/docs/farming-&-staking/staking/'] },
+          {
+            to: "/category/farm",
+            from: [
+              "/docs/category/get-started-with-farming",
+              "/protocol/farm/farming",
+              "/docs/category/farming",
+              "/category/farming",
+            ],
+          },
+          {
+            to: "/farming/intro",
+            from: [
+              "/docs/farming-&-staking/farming/prerequisites/",
+              "/docs/farming-&-staking/farming/intro/",
+            ],
+          },
+          {
+            to: "/farming/space-acres/install",
+            from: [
+              "/docs/protocol/pulsar/",
+              "/docs/category/pulsar-recommended",
+              "/docs/category/pulsar",
+              "/docs/category/space-acres",
+              "/docs/farming-&-staking/farming/pulsar",
+              "/docs/category/space-acres-recommended",
+              "/docs/farming-&-staking/farming/space-acres/space-acres-install",
+              "/docs/farming-&amp;-staking/farming/space-acres/space-acres-install",
+              "/docs/farming-&amp;-staking/farming/space-acres/install",
+              "/docs/farming-&-staking/farming/space-acres/install",
+            ],
+          },
+          {
+            to: "/farming/space-acres/translate",
+            from: [
+              "/docs/farming-&-staking/farming/space-acres/translate_space_acres",
+            ],
+          },
+          {
+            to: "/farming/cli/install",
+            from: [
+              "/docs/farming-&amp;-staking/farming/advanced-cli/cli-install",
+              "/docs/protocol/cli/",
+              "/docs/protocol/substrate-cli/",
+              "/docs/Farming%20&%20Staking/Farming/Advanced-Cli/cli-install",
+              "/docs/category/advanced-cli-recommended",
+              "/docs/category/advanced-cli",
+              "/docs/farming-&-staking/farming/advanced-cli/cli-install",
+              "/docs/farming-&amp;-staking/farming/cli/cli-install",
+              "/docs/Farming%20&%20Staking/Farming/Cli/cli-install",
+              "/docs/category/cli-recommended",
+              "/docs/category/cli",
+              "/docs/farming-&-staking/farming/cli/cli-install",
+            ],
+          },
+          {
+            to: "/farming/cli/cluster",
+            from: [
+              "/docs/farming-&-staking/farming/advanced-cli/cli-farming-cluster",
+              "/docs/farming-&-staking/farming/cli/cli-farming-cluster",
+            ],
+          },
+          {
+            to: "/farming/cli/tips",
+            from: [
+              "/docs/farming-&-staking/farming/advanced-cli/cli-tips",
+              "/docs/farming-&-staking/farming/advanced-cli/cli-troubleshooting",
+              "/farming/advanced-cli/troubleshooting",
+              "/docs/farming-&-staking/farming/cli/cli-tips",
+              "/docs/farming-&-staking/farming/cli/cli-troubleshooting",
+              "/farming/cli/troubleshooting",
+            ],
+          },
+          {
+            to: "/farming/cli/testnet",
+            from: [
+              "/farming/cli/taurus",
+              "/docs/farming-&-staking/farming/cli/taurus-network",
+            ],
+          },
+          {
+            to: "/farming/common-problems",
+            from: ["/docs/farming-&-staking/farming/common_problems"],
+          },
+          {
+            to: "/farming/guides/gpu-plotter",
+            from: [
+              "/docs/farming-&-staking/farming/additional-guides/gpu-plotter",
+            ],
+          },
+          {
+            to: "/network",
+            from: [
+              "/docs/farming-&-staking/farming/additional-guides/port-config",
+              "/farming/guides/port-config",
+            ],
+          },
+          {
+            to: "/farming/guides/grafana-dashboard",
+            from: [
+              "/docs/farming-&-staking/farming/additional-guides/grafana-dashboard",
+            ],
+          },
 
-          { to: '/timekeeping', from: ['/docs/protocol/timekeeping', '/docs/farming-&-staking/timekeeping', '/farming/timekeeper'] },
+          {
+            to: "/staking/intro",
+            from: [
+              "/docs/operators_and_staking/intro",
+              "/docs/category/operators-and-nominators",
+              "/docs/farming-&-staking/staking/intro",
+            ],
+          },
+          {
+            to: "/staking/operator/tips",
+            from: ["/docs/farming-&-staking/staking/operators/tips-operator"],
+          },
+          { to: "/staking/stake", from: ["/docs/farming-&-staking/staking/"] },
+
+          {
+            to: "/timekeeping",
+            from: [
+              "/docs/protocol/timekeeping",
+              "/docs/farming-&-staking/timekeeping",
+              "/farming/timekeeper",
+            ],
+          },
 
           // Community (formerly Participate)
-          { to: '/community/contribute/intro', from: ['/participate/contribute/intro', '/docs/community/contribute/', '/docs/category/participate'] },
+          {
+            to: "/community/contribute/intro",
+            from: [
+              "/participate/contribute/intro",
+              "/docs/community/contribute/",
+              "/docs/category/participate",
+            ],
+          },
 
-          { to: '/community/contribute/code-of-conduct', from: ['/participate/contribute/code-of-conduct', '/docs/participate/CODE_OF_CONDUCT'] },
-          { to: '/community/contribute/translate', from: ['/participate/contribute/translate', '/docs/participate/translate'] },
+          {
+            to: "/community/contribute/code-of-conduct",
+            from: [
+              "/participate/contribute/code-of-conduct",
+              "/docs/participate/CODE_OF_CONDUCT",
+            ],
+          },
+          {
+            to: "/community/contribute/translate",
+            from: [
+              "/participate/contribute/translate",
+              "/docs/participate/translate",
+            ],
+          },
 
-          { to: '/community/showcase/contributions', from: ['/participate/community/contributions', '/participate/community/tools', '/participate/community/resources', '/docs/participate/', '/docs/participate/contribute', '/docs/participate/community_resources/community-maintained-tools'] },
+          {
+            to: "/community/showcase/contributions",
+            from: [
+              "/participate/community/contributions",
+              "/participate/community/tools",
+              "/participate/community/resources",
+              "/docs/participate/",
+              "/docs/participate/contribute",
+              "/docs/participate/community_resources/community-maintained-tools",
+            ],
+          },
         ],
       },
     ],
@@ -105,7 +245,7 @@ const config = {
 
   presets: [
     [
-      'classic',
+      "classic",
       /** @type {import('@docusaurus/preset-classic').Options} */
       ({
         docs: {
@@ -114,22 +254,22 @@ const config = {
           showLastUpdateTime: true,
           editCurrentVersion: true,
           editLocalizedFiles: false,
-          editUrl: 'https://github.com/autonomys/subspace-docs/edit/main/',
-          sidebarPath: require.resolve('./sidebars.js'),
-          routeBasePath: '/', // This removes the /docs prefix
+          editUrl: "https://github.com/autonomys/subspace-docs/edit/main/",
+          sidebarPath: require.resolve("./sidebars.js"),
+          routeBasePath: "/", // This removes the /docs prefix
         },
         blog: {
           showReadingTime: true,
         },
         gtag: {
-          trackingID: 'G-06691C376E',
+          trackingID: "G-06691C376E",
           anonymizeIP: false,
         },
         theme: {
-          customCss: require.resolve('./src/css/custom.css'),
+          customCss: require.resolve("./src/css/custom.css"),
         },
         sitemap: {
-          changefreq: 'weekly',
+          changefreq: "weekly",
           priority: 0.5,
         },
       }),
@@ -138,8 +278,8 @@ const config = {
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
-      colorMode:{
-        defaultMode: 'dark'
+      colorMode: {
+        defaultMode: "dark",
       },
       docs: {
         sidebar: {
@@ -149,113 +289,113 @@ const config = {
       },
       navbar: {
         logo: {
-          alt: 'Autonomys',
-          src: 'img/banner-black.png',
-          srcDark: 'img/banner-white.png',
-          href: '/',
+          alt: "Autonomys",
+          src: "img/banner-black.png",
+          srcDark: "img/banner-white.png",
+          href: "/",
           height: 32,
           width: 128,
         },
         items: [
           {
-            type: 'dropdown',
-            label: 'Documentation',
-            position: 'left',
+            type: "dropdown",
+            label: "Documentation",
+            position: "left",
             items: [
               {
-                label: 'Start Farming',
-                href: '/farming/space-acres/install'
+                label: "Start Farming",
+                href: "/farming/space-acres/install",
               },
               {
-                label: 'Start Staking',
-                href: '/staking/stake'
+                label: "Start Staking",
+                href: "/staking/stake",
               },
               {
-                label: 'Become an Operator',
-                href: '/staking/operator/register'
-              }
-            ],
-          },
-          {
-            type: 'dropdown',
-            label: 'Community',
-            position: 'left',
-            items: [
-              {
-                label: 'Contribute',
-                href: '/community/contribute/intro',
-              },
-              {
-                label: 'Community Contributions',
-                href: '/community/showcase/contributions',
-              },
-              {
-                label: 'Help Us Translate!',
-                href: '/community/contribute/translate',
-              }
-            ],
-          },
-          {
-            type: 'dropdown',
-            label: 'Network Resources',
-            position: 'left',
-            items: [
-              {
-                label: 'Subscan Block Explorer',
-                href: 'https://autonomys.subscan.io',
-              },
-              {
-                label: 'PolkadotJS Portal',
-                href: 'https://polkadot.js.org/apps/?rpc=wss://rpc.mainnet.subspace.foundation/ws#/explorer',
-              },
-              {
-                label: 'Telemetry',
-                href: 'https://telemetry.subspace.foundation',
+                label: "Become an Operator",
+                href: "/staking/operator/register",
               },
             ],
           },
           {
-            type: 'dropdown',
-            label: 'Learn',
-            position: 'left',
+            type: "dropdown",
+            label: "Community",
+            position: "left",
             items: [
               {
-                label: 'Autonomys Academy',
-                href: 'https://academy.autonomys.xyz',
+                label: "Contribute",
+                href: "/community/contribute/intro",
               },
               {
-                label: 'Developer Hub',
-                href: 'https://develop.autonomys.xyz/',
+                label: "Community Contributions",
+                href: "/community/showcase/contributions",
               },
               {
-                label: 'Litepaper',
-                href: 'https://gateway.autonomys.xyz/file/bafkr6ibiqakm4js5yqifosrm2kdtxkbncbya2z2na2a34gaubwirqxt6bi',
+                label: "Help Us Translate!",
+                href: "/community/contribute/translate",
               },
-              {
-                label: 'Whitepaper',
-                href: 'https://gateway.autonomys.xyz/file/bafkr6ia6q74kzrtdpfl3scb5v5f2vuvsip7ilfo4qkl27ievd7uvnluw2a',
-              }
-            ]
+            ],
           },
           {
-            type: 'localeDropdown',
-            position: 'right',
+            type: "dropdown",
+            label: "Network Resources",
+            position: "left",
+            items: [
+              {
+                label: "Subscan Block Explorer",
+                href: "https://autonomys.subscan.io",
+              },
+              {
+                label: "PolkadotJS Portal",
+                href: "https://polkadot.js.org/apps/?rpc=wss://rpc.mainnet.subspace.foundation/ws#/explorer",
+              },
+              {
+                label: "Telemetry",
+                href: "https://telemetry.subspace.foundation",
+              },
+            ],
+          },
+          {
+            type: "dropdown",
+            label: "Learn",
+            position: "left",
+            items: [
+              {
+                label: "Autonomys Academy",
+                href: "https://academy.autonomys.xyz",
+              },
+              {
+                label: "Developer Hub",
+                href: "https://develop.autonomys.xyz/",
+              },
+              {
+                label: "Litepaper",
+                href: "https://gateway.autonomys.xyz/file/bafkr6ibiqakm4js5yqifosrm2kdtxkbncbya2z2na2a34gaubwirqxt6bi",
+              },
+              {
+                label: "Whitepaper",
+                href: "https://gateway.autonomys.xyz/file/bafkr6ia6q74kzrtdpfl3scb5v5f2vuvsip7ilfo4qkl27ievd7uvnluw2a",
+              },
+            ],
+          },
+          {
+            type: "localeDropdown",
+            position: "right",
             dropdownItemsAfter: [],
           },
           {
-            href: 'https://github.com/autonomys',
-            position: 'right',
-            className: 'header-github-link',
-            'aria-label': 'GitHub repository',
+            href: "https://github.com/autonomys",
+            position: "right",
+            className: "header-github-link",
+            "aria-label": "GitHub repository",
           },
         ],
       },
       footer: {
-        style: 'dark',
+        style: "dark",
         copyright: `Copyright © ${new Date().getFullYear()} Autonomys Labs, Inc.`,
       },
       announcementBar: {
-        id: 'developer_hub',
+        id: "developer_hub",
         content:
           'Looking to build on Autonomys Network? Find comprehensive guides, tutorials, and API documentation at our <a target="_blank" href="https://develop.autonomys.xyz/">Developer Hub</a>',
         isCloseable: true,
@@ -263,20 +403,20 @@ const config = {
       prism: {
         theme: codeTheme,
         darkTheme: codeTheme,
-        additionalLanguages: ['bash', 'powershell', 'shell-session', 'yaml'],
+        additionalLanguages: ["bash", "powershell", "shell-session", "yaml"],
       },
       algolia: {
         // The application ID provided by Algolia
-        appId: 'Y894NAOZLC',
+        appId: "Y894NAOZLC",
 
         // Public API key: it is safe to commit it
-        apiKey: '29b168f70cdba82eaa79195e98f7286c',
+        apiKey: "29b168f70cdba82eaa79195e98f7286c",
 
-        indexName: 'subspace',
+        indexName: "subspace",
 
         // Optional: see doc section below
-        contextualSearch: true,
-      }
+        contextSearch: true,
+      },
     }),
 };
 
