@@ -9,108 +9,94 @@ keywords:
   - CLI
   - SubWallet
   - Wallet
-  - Staking
 ---
 
 import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem";
 
 :::note
+
 SubWallet is a third-party wallet built for Substrate and EVM networks by the [SubWallet Team](https://subwallet.app).
 
 _This guide covers the browser extension setup. A mobile app is also available on [Android](https://play.google.com/store/apps/details?id=app.subwallet.mobile) and [iOS](https://testflight.apple.com/join/ZW3pUbWj)._
+
 :::
 
-SubWallet is a user-friendly Web3 Multiverse Gateway for the Substrate ecosystem designed to provide a secure and streamlined way to connect to blockchain-based applications.
+SubWallet is a user-friendly Web3 Multiverse Gateway for the Substrate ecosystem. Our vision is to provide you with the simplest and most secure way to connect to blockchain-based applications.
 
-To learn more about SubWallet, visit their official [Website](https://subwallet.app).
+To learn more about SubWallet visit their [Website](https://subwallet.app).
 
----
+## Create or Import A New Wallet
 
-## Create or Setup Your SubWallet
+1. Visit the [SubWallet website](https://www.subwallet.app/download.html) and Download your respective version.
+2. Once extension is installed, open it.
+3. The extension will give you up to four options. You will most likely want to select `Create a new account`.
 
-1. Visit the [SubWallet download page](https://www.subwallet.app/download.html) and install the respective extension version for your browser.
-2. Once the extension is installed, open it from your browser's toolbar.
-3. The onboarding interface will display several setup options. To initiate a secure staking setup, select **Create a new account**.
+:::tip
 
-:::tip Existing Wallets
-If you prefer to import an active pre-existing keyphrase instead of generating a fresh address, select **Import an account**.
+If you would like to Import an **Existing** Wallet, then select `Import an account`
+
 :::
 
 ![step-3](/img/doc-imgs/subwallet/Subwallet-1.png)
 
-4. Carefully read and accept the SubWallet Terms of Use.
+4. Carefully read and accept the Terms of Use.
 
 ![step-4](/img/doc-imgs/subwallet/Subwallet-2.png)
 
-5. Enter and confirm a strong, master extension password.
+5. Enter and confirm the password for your account. Make sure to use a strong password.
 
 ![step-5](/img/doc-imgs/subwallet/Subwallet-3.png)
 
-6. Review the structural safety information explaining how to keep your private keys secure. Click on each safety tip to acknowledge that you understand it.
+6. Review the information on how to keep your seed phrase secure. Click on each tip to confirm that you have read and understood it.
 
 ![step-6](/img/doc-imgs/subwallet/Subwallet-4.png)
 
----
-
-## Managing Your Accounts
-
-To maintain strict accounting precision while staking on the Autonomys Network, it is ideal to generate a fresh target account.
-
-### Creating a New Account (Recommended for Staking)
-
-1. Provide an easily recognizable local name for your fresh account (e.g., "Autonomys Staking Pool").
+7. Enter a name for your account.
 
 ![step-7](/img/doc-imgs/subwallet/Subwallet-5.png)
 
-2. Your unique 12-word seed phrase will be generated. Write it down carefully in physical format.
+8. Write down your seed phrase in a secure place. You will need it if you ever forget your password, or decide to transfer the account to another PC.
 
 ![step-8](/img/doc-imgs/subwallet/Subwallet-6.png)
 
-:::warning Protect Your Cryptocurrency Recovery Phrase at All Costs
-Your recovery phrase (also known as a seed phrase) is the master key to your cryptocurrency wallet. Anyone with access to this phrase can take complete control of your funds. Never share it with anyone, never store it in unsecured digital platforms or emails, and always ensure you have a safe offline backup. Treat it like your most sensitive personal or financial information. _If it’s exposed or lost, you could permanently lose access to your cryptocurrency_.
-:::
-
-3. Confirm that you have backed up the phrase securely. You will then see the deployment success screen.
+9. Congratulations you have successfully created your wallet with SubWallet.
 
 ![step-9](/img/doc-imgs/subwallet/Subwallet-7.png)
 
----
+## Connect wallet to Autonomys mainnet and find wallet public address
 
-## Connect to Autonomys & Find Your Public Address
-
-Follow these steps to activate the native Autonomys asset display tracking and grab your public address.
-
-1. Open the main wallet screen, scroll to the bottom, and click on **Manage tokens**.
+1. Open SubWallet, scroll all the way down and click on _Manage tokens_.
 
 ![wallet-1](/img/doc-imgs/subwallet/Subwallet-8.png)
 
-2. For clarity, you may deselect all automatically enabled tokens belonging to foreign networks.
+2. You can deselect all automatically enabled tokens for your convenience.
 
 ![wallet-2](/img/doc-imgs/subwallet/Subwallet-9.png)
 
-3. In the search box, filter for `Autonomys`. Toggle on the network visibility switches required for your workflow (e.g., **mainnet** or **Chronos** testnet options).
+3. In the search bar, start typing the name of the network, e.g. Autonomys.
+   You will see two networks - **mainnet** and **Chronos** testnet.
 
 ![wallet-3](/img/doc-imgs/subwallet/Subwallet-10.png)
 
-4. Return to the primary screen where your active **AI3** asset balances are listed. Click directly on the asset name row.
+4. Return to the first screen, where you will see the AI3 token along with your balance. To view your wallet's public address, click on its name.
 
 ![wallet-4](/img/doc-imgs/subwallet/Subwallet-11.png)
 
-5. Click the dedicated **Copy** icon button to send your consensus public address straight to your system clipboard.
+5. And then click on the _Copy_ icon to copy the public address.
 
 ![wallet-5](/img/doc-imgs/subwallet/Subwallet-12.png)
 
----
-
 ## Connect to Autonomys Network via RPC
 
-If an active development network or specific custom testnet endpoint is not appearing inside the default token list, you can map your provider node endpoints manually. Use the current RPC network strings provided below:
+Sometimes you won't see the network you would like to connect to in a list of available networks. In this case you can connect to Autonomys Network manually via RPC.
+
+This also can be helpful for in-development networks such as the Autonomys Network Testnet. Below you will find a simple guide on how to add these new networks. Additionally we will try and keep an updated list of active RPC endpoints below for development.
 
 <Tabs>
   <TabItem value="mainnet" label="Mainnet" default>
-
     ### Consensus
+
     ```
     wss://rpc.mainnet.subspace.foundation/ws
     ```
@@ -118,13 +104,14 @@ If an active development network or specific custom testnet endpoint is not appe
   </TabItem>
   
   <TabItem value="chronos" label="Chronos Testnet">
-
     ### Consensus
+
     ```
     wss://rpc.chronos.autonomys.xyz/ws
     ```
 
     ### Auto EVM
+
     ```
     wss://auto-evm.chronos.autonomys.xyz/ws
     ```
@@ -132,60 +119,63 @@ If an active development network or specific custom testnet endpoint is not appe
   </TabItem>
 </Tabs>
 
-1. Open the wallet dashboard interface and select the three-line configuration menu icon in the top left corner.
+1. Open SubWallet, select the 3 line menu in the top left of the wallet.
 
    ![rpc-step-1](/img/doc-imgs/subwallet/rpc-1.png)
 
-2. Inside the settings panel, select the **Manage Networks** option.
+2. Inside the settings menu you will see the option to Manage Networks.
 
    ![rpc-step-2](/img/doc-imgs/subwallet/rpc-2.png)
 
-3. Click on the **+** (Add) icon located in the top right corner of the menu.
+3. Within the Manage Networks menu you will see a + in the top right corner.
 
    ![rpc-step-3](/img/doc-imgs/subwallet/rpc-3.png)
 
-4. Populate the **Provider URL** field with one of the valid active network strings listed above. The interface will automatically query the node endpoint to map the remaining parameters (Network Name, Symbol, and default Subscan tracking explorer).
+4. This will open the Import Network menu, where you will see a few options
 
-   _Note: The default block explorer for the network is the [Subscan Block Explorer](https://autonomys.subscan.io)._
+- Provider URL
+- Network Name
+- Symbol
+- Block explorer
+- Crowdloan URL
+
+The only required option is the Provider URL. Adding an explorer is optional. The default block explorer for the Autonomys Network is [Subscan Block Explorer](https://autonomys.subscan.io).
+
+You can refer to the _RPC Endpoints_ above for available provider URLs for the Autonomys Network.
+
+5. Fill in the provider URL, once you click out of this box it will check the URL and add the rest of the information, then click Save.
+   - _In this example we will be using the Chronos testnet RPC `wss://rpc.chronos.autonomys.xyz/ws`_
 
    ![rpc-step-4](/img/doc-imgs/subwallet/rpc-4.png)
 
-5. Click **Save** to lock in the endpoint configurations, then navigate back to your standard network list to switch your workspace focus to the new node.
+6. You will then be taken back to the network screen where you can then select your new network that was added.
 
    ![rpc-step-5](/img/doc-imgs/subwallet/rpc-5.png)
 
----
+## Troubleshooting
 
-## Backing Up Your Wallet
+If you face any trouble or would like to learn about other features for SubWallet, please see the [Official SubWallet Documentation](https://docs.subwallet.app/).
 
-Maintaining alternative offline exports of your account profile ensures long-term recovery capabilities.
+### How do I backup my wallet?
 
-1. Click directly on your active **Account avatar name banner** at the top of the interface.
+1. You can backup/export your wallet. Click on your _Account_.
 
    ![trouble-1](/img/doc-imgs/subwallet/Trouble-1.png)
 
-2. Identify the specific wallet profile requiring an export and click its corresponding **pencil/edit icon**.
+2. Select the account you would like to backup and click on the _edit_ sign.
 
    ![trouble-2](/img/doc-imgs/subwallet/Trouble-2.png)
 
-3. Select the **Export** option from the operational dropdown actions list.
+3. Select _Export_.
 
    ![trouble-3](/img/doc-imgs/subwallet/Trouble-3.png)
 
-4. Provide your master confirmation password. Choose your preferred structural export strategy (**Seed phrase**, backup **JSON** file, or scannable **QR code**) and follow the on-screen prompts to download or record the backup safely.
+4. You will then enter your wallet password and click which preferred export method you would like to use, either `Seed phrase`, `JSON` or `QR code`.
 
    ![trouble-4](/img/doc-imgs/subwallet/Trouble-4.png)
 
----
+## Next Steps
 
-## 🚀 Next Steps: The Staking Journey
+### Pay for Storage
 
-Now that your SubWallet profile is fully initialized and mapped to the network, seamlessly pivot into your staking operations:
-
-- **Fund Your Address:** Use your copied consensus address to securely receive your tokens.
-- **Advanced Portal Setup:** If your workflow requires hooking into full Polkadot apps dashboards, check out the [Polkadot.js Apps Guide](../../staking/additional-guides/polkadot-apps.mdx).
-- **Launch Staking Positions:** Head straight over to the main [Staking Guide](../../staking/staking.mdx) to pair your wallet and begin earning block rewards.
-
-## Troubleshooting
-
-For advanced account pairing instructions or UI troubleshooting support, consult the [Official SubWallet Documentation](https://docs.subwallet.app/).
+To use the network for distributed data storage, refer to the [Pay with AI3 Guide](../../subspace-network/pay-with-ai3.mdx). Note that your first step requires transferring assets via XDM (Cross-Domain Messaging) to the storage domain.
