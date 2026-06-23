@@ -19,7 +19,7 @@ polkadot.js extension is a Substrate/EVM wallet created by the creators of Subst
 
 This is the barebones wallet. This is because it is a wallet that supports all Substrate based networks. This is an extension that works similarly to MetaMask, or most other browser based wallets you've likely used in the past.
 
-## Create a New Wallet
+## Creating a New Account
 
 1. Visit the [Polkadot.js](https://polkadot.js.org/extension/) Website and Download your respective version.
 
@@ -37,13 +37,7 @@ The Chrome option will work on all Chromium based browsers such as Brave, Vivald
 
    ![step-3](/img/doc-imgs/polkadot/Polkadot-2.png)
 
-4. The extension will then show you your 12-word mnemonic seed.
-
-:::danger
-
-MAKE SURE YOU STORE THIS SECURELY, AND NEVER SHARE IT
-
-:::
+4. The extension will then show you your 12-word mnemonic seed. Ensure you store this safely.
 
 ![step-4](/img/doc-imgs/polkadot/Polkadot-3.png)
 
@@ -61,7 +55,7 @@ MAKE SURE YOU STORE THIS SECURELY, AND NEVER SHARE IT
 
 Some users may be provided an existing mnemonic seed phrase that may have been provided by Subspace-Desktop, if this is the case you will want to follow this portion of the guide.
 
-1. Install the Extension (See [step 1](#create-a-new-wallet) of the previous section)
+1. Install the Extension (See [step 1](#creating-a-new-account) of the previous section)
 
 2. Once extension is installed, Open it and click `+`, & `Import account from pre-existing seed`
 
