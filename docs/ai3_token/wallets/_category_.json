@@ -1,9 +1,9 @@
 {
-  "label": "Wallets",
-  "position": 1,
-  "link": {
-    "type": "generated-index",
-    "slug": "/wallets",
-    "description": "Comprehensive guides on setting up supported consensus-chain wallets for the Autonomys Network, including Talisman (Recommended), SubWallet, Polkadot.js extension, and FoxWallet."
-  }
+    "label": "Wallets",
+    "position": 1,
+    "link": {
+        "type": "generated-index",
+        "slug": "/wallets",
+        "description": "Guides on setting up SubWallet or polkadot{.js} extension wallet"
+      }
 }
