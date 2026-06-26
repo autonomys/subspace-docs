@@ -4,17 +4,17 @@ sidebar_position: 2
 description: How to configure the FoxWallet Web3 wallet for the Autonomys Network
 slug: /wallets/foxwallet
 keywords:
-  - Farmer
-  - Farming
-  - CLI
-  - FoxWallet
-  - Wallet
+    - Farmer
+    - Farming
+    - CLI
+    - FoxWallet
+    - Wallet
 ---
 
 :::note
 
 FoxWallet is a 3rd party multi-chain wallet created by the [FoxWallet Team](https://foxwallet.com/).
-_Although FoxWallet has a browser extension, it does not yet support Autonomys. This guide deals with the mobile app only._
+*Although FoxWallet has a browser extension, it does not yet support Autonomys. This guide deals with the mobile app only.*
 
 :::
 
@@ -44,7 +44,7 @@ _Although FoxWallet has a browser extension, it does not yet support Autonomys. 
 
 :::warning Protect Your Cryptocurrency Recovery Phrase at All Costs
 
-Your recovery phrase (also known as a seed phrase) is the master key to your cryptocurrency wallet. Anyone with access to this phrase can take complete control of your funds. Never share it with anyone, never store it in unsecured digital platforms or emails, and always ensure you have a safe offline backup. Treat it like your most sensitive personal or financial information. _If it’s exposed or lost, you could permanently lose access to your cryptocurrency_.
+Your recovery phrase (also known as a seed phrase) is the master key to your cryptocurrency wallet. Anyone with access to this phrase can take complete control of your funds. Never share it with anyone, never store it in unsecured digital platforms or emails, and always ensure you have a safe offline backup. Treat it like your most sensitive personal or financial information. *If it’s exposed or lost, you could permanently lose access to your cryptocurrency*.
 
 :::
 
@@ -107,9 +107,3 @@ If you face any trouble or would like to learn about other features for FoxWalle
 ![step-14](/img/doc-imgs/foxwallet/FoxWallet-14.jpg)
 
 8. Once you `Confirm backup`, you will be returned to the home page.
-
-## Next Steps
-
-### Pay for Storage
-
-To use the network for distributed data storage, refer to the [Pay with AI3 Guide](../../subspace-network/pay-with-ai3.mdx). Note that your first step requires transferring assets via XDM (Cross-Domain Messaging) to the storage domain.
