@@ -30,7 +30,7 @@ To learn more about SubWallet visit their [Website](https://subwallet.app).
 
 1. Visit the [SubWallet website](https://www.subwallet.app/download.html) and Download your respective version. 
 2. Once extension is installed, open it.
-3. The extension will give you up to four options. You will most likely want to select `Create a new account`.
+3. The extension will present three configuration options. Select **Create a new account** to set up a brand-new wallet.
 
 :::tip
 
@@ -40,11 +40,11 @@ If you would like to Import an **Existing** Wallet, then select `Import an accou
 
 ![step-3](/img/doc-imgs/subwallet/Subwallet-1.png)
 
-4. Carefully read and accept the Terms of Use.
+4. Carefully read the Terms of Use, scroll to the bottom of the section, check the box confirming you understand and agree, and click `Continue`.
 
 ![step-4](/img/doc-imgs/subwallet/Subwallet-2.png)
 
-5. Enter and confirm the password for your account. Make sure to use a strong password. 
+5. Enter and confirm the password for your account. Make sure to use a strong password.
 
 ![step-5](/img/doc-imgs/subwallet/Subwallet-3.png)
 
@@ -52,47 +52,45 @@ If you would like to Import an **Existing** Wallet, then select `Import an accou
 
 ![step-6](/img/doc-imgs/subwallet/Subwallet-4.png)
 
-7. Enter a name for your account.
+7. Write down your seed phrase in a secure place. You will need it if you ever forget your password, or decide to transfer the account to another PC. 
 
-![step-7](/img/doc-imgs/subwallet/Subwallet-5.png)
+![step-7](/img/doc-imgs/subwallet/Subwallet-6.png)
 
-8. Write down your seed phrase in a secure place. You will need it if you ever forget your password, or decide to transfer the account to another PC. 
+8. Enter a name for your account.
 
-![step-8](/img/doc-imgs/subwallet/Subwallet-6.png)
+![step-8](/img/doc-imgs/subwallet/Subwallet-5.png)
 
-9. Congratulations you have successfully created your wallet with SubWallet.
+9. Congratulations, you have successfully created your wallet with SubWallet! Click **Go to home** to open your wallet dashboard.
 
 ![step-9](/img/doc-imgs/subwallet/Subwallet-7.png)
 
 ## Connect wallet to Autonomys mainnet and find wallet public address
 
-1. Open SubWallet, scroll all the way down and click on *Manage tokens*.
+1. Click the menu icon (three horizontal lines) in the top-left corner of the dashboard to open the settings panel, then select `Manage networks`.
 
 ![wallet-1](/img/doc-imgs/subwallet/Subwallet-8.png)
 
-2. You can deselect all automatically enabled tokens for your convenience.
+2. In the search bar at the top, start typing `Autonomys`. 
 
 ![wallet-2](/img/doc-imgs/subwallet/Subwallet-9.png)
 
-3. In the search bar, start typing the name of the network, e.g. Autonomys.
-You will see two networks - **mainnet** and **Chronos** testnet.
+3. Toggle the switch next to **Autonomys Mainnet** to enable the network. 
 
 ![wallet-3](/img/doc-imgs/subwallet/Subwallet-10.png)
 
-4. Return to the first screen, where you will see the AI3 token along with your balance. To view your wallet's public address, click on its name.
+4. Return to the home screen dashboard, where you will see the **AI3** token listed under your assets. Click on the token row to view its details.
 
 ![wallet-4](/img/doc-imgs/subwallet/Subwallet-11.png)
 
-5. And then click on the *Copy* icon to copy the public address. 
+5. Click on the **Copy** icon (the overlapping squares button beneath the price chart) to copy your wallet's public address to your clipboard.
 
 ![wallet-5](/img/doc-imgs/subwallet/Subwallet-12.png)
 
-
 ## Connect to Autonomys Network via RPC
 
-Sometimes you won't see the network you would like to connect to in a list of available networks. In this case you can connect to Autonomys Network manually via RPC.
+Sometimes a specific network or a pre-release testing environment may not appear in the default list of available networks. In these instances, you can manually connect to the Autonomys Network via an RPC endpoint.
 
-This also can be helpful for in-development networks such as the Autonomys Network Testnet. Below you will find a simple guide on how to add these new networks. Additionally we will try and keep an updated list of active RPC endpoints below for development.
+Use the tabs below to copy the active RPC endpoint you need:
 
 <Tabs>
   <TabItem value="mainnet" label="Mainnet" default>
@@ -120,59 +118,54 @@ This also can be helpful for in-development networks such as the Autonomys Netwo
   </TabItem>
 </Tabs>
 
-
-1. Open SubWallet, select the 3 line menu in the top left of the wallet.
+1. Open SubWallet and click the menu icon (three horizontal lines) in the top-left corner of the dashboard.
 
     ![rpc-step-1](/img/doc-imgs/subwallet/rpc-1.png)
 
-2. Inside the settings menu you will see the option to Manage Networks.
+2. Inside the settings menu, select `Manage networks`.
 
     ![rpc-step-2](/img/doc-imgs/subwallet/rpc-2.png)
     
-3. Within the Manage Networks menu you will see a + in the top right corner.
+3. In the top-right corner of the **Manage networks** screen, click the plus (`+`) icon.
 
     ![rpc-step-3](/img/doc-imgs/subwallet/rpc-3.png)
 
-4. This will open the Import Network menu, where you will see a few options
-- Provider URL
-- Network Name
-- Symbol
-- Block explorer
-- Crowdloan URL
+4. This opens the **Import network** menu. You will see several configuration options:
+    * `Provider URL` *(Required)*
+    * `Network Name`
+    * `Symbol`
+    * `Block explorer` *(Optional — The default block explorer is [Subscan](https://autonomys.subscan.io))*
+    * `Crowdloan URL`
 
-The only required option is the Provider URL. Adding an explorer is optional. The default block explorer for the Autonomys Network is [Subscan Block Explorer](https://autonomys.subscan.io).
-
-You can refer to the *RPC Endpoints* above for available provider URLs for the Autonomys Network.
-    
-5. Fill in the provider URL, once you click out of this box it will check the URL and add the rest of the information, then click Save. 
-    - *In this example we will be using the Chronos testnet RPC `wss://rpc.chronos.autonomys.xyz/ws`*
+5. Paste your chosen endpoint into the `Provider URL` field. Once you click outside the input field, SubWallet will automatically fetch and populate the remaining network details. Click `Save`.
+    * *Example using the Chronos testnet RPC:* `wss://rpc.chronos.autonomys.xyz/ws`
 
     ![rpc-step-4](/img/doc-imgs/subwallet/rpc-4.png)
 
-6. You will then be taken back to the network screen where you can then select your new network that was added.
+6. You will be returned to the network management screen, where your newly added custom network will be saved and enabled.
 
     ![rpc-step-5](/img/doc-imgs/subwallet/rpc-5.png)
 
+---
+
 ## Troubleshooting
 
-If you face any trouble or would like to learn about other features for SubWallet, please see the [Official SubWallet Documentation](https://docs.subwallet.app/).
-
+If you experience issues or want to explore advanced extension configurations, please consult the [Official SubWallet Documentation](https://docs.subwallet.app/).
 
 ### How do I backup my wallet?
 
-1. You can backup/export your wallet. Click on your *Account*.
+1. To export or back up your private keys, click on your account name selector at the top-left of the main dashboard.
 
     ![trouble-1](/img/doc-imgs/subwallet/Trouble-1.png)
 
-
-2. Select the account you would like to backup and click on the *edit* sign.
+2. Locate the specific account you want to back up and click its corresponding **pencil/edit** icon.
 
     ![trouble-2](/img/doc-imgs/subwallet/Trouble-2.png)
 
-3. Select *Export*.
+3. Select `Export account`.
 
     ![trouble-3](/img/doc-imgs/subwallet/Trouble-3.png)
 
-4. You will then enter your wallet password and click which preferred export method you would like to use, either `Seed phrase`, `JSON` or `QR code`.
+4. Enter your wallet password, then select your preferred export format: `Seed phrase`, `JSON file`, or `QR code`. Ensure you store these exports in a secure, offline location.
 
     ![trouble-4](/img/doc-imgs/subwallet/Trouble-4.png)
