@@ -38,9 +38,9 @@ FoxWallet is a 3rd party multi-chain wallet created by the [FoxWallet Team](http
 
 ![step-4](/img/doc-imgs/foxwallet/FoxWallet-4.jpg)
 
-4. After confirming, you will go to Step 2 where you can see your seed phrase. You will first need to acknowledge a warning about protecting the phrase.
+3. After confirming, you will go to Step 2 where you can see your seed phrase. You will first need to acknowledge a warning about protecting the phrase.
 
-5. This screen is set to prevent screenshots for safety reasons. To advance to step 3, you will need to `Confirm backup`.
+4. This screen is set to prevent screenshots for safety reasons. To advance to step 3, you will need to `Confirm backup`.
 
 :::warning Protect Your Cryptocurrency Recovery Phrase at All Costs
 
@@ -48,9 +48,9 @@ Your recovery phrase (also known as a seed phrase) is the master key to your cry
 
 :::
 
-6. Confirming that backup will require you to click on each word phrase in the correct order and then select `Yes`.
+5. Confirming that backup will require you to click on each word phrase in the correct order and then select `Yes`.
 
-7. Congratulations, you are now on the home page where you can see your assets and create transactions.
+6. Congratulations, you are now on the home page where you can see your assets and create transactions.
 
 ![step-5](/img/doc-imgs/foxwallet/FoxWallet-5.jpg)
 
@@ -70,7 +70,7 @@ Your recovery phrase (also known as a seed phrase) is the master key to your cry
 
 4. Clicking next step will take you to the home page where you can see your assets and create transactions.
 
-![step-8](/img/doc-imgs/foxwallet/FoxWallet-5.jpg)
+![step-8-import](/img/doc-imgs/foxwallet/FoxWallet-5.jpg)
 
 ## Troubleshooting
 
@@ -104,6 +104,6 @@ If you face any trouble or would like to learn about other features for FoxWalle
 
 7. Your seed phrase will be displayed.
 
-![step-14](/img/doc-imgs/foxwallet/FoxWallet-14.jpg)
+![step-15](/img/doc-imgs/foxwallet/FoxWallet-14.jpg)
 
 8. Once you `Confirm backup`, you will be returned to the home page.
