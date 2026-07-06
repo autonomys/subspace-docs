@@ -21,11 +21,11 @@ This is the barebones wallet framework designed to support all Substrate-based n
 
 ## Create a New Wallet
 
-1. Visit the official Chrome Web Store or Firefox Add-ons page to install the extension. 
+1. Visit the official [Polkadot{.js} Extension website](https://polkadot.js.org/extension/) and download the respective version for your browser (Chrome/Firefox). 
 
 :::tip
 
-The Chrome Web Store extension works seamlessly on all Chromium-based browsers, including Google Chrome, Brave, Vivaldi, Microsoft Edge, and Opera.
+The Chrome extension works seamlessly on all Chromium-based browsers, including Google Chrome, Brave, Vivaldi, Microsoft Edge, and Opera.
 
 :::
 
@@ -33,15 +33,11 @@ The Chrome Web Store extension works seamlessly on all Chromium-based browsers, 
 
     ![step-2](/img/doc-imgs/polkadot/Polkadot-1.png)
 
-3. Next, an **"Asset Hub Migration Notice"** will appear regarding Polkadot ecosystem network balances. Click the orange **"I Understand"** button at the bottom to proceed to the main interface.
-
-    ![asset-hub-notice](/img/doc-imgs/polkadot/Asset-Hub-Notice.png)
-
-4. On the **Add Account** splash screen, click the large `+` icon in the center of the window (or the small `+` icon in the top-right corner) to create your first account.
+3. On the **Add Account** splash screen, click the large `+` icon in the center of the window (or the small `+` icon in the top-right corner) to create your first account.
 
     ![add-account-screen](/img/doc-imgs/polkadot/Polkadot-2.png)
 
-5. The extension will generate and display your unique 12-word mnemonic seed phrase. Write this down or click **"Copy to clipboard"** to back it up. 
+4. The extension will generate and display your unique 12-word mnemonic seed phrase. Write this down or click **"Copy to clipboard"** to back it up. 
 
 :::danger Secure Your Backup
 MAKE SURE YOU STORE THIS MNEMONIC SEED SECURELY AND NEVER SHARE IT. Anyone who obtains these 12 words can access and control your network funds permanently.
@@ -51,7 +47,7 @@ MAKE SURE YOU STORE THIS MNEMONIC SEED SECURELY AND NEVER SHARE IT. Anyone who o
 
     ![mnemonic-seed-screen](/img/doc-imgs/polkadot/Polkadot-3.png)
 
-6. On the second configuration page (**Create an account 2/2**), set up your account parameters:
+5. On the second configuration page (**Create an account 2/2**), set up your account parameters:
    * **Network:** Leave this set to the default **"Allow use on any chain"** option (you will map this to the Autonomys mainnet via metadata settings later).
    * **A Descriptive Name for Your Account:** Input a local reference name for your wallet.
    * **A New Password for This Account:** Create a strong password to encrypt your keys locally, then confirm it in the secondary password field.
@@ -60,7 +56,7 @@ MAKE SURE YOU STORE THIS MNEMONIC SEED SECURELY AND NEVER SHARE IT. Anyone who o
 
     ![account-credentials-setup](/img/doc-imgs/polkadot/Polkadot-4.png)
 
-7. Congratulations! You have successfully created your Polkadot.js wallet extension account. Your active account profile card will now be displayed inside the main dashboard interface.
+6. Congratulations! You have successfully created your Polkadot.js wallet extension account. Your active account profile card will now be displayed inside the main dashboard interface.
 
     ![wallet-dashboard-active](/img/doc-imgs/polkadot/Polkadot-5.png)
 
