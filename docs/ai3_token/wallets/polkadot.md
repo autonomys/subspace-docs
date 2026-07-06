@@ -1,7 +1,7 @@
 ---
 title: Polkadot
 sidebar_position: 3
-description: How to configure the Polkadot{.js} Substrate wallet for the Autonomys Network
+description: How to configure the Polkadot\{.js\} Substrate wallet for the Autonomys Network
 slug: /wallets/polkadot
 keywords:
     - Farmer
@@ -13,7 +13,7 @@ keywords:
 
 :::note
 
-The Polkadot{.js} extension is a Substrate/EVM wallet created by the creators of Substrate & Polkadot/Kusama, the [Parity Team](https://www.parity.io/).
+The Polkadot\{.js\} extension is a Substrate/EVM wallet created by the creators of Substrate & Polkadot/Kusama, the [Parity Team](https://www.parity.io/).
 
 :::
 
@@ -21,7 +21,7 @@ This is the barebones wallet framework designed to support all Substrate-based n
 
 ## Create a New Wallet
 
-1. Visit the official [Polkadot{.js} Extension website](https://polkadot.js.org/extension/) and download the respective version for your browser (Chrome/Firefox). 
+1. Visit the official [Polkadot\{.js\} Extension website](https://polkadot.js.org/extension/) and download the respective version for your browser (Chrome/Firefox).
 
 :::tip
 
@@ -63,9 +63,9 @@ MAKE SURE YOU STORE THIS MNEMONIC SEED SECURELY AND NEVER SHARE IT. Anyone who o
 
 ## Importing an Existing Seed
 
-If you have an existing mnemonic seed phrase (for instance, one generated from Subspace-Desktop), use this workflow to restore your account.
+If you have an existing mnemonic seed phrase, use this workflow to restore your account.
 
-1. Install the Extension (See step 1 of the previous section).
+1. Install the Extension (See [step 1](#create-a-new-wallet) of the previous section).
 
 2. Once the extension is installed, open it and click the orange `+` icon in the top-right toolbar. From the dropdown menu that appears, select **"Import account from pre-existing seed"**.
 
@@ -89,7 +89,7 @@ If you have an existing mnemonic seed phrase (for instance, one generated from S
 If you face any issues or want to explore advanced features, consult the [Official Polkadot.js Documentation](https://polkadot.js.org/). Common network FAQs are detailed below.
 
 ### How can I find my Public Address?
-* You can see your default Substrate public address starting with `5` directly below your wallet name inside the main extension window.
+* You can see your default Substrate public address starting with `5` directly below your wallet name inside the main extension window. For a comprehensive overview of address variations, you can also consult the community [Substrate Wallet Guide](https://forum.autonomys.xyz/t/substrate-wallet-guide/4535).
     
     ![trouble-1](/img/doc-imgs/polkadot/trouble-1.png)
 
@@ -103,7 +103,7 @@ Sometimes when installing or updating the extension on a new browser, the local 
 
 Follow these steps with your browser window open:
 
-1. Navigate to the official **Autonomys Portal**. When your browser extension detects the site, an access permissions popup will appear. Check the box for your desired account(s) and click **"Connect 1 account(s)"** to allow the portal to communicate with your wallet.
+1. Navigate to the official **[Autonomys Portal](https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Frpc.mainnet.subspace.foundation%2Fws#/explorer)**. When your browser extension detects the site, an access permissions popup will appear. Check the box for your desired account(s) and click **"Connect 1 account(s)"** to allow the portal to communicate with your wallet.
     
     ![authorize-connection](/img/doc-imgs/polkadot/trouble-4.png)
 
