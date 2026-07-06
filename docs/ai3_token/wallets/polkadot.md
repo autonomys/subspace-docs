@@ -43,7 +43,7 @@ The Chrome extension works seamlessly on all Chromium-based browsers, including 
 MAKE SURE YOU STORE THIS MNEMONIC SEED SECURELY AND NEVER SHARE IT. Anyone who obtains these 12 words can access and control your network funds permanently.
 :::
 
-   Once securely backed up, click the checkbox for **"I have saved my mnemonic seed safely."** and then click the brown **"Next step"** button at the bottom.
+   Once securely backed up, click the checkbox for **"I have saved my mnemonic seed safely."** and then click the orange **"Next step"** button at the bottom.
 
     ![mnemonic-seed-screen](/img/doc-imgs/polkadot/Polkadot-3.png)
 
@@ -52,7 +52,7 @@ MAKE SURE YOU STORE THIS MNEMONIC SEED SECURELY AND NEVER SHARE IT. Anyone who o
    * **A Descriptive Name for Your Account:** Input a local reference name for your wallet.
    * **A New Password for This Account:** Create a strong password to encrypt your keys locally, then confirm it in the secondary password field.
    
-   Once all fields are complete, click the brown **"Add the account with the generated seed"** button at the bottom.
+   Once all fields are complete, click the orange **"Add the account with the generated seed"** button at the bottom.
 
     ![account-credentials-setup](/img/doc-imgs/polkadot/Polkadot-4.png)
 
@@ -71,7 +71,7 @@ If you have an existing mnemonic seed phrase, use this workflow to restore your 
 
     ![import-menu-selection](/img/doc-imgs/polkadot/step-2a.png)
 
-3. Type or paste your 12-word mnemonic seed phrase into the designated input box and click the brown **"Next"** button.
+3. Type or paste your 12-word mnemonic seed phrase into the designated input box and click the orange **"Next"** button.
 
     ![seed-input-entry](/img/doc-imgs/polkadot/step-3a.png)
 
@@ -79,7 +79,7 @@ If you have an existing mnemonic seed phrase, use this workflow to restore your 
    * **A Descriptive Name for Your Account:** Enter a local identifier for your imported profile.
    * **A New Password for This Account:** Set a strong password to encrypt this wallet account locally on your device, then confirm it in the field below.
 
-   Once both fields are filled, click the brown **"Add the account with the supplied seed"** button at the bottom to finalize importing your account.
+   Once both fields are filled, click the orange **"Add the account with the supplied seed"** button at the bottom to finalize importing your account.
 
     ![import-credentials-setup](/img/doc-imgs/polkadot/step-4a.png)
 
