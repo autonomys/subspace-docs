@@ -59,11 +59,11 @@ Talisman is a 3rd party Ethereum and Polkadot wallet created by the [Talisman Te
 
 3. On the **"Create a new Substrate account"** screen, locate the **Account name** field and type a local name inside the **"Choose a name"** input box. Click the green **"Create →"** button in the lower-right corner to proceed.
 
-![step-3](/img/doc-imgs/talisman/Talisman-7-name.png)
+![step-3](/img/doc-imgs/talisman/Talisman-8.png)
 
 4. A **"New recovery phrase"** security warning modal will pop up detailing the rules of seed safety. Review the security statements, then click the wide lime-green **"Acknowledge and Continue"** button at the bottom to reveal your keys.
 
-![step-4](/img/doc-imgs/talisman/Talisman-8.png)
+![step-4](/img/doc-imgs/talisman/Talisman-9.png)
 
 :::warning Protect Your Cryptocurrency Recovery Phrase at All Costs
 Your recovery phrase (also known as a seed phrase) is the master key to your cryptocurrency wallet. Anyone with access to this phrase can take complete control of your funds. Never share it with anyone, never store it in unsecured digital platforms or emails, and always ensure you have a safe offline backup. Treat it like your most sensitive personal or financial information. *If it’s exposed or lost, you could permanently lose access to your cryptocurrency*.
@@ -75,7 +75,7 @@ Your recovery phrase (also known as a seed phrase) is the master key to your cry
 
 6. Once completed, you will be redirected to your main Talisman dashboard. Your new account name will appear under the **Accounts** panel on the left. 
 
-    > 💡 **Tip:** For quick access, click your browser's extensions icon (🧩) and select the pin icon (📌) next to Talisman to anchor it to your browser toolbar.
+     > 💡 **Tip:** For quick access, click your browser's extensions icon (🧩) and select the pin icon (📌) next to Talisman to anchor it to your browser toolbar.
 
 ![step-6-dashboard](/img/doc-imgs/talisman/Talisman-11.png)
 
@@ -83,11 +83,11 @@ Your recovery phrase (also known as a seed phrase) is the master key to your cry
 
 8. In the **"Select network"** modal overlay that appears, click inside the **"Search by network name"** input bar and type *Autonomys*. 
 
-9. Locate the **Autonomys** entry from the filtered list. You will see a preview of your public address starting with the native network characters `sue`. 
+9. Locate the **Autonomys** entry from the filtered list. You will see a preview of your public address starting with the native network characters `su`. 
 
 10. To manage or copy your credentials, choose one of the quick actions on the right side of the row:
-    * Click the **QR code icon** (four squares) to open up an expandable address card layout.
-    * Click the **Copy icon** (overlapping document squares) to save your public address directly to your clipboard.
+     * Click the **QR code icon** (four squares) to open up an expandable address card layout.
+     * Click the **Copy icon** (overlapping document squares) to save your public address directly to your clipboard.
 
 ![step-10-network](/img/doc-imgs/talisman/Talisman-12.png)
 
