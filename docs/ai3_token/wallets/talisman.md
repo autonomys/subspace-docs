@@ -1,8 +1,10 @@
 ---
 title: Talisman
-sidebar_position: 2
+sidebar_position: 1
 description: How to configure the Talisman wallet for the Autonomys Network
 slug: /wallets/talisman
+sidebar_custom_props:
+    card_thumbnail: /img/doc-imgs/wallets/talisman-card.png
 keywords:
     - Farmer
     - Farming
@@ -23,7 +25,7 @@ Talisman offers an intuitive interface for managing assets across multiple ecosy
 
 1. Download and install the browser extension from the official [Talisman Website](https://talisman.xyz/).
 
-2. Open the browser extension. On the onboarding splash window, review the privacy notes and click the green **"Get Started"** button. Create a strong local master password to lock the extension interface on your device, then click **"Continue"**.
+2. Open the browser extension. On the onboarding splash window, review the privacy notes and click the green **"Get Started"** button. Create a strong local master password to lock the extension interface on your machine, then click **"Continue"**.
 
     ![step-2](/img/doc-imgs/talisman/Talisman-1.png)
 
@@ -53,7 +55,7 @@ If you are migrating from another wallet application (such as Polkadot.js), foll
 
 1. Open the Talisman interface and open the account options menu by clicking your avatar or the **"Add account"** button in the sidebar.
 
-2. From the multi-tab layout, choose **"Import an existing account"** and select **"Recovery Phrase"** (or choose the Polkadot.js backup option if you are uploading an encrypted JSON file).
+2. From the multi-tab layout, choose **"Import an existing account"** and select **"Recovery Phrase"**.
 
     ![import-menu-selection](/img/doc-imgs/talisman/Talisman-6.png)
 
@@ -66,7 +68,7 @@ If you are migrating from another wallet application (such as Polkadot.js), foll
 
 ## Troubleshooting
 
-If you encounter performance hitches, asset display issues, or balance sync errors, try the basic steps below.
+If you encounter performance hitches, asset display issues, or balance sync errors, please consult the [Official Talisman Documentation](https://docs.talisman.xyz/talisman). Common network tips are listed below.
 
 ### My Autonomys address is missing or shows an incorrect prefix
 Talisman handles address prefixes automatically based on the network context. Ensure you are looking at your Substrate/Polkadot identity. If the address doesn't match the native format starting with `su`, ensure you have toggled on the **Autonomys Network** visibility under your active network filtering settings inside the primary dashboard interface.
