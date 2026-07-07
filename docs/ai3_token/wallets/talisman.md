@@ -5,6 +5,7 @@ description: How to configure the Talisman wallet for the Autonomys Network
 slug: /wallets/talisman
 sidebar_custom_props:
     card_thumbnail: /img/doc-imgs/wallets/talisman-card.png
+    featured: true
 keywords:
     - Farmer
     - Farming
