@@ -4,7 +4,8 @@ sidebar_position: 1
 description: How to configure the Talisman wallet for the Autonomys Network
 slug: /wallets/talisman
 sidebar_custom_props:
-  featured: true
+    card_thumbnail: /img/doc-imgs/wallets/talisman-card.png
+    featured: true
 keywords:
     - Farmer
     - Farming
@@ -14,113 +15,61 @@ keywords:
 ---
 
 :::note
-Talisman is a 3rd party Ethereum and Polkadot wallet created by the [Talisman Team](https://talisman.xyz).
+
+The Talisman wallet is a multi-chain web3 wallet that supports both Substrate (Polkadot ecosystem) and EVM (Ethereum ecosystem) networks.
+
 :::
 
-## Create or Import A New Wallet
+Talisman offers an intuitive interface for managing assets across multiple ecosystems, making it an excellent choice for users interacting with the Autonomys Network.
 
-1. Visit the [Talisman website](https://talisman.xyz/download) and add the extension to your browser.
+## Create a New Wallet
 
-2. Once the extension is installed, open it.
+1. Download and install the browser extension from the official [Talisman Website](https://talisman.xyz/).
 
-![step-2](/img/doc-imgs/talisman/Talisman-1.png)
+2. Open the browser extension. On the onboarding splash window, review the privacy notes and click the green **"Get Started"** button. Create a strong local master password to lock the extension interface on your machine, then click **"Continue"**.
 
-3. After clicking the `Get Started` button, you will need to set a password.
+    ![step-2](/img/doc-imgs/talisman/Talisman-1.png)
 
-![step-3](/img/doc-imgs/talisman/Talisman-2.png)
+3. On the **"Create a new Polkadot account"** screen, locate the **Account name** field and type a local name inside the **"Choose a name"** input box. Click the green **"Create →"** button in the lower-right corner to proceed.
 
-4. Once you set your password and click `Continue`, you will need to answer a privacy question.
+    ![step-3](/img/doc-imgs/talisman/Talisman-2.png)
 
-![step-4](/img/doc-imgs/talisman/Talisman-3.png)
+4. The wallet dashboard will open, showing your newly generated account. To copy your address, click **"Receive"**, select your account, and search for or click on **Autonomys Network**. Your address string should begin with the native network identifier `su`.
 
-5. You will then get a welcome screen and need to click `Enter Talisman`.
 
-![step-5](/img/doc-imgs/talisman/Talisman-4.png)
+## Backup Your Wallet
 
-6. Once you enter Talisman, you will see a dashboard.
-
-![step-6](/img/doc-imgs/talisman/Talisman-5.png)
-
-## Connect a wallet to Autonomys and find your wallet public address
-
-### Creating a new account
-
-1. Click the `Add account` button and you will see a multi-tab screen.
-
-![step-1](/img/doc-imgs/talisman/Talisman-6.png)
-
-2. Next click on `New Polkadot account` and you will be prompted to choose an account name.
-
-![step-2](/img/doc-imgs/talisman/Talisman-7.png)
-
-3. After choosing a name and clicking `Create`, you will see some information about your recovery phrase. 
-
-![step-3](/img/doc-imgs/talisman/Talisman-8.png)
-
-![step-3](/img/doc-imgs/talisman/Talisman-9.png)
-
-4. Then click `Acknowledge and Continue`, and you will see your recovery phrase.
-
-![step-4](/img/doc-imgs/talisman/Talisman-10.png)
-
-:::warning Protect Your Cryptocurrency Recovery Phrase at All Costs
-Your recovery phrase (also known as a seed phrase) is the master key to your cryptocurrency wallet. Anyone with access to this phrase can take complete control of your funds. Never share it with anyone, never store it in unsecured digital platforms or emails, and always ensure you have a safe offline backup. Treat it like your most sensitive personal or financial information. *If it’s exposed or lost, you could permanently lose access to your cryptocurrency*.
+:::danger Secure Your Backup
+Always secure your backup recovery phrase. Anyone who gains access to these words can completely control your assets.
 :::
 
-5. You can either Verify the recovery phrase or Skip Verification and it will take you to the dashboard.
+1. Open the Talisman extension and click the **Settings** gear icon or select your account profile avatar in the upper navigation bar.
 
-![step-5](/img/doc-imgs/talisman/Talisman-11.png)
+2. Navigate to **"Backup Recovery Phrase"** or **"Export Account"**. Enter your local master password to unlock your credentials.
 
-6. To get a public wallet address, you need to click `Receive`.
+3. Write down the 12 or 24-word recovery phrase exactly as displayed on the screen and store it safely offline. Check the confirmation box acknowledging you saved the phrase securely to finalize the backup process.
 
-7. You can search for autonomys when selecting a network.
 
-![step-7](/img/doc-imgs/talisman/Talisman-12.png)
+## Importing an Existing Seed
 
-8. Clicking on the QR code icon and you will get a QR code and can click `Copy Address` to copy the address to your clipboard.
+If you are migrating from another wallet application (such as Polkadot.js), follow these steps to import your account.
 
-![step-8](/img/doc-imgs/talisman/Talisman-13.png)
+1. Open the Talisman interface and open the account options menu by clicking your avatar or the **"Add account"** button in the sidebar.
 
-### Importing an existing account
+2. From the multi-tab layout, choose **"Import an existing account"** and select **"Recovery Phrase"**.
 
-1. Click the `Add account` button and you will see a multi-tab screen.
+    ![import-menu-selection](/img/doc-imgs/talisman/Talisman-6.png)
 
-![step-1](/img/doc-imgs/talisman/Talisman-6.png) 
+3. Select **"Polkadot / Substrate"** as your target ecosystem network type.
 
-2. Navigate to the `Import` tab.
+4. Carefully type or paste your 12-word mnemonic seed phrase into the input field. Give the account a unique local nickname, set up your password authorization, and click **"Import"** to restore your wallet.
 
-![step-2](/img/doc-imgs/talisman/Talisman-16.png)
+    ![wallet-dashboard-restored](/img/doc-imgs/talisman/Talisman-9.png)
 
-3. Next, click `Import via Recovery Phrase` and select Polkadot.
-
-![step-3](/img/doc-imgs/talisman/Talisman-17.png)
-
-4. Once you click the `Import` button, the screen will expand for you to choose a name for the account and enter your seed phrase.
-
-![step-4](/img/doc-imgs/talisman/Talisman-18.png)
-
-5. To finish the import, client the `Import` button again.
 
 ## Troubleshooting
 
-If you face any trouble or would like to learn about other features for Talisman, please see the [Official Talisman Documentation](https://docs.talisman.xyz/talisman).
+If you encounter performance hitches, asset display issues, or balance sync errors, please consult the [Official Talisman Documentation](https://docs.talisman.xyz/talisman). Common network tips are listed below.
 
-## How do I backup my wallet?
-
-1. You can backup/export your wallet. Click on the three dots in the top right to show the menu.
-
-![step-1](/img/doc-imgs/talisman/Talisman-19.png)
-
-2. Next choose `Export as JSON` from the menu.
-
-![step-2](/img/doc-imgs/talisman/Talisman-20.png)
-
-3. You will need to enter the password for your account and click `Submit`
-
-![step-3](/img/doc-imgs/talisman/Talisman-21.png)
-
-4. Next you need to create a different password for the JSON.
-
-![step-4](/img/doc-imgs/talisman/Talisman-22.png)
-
-5. After clicking `Export`, it will download your JSON file.
+### My Autonomys address is missing or shows an incorrect prefix
+Talisman handles address prefixes automatically based on the network context. Ensure you are looking at your Substrate/Polkadot identity. If the address doesn't match the native format starting with `su`, ensure you have toggled on the **Autonomys Network** visibility under your active network filtering settings inside the primary dashboard interface.
