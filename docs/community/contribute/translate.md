@@ -44,7 +44,7 @@ This guide will walk you through the process of providing translations for this 
 
 ### Prerequisites
 
-- Crowdin Account: They are free and will be necessary if you would like to contribute to our translations. You can create an account [here](https://accounts.crowdin.com/register)
+- Crowdin account: A free account is required to contribute translations. You can create an account [here](https://accounts.crowdin.com/register)
 - Join the Autonomys Network project on Crowdin.
     - [Documentation Project Portal](https://crowdin.com/project/subspace-docs)
 
@@ -58,11 +58,10 @@ This guide will walk you through the process of providing translations for this 
 Below you will find the walkthrough of how to provide translations for the Autonomys Network through the Crowdin translation portal. 
 
 1. Visit and join the respective translation portal for which website you would like to help translate (see above).
-   Or you can find the "Official Subspace Documentation" project yourself by using the search in CrowdIn.
-
+   Alternatively, you can search for the "Official Subspace Documentation" project directly on Crowdin.
     ![translate-step-1](/img/doc-imgs/crowdin/crowdin_login_page.png)
 
-2. Once you're on the project page – click the "Join" button.
+2. Once you're on the project page, click the "Join" button.
 
     ![translate-step-2](/img/doc-imgs/crowdin/crowdin_join_page.png)
 
@@ -70,20 +69,20 @@ Below you will find the walkthrough of how to provide translations for the Auton
 
     ![translate-step-3](/img/doc-imgs/crowdin/crowdin_project_page_lang_select.png)
 
-4. You will find yourself at a screen with all of the source files listed, select `Translate All` in the top right.
+4. You will see a screen listing all the source files. Select `Translate All` in the top-right corner.
 
     ![translate-step-4](/img/doc-imgs/crowdin/crowdin_translate_all_btn.png)
 
 5. You will then be taken to the Crowdin Translation Portal. There, you'll see the following interface elements:
 
-- **Source Strings** – the original string (usually English) to be translated
-- **Translation Input Field** – where you type your translation
-- **Machine Translation Suggestions** – machine-generated translation options
-- **Glossary Terms** – highlighted terms with defined translations
-- **Comments/Discussions Panel** – for feedback or clarifications
+- **Source Strings:** The original text to be translated.
+- **Translation Input Field:** Where you enter your translation.
+- **Machine Translation Suggestions:** Automatically generated translation suggestions.
+- **Glossary Terms:** Highlighted terms with predefined translations.
+- **Comments/Discussions Panel:** Where contributors can ask questions, provide feedback, and clarify translation issues.
 
     ![translate-step-5](/img/doc-imgs/crowdin/crowdin_translation_portal.png)
 
 6. From here you will fill in your translations as you would like and finalize once you are done.
 
-7. Your translation will be reviewed and approved on a timely basis, please note translations can take a couple days before they populate on the deployed documentation.
+7. Your translations will be reviewed before approval. Please note that approved translations may take a few days to appear in the published documentation.
